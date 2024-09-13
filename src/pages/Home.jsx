@@ -12,7 +12,7 @@ console.log(location)
             <div className="homeContent">
             <div className="Home-text">
          
-          <h3>SUMMER SALE | UP TO 50% OFF</h3>
+          <h3>SUMMER SALE | UP TO 30% OFF</h3>
          <h1> 2024 Summer Collection</h1> 
         </div>
   
