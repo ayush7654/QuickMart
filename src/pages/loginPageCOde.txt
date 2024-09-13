@@ -1,0 +1,90 @@
+import {useState,useContext,useEffect} from "react";
+import {LogInContext }from '../App'
+import {Link} from "react-router-dom"
+import UserInfo from "../UserInfo";
+import { BreadCrumbContext } from "../App";
+
+
+export default function LoginPage(){
+    const[LoginDetails,setLoginDetails]= useState({email:"",password:""})
+
+    const[LoggedIn,setLoggedIn]= useContext(LogInContext)
+    const[BreadCrumbs,setbreadcrumbs]= useContext(BreadCrumbContext)
+     
+    useEffect(()=>{
+        const storedLogin = localStorage.getItem("LoginState") 
+        setLoggedIn(storedLogin==="true")
+    },[])
+   
+    function handleChange(e){
+        if(e.target.name==="email"){
+            setLoginDetails(prevState=>{
+            return {...prevState,email: e.target.value}
+            })
+        }else(
+            setLoginDetails(prevState=>{
+                return{
+                    ...prevState,password: e.target.value
+                }
+            })
+        )
+       
+   
+    }
+
+   
+    
+    
+    function Submit(){
+     const findUser = UserInfo.find(user=>user.email===LoginDetails.email)
+      if(LoginDetails.email===findUser.email && LoginDetails.password===findUser.password){
+        setLoggedIn(true)
+        localStorage.setItem("LoginState",true)
+      }
+
+    }
+
+    function handleLogout(){
+        setLoggedIn(false)
+        localStorage.removeItem("LoginState")
+    }
+
+  
+   
+    
+    return(<>
+    <h1>Welcome to Online Store</h1>
+
+    
+    {LoggedIn?(<>
+    <h2>You are Logged in with {LoginDetails.email}
+    </h2>
+    <button onClick={handleLogout}>Log Out</button></>):(<div className="login-div">
+    <h2>Please Log in to buy items</h2>
+    <input className="login-email" 
+           placeholder="type your Email" 
+           name="email"
+           value={LoginDetails.email}
+           onChange={handleChange}/>    
+
+    <input className="login-password"  
+           placeholder="type your password"
+           name="password"        
+           value={LoginDetails.password}
+           onChange={handleChange}/> 
+
+    <button className='login-button'
+           onClick={Submit} >Log In</button>
+
+    <div className="register-div">
+        <p>Don't have an account?</p>
+        <Link onClick={()=>setbreadcrumbs(prev=>[...prev,">Registration"])} to={"/register"}>Register</Link>
+    </div>  
+    </div>)}
+    
+    
+    </>
+        
+    )
+}
+
