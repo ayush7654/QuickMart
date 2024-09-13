@@ -2,6 +2,7 @@ import {useState,useEffect,useContext,useRef} from "react";
 import {useParams,useOutletContext,Link,useLocation} from 'react-router-dom'
 import { BreadCrumbContext } from "../App";
 import { useFirebase } from "../components/FirebaseContext/Firebase";
+import CarouselComponent from "../components/CarouselComponent";
 export default function ProductDetails(){
     const{id} = useParams()
     const [product,setProduct]= useState(null)
@@ -33,23 +34,32 @@ export default function ProductDetails(){
     console.log(location)
    
     return(
-    <>
-   <Link onClick={()=>setbreadcrumbs("STORE")} to={`/store?${location.state.search}` }>Back to Store</Link>
+    <div>
+       
+   {/* <Link onClick={()=>setbreadcrumbs("STORE")} to={`/store?${location.state.search}` }>Back to Store</Link> */}
     {product?<div className="product-detail">
-         <div>{product.images.map((pic,index)=><img key={index} src={pic} width='300px'/>)}</div> 
-         <div>
+        <CarouselComponent Imagelist={product.images}/> 
+         <div className="product-info">
             
-        <h2>{product.title}</h2> 
-        <h4>Description:</h4><p>{product.description}</p>
-        <h2>Price: ${product.price}</h2>
-        <h4>Rating:{product.rating}/5</h4>
-        <button onClick={handleClick}>Add to Cart</button>
+        <h2  style={{fontSize:'30px'}}>{product.title}</h2> 
+        <h3 >Description:</h3>
+        <p  style={{fontSize:'18px', lineHeight:'25px',width:'450px'}}>{product.description}</p>
+        <div className="product-info-price-div">
+        <h3>Price:</h3><h2>${product.price}</h2>
+        </div>
+        <div  className="product-info-rating-div">
+            <h3 >Rating:</h3>
+            <h2>{product.rating.toFixed(1)}/5</h2>
+        </div>
+     
+        <button className="addTocartBtn" onClick={handleClick}>Add to Cart</button>
          </div>
 
     
         </div>:<p>loading..</p>}
+
     
-    </>
+    </div>
         
     )
 }
