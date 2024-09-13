@@ -10,8 +10,8 @@ body{
  
 }
 .outlet-container{
-  margin-left: 20px;
-  margin-right: 20px;
+  /* margin-left: 20px;
+  margin-right: 20px; */
 }
 button {
   border-radius: 8px;
@@ -223,7 +223,7 @@ a:hover {
   padding-top:20px ;
   padding-left:40px ;
   padding-right:40px ;
-/* background-color: rgba(228, 235, 237, 0.801); */
+ background-color: rgba(255, 255, 255, 0.743); 
   box-shadow: 10px 10px #1a1a1a5e;
 }
 .product-info-price-div,.product-info-rating-div{
@@ -245,10 +245,10 @@ a:hover {
   padding:20px;
 }
 .Login-Page{
-  background-image: url('./assets/LoginBG.jpg');
-  background-size:100%;
+   background-image: url('../public/BGpicture3.avif');
+  background-size:cover;
   background-repeat: no-repeat ;
-  background-position: center;
+  background-position: center; 
   height:100vh;
   display: flex;
   flex-direction: column;

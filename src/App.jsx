@@ -8,6 +8,7 @@ import Cart from './pages/Cart'
 import LoginPage from './pages/LoginPage'
 import Registration from './pages/Registration'
 import ProductDetails from './pages/ProductDetails'
+import SearchResults from './pages/SearchResults'
 import ErrorPage from './pages/ErrorPage'
 import Layout from './components/Layout'
 import Authentication from './components/Authentication'
@@ -30,9 +31,10 @@ const[Breadcrumbs,setbreadcrumbs]= useState([]);
       <Route path="/about" element={<About/>}/>
       <Route path="/store" element={<Store/>}/>
       <Route path="/store/:id" element={<ProductDetails/>}/>
+      <Route path="/search/:product" element={<SearchResults/>}/>
       <Route element={<Authentication/>}>
        <Route path="/cart" element={<Cart/>}/>
-      </Route>
+       </Route>
       <Route path="/login" element={<LoginPage/>}/>
       <Route path="/register" element={<Registration/>}/>
       </Route>
