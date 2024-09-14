@@ -4,6 +4,7 @@ import { getItems ,getFilteredItems} from "../api";
 import { BreadCrumbContext } from "../App";
 import PageNav from "../components/Paginization/PageNav";
 import ProductCard from "../components/ProductCard";
+import { ChevronLeft, ChevronRight } from 'react-feather'
 import ProductDetails from './ProductDetails';
 export default function Store() {
 
@@ -155,16 +156,16 @@ export default function Store() {
     <div className="Store-Page">
       <div className="Store-filter">
         <div className={currentCategory?"allBtn":"allBtn-selected"} onClick={()=>setcurrentCategory('')}><Link to='/store?page=1' style={{color:'black'}}>All</Link></div>
-        <div onClick={()=>handleCategory('left')}>left</div>
-        <div style={{overflow:'hidden',width:'85%'}}> <div className="store-categories"  style={{translate:`${-CategoryNum*200}px`}}>{productCategory && productCategory.map((item,index)=><div onClick={()=>handleFilter(item.slug)} className={item.slug===currentCategory?"store-category-selected" :"store-category"} key={index}>{item.name}</div>)}</div></div>
-        <div onClick={()=>handleCategory('right')}>right</div>
+        <div onClick={()=>handleCategory('left')}><ChevronLeft/></div>
+        <div style={{overflow:'hidden',width:'85%'}}> <div className="store-categories"  style={{translate:`${-CategoryNum*200}px`}}>{productCategory && productCategory.map((item,index)=><div onClick={()=>handleFilter(item.slug)} className={item.slug===typeFilter?"store-category-selected" :"store-category"} key={index}>{item.name}</div>)}</div></div>
+        <div onClick={()=>handleCategory('right')}><ChevronRight/></div>
       </div>
-        {typeFilter && FinalItems?(FinalItems.length===0?<div style={{padding:'20px',fontSize:'30px',fontWeight:500}}>No results found </div>:<div  style={{padding:'20px',fontSize:'18px'}}>{FinalItems.length} results found for {typeFilter}</div>):null}
+        
       <div className="productList">
         {isLoading?<h2>Loading...</h2>:productElements}
       </div>
 
-    {!currentCategory &&  <div className="pagination">
+    {!typeFilter &&  <div className="pagination">
         {page.current>1 && <div className="nav-left" onClick={() => {handlePage(page.current-1),handleNav(page.current)}}>
           ←
         </div>}

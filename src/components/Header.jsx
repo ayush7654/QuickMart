@@ -25,15 +25,15 @@ export default function Header(){
     return(<div>
         <div className="header">
         <div className="logo-title">
-        <div>Quick Deals, Quick Feels </div>
         <div className="logo-name">
         <img src="/src/assets/logo.png" width="45px" alt='Website-Logo'/>
         <div className="name">QuickMart</div>
         </div>
+        <div>Quick Deals, Quick Feels </div>
         </div>
 
         <div style={{display:'flex', position:'relative',alignItems:'center'}}>
-            <input style={{ width: '600px',height:'40px',border: '0px' ,borderRadius:'4px'}} className="header-search-box" placeholder="search box" value={searchTerm} onChange={(e)=>{setSearchTerm(e.target.value)}}/>
+            <input style={{ width: '600px',height:'40px',border: '0px' ,borderRadius:'4px'}} className="header-search-box" placeholder="What are you looking for?" value={searchTerm} onChange={(e)=>{setSearchTerm(e.target.value)}}/>
            <div style={{ position:'absolute',right:'10px'}} ><Link to={`/search/${searchTerm}` }> <Search style={{color:'grey'}}/></Link></div>
             
         </div>

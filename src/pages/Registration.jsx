@@ -18,7 +18,7 @@ export default function Registration(){
 
 
  return(
-    <>
+    <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
    {firebase.isLoggedIn?<>
      <h1>Welcome {firebase.currentUser.email}!</h1>
      <Link to='/'>Go to Home Page</Link>
@@ -35,7 +35,7 @@ export default function Registration(){
     </div>}
     
     
-    </>
+    </div>
     
  )
 }

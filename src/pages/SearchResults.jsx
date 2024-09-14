@@ -35,7 +35,13 @@ export default function SearchResults() {
      
   />
   )):<div>Loading..</div>
-  return (
-    <div className='search-result-list'>{productElements}</div>
+  return (<div>
+     <div style={{fontSize:'18px', padding:'10px',marginLeft:'20px'}}>{productElements.length} products found for "{product}"</div>
+     <div className='search-result-list'>
+      
+        {productElements}
+    </div>
+  </div>
+   
   )
 }
