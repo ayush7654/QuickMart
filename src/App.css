@@ -49,8 +49,10 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content:space-between;
-  
+  align-items: center; 
+  padding-bottom: 5px;
 }
+
 /*  */
 .Home{
   display: flex;
@@ -178,24 +180,25 @@ a:hover {
 }
 .product{
   border:0px solid black;
-  padding:7px;
+  padding:5px;
   height:280px;
   text-align: center;
   background-color: white;
   border-radius: 5px;
   color:black; 
-  box-shadow: 5px 5px 5px  rgba(69, 67, 67, 0.3); 
+ box-shadow: 2px 5px 5px  rgba(69, 67, 67, 0.3);  
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 .product:hover{
   
-  box-shadow: 10px 10px 10px   rgba(0, 0, 0, 0.524);
+  box-shadow: 0px 5px 20px   rgba(0, 0, 0, 0.524);
 }
 .Store-Product-title{
   color:rgb(78, 74, 74);
   font-weight:600;
   font-size:15px;
   line-height: 20px;
+  line-clamp: 1;
   
 }
 .productList{
@@ -225,6 +228,7 @@ a:hover {
   padding-right:40px ;
  background-color: rgba(255, 255, 255, 0.743); 
   box-shadow: 10px 10px #1a1a1a5e;
+  position: relative;
 }
 .product-info-price-div,.product-info-rating-div{
   display: flex;
@@ -233,15 +237,31 @@ a:hover {
   align-items: center;
 }
 .addTocartBtn{
-  background-color: #4743438e;
+  width: 300px;
+  background-color: #1a1a1aaf;
   font-weight: 500;
+  position: absolute;
+  bottom: 30px;
+  left:0px;
+  right:0px;
+  margin:auto;
 }
 .addTocartBtn:hover{
-  background-color: #1a1a1aaf;
+  background-color: rgba(0, 0, 0, 0.838)
 }
 
 
 .Cart-item{
+  padding:20px;
+}
+
+.search-result-list{
+  height: 700px;
+ 
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns of equal width */
+  grid-template-rows: repeat(2, 1fr); /* 2 rows of equal height */
+  grid-gap: 20px;
   padding:20px;
 }
 .Login-Page{

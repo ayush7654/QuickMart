@@ -1,6 +1,7 @@
 import {useState,useContext} from "react";
-import {NavLink} from 'react-router-dom'
-import { BreadCrumbContext } from "../App";
+import {NavLink, Link} from 'react-router-dom'
+import { Search } from "react-feather";
+/* import { BreadCrumbContext } from "../App"; */
 export default function Header(){
 
     const elements = [{title:"HOME",path:''},
@@ -8,8 +9,10 @@ export default function Header(){
         {title:"YOUR CART", path:'cart'},
         {title:"ABOUT", path:'about'},
         {title:"LOGIN",path:'login'}]
+
+    const [searchTerm,setSearchTerm]= useState('')
     
-    const [Breadcrumbs,setbreadcrumbs] = useContext(BreadCrumbContext)
+   /*  const [Breadcrumbs,setbreadcrumbs] = useContext(BreadCrumbContext) */
 
     const handleClick=(title)=>{
         setbreadcrumbs(title)
@@ -27,6 +30,12 @@ export default function Header(){
         <img src="/src/assets/logo.png" width="45px" alt='Website-Logo'/>
         <div className="name">QuickMart</div>
         </div>
+        </div>
+
+        <div style={{display:'flex', position:'relative',alignItems:'center'}}>
+            <input style={{ width: '600px',height:'40px',border: '0px' ,borderRadius:'4px'}} className="header-search-box" placeholder="search box" value={searchTerm} onChange={(e)=>{setSearchTerm(e.target.value)}}/>
+           <div style={{ position:'absolute',right:'10px'}} ><Link to={`/search/${searchTerm}` }> <Search style={{color:'grey'}}/></Link></div>
+            
         </div>
        
         
