@@ -150,34 +150,58 @@ a:hover {
 
 
 .Store-filter{
+  margin-left: 20px;
+  border:0px solid black;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap:10px;
-  height: 40px;
-  padding:10px;
+flex-direction: row;
+align-items: center;
+gap:20px;
+font-size: 18px;
+padding-top: 10px;
+
   
 }
-.Store-filter>input{
-  width: 500px;
-  background-color: rgb(255, 255, 255);
-  color:black;
-  font-size: 18px;
-  border:0px;
-
-}
-.Filter-Button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.allBtn{
   padding:5px;
   border-radius: 5px;
-  font-weight: 600;
-  color:rgb(0, 0, 0);
-  background-color: rgba(110, 159, 194, 0.303);
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-
+  background-color: rgba(149, 197, 182, 0.314);
 }
+.allBtn-selected{
+  padding:5px;
+  border-radius: 5px;
+  background-color: rgba(57, 112, 111, 0.443);
+}
+.store-categories{
+  border:0px solid rgb(203, 42, 42);
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  gap:30px;
+  margin-right: 20px;
+  width:85%;
+  transition: translate 400ms ease-in-out;
+  align-items: center;
+
+ }
+ .store-category{
+  flex-shrink: 0;
+  max-width: fit-content;
+  padding:5px;
+  border-radius: 5px;
+  background-color: rgba(149, 197, 182, 0.314);
+ }
+ .store-category-selected{
+  flex-shrink: 0;
+  max-width: fit-content;
+  padding:5px;
+  border-radius: 5px;
+  background-color: rgba(57, 112, 111, 0.443);
+ }
+ .store-category:hover{
+  background-color: rgba(57, 112, 111, 0.443);
+ }
+
+
 .product{
   border:0px solid black;
   padding:5px;
@@ -199,11 +223,11 @@ a:hover {
   font-size:15px;
   line-height: 20px;
   line-clamp: 1;
-  
 }
+
 .productList{
-  height: 700px;
- 
+margin-top: 20px;
+ /*  height: 600px; */
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 columns of equal width */
   grid-template-rows: repeat(2, 1fr); /* 2 rows of equal height */
@@ -404,7 +428,7 @@ display: flex;
 flex-direction: row;
 overflow: hidden;
 border: 0px solid black;
-background-color: rgba(235, 240, 241, 0.801);
+background-color: rgb(255, 255, 255);
 box-shadow: 5px 8px 10px 5px   rgba(0, 0, 0, 0.434);
 }
 .ImageBox:hover{

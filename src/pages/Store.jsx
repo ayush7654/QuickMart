@@ -1,16 +1,17 @@
 import { useState, useEffect, useContext, useRef } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { getItems ,getFilteredItems} from "../api";
 import { BreadCrumbContext } from "../App";
-import { debounce } from "lodash";
 import PageNav from "../components/Paginization/PageNav";
 import ProductCard from "../components/ProductCard";
+import ProductDetails from './ProductDetails';
 export default function Store() {
 
   const ProductCache=useRef({})
   const FilteredItemsCache=useRef({})
   const [isLoading,setIsLoading]= useState(false)
   const [FilteredProducts, setFilteredProducts] = useState();
+  const [productCategory,setProductCategory]= useState([])
 
  const page= useRef(1)
  const [PageNavArr,setPageNavArr]= useState([1,2,3,4,5,6,7,8,9,10])
@@ -18,11 +19,26 @@ export default function Store() {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const [inputFilter, setInputFilter] = useState("");
+  const [currentCategory, setcurrentCategory] = useState('');
+  const [CategoryNum, setCategoryNum]= useState(0) 
 
   const typeFilter = searchParams.get("type");
   const PageNumber = searchParams.get("page");
 
+  const handleCategory=(direction)=>{
+    setCategoryNum(prev=>{
+      if(direction==="left"){
+        if(prev>0){
+          return prev-1
+        }
+      
+      }else{
+        if(prev<10){
+          return prev+1;
+        }
+      }
+    })
+  }
 
   const handlePage=(id)=>{
     page.current= id;
@@ -36,12 +52,11 @@ export default function Store() {
       setPageNavArr(prev=>prev.map(num=>num-1))
     }
   }
-  const handleInputField=(value)=>{
-    setInputFilter(value)
-  }
-  const handleFilter=()=>{
-    console.log("filter applied")
-    setSearchParams({type:inputFilter})
+ 
+  const handleFilter=(category)=>{
+    console.log("current Categoryis ", category)
+    setcurrentCategory(category)
+    setSearchParams({type:category})
   }
 
 /*    const[BreadCrumbs,setbreadcrumbs]= useContext(BreadCrumbContext)
@@ -50,6 +65,14 @@ export default function Store() {
 
     }  */
 
+ useEffect(()=>{
+ const fetchCategory= async()=>{
+ const response= await fetch("https://dummyjson.com/products/categories")
+ const data = await response.json()
+ setProductCategory(data)
+ }
+ fetchCategory();
+ },[])
 
   useEffect(() => {
    
@@ -102,7 +125,7 @@ export default function Store() {
     loadFilteredItem();
    }
    
-  },[typeFilter])
+  },[currentCategory])
 
   useEffect(()=>{
     setPageNavArr(prev=>prev.map(num=>num+(page.current>10?page.current-10:null)))
@@ -120,7 +143,7 @@ export default function Store() {
       id={product.id}
       images={product.images}
       title={product.title}
-      searchParams={searchParams}
+     // searchParams={searchParams}
       price={product.price}
      
   />
@@ -131,19 +154,17 @@ export default function Store() {
   return (
     <div className="Store-Page">
       <div className="Store-filter">
-        <input
-          placeholder="What are you looking for?"
-          value={inputFilter}
-          onChange={(e)=>handleInputField(e.target.value)}
-        />
-        <div className="Filter-Button"  onClick={handleFilter}> Set Filter</div>
+        <div className={currentCategory?"allBtn":"allBtn-selected"} onClick={()=>setcurrentCategory('')}><Link to='/store?page=1' style={{color:'black'}}>All</Link></div>
+        <div onClick={()=>handleCategory('left')}>left</div>
+        <div style={{overflow:'hidden',width:'85%'}}> <div className="store-categories"  style={{translate:`${-CategoryNum*200}px`}}>{productCategory && productCategory.map((item,index)=><div onClick={()=>handleFilter(item.slug)} className={item.slug===currentCategory?"store-category-selected" :"store-category"} key={index}>{item.name}</div>)}</div></div>
+        <div onClick={()=>handleCategory('right')}>right</div>
       </div>
-       {typeFilter && FinalItems?(FinalItems.length===0?<div style={{padding:'20px',fontSize:'30px',fontWeight:500}}>No results found </div>:<div  style={{padding:'20px',fontSize:'18px'}}>{FinalItems.length} results found for {typeFilter}</div>):null}
+        {typeFilter && FinalItems?(FinalItems.length===0?<div style={{padding:'20px',fontSize:'30px',fontWeight:500}}>No results found </div>:<div  style={{padding:'20px',fontSize:'18px'}}>{FinalItems.length} results found for {typeFilter}</div>):null}
       <div className="productList">
         {isLoading?<h2>Loading...</h2>:productElements}
       </div>
 
-      <div className="pagination">
+    {!currentCategory &&  <div className="pagination">
         {page.current>1 && <div className="nav-left" onClick={() => {handlePage(page.current-1),handleNav(page.current)}}>
           ←
         </div>}
@@ -155,7 +176,7 @@ export default function Store() {
         <div className="nav-right" onClick={() => {handlePage(page.current+1),handleNav(page.current)}}>
           →
         </div>
-      </div>
+      </div>} 
     </div>
   );
 }
