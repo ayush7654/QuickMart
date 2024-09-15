@@ -15,10 +15,10 @@ export default function Authentication(){
     let loginState= firebase.isLoggedIn // make this a boolean to dectect if any user is logged in 
     
     return(<>
-    {loginState?<Outlet context= {cartList}/>:<>
+    {loginState?<Outlet context= {cartList}/>:<div style={{backgroundColor:'grey', height:'80vh',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
     <h2>Please login to see your Cart</h2>
     <Link onClick={()=>setbreadcrumbs("LOGIN")} to="/login">Go to login Page</Link>
-    </>}
+    </div>}
     
     
     </>

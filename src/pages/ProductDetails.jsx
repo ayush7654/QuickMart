@@ -6,6 +6,7 @@ import CarouselComponent from "../components/CarouselComponent";
 export default function ProductDetails(){
     const{id} = useParams()
     const [product,setProduct]= useState(null)
+
     useEffect(()=>{
         fetch(`https://dummyjson.com/products/${id}`)
         .then(res=>res.json())
@@ -15,6 +16,18 @@ export default function ProductDetails(){
     const firebase= useFirebase()
     const userInfo = firebase.isLoggedIn?firebase.currentUser.email:null
     const location= useLocation()
+
+    const [AddedtoCart,setAddedtoCart]= useState(false)
+    const [quantity, setQuantity] = useState(1);
+    const handleIncrease = () => {
+        setQuantity(prevQuantity => prevQuantity + 1);
+    };
+
+    const handleDecrease = () => {
+        if (quantity > 1) {
+            setQuantity(prevQuantity => prevQuantity - 1);
+        }
+    };
 
     
 
@@ -40,19 +53,43 @@ export default function ProductDetails(){
     {product?<div className="product-detail">
         <CarouselComponent Imagelist={product.images}/> 
          <div className="product-info">
-            
+            {/* to be added : category, stock, dimensions */}
         <h2  style={{fontSize:'30px'}}>{product.title}</h2> 
-        <h3 >Description:</h3>
-        <p  style={{fontSize:'18px', lineHeight:'25px',width:'450px'}}>{product.description}</p>
+        <h3>Description:</h3>
+        <p style={{fontSize:'18px', lineHeight:'25px',width:'450px'}}>{product.description}</p>
         <div className="product-info-price-div">
-        <h3>Price:</h3><h2>${product.price}</h2>
+        <h4>Price:</h4><h2>${product.price}</h2>
         </div>
         <div  className="product-info-rating-div">
-            <h3 >Rating:</h3>
+            <h4 >Rating:</h4>
             <h2>{product.rating.toFixed(1)}/5</h2>
         </div>
+        <div style={{display:'flex',flexDirection:'row', alignItems:'center',gap:'10px'}}>
+            <h4>Stocks left:</h4>
+            <h3> {product.stock}</h3>
+           </div>
+        <div style={{display:'flex', justifyContent:'center'}}>
+        <div className="quantity-container">
+            <button 
+                className="decrease-btn" 
+                onClick={handleDecrease} 
+                disabled={quantity === 1}
+            >
+                -
+            </button>
+            <input 
+                type="text" 
+                className="quantity-input" 
+                value={quantity} 
+                readOnly
+            />
+            <button className="increase-btn" onClick={handleIncrease}>
+                +
+            </button>
+        </div>
+        </div>
      
-        <button className="addTocartBtn" onClick={handleClick}>Add to Cart</button>
+        {!AddedtoCart?<button className="addTocartBtn" onMouseDown={()=>setAddedtoCart(true)} onClick={handleClick}>Add to Cart</button>:<button className="addTocartBtn" style={{backgroundColor:'black'}} onMouseDown={()=>setAddedtoCart(false)}>Added to Cart</button>}
          </div>
 
     

@@ -1,5 +1,5 @@
 import {useState,useContext} from "react";
-import {NavLink, Link} from 'react-router-dom'
+import {NavLink, Link, useLocation} from 'react-router-dom'
 import { Search } from "react-feather";
 /* import { BreadCrumbContext } from "../App"; */
 export default function Header(){
@@ -21,15 +21,20 @@ export default function Header(){
       
     }
 
+    const location= useLocation()
+    console.log(location)
+
    
-    return(<div>
-        <div className="header">
-        <div className="logo-title">
-        <div className="logo-name">
-        <img src="/src/assets/logo.png" width="45px" alt='Website-Logo'/>
+    return(<div className="sticky-header">
+        <div className={location.pathname==='/'?"header-home":'header'}>
+        
+        <div style={{display:'flex', flexDirection:'row',alignItems:'center',justifyContent:'center',gap:'0px'}} className="logo-title">
+        <img src='./public/Logofinal3.png' width='72px' style={{paddingTop:'10px'}} />
+        <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}} className="logo-name">
         <div className="name">QuickMart</div>
+        <div style={{color:'white',paddingBottom:'20px'}}>Quick Deals, Quick Feels </div>
         </div>
-        <div>Quick Deals, Quick Feels </div>
+      
         </div>
 
         <div style={{display:'flex', position:'relative',alignItems:'center'}}>

@@ -7,7 +7,7 @@ console.log(location)
    
     return(<>
     <div className="Home">
-        <div style={{height:'95vh',border:'0px solid red',display:'flex',alignItems:'center'}}>
+        <div style={{height:'89vh',border:'0px solid red',display:'flex',alignItems:'center'}}>
             <div className="homeBGImg"></div>
             <div className="homeContent">
             <div className="Home-text">
@@ -23,6 +23,29 @@ console.log(location)
         <div className="Home-bottom" style={{color:'red', marginTop:''}}>
             <div className="Home-bottom-content">
                 <div  className="Home-category-box">
+                    
+                    <div className="left-box">
+                    <div className=".left-box1">
+                        <Link to='/store?type=skin-care'>
+                        <div className="left-box1-a">
+                            <div className="left-box1-a-content"><div  style={{position:'absolute', bottom:'20px',left:'10px',fontSize:'30px',color:'white', fontWeight:600 }}>Skincare</div></div>
+                        </div></Link>
+                        <Link to='/store?type=groceries'>
+                        <div className="left-box1-b">
+                            <div className="left-box1-b-content"><div  style={{position:'absolute', bottom:'20px',left:'10px',fontSize:'30px',color:'white', fontWeight:600 }}>Essentials</div></div>
+                        </div>
+                        </Link>
+                       
+                    </div>
+                    <Link to='/store?type=mens-shoes'>
+                    <div className="left-box2">
+                        <div className="left-box2-content" ><div style={{position:'absolute', bottom:'20px',left:'10px',fontSize:'30px',color:'white', fontWeight:600 }}>Footwear</div></div>
+                    </div>
+                    </Link>
+
+                    </div>
+                    
+                    
                  <div style={{display:'flex'}} className="Home-category-boxes">
                     <Link to='/store?type=furniture'><div className="box1">
                         <div className="box1-content" ><div style={{position:'absolute', bottom:'20px',left:'20px',fontSize:'30px',color:'white', fontWeight:600 }}>Live Comfortably</div></div>
@@ -48,6 +71,11 @@ console.log(location)
                        
                     </div>
                  </div>
+                 {/* <Link>
+                    <div className="right-box">
+                        <div className="right-box-content"><div>right</div></div>
+                    </div>
+                    </Link> */}
                 </div>
             </div>
         </div>

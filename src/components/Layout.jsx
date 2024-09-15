@@ -9,7 +9,7 @@ export default function Home(){
    
    
     return(
-    <div className={`root${isHomePage ? 'home' : 'nothome'}`} style={{position:"relative"}}>
+    <div  className={`root${isHomePage ? 'home' : 'nothome'}`} style={{position:"relative"}}>
     <Header/>
     <div className='outlet-container'>
     <Outlet />
