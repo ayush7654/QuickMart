@@ -70,6 +70,7 @@ export default function ProductDetails(){
            </div>
         <div style={{display:'flex', justifyContent:'center'}}>
         <div className="quantity-container">
+           
             <button 
                 className="decrease-btn" 
                 onClick={handleDecrease} 

@@ -20,7 +20,7 @@ console.log(location)
         </div>
 
 
-        <div className="Home-bottom" style={{color:'red', marginTop:''}}>
+        <div className="Home-bottom" >
             <div className="Home-bottom-content">
                 <div  className="Home-category-box">
                     
@@ -71,11 +71,7 @@ console.log(location)
                        
                     </div>
                  </div>
-                 {/* <Link>
-                    <div className="right-box">
-                        <div className="right-box-content"><div>right</div></div>
-                    </div>
-                    </Link> */}
+            
                 </div>
             </div>
         </div>
