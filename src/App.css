@@ -104,7 +104,7 @@ a:hover {
 }
 .homeBGImg{
   border: solid black 0px;
-  background-image: linear-gradient(rgba(52, 46, 46, 0.2), rgba(0, 0, 0, 0)), url('../public/BGpicture6.jpg');
+  background-image: linear-gradient(rgba(52, 46, 46, 0.2), rgba(0, 0, 0, 0)), url('/BGpicture6.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
