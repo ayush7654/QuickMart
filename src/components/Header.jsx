@@ -4,11 +4,11 @@ import { Search } from "react-feather";
 /* import { BreadCrumbContext } from "../App"; */
 export default function Header(){
 
-    const elements = [{title:"HOME",path:''},
-        {title:"STORE",path:'store?page=1'},
-        {title:"YOUR CART", path:'cart'},
-        {title:"ABOUT", path:'about'},
-        {title:"LOGIN",path:'login'}]
+    const elements = [{title:"HOME",path:'/'},
+        {title:"STORE",path:'/store?page=1'},
+        {title:"YOUR CART", path:'/cart'},
+        {title:"ABOUT", path:'/about'},
+        {title:"LOGIN",path:'/login'}]
 
     const [searchTerm,setSearchTerm]= useState('')
     
@@ -46,7 +46,7 @@ export default function Header(){
         
        
          <div className='Home-Nav-Container'>
-            {elements.map((element,index)=> <NavLink onClick={()=>handleClick(element.title)}  key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={`/${element.path}`}>{element.title}</NavLink>)}
+            {elements.map((element,index)=> <NavLink onClick={()=>handleClick(element.title)}  key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}>{element.title}</NavLink>)}
          </div>
          {/* <div>{Breadcrumbs}</div> */}
          
