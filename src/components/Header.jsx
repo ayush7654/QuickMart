@@ -48,7 +48,7 @@ export default function Header(){
          <div className='Home-Nav-Container'>
             {elements.map((element,index)=> <NavLink onClick={()=>handleClick(element.title)}  key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}>{element.title}</NavLink>)}
          </div>
-         {/* <div>{Breadcrumbs}</div> */}
+        
          
         
     </div>
