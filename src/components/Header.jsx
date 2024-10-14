@@ -29,7 +29,7 @@ export default function Header(){
         <div className={location.pathname==='/'?"header-home":'header'}>
         
         <div style={{display:'flex', flexDirection:'row',alignItems:'center',justifyContent:'center',gap:'0px'}} className="logo-title">
-        <img src='./public/Logofinal3.png' width='72px' style={{paddingTop:'10px'}} />
+        <img src='/public/Logofinal3.png' width='72px' style={{paddingTop:'10px'}} />
         <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}} className="logo-name">
         <div className="name">QuickMart</div>
         <div style={{color:'white',paddingBottom:'20px'}}>Quick Deals, Quick Feels </div>
