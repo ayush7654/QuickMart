@@ -143,13 +143,9 @@ a:hover {
   line-height: 0px;
   text-align: center;
   font-size: 35px;
-  color:rgb(255, 255, 255);
+  color:rgb(0, 0, 0);
   padding: 20px;
-  background: linear-gradient(
-    to right, 
-    transparent, 
-    rgba(29, 26, 26, 0.5), 
-    transparent)
+
 
  /*  background-color: rgba(74, 99, 94, 0.366); */
 }
