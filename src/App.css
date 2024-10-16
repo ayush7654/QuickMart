@@ -392,13 +392,15 @@ font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
   padding:5px;
   border-radius: 5px;
   background-color: rgb(132, 156, 201);
+  color: black;
   
 }
 .allBtn-selected{
   padding:5px;
   border-radius: 5px;
-  background-color:rgb(35, 60, 169);
   color: white;
+  background-color:rgb(35, 60, 169);
+
 }
 .Store-filter-left:hover,.Store-filter-right:hover{
   border-radius: 5px;
