@@ -7,7 +7,7 @@ console.log(location)
    
     return(<>
     <div className="Home">
-        <div style={{height:'88vh',border:'0px solid red',display:'flex',alignItems:'center'}}>
+        <div style={{height:'70vh',border:'0px solid red',display:'flex',alignItems:'center'}}>
             
             <div className="homeContent">
                 <div className="Home-text0">
