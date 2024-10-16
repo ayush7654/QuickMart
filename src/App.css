@@ -384,7 +384,7 @@ align-items: center;
 gap:20px;
 font-size: 18px;
 padding-top: 10px;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
 
   
 }
