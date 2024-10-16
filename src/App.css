@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 body{
  
@@ -41,13 +42,13 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 1000;
- 
+  
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
   width: 100%;
 }
 
 .header-home{
-  background-color:rgba(57, 112, 111, 0.579);; /*  */
+  background-color:rgba(34, 52, 133, 0.968); /*  */
   border:0px solid white;
   height:70px;
   width:100%;
@@ -61,7 +62,7 @@ a:hover {
 .header{
    
 
- background-color:rgb(5, 111, 117); /* rgba(57, 112, 111, 0.354); */
+ background-color:rgba(34, 52, 133, 0.968);  /* rgba(57, 112, 111, 0.354); */
   border:0px solid white;
   height:70px;
   width:100%;
@@ -95,6 +96,8 @@ a:hover {
   justify-content: center;
   border: 0px solid black;
   width: 100%;
+  background: linear-gradient(to bottom, rgba(16, 16, 128, 0.857), white);
+
 
 /* background-image:url('./assets/HomeBG.avif');
   background-repeat: no-repeat;
@@ -102,56 +105,83 @@ a:hover {
   background-position: center;
   z-index: -1; */
 }
-.homeBGImg{
-  border: solid black 0px;
-  background-image: linear-gradient(rgba(52, 46, 46, 0.2), rgba(0, 0, 0, 0)), url('/BGpicture6.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-    height: 100vh; /* Equivalent to h-3/4 */
-    display: flex; /* Equivalent to flex */
-    flex-direction: column; /* Equivalent to flex-col */
-    justify-content: center; /* Equivalent to justify-center */
-    align-items: center; /* Equivalent to items-center */
-    position: absolute; /* Equivalent to absolute */
-    top: 0; /* Equivalent to inset-0 */
-    right: 0; /* Equivalent to inset-0 */
-    bottom: 0; /* Equivalent to inset-0 */
-    left: 0; /* Equivalent to inset-0 */
-    background-repeat: no-repeat; /* Equivalent to bg-no-repeat */
-    background-attachment: fixed;
-    
-  
-  }
- 
- /*  background-image:url('./assets/HomeBG.avif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  z-index: -1; */
+
 
 .homeContent{
   display: flex;
   justify-content: center;
-  align-items: center;
-  place-content: center;
+  flex-direction: column;
+
+  
+ 
+ 
+ 
 }
-.Home-text{
+.home-Img{
+  
+  border: 0px solid red;
+
+
+ 
+}
+.Home-text0{
+  display: flex;
+  flex-direction: row;
+  line-height: 0px;
+  text-align: center;
+  justify-content: center;
+  gap:10px;
+  font-size: 40px;
+  color:rgb(255, 255, 255);
+margin-bottom: 90px;
+  border: 0px solid blue;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  
+
+   
+}
+.Home-text1{
   display: flex;
   flex-direction: column;
   line-height: 0px;
   text-align: center;
-  font-size: 35px;
+  font-size: 100px;
+  color:rgb(255, 255, 255);
+margin-bottom: 25px;
+  border: 0px solid blue;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 0px -5px 30px rgb(123, 191, 228);
+
+  
+
+   
+}
+.Home-text2{
+  display: flex;
+  flex-direction: column;
+  line-height: 0px;
+  text-align: center;
+  font-size: 30px;
   color:rgb(0, 0, 0);
-  padding: 20px;
+padding-top: 50px;
+  border: 0px solid blue;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 
-
-   background-color: rgba(94, 142, 133, 0.818); 
+   
 }
 .Home-bottom{
-  height: 450px;
+  height: 440px;
+ 
 }
+
+
+
 .Home-category-box{
   border: 1px solid black;
   
@@ -162,7 +192,8 @@ a:hover {
   align-items: center;
   width: 1500px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: rgba(138, 169, 184, 0.417);
+  /* background-color: rgba(79, 109, 155, 0.627); */
+  background-color: rgba(119, 144, 186, 0.587);
   backdrop-filter: blur(10px);
   /* box-shadow: 0px 0px 100px rgb(146, 176, 190); */
   
@@ -360,16 +391,18 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 .allBtn{
   padding:5px;
   border-radius: 5px;
-  background-color: rgba(149, 197, 182, 0.314);
+  background-color: rgb(132, 156, 201);
+  
 }
 .allBtn-selected{
   padding:5px;
   border-radius: 5px;
-  background-color: rgba(57, 112, 111, 0.443);
+  background-color:rgb(35, 60, 169);
+  color: white;
 }
 .Store-filter-left:hover,.Store-filter-right:hover{
   border-radius: 5px;
- background-color: #6a69697b;
+  background-color: rgb(132, 156, 201);
 }
 .store-categories{
   border:0px solid rgb(203, 42, 42);
@@ -388,17 +421,18 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   max-width: fit-content;
   padding:5px;
   border-radius: 5px;
-  background-color: rgba(149, 197, 182, 0.314);
+  background-color: rgb(132, 156, 201);
  }
  .store-category-selected{
   flex-shrink: 0;
   max-width: fit-content;
   padding:5px;
   border-radius: 5px;
-  background-color: rgba(57, 112, 111, 0.443);
+  background-color:rgb(35, 60, 169);
+  color: white;
  }
  .store-category:hover{
-  background-color: rgba(57, 112, 111, 0.443);
+  background-color: rgba(68, 98, 167, 0.821);
  }
 
 
@@ -536,6 +570,7 @@ button:disabled {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 .login-box{
