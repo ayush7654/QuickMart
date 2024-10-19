@@ -1,11 +1,12 @@
 import { useState, useEffect, useContext, useRef } from "react";
 import { useSearchParams, Link } from "react-router-dom";
-import { getItems ,getFilteredItems} from "../api";
-import { BreadCrumbContext } from "../App";
-import PageNav from "../components/Paginization/PageNav";
-import ProductCard from "../components/ProductCard";
+import { getItems ,getFilteredItems} from "../../api";
+import { BreadCrumbContext } from "../../App";
+import PageNav from "../../components/Paginization/PageNav";
+import ProductCard from "../../components/ProductCard";
 import { ChevronLeft, ChevronRight } from 'react-feather'
-import ProductDetails from './ProductDetails';
+import ProductDetails from '../ProductDetails';
+import './Store.css'
 export default function Store() {
 
   const ProductCache=useRef({})
