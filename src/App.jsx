@@ -1,7 +1,7 @@
 import './App.css'
 import React ,{useState,createContext} from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 import About from './pages/About'
 import Store from './pages/Store'
 import Cart from './pages/Cart'
