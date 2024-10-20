@@ -1,11 +1,13 @@
 import {useState,useEffect,useContext,useRef} from "react";
 import {useParams,useOutletContext,Link,useLocation} from 'react-router-dom'
-import { BreadCrumbContext } from "../App";
-import { useFirebase } from "../components/FirebaseContext/Firebase";
-import CarouselComponent from "../components/CarouselComponent";
+import { BreadCrumbContext } from "../../App";
+import { useFirebase } from "../../components/FirebaseContext/Firebase";
+import CarouselComponent from "../../components/CarouselComponent";
+import './ProductDetails.css'
 export default function ProductDetails(){
     const{id} = useParams()
-    const [product,setProduct]= useState(null)
+    const [product,setProduct]= useState(null);
+    
 
     useEffect(()=>{
         fetch(`https://dummyjson.com/products/${id}`)
@@ -47,26 +49,26 @@ export default function ProductDetails(){
     console.log(location)
    
     return(
-    <div>
+    <div className="productDetails-page">
        
    {/* <Link onClick={()=>setbreadcrumbs("STORE")} to={`/store?${location.state.search}` }>Back to Store</Link> */}
     {product?<div className="product-detail">
         <CarouselComponent Imagelist={product.images}/> 
          <div className="product-info">
             {/* to be added : category, stock, dimensions */}
-        <h2  style={{fontSize:'30px'}}>{product.title}</h2> 
-        <h3>Description:</h3>
-        <p style={{fontSize:'18px', lineHeight:'25px',width:'450px'}}>{product.description}</p>
+        <h2 className="product-title"  >{product.title}</h2> 
+        <div style={{fontSize:'1rem',fontWeight:600}}>Description:</div>
+        <p className="product-description" >{product.description}</p>
         <div className="product-info-price-div">
-        <h4>Price:</h4><h2>${product.price}</h2>
+        <div style={{fontSize:'1rem',fontWeight:600}}>Price:</div><div style={{fontSize:'1rem',fontWeight:600}}>${product.price}</div>
         </div>
         <div  className="product-info-rating-div">
-            <h4 >Rating:</h4>
-            <h2>{product.rating.toFixed(1)}/5</h2>
+            <div style={{fontSize:'1rem',fontWeight:600}} >Rating:</div>
+            <div style={{fontSize:'1rem',fontWeight:600}}>{product.rating.toFixed(1)}/5</div>
         </div>
-        <div style={{display:'flex',flexDirection:'row', alignItems:'center',gap:'10px'}}>
-            <h4>Stocks left:</h4>
-            <h3> {product.stock}</h3>
+        <div  style={{display:'flex',flexDirection:'row', alignItems:'center',gap:'10px',paddingTop:'10px'}}>
+            <div style={{fontSize:'1rem',fontWeight:600}}>Stocks left:</div>
+            <div style={{fontWeight:600}}> {product.stock}</div>
            </div>
         <div style={{display:'flex', justifyContent:'center'}}>
         <div className="quantity-container">
