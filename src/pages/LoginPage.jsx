@@ -1,8 +1,8 @@
-import {useState,useContext,useEffect} from "react";
+import {useState} from "react";
 import { useFirebase } from "../components/FirebaseContext/Firebase";
 import {Link} from "react-router-dom"
-import UserInfo from "../UserInfo";
-import { BreadCrumbContext } from "../App";
+
+
 
 
 export default function LoginPage(){
@@ -24,25 +24,27 @@ export default function LoginPage(){
     }
 
     
-   /*  const[BreadCrumbs,setbreadcrumbs]= useContext(BreadCrumbContext) */
+  
      console.log(firebase.currentUser)
   
  
     
     return(<div className="Login-Page">
-   <h1>Welcome to Online Store</h1>
-   {firebase.isLoggedIn?<div className="login-success-box">
+        <div className="LoginImg"></div>
+  
+ 
+     <div className="login-div">
+     {firebase.isLoggedIn?<div className="login-success-box">
             <h2>You are logged in with {firebase.currentUser.email}</h2>
             <button onClick={SignOut}>Sign Out</button>
         </div>:(
-     <div className="login-div">
       
         <div className="login-box">
-        <h2>Get Started!</h2>
+        <div className="login-title">Log in to get started!</div>
      <div className="Email">
         <div>Email</div>
         <input className="login-email" 
-            placeholder="type your Email" 
+            placeholder="example@email.com..." 
             name="email"
             value={email}
             onChange={(e)=>setEmail(e.target.value)}/> 
@@ -50,7 +52,7 @@ export default function LoginPage(){
      <div className="Password">
        <div>Password</div>
        <input className="login-password"  
-            placeholder="type your password"
+            placeholder="-----------"
             name="password"        
             value={password}
             onChange={(e)=>setPassword(e.target.value)}/> 
@@ -64,10 +66,10 @@ export default function LoginPage(){
          <div><Link onClick={()=>setbreadcrumbs(prev=>[...prev,">Registration"])} to={"/register"}>Create account</Link></div>
      </div>   
         </div>
-     
+    )}
      </div>
        
-    )}
+    
     
     
     </div>

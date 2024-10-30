@@ -8,11 +8,13 @@ export default function CarouselComponent({Imagelist}) {
 
   // Function to update the image width based on screen size
   const updateImageWidth = () => {
-    if (window.innerWidth <600) {
-      setImageWidth(300); // Example: smaller width for mobile devices
+    if (window.innerWidth < 400) {
+      setImageWidth(250); // Example: smaller width for mobile devices
+    } else if(window.innerWidth < 600) {
+      setImageWidth(300); // Example: default width for larger screens
     } else if(window.innerWidth < 745) {
       setImageWidth(500); // Example: default width for larger screens
-    } else if(window.innerWidth < 950) {
+    }else if(window.innerWidth < 950) {
       setImageWidth(300); // Example: default width for larger screens
     } else if(window.innerWidth < 1125) {
       setImageWidth(400); // Example: default width for larger screens

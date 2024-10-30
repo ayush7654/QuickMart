@@ -30,7 +30,7 @@
   }
   .Store-filter-left:hover,.Store-filter-right:hover{
     border-radius: .3rem;
-    background-color: rgb(132, 156, 201);
+    background-color:rgb(35, 60, 169);
   }
   .store-categories{
     border:0px solid rgb(203, 42, 42);
@@ -170,7 +170,7 @@
       
       .productList{
         margin: 1.2rem;
-         /*  height: 600px; */
+        
           display: grid;
           grid-template-columns: repeat(4, 1fr); /* 5 columns of equal width */
           grid-template-rows: repeat(3, 1fr); /* 2 rows of equal height */
@@ -224,7 +224,7 @@
       }
     .productList{
         margin: 1.2rem;
-         /*  height: 600px; */
+         
           display: grid;
           grid-template-columns: repeat(3, 1fr); /* 5 columns of equal width */
           grid-template-rows: repeat(4, 1fr); /* 2 rows of equal height */
@@ -260,7 +260,7 @@
   @media (max-width:580px){
     .productList{
         margin: 1.2rem;
-         /*  height: 600px; */
+         
           display: grid;
           grid-template-columns: repeat(2, 1fr); /* 5 columns of equal width */
           grid-template-rows: repeat(5, 1fr); /* 2 rows of equal height */
@@ -287,5 +287,59 @@
             width: 1.6rem;
             height: 1.6rem;
           
+          }
+  }
+
+  
+  @media (max-width:400px){
+    .productList{
+        margin: 1.2rem;
+         
+          display: grid;
+          grid-template-columns: repeat(2, 1fr); /* 5 columns of equal width */
+          grid-template-rows: repeat(5, 1fr); /* 2 rows of equal height */
+          grid-gap: 1rem;
+       
+         
+        }
+        .page-nav{
+            
+            width: 1.4rem;
+            height: 1.4rem;
+            font-size: .6rem;
+           
+          }
+          .page-nav-selected{
+           
+            width: 1.4rem;
+            height: 1.4rem;
+            
+           
+          }
+     
+          .nav-left,.nav-right{
+           
+            width: 1.2rem;
+            height: 1.2rem;
+           
+           
+          
+          }
+          .product{
+            height: 200px;
+          }
+          .Store-filter{
+            gap: 3px;
+            font-size: .8rem;
+          }
+
+          .Store-Product-title{
+            font-size: .8rem;
+          }
+          .price-title{
+            font-size: .8rem;
+          }
+          .product-price{
+            font-size: .9rem;
           }
   }

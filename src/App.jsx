@@ -2,7 +2,7 @@ import './App.css'
 import React ,{useState,createContext} from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home/Home'
-import About from './pages/About'
+
 import Store from './pages/Store/Store'
 import Cart from './pages/Cart'
 import LoginPage from './pages/LoginPage'
@@ -28,7 +28,7 @@ const[Breadcrumbs,setbreadcrumbs]= useState([]);
     <Routes>
       <Route element = {<Layout/>}>
       <Route path="/" element={<Home/>}/>
-      <Route path="/about" element={<About/>}/>
+      
       <Route path="/store" element={<Store/>}/>
       <Route path="/store/:id" element={<ProductDetails/>}/>
       <Route path="/search/:product" element={<SearchResults/>}/>

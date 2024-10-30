@@ -7,7 +7,7 @@ export default function Header(){
     const elements = [{title:"HOME",path:'/'},
         {title:"STORE",path:'/store?page=1'},
         {title:"CART", path:'/cart'},
-        {title:"ABOUT", path:'/about'},
+      
         {title:"LOGIN",path:'/login'}]
 
     const [searchTerm,setSearchTerm]= useState('')
