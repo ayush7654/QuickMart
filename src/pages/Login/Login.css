@@ -1,0 +1,259 @@
+.Login-Page{
+
+    height:90vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    
+    
+   
+    font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+  
+  }
+  .login-title{
+   font-size: 2rem;
+   font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+   font-weight:600;
+  }
+  
+  .LoginImg{
+   
+   height: 90%;
+   width: 60%;
+  border-radius: 1rem;
+   overflow: hidden;
+   background-image: url('./LoginBGImg2.webp');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   box-shadow: 7px 7px rgb(127, 125, 125);
+  }
+  .login-div{
+    height: 100%;
+    width: 40%;
+  
+    display: flex;
+    align-items: center;
+  justify-content: end;
+  }
+  .login-box{
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 90%;
+    gap:2rem;
+    padding:0px;
+    border-radius: 1rem;
+    align-items: center;
+   justify-content: center;
+    background-color: rgb(134, 155, 195);
+    box-shadow: -7px 7px rgb(127, 125, 125);
+   
+  }
+  .login-success-box{
+    display: flex;
+    flex-direction: column;
+    gap:.6rem;
+    padding:0px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(134, 155, 195);
+    border-radius: 1rem;
+    height:90%;
+    width: 90%;
+    box-shadow: -5px 5px rgb(127, 125, 125);
+  
+  }
+  .Email{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap:2px;
+   
+  }
+  
+  .Password{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap:2px;
+  }
+  .login-email,.login-password{
+    height: 2.5rem;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border: 0px;
+    color:rgba(43, 38, 38, 0.92);
+    font-size: 1rem;
+    padding-left:10px;
+    border-radius: .6rem;
+    
+  }
+  .login-email,.login-password:focus{
+    outline: none;
+  }
+  .login-button{
+    width:50%;
+    
+    margin-top: 20px;
+  }
+  .register-div{
+   display: flex;
+   flex-direction: row;
+   gap:15px;
+  }
+  
+  
+  .register-form{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap:20px;
+    padding:20px;
+   
+  }
+  .register-form>input{
+    padding:10px;
+  }
+  .register-button{
+    width:100px;
+  }
+  
+  
+  @media(max-width:900px){
+    .login-title{
+      font-size: 1.5rem;
+     
+     }
+     .Email{
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+     
+    }
+    
+    .Password{
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+    }
+    .login-button{
+      width:70%;
+      margin-top: 20px;
+    }
+     .register-div{
+      font-size: .8rem;
+     }
+  
+  }
+  
+  @media(max-width:670px){
+  
+    .login-title{
+      font-size: 1.5rem;
+   
+     }
+     
+     .LoginImg{
+      
+      height: 90%;
+      width: 50%;
+      background-image: url('./LoginBGImg3.jpg');
+      background-position: -60px ;
+      box-shadow: 4px 4px rgb(127, 125, 125);
+  
+     }
+     .login-div{
+       height: 100%;
+       width: 50%;
+     
+     
+   
+     }
+     .login-box{
+  
+       box-shadow: -4px 4px rgb(127, 125, 125);
+      
+     }
+     .login-success-box{
+       display: flex;
+       flex-direction: column;
+       gap:.6rem;
+       padding:0px;
+       align-items: center;
+       justify-content: center;
+       background-color: rgb(134, 155, 195);
+       border-radius: 1rem;
+       height:90%;
+       width: 90%;
+       box-shadow: -4px 4px rgb(127, 125, 125);
+     
+     }
+     .Email{
+       width: 80%;
+       display: flex;
+       flex-direction: column;
+      
+     }
+     
+     .Password{
+       width: 80%;
+       display: flex;
+       flex-direction: column;
+     }
+  }
+  
+  @media(max-width:530px){
+    .login-title{
+      font-size: 1.2rem;
+   
+     }
+     
+     .LoginImg{
+      
+      height: 90%;
+      width: 35%;
+      background-image: url('./LoginBGImg3.jpg');
+      box-shadow: 4px 4px rgb(127, 125, 125);
+      background-position: -100px;
+  
+     }
+     .login-div{
+       height: 100%;
+       width: 65%;
+     
+     
+   
+     }
+     .login-box{
+  
+       box-shadow: -4px 4px rgb(127, 125, 125);
+      
+     }
+     .login-success-box{
+    font-size: 1rem;
+    padding: 2px;
+     
+     }
+     .login-email,.login-password{
+      height: 2rem;
+      font-size: .8rem;
+     }
+     .Email{
+       width: 80%;
+       display: flex;
+       flex-direction: column;
+      
+     }
+     
+     .Password{
+       width: 80%;
+       display: flex;
+       flex-direction: column;
+     }
+     .register-div{
+      font-size: .7rem;
+      gap: 5px;
+     }
+  }

@@ -5,7 +5,7 @@ import Home from './pages/Home/Home'
 
 import Store from './pages/Store/Store'
 import Cart from './pages/Cart/Cart'
-import LoginPage from './pages/LoginPage'
+import LoginPage from './pages/Login/LoginPage'
 import Registration from './pages/Registration'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
 import SearchResults from './pages/SearchResults'
