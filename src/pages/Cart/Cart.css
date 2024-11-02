@@ -27,7 +27,7 @@
       border: 0px yellow solid;
       height: 100%;
       width: 100%;
-      background-image: url('./CartBG.jpg');
+      background-image: url('/CartBG.jpg');
       background-position: center;
      background-repeat: no-repeat;
      background-size: cover;
@@ -58,7 +58,7 @@
         margin-top: 3.6rem;
         border-radius: 1rem;
         border: 0px red solid;
- background-image: url('./CartBGPh.jpg');
+ background-image: url('/CartBGPh.jpg');
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover; 
