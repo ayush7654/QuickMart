@@ -1,0 +1,389 @@
+.Cart-page-Out{
+
+    border: 0px red solid;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+     
+      align-items: center;  
+      overflow-x: hidden;
+    }
+    .cartOut-text{
+      position: absolute;
+      top: 50%;
+      height: 10%;
+      width: 99%;
+      display: flex;
+      gap: 5rem;
+      font-size: 1.2rem;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+      z-index: 1;
+      border:3px solid rgb(68, 65, 65);
+      background-color: rgb(154, 174, 213);
+    }
+    .cart-BG{
+      border: 0px yellow solid;
+      height: 100%;
+      width: 100%;
+      background-image: url('./CartBG.jpg');
+      background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     overflow: hidden;
+    
+    
+    }
+    .cart-BG::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity for desired darkness */
+      z-index: 0; /* Ensure overlay stays on top of the background */
+    }
+
+    .Cart-page-In{
+     border: 0px solid black;
+      padding-left: 2rem;
+      display: flex;
+    }
+    .cart-In-BG{
+        border: 0px solid green;
+        width: 40%;
+        height: 80vh;
+        margin-top: 3.6rem;
+        border-radius: 1rem;
+        border: 0px red solid;
+ background-image: url('./CartBGPh.jpg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover; 
+position: fixed;
+right: 0;
+top:4rem;
+display: flex;
+justify-content: center;
+box-shadow: -5px 5px rgb(80, 125, 214);
+
+    }
+
+    .cart-product-title{
+        font-size: 1.2rem;
+        padding-bottom:1rem;
+    }
+    .cart-product-price{
+        font-size: 1rem;
+        padding-bottom:1rem;
+    }
+
+    .cart-product-quantity{
+        font-size: 1rem;
+        padding-bottom:1rem;
+    }
+ 
+
+      .checkout-info{
+        position: absolute;
+        border: 0px black solid;
+        bottom: 7rem;
+        left:7rem;
+        right: 7rem;
+        font-size: 1.2rem;
+        overflow: auto;
+        padding:1rem;
+        z-index: 1;
+        font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+        background-color: rgba(255, 255, 255, 0.863);
+        
+
+      }
+
+    .checkout-btn{
+        position: absolute;
+        bottom: 2rem;
+        left:7rem;
+        right: 7rem;
+        font-size: 1.5rem;
+        font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+        background-color: rgba(36, 35, 35, 0.899);
+
+    }
+    .checkout-btn:hover{
+        background-color: rgb(0, 0, 0);
+
+    }
+
+.cart-item-list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    margin-top: 3rem;
+}
+    .Cart-item{
+border: 0px red solid;
+background-color: white;
+width: 50%;
+display: flex;
+padding: 0px;
+border-radius: .4rem;
+font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+    }
+
+    
+    .cart-product-info{
+        background-color: rgba(147, 170, 213, 0.67);
+        width: 100%;
+     position: relative;
+        padding: 1rem;
+     border-top-right-radius: .4rem;
+     border-bottom-right-radius: .4rem;
+
+    }
+
+    .cart-btn{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap:2rem;
+        bottom:.5rem;
+        right:1rem;
+        
+    
+        
+         }
+     
+    .cart-remove-btn{
+    width: 35%;
+    border-radius: .3rem;
+    font-size: .8rem;
+    background-color: rgba(36, 35, 35, 0.899);
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+        
+    }
+
+    .cart-buy-btn{
+        width: 35%;
+        border-radius: .3rem;
+        font-size: .8rem;
+        background-color: rgba(36, 35, 35, 0.899);
+        font-weight: 600;
+        font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+    }
+
+    @media(max-width:1000px){
+        .Cart-page-In{
+            padding-left:1rem ;
+        }
+        .Cart-item{
+            width: 55%;
+        }
+        .cart-btn{
+       
+            bottom:.5rem;
+            right:1rem;
+            gap:1rem
+            
+        
+            
+             }
+         
+        .cart-remove-btn{
+        width: 40%;
+        font-size: .7rem;
+      
+            
+        }
+    
+        .cart-buy-btn{
+            width: 40%;
+            font-size: .7rem;
+           
+        }
+        
+      .checkout-info{
+   
+        bottom: 7rem;
+        left:3rem;
+        right: 3rem;
+
+      }
+
+    .checkout-btn{
+       
+        bottom: 2rem;
+        left:3rem;
+        right: 3rem;
+        font-size: 1.3rem;
+        
+
+    }
+
+    }
+
+    @media(max-width:765px){
+        .cart-In-BG{
+            width:30%;
+            background-position: -200px;
+        }
+        .Cart-item{
+            width: 65%;
+        }
+        .checkout-info{
+   
+            bottom: 7rem;
+            left:1rem;
+            right: 1rem;
+    
+          }
+    
+        .checkout-btn{
+           
+            bottom: 2rem;
+            left:1rem;
+            right: 1rem;
+            font-size: 1.3rem;
+            
+    
+        }
+
+    }
+
+    @media(max-width:630px){
+     .Cart-item{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+      
+        
+     }
+     .cart-item-list{
+        margin-top: .8rem;
+
+     }
+
+     .cart-product-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+     .cart-product-info{
+        padding: .3rem;
+        box-sizing: border-box;
+        height: 8rem;
+        border-top-right-radius: 0rem;
+        border-bottom-left-radius: .4rem;
+
+        
+        
+     }
+     .cart-product-title{
+        font-size: 1rem;
+        padding-bottom:.5rem;
+    }
+    .cart-product-price{
+        font-size: .9rem;
+        padding-bottom:.5rem;
+    }
+
+    .cart-product-quantity{
+        font-size: .9rem;
+        padding-bottom:1rem;
+    }
+    .cart-btn{
+       border: 0px solid black;
+        bottom:.3rem;
+        width: 100%;
+        right: 0;
+        left: 0;
+      
+        gap:1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    
+        
+         }
+         .cart-In-BG{
+            width:45%;
+            background-position: -200px;
+        }
+
+
+    }
+
+@media(max-width:425px){
+    .Cart-page-In{
+        padding-left:.4rem ;
+    }
+    
+    .cartOut-text{
+        width: 98%;
+        font-size: .9rem;
+    }
+        .cart-BG{
+        
+          background-image: url('./CartInBG.jpg');
+       
+        
+        }
+
+        .Cart-item{
+            display: flex;
+            flex-direction: column;
+            width: 55%;
+          
+            
+         }
+       
+
+        .cart-In-BG{
+            width:40%;
+            border-radius: .5rem;
+            background-position: -260px;
+            box-shadow: -3px 3px rgb(80, 125, 214);
+        }
+
+        .cart-product-title{
+            font-size: .9rem;
+            padding-bottom:.5rem;
+        }
+        .cart-product-price{
+            font-size: .9rem;
+            padding-bottom:.4rem;
+        }
+    
+        .cart-product-quantity{
+            font-size: .8rem;
+            padding-bottom:1rem;
+        }
+        .checkout-info{
+   
+            bottom: 6rem;
+            left:.2rem;
+            right: .2rem;
+            font-size: .8rem;
+            font-weight: 600;
+    
+          }
+    
+        .checkout-btn{
+           
+            bottom: 2rem;
+            left:.2rem;
+            right: .2rem;
+            font-size: 1.1rem;
+            
+    
+        }
+        
+      
+}
