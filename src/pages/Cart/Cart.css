@@ -331,7 +331,7 @@ font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
     }
         .cart-BG{
         
-          background-image: url('./CartInBG.jpg');
+          background-image: url('/CartInBG.jpg');
        
         
         }

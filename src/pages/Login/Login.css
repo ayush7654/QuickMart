@@ -159,7 +159,7 @@
       
       height: 90%;
       width: 50%;
-      background-image: url('./LoginBGImg3.jpg');
+      background-image: url('/LoginBGImg3.jpg');
       background-position: -60px ;
       box-shadow: 4px 4px rgb(127, 125, 125);
   
@@ -214,7 +214,7 @@
       
       height: 90%;
       width: 35%;
-      background-image: url('./LoginBGImg3.jpg');
+      background-image: url('/LoginBGImg3.jpg');
       box-shadow: 4px 4px rgb(127, 125, 125);
       background-position: -100px;
   
