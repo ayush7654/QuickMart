@@ -11,7 +11,8 @@ console.log(location)
         <div className="homeContent-Container">
             
             <div className="homeContent">
-                <div className="Home-text0">
+                <div className="Home-upper"></div>
+             {/*    <div className="Home-text0">
                     <div style={{textShadow:"0 0 30px #00DEFF, 0 0 20px #00DEFF, 0 0 20px #00DEFF"}}>Built</div>
                     <div style={{textShadow:"0 0 30px #5500FF, 0 0 30px #5500FF, 0 0 30px #5500FF"}}>for</div>
                     <div>
@@ -28,7 +29,7 @@ console.log(location)
                  <div className="Home-Img-container">
                     <img src={"/Iphone.png"} className="Home-Img" />
                 </div> 
-                <div className="Home-text2">Coming Soon</div>
+                <div className="Home-text2">Coming Soon</div> */}
 
            
   

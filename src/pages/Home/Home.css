@@ -8,13 +8,14 @@
     border: 0px solid black;
     width: 100%;
     /* background: linear-gradient(to bottom, rgba(16, 16, 128, 0.857), white); */
-    background: linear-gradient(to bottom, rgba(44, 44, 147, 0.857), white);
+/*     background: linear-gradient(to bottom, rgb(0, 0, 0), white); */
+ background-color: black;
    overflow-x: hidden;
   
   
   }
   .homeContent-Container{
-   
+   width: 100%;
     height: 70vh;
     border: 0px solid red;
     display: flex;
@@ -27,11 +28,17 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
+    height: 100%;
+    background-image: url('/HomeProductBG2.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
   
-    
-   
-   
-   
+  }
+  .Home-upper{
+    border: 0px red solid;
+    width: 100%;
+    height: 100%;
   }
   .Home-Img-container{
     
@@ -376,7 +383,14 @@
   }
 
 @media (max-width:1050px){
-    
+  .Home{
+    background-color: rgb(134, 155, 195);
+  }
+  .homeContent{
+
+    background-size: cover;
+  
+  }
 
     .Home-Img{
         width:450px ;
@@ -580,7 +594,7 @@ height: 100px;
     border: 0px solid rgb(200, 29, 29);
     display: flex;
     flex-direction:column ;
-    background-color: rgba(12, 31, 84, 0.811);
+    background-color:rgba(86, 96, 143, 0.968);
     backdrop-filter: blur(0px);
     
   }
@@ -589,7 +603,7 @@ height: 100px;
     width: 400px;
     height: 400px;
     justify-content: end;
-    background-color: rgba(12, 31, 84, 0.811);
+    background-color:rgba(86, 96, 143, 0.968);
     backdrop-filter: blur(0px);
     }
     .box1{
@@ -632,15 +646,14 @@ height: 100px;
             display: flex;
             flex-direction: row;
             width: 100%;
-            background-color: rgba(12, 31, 84, 0.811);
-    backdrop-filter: blur(10px);
+            background-color:rgba(86, 96, 143, 0.968);    backdrop-filter: blur(10px);
           } 
     }
 
     @media (max-width:400px){
 
       .homeContent-Container{
-          height: 50vh;
+          height: 40vh;
       }
       .Home-Img{
           width:300px ;
@@ -691,7 +704,7 @@ height: 100px;
       border: 0px solid rgb(200, 29, 29);
       display: flex;
       flex-direction:column ;
-      background-color: rgba(12, 31, 84, 0.811);
+      background-color:rgba(86, 96, 143, 0.968);
       backdrop-filter: blur(0px);
       
     }
@@ -700,7 +713,7 @@ height: 100px;
       width: 300px;
       height: 300px;
       justify-content: end;
-      background-color: rgba(12, 31, 84, 0.811);
+      background-color:rgba(86, 96, 143, 0.968);
       backdrop-filter: blur(0px);
       }
       .box1{
@@ -743,7 +756,7 @@ height: 100px;
               display: flex;
               flex-direction: row;
               width: 100%;
-              background-color: rgba(12, 31, 84, 0.811);
+              background-color:rgba(86, 96, 143, 0.968);
       backdrop-filter: blur(10px);
             } 
       }
