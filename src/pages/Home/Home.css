@@ -145,6 +145,7 @@
     height: 400px;
     display: flex;
     flex-direction: row;
+    background-color:rgba(86, 96, 143, 0.968);
   }
   .box1{
     width: 400px;
@@ -153,6 +154,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color:rgba(86, 96, 143, 0.968);
     
   }
   .box2,.left-box2{
@@ -162,6 +164,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color:rgba(86, 96, 143, 0.968);
   }
   .left-box2-content{
     border:0px solid black;
@@ -172,6 +175,7 @@
     background-size: cover;
     background-position: center;
     position: relative;
+    
   }
   .left-box2-content-name{
     position: absolute;
@@ -180,6 +184,7 @@
     font-size: 30px;
     color:white;
     font-weight: 600;
+    
   }
 
   .box3,.left-box1{
@@ -188,6 +193,7 @@
     border: 0px solid rgb(255, 115, 0);
     display: flex;
     flex-direction: column;
+    background-color:rgba(86, 96, 143, 0.968);
 
   }
 

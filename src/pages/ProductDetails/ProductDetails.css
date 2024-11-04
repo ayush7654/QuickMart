@@ -11,7 +11,7 @@
     width: 100%;
     padding:1rem;
     margin-top: 3rem;
-    line-height: 1.2rem;
+    line-height: 1.4rem;
     color:black;
     display: flex;
     flex-direction: row;
@@ -30,11 +30,22 @@
    background-color: rgba(147, 170, 213, 0.67); 
     box-shadow: 10px 10px #1a1a1a5e;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+  }
+  .product-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-bottom: 1rem;
   }
   .product-description{
-    width: 25rem;
-    font-size: 1.1rem;
-    line-height: 1.4rem;
+    width: 70%;
+    font-size: 1.07rem;
+    line-height: 1.5rem;
+  }
+  .price-num{
+    font-size: 1.5rem;
   }
   .product-info-price-div,.product-info-rating-div{
     display: flex;
@@ -46,9 +57,11 @@
   }
   
   .quantity-container {
+    position: absolute;
     display: flex;
     padding-top: .6rem;
     align-items: center;
+    bottom: 6rem;
   }
   
   .quantity-input {
@@ -125,11 +138,9 @@
   overflow: hidden;
   border: 0px solid black;
   background-color: rgb(255, 255, 255);
-  box-shadow: 5px 8px 10px 5px   rgba(0, 0, 0, 0.434);
+box-shadow: -10px 10px #1a1a1a5e;
   }
-  .ImageBox:hover{
-    box-shadow: 10px 10px 10px 10px  rgba(0, 0, 0, 0.434);
-  }
+ 
   .currentImage{
     transition: translate 400ms ease-in-out;
     width: 600px;
@@ -167,9 +178,13 @@
     .product-detail{
 
         margin-top: 2rem;
-        line-height: 1.2rem;
+        line-height: 1rem;
         gap:2rem;
       }
+      .product-description{
+        width: 80%;
+      }
+
       .product-info{
       
         height: 67vh;
@@ -204,10 +219,21 @@
         line-height: 1.2rem;
         gap:2rem;
       }
+      .product-title{
+        padding-bottom: .6rem;
+      }
       .product-info{
       
         height: 65vh;
+        gap:.2rem;
         
+      }
+      .price-num{
+        font-size: 1.1rem;
+      }
+      .product-description{
+        width: 90%;
+        font-size: 1rem;
       }
 
       .leftArrow,.rightArrow{
@@ -237,6 +263,7 @@
         line-height: 1.2rem;
         gap:2rem;
       }
+    
       .carousel-div{
         display: flex;
         flex-direction: column;
@@ -253,11 +280,16 @@
         gap: .2rem;
        
       }
-      .product-info{
+      .product-description{
       
-        height: 65vh;
-        
+        font-size: 1.07rem;
+        line-height: 1rem;
       }
+      .price-num{
+        font-size: 1.08rem;
+        font-weight: 600;
+      }
+  
 
       .leftArrow,.rightArrow{
     
@@ -281,8 +313,8 @@
         width: 35%;
         height: 65vh;
         padding:1rem ;
-       
-       background-color: rgba(255, 255, 255, 0.743); 
+        gap:.5rem;
+        background-color: rgba(147, 170, 213, 0.67); 
         box-shadow: 10px 10px #1a1a1a5e;
         position: relative;
       }
@@ -465,6 +497,7 @@
       .product-info{
       
         width: 70%;
+        box-shadow: 5px 5px #1a1a1a5e;
     
       }
       .product-info-price-div,.product-info-rating-div{
@@ -472,9 +505,17 @@
         font-size: .8rem;
       
       }
+      
+      .price-num{
+        font-size: 1.1rem;
+      
+      }
       .product-description{
         width: 15rem;
         font-size: .9rem;
+      }
+      .rating-num{
+        display: none;
       }
  
     .carousel-div{
@@ -494,6 +535,7 @@
     
       .ImageBox{
       width: 15.625rem;
+  
      
       }
       
@@ -536,10 +578,8 @@
   }
   .ImageBox{
    
-    box-shadow: -10px -10px #1a1a1a5e;
+    box-shadow: -5px 5px #1a1a1a5e;
     }
-    .ImageBox:hover{
-      box-shadow: -10px -10px #1a1a1a5e;
-    }
+    
 
   }
