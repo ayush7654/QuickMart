@@ -3,7 +3,7 @@
 import {useState,useEffect,createContext, useContext} from 'react'
 import { initializeApp } from "firebase/app";
 import { getAuth ,createUserWithEmailAndPassword , signInWithEmailAndPassword,signOut,onAuthStateChanged} from "firebase/auth";
-import { getFirestore ,doc, setDoc,getDocs, collection} from 'firebase/firestore';
+import { getFirestore ,doc, setDoc,getDocs, collection, deleteDoc } from 'firebase/firestore';
 //initilaizing services
 const firebaseConfig = {
   apiKey: "AIzaSyBrX1DICIvn_i5PrtRGL1PEYP7x4Fdfi6M",
@@ -64,8 +64,13 @@ export const FirebaseProvider=(props)=>{
     const docSnapShot = await getDocs(userDocRef)
     return docSnapShot
   }
+
+  const deleteDataInFB = async (collectionName, userId, cartItems, ProductName) => {
+    const docRef = doc(firestore, collectionName, userId, cartItems, ProductName);
+    await deleteDoc(docRef);
+};
   
-  return <FirebaseContext.Provider value={{SignUpUser,SignInUser,SignOutUser,currentUser,isLoggedIn,storeDataInFB,getDataFromFB}}>
+  return <FirebaseContext.Provider value={{SignUpUser,SignInUser,SignOutUser,currentUser,isLoggedIn,storeDataInFB,getDataFromFB, deleteDataInFB}}>
       {props.children}
   </FirebaseContext.Provider>
 }

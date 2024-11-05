@@ -161,7 +161,9 @@
     height: 2.5rem;
     cursor:pointer;
     border-radius: .3rem;
-    background-color: rgba(110, 159, 194, 0.303);
+    background-color:rgb(35, 60, 169);
+    color: white;
+    font-weight: 800;
   
   }
 

@@ -6,6 +6,7 @@ import PageNav from "../../components/Paginization/PageNav";
 import ProductCard from "../../components/ProductCard";
 import { ChevronLeft, ChevronRight } from 'react-feather'
 import ProductDetails from '../ProductDetails/ProductDetails';
+import { useLocation } from "react-router-dom";
 import './Store.css'
 export default function Store() {
 
@@ -14,6 +15,8 @@ export default function Store() {
   const [isLoading,setIsLoading]= useState(false)
   const [FilteredProducts, setFilteredProducts] = useState();
   const [productCategory,setProductCategory]= useState([])
+
+  const location= useLocation()
 
  const page= useRef(1)
  const [PageNavArr,setPageNavArr]= useState([1,2,3,4,5,6,7,8,9,10])
@@ -147,11 +150,16 @@ export default function Store() {
       title={product.title}
      // searchParams={searchParams}
       price={product.price}
+      path={location.search}
+      
+    
      
   />
   ))
+
+  console.log('this is location serach',location.s)
  const getPagesStyle=(i)=>{
-    return { backgroundColor: page.current === i? "rgb(172, 167, 167)" : null }
+    return { backgroundColor: page.current === i? "rgb(132, 156, 201)" : null }
  }
   return (
     <div className="Store-Page">

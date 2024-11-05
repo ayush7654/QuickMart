@@ -38,19 +38,32 @@ export default function ProductDetails(){
 
     
   
-
+ 
     const updataDataBase=async()=>{
         await firebase.storeDataInFB("users",userInfo,"CartItems",product.title,product)
     }
+
+    const deleteFromDataBase = async () => {
+        await firebase.deleteDataInFB("users", userInfo, "CartItems", product.title);
+    };
    
     function handleClick() {
-        updataDataBase();
-        setAddedtoCart(prev=>!prev);
+        if (AddedtoCart) {
+            // If already added to cart, delete it
+            deleteFromDataBase();
+        } else {
+            // If not added, add it to the database
+            updataDataBase();
+        }
+        // Toggle the state
+        setAddedtoCart(prev => !prev);
     }
     console.log(location)
+    console.log(product)
    
     return(
     <div className="productDetails-page">
+        <Link to={`/store${location.state}`} className="backToStore">←</Link>
        
   
     {product?<div className="product-detail">

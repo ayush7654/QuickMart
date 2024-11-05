@@ -3,7 +3,7 @@ import { useFirebase } from "./FirebaseContext/Firebase";
 import { BreadCrumbContext } from "../App";
 import {Outlet, Navigate,Link} from 'react-router-dom'
 import { useOutletContext } from "react-router-dom";
-import firebase from "firebase/compat/app";
+
 export default function Authentication(){
     
    /*  const loginState= localStorage.getItem("LoginState") */

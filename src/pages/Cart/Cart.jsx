@@ -8,6 +8,7 @@ export default function Cart(){
 
     const firebase= useFirebase()
     const userInfo = firebase.isLoggedIn?firebase.currentUser.email:null
+
     const fetchData=async()=>{
         const cartItem= await firebase.getDataFromFB("users",userInfo,"CartItems")
         cartItem.forEach(item=>setcartList(prev=>[...prev,item.data().Product]))
@@ -18,6 +19,16 @@ export default function Cart(){
    useEffect(()=>{
     fetchData()
    },[])
+
+   const handleRemove = async (productTitle) => {
+   
+     // Optimistically update the state
+     setcartList(prevCartList => prevCartList.filter(product => product.title !== productTitle));
+    
+     // Delete product from Firestore
+    await firebase.deleteDataInFB("users", userInfo, "CartItems", productTitle);
+};
+
  console.log(cartList)
     const cartElements=cartList? (cartList.map((product,index)=>(
         <div key={index} className="Cart-item">
@@ -28,7 +39,7 @@ export default function Cart(){
            <div className="cart-product-quantity">Quantity:</div>
           <div className="cart-btn">
           <button className="cart-buy-btn">Buy now</button>
-          <button className="cart-remove-btn">Remove</button>
+          <button className="cart-remove-btn" onClick={()=>handleRemove(product.title)}>Remove</button>
           </div>
         
           </div>
@@ -36,14 +47,11 @@ export default function Cart(){
         </div>))):"loading..";
    
     return(<div className="Cart-page-In">
-{/*     {cartList?<>
-    <h2>This is your Cart</h2>
-    <h3>Total items: {cartList.length}</h3>
-    </>:<h2>So empty :/</h2>} */}
+
     <div className="cart-item-list">{cartElements}</div>
     <div className="cart-In-BG">
         <div className="checkout-info">
-            {/* <div>{cartList?(cartList.map((item)=><div>{item.title}</div>)):<div>Loading...</div>}</div> */}
+          
         
         <div className="total-cost">Total cost:</div>
         </div>
