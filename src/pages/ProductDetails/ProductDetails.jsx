@@ -1,6 +1,6 @@
 import {useState,useEffect,useContext,useRef} from "react";
 import {useParams,useOutletContext,Link,useLocation} from 'react-router-dom'
-import { BreadCrumbContext } from "../../App";
+
 import { useFirebase } from "../../components/FirebaseContext/Firebase";
 import CarouselComponent from "../../components/CarouselComponent";
 
@@ -35,7 +35,7 @@ export default function ProductDetails(){
 
     
 
-    const[BreadCrumbs,setbreadcrumbs]= useContext(BreadCrumbContext)
+
     
   
 
@@ -43,17 +43,16 @@ export default function ProductDetails(){
         await firebase.storeDataInFB("users",userInfo,"CartItems",product.title,product)
     }
    
-    function handleClick(){
-    
+    function handleClick() {
         updataDataBase();
-   
+        setAddedtoCart(prev=>!prev);
     }
     console.log(location)
    
     return(
     <div className="productDetails-page">
        
-   {/* <Link onClick={()=>setbreadcrumbs("STORE")} to={`/store?${location.state.search}` }>Back to Store</Link> */}
+  
     {product?<div className="product-detail">
         <CarouselComponent Imagelist={product.images}/> 
          <div className="product-info">
@@ -99,8 +98,16 @@ export default function ProductDetails(){
         </div>
         </div>
      
-        {!AddedtoCart?<button className="addTocartBtn" onMouseDown={()=>setAddedtoCart(true)} onClick={handleClick}>Add to Cart</button>:<button className="addTocartBtn" style={{backgroundColor:'black'}} onMouseDown={()=>setAddedtoCart(false)}>Added to Cart</button>}
+        <button 
+  className="addTocartBtn" 
+  onClick={handleClick}
+  style={{ backgroundColor: AddedtoCart ? 'black' : '#1a1a1aaf' }}
+>
+  {AddedtoCart ? 'Added to Cart' : 'Add to Cart'}
+</button>
+     
          </div>
+
 
     
         </div>:<p>loading..</p>}
