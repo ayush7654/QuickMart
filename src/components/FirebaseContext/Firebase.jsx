@@ -54,10 +54,16 @@ export const FirebaseProvider=(props)=>{
     return signOut(firebaseAuth)
   }
 
-  const storeDataInFB=async(collectionName,userId,cartItems,ProductName,newProduct)=>{
-    const userDocRef= doc(firestore,collectionName,userId,cartItems,ProductName)
-    await setDoc(userDocRef,{Product:newProduct},{merge:true})
-  }
+  const storeDataInFB = async (collectionName, userId, cartItems, ProductName, newProduct, productQuantity) => {
+    const userDocRef = doc(firestore, collectionName, userId, cartItems, ProductName);
+    
+    // This will add both 'Product' and 'quantity' fields to the document
+    await setDoc(userDocRef, { 
+      Product: newProduct,
+     
+    }, { merge: true });
+  };
+  
 
   const getDataFromFB=async(collectionName,userId,cartItems)=>{
     const userDocRef = collection(firestore,collectionName,userId,cartItems)

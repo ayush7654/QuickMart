@@ -1,10 +1,11 @@
 import {useEffect, useState} from "react";
-import {useOutletContext,useLocation} from 'react-router-dom'
+
 import { useFirebase } from "../../components/FirebaseContext/Firebase";
 import './Cart.css'
 
 export default function Cart(){
     const[cartList,setcartList]= useState([])
+    const [totalCost, setTotalCost] = useState(0); // Initialize total cost state
 
     const firebase= useFirebase()
     const userInfo = firebase.isLoggedIn?firebase.currentUser.email:null
@@ -16,9 +17,27 @@ export default function Cart(){
       
     }
 
+    const calculateTotalCost = () => {
+        const total = cartList.reduce((acc, item) => {
+          return acc + item.price * item.quantity;
+        }, 0);
+        setTotalCost(total);
+        console.log("Total Cost:", total);
+      };
+
+   
+
+  
+
    useEffect(()=>{
     fetchData()
+
    },[])
+
+   useEffect(() => {
+    calculateTotalCost();
+  }, [cartList]); // Recalculate total cost whenever cartList changes
+
 
    const handleRemove = async (productTitle) => {
    
@@ -36,7 +55,7 @@ export default function Cart(){
           <div  className="cart-product-info"> 
             <div className="cart-product-title">{product.title}</div>
             <div className="cart-product-price">Price: ${product.price}</div>
-           <div className="cart-product-quantity">Quantity:</div>
+           <div className="cart-product-quantity">Quantity: {product.quantity}</div>
           <div className="cart-btn">
           <button className="cart-buy-btn">Buy now</button>
           <button className="cart-remove-btn" onClick={()=>handleRemove(product.title)}>Remove</button>
@@ -53,7 +72,7 @@ export default function Cart(){
         <div className="checkout-info">
           
         
-        <div className="total-cost">Total cost:</div>
+        <div className="total-cost">Total cost: ${totalCost.toFixed(2)}</div>
         </div>
      
         <button className="checkout-btn">Place order</button>

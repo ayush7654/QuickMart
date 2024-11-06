@@ -60,7 +60,7 @@ export default function CarouselComponent({Imagelist}) {
 
  
  
-  console.log(imageWidth)
+
   return (
     <>
     <div className="carousel-div">

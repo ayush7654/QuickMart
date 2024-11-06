@@ -40,7 +40,13 @@ export default function ProductDetails(){
   
  
     const updataDataBase=async()=>{
-        await firebase.storeDataInFB("users",userInfo,"CartItems",product.title,product)
+
+        const productInfo = {
+            ...product,
+            quantity: quantity
+        };
+        console.log('this is productInfo',productInfo)
+        await firebase.storeDataInFB("users",userInfo,"CartItems",product.title,productInfo)
     }
 
     const deleteFromDataBase = async () => {
@@ -59,7 +65,8 @@ export default function ProductDetails(){
         setAddedtoCart(prev => !prev);
     }
     console.log(location)
-    console.log(product)
+    console.log(quantity)
+
    
     return(
     <div className="productDetails-page">
