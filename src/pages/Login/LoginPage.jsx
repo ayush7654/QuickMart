@@ -7,9 +7,12 @@ import './Login.css'
 
 
 export default function LoginPage(){
+
+    const [createAccount,setCreateAccount]= useState(false);
    
     const [email,setEmail]= useState('')
     const [password,setPassword]= useState('')
+
 
     const firebase= useFirebase();
     console.log(firebase)
@@ -64,7 +67,7 @@ export default function LoginPage(){
  
       <div className="register-div">
          <div>Don't have an account?</div>
-         <div><Link onClick={()=>setbreadcrumbs(prev=>[...prev,">Registration"])} to={"/register"}>Create account</Link></div>
+         <div><Link to={"/register"}>Create account</Link></div>
      </div>   
         </div>
     )}

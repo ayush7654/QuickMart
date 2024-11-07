@@ -6,7 +6,7 @@ import Home from './pages/Home/Home'
 import Store from './pages/Store/Store'
 import Cart from './pages/Cart/Cart'
 import LoginPage from './pages/Login/LoginPage'
-import Registration from './pages/Registration'
+import Registration from './Registration/Registration'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
 import SearchResults from './pages/SearchResults'
 import ErrorPage from './pages/ErrorPage'
@@ -19,12 +19,12 @@ export const BreadCrumbContext = createContext()
 function App() {
   
 
-const[Breadcrumbs,setbreadcrumbs]= useState([]);
+
 
   return (
     <BrowserRouter>
     <FirebaseProvider >
-      <BreadCrumbContext.Provider value ={[Breadcrumbs,setbreadcrumbs]}>
+
     <Routes>
       <Route element = {<Layout/>}>
       <Route path="/" element={<Home/>}/>
@@ -41,7 +41,7 @@ const[Breadcrumbs,setbreadcrumbs]= useState([]);
       <Route path="*" element={<ErrorPage/>}/>
       
     </Routes>
-     </BreadCrumbContext.Provider>
+  
     </FirebaseProvider>
     </BrowserRouter>
   )

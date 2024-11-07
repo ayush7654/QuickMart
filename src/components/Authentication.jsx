@@ -10,7 +10,7 @@ export default function Authentication(){
     
     const cartList = useOutletContext()
     const firebase= useFirebase()
-    const[BreadCrumbs,setbreadcrumbs]=useContext(BreadCrumbContext)
+
    
     let loginState= firebase.isLoggedIn // make this a boolean to dectect if any user is logged in 
     

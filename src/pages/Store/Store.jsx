@@ -5,7 +5,6 @@ import { BreadCrumbContext } from "../../App";
 import PageNav from "../../components/Paginization/PageNav";
 import ProductCard from "../../components/ProductCard";
 import { ChevronLeft, ChevronRight } from 'react-feather'
-import ProductDetails from '../ProductDetails/ProductDetails';
 import { useLocation } from "react-router-dom";
 import './Store.css'
 export default function Store() {
@@ -59,16 +58,11 @@ export default function Store() {
   }
  
   const handleFilter=(category)=>{
-    console.log("current Categoryis ", category)
+   
     setcurrentCategory(category)
     setSearchParams({type:category})
   }
 
-/*    const[BreadCrumbs,setbreadcrumbs]= useContext(BreadCrumbContext)
-    const handleBreadCrumb=(category,title)=>{
-        setbreadcrumbs(prev=>[...prev,">"+category,">"+title])
-
-    }  */
 
  useEffect(()=>{
  const fetchCategory= async()=>{
@@ -157,7 +151,7 @@ export default function Store() {
   />
   ))
 
-  console.log('this is location serach',location.s)
+
  const getPagesStyle=(i)=>{
     return { backgroundColor: page.current === i? "rgb(132, 156, 201)" : null }
  }

@@ -48,7 +48,6 @@ export default function Cart(){
     await firebase.deleteDataInFB("users", userInfo, "CartItems", productTitle);
 };
 
- console.log(cartList)
     const cartElements=cartList? (cartList.map((product,index)=>(
         <div key={index} className="Cart-item">
           <div className="cart-product-img"><img src={product.images[0]} width="200px"/></div> 

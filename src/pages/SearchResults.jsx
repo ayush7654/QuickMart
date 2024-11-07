@@ -8,7 +8,7 @@ export default function SearchResults() {
  
 
   const {product} = useParams()
-  console.log(product)
+  
   useEffect(()=>{
     const fetchList=async()=>{
         try{
@@ -30,7 +30,7 @@ export default function SearchResults() {
       id={product.id}
       images={product.images}
       title={product.title}
-     // searchParams={searchParams}
+ 
       price={product.price}
      
   />

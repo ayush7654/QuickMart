@@ -1,0 +1,173 @@
+
+
+.register-page-In{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+  
+}
+.register-Img{
+    height: 90%;
+    width: 60%;
+   border-radius: 1rem;
+    overflow: hidden;
+    background-image: url('/RegisterImg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 7px 7px rgb(127, 125, 125);
+  
+
+}
+.register-page-div{
+    display: flex;
+   
+    border: 0px solid rgb(0, 0, 0);
+    width: 40%;
+    height: 100%;
+    align-items: center;
+   
+    
+}
+
+.register-title{
+    font-size: 2rem;
+    font-weight:600;
+}
+
+.register-box{
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 90%;
+    margin-left: auto; 
+    background-color: rgb(134, 155, 195);
+    box-shadow: -7px 7px rgb(127, 125, 125);
+    align-items: center;
+    justify-content: center;
+    border: 0px solid rgb(0, 21, 255);
+    border-radius: 1rem;
+    gap: 2rem;
+    font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+}
+.reg-Email-div{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+.reg-password-div{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap:2px;
+
+}
+
+.reg-Confirm-password{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap:2px;
+
+}
+
+.register-emailId,.register-password,.register-ConfirmPassword{
+    height: 2.5rem;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border: 0px;
+    color:rgba(43, 38, 38, 0.92);
+    font-size: 1rem;
+    padding-left:10px;
+    border-radius: .6rem;
+}
+
+.register-emailId,.register-password,.register-ConfirmPassword:focus{
+    outline: none;
+}
+
+.register-page-button{
+    width:50%;
+    
+    margin-top: 20px;
+
+}
+.reg-loggedIn{
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 90%;
+    margin-left: auto; 
+    background-color: rgb(134, 155, 195);
+    box-shadow: -7px 7px rgb(127, 125, 125);
+    align-items: center;
+    justify-content: center;
+    border: 0px solid rgb(0, 21, 255);
+    border-radius: 1rem;
+    gap: 2rem;
+    font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+ 
+}
+
+.regIn-Greeting{
+ font-size: 2rem;
+}
+.regIn-User{
+    font-size: 1.5rem;
+
+}
+
+@media(max-width:770px){
+    .register-Img{
+        width: 40%;
+        background-image: url('/RegBGPh.jpg');
+        background-position: -100px;
+
+    }
+
+    .register-page-div{
+        width: 60%;
+    }
+
+
+
+}
+
+@media(max-width:500px){
+    .register-Img{
+        width: 35%;
+       
+        background-position: -120px;
+
+    }
+
+    .register-page-div{
+        width: 65%;
+    }
+
+    .reg-Email-div{
+        width: 80%;
+      
+    }
+    
+    .reg-password-div{
+        width: 80%;
+       
+    
+    }
+    
+    .reg-Confirm-password{
+        width: 80%;
+    
+    
+    }
+
+    
+.register-title{
+    font-size: 1.5rem;
+}
+}

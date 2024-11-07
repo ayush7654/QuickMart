@@ -64,8 +64,7 @@ export default function ProductDetails(){
         // Toggle the state
         setAddedtoCart(prev => !prev);
     }
-    console.log(location)
-    console.log(quantity)
+
 
    
     return(
