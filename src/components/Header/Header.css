@@ -296,7 +296,7 @@
  
     .Home-Nav-Container{
        
-        gap:.3rem;
+        gap:.8rem;
      
         padding-top:1rem ;
     
@@ -310,7 +310,7 @@
         font-size: .8rem;
      
         border-radius: .2rem;
-        padding:.2rem;
+        padding:.1rem;
         height:.8rem;
       
       }
