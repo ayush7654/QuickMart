@@ -119,6 +119,23 @@
   .register-button{
     width:100px;
   }
+.login-success-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+}
+  .loggedIn-text{
+
+    
+    font-size: 1.5rem;
+  }
+
+  .loggedIn-user{
+
+    font-size: 1.5rem;
+  }
   
   
   @media(max-width:900px){
@@ -145,6 +162,15 @@
      .register-div{
       font-size: .8rem;
      }
+
+     .loggedIn-text{       
+        font-size: 1.2rem;
+      }
+      
+  .loggedIn-user{
+
+    font-size: 1.2rem;
+  }
   
   }
   
@@ -202,6 +228,11 @@
        display: flex;
        flex-direction: column;
      }
+
+     .login-success-box{
+   
+        gap:2rem;
+    }
   }
   
   @media(max-width:530px){
@@ -255,5 +286,8 @@
      .register-div{
       font-size: .7rem;
       gap: 5px;
+     }
+     .loggedIn-link{
+        font-size: .8rem;
      }
   }
