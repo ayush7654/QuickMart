@@ -12,27 +12,7 @@ console.log(location)
             
             <div className="homeContent">
                 <div className="Home-upper"></div>
-             {/*    <div className="Home-text0">
-                    <div style={{textShadow:"0 0 30px #00DEFF, 0 0 20px #00DEFF, 0 0 20px #00DEFF"}}>Built</div>
-                    <div style={{textShadow:"0 0 30px #5500FF, 0 0 30px #5500FF, 0 0 30px #5500FF"}}>for</div>
-                    <div>
-                        <span style={{textShadow:"0 0 20px #C65AE6, 0 0 20px #C65AE6, 0 0 20px #C65AE6"}}>Ap</span>
-                        <span style={{textShadow:"0 0 20px #E65AE2, 0 0 20px #E65AE2, 0 0 20px #E65AE2"}}>ple</span>
-                    </div>
-                    <div>
-                        <span style={{textShadow:"0 0 20px #FF3399, 0 0 20px #FF3399, 0 0 20px #FF3399"}}>Inte</span>
-                        <span style={{textShadow:"0 0 20px #EE4B6C, 0 0 20px #EE4B6C, 0 0 20px #EE4B6C"}}>llige</span>
-                        <span style={{textShadow:"0 0 20px #EED950, 0 0 20px #EED950, 0 0 20px #EED950"}}>nce</span>
-                    </div>
-                    </div>
-            <div className="Home-text1">iPhone 16  </div> 
-                 <div className="Home-Img-container">
-                    <img src={"/Iphone.png"} className="Home-Img" />
-                </div> 
-                <div className="Home-text2">Coming Soon</div> */}
-
-           
-  
+          
             </div>
         </div>
 
@@ -80,7 +60,7 @@ console.log(location)
                         <div className="box4">
                             <div className="box4-content"><div className="box4-content-name" id="home-category-name">Sports</div></div>
                         </div></Link>
-                        <Link to='/store?type=laptops'>
+                        <Link to='/store?type=mobile-accessories'>
                         <div className="box5">
                             <div className="box5-content"><div className="box5-content-name" id="home-category-name">Electronics</div></div>
                         </div>
