@@ -41,6 +41,7 @@ export default function LoginPage(){
      {firebase.isLoggedIn?<div className="login-success-box">
             <h2>You are logged in with {firebase.currentUser.email}</h2>
             <button onClick={SignOut}>Sign Out</button>
+            <Link style={{fontSize:'1.2rem',paddingTop:'1rem'}} to='/store?page=1'>Go to Store →</Link>
         </div>:(
       
         <div className="login-box">
