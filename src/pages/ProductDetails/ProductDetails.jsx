@@ -69,7 +69,7 @@ export default function ProductDetails(){
    
     return(
     <div className="productDetails-page">
-        <Link to={`/store${location.state}`} className="backToStore">←</Link>
+        <Link to={`/store${location.state?location.state:''}`} className="backToStore">←</Link>
        
   
     {product?<div className="product-detail">

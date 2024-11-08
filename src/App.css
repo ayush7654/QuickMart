@@ -67,12 +67,3 @@ a:hover {
   padding:20px;
 }
 
-.search-result-list{
-  height: 700px;
- 
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 columns of equal width */
-  grid-template-rows: repeat(2, 1fr); /* 2 rows of equal height */
-  grid-gap: 20px;
-  padding:20px;
-}
