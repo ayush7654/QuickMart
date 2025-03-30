@@ -124,7 +124,7 @@ export default function Store() {
     loadFilteredItem();
    }
    
-  },[currentCategory])
+  },[currentCategory,typeFilter])
 
   useEffect(()=>{
     setPageNavArr(prev=>prev.map(num=>num+(page.current>10?page.current-10:null)))

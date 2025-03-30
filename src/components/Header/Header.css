@@ -2,7 +2,7 @@
     position: sticky;
     top: 0;
     z-index: 1;
-    background-color:rgba(34, 52, 133, 0.968);  /* rgba(57, 112, 111, 0.354); */
+    background-color:rgb(62, 69, 110);  /* rgba(57, 112, 111, 0.354); rgba(34, 52, 133, 0.968);*/
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
     width: 100%;
   }
@@ -28,7 +28,7 @@
     display:'flex';
     flex-direction: row;
     justify-content: center;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
     height: 100%;
     font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
@@ -53,9 +53,16 @@
     width:5rem;
     padding-top: 10px;
   }
+
+  .header-searchBar-div{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    
+  }
   .header-searchBar{
     border: 0px solid red;
-   width: 40%;
+   width: 100%;
     display:flex;
     position: relative;
     align-items: center;
@@ -66,6 +73,26 @@
     height: 2.5rem;
     border: 0px;
     border-radius: .2rem;
+  }
+
+  .suggestionBox{
+    border: 0px solid red;
+    color: black;
+   width: 40%;
+   max-height: 8rem;
+   position: absolute;
+   margin-top: 2.7rem;
+   background-color: white;
+  overflow: hidden;
+  
+  }
+  .suggestion{
+    color: black;
+    padding: .4rem;
+  }
+
+  .suggestion:hover{
+    background-color: gainsboro;
   }
 
   
@@ -84,6 +111,11 @@
   }
   .navlink{
     color:rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    gap: .2rem;
+    align-items: center;
+    justify-content: center;
     
    
    
@@ -96,6 +128,9 @@
     border-radius: .2rem;
     padding:.2rem;
     height:1.3rem;
+    display: flex;
+    flex-direction: row;
+    gap: .2rem;
   
   }
 
@@ -133,10 +168,13 @@
 
   @media (max-width:800px){
    
-    .header-searchBar{
+    .header-searchBar-div{
 
        width: 30%;
       
+      }
+      .suggestionBox{
+        width: 30%;
       }
  
     .Home-Nav-Container{
@@ -187,7 +225,7 @@
         
         
       }
-    .header-searchBar{
+    .header-searchBar-div{
         right: 50%;
         translate:50% ;
         top:65px;
@@ -204,6 +242,10 @@
         height: 2rem;
         border: 0px;
         border-radius: .2rem;
+      }
+
+      .suggestionBox{
+        width: 100%;
       }
  
     .Home-Nav-Container{
@@ -280,11 +322,7 @@
         padding-top: 1.1rem;
     
       }
-      .header-searchBar{
-        
-        top:60px;
-      
-      }
+    
 
   }
 
