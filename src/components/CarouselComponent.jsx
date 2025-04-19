@@ -62,7 +62,7 @@ export default function CarouselComponent({Imagelist}) {
  
 
   return (
-    <>
+ 
     <div className="carousel-div">
       <div className="carousel-sub-div">
       <button className='leftArrow'  onClick={()=>handleSlide('left')} ><div><ChevronLeft className='left-arrow-content' /></div></button>
@@ -82,6 +82,6 @@ export default function CarouselComponent({Imagelist}) {
     </div>
     </div>
    
-    </>
+   
   )
 }

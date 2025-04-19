@@ -2,7 +2,7 @@
     position: sticky;
     top: 0;
     z-index: 1;
-    background-color:rgb(62, 69, 110);  /* rgba(57, 112, 111, 0.354); rgba(34, 52, 133, 0.968);*/
+    background-color:rgb(0, 0, 0);  /* rgb(62, 69, 110) */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
     width: 100%;
   }
@@ -124,7 +124,7 @@
   .navlink-selected{
     color:rgb(0, 0, 0);
     font-size: 1.2rem;
-    background-color: rgba(255, 255, 255, 0.608);
+    background-color: rgb(163, 184, 221); 
     border-radius: .2rem;
     padding:.2rem;
     height:1.3rem;

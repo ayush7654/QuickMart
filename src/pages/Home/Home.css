@@ -6,40 +6,51 @@
     align-items: center;
     justify-content: center;
     border: 0px solid black;
-    width: 100%;
+    width: 100vw;
+ 
     /* background: linear-gradient(to bottom, rgba(16, 16, 128, 0.857), white); */
 /*     background: linear-gradient(to bottom, rgb(0, 0, 0), white); */
  background-color: black;
    overflow-x: hidden;
+   position: relative;
+   background-color: rgb(0, 0, 0); 
   
   
   }
   .homeContent-Container{
-   width: 100%;
-    height: 70vh;
+    position: relative;
+    width: 100%;
+   position: relative;
+   
     border: 0px solid red;
     display: flex;
-    align-items: center;
+ 
+     
+     
+    
   }
-  
+  .homeCrousal{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border-bottom: 5px solid white;
+   
+  }
   
   .homeContent{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    background-image: url('/HomeProductBG2.webp');
+    
+    
+    width: 100vw;
+    height: 100vh;
+   
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
   
   }
-  .Home-upper{
-    border: 0px red solid;
-    width: 100%;
-    height: 100%;
-  }
+  
   .Home-Img-container{
     
     border: 0px solid red;
@@ -48,720 +59,228 @@
   .Home-Img{
     width:700px ;
   }
-  .Home-text0{
+  .bgImgNav{
+    border: 2px solid rgba(255, 255, 255, 0.873);
+    background-color: black;
+    width: 35%;
+    height: .3rem;
+    color:white;
+    position: absolute;
+    margin: auto;
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    bottom:2rem;
+    left: 50%;
+  transform: translateX(-50%);
+  }
+ 
+  .bgImgNav-slider{
+    width: 25%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.901);
+  }
+
+  .buy-link{
+    color:rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    font-size: 1.4rem;
+    height: 5rem;
+    width:30%;
+    border: 3px rgb(255, 255, 255) solid;
     display: flex;
-    flex-direction: row;
-    line-height: 0px;
-    text-align: center;
     justify-content: center;
-    gap:.5rem;
-    font-size: 2.5rem;
-    color:rgb(255, 255, 255);
-  margin-bottom: 5rem;
-    border: 0px solid blue;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    
-  
-     
+    align-items: center;
+    border-radius: 4rem;
+    margin-top: 0;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+    box-shadow: -1px -5px inset;
+    font-family:  'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+
   }
-  .Home-text1{
-    display: flex;
-    flex-direction: column;
-    line-height: 0px;
-    text-align: center;
-    font-size: 6rem;
-    color:rgb(255, 255, 255);
-  margin-bottom: 1.8rem;
-    border: 0px solid blue;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-shadow: 0px -5px 30px rgb(123, 191, 228);
-  
-    
-  
-     
-  }
-  .Home-text2{
-    display: flex;
-    flex-direction: column;
-    line-height: 0px;
-    text-align: center;
-    font-size: 2rem;
+  .buy-link:hover{
+    background-color: rgb(192, 206, 235);
     color:rgb(0, 0, 0);
-  padding-top: 3rem;
-    border: 0px solid blue;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  
-     
   }
+
+ 
+
   .Home-bottom{
     border: 0px solid red;
     width: 100%;
-
-
-
-   
-   
-  }
-
-  
-  
-  .Home-category-box{
-    border: 2px solid rgb(65, 61, 61);
-    
     display: flex;
-    padding:1.5;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+    font-family:  'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+    
+   
+  }
+.bento-heading{
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color:rgb(255, 255, 255);
+  font-size: 6rem;
+  padding-bottom: 1rem;
+}
+  .category-bento{
+    height: auto;
+    width: 95%;
+    border: 0px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    
+   
+    
+  }
+
+  .bento-left-long{
+    height: 500px;
+    width: 19%;
+    border: 0px solid rgb(75, 59, 161);
+   
+  
+  }
+  .bento-left-long-img,.upper-a-img,.upper-b-img,.upper-c-img,.lower-a-img,.lower-b-img,.bento-right-long-img{
+    height: 100%;
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: end;
+    color: white;
+    font-size: 2.4rem;
+  }
+
+
+
+  .bento-center{
+    height: 500px;
+    width: 61%;
+    border: 0px solid rgb(59, 161, 64);
+  
+  }
+
+  .bento-center-upper{
+    height: 60%;
     width: 100%;
-    font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
-    background-color: #8895c9;
-    
-    backdrop-filter: blur(10px);
-  
-    
-  }
-  .Home-category-boxes{
-    height:400px;
-    width:800px;
-    border: 0px solid rgb(200, 29, 29);
+    border: 0px solid rgb(255, 255, 255);
     display: flex;
-    flex-direction: row;
-    
-  }
-  .box2-conatiner{
-    display: flex;
-    flex-direction: row;
-  }
-  .left-box{
-    border: 0px solid black;
-    width: 400px;
-    height: 400px;
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(62, 69, 110);
-  }
-  .box1{
-    width: 400px;
-    height: 400px;
-    border: 0px solid blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(62, 69, 110);
-    
-  }
-  .box2,.left-box2{
-    width: 200px;
-    height: 400px;
-    border: 0px solid rgb(0, 255, 85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(62, 69, 110);
-  }
-  .left-box2-content{
-    border:0px solid black;
-    height:95%;
-    width:95%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url('/HPFootwearBG.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    
-  }
-  .left-box2-content-name{
-    position: absolute;
-    bottom: 20px;
-    left:10px;
-    font-size: 30px;
-    color:white;
-    font-weight: 600;
-
-    
-  }
-
-  .box3,.left-box1{
-    width: 200px;
-    height: 400px;
-    border: 0px solid rgb(255, 115, 0);
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(62, 69, 110);
-
-  }
-
-  .box4,.left-box1-a{
-    width: 200px;
-    height: 200px;
-    border: 0px solid rgb(255, 115, 0);
-    display: flex;
-    justify-content: center;
-   align-items: center;
-  }                          
-
-  .left-box1-a-content{  
-    border:0px solid black;
-    height:90%;
-    width:95%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url('/HPSkinCareBG.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-
-  }
-  .left-box1-a-content-name{
-   
-    position: absolute;
-    bottom: 20px;
-    left:10px;
-    font-size: 30px;
-    color:white;
-    font-weight: 600;
-
-  }
-  
-  
-  .box5,.left-box1-b{
-    width: 200px;
-    height: 200px;
-    border: 0px solid rgb(255, 115, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(62, 69, 110);
-  }
-
-  .left-box1-b-content{
-    border:0px solid black;
-    height:90%;
-    width:95%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url('/HPEssentialsBG.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-
-  .left-box1-b-content-name{
-    
-    position: absolute;
-    bottom: 20px;
-    left:10px;
-    font-size: 30px;
-    color:white;
-    font-weight: 600;
-  }
-
-  .box1-content{
-    border:0px solid black;
-    height:95%;
-    width:95%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url('/HPIndoorsBG.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    
-  }
-  .box1-content-name{
-    position: absolute;
-    bottom: 20px;
-    left:20px;
-    font-size: 30px;
-    color:white;
-    font-weight: 600;
-  }
-  
-  .box2-content{
-    border:0px solid black;
-    height:95%;
-    width:95%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url('/HPFashionBG2.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-
-  .box2-content-name{
-    position: absolute;
-    bottom: 20px;
-    left:10px;
-    font-size: 30px;
-    color:white;
-    font-weight: 600;
-  }
-
-  .box4-content{
-    border:0px solid black;
-    height:90%;
-    width:95%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url('/HPSportBG.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-
-  .box4-content-name{
-    position: absolute;
-    bottom: 20px;
-    left:10px;
-    font-size: 30px;
-    color:white;
-    font-weight: 600;
-  }
-
-  .box5-content{
-    border:0px solid black;
-    height:90%;
-    width:95%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url('/HPElectronicsBG.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-  .box5-content-name{
-    position: absolute;
-    bottom: 20px;
-    left:10px;
-    font-size: 30px;
-    color:white;
-    font-weight: 600;
-  }
-
-  @media (max-width:1250px){
-    
-
-    .Home-Img{
-        width:600px ;
-      }
-
-  .Home-text0{
- 
-    gap:.5rem;
-    font-size: 2rem;
-  margin-bottom: 5rem;
- 
-  }
-  .Home-text1{
-   
-    font-size: 5rem;
-  margin-bottom: 1.5rem;
- 
-  }
-  .Home-text2{
-    font-size: 2rem;
-  padding-top: 3rem;
-
-  }
-
- 
-  
- 
-  .Home-category-boxes{
-    height:400px;
-    width:700px;
-  }
-  .left-box{
-    width: 350px;
-    height: 400px;
-  }
-  .box1{
-    width: 350px;
-    height: 400px;
-    
-  }
-  .box2,.left-box2{
-    width: 150px;
-    height: 400px;
+    justify-content: space-around;
    
   }
-
-  }
-
-@media (max-width:1050px){
-  .Home{
-    background-color: rgb(134, 155, 195);
-  }
-  .homeContent{
-
-    background-size: cover;
-  
-  }
-
-    .Home-Img{
-        width:450px ;
-      }
-
-  .Home-text0{
- 
-    gap:.5rem;
-    font-size: 2rem;
-  margin-bottom: 4rem;
- 
-  }
-  .Home-text1{
-   
-    font-size: 4rem;
-  margin-bottom: 1.2rem;
- 
-  }
- 
-
-
-  .Home-category-boxes{
-    height:300px;
-    width:600px;
-    display: flex;
-    
-  }
-  .left-box{
-    width: 300px;
-    height: 300px;
-  }
-  .box1{
-    width: 300px;
-    height: 300px;
-    
-  }
-  .box2,.left-box2{
-    width: 150px;
-    height: 300px;
-   
-  }
-
-  .box2,.left-box2{
-    width: 150px;
-    height: 300px;
-    
-  }
- 
-  .box3,.left-box1{
-    width: 150px;
-    height: 300px;
- 
-    
-   
-  }
-  .box4,.left-box1-a{
-    width: 150px;
-    height: 150px;
-  
-  }
-
-  .box5,.left-box1-b{
-    width: 150px;
-    height: 150px;
-  
-  }
-
- #home-category-name{
-    font-size: 25px;
+ .upper-a,.upper-c{
+  height: 98.5%;
+  width: 25%;
+  border: 0px solid rgb(164, 53, 53);
  }
-  
-
-}
 
 
-@media (max-width:900px){
-    
-
-  #home-category-name{
-    font-size: 15px;
+ .upper-b{
+  height: 98.5%;
+  width: 46%;
+  border: 0px solid rgb(164, 53, 53);
  }
- .Home-Img{
-    width:450px ;
+
+ .bento-center-lower{
+  height: 40%;
+  width: 100%;
+  border: 0px solid rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+ }
+
+ .lower-a,.lower-b{
+  height: 95%;
+  width: 48.5%;
+  border: 0px solid rgb(56, 166, 34);
+  transition: transform 5s ease, box-shadow 5s ease;
+ }
+ 
+
+  .bento-right-long{
+    height: 500px;
+    width: 19%;
+    border: 0px solid rgb(161, 59, 122);
   }
 
-.Home-text0{
-
-gap:.5rem;
-font-size: 2rem;
-margin-bottom: 4rem;
-
-}
-.Home-text1{
-
-font-size: 4rem;
-margin-bottom: 1.2rem;
-
-}
-
-
-
-.Home-category-boxes{
-height:300px;
-width:400px;
-display: flex;
-
-}
-.left-box{
-width: 200px;
-height: 300px;
-justify-content: end;
-}
-.box1{
-width: 200px;
-height: 200px;
-
-}
-.box2,.left-box2{
-width: 100px;
-height: 200px;
-
-}
-
-.box2,.left-box2{
-width: 100px;
-height: 200px;
-
-}
-
-.box3,.left-box1{
-width: 100px;
-height: 200px;
-
-
-
-}
-.box4,.left-box1-a{
-width: 100px;
-height: 100px;
-
-}
-
-.box5,.left-box1-b{
-width: 100px;
-height: 100px;
-
-}
-}
-
-@media (max-width:600px){
-
-    .homeContent-Container{
-        height: 50vh;
-    }
-    .Home-Img{
-        width:300px ;
-      }
-    
-    .Home-text0{
-    
-    gap:.3rem;
-    font-size: 1.5rem;
-    margin-bottom: 4rem;
-    
-    }
-    .Home-text1{
-    
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    
-    }
-    .Home-text2{
-    
-        font-size: 1.5rem;
-        padding-top: 1.5rem;
-        
-        }
-  
-        .Home-bottom{
-            border: 0px solid red;
-            width: 100%;
-          
-            
-            
-
-          }
-    
-  .Home-category-box{
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(119, 144, 186, 0);
-    backdrop-filter: blur(0px);
-    border: 0px;
-    
+  .bento-left-long-img{
+   
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),url('/HPFashionBG2.webp');
+   
   }
 
 
-  .Home-category-boxes{
-    height:400px;
-    width:400px;
-    border: 0px solid rgb(200, 29, 29);
-    display: flex;
-    flex-direction:column ;
+  .upper-a-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),url('/HPSkinCareBG.webp');
+    transition: transform 0.3s ease;
+  }
+  .upper-a-img:hover{
+    transform: scale(1.1);
+  }
+
+  .upper-b-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),url('/HPIndoorsBG.jpeg');
+    transition: transform 0.3s ease;
+  }
+
+  .upper-b-img:hover{
+    transform: scale(1.1);
+  }
+
+  .upper-c-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),url('/HPEssentialsBG.jpeg');
+    transition: transform 0.3s ease;
+  }
+
+  .upper-c-img:hover{
+    transform: scale(1.1);
+  }
+
+  .lower-a-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),url('/HPElectronicsBG.webp');
+    transition: transform 0.3s ease;
+  }
+  .lower-a-img:hover{
+    transform: scale(1.06);
+  }
+
   
-    backdrop-filter: blur(0px);
+
+  .lower-b-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),url('/HPSportBG.jpeg');
+    transition: transform 0.3s ease;
+  }
+
+  .lower-b-img:hover{
+    transform: scale(1.06);
+  }
+
+  
+
+
+  .bento-right-long-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),url('/HPFootwearBG.webp'); 
+    transition: transform 0.3s ease;
+          
+   
     
   }
-  .left-box{
-    border: 0px solid rgb(200, 29, 29);
-    width: 400px;
-    height: 400px;
-    justify-content: end;
-  
-    backdrop-filter: blur(0px);
-    }
-    .box1{
-        width:400px;
-        height: 400px;
-        
-        }
-        .box2,.left-box2{
-        width: 200px;
-        height: 200px;
-        
-        }
-        
-        .box2,.left-box2{
-        width: 200px;
-        height: 400px;
-        
-        }
-        
-        .box3,.left-box1{
-        width: 200px;
-        height: 200px;
-        
-        
-        
-        }
-        .box4,.left-box1-a{
-        width: 200px;
-        height: 200px;
-        
-        }
-        
-        .box5,.left-box1-b{
-        width: 200px;
-        height: 200px;
-        
-        }
-    
-         .box2-conatiner{
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-          
-          } 
-    }
 
-    @media (max-width:400px){
+  .home-site-Info{
+    color:black;
+    background-color: white;
+    width: 100%;
+    padding:2rem;
+    margin-left: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 4rem;
+  }
 
-      .homeContent-Container{
-          height: 40vh;
-      }
-      .Home-Img{
-          width:300px ;
-        }
-      
-      .Home-text0{
-      
-      gap:.3rem;
-      font-size: 1.5rem;
-      margin-bottom: 4rem;
-      
-      }
-      .Home-text1{
-      
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      
-      }
-      .Home-text2{
-      
-          font-size: 1.5rem;
-          padding-top: 1.5rem;
-          
-          }
-    
-          .Home-bottom{
-              border: 0px solid red;
-              width: 100%;
-            
-              
-              
-  
-            }
-      
-    .Home-category-box{
-      display: flex;
-      flex-direction: column;
-      background-color: rgba(119, 144, 186, 0);
-      backdrop-filter: blur(0px);
-      border: 0px;
-      
-    }
   
   
-    .Home-category-boxes{
-      height:300px;
-      width:300px;
-      border: 0px solid rgb(200, 29, 29);
-      display: flex;
-      flex-direction:column ;
-  
-      
-    }
-    .left-box{
-      border: 0px solid rgb(200, 29, 29);
-      width: 300px;
-      height: 300px;
-      justify-content: end;
 
-      }
-      .box1{
-          width:300px;
-          height: 300px;
-          
-          }
-          .box2,.left-box2{
-          width: 150px;
-          height: 300px;
-          
-          }
-          
-          .box2,.left-box2{
-          width: 150px;
-          height: 300px;
-          
-          }
-          
-          .box3,.left-box1{
-          width: 150px;
-          height: 150px;
-          
-          
-          
-          }
-          .box4,.left-box1-a{
-          width: 150px;
-          height: 150px;
-          
-          }
-          
-          .box5,.left-box1-b{
-          width: 150px;
-          height: 150px;
-          
-          }
-      
-           .box2-conatiner{
-              display: flex;
-              flex-direction: row;
-              width: 100%;
-         
-            } 
-      }
+
+
+

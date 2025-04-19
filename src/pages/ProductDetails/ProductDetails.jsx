@@ -1,5 +1,6 @@
 import {useState,useEffect,useContext,useRef} from "react";
 import {useParams,useOutletContext,Link,useLocation} from 'react-router-dom'
+import ProductCard from "../../components/ProductCard";
 
 import { useFirebase } from "../../components/FirebaseContext/Firebase";
 import CarouselComponent from "../../components/CarouselComponent";
@@ -9,7 +10,20 @@ import StarRating from './../../components/StarRating';
 export default function ProductDetails(){
     const{id} = useParams()
     const [product,setProduct]= useState(null);
+    const[categories,setCategories]= useState(null)
+    const[currentCategory,setCurrentCategory]= useState(null)                              
     
+
+    useEffect(()=>{
+        const fetchCategory= async()=>{
+        const response= await fetch("https://dummyjson.com/products/categories")
+        const data = await response.json()
+        setCategories(data)
+      
+        }
+        fetchCategory();
+        },[])
+
 
     useEffect(()=>{
         fetch(`https://dummyjson.com/products/${id}`)
@@ -17,6 +31,24 @@ export default function ProductDetails(){
         .then(data=>(setProduct(data)))
     },[id])
     
+    useEffect(() => {
+        if (!product?.category) return; // prevent fetch if category is missing
+      
+        const fetchProducts = async () => {
+          try {
+            const response = await fetch(`https://dummyjson.com/products/category/${product.category}`);
+            const data = await response.json();
+            setCurrentCategory(data);
+            console.log('currentCategory products', data);
+          } catch (error) {
+            console.error('Error fetching category products:', error);
+          }
+        };
+      
+        fetchProducts();
+      }, [product?.category]);
+
+
     const firebase= useFirebase()
     const userInfo = firebase.isLoggedIn?firebase.currentUser.email:null
     const location= useLocation()
@@ -37,7 +69,7 @@ export default function ProductDetails(){
 
 
     
-  
+  console.log(product)
  
     const updataDataBase=async()=>{
 
@@ -65,25 +97,36 @@ export default function ProductDetails(){
         setAddedtoCart(prev => !prev);
     }
 
+    const formatDate = (isoString) => {
+        const date = new Date(isoString);
+        const day = String(date.getDate()).padStart(2, '0');       // adds leading 0 if needed
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // getMonth() is zero-based
+        const year = date.getFullYear();
+      
+        return `${day}/${month}/${year}`;
+      };
+      const formattedDate = formatDate("2024-05-23T08:56:21.623Z");
+      console.log('date is ',formattedDate);
 
    
-    return(
-    <div className="productDetails-page">
-        <Link to={`/store${location.state?location.state:'?page=1'}`} className="backToStore">←</Link>
-       
-  
+    return(<>
+      <Link to={`/store${location.state?location.state:'?page=1'}`} className="backToStore">←</Link>
+    <div className="productDetails-nav">   {categories?categories.slice(12,20).map(item=><Link to={`/store?type=${item.slug}`}  className="productDetails-nav-item">{item.name}</Link>):<div>loading</div>}</div>
+    <div className="productDetails-div">
+        
     {product?<div className="product-detail">
         <CarouselComponent Imagelist={product.images}/> 
-         <div className="product-info">
+        <div className="product-info-div">
+        <div className="product-info-pd">
             {/* to be added : category, stock, dimensions */}
-        <div className="product-title"  >{product.title}</div> 
+        <div className="product-title"  ><div style={{fontSize:'.7rem',marginLeft:'0rem',color:'white'}}><span style={{backgroundColor:'rgb(68, 64, 64)',padding:'.2rem'}}>{product.brand && product.brand}</span></div>{product.title}</div> 
         <div>
         <div style={{fontSize:'1rem',fontWeight:600}}>Description:</div>
         <p className="product-description" >{product.description}</p>
         </div>
        
         <div className="product-info-price-div">
-        <div style={{fontSize:'1rem',fontWeight:600}}>Price:</div><div className="price-num">${product.price}</div>
+        <div style={{fontSize:'1rem',fontWeight:600}}>Price:</div><div className="price-num">${product.price}</div><div></div>
         </div>
         <div  className="product-info-rating-div">
             <div style={{fontSize:'1rem',fontWeight:600}} >Rating:</div>
@@ -91,48 +134,103 @@ export default function ProductDetails(){
             <div className="rating-num" style={{fontSize:'1rem',fontWeight:600}}><span style={{fontSize:'1.5rem'}}>{product.rating.toFixed(1)}</span>/5</div>
           
         </div>
-        <div  style={{display:'flex',flexDirection:'row', alignItems:'center',gap:'10px',paddingTop:'10px'}}>
-            <div style={{fontSize:'1rem',fontWeight:600}}>Stocks left:</div>
-            <div style={{fontWeight:600}}> {product.stock}</div>
-           </div>
-        <div style={{display:'flex', justifyContent:'center'}}>
-        <div className="quantity-container">
+        <div className="policy-ship-div" >
            
-            <button 
+           
+            <div style={{fontWeight:600}}> {product.returnPolicy}</div>
+            
+            <div style={{fontWeight:600,paddingTop:'.7rem'}}>{product.shippingInformation}</div>
+           
+           </div>
+           <div style={{display:'flex',fontWeight:600,paddingTop:'.5rem'}} className="stock-div">
+            <div style={{fontSize:'1rem',fontWeight:600}}>Stocks left :</div>
+        <span>{product.stock}</span> </div>
+         
+         
+        <div className="quantity-container-div">
+           <div style={{fontWeight:'600',position:'absolute',left:0}}>Select Quantity:</div>
+           <div className="quantity-container">
+           <div
                 className="decrease-btn" 
                 onClick={handleDecrease} 
                 disabled={quantity === 1}
             >
                 -
-            </button>
+            </div>
             <input 
                 type="text" 
                 className="quantity-input" 
                 value={quantity} 
                 readOnly
             />
-            <button className="increase-btn" onClick={handleIncrease}>
+            <div className="increase-btn" onClick={handleIncrease}>
                 +
-            </button>
+            </div>
+           </div>
+         
+          
         </div>
-        </div>
+       
+        
      
-        <button 
+        <div
   className="addTocartBtn" 
   onClick={handleClick}
   style={{ backgroundColor: AddedtoCart ? 'black' : '#1a1a1aaf' }}
 >
   {AddedtoCart ? 'Added to Cart' : 'Add to Cart'}
-</button>
+</div>
      
+         </div>
+         <div className="review-box" ><span style={{fontWeight:700}}>Top Reviews</span>
+         {product.reviews.map(review=>
+         <div className="reviews" >
+            <div className="user-review"><img src='/userIcon.png' width='40px'/>{review.reviewerName} <div style={{fontSize:'.9rem',color:'rgb(85, 81, 81)',paddingLeft:'10rem'}}>Reviewed on: {formatDate(review.date)}</div></div>
+          
+            <StarRating  rating={review.rating}/>
+           
+            <div>{review.comment}</div>
+
+         </div>)}
          </div>
 
 
-    
+        </div>
         </div>:<p>loading..</p>}
 
-    
+        
+
+        
+
+  
     </div>
+ <div className="Product-Details-SimilarProducts">
+    <div className="similarProducts-head">Similar Products</div>
+ <div className="Product-Details-SimilarProducts-list">
+        
+ {currentCategory ? currentCategory.products.map(item => 
+  item.id !== product.id && (
+    <ProductCard
+      classname='productDetails-product'
+      key={item.id}
+      id={item.id}
+      images={item.images}
+      title={item.title}
+      price={item.price}
+      path={location.search}
+    />
+  )
+) : 'loading'}
+    </div>
+ </div>
+   
+    
+    </>
+    
         
     )
 }
+
+
+
+

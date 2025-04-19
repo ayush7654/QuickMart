@@ -94,7 +94,7 @@ export default function Header(){
         
        
          <div className='Home-Nav-Container'>
-            {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}> <img src={`/${element.logo}.png`} width='20px'/><div>{element.title}</div></NavLink>)}
+            {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}> <img src={`/${element.logo}.png`} width='20px'/><div></div></NavLink>)}
          </div>
         
          

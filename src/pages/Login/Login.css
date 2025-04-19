@@ -47,7 +47,7 @@
     border-radius: 1rem;
     align-items: center;
    justify-content: center;
-    background-color: rgb(134, 155, 195);
+    background-color: rgb(188, 202, 230);
     box-shadow: -7px 7px rgb(127, 125, 125);
    
   }
@@ -58,7 +58,7 @@
     padding:0px;
     align-items: center;
     justify-content: center;
-    background-color: rgb(134, 155, 195);
+    background-color:rgb(188, 202, 230);
     border-radius: 1rem;
     height:90%;
     width: 90%;

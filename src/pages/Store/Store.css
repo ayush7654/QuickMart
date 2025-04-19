@@ -2,27 +2,36 @@
     overflow-x: hidden;
 }
 .Store-filter{
-    margin-left: 1.5rem;
+    padding-left:1rem;
     border:0px solid black;
     display: flex;
   flex-direction: row;
   align-items: center;
   gap:1.5rem;
   font-size: 1rem;
-  padding-top: .6rem;
+  height: 3rem;
+  width: 100%;
   font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
-  
+  background-color: white;
     
   }
   .allBtn{
-    padding:.3rem;
+    display: flex;
+    align-items: center;
+    height: 1.7rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
     border-radius: .3rem;
     background-color: rgb(132, 156, 201);
     color: black;
     
   }
   .allBtn-selected{
-    padding:.3rem;
+    display: flex;
+    align-items: center;
+    height: 90%;
+    padding-left: .3rem;
+    padding-right: .3rem;
     border-radius: .3rem;
     color: white;
     background-color:rgb(62, 69, 110);
@@ -38,33 +47,44 @@
     flex-direction: row;
     flex-shrink: 0;
     gap:1.5rem;
-    margin-right: 1.5rem;
-    width:85%;
+    height: 3rem;
+    width:100%;
     transition: translate 400ms ease-in-out;
     align-items: center;
   
    }
    .store-category{
+    display: flex;
+    align-items: center;
     flex-shrink: 0;
     max-width: fit-content;
-    padding:.3rem;
+   height: 1.7rem;
+   padding-left: .3rem;
+   padding-right: .3rem;
     border-radius: .3rem;
-    background-color: rgb(132, 156, 201);
+    background-color: rgb(163, 184, 221);
+    
+    
    }
    .store-category-selected{
+    display: flex;
+    align-items: center;
     flex-shrink: 0;
     max-width: fit-content;
-    padding:.3rem;
+    padding:.3rem ;
+    height: 90%;
     border-radius: .3rem;
-    background-color:rgb(62, 69, 110);
-    color: white;
+    background-color:#eeeeee;;
+    color: rgb(0, 0, 0);
+    
    }
    .store-category:hover{
-    background-color: rgba(68, 98, 167, 0.821);
+    background-color: rgba(227, 230, 235, 0.875);
+    cursor: pointer;
    }
   
   
-  .product{
+  .store-product{
     border:0px solid black;
     padding:.3rem;
     height:300px;
@@ -74,12 +94,12 @@
     background-color: white;
     border-radius: .3rem;
     color:black; 
-    box-shadow: 1px 1px 3px  rgba(69, 67, 67, 0.2);   
+    box-shadow: 0px 1px 1px  rgba(69, 67, 67, 0.2);   
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   }
-  .product:hover{
+  .store-product:hover{
     
-    box-shadow: 0px 5px 20px   rgba(0, 0, 0, 0.524);
+    box-shadow: 0px 3px 5px   rgb(98, 95, 95);
   }
   .Store-Product-title{
     color:rgb(78, 74, 74);
@@ -123,6 +143,7 @@
     gap:.3rem;
     padding-bottom: 1rem;
     position: static;
+    margin-top: 4rem;
    
     
     
@@ -134,8 +155,8 @@
     font-weight: 700;
     text-align: center;
     border: 0px solid grey;
-   width: 2.5rem;
-   height: 2.5rem;
+   width: 2rem;
+   height: 2rem;
     cursor:pointer;
     border-radius: .3rem;
     background-color: rgb(255, 255, 255);
@@ -144,8 +165,8 @@
   .page-nav-selected{
     text-align: center;
     border: 2px solid rgb(172, 167, 167);
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     cursor:pointer;
     border-radius: .3rem;
     background-color:rgb(255, 255, 255); 
@@ -157,15 +178,45 @@
     align-items: center;
     text-align: center;
     border: 0px solid grey;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     cursor:pointer;
     border-radius: .3rem;
-    background-color:rgb(62, 69, 110);
+    background-color:rgb(48, 48, 51);
     color: white;
     font-weight: 800;
   
   }
+
+  .store-footer-info{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: white;
+    
+  }
+
+  .store-footer-heading{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    color:rgb(88, 87, 87);
+  }
+
+.store-footer-list{
+  display: flex;
+  flex-direction: column;
+  gap:2rem;
+ 
+}
+  #store-footer-subhead{
+    font-size: 1rem;
+    color:rgb(92, 92, 92);
+  }
+
+  #store-footer-products{
+    font-size: .9rem;
+    color:rgb(147, 145, 145);
+
+  }
+
 
   @media (max-width:1150px){
  
