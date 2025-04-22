@@ -10,11 +10,11 @@ export default function Header(){
     console.log('username',firebase.currentUser)
     
 
-    const elements = [{title:"HOME ",path:'/',logo:'homelogo2'},
-        {title:"STORE ",path:'/store?page=1',logo:'storeLogo3'},
-        {title:"CART ", path:'/cart',logo:'cartlogo'},
+    const elements = [{title:"HOME ",path:'/',logo:'homelogo2.png'},
+        {title:"STORE ",path:'/store?page=1',logo:'storeLogo3.png'},
+        {title:"CART ", path:'/cart',logo:'cartlogo.png'},
       
-        {title:firebase.isLoggedIn?'Name':'LOGIN',path:'/login',logo:firebase.isLoggedIn?'userIcon':'loginlogo'}]
+        {title:firebase.isLoggedIn?'Name':'LOGIN',path:'/login',logo:firebase.isLoggedIn?'userIcon.png':'loginlogo.png'}]
 
     const [searchTerm,setSearchTerm]= useState('')
 
@@ -68,10 +68,10 @@ export default function Header(){
         <div className="header-home">
         
         <div className="logo-title">
-        <img src='/SiteLogo3.png'  className="logoImg"  />
-        <div  className="logo-name">
+        <img src='/QMsiteLogo.png'  className="logoImg"  /> 
+        <div  className="header-logo-name">
         <div className="name">QuickMart</div>
-        <div className="tagline" style={{color:'white',paddingBottom:'20px'}}>Quick Deals, Quick Feels </div>
+     {/* <div className="tagline">Quick Deals, Quick Feels </div>  */}
         </div>
       
         </div>
@@ -94,7 +94,7 @@ export default function Header(){
         
        
          <div className='Home-Nav-Container'>
-            {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}> <img src={`/${element.logo}.png`} width='20px'/><div></div></NavLink>)}
+            {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}> <img src={`/${element.logo}`} id='header-nav-Icon'/><div></div></NavLink>)}
          </div>
         
          

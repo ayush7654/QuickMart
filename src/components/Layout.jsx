@@ -14,8 +14,9 @@ export default function Home(){
     <Header/>
     <div className='outlet-container'>
     <Outlet />
-    </div>
     <Footer />
+    </div>
+    
     </div>
         
     )

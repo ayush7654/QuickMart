@@ -17,12 +17,15 @@ export default function Authentication(){
     return(<div >
     {loginState?<Outlet context= {cartList}/>:
     <div className="Cart-page-Out" >
-        <div className="cartOut-text">
-        <div>Log in to see your Cart</div>
-        <Link to="/login">Go to login Page →</Link>
-        </div>
+      
         <div className="cart-BG">
-
+    
+        <div className="cartOut-text">
+        <img className="cartOut-img" src='QMcartArrow.webp' />
+            <div className="cartOut-text-1">Missing Cart items?</div>
+        <div className="cartOut-text-2">Login to see the items you added previously</div>
+        <Link to="/login" className="cart-Login-btn"> Login </Link>
+        </div>
         </div>
 
     </div>}

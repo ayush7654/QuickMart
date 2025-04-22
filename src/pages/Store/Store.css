@@ -29,17 +29,17 @@
   .allBtn-selected{
     display: flex;
     align-items: center;
-    height: 90%;
+    height: 100%;
     padding-left: .3rem;
     padding-right: .3rem;
-    border-radius: .3rem;
-    color: white;
-    background-color:rgb(62, 69, 110);
+    border-radius: 0rem;
+
+    background-color:#eeeeee;
   
   }
   .Store-filter-left:hover,.Store-filter-right:hover{
     border-radius: .3rem;
-    background-color:rgb(62, 69, 110);
+    background-color: rgb(132, 156, 201);
   }
   .store-categories{
     border:0px solid rgb(203, 42, 42);
@@ -74,7 +74,7 @@
     padding:.3rem ;
     height: 90%;
     border-radius: .3rem;
-    background-color:#eeeeee;;
+    background-color:#eeeeee;
     color: rgb(0, 0, 0);
     
    }
@@ -152,7 +152,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 700;
+    font-weight: 400;
+    font-size: .8rem;
     text-align: center;
     border: 0px solid grey;
    width: 2rem;
@@ -220,7 +221,9 @@
 
   @media (max-width:1150px){
  
-      
+    .Store-filter{
+      width: 95%;
+    }
       .productList{
         margin: 1.2rem;
         
@@ -242,7 +245,7 @@
   @media (max-width:920px){
     
     .Store-filter{
-        margin-left: 1rem;
+       
         gap:1rem;
 
       }
@@ -311,6 +314,12 @@
   }
 
   @media (max-width:580px){
+
+    .Store-filter{
+      gap: 3px;
+      font-size: .8rem;
+    }
+
     .productList{
         margin: 1.2rem;
          
@@ -381,10 +390,7 @@
           .product{
             height: 200px;
           }
-          .Store-filter{
-            gap: 3px;
-            font-size: .8rem;
-          }
+      
 
           .Store-Product-title{
             font-size: .8rem;

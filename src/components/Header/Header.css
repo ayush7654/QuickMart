@@ -2,7 +2,7 @@
     position: sticky;
     top: 0;
     z-index: 1;
-    background-color:rgb(0, 0, 0);  /* rgb(62, 69, 110) */
+    background-color: rgb(27, 27, 27);  /* rgb(62, 69, 110) */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
     width: 100%;
   }
@@ -10,9 +10,9 @@
   .header-home{
     
     border:0px solid white;
-    height:4.5rem;
+    height:5rem;
     
-    color:black;
+    color:rgb(255, 255, 255);
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -23,35 +23,40 @@
  
   
   .logo-title {
-    border: 0px solid red;
-    padding-left: 20px;
+    border:0px solid rgb(8, 0, 255);
+    padding-left: 10px;
     display:'flex';
     flex-direction: row;
     justify-content: center;
-    gap: 5px;
+    gap: 0px;
     align-items: center;
     height: 100%;
     font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
   }
   
-  .logo-name{
+  .header-logo-name{
     
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
-    top:10px;
+  height: 100%;
+    border: 0px solid red;
   }
   .name{
-    color:white;
-    font-weight: 600;
-    font-size: 2rem;
-    font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+    border: 0px solid red;
+    font-weight:900;
+    font-size: 3.2rem;
+    font-family:'Times New Roman', Times, serif;
   }
   .logoImg{
-    width:5rem;
-    padding-top: 10px;
+    width:6rem;
+   
+  }
+  .tagline{
+    border: 0px solid red;
+    font-size: .8rem;
   }
 
   .header-searchBar-div{
@@ -66,6 +71,7 @@
     display:flex;
     position: relative;
     align-items: center;
+    
   }
   .header-search-box{
   
@@ -73,6 +79,7 @@
     height: 2.5rem;
     border: 0px;
     border-radius: .2rem;
+    background-color: rgb(224, 229, 229);
   }
 
   .suggestionBox{
@@ -122,16 +129,23 @@
     
   }
   .navlink-selected{
-    color:rgb(0, 0, 0);
-    font-size: 1.2rem;
-    background-color: rgb(163, 184, 221); 
-    border-radius: .2rem;
-    padding:.2rem;
+    border: 1px solid white;
+    border-radius: 15%;
+  
+    background-color: rgb(27, 27, 27);
+  
+    padding:.5rem;
     height:1.3rem;
     display: flex;
     flex-direction: row;
-    gap: .2rem;
+    justify-content: center;
+    align-items: center;
+   
   
+  }
+
+  #header-nav-Icon{
+    width: 30px;
   }
 
  
@@ -150,7 +164,11 @@
       .navlink-selected{
         
         font-size: 1rem;
-        background-color: rgba(255, 255, 255, 0.608); 
+     
+      }
+
+      #header-nav-Icon{
+        width: 20px;
       }
       .name{
        
@@ -218,13 +236,20 @@
      
       }
       .logo-title {
-       
-      
+       height: 50%;
+      border: 0px solid red;
         gap: 0;
         align-items: start;
-        
-        
+        gap:.2rem;
+
       }
+
+      .Home-Nav-Container{
+   
+          gap:2rem;
+      }
+
+
     .header-searchBar-div{
         right: 50%;
         translate:50% ;
@@ -278,7 +303,7 @@
       }
       .logoImg{
         width:3.2rem;
-        padding-top: 1.1rem;
+       
     
       }
 
@@ -319,7 +344,7 @@
       }
       .logoImg{
         width:2.8rem;
-        padding-top: 1.1rem;
+       
     
       }
     
@@ -344,8 +369,8 @@
       }
       .logoImg{
         width:2.4rem;
-        padding-top: 1.1rem;
-        padding-right: 2px;
+        padding-top: .5rem;
+        
     
       }
       .logo-title{

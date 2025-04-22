@@ -158,12 +158,15 @@ export default function Store() {
  }
   return (
     <div className="Store-Page">
+      <div style={{width:'100%', backgroundColor:'white'}}>
       <div className="Store-filter">
-        <div className={currentCategory?"allBtn":"allBtn-selected"} onClick={()=>setcurrentCategory('')}><Link style={{color:currentCategory?'black':'white'}} to='/store?page=1'>All</Link></div>
+        <div className={currentCategory?"allBtn":"allBtn-selected"} onClick={()=>setcurrentCategory('')}><Link style={{color:'black'}} to='/store?page=1'>All</Link></div>
         <div className="Store-filter-left" onClick={()=>handleCategory('left')}><ChevronLeft/></div>
         <div style={{overflow:'hidden',width:'85%'}}> <div className="store-categories"  style={{translate:`${-CategoryNum*200}px`}}>{productCategory && productCategory.map((item,index)=><div onClick={()=>handleFilter(item.slug)} className={item.slug===typeFilter?"store-category-selected" :"store-category"} key={index}>{item.name}</div>)}</div></div>
         <div className="Store-filter-right" onClick={()=>handleCategory('right')}><ChevronRight/></div>
       </div>
+      </div>
+    
         
       <div className="productList">
         {isLoading?<h2>Loading...</h2>:productElements}
