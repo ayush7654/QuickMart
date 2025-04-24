@@ -17,8 +17,8 @@
   display: flex;
   justify-content: space-around;
   height: 80vh;
-    border:0px solid rgb(182, 16, 16);
-   width: 100%;
+    border:0px solid rgb(200, 226, 29);
+   width: 95%;
     
     
     line-height: 1.4rem;
@@ -30,18 +30,24 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
 
- 
+ #pd-subHead{
+  font-size: 1rem;
+  font-weight: 600;
+ }
   .product-info-div{
-    border: 0px solid red;
+    border: 0px solid rgb(0, 255, 21);
     width: 40%;
+    
+   
 
   }
 
   .product-info-pd{
     border: 0px solid black;
-    width: 90%;
+    width: 100%;
     
     padding:2rem ;
+
    font-size: 1rem;
    background-color: rgb(188, 202, 230); 
     box-shadow: 10px 10px #1a1a1a5e;
@@ -54,8 +60,8 @@
 
   .review-box{
     border: 0px solid rgb(255, 255, 255);
-    width: 90%;
-
+    width: 100%;
+  
     padding:2rem ;
     background-color: rgb(188, 202, 230);
     box-shadow: 10px 10px #1a1a1a5e;
@@ -77,9 +83,9 @@
     display:flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 
-    gap:.4rem
-  }
+      }
 
   .product-title{
     font-size: 1.5rem;
@@ -114,15 +120,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10rem;
-    padding-top:.5rem;
+    justify-content:space-between ;
+    
+  
   }
   .quantity-container-div{
     width: 100%;
     display: flex;
-    justify-content: center;
-    position: relative;
-    padding:.5rem;
+    justify-content: space-between;
+  
    
     
     border: 0px red solid;
@@ -133,13 +139,14 @@
     display: flex;
     align-items: center;
     border: 0px red solid; 
+    padding-right: 5rem;
    
   
   }
   
   .quantity-input {
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     text-align: center;
     font-size: 1.2rem;
     margin: 0 .7rem;
@@ -258,26 +265,42 @@
   }
 
   .backToStore{
-    position: absolute;
-    top:5rem;
-    left:2rem;
-    font-size: 2rem;
-    font-weight: 600;
+    
+   position: absolute;
+    font-size: 1.5rem;
+    font-weight: 400;
     color:black;
+    left:1rem;
   }
+
+  .productDetails-nav-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    position: relative;
+  }
+
+
   .productDetails-nav{
    display: flex;
    justify-content: center;
    align-items: center;
+   width: 90%;
    gap:2rem;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    height: 3.5rem;
+   border: 0px solid red;
    background-color: rgb(255, 255, 255);
     
   }
   .productDetails-nav-item{
     display: flex;
+    border: 0px solid red;
     align-items: center;
+    font-size: 1rem;
+ 
   background-color: rgba(255, 255, 255, 0.875);
 height: 90%;
   padding-left:.5rem;
@@ -316,13 +339,13 @@ height: 90%;
 .productDetails-product{
 
   width: 18%;
-  border:0px solid black;
+  border:1px solid rgb(147, 146, 146);
   padding:.3rem;
   height:300px;
   justify-content: center;
   align-content: center;
   text-align: center;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: .3rem;
   color:black; 
   box-shadow: 0px 1px 1px  rgba(69, 67, 67, 0.2);   
@@ -338,12 +361,6 @@ height: 90%;
 
   @media (max-width:1390px){
 
-    .product-detail{
-
-        margin-top: 2rem;
-        line-height: 1rem;
-        gap:2rem;
-      }
       .product-description{
         width: 80%;
       }
@@ -370,17 +387,26 @@ height: 90%;
         transition: translate 400ms ease-in-out;
         width: 500px;
       }
+
+      .productDetails-product{
+
+        width: 24%;
+      
+      }
+
+     
    
       
   }
 
   @media (max-width:1125px){
 
-    .product-detail{
+ 
 
-        margin-top: 2rem;
-        line-height: 1.2rem;
-        gap:2rem;
+      .product-info-div{
+        border: 0px solid rgb(0, 255, 21);
+        width: 45%;
+
       }
       .product-title{
         padding-bottom: .6rem;
@@ -398,6 +424,18 @@ height: 90%;
         width: 90%;
         font-size: 1rem;
       }
+
+      .policy-ship-div{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap:1rem;
+      }
+      .quantity-container{
+        padding:0rem ;
+      }
+  
+    
 
       .leftArrow,.rightArrow{
     
@@ -420,35 +458,36 @@ height: 90%;
   }
   @media (max-width:950px){
 
-    .product-detail{
+    .productDetails-nav{
+      gap:1rem;
+    }
 
-        margin-top: 2rem;
-        line-height: 1.2rem;
-        gap:2rem;
-
-        
-      }
+    .reviews{
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      border-bottom: 2px solid white;
+      padding: 0px;
+      padding-bottom: .8rem;
+      
+    }
+  
     
       .carousel-div{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-right: 1.2rem;
+     border: 2px solid red;
         width: 45%;
-        border:0px solid red;
+     
       }
       .carousel-sub-div{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        
         gap: .2rem;
+        border: 2px solid rgb(0, 34, 255);
        
       }
       .product-description{
       
         font-size: 1.07rem;
-        line-height: 1rem;
+       
       }
       .price-num{
         font-size: 1.08rem;
@@ -473,19 +512,9 @@ height: 90%;
         width: 300px;
       }
 
-      .product-info{
-        border: 0px solid black;
-        width: 35%;
-        height: 65vh;
-        padding:1rem ;
-        gap:.5rem;
-        background-color: rgba(147, 170, 213, 0.67); 
-        box-shadow: 10px 10px #1a1a1a5e;
-        position: relative;
-      }
+    
       .product-info-price-div,.product-info-rating-div{
-        display: flex;
-        flex-direction: row;
+        
         gap:.2rem;
         align-items: center;
         font-size: .8rem;
@@ -524,20 +553,46 @@ height: 90%;
   }
  
   @media (max-width:745px){
+    .productDetails-div{
+      display: flex;
+      justify-content: center;
+      border: 2px solid black;
+      width: 100%;
+      
+    }
+    .product-info-div{
+      border: 0px solid rgb(64, 255, 0);
+      width: 95%;
+     
+  
+    }
     .product-detail{
       
         display: flex;
-        
-    
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    overflow-y: visible;
         flex-direction: column;
         gap:2rem;
+        border: 0px solid black;
+        width: 100%;
+        padding: 0;
         
       }
-      .product-info{
-      
-        width: 65%;
-    
+      .product-info-pd{
+        padding: 2rem;
+       width: 100%;
+        box-shadow: 0px 0px #ffffff5e;
+
       }
+      .review-box{
+        padding:1rem ;
+        width: 100%;
+        box-shadow: 0px 0px #ffffff5e;
+
+      }
+   
       .product-info-price-div,.product-info-rating-div{
       
         font-size: 1rem;
@@ -573,31 +628,57 @@ height: 90%;
         transition: translate 400ms ease-in-out;
         width: 500px;
       }
-      .backToStore{
-        position: absolute;
-        top:8rem;
-        left:1rem;
-        font-size: 1.5rem;
-        font-weight: 600;
+
+      .Product-Details-SimilarProducts-list{
+ 
+        background-color: white;
+       width: 100%;
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       grid-template-rows: repeat(2, auto);
+     gap:1rem;
+     justify-items: center; 
+      
       }
+      .productDetails-product{
+
+        width: 90%;
+      
+      }
+      
+
+    
   }
 
   
   @media (max-width:600px){
-    .product-detail{
-      
-        display: flex;
-        
+
+    .backToStore{
+ 
+    }
+
+    .productDetails-nav{
     
-        flex-direction: column;
-        gap:2rem;
-        
-      }
-      .product-info{
-      
-        width: 70%;
+      gap:.8rem;
     
-      }
+      height: 2.5rem;
+      
+       
+     }
+     .productDetails-nav-item{
+      
+       font-size: .8rem;
+    
+     background-color: rgba(255, 255, 255, 0.875);
+   height: 90%;
+     padding-left:.5rem;
+     padding-right:.5rem;
+     border-radius: 10%;
+     color:black;
+    
+     }
+ 
+     
       .product-info-price-div,.product-info-rating-div{
       
         font-size: .8rem;
@@ -651,7 +732,7 @@ height: 90%;
   
   .addTocartBtn{
     
-    bottom: 1.5rem;
+   
   
   }
  
@@ -752,6 +833,16 @@ height: 90%;
   .ImageBox{
    
     box-shadow: 0px 10px 20px #1a1a1a5e;
+    }
+
+    .Product-Details-SimilarProducts-list{
+      gap:.5rem;
+    }
+
+    .productDetails-product{
+
+      width: 100%;
+    
     }
     
 

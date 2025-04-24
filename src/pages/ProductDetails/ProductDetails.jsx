@@ -110,45 +110,55 @@ export default function ProductDetails(){
 
    
     return(<>
-      <Link to={`/store${location.state?location.state:'?page=1'}`} className="backToStore">←</Link>
-    <div className="productDetails-nav">   {categories?categories.slice(12,20).map(item=><Link to={`/store?type=${item.slug}`}  className="productDetails-nav-item">{item.name}</Link>):<div>loading</div>}</div>
+    {window.innerWidth>550 && <div className="productDetails-nav-container">
+     <div className="productDetails-nav">  
+    <Link to={`/store${location.state?location.state:'?page=1'}`} className="backToStore">←</Link> 
+    {categories?categories.slice(12,20).map(item=><Link to={`/store?type=${item.slug}`}  className="productDetails-nav-item">{item.name}</Link>):<div>loading</div>}
+    </div>
+     </div>}
+    
     <div className="productDetails-div">
         
     {product?<div className="product-detail">
+
+
         <CarouselComponent Imagelist={product.images}/> 
+
+
         <div className="product-info-div">
-        <div className="product-info-pd">
+         <div className="product-info-pd">
+          
             {/* to be added : category, stock, dimensions */}
         <div className="product-title"  ><div style={{fontSize:'.7rem',marginLeft:'0rem',color:'white'}}><span style={{backgroundColor:'rgb(68, 64, 64)',padding:'.2rem'}}>{product.brand && product.brand}</span></div>{product.title}</div> 
         <div>
-        <div style={{fontSize:'1rem',fontWeight:600}}>Description:</div>
+        <div id='pd-subHead'>Description:</div>
         <p className="product-description" >{product.description}</p>
         </div>
        
         <div className="product-info-price-div">
-        <div style={{fontSize:'1rem',fontWeight:600}}>Price:</div><div className="price-num">${product.price}</div><div></div>
+        <div  id='pd-subHead'>Price:</div><div className="price-num">${product.price}</div><div></div>
         </div>
         <div  className="product-info-rating-div">
-            <div style={{fontSize:'1rem',fontWeight:600}} >Rating:</div>
+            <div id='pd-subHead' >Rating:</div>
             <StarRating rating={product.rating}/>
-            <div className="rating-num" style={{fontSize:'1rem',fontWeight:600}}><span style={{fontSize:'1.5rem'}}>{product.rating.toFixed(1)}</span>/5</div>
+            <div className="rating-num" id='pd-subHead'><span style={{fontSize:'1.5rem'}}>{product.rating.toFixed(1)}</span>/5</div>
           
         </div>
         <div className="policy-ship-div" >
            
            
-            <div style={{fontWeight:600}}> {product.returnPolicy}</div>
+            <div id='pd-subHead'> {product.returnPolicy}</div>
             
-            <div style={{fontWeight:600,paddingTop:'.7rem'}}>{product.shippingInformation}</div>
+            <div id='pd-subHead'>{product.shippingInformation}</div>
            
            </div>
-           <div style={{display:'flex',fontWeight:600,paddingTop:'.5rem'}} className="stock-div">
-            <div style={{fontSize:'1rem',fontWeight:600}}>Stocks left :</div>
+           <div id='pd-subHead' style={{display:'flex'}} className="stock-div">
+            <div id='pd-subHead'>Stocks left :</div>
         <span>{product.stock}</span> </div>
          
          
         <div className="quantity-container-div">
-           <div style={{fontWeight:'600',position:'absolute',left:0}}>Select Quantity:</div>
+           <div id='pd-subHead'>Select Quantity:</div>
            <div className="quantity-container">
            <div
                 className="decrease-btn" 
@@ -185,14 +195,20 @@ export default function ProductDetails(){
          <div className="review-box" ><span style={{fontWeight:700}}>Top Reviews</span>
          {product.reviews.map(review=>
          <div className="reviews" >
-            <div className="user-review"><img src='/userIcon.png' width='40px'/>{review.reviewerName} <div style={{fontSize:'.9rem',color:'rgb(85, 81, 81)',paddingLeft:'10rem'}}>Reviewed on: {formatDate(review.date)}</div></div>
+            <div className="user-review">
+              <div style={{display:'flex',gap:'.4rem', alignItems:'center'}}>
+              <img src='/userIcon.png' width='40px'/>{review.reviewerName}
+              </div>
+             
+               <div style={{fontSize:'.9rem',color:'rgb(85, 81, 81)'}}>Reviewed on: {formatDate(review.date)}</div>
+               </div>
           
             <StarRating  rating={review.rating}/>
            
             <div>{review.comment}</div>
 
          </div>)}
-         </div>
+         </div> 
 
 
         </div>

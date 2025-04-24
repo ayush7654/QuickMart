@@ -10,7 +10,9 @@ body{
  width: 100%;
 
 }
-
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
