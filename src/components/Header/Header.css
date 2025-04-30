@@ -2,7 +2,7 @@
     position: sticky;
     top: 0;
     z-index: 1;
-    background-color: rgb(27, 27, 27);  /* rgb(62, 69, 110) */
+    background-color:  rgb(27, 27, 27);  /* */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
     width: 100%;
   }
@@ -47,11 +47,11 @@
   .name{
     border: 0px solid red;
     font-weight:900;
-    font-size: 3.2rem;
-    font-family:'Times New Roman', Times, serif;
+    font-size: 2.8rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
   }
   .logoImg{
-    width:6rem;
+    width:5rem;
    
   }
   .tagline{
@@ -208,7 +208,7 @@
         font-size: .8rem;
        
         
-        height:1rem;
+       
       
       }
       .name{
@@ -244,10 +244,7 @@
 
       }
 
-      .Home-Nav-Container{
-   
-          gap:2rem;
-      }
+     
 
 
     .header-searchBar-div{
@@ -275,7 +272,7 @@
  
     .Home-Nav-Container{
        
-        gap:.3rem;
+        gap:1rem;
         align-items: center;
         padding-top:1rem ;
        
@@ -290,7 +287,7 @@
         
         border-radius: .2rem;
         padding:.2rem;
-        height:1rem;
+    
       
       }
       .name{
@@ -330,7 +327,7 @@
    
       border-radius: .2rem;
       padding:.2rem;
-      height:.8rem;
+     
     
     }
       .name{

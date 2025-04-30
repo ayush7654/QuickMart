@@ -21,7 +21,7 @@ export default function Authentication(){
         <div className="cart-BG">
     
         <div className="cartOut-text">
-        <img className="cartOut-img" src='QMcartArrow.webp' />
+        <img className="cartOut-img" src='QMicons/QMcartArrow.webp' />
             <div className="cartOut-text-1">Missing Cart items?</div>
         <div className="cartOut-text-2">Login to see the items you added previously</div>
         <Link to="/login" className="cart-Login-btn"> Login </Link>

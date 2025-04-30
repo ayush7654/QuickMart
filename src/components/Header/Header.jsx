@@ -10,11 +10,11 @@ export default function Header(){
     console.log('username',firebase.currentUser)
     
 
-    const elements = [{title:"HOME ",path:'/',logo:'homelogo2.png'},
-        {title:"STORE ",path:'/store?page=1',logo:'storeLogo3.png'},
-        {title:"CART ", path:'/cart',logo:'cartlogo.png'},
+    const elements = [{title:"HOME ",path:'/',logo:'QMicons/homelogo2.png'},
+        {title:"STORE ",path:'/store?page=1',logo:'QMicons/storeLogo3.png'},
+        {title:"CART ", path:'/cart',logo:'QMicons/cartlogo.png'},
       
-        {title:firebase.isLoggedIn?'Name':'LOGIN',path:'/login',logo:firebase.isLoggedIn?'userIcon.png':'loginlogo.png'}]
+        {title:firebase.isLoggedIn?'Name':'LOGIN',path:'/login',logo:firebase.isLoggedIn?'QMicons/userIcon.png':'QMicons/loginlogo.png'}]
 
     const [searchTerm,setSearchTerm]= useState('')
 
@@ -68,7 +68,7 @@ export default function Header(){
         <div className="header-home">
         
         <div className="logo-title">
-        <img src='/QMsiteLogo.png'  className="logoImg"  /> 
+        <img src='QMicons//QMsiteLogo.png'  className="logoImg"  /> 
         <div  className="header-logo-name">
         <div className="name">QuickMart</div>
      {/* <div className="tagline">Quick Deals, Quick Feels </div>  */}

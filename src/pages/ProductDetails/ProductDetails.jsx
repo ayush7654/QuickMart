@@ -107,15 +107,17 @@ export default function ProductDetails(){
       };
       const formattedDate = formatDate("2024-05-23T08:56:21.623Z");
       console.log('date is ',formattedDate);
-
+     
+      const categoryArr= categories? (window.innerWidth>775? categories.slice(12,20): categories.slice(12,16)):'loading'
+      console.log('arr is',categoryArr)
    
     return(<>
-    {window.innerWidth>550 && <div className="productDetails-nav-container">
+      <div className="productDetails-nav-container">
      <div className="productDetails-nav">  
     <Link to={`/store${location.state?location.state:'?page=1'}`} className="backToStore">←</Link> 
-    {categories?categories.slice(12,20).map(item=><Link to={`/store?type=${item.slug}`}  className="productDetails-nav-item">{item.name}</Link>):<div>loading</div>}
+    {categories?categoryArr.map(item=><Link to={`/store?type=${item.slug}`}  className="productDetails-nav-item">{item.name}</Link>):<div>loading</div>}
     </div>
-     </div>}
+     </div> 
     
     <div className="productDetails-div">
         

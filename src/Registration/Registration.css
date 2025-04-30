@@ -13,7 +13,7 @@
     width: 60%;
    border-radius: 1rem;
     overflow: hidden;
-    background-image: url('/RegisterImg.jpg');
+    background-image: url('/QMbgImages/RegisterImg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -124,7 +124,7 @@
 @media(max-width:770px){
     .register-Img{
         width: 40%;
-        background-image: url('/RegBGPh.jpg');
+        background-image: url('/QMbgImages/RegBGPh.jpg');
         background-position: -100px;
 
     }

@@ -65,7 +65,7 @@ export default function CarouselComponent({Imagelist}) {
  
     <div className="carousel-div">
       <div className="carousel-sub-div">
-      <button className='leftArrow'  onClick={()=>handleSlide('left')} ><div><ChevronLeft className='left-arrow-content' /></div></button>
+      <div className='leftArrow'  onClick={()=>handleSlide('left')} ><div><ChevronLeft className='left-arrow-content' /></div></div>
       <div className='ImageBox'>  
        {Imagelist.map((img,index)=>  // We render all the images together side by side.
        <img 
@@ -75,7 +75,7 @@ export default function CarouselComponent({Imagelist}) {
        style={{translate:`${-ImgId*imageWidth}px`}} //This property moves the image outside of the image box to a distance equal to its length.
        />)}
       </div>
-      <button className='rightArrow'  onClick={()=>handleSlide('right')} ><div><ChevronRight className='right-arrow-content' /></div></button>
+      <div className='rightArrow'  onClick={()=>handleSlide('right')} ><div><ChevronRight className='right-arrow-content' /></div></div>
       </div>
       <div className="ImgSelecters">
       {Imagelist.map((item,index)=><div id={index} onClick={()=>handleClick(index)} className={ImgId===index?"imgBtn-clicked":'imgBtn'} key={index}></div>)}

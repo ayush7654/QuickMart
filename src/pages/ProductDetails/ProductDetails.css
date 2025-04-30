@@ -195,7 +195,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-right: 1.2rem;
+  
     width: 45%;
     position: sticky;
     top:0;
@@ -216,9 +216,11 @@
   align-items: center;
   border: 1px solid;
   height: 3rem;
-  width: .8rem;
-  background-color: #1a1a1a00;
-  color: #050505;
+  padding:.5rem;
+  border-radius: 20%;
+  background-color: #413c3c;
+  color: #ffffff;
+  border: 0px solid white;
     
   }
   .ImageBox{
@@ -271,6 +273,7 @@
     font-weight: 400;
     color:black;
     left:1rem;
+    
   }
 
   .productDetails-nav-container{
@@ -285,10 +288,10 @@
 
   .productDetails-nav{
    display: flex;
-   justify-content: center;
+   justify-content: space-around;
    align-items: center;
    width: 90%;
-   gap:2rem;
+   
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    height: 3.5rem;
    border: 0px solid red;
@@ -361,6 +364,10 @@ height: 90%;
 
   @media (max-width:1390px){
 
+    .product-detail{
+      border: 2px solid red;
+    }
+
       .product-description{
         width: 80%;
       }
@@ -372,12 +379,12 @@ height: 90%;
       }
 
       .leftArrow,.rightArrow{
+  
+        height: 2.5rem;
+        padding:.2rem;
     
-      height: 3rem;
-      width: .2rem;
-   
-        
-      }
+          
+        }
       .ImageBox{
       width: 31.25rem;
       }
@@ -438,12 +445,12 @@ height: 90%;
     
 
       .leftArrow,.rightArrow{
-    
-      height: 3rem;
-      width: .2rem;
-   
-        
-      }
+  
+        height: 2.5rem;
+        padding:.2rem;
+  
+        }
+
       .ImageBox{
       width: 25rem;
       }
@@ -474,14 +481,14 @@ height: 90%;
   
     
       .carousel-div{
-     border: 2px solid red;
+     border: 0px solid red;
         width: 45%;
      
       }
       .carousel-sub-div{
         
         gap: .2rem;
-        border: 2px solid rgb(0, 34, 255);
+        border: 0px solid rgb(0, 34, 255);
        
       }
       .product-description{
@@ -495,13 +502,13 @@ height: 90%;
       }
   
 
-      .leftArrow,.rightArrow{
+    .leftArrow,.rightArrow{
+  
+        height: 2.5rem;
+        padding:.2rem;
     
-      height: 3rem;
-      width: .2rem;
-   
-        
-      }
+          
+        }
       .ImageBox{
       width: 18.75rem;
       }
@@ -553,11 +560,34 @@ height: 90%;
   }
  
   @media (max-width:745px){
+
+    .productDetails-nav{
+    
+      gap:.8rem;
+     width: 90%;
+      height: 2.5rem;
+      
+       
+     }
+     .productDetails-nav-item{
+      
+       font-size: .8rem;
+    
+     background-color: rgba(255, 255, 255, 0.875);
+   height: 90%;
+     padding-left:0rem;
+     padding-right:0rem;
+     border-radius: 10%;
+     color:black;
+    
+     }
+
     .productDetails-div{
       display: flex;
       justify-content: center;
-      border: 2px solid black;
+      border: 0px solid black;
       width: 100%;
+      padding-top:1rem;
       
     }
     .product-info-div{
@@ -653,30 +683,18 @@ height: 90%;
   
   @media (max-width:600px){
 
-    .backToStore{
- 
-    }
-
+    
     .productDetails-nav{
     
-      gap:.8rem;
-    
-      height: 2.5rem;
+      
+     width: 80%;
+      
       
        
      }
-     .productDetails-nav-item{
-      
-       font-size: .8rem;
+
+   
     
-     background-color: rgba(255, 255, 255, 0.875);
-   height: 90%;
-     padding-left:.5rem;
-     padding-right:.5rem;
-     border-radius: 10%;
-     color:black;
-    
-     }
  
      
       .product-info-price-div,.product-info-rating-div{
@@ -730,16 +748,35 @@ height: 90%;
   
  
   
-  .addTocartBtn{
-    
-   
   
-  }
  
 
   }
 
   @media (max-width:400px){
+
+    .backToStore{
+    
+    
+       font-size: 1.2rem;
+      
+       left:.2rem;
+       
+     }
+
+     .productDetails-nav{
+    
+      
+      width: 85%;
+    
+
+        
+      }
+      .productDetails-nav-item{
+        font-size: .7rem;
+      }
+
+
     .product-detail{
       
         display: flex;
@@ -812,14 +849,10 @@ height: 90%;
   }
 
   .leftArrow,.rightArrow{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid;
-    height: 2.5rem;
-    width: .6rem;
-    color: #050505;
-    background-color: #1a1a1a00;
+  
+    height: 2rem;
+    padding:.2rem;
+
       
     }
   
@@ -836,7 +869,7 @@ height: 90%;
     }
 
     .Product-Details-SimilarProducts-list{
-      gap:.5rem;
+      gap:0rem;
     }
 
     .productDetails-product{

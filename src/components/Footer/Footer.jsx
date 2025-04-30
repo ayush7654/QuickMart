@@ -58,8 +58,8 @@ export default function Footer() {
 <div className='upper-right'>
     <div className='right-a'>
         <div id='footer-title'>Mail Us</div>
-        <div id='footer-list' >
-        <div>QuickMart Internet Private Limited, </div>
+        <div id='footer-list'>
+        <div>QuickMart Internet Private Ltd, </div>
         <div>Buildings Alyssa, Begonia &</div>
         <div>Clove Embassy Tech Village,</div>
         <div>Bengaluru, 560103,</div>
@@ -67,16 +67,16 @@ export default function Footer() {
         </div>
       
         <div>Social:</div>
-        <div  style={{display:'flex', alignItems:'center',justifyContent:'space-between'}} ><img className='footer-fbIcon' src='./fbIcon2.png' />
-        <img className='footer-xIcon' src='./xIcon2.png'  />
-        <img className='footer-ytIcon' src='./ytIcon2.png' />
-        <img className='footer-instaIcon' src='./InstaIcon2.png'/>
+        <div  style={{display:'flex', alignItems:'center',justifyContent:'space-between'}} ><img className='footer-fbIcon' src='./QMicons/fbIcon2.png' />
+        <img className='footer-xIcon' src='./QMicons/xIcon2.png'  />
+        <img className='footer-ytIcon' src='./QMicons/ytIcon2.png' />
+        <img className='footer-instaIcon' src='./QMicons/InstaIcon2.png'/>
         </div>
     </div>
     <div className='right-b'>
         <div id='footer-title'>Registered Office Address</div>
         <div id='footer-list' >
-        <div>QuickMart Internet Private Limited,</div>
+        <div>QuickMart Internet Private Ltd,</div>
         <div>Buildings Alyssa, Begonia &</div>
         <div>Clove Embassy Tech Village,</div>
         <div>Bengaluru, 560103,</div>

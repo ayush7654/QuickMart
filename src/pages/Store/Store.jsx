@@ -185,7 +185,8 @@ export default function Store() {
           →
         </div>
       </div>} 
-    <div className="store-footer-info" style={{padding:'1rem'}}>
+      <div style={{display:'flex',justifyContent:'center',width:'100%'}}>
+      <div className="store-footer-info" >
       <div className="store-footer-heading">Top Stories: Brand Directory</div>
       <div className="store-footer-list">
         <div id='store-footer-subhead' className="store-footer-info-a">
@@ -215,6 +216,8 @@ export default function Store() {
         </div>
       </div>
     </div>
+      </div>
+ 
     </div>
   );
 }

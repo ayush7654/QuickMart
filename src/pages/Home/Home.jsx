@@ -7,13 +7,11 @@ export default function Home(){
 
 const location = useLocation()
 const homeBGs = [
-    { id: 0, img: '/homeBGiPhone3.jpg', product: './store/123' },
-    { id: 1, img: 'homeAirJs3.png', product: './store/88' },
-    { id: 2, img: 'homeRolex4.avif', product: './store/98' },
-    { id: 3, img: 'homeBGclothes4.jpg', product: './store/98' },
-    { id: 4, img: '/homeBGiPhone3.jpg', product: './store/123'
-        
-    }
+    { id: 0, img1: 'QMbgImages/QMapple.png',img2:'QMbgImages/homeBGiPhone.avif', product: './store/123' },
+    { id: 1, img1: 'QMbgImages/QMAirJordan.webp',img2:'QMbgImages/AjSample2.jpg', product: './store/88' },
+    { id: 2, img1: 'QMbgImages/QMRolex2final.jpg',img2:'QMbgImages/QMRolexSm.webp', product: './store/98' },
+    { id: 3, img1: 'QMbgImages/QMlevis2.jpg',img2:'QMbgImages/QMlevisSm.jpg', product: './store/98' },
+    { id: 4, img1: 'QMbgImages/QMapple.png',img2:'/homeBGiPhone.avif', product: './store/123' }
   ];
 const [currentBGImg,setCurrentBGImg]= useState('');
 const[currentPath,setCurrentPath]= useState('./store/123')
@@ -58,21 +56,22 @@ useEffect(() => {
   <div className="Home">
  
           <div className="homeContent-Container">
-            {homeBGs.map(bg=><div key={bg.id} className="homeCrousal" >
-                <div
+            {homeBGs.map(bg=><div key={bg.id} className="homeCrousal"  >
+             {/*  <img src={`${bg.img}`} width='100%'/> */}
+            <div
   className="homeContent"
   style={{
-    backgroundImage: `url(${bg.img})`,
+    backgroundImage: `url(${window.innerWidth>600?bg.img1:bg.img2})`,
     transform: `translateX(-${currentBGImg * 100}vw)`,
     transition: transition?'transform 2000ms ease-in-out':'none',
-  }}
-></div>
+  }} 
+>   {/*   <img className="homeImg" style={{marginTop:'-15rem'}} src={`${bg.img}`} width='100%'/>   */} </div> 
 
 </div>)}
-   
+<Link to={currentPath} className="buy-link">Buy Now</Link>
 <div className="bgImgNav"><div className="bgImgNav-slider" style={{transform: transition?`translateX(${currentBGImg*100}%)`:`translateX(0%)`, transition:transition?'transform 2000ms ease-in-out':'none'}}></div></div>
         </div>
-        <Link to={currentPath} className="buy-link">Buy Now</Link>
+      
          
          <div className="home-Products-div">
           <div className="home-Products-div-head">Exclusive Offers</div>
