@@ -68,7 +68,7 @@ export default function Header(){
         <div className="header-home">
         
         <div className="logo-title">
-        <img src='QMicons//QMsiteLogo.png'  className="logoImg"  /> 
+        <img src='/QMicons//QMsiteLogo.png'  className="logoImg"  /> 
         <div  className="header-logo-name">
         <div className="name">QuickMart</div>
      {/* <div className="tagline">Quick Deals, Quick Feels </div>  */}

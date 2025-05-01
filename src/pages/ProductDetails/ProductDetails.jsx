@@ -199,7 +199,7 @@ export default function ProductDetails(){
          <div className="reviews" >
             <div className="user-review">
               <div style={{display:'flex',gap:'.4rem', alignItems:'center'}}>
-              <img src='/userIcon.png' width='40px'/>{review.reviewerName}
+              <img src='/QMicons/userIcon.png' width='40px'/>{review.reviewerName}
               </div>
              
                <div style={{fontSize:'.9rem',color:'rgb(85, 81, 81)'}}>Reviewed on: {formatDate(review.date)}</div>
