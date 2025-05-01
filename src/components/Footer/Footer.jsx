@@ -67,10 +67,10 @@ export default function Footer() {
         </div>
       
         <div>Social:</div>
-        <div  style={{display:'flex', alignItems:'center',justifyContent:'space-between'}} ><img className='footer-fbIcon' src='./QMicons/fbIcon2.png' />
-        <img className='footer-xIcon' src='./QMicons/xIcon2.png'  />
-        <img className='footer-ytIcon' src='./QMicons/ytIcon2.png' />
-        <img className='footer-instaIcon' src='./QMicons/InstaIcon2.png'/>
+        <div  style={{display:'flex', alignItems:'center',justifyContent:'space-between'}} ><img className='footer-fbIcon' src='/QMicons/fbIcon2.png' />
+        <img className='footer-xIcon' src='/QMicons/xIcon2.png'  />
+        <img className='footer-ytIcon' src='/QMicons/ytIcon2.png' />
+        <img className='footer-instaIcon' src='/QMicons/InstaIcon2.png'/>
         </div>
     </div>
     <div className='right-b'>

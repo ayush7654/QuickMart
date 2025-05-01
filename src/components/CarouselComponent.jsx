@@ -8,9 +8,7 @@ export default function CarouselComponent({Imagelist}) {
 
   // Function to update the image width based on screen size
   const updateImageWidth = () => {
-    if (window.innerWidth < 400) {
-      setImageWidth(250); // Example: smaller width for mobile devices
-    } else if(window.innerWidth < 600) {
+   if(window.innerWidth < 600) {
       setImageWidth(300); // Example: default width for larger screens
     } else if(window.innerWidth < 745) {
       setImageWidth(500); // Example: default width for larger screens
@@ -65,7 +63,7 @@ export default function CarouselComponent({Imagelist}) {
  
     <div className="carousel-div">
       <div className="carousel-sub-div">
-      <div className='leftArrow'  onClick={()=>handleSlide('left')} ><div><ChevronLeft className='left-arrow-content' /></div></div>
+      <div className='leftArrow'  onClick={()=>handleSlide('left')} ><ChevronLeft className='left-arrow-content' /></div>
       <div className='ImageBox'>  
        {Imagelist.map((img,index)=>  // We render all the images together side by side.
        <img 
@@ -75,7 +73,7 @@ export default function CarouselComponent({Imagelist}) {
        style={{translate:`${-ImgId*imageWidth}px`}} //This property moves the image outside of the image box to a distance equal to its length.
        />)}
       </div>
-      <div className='rightArrow'  onClick={()=>handleSlide('right')} ><div><ChevronRight className='right-arrow-content' /></div></div>
+      <div className='rightArrow'  onClick={()=>handleSlide('right')} ><ChevronRight className='right-arrow-content' /></div>
       </div>
       <div className="ImgSelecters">
       {Imagelist.map((item,index)=><div id={index} onClick={()=>handleClick(index)} className={ImgId===index?"imgBtn-clicked":'imgBtn'} key={index}></div>)}

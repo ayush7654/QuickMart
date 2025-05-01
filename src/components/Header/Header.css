@@ -1,8 +1,8 @@
 .sticky-header {
     position: sticky;
     top: 0;
-    z-index: 1;
-    background-color:  rgb(27, 27, 27);  /* */
+    z-index: 999;
+    background: linear-gradient(to bottom, rgb(27, 27, 27), #3b3a3a, rgb(27, 27, 27));
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
     width: 100%;
   }
@@ -132,7 +132,7 @@
     border: 1px solid white;
     border-radius: 15%;
   
-    background-color: rgb(27, 27, 27);
+   
   
     padding:.5rem;
    
@@ -148,11 +148,21 @@
     width: 25px;
   }
 
+  .header-backArrow{
+    position: absolute;
+    bottom: 15px;
+    left:5px;
+    display: none;
+    color:white;
+  }
+
  
 
   @media (max-width:1025px){
 
- 
+    .header-home{
+      height: 4rem;
+    }
     .Home-Nav-Container{
       
         gap:.5rem;
@@ -229,7 +239,7 @@
     .header-home{
     
 
-        height:7rem;
+        height:5.5rem;
         
        
         align-items: start;
@@ -244,13 +254,22 @@
 
       }
 
+      .header-backArrow{
+        position: absolute;
+        bottom: 10px;
+        left:10px;
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
      
 
 
     .header-searchBar-div{
         right: 50%;
         translate:50% ;
-        top:65px;
+        bottom:7px;
         position: absolute;
     
        width: 80%;
@@ -274,7 +293,7 @@
        
         gap:1rem;
         align-items: center;
-        padding-top:1rem ;
+        padding-top: .7rem;
        
        
         font-size: .8rem;
@@ -310,11 +329,20 @@
     
      
     
+    .header-backArrow{
+      position: absolute;
+      bottom: 15px;
+      left:5px;
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
     .Home-Nav-Container{
        
       gap:.8rem;
    
-      padding-top:1rem ;
+  
   
       margin-right: .5rem;
       font-size: .7rem;
@@ -366,7 +394,7 @@
       }
       .logoImg{
         width:2.4rem;
-        padding-top: .5rem;
+        padding-top: .3rem;
         
     
       }

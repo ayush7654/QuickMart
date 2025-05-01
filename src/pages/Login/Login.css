@@ -272,14 +272,14 @@
       font-size: .8rem;
      }
      .Email{
-       width: 80%;
+       width: 90%;
        display: flex;
        flex-direction: column;
       
      }
      
      .Password{
-       width: 80%;
+       width: 90%;
        display: flex;
        flex-direction: column;
      }

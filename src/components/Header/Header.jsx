@@ -96,7 +96,8 @@ export default function Header(){
          <div className='Home-Nav-Container'>
             {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}> <img src={`/${element.logo}`} id='header-nav-Icon'/><div></div></NavLink>)}
          </div>
-        
+
+        <div className="header-backArrow"> <Link style={{color:'white'}} to={`/store${location.state?location.state:'?page=1'}`}  >←</Link> </div>
          
         
     </div>

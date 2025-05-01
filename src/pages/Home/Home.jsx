@@ -11,7 +11,7 @@ const homeBGs = [
     { id: 1, img1: 'QMbgImages/QMAirJordan.webp',img2:'QMbgImages/AjSample2.jpg', product: './store/88' },
     { id: 2, img1: 'QMbgImages/QMRolex2final.jpg',img2:'QMbgImages/QMRolexSm.webp', product: './store/98' },
     { id: 3, img1: 'QMbgImages/QMlevis2.jpg',img2:'QMbgImages/QMlevisSm.jpg', product: './store/98' },
-    { id: 4, img1: 'QMbgImages/QMapple.png',img2:'/homeBGiPhone.avif', product: './store/123' }
+    { id: 4, img1: 'QMbgImages/QMapple.png',img2:'QMbgImages/homeBGiPhone.avif', product: './store/123' }
   ];
 const [currentBGImg,setCurrentBGImg]= useState('');
 const[currentPath,setCurrentPath]= useState('./store/123')

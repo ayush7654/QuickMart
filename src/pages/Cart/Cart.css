@@ -30,7 +30,7 @@
       font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
       z-index: 0;
       border:0px solid rgb(68, 65, 65);
-      background-color: rgba(221, 230, 246, 0.953);
+      background-color: rgba(221, 230, 246, 0.785);
     }
 
     .cartOut-text-1{
@@ -402,7 +402,7 @@ font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
     }
         .cart-BG{
         
-          background-image: url('/CartInBG.jpg');
+          background-image: url('QMbgImages/CartInBG.jpg');
        
         
         }

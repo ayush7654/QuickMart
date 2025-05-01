@@ -1,6 +1,7 @@
 import './App.css'
 import React ,{useState,createContext} from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ScrollToTop from "./components/ScrollToTop";
 import Home from './pages/Home/Home'
 
 import Store from './pages/Store/Store'
@@ -24,7 +25,7 @@ function App() {
   return (
     <BrowserRouter>
     <FirebaseProvider >
-
+    <ScrollToTop />
     <Routes>
       <Route element = {<Layout/>}>
       <Route path="/" element={<Home/>}/>
