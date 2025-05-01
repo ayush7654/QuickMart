@@ -10,7 +10,7 @@ const homeBGs = [
     { id: 0, img1: 'QMbgImages/QMapple.png',img2:'QMbgImages/homeBGiPhone.avif', product: './store/123' },
     { id: 1, img1: 'QMbgImages/QMAirJordan.webp',img2:'QMbgImages/AjSample2.jpg', product: './store/88' },
     { id: 2, img1: 'QMbgImages/QMRolex2final.jpg',img2:'QMbgImages/QMRolexSm.webp', product: './store/98' },
-    { id: 3, img1: 'QMbgImages/QMlevis2.jpg',img2:'QMbgImages/QMlevisSm.jpg', product: './store/98' },
+    { id: 3, img1: 'QMbgImages/QMlevis2.jpg',img2:'QMbgImages/QMlevisSm.jpg', product: './store/84' },
     { id: 4, img1: 'QMbgImages/QMapple.png',img2:'QMbgImages/homeBGiPhone.avif', product: './store/123' }
   ];
 const [currentBGImg,setCurrentBGImg]= useState('');
@@ -22,30 +22,34 @@ const [transition,setTransition]= useState(true)
 
 
 //console.log(location)
-console.log(currentPath)
+console.log(currentBGImg)
 
 
 useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBGImg(prev => {
-        const next = (prev + 1) % 5; //loops through 0,1,2,3
+        const next = (prev + 1) % 5; //loops through 0,1,2,3,4
         setCurrentPath(homeBGs[next].product); // use the upcoming index here
         return next;
       });
     }, 4000);
   
     return () => clearInterval(interval);
-  }, []);
+  }, []); 
+  
+ 
   
 
-
-  useEffect(()=>{
-    if(currentBGImg===0){
-        setTransition(false);
-    }else{
-        setTransition(true)
+  useEffect(() => {
+    if (currentBGImg === 0) {
+      setTransition(false);
+  
+      // Wait one frame to allow transition: none to apply
+      requestAnimationFrame(() => {
+        setTransition(true); // re-enable transition after DOM updates
+      });
     }
-  },[currentBGImg])
+  }, [currentBGImg]);
 
  
 
@@ -63,7 +67,7 @@ useEffect(() => {
   style={{
     backgroundImage: `url(${window.innerWidth>600?bg.img1:bg.img2})`,
     transform: `translateX(-${currentBGImg * 100}vw)`,
-    transition: transition?'transform 2000ms ease-in-out':'none',
+    transition: transition?'transform 2000ms ease-in-out':'none'
   }} 
 >   {/*   <img className="homeImg" style={{marginTop:'-15rem'}} src={`${bg.img}`} width='100%'/>   */} </div> 
 
