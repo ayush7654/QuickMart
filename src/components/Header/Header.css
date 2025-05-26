@@ -2,8 +2,9 @@
     position: sticky;
     top: 0;
     z-index: 999;
-    background: linear-gradient(to bottom, rgb(27, 27, 27), #3b3a3a, rgb(27, 27, 27));
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+   /*  background: linear-gradient(to bottom, rgb(22, 22, 22), #292828); */
+  background-color: #eeeeee;  
+   /*  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */ /* Optional shadow */
     width: 100%;
   }
   
@@ -12,7 +13,7 @@
     border:0px solid white;
     height:5rem;
     
-    color:rgb(255, 255, 255);
+    color: black;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -46,12 +47,13 @@
   }
   .name{
     border: 0px solid red;
-    font-weight:900;
-    font-size: 2.8rem;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+   letter-spacing: .1rem;
+    
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
   }
   .logoImg{
-    width:5rem;
+    width:20rem;
+    margin-left: .5rem;
    
   }
   .tagline{
@@ -63,6 +65,7 @@
     width: 40%;
     display:flex;
     flex-direction: column;
+   
     
   }
   .header-searchBar{
@@ -79,7 +82,7 @@
     height: 2.5rem;
     border: 0px;
     border-radius: .2rem;
-    background-color: rgb(224, 229, 229);
+    background-color: rgb(255, 255, 255);
   }
 
   .suggestionBox{
@@ -112,40 +115,69 @@
     align-items: center;
     font-weight:400;
     margin-right: 1.2rem;
-  
-    font-size: 1rem;
+   
+    font-size: .9rem;
     font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
   }
+
+
   .navlink{
-    color:rgb(255, 255, 255);
+    color: black;
     display: flex;
     flex-direction: row;
     gap: .2rem;
     align-items: center;
     justify-content: center;
-    
+    letter-spacing: .2rem;
+    padding-bottom: .2rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0);
    
-   
-    
+  
+  
+
   }
-  .navlink-selected{
-    border: 1px solid white;
-    border-radius: 15%;
-  
+  .navlink:hover{
+    color:black;
+   border-bottom: 0px solid grey;
+   text-decoration: underline;
+   text-underline-offset: .5rem;
    
+  }
+  .navlink-selected {
   
-    padding:.5rem;
+    letter-spacing: .2rem;
+    padding:.2rem;
+  color: black;
+  border-radius: .3rem;
    
+   border: 0px solid rgb(134, 130, 130);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: .2rem;
    
   
   }
 
+  .navlink-selected #header-nav-name{
+    padding-bottom: .2rem;
+    border-bottom: 2px solid rgb(48, 47, 47);
+  }
+
+  #header-icon{
+    border: 0px solid black;
+    height: 1.2rem;
+    width: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
   #header-nav-Icon{
-    width: 25px;
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
   }
 
   .header-backArrow{
@@ -153,8 +185,66 @@
     bottom: 15px;
     left:5px;
     display: none;
-    color:white;
-  }
+   }
+
+  .backToStore{
+    
+    position: absolute;
+     font-size: 1.5rem;
+     font-weight: 400;
+     color:rgb(255, 255, 255);
+     left:1rem;
+     
+   }
+ 
+   .productDetails-nav-container{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: rgb(26, 25, 25); 
+     width: 100%;
+     position: relative;
+   }
+ 
+ 
+   .productDetails-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 3.5rem;
+    border: 0px solid red;
+   background-color: rgb(26, 25, 25); 
+     
+   }
+   .productDetails-nav-item{
+     display: flex;
+     border: 0px solid red;
+     align-items: center;
+     font-size: 1rem;
+  
+/*   background-color: rgba(255, 255, 255, 0.875); */
+ height: 90%;
+   padding-left:.5rem;
+   padding-right:.5rem;
+   
+   color:rgb(255, 255, 255);
+  
+   }
+   .productDetails-nav-item:hover{
+border-bottom: 2px solid white;
+color:rgb(255, 255, 255);
+   }
+ 
+   .Product-Details-SimilarProducts{
+     border: 0px black solid;
+   background-color: white;
+  width: 100%;
+  margin-top:2rem;
+  margin-bottom:2rem;
+   }
 
  
 

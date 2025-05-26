@@ -47,8 +47,9 @@
     border-radius: 1rem;
     align-items: center;
    justify-content: center;
-    background-color: rgb(179, 196, 230);
-    box-shadow: -7px 7px rgb(127, 125, 125);
+    /* background-color: #b9dbf2; */
+    background: linear-gradient(to right,rgb(68, 71, 147) 0% , #2898e2c5 , rgb(68, 71, 147)  100%);
+    box-shadow: -7px 7px rgb(68, 66, 66);
    
   }
   .login-success-box{
@@ -58,7 +59,7 @@
     padding:0px;
     align-items: center;
     justify-content: center;
-    background-color:rgb(188, 202, 230);
+    background-color:rgb(188, 202, 235);
     border-radius: 1rem;
     height:90%;
     width: 90%;

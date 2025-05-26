@@ -49,8 +49,10 @@
     padding:2rem ;
 
    font-size: 1rem;
-   background-color: rgb(188, 202, 230); 
-    box-shadow: 10px 10px #1a1a1a5e;
+   
+   /* background: linear-gradient(to right,  rgb(83, 120, 200)0%, #cdd5df , rgb(83, 120, 200) 100%); */
+   background: radial-gradient(circle, #ffffff 0%, rgba(18, 18, 88) 100%);  
+    box-shadow: 10px 10px #ffffff;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -63,7 +65,7 @@
     width: 100%;
   
     padding:2rem ;
-    background-color: rgb(188, 202, 230);
+    background: radial-gradient(circle, #2898e2c5 0%, rgba(18, 18, 88)  100%);  
     box-shadow: 10px 10px #1a1a1a5e;
     margin-top: 2rem;
     display: flex;
@@ -266,63 +268,7 @@
    border:1px solid white;
   }
 
-  .backToStore{
-    
-   position: absolute;
-    font-size: 1.5rem;
-    font-weight: 400;
-    color:black;
-    left:1rem;
-    
-  }
-
-  .productDetails-nav-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    width: 100%;
-    position: relative;
-  }
-
-
-  .productDetails-nav{
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   width: 90%;
-   
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   height: 3.5rem;
-   border: 0px solid red;
-   background-color: rgb(255, 255, 255);
-    
-  }
-  .productDetails-nav-item{
-    display: flex;
-    border: 0px solid red;
-    align-items: center;
-    font-size: 1rem;
- 
-  background-color: rgba(255, 255, 255, 0.875);
-height: 90%;
-  padding-left:.5rem;
-  padding-right:.5rem;
-  border-radius: 10%;
-  color:black;
- 
-  }
-  .productDetails-nav-item:hover{
-    background-color: rgba(227, 230, 235, 0.875);
-  }
-
-  .Product-Details-SimilarProducts{
-    border: 0px black solid;
-  background-color: white;
- width: 100%;
- margin-top:2rem;
- margin-bottom:2rem;
-  }
+  
 
   .similarProducts-head{
   font-size: 2rem;

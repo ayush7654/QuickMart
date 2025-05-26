@@ -8,11 +8,11 @@
   flex-direction: row;
   align-items: center;
   gap:1.5rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   height: 3rem;
   width: 100%;
   font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
-  background-color: white;
+  background: linear-gradient(to right, #2898e2c5,  rgba(18, 18, 88)  , #2898e2c5 100%);
     
   }
   .allBtn{
@@ -46,11 +46,13 @@
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
-    gap:1.5rem;
+    gap:5rem;
     height: 3rem;
     width:100%;
     transition: translate 400ms ease-in-out;
     align-items: center;
+ 
+    
   
    }
    .store-category{
@@ -62,7 +64,8 @@
    padding-left: .3rem;
    padding-right: .3rem;
     border-radius: .3rem;
-    background-color: rgb(163, 184, 221);
+    color:white;
+   
     
     
    }
@@ -85,13 +88,13 @@
   
   
   .store-product{
-    border:0px solid black;
+    border:1px solid rgb(182, 176, 176);
     padding:.3rem;
     height:300px;
     justify-content: center;
     align-content: center;
     text-align: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: .3rem;
     color:black; 
     box-shadow: 0px 1px 1px  rgba(69, 67, 67, 0.2);   
@@ -99,7 +102,7 @@
   }
   .store-product:hover{
     
-    box-shadow: 0px 3px 5px   rgb(98, 95, 95);
+    
   }
   .Store-Product-title{
     color:rgb(78, 74, 74);

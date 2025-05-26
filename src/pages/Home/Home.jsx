@@ -2,54 +2,81 @@ import {useState,useEffect,useRef} from "react";
 import { useLocation, Link } from "react-router-dom";
 import ProductCard from "../../components/ProductCard";
 
+ import { ChevronLeft,ChevronRight } from 'lucide-react'; 
+
+
+
+
+
 import './Home.css';
 export default function Home(){
 
 const location = useLocation()
 const homeBGs = [
-    { id: 0, img1: 'QMbgImages/QMapple.png',img2:'QMbgImages/homeBGiPhone.avif', product: './store/123' },
-    { id: 1, img1: 'QMbgImages/QMAirJordan.webp',img2:'QMbgImages/AjSample2.jpg', product: './store/88' },
-    { id: 2, img1: 'QMbgImages/QMRolex2final.jpg',img2:'QMbgImages/QMRolexSm.webp', product: './store/98' },
-    { id: 3, img1: 'QMbgImages/QMlevis2.jpg',img2:'QMbgImages/QMlevisSm.jpg', product: './store/84' },
-    { id: 4, img1: 'QMbgImages/QMapple.png',img2:'QMbgImages/homeBGiPhone.avif', product: './store/123' }
-  ];
-const [currentBGImg,setCurrentBGImg]= useState('');
-const[currentPath,setCurrentPath]= useState('./store/123')
+  { id: 0, img1: 'QMbgImages/QMAirJordan5.webp',img2:'QMbgImages/AjSample2.jpg', product: './store/88' },
 
+    { id: 1, img1: 'QMbgImages/QMRolex3.jpg',img2:'QMbgImages/QMRolexSm.webp', product: './store/98' },
+    { id: 2, img1: 'QMbgImages/QMApple6.jpg',img2:'QMbgImages/homeBGiPhone.avif', product: './store/123' },
+    { id: 3, img1: 'QMbgImages/QMlevis8.png',img2:'QMbgImages/QMlevisSm.jpg', product: './store/84' }
+  ];
+const [currentBGImg,setCurrentBGImg]= useState(0);
+const[currentPath,setCurrentPath]= useState('./store/123')
+const isFirstRender = useRef(true); // track initial mount
 const [transition,setTransition]= useState(true)
 
 
 
 
-//console.log(location)
+
 console.log(currentBGImg)
 
+function leftNav(){
+  setCurrentBGImg(prev=>{
+   if(prev>0){
+      return prev-1;
+    }
+    else{
+      return prev
+    }
+  })
+}
 
-useEffect(() => {
+function rightNav(){
+  setCurrentBGImg(prev=>{
+
+if(prev<homeBGs.length-1){
+    return prev+1
+  }
+  else{
+    return prev
+  }
+  })
+}
+
+
+  
+ 
+ /*   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentBGImg(prev => {
-        const next = (prev + 1) % 5; //loops through 0,1,2,3,4
-        setCurrentPath(homeBGs[next].product); // use the upcoming index here
-        return next;
-      });
+      setCurrentBGImg(prev => (prev + 1) % homeBGs.length);
     }, 4000);
   
     return () => clearInterval(interval);
-  }, []); 
-  
- 
+  }, []);   */
   
 
-  useEffect(() => {
-    if (currentBGImg === 0) {
-      setTransition(false);
-  
-      // Wait one frame to allow transition: none to apply
-      requestAnimationFrame(() => {
-        setTransition(true); // re-enable transition after DOM updates
-      });
+/*   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return; // skip transition logic on first render
     }
-  }, [currentBGImg]);
+  
+    if (currentBGImg=== 0) {
+      setTransition(false);
+      requestAnimationFrame(() => setTransition(true));
+    }
+  }, [currentBGImg]); */
+
 
  
 
@@ -58,8 +85,15 @@ useEffect(() => {
     return(<>
     
   <div className="Home">
+    
  
           <div className="homeContent-Container">
+            <div className="crousel-frame"></div>
+            <div className="Nav-div">
+<ChevronLeft onClick={leftNav} className="home-left-arrow" strokeWidth={.5} absoluteStrokeWidth />
+              <ChevronRight onClick={rightNav} className="home-right-arrow" strokeWidth={.5} absoluteStrokeWidth />
+
+            </div>
             {homeBGs.map(bg=><div key={bg.id} className="homeCrousal"  >
              {/*  <img src={`${bg.img}`} width='100%'/> */}
             <div
@@ -69,10 +103,15 @@ useEffect(() => {
     transform: `translateX(-${currentBGImg * 100}vw)`,
     transition: transition?'transform 2000ms ease-in-out':'none'
   }} 
->   {/*   <img className="homeImg" style={{marginTop:'-15rem'}} src={`${bg.img}`} width='100%'/>   */} </div> 
+>    </div> 
 
 </div>)}
-<Link to={currentPath} className="buy-link">Buy Now</Link>
+
+<div  className="buy-link">
+  <Link id='buyLink-btn' className="btn-discoverMore">DISCOVER MORE</Link>
+  <Link id='buyLink-btn'  to={currentPath} className="btn-shopNow">SHOP NOW</Link>
+</div>
+
 <div className="bgImgNav"><div className="bgImgNav-slider" style={{transform: transition?`translateX(${currentBGImg*100}%)`:`translateX(0%)`, transition:transition?'transform 2000ms ease-in-out':'none'}}></div></div>
         </div>
       
@@ -126,26 +165,43 @@ useEffect(() => {
 
       
       
-         <div className="bento-heading" ><span id="bento-sub-heading">Click. </span><span id="bento-sub-heading">Pick. </span><span id="bento-sub-heading">Shop.</span> </div>
-        <div className="Home-bottom" >
-          <div  className="category-bento">
-            <div className="bento-left-long"><Link to='/store?type=womens-dresses'><div className="bento-left-long-img"><span className="bento-left-long-img-name" >FASHION</span></div></Link></div>
-       <div className="bento-center">
-        <div className="bento-center-upper">
-          <div className="upper-a"><Link to='/store?type=skin-care'><div className="upper-a-img"><span className="upper-a-img-name" >SKINCARE</span></div></Link></div>
-          <div className="upper-b"><Link to='/store?type=furniture'><div className="upper-b-img"><span className="upper-b-img-name">HOME DECOR</span></div></Link></div>
-          <div className="upper-c"><Link to='/store?type=groceries'><div className="upper-c-img"><span  className="upper-c-img-name" >ESSENTIALS</span></div></Link></div>
-        </div>
-        <div className="bento-center-lower">
-        <div className="lower-a"><Link to='/store?type=mobile-accessories'><div className="lower-a-img"><span className="lower-a-img-name" >ELECTRONICS</span></div></Link></div>
-        <div className="lower-b"><Link to='/store?type=sports-accessories'><div className="lower-b-img"><span className="lower-b-img-name" >SPORTS</span></div></Link></div>
-        </div>
-       </div>
-            <div className="bento-right-long"><Link to='/store?type=mens-shoes'><div  className="bento-right-long-img"><span className="bento-right-long-img-name" >FOOTWEAR</span></div></Link></div>
-
+         <div className="trending-products-div">
+          <div className="trending-products-heading">Trends in Fashion</div>
+          <div className="trending-products">
+<div className="trending-product-1"><span className="tp-1-btn">Winter Collection</span></div>
+<div className="trending-product-2"><span className="tp-2-btn">Summer Collection</span></div>
           </div>
+        </div>
+        <div className="Home-bottom" >
+        <div className="bento-heading" ><span id="bento-sub-heading">Click. </span><span id="bento-sub-heading">Pick. </span><span id="bento-sub-heading">Shop.</span> </div>
+    
+      
+      <div class="container-bento">
+  <div class="bento1">
+    <div class="bento1-a"><div id='bento-img-div' className="bento1-a-img"></div><span className="bento1-a-img-name">HOME DECOR</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+    <div class="bento1-b"><div id='bento-img-div' className="bento1-b-img"></div><span className="bento1-b-img-name" >WEARABLES</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+    <div class="bento1-c" ><div id='bento-img-div'  className="bento1-c-img"></div><span className="bento1-c-img-name" >SHADES</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+  </div>
+  <div class="bento2">
+    <div class="bento2-a"><div id='bento-img-div' className="bento2-a-img"></div><span className="bento2-a-img-name" >SKINCARE</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+    <div class="bento2-b"><div id='bento-img-div' className="bento2-b-img"></div><span  className="bento2-b-img-name" >ESSENTIALS</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+    <div class="bento2-c"><div id='bento-img-div' className="bento2-c-img"></div><span className="bento2-c-img-name" >ELECTRONICS</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+  </div>
+  <div class="bento3">
+    <div class="bento3-a"><div id='bento-img-div' className="bento3-a-img"></div><span className="bento3-a-img-name" >SPORTS</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+    <div class="bento3-b"><div id='bento-img-div' className="bento3-b-img"></div><span className="bento3-b-img-name" >WATCHES</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+    <div class="bento3-c"><div id='bento-img-div' className="bento3-c-img"></div><span className="bento3-c-img-name" >FOOTWEAR</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+  </div>
+</div>
+
+
+
   
         </div>
+
+      
+
+
         <div style={{display:'flex',justifyContent:'center',width:'100%'}}>
         <div className="home-site-Info">
           <div className="site-Info-a">
