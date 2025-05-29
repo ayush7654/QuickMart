@@ -11,11 +11,15 @@ export default function Header(){
     console.log('username',firebase.currentUser)
     
 
-    const elements = [{title:"HOME ",path:'/',logo:'QMicons/QM-homeIcon-bl.png'},/* QMicons/homelogo2.png */
-        {title:"STORE ",path:'/store?page=1',logo:'QMicons/QM-storeIcon-bl.png'},/* QMicons/storeLogo3.png */
-        {title:"CART ", path:'/cart',logo:'QMicons/QM-cartIcon-bl.png'},/* QMicons/cartlogo.png  */
-      
-        {title:firebase.isLoggedIn?'Name':'LOGIN',path:'/login',logo:firebase.isLoggedIn?'QMicons/userIcon.png':'QMicons/QM-loginIcon-bl.png'}] /* QMicons/loginlogo.png */
+    const elements = [
+       
+        {title:"CART ", path:'/cart',logo:'QMicons/cartLogoOl2.png'},
+        {title:"WISHLIST ", path:'/wishList',logo:'QMicons/heartIconOl5.png'},
+        {title:firebase.isLoggedIn?'Name':'LOGIN',path:'/login',logo:firebase.isLoggedIn?'QMicons/userIconOl.png':'QMicons/LoginIconOl.png'}
+        ] 
+
+
+    const navElements= [{title:'HOME',path:'/'},{title:'STORE',path:'/store'},{title:'ABOUT',path:'/about'},{title:'BLOG',path:'/blog'},{title:'CONTACT',path:'/contact'}]
 
     const [searchTerm,setSearchTerm]= useState('')
 
@@ -84,16 +88,17 @@ export default function Header(){
 
         <div className="header-home">
 
-     
-
         <div className="logo-title">
-        <img src='QMSiteLogo12.png'  className="logoImg"  /> 
+        <img src='QMSiteLogo26.png'  className="logoImg"  /> 
         <div  className="header-logo-name">
-       {/*  <div className="name"><span style={{fontSize:'2.5rem'}}>Quick</span><span style={{fontSize:'2.5rem'}}>Mart</span></div>  */}
-     {/* <div className="tagline">Quick Deals, Quick Feels </div>  */}
+
         </div>
       
         </div>
+
+     
+
+     
 
         <div className="header-searchBar-div" >
             <div className="header-searchBar" >
@@ -108,25 +113,8 @@ export default function Header(){
             
         </div> 
 
-        
-     
 
-        {/* <div>QuickMart</div> */}
 
-        
-
-   
- 
-        
-
-       
-       
-        
-      
-        
-       
-        
-       
          <div className='Home-Nav-Container'>
             {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div id="header-icon">{<img src={`/${element.logo}`} id='header-nav-Icon'/> }</div> <div id='header-nav-name'>{element.title}</div>  <div></div></NavLink>)}
          </div>
@@ -136,9 +124,17 @@ export default function Header(){
         
     </div>
     <div className="productDetails-nav-container">
+      <div className='blackLine'></div>
      <div className="productDetails-nav">  
-    <Link to={`/store${location.state?location.state:'?page=1'}`} className="backToStore">←</Link> 
-    {categories?categoryArr.map(item=><Link to={`/store?type=${item.slug}`}  className="productDetails-nav-item">{item.name}</Link>):<div>loading</div>}
+   {/*  <Link to={`/store${location.state?location.state:'?page=1'}`} className="backToStore">←</Link> */} 
+    {navElements 
+  ? navElements.map(item => (
+      <NavLink to={item.path} className={({isActive})=>isActive?'productDetails-nav-item-selected':'productDetails-nav-item'}  key={item.path}>
+        {item.title}
+      </NavLink>
+    ))
+  : <div>loading</div>
+}
     </div>
      </div> 
     </div>

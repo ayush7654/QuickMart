@@ -1,22 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .sticky-header {
     position: sticky;
     top: 0;
     z-index: 999;
-   /*  background: linear-gradient(to bottom, rgb(22, 22, 22), #292828); */
-  background-color: #eeeeee;  
-   /*  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */ /* Optional shadow */
-    width: 100%;
+
+  background-color: #ffffff;
+  
+    width: 100vw;
+    border: 0px solid red;
   }
   
   .header-home{
     
     border:0px solid white;
     height:5rem;
-    
+   
     color: black;
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content:center;
     align-items: center; 
     padding-bottom: 0px;
   }
@@ -25,7 +30,7 @@
   
   .logo-title {
     border:0px solid rgb(8, 0, 255);
-    padding-left: 10px;
+    
     display:'flex';
     flex-direction: row;
     justify-content: center;
@@ -45,24 +50,20 @@
   height: 100%;
     border: 0px solid red;
   }
-  .name{
-    border: 0px solid red;
-   letter-spacing: .1rem;
-    
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-  }
+
   .logoImg{
-    width:20rem;
-    margin-left: .5rem;
+    width:22rem;
+    
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    left: 0rem;
    
-  }
-  .tagline{
-    border: 0px solid red;
-    font-size: .8rem;
+   
   }
 
   .header-searchBar-div{
-    width: 40%;
+    width: 30%;
     display:flex;
     flex-direction: column;
    
@@ -79,21 +80,33 @@
   .header-search-box{
   
     width: 100%;
-    height: 2.5rem;
+    height: 3rem;
     border: 0px;
     border-radius: .2rem;
-    background-color: rgb(255, 255, 255);
+    background-color: #eeeeee;
+    font-size: 1rem;
+    padding:.5rem;
+    font-family: 'Poppins', sans-serif;
+   
+  }
+  .header-search-box:focus{
+    outline: none;
+    border-bottom:0px solid rgb(159, 159, 159) ;
+    background-color: #eeeeee;
+    border-bottom:1px solid rgb(159, 159, 159) ;
   }
 
   .suggestionBox{
     border: 0px solid red;
     color: black;
-   width: 40%;
+   width: 30%;
    max-height: 8rem;
    position: absolute;
    margin-top: 2.7rem;
    background-color: white;
   overflow: hidden;
+  z-index: 1;
+  font-family: 'Montserrat', sans-serif;
   
   }
   .suggestion{
@@ -104,6 +117,7 @@
   .suggestion:hover{
     background-color: gainsboro;
   }
+ 
 
   
   .Home-Nav-Container{
@@ -115,23 +129,29 @@
     align-items: center;
     font-weight:400;
     margin-right: 1.2rem;
-   
+   position: absolute;
+   right:2rem;
+   bottom:30%;
+   z-index: 1;
     font-size: .9rem;
-    font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 
 
   .navlink{
     color: black;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: .2rem;
     align-items: center;
     justify-content: center;
     letter-spacing: .2rem;
-    padding-bottom: .2rem;
-    border-bottom: 1px solid rgba(128, 128, 128, 0);
-   
+    padding-bottom: 0rem;
+    border: 0px solid rgba(128, 128, 128, 0);
+    background-color: #eeeeee;
+    padding:.5rem;
+    border-radius: .2rem;
+    
   
   
 
@@ -148,11 +168,12 @@
     letter-spacing: .2rem;
     padding:.2rem;
   color: black;
-  border-radius: .3rem;
-   
+  border-radius: 0rem;
+
+ background-color: #ffffff;
    border: 0px solid rgb(134, 130, 130);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: .2rem;
@@ -161,14 +182,18 @@
   }
 
   .navlink-selected #header-nav-name{
-    padding-bottom: .2rem;
-    border-bottom: 2px solid rgb(48, 47, 47);
+
+    text-decoration: underline;
+   text-underline-offset: .5rem;
+   text-decoration-thickness: .1rem;
+
+
   }
 
   #header-icon{
     border: 0px solid black;
-    height: 1.2rem;
-    width: 1.2rem;
+    height: 1.5rem;
+    width: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -178,6 +203,7 @@
     width: 100%;
   height: 100%;
   object-fit: cover;
+ 
   }
 
   .header-backArrow{
@@ -201,22 +227,35 @@
      display: flex;
      justify-content: center;
      align-items: center;
-     background-color: rgb(26, 25, 25); 
+     background-color: #ffffff;
      width: 100%;
      position: relative;
+     border: 0px solid black;
+     
    }
+.blackLine{
+  width: 100%;
+  height: 0px;
+  background-color: rgb(25, 25, 25);
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+}
  
  
    .productDetails-nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 90%;
-    
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    height: 3.5rem;
+    width: 50%;
+   border-top-right-radius:.5rem ;
+   border-top-left-radius:.5rem ; 
+ 
+    font-family: 'Poppins', sans-serif;
+    height: 3.2rem;
+    z-index: 1;
     border: 0px solid red;
-   background-color: rgb(26, 25, 25); 
+   background-color: rgb(25, 25, 25); 
      
    }
    .productDetails-nav-item{
@@ -224,19 +263,32 @@
      border: 0px solid red;
      align-items: center;
      font-size: 1rem;
-  
-/*   background-color: rgba(255, 255, 255, 0.875); */
+   
+
  height: 90%;
-   padding-left:.5rem;
-   padding-right:.5rem;
+
    
    color:rgb(255, 255, 255);
   
    }
    .productDetails-nav-item:hover{
-border-bottom: 2px solid white;
+border-bottom: 1px solid white;
 color:rgb(255, 255, 255);
    }
+
+   .productDetails-nav-item-selected{
+    display: flex;
+    border: 0px solid red;
+    align-items: center;
+    font-size: 1rem;
+    border-bottom: 2px solid white;
+
+height: 90%;
+
+  
+  color:rgb(255, 255, 255);
+ 
+  }
  
    .Product-Details-SimilarProducts{
      border: 0px black solid;

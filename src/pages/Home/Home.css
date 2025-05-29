@@ -1,5 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+
 .Home{
     display: flex;
     flex-direction: column;
@@ -115,7 +120,7 @@
     
     
     width: 100vw;
-    height: 90vh;
+    height: 85vh;
    
     background-position: center;
     background-repeat: no-repeat;
@@ -125,14 +130,7 @@
 
  
   
- /*  .Home-Img-container{
-    
-    border: 0px solid red;
-  
-  }
-  .Home-Img{
-    width:700px ;
-  } */
+
   .bgImgNav{
     border: 0px solid rgba(0, 0, 0, 0.873);
     background-color: #eeeeee;
@@ -173,7 +171,7 @@
     align-items: center;
    
     
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
    
    
     font-family:  'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
@@ -196,42 +194,75 @@
   }
 
   .btn-discoverMore{
-     
-     background-color: #eeeeee; 
-      color:rgb(0, 0, 0);
-      border: 1px rgb(0, 0, 0) solid;
+         /*  background-color: rgba(233, 231, 231, 0.799); */
+         color:#eeeeee;
+         border: 1px rgb(255, 255, 255) solid;
+  
+  }
+
+  .btn-discoverMore:hover{
+    color:white;
   }
 
   .btn-shopNow{
     
-    /*  background-color: rgba(233, 231, 231, 0.799); */
-      color:rgb(255, 255, 255);
-      border: 1px rgb(255, 255, 255) solid;
+
+      background-color: #eeeeee;
+      color:rgb(0, 0, 0);
+      border: 1px rgb(0, 0, 0) solid;
+  }
+  .btn-shopNow:hover{
+    background-color: white;
+    color:black;
   }
 
-  #buyLink-btn:hover{
-    background-color: rgb(252, 250, 250);
-   border: 1px solid black;
-    color:rgb(3, 3, 3);
 
-  }
  
   .home-Products-div{
     width: 100%;
     background-color:white;
     margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  .home-Products-div-head{
-    font-size: 3.5rem;
-    font-weight: 600;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding: 0rem;
-    color: rgb(18, 18, 18);
+  .home-Products-heading-div{
+    width: 100%;
     display: flex;
     justify-content: center;
-  /*   background: linear-gradient(to right, #2898e2c5,  rgba(18, 18, 88)  , #2898e2c5 100%); */
-/*      background-color: rgb(192, 206, 235);  */
-     background-color: rgb(255, 255, 255); 
+    align-items: center;
+    border: 0px solid red;
+    height: 3.2rem;
+    background-color: rgb(255, 255, 255);
+ 
+  }
+  .home-Products-div-head{
+
+
+ width: 50%;
+height: 100%;
+ border-bottom: 0px solid rgb(255, 255, 255);
+    padding: 0rem;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     background-color: rgb(25, 25, 25); 
+     border-top-right-radius: .5rem;
+     border-top-left-radius: .5rem;
+  }
+
+  #hp-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: .2rem;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+height: 90%;
+    border-bottom: 2px solid rgb(255, 255, 255);
   }
   .home-Products{
     border: 0px solid red;
@@ -240,7 +271,8 @@
     justify-content: space-around;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    background-image: url('/blue-green-bg15.jpg');
+    background-color: #eeeeee;
+    background-image: url('/blue-green-bg17.webp');
     background-position: center;
     background-size: contain  ;
     
@@ -260,10 +292,10 @@
     justify-content: center;
     align-content: center;
     text-align: center;
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 0rem;
     color:black; 
-    box-shadow: 10px 10px rgb(57, 56, 56);
+    box-shadow: 10px 10px #545454;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   }
   
@@ -283,9 +315,13 @@
     justify-content: center;
     align-items: center;
     font-family:  'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
-     background-image: url('/blue-green-bg28.jpg');
-    background-position: center;
-    background-size: cover;  
+    /* background-image: url('/QMbgImages/blue-green-bg29.jpg'); */
+/*     background-image: url('/blue-green-bg16-Copy.jpg'); */
+background-image: url('/QMbgImages/feathersBG2.png'); 
+   background-repeat: no-repeat;
+   background-position: center;
+    background-size: cover; 
+   
     /* background-repeat: no-repeat;  */
  
 
@@ -294,8 +330,8 @@
  
   }
 
-  .bento1-a,.bento2-c,.bento3-a{
-    /* background-color: #3cfaa7; */
+  .bento1,.bento2,.bento3{
+ 
     border: 0px solid black;
  /*      background-image: url('/blue-green-bg3.jpg');
     background-position: center;
@@ -307,7 +343,7 @@
 
 
 .bento-heading{
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;/*  font-family: 'Poppins', sans-serif; */
   color:rgb(0, 0, 0);
   display: flex;
   
@@ -346,7 +382,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .bento1,.bento2,.bento3{
   border: 0px solid red;
-  width: 80%;
+  width: 70%;
   height: 55vh;
   display: flex;
   align-items: center;
@@ -419,79 +455,97 @@ background-size: cover; */
 
 .bento1-b-img-name,.bento2-a-img-name,.bento1-a-img-name,.bento2-b-img-name,.bento3-a-img-name,.bento2-c-img-name,.bento1-c-img-name,.bento3-b-img-name,.bento3-c-img-name{
 
-  font-size: 2.5rem;
-  font-weight: 400;
+  font-size: 1.7rem;
+ /*  font-weight: 200; */
   position: absolute;
-
-  top: 50%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  top: 90%;
   left:50%;
   transform: translate(-50%,-50%);
   color:white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   
 }
 
 
   .bento1-b-img{
    
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),url('/QMbgImages/HPFashionBG.jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), url('/QMbgImages/HPFashionBG.jpg');
     transition: transform 0.3s ease;
    
   }
 
-  .bento1-b-img:hover{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url('/QMbgImages/HPFashionBG.jpg');
+
+
+  .bento1-b:hover .bento1-b-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPFashionBG.jpg');
     transform: scale(1.05);
   }
 
 
   .bento2-a-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),url('/QMbgImages/HPSkinCareBG.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)),url('/QMbgImages/HPSkinCareBG.webp');
     transition: transform 0.3s ease;
   }
-  .bento2-a-img:hover{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url('/QMbgImages/HPSkinCareBG.webp');
+
+  .bento2-a:hover .bento2-a-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPSkinCareBG.webp');
     transform: scale(1.05);
   }
 
+
   .bento1-a-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),url('/QMbgImages/HPHomeDecorBG.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .15)),url('/QMbgImages/HPHomeDecorBG.webp');
     transition: transform 0.3s ease;
   
   }
 
-  .bento1-a-img:hover{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url('/QMbgImages/HPHomeDecorBG.webp');
+
+
+  .bento1-a:hover .bento1-a-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPHomeDecorBG.webp');
     transform: scale(1.05);
   }
 
   .bento2-b-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),url('/QMbgImages/HPEssentialsBG2.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .1)),url('/QMbgImages/HPGlassesBG.jpg');
     transition: transform 0.3s ease;
   }
 
-  .bento2-b-img:hover{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url('/QMbgImages/HPEssentialsBG2.jpg');
+
+
+  .bento2-b:hover  .bento2-b-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPGlassesBG.jpg');
     transform: scale(1.05);
   }
 
+
+
   .bento3-a-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),url('/QMbgImages/HPSportBG.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url('/QMbgImages/HPSportBG.jpeg');
     transition: transform 0.3s ease;
   }
-  .bento3-a-img:hover{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url('/QMbgImages/HPSportBG.jpeg');
+
+
+  .bento3-a:hover .bento3-a-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPSportBG.jpeg');
     transform: scale(1.05);
   }
 
   
 
   .bento2-c-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),url('/QMbgImages/HPElectronicsBG.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .1)),url('/QMbgImages/HPElectronicsBG2.webp');
     transition: transform 0.3s ease;
   }
 
-  .bento2-c-img:hover{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url('/QMbgImages/HPElectronicsBG.webp');
+
+  .bento2-c:hover  .bento2-c-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPElectronicsBG2.webp');
     transform: scale(1.05);
   }
 
@@ -499,35 +553,40 @@ background-size: cover; */
 
 
   .bento1-c-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url('/QMbgImages/HPGlassesBG.jpg'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.1)),url('/QMbgImages/HPEssentialsBG2.jpg'); 
     transition: transform 0.3s ease;
  
     
 
   }
-  .bento1-c-img:hover{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url('/QMbgImages/HPGlassesBG.jpg'); 
-    transform: scale(1.05);
 
+
+  .bento1-c:hover  .bento1-c-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPEssentialsBG2.jpg'); 
+    transform: scale(1.05);
   }
 
   .bento3-b-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url('/QMbgImages/HPWatchesBG.jpg'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url('/QMbgImages/HPWatchesBG.jpg'); 
     transition: transform 0.3s ease;
   }
 
-  .bento3-b-img:hover{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url('/QMbgImages/HPWatchesBG.jpg'); 
+
+
+  .bento3-b:hover  .bento3-b-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPWatchesBG.jpg'); 
     transform: scale(1.05);
   }
 
   .bento3-c-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url('/QMbgImages/HPFootwearBG2.avif'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url('/QMbgImages/HPFootwearBG2.avif'); 
     transition: transform 0.3s ease;
   }
 
-  .bento3-c-img:hover{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url('/QMbgImages/HPFootwearBG2.avif'); 
+
+
+  .bento3-c:hover  .bento3-c-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPFootwearBG2.avif'); 
     transform: scale(1.05);
   }
 
@@ -535,7 +594,7 @@ background-size: cover; */
   #bento-btn-div{
     position: absolute;
     bottom: 25%;
-    display: flex;
+    display: none;
     justify-content: space-between;
     width: 80%;
     height: 12%;
