@@ -55,9 +55,9 @@
     width:22rem;
     
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     z-index: 1;
-    left: 0rem;
+    left: 1rem;
    
    
   }
@@ -80,12 +80,13 @@
   .header-search-box{
   
     width: 100%;
-    height: 3rem;
+    height: 2.5rem;
     border: 0px;
-    border-radius: .2rem;
-    background-color: #eeeeee;
+    border-radius: 0rem;
+    background-color: #ffffff;
     font-size: 1rem;
     padding:.5rem;
+    border-bottom: 2px solid rgb(176, 176, 176);
     font-family: 'Poppins', sans-serif;
    
   }
@@ -105,7 +106,7 @@
    margin-top: 2.7rem;
    background-color: white;
   overflow: hidden;
-  z-index: 1;
+  z-index: 999;
   font-family: 'Montserrat', sans-serif;
   
   }

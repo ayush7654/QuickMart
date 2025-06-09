@@ -1,5 +1,19 @@
-.StorePage{
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+.Store-Page{
     overflow-x: hidden;
+     display: flex;
+     flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    border: 0px solid red;
+    background-color: white;
 }
 .Store-filter{
     padding-left:1rem;
@@ -7,50 +21,72 @@
     display: flex;
   flex-direction: row;
   align-items: center;
-  gap:1.5rem;
-  font-size: 1.1rem;
+  gap:1rem;
+  font-size: 1rem;
   height: 3rem;
   width: 100%;
-  font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
-  background: linear-gradient(to right, #2898e2c5,  rgba(18, 18, 88)  , #2898e2c5 100%);
+  font-family: 'Montserrat', sans-serif;
+/*   background: linear-gradient(to right, #9fe2e1 100%); */ 
+ background-color: #9fe2e1; 
+color:black;
+margin-top: 0rem;
     
   }
   .allBtn{
     display: flex;
-    align-items: center;
-    height: 1.7rem;
-    padding-left: .3rem;
-    padding-right: .3rem;
+    justify-content: center;
+    align-items:center;
+    height: 100%;
+    padding-left: .5rem;
+    padding-right: .5rem;
     border-radius: .3rem;
-    background-color: rgb(132, 156, 201);
+    color: black;
+    
+  }
+  .allBtn:hover{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100%;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    border-radius: .5rem;
+    background-color: rgba(227, 230, 235, 0.875);
     color: black;
     
   }
   .allBtn-selected{
     display: flex;
     align-items: center;
-    height: 100%;
-    padding-left: .3rem;
-    padding-right: .3rem;
-    border-radius: 0rem;
-
-    background-color:#eeeeee;
+    height: 90%;
+    padding:.5rem ;
+    border-radius: .5rem;
+    background-color:#ffffff;
   
+  }
+  .Store-filter-left,.Store-filter-right{
+    height: 100%;
+    border: 0px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .Store-filter-left:hover,.Store-filter-right:hover{
     border-radius: .3rem;
-    background-color: rgb(132, 156, 201);
+    background-color: rgba(227, 230, 235, 0.875);
   }
   .store-categories{
     border:0px solid rgb(203, 42, 42);
     display: flex;
     flex-direction: row;
+    align-items: center;
     flex-shrink: 0;
     gap:5rem;
     height: 3rem;
     width:100%;
     transition: translate 400ms ease-in-out;
-    align-items: center;
+    
+   
  
     
   
@@ -60,11 +96,13 @@
     align-items: center;
     flex-shrink: 0;
     max-width: fit-content;
-   height: 1.7rem;
+    height: 85%;
    padding-left: .3rem;
    padding-right: .3rem;
-    border-radius: .3rem;
-    color:white;
+    border-radius: 0rem;
+    color:rgb(0, 0, 0);
+    font-size: .9rem;
+    font-weight: 500;
    
     
     
@@ -74,40 +112,99 @@
     align-items: center;
     flex-shrink: 0;
     max-width: fit-content;
-    padding:.3rem ;
-    height: 90%;
-    border-radius: .3rem;
-    background-color:#eeeeee;
+    padding:0rem ;
+    height: 85%;
+border-bottom: 2px solid black;
+   
+ 
     color: rgb(0, 0, 0);
+    font-weight: 500;
+ 
+    
+    
     
    }
    .store-category:hover{
-    background-color: rgba(227, 230, 235, 0.875);
+   
     cursor: pointer;
+    border-bottom: 2px solid rgb(24, 23, 23);
    }
+
+   .productList {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2rem;
+    width: 85%;
+    border: 0px solid red;
+  }
   
+  .store-product {
+    border: 1px solid rgb(182, 176, 176);
+    padding: .5rem;
+   /*  height: 300px; */
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+   /*  background-color: #ffffff; */
+    border-radius: .5rem;
+    
+    color: black;
+    /* box-shadow:1px 1px 1px 1px rgba(69, 67, 67, 0.2); */
+    
+  }
   
+
+  
+  /*  .productList{
+    margin: 1rem;
+    
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr); 
+      grid-gap: 0rem;
+      width: 80%;
+      border-right: 0px solid #eeeeee;
+   
+     
+    }
+
+
+
+
   .store-product{
     border:1px solid rgb(182, 176, 176);
+
     padding:.3rem;
     height:300px;
     justify-content: center;
     align-content: center;
     text-align: center;
-    background-color: rgb(255, 255, 255);
-    border-radius: .3rem;
+    background-color: #eeeeee;
+    border-radius: 0rem;
     color:black; 
     box-shadow: 0px 1px 1px  rgba(69, 67, 67, 0.2);   
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   }
+ */
+  /*     border-left:0px;
+    border-top: 0px;
+    border-bottom: 1px solid rgb(182, 176, 176); */
+ 
+
+
   .store-product:hover{
     
     
   }
   .Store-Product-title{
-    color:rgb(78, 74, 74);
-    font-weight:600;
+    
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* or 400/500 depending on thickness */
+    color: #5b5b5b;   /* light gray for that faded effect */
     font-size:1rem;
+    padding:.2rem;
     line-height: 1.2rem;
     display: -webkit-box;
     -webkit-line-clamp: 1; /* Number of lines to show */
@@ -118,24 +215,19 @@
   }
  
   
-  .productList{
-  margin: 1.2rem;
-   /*  height: 600px; */
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns of equal width */
-    grid-template-rows: repeat(2, 1fr); /* 2 rows of equal height */
-    grid-gap: 1.2rem;
- 
-   
-  }
+  
   .productImg{
-        width: 200px;
-        height: 75%;
+        width: 100%;
+        /* height: 75%; */
+        background-color: #eeeeee;
   }
 
+
   .product-price{
-    font-weight: 700;
-    font-size: 1.2rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #4b4b4b;
+    font-family: 'Inter', sans-serif;
   }
 
   .pagination{
@@ -163,7 +255,7 @@
    height: 2rem;
     cursor:pointer;
     border-radius: .3rem;
-    background-color: rgb(255, 255, 255);
+    background-color: #eeeeee;
    
   }
   .page-nav-selected{
@@ -173,7 +265,7 @@
     height: 2rem;
     cursor:pointer;
     border-radius: .3rem;
-    background-color:rgb(255, 255, 255); 
+    
    
   }
   .nav-left,.nav-right{

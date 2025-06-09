@@ -19,7 +19,7 @@ export default function Header(){
         ] 
 
 
-    const navElements= [{title:'HOME',path:'/'},{title:'STORE',path:'/store'},{title:'ABOUT',path:'/about'},{title:'BLOG',path:'/blog'},{title:'CONTACT',path:'/contact'}]
+    const navElements= [{title:'HOME',path:'/'},{title:'STORE',path:'/store?page=1'},{title:'ABOUT',path:'/about'},{title:'BLOG',path:'/blog'},{title:'CONTACT',path:'/contact'}]
 
     const [searchTerm,setSearchTerm]= useState('')
 
@@ -89,7 +89,7 @@ export default function Header(){
         <div className="header-home">
 
         <div className="logo-title">
-        <img src='QMSiteLogo26.png'  className="logoImg"  /> 
+        <img src='/QMSiteLogo39(1).png'  className="logoImg"  /> 
         <div  className="header-logo-name">
 
         </div>
@@ -102,7 +102,7 @@ export default function Header(){
 
         <div className="header-searchBar-div" >
             <div className="header-searchBar" >
-            <input  className="header-search-box" placeholder="What are you looking for?" value={searchTerm} onChange={handleChange}/>
+            <input  className="header-search-box" placeholder="SEARCH" value={searchTerm} onChange={handleChange}/>
             <div style={{ position:'absolute',right:'10px'}} ><Link style={{color:'black'}} to={`/search/${searchTerm}` }> <Search style={{color:'grey'}}/></Link></div>
             </div>
 

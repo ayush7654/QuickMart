@@ -11,9 +11,15 @@ export default function ProductDetails(){
     const{id} = useParams()
     const [product,setProduct]= useState(null);
  
-    const[currentCategory,setCurrentCategory]= useState(null)                              
+    const[currentCategory,setCurrentCategory]= useState(null)    
     
+    const [pdColor,setpdColor]= useState('Black')    
 
+    const pdColorArr=[{id:0,colorName:'Black',color:'rgb(0,0,0)'},{id:1,colorName:'Grey',color:'rgb(113, 113, 113)'},{id:2,colorName:'Blue',color:'rgb(0, 61, 130)'},{id:3,colorName:'Red',color:'rgb(135, 0, 0)'}]
+
+     function switchColor(e){
+     setpdColor(e)
+    }
 
     useEffect(()=>{
         fetch(`https://dummyjson.com/products/${id}`)
@@ -114,37 +120,57 @@ export default function ProductDetails(){
         <div className="product-info-div">
          <div className="product-info-pd">
           
-            {/* to be added : category, stock, dimensions */}
-        <div className="product-title"  ><div style={{fontSize:'.7rem',marginLeft:'0rem',color:'white'}}><span style={{backgroundColor:'rgb(68, 64, 64)',padding:'.2rem'}}>{product.brand && product.brand}</span></div>{product.title}</div> 
-        <div>
-        <div id='pd-subHead'>Description:</div>
-        <p className="product-description" >{product.description}</p>
-        </div>
-       
-        <div className="product-info-price-div">
-        <div  id='pd-subHead'>Price:</div><div className="price-num">${product.price}</div><div></div>
-        </div>
+           
+        <div className="product-title-div" >
+          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',border:'0px solid red',height:'2rem',width:'100%'}}>
+            <div className="pd-brandName"> {product.brand && product.brand} </div>
+            <div style={{width:'85%',height:'.1rem',backgroundColor:'rgb(63, 63, 63)'}}></div>
+            </div>
+          <div className="pd-title">{product.title}</div>
+          </div> 
+          <div className="product-info-price-div">
+        <div className="price-num">${product.price}</div>
         <div  className="product-info-rating-div">
-            <div id='pd-subHead' >Rating:</div>
-            <StarRating rating={product.rating}/>
-            <div className="rating-num" id='pd-subHead'><span style={{fontSize:'1.5rem'}}>{product.rating.toFixed(1)}</span>/5</div>
+            
+            <StarRating rating={product.rating} starSize={30}/>
+           
           
         </div>
+        </div>
+
+
+        <div style={{border:'0px solid red'}}>
+        
+        <div className="product-description" >{product.description}</div>
+        </div>
+
+        <div className="pd-colorpick-div">
+          <div  className="pd-colorpick-head">COLOR / <span style={{color:'rgb(63, 63, 63)'}}>{pdColor}</span></div>
+          <div className="pd-colorpick">
+
+            {pdColorArr.map(item=> <div onClick={()=>switchColor(item.colorName)} className={item.colorName==pdColor?"pd-color-div-selected":"pd-color-div"}><div id="pd-color" style={{backgroundColor:item.color}}></div></div>)}
+
+          </div>
+        </div>
+       
+     
+      
         <div className="policy-ship-div" >
            
            
-            <div id='pd-subHead'> {product.returnPolicy}</div>
+            <div id='pd-subHead' > {product.returnPolicy}</div>
             
-            <div id='pd-subHead'>{product.shippingInformation}</div>
+           
            
            </div>
+           <div id='pd-subHead' >{product.shippingInformation}</div>
            <div id='pd-subHead' style={{display:'flex'}} className="stock-div">
-            <div id='pd-subHead'>Stocks left :</div>
-        <span>{product.stock}</span> </div>
+            <div id='pd-subHead' >Stocks left :&nbsp;</div>
+        <span style={{fontSize:'1.2rem'}}> {product.stock}</span> </div>
          
          
         <div className="quantity-container-div">
-           <div id='pd-subHead'>Select Quantity:</div>
+           <div id='pd-subHead' >Select Quantity:</div>
            <div className="quantity-container">
            <div
                 className="decrease-btn" 
@@ -172,26 +198,33 @@ export default function ProductDetails(){
         <div
   className="addTocartBtn" 
   onClick={handleClick}
-  style={{ backgroundColor: AddedtoCart ? 'black' : '#1a1a1aaf' }}
+  style={{ backgroundColor: AddedtoCart ? 'black' : 'rgb(63, 63, 63)' }}
 >
   {AddedtoCart ? 'Added to Cart' : 'Add to Cart'}
 </div>
      
          </div>
-         <div className="review-box" ><span style={{fontWeight:700}}>Top Reviews</span>
+         <div className="review-box" >
+           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}} className="review-box-title">
+            <div className="review-head">Top Reviews</div>
+            <div style={{width:'70%',height:'.1rem',backgroundColor:'rgb(63, 63, 63)'}}></div>
+          </div> 
+          
          {product.reviews.map(review=>
          <div className="reviews" >
             <div className="user-review">
-              <div style={{display:'flex',gap:'.4rem', alignItems:'center'}}>
-              <img src='/QMicons/userIcon.png' width='40px'/>{review.reviewerName}
-              </div>
+              <div style={{display:'flex',gap:'.7rem', alignItems:'center'}}>
+              <img src='/QMicons/userIconGrey.webp' width='30px'/><span className="reviewer-name">{review.reviewerName}</span>
+              </div> 
              
-               <div style={{fontSize:'.9rem',color:'rgb(85, 81, 81)'}}>Reviewed on: {formatDate(review.date)}</div>
+               <div style={{fontSize:'.8rem',color:'rgb(99, 99, 99)'}}>Reviewed on: {formatDate(review.date)}</div>
                </div>
           
-            <StarRating  rating={review.rating}/>
+            <StarRating rating={review.rating} starSize={20}/>
            
-            <div>{review.comment}</div>
+            <div className="review-comment">{review.comment}</div>
+
+            <div className="review-line-div"><div style={{width:'100%',height:'.1rem',backgroundColor:'rgb(151, 151, 151)', marginTop:'2rem'}}></div></div>
 
          </div>)}
          </div> 
@@ -210,7 +243,7 @@ export default function ProductDetails(){
     <div className="similarProducts-head">Similar Products</div>
  <div className="Product-Details-SimilarProducts-list">
         
- {currentCategory ? currentCategory.products.map(item => 
+ {currentCategory ? currentCategory.products.slice(0,5).map(item => 
   item.id !== product.id && (
     <ProductCard
       classname='productDetails-product'

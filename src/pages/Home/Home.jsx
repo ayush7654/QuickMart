@@ -4,6 +4,8 @@ import ProductCard from "../../components/ProductCard";
 
  import { ChevronLeft,ChevronRight } from 'lucide-react'; 
 
+ import StarRating from './../../components/StarRating';
+
 
 
 
@@ -13,9 +15,8 @@ export default function Home(){
 
 const location = useLocation()
 const homeBGs = [
-  { id: 0, img1: 'QMbgImages/QMAirJordan5.webp',img2:'QMbgImages/AjSample2.jpg', product: './store/88' },
-
-    { id: 1, img1: 'QMbgImages/QMRolex3.jpg',img2:'QMbgImages/QMRolexSm.webp', product: './store/98' },
+    { id: 0, img1: 'QMbgImages/QMRolex3.jpg',img2:'QMbgImages/QMRolexSm.webp', product: './store/98' },
+    { id: 1, img1: 'QMbgImages/QMAirJordan5.webp',img2:'QMbgImages/AjSample2.jpg', product: './store/88' },
     { id: 2, img1: 'QMbgImages/QMApple4.jpg',img2:'QMbgImages/homeBGiPhone.avif', product: './store/123' },
     { id: 3, img1: 'QMbgImages/QMlevis8.png',img2:'QMbgImages/QMlevisSm.jpg', product: './store/84' }
   ];
@@ -174,25 +175,27 @@ if(prev<homeBGs.length-1){
         </div>
         <div className="Home-bottom" >
 
+    
+
         <div className="home-Products-heading-div" >{/* <img src='/headImg1.png' width='500px'/> */}<div className="home-Products-div-head"><span id='hp-head'>CLICK. PICK. SHOP.</span></div></div>
       {/*   <div className="bento-heading" ><span id="bento-sub-heading">Click. </span><span id="bento-sub-heading">Pick. </span><span id="bento-sub-heading">Shop.</span> </div> */}
     
       
       <div class="container-bento">
   <div class="bento1">
-    <div class="bento1-a"><div id='bento-img-div' className="bento1-a-img"></div><span className="bento1-a-img-name">HOME DECOR {'>'} </span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+    <div class="bento1-a"><div id='bento-img-div' className="bento1-a-img"></div><span className="bento1-a-img-name">ELECTRONICS {'>'} </span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
     <div class="bento1-b"><div id='bento-img-div' className="bento1-b-img"></div><span className="bento1-b-img-name" >STYLE {'>'} </span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
     <div class="bento1-c" ><div id='bento-img-div'  className="bento1-c-img"></div><span className="bento1-c-img-name" >SHADES {'>'}</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
   </div>
   <div class="bento2">
-    <div class="bento2-a"><div id='bento-img-div' className="bento2-a-img"></div><span className="bento2-a-img-name" >SKINCARE {'>'}</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
-    <div class="bento2-b"><div id='bento-img-div' className="bento2-b-img"></div><span  className="bento2-b-img-name" >ESSENTIALS {'>'}</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
-    <div class="bento2-c"><div id='bento-img-div' className="bento2-c-img"></div><span className="bento2-c-img-name" >ELECTRONICS {'>'}</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+    <div class="bento2-a"><div id='bento-img-div' className="bento2-a-img"></div><span className="bento2-a-img-name" >FOOTWEAR {'>'}</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+    <div class="bento2-b"><div id='bento-img-div' className="bento2-b-img"></div><span  className="bento2-b-img-name" >WATCHES {'>'}</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+    <div class="bento2-c"><div id='bento-img-div' className="bento2-c-img"></div><span className="bento2-c-img-name" >SPORTS {'>'}</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
   </div>
   <div class="bento3">
-    <div class="bento3-a"><div id='bento-img-div' className="bento3-a-img"></div><span className="bento3-a-img-name" >SPORTS {'>'}</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
-    <div class="bento3-b"><div id='bento-img-div' className="bento3-b-img"></div><span className="bento3-b-img-name" >WATCHES {'>'}</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
-    <div class="bento3-c"><div id='bento-img-div' className="bento3-c-img"></div><span className="bento3-c-img-name" >FOOTWEAR {'>'}</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+    <div class="bento3-a"><div id='bento-img-div' className="bento3-a-img"></div><span className="bento3-a-img-name" >HOME DECOR {'>'}</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+    <div class="bento3-b"><div id='bento-img-div' className="bento3-b-img"></div><span className="bento3-b-img-name" >SKINCARE {'>'}</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
+    <div class="bento3-c"><div id='bento-img-div' className="bento3-c-img"></div><span className="bento3-c-img-name" >ESSENTIALS {'>'}</span><div id ='bento-btn-div' className="bento1-a-btn"><div id='bento-btn1'>Explore</div><div  id='bento-btn2'>Shop Now</div></div></div>
   </div>
 </div>
 
@@ -204,7 +207,7 @@ if(prev<homeBGs.length-1){
       
 
 
-        <div style={{display:'flex',justifyContent:'center',width:'100%'}}>
+        <div style={{display:'flex',justifyContent:'center',width:'100%',backgroundColor:'#eeeeee'}}>
         <div className="home-site-Info">
           <div className="site-Info-a">
             <div id="homeInfo-subhead">QuickMart: The One-stop Destination</div>

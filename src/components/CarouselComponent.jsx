@@ -76,7 +76,7 @@ export default function CarouselComponent({Imagelist}) {
       <div className='rightArrow'  onClick={()=>handleSlide('right')} ><ChevronRight className='right-arrow-content' /></div>
       </div>
       <div className="ImgSelecters">
-      {Imagelist.map((item,index)=><div id={index} onClick={()=>handleClick(index)} className={ImgId===index?"imgBtn-clicked":'imgBtn'} key={index}></div>)}
+      {Imagelist.map((item,index)=><div id={index} onClick={()=>handleClick(index)} className={ImgId===index?"imgBtn-clicked-div":'imgBtn-div'} key={index}><div className='imgBtn'></div></div>)}
     </div>
     </div>
    

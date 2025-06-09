@@ -14,6 +14,7 @@ import ErrorPage from './pages/ErrorPage'
 import Layout from './components/Layout'
 import Authentication from './components/Authentication'
 import { FirebaseProvider } from './components/FirebaseContext/Firebase'
+import LoadingBird from './pages/LoadingPage';
 
 
 export const BreadCrumbContext = createContext()

@@ -79,7 +79,7 @@ export default function Store() {
       
       try {
         setIsLoading(true)
-        const data = await getItems(Number(PageNumber),10);
+        const data = await getItems(Number(PageNumber),8);
 
        
         ProductCache.current[PageNumber]=data;
@@ -154,7 +154,7 @@ export default function Store() {
 
 
  const getPagesStyle=(i)=>{
-    return { backgroundColor: page.current === i? "rgb(163, 184, 221)" : null }
+    return { backgroundColor: page.current === i? "white" : null, border:page.current === i?'1px solid grey':null }
  }
   return (
     <div className="Store-Page">

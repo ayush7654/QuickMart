@@ -12,13 +12,10 @@
     justify-content: center;
     border: 0px solid black;
     width: 100vw;
-   
- 
-    /* background: linear-gradient(to bottom, rgba(16, 16, 128, 0.857), white); */
-/*     background: linear-gradient(to bottom, rgb(0, 0, 0), white); */
- 
    overflow-x: hidden;
    position: relative;
+   background-color: white;
+ 
   
   
   
@@ -27,7 +24,7 @@
   .homeContent-Container{
     position: relative;
     width: 100vw;
-   
+    
    
     border-left: 0px solid red;
     display: flex;
@@ -234,7 +231,7 @@
     align-items: center;
     border: 0px solid red;
     height: 3.2rem;
-    background-color: rgb(255, 255, 255);
+    background-color: #eeeeee;
  
   }
   .home-Products-div-head{
@@ -271,10 +268,10 @@ height: 90%;
     justify-content: space-around;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    background-color: #eeeeee;
-    background-image: url('/blue-green-bg17.webp');
+    background-color: #ffffff;
+    background-image: url('/greenStorksBG.jpg'); /* blue-green-bg17(2).png */
     background-position: center;
-    background-size: contain  ;
+    background-size: contain  ; 
     
    
     
@@ -283,25 +280,31 @@ height: 90%;
 
   .home-product{
 
-    width: 18%;
-    border:1px solid rgb(137, 137, 137);
-    padding:.3rem;
-    height:300px;
+    width: 20%;
+    border:1px solid rgb(132, 132, 132);
+    padding:.5rem;
+   
   
     
     justify-content: center;
     align-content: center;
     text-align: center;
     background-color: #ffffff;
-    border-radius: 0rem;
+    border-radius: .5rem;
     color:black; 
-    box-shadow: 10px 10px #545454;
+  /*   box-shadow: 10px 10px #545454; */
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   }
+
+  .productImg{
+    border-radius: .5rem;
+  }
+
+
   
   
   .home-product:hover{
-    box-shadow:15px 15px rgb(30, 30, 31);
+   /*  box-shadow:15px 15px rgb(30, 30, 31); */
   }
  
 
@@ -315,14 +318,13 @@ height: 90%;
     justify-content: center;
     align-items: center;
     font-family:  'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
-    /* background-image: url('/QMbgImages/blue-green-bg29.jpg'); */
-/*     background-image: url('/blue-green-bg16-Copy.jpg'); */
-background-image: url('/QMbgImages/feathersBG2.png'); 
-   background-repeat: no-repeat;
-   background-position: center;
-    background-size: cover; 
-   
-    /* background-repeat: no-repeat;  */
+
+  /*   background-image: url('/QM-BG-HP.jpg');
+    background-repeat: no-repeat;
+    background-position:bottom;
+    background-size: contain; */
+    
+
  
 
     
@@ -374,7 +376,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;/*
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap:.7rem;
+  gap:.4rem;
   padding:2rem;
  
 
@@ -382,7 +384,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;/*
 }
 .bento1,.bento2,.bento3{
   border: 0px solid red;
-  width: 70%;
+  width: 90%;
   height: 55vh;
   display: flex;
   align-items: center;
@@ -393,24 +395,26 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;/*
 .bento1-a,.bento2-c,.bento3-a{
   border: 0px solid rgb(0, 0, 0);
   height: 100%;
-  width: 49%;
+  width: 49.5%;
   overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: .5rem;
 
 
 }
 .bento1-b,.bento1-c,.bento2-a,.bento2-b,.bento3-b,.bento3-c{
   border: 0px solid rgb(48, 43, 136);/* rgb(72, 72, 210); */
   height:100%;
-  width: 24%;
+  width: 24.5%;
   overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: .5rem;
 }
 
 .bento1-b{
@@ -423,6 +427,13 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;/*
 #bento-img-div{
  
   border: 0px solid rgb(116, 116, 116);
+
+}
+
+#bento-img-div:hover{
+ 
+  
+  
 }
 
    
@@ -432,7 +443,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;/*
   background-repeat: no-repeat;
   background-size: cover;
    background-position: center; 
- 
+
   color: white;
 
 }
@@ -464,17 +475,33 @@ background-size: cover; */
   top: 90%;
   left:50%;
   transform: translate(-50%,-50%);
-  color:white;
-  width: 100%;
+  color:rgb(255, 255, 255);
+  width: 60%;
+
   display: flex;
   justify-content: center;
+  border-top-right-radius: .5rem;
+  border-top-left-radius: .5rem;
   
 }
 
 
+.bento1-a-img{
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .15)),url('/QMbgImages/HPElectronicsBG2.webp');
+  transition: transform 0.3s ease;
+
+}
+
+
+
+.bento1-a:hover .bento1-a-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPElectronicsBG2.webp');
+  transform: scale(1.05);
+}
+
   .bento1-b-img{
    
-    background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), url('/QMbgImages/HPFashionBG.jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), url('/QMbgImages/QM-HP-Style3.jpg');
     transition: transform 0.3s ease;
    
   }
@@ -482,78 +509,13 @@ background-size: cover; */
 
 
   .bento1-b:hover .bento1-b-img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPFashionBG.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/QM-HP-Style3.jpg');
     transform: scale(1.05);
-  }
-
-
-  .bento2-a-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)),url('/QMbgImages/HPSkinCareBG.webp');
-    transition: transform 0.3s ease;
-  }
-
-  .bento2-a:hover .bento2-a-img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPSkinCareBG.webp');
-    transform: scale(1.05);
-  }
-
-
-  .bento1-a-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .15)),url('/QMbgImages/HPHomeDecorBG.webp');
-    transition: transform 0.3s ease;
   
   }
-
-
-
-  .bento1-a:hover .bento1-a-img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPHomeDecorBG.webp');
-    transform: scale(1.05);
-  }
-
-  .bento2-b-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .1)),url('/QMbgImages/HPGlassesBG.jpg');
-    transition: transform 0.3s ease;
-  }
-
-
-
-  .bento2-b:hover  .bento2-b-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPGlassesBG.jpg');
-    transform: scale(1.05);
-  }
-
-
-
-  .bento3-a-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url('/QMbgImages/HPSportBG.jpeg');
-    transition: transform 0.3s ease;
-  }
-
-
-  .bento3-a:hover .bento3-a-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPSportBG.jpeg');
-    transform: scale(1.05);
-  }
-
-  
-
-  .bento2-c-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .1)),url('/QMbgImages/HPElectronicsBG2.webp');
-    transition: transform 0.3s ease;
-  }
-
-
-  .bento2-c:hover  .bento2-c-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPElectronicsBG2.webp');
-    transform: scale(1.05);
-  }
-
-  
-
 
   .bento1-c-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.1)),url('/QMbgImages/HPEssentialsBG2.jpg'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.1)),url('/QMbgImages/QM-HP-Glasses.jpg'); 
     transition: transform 0.3s ease;
  
     
@@ -562,31 +524,85 @@ background-size: cover; */
 
 
   .bento1-c:hover  .bento1-c-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPEssentialsBG2.jpg'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.25)),url('/QMbgImages/QM-HP-Glasses.jpg'); 
     transform: scale(1.05);
   }
 
+
+
+
+  .bento2-a-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)),url('/QMbgImages/QMShoes.jpg');
+    transition: transform 0.3s ease;
+  }
+
+  .bento2-a:hover .bento2-a-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/QMShoes.jpg');
+    transform: scale(1.05);
+  }
+
+
+
+
+  .bento2-b-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .1)),url('/QMbgImages/QM-Watches.webp');
+    transition: transform 0.3s ease;
+  }
+
+
+
+  .bento2-b:hover  .bento2-b-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/QM-Watches.webp');
+    transform: scale(1.05);
+  }
+
+
+  .bento2-c-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .1)),url('/QMbgImages/HPSportBG.jpeg');
+    transition: transform 0.3s ease;
+  }
+
+
+  .bento2-c:hover  .bento2-c-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPSportBG.jpeg');
+    transform: scale(1.05);
+  }
+
+
+  .bento3-a-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url('/QMbgImages/HPHomeDecorBG.webp');
+    transition: transform 0.3s ease;
+  }
+
+
+  .bento3-a:hover .bento3-a-img{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPHomeDecorBG.webp');
+    transform: scale(1.05);
+  }
+
+  
+
   .bento3-b-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url('/QMbgImages/HPWatchesBG.jpg'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url('/QMbgImages/QM-HP-Skincare.jpg'); 
     transition: transform 0.3s ease;
   }
 
 
 
   .bento3-b:hover  .bento3-b-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPWatchesBG.jpg'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/QM-HP-Skincare.jpg'); 
     transform: scale(1.05);
   }
 
   .bento3-c-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url('/QMbgImages/HPFootwearBG2.avif'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url('/QMbgImages/QM-HP-Essentials.jpg'); 
     transition: transform 0.3s ease;
   }
 
 
 
   .bento3-c:hover  .bento3-c-img{
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/HPFootwearBG2.avif'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)),url('/QMbgImages/QM-HP-Essentials.jpg'); 
     transform: scale(1.05);
   }
 
@@ -717,7 +733,7 @@ width: 100%;
     padding:2rem;
    
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
 
   #homeInfo-subhead{
