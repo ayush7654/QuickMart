@@ -1,0 +1,27 @@
+  .home-footer{
+    display: flex;
+    justify-content:center ;
+    width: 100%;
+    background-color: #eeeeee;
+
+  }
+
+  .home-site-Info{
+    border: 0px solid rgb(229, 29, 29) ;
+    color:black;
+    background-color: white;
+    width: 95%;
+    padding:2rem;
+   
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 4rem;
+  }
+
+  #homeInfo-subhead{
+    font-size: 1.5rem;
+    color:rgb(92, 92, 92);
+  }
+  #homeInfo-para{
+    font-size: 1rem;
+    color:grey;
+  }

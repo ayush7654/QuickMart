@@ -1,0 +1,141 @@
+
+
+  .trending-products-div{
+  background-color: white;
+  }
+
+
+
+
+
+
+
+
+
+  .Home-bottom{
+    border: 0px solid red;
+    width: 100%;
+    margin-top: 4rem;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family:  'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+
+  }
+
+
+  
+  .trending-products-div{
+    border: 0px solid rgb(229, 29, 29);
+    width:100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+  }
+
+  .trending-products-heading-div{
+    
+       display: flex;
+    justify-content: center;
+    align-items: end;
+      background-color:rgb(255, 255, 255);
+      width: 100%;
+      height: 4.5rem;
+      
+
+  }
+
+  .trending-products-heading{
+
+       display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+ 
+    background-color:rgb(33, 33, 33); ;
+    color:rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(22, 22, 22);
+    width: 100%;
+    height: 80%;
+  
+
+       font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+  
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+  }
+
+  .trending-products{
+    border: 0px solid rgb(10, 10, 10);
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #trending-product{
+    border: 0px solid rgb(229, 29, 29) ;
+    width: 49%;
+    height: 95%;
+    overflow: hidden;
+  }
+
+  .trending-product-1{
+        width: 100%;
+    height: 100%;
+    background-image: url('/QM-Img-tp1.webp') ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    transition: transform .3s ease ;
+  }
+
+  .trending-product-2{
+       width: 100%;
+    height: 100%;
+    background-image: url('/QM-Img-tp2.webp') ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+      transition: transform .3s ease ;
+    
+  }
+
+  #trending-product:hover .trending-product-1 ,#trending-product:hover .trending-product-2{
+transform :scale(1.03);
+  }
+
+  .tp-1-btn{
+    position: absolute;
+    bottom: 15%;
+    right:2%;
+    color:white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 2px solid white;
+    font-size: 2.5rem;
+    padding:1rem;
+  }
+
+  .tp-2-btn{
+    position: absolute;
+    bottom: 15%;
+    left:2%;
+    color:rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 2px solid rgb(0, 0, 0);
+    font-size: 2.5rem;
+    padding:1rem;
+    
+  }
+
+  
+ 

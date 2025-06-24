@@ -10,7 +10,7 @@
   background-color: #ffffff;
   
     width: 100vw;
-    border: 0px solid red;
+    border-bottom: 0px solid rgb(135, 135, 135);
   }
   
   .header-home{
@@ -52,10 +52,10 @@
   }
 
   .logoImg{
-    width:22rem;
+    width:20rem;
     
     position: absolute;
-    bottom: 10px;
+    bottom: 1rem;
     z-index: 1;
     left: 1rem;
    
@@ -140,7 +140,7 @@
 
 
   .navlink{
-    color: black;
+    color: rgb(40, 40, 40);
     display: flex;
     flex-direction: column;
     gap: .2rem;
@@ -148,8 +148,8 @@
     justify-content: center;
     letter-spacing: .2rem;
     padding-bottom: 0rem;
-    border: 0px solid rgba(128, 128, 128, 0);
-    background-color: #eeeeee;
+    border: 1px solid rgb(181, 181, 181);
+    background-color: #f8f8f8; 
     padding:.5rem;
     border-radius: .2rem;
     
@@ -167,9 +167,9 @@
   .navlink-selected {
   
     letter-spacing: .2rem;
-    padding:.2rem;
-  color: black;
-  border-radius: 0rem;
+    padding:.5rem;
+  color: rgb(40, 40, 40);
+
 
  background-color: #ffffff;
    border: 0px solid rgb(134, 130, 130);
@@ -181,6 +181,14 @@
    
   
   }
+
+   .navlink #fd-header-logo{
+      display:none;
+    }
+
+    .navlink-selected #ol-header-logo{
+      display:none;
+    }
 
   .navlink-selected #header-nav-name{
 
@@ -249,8 +257,8 @@
     justify-content: space-around;
     align-items: center;
     width: 50%;
-   border-top-right-radius:.5rem ;
-   border-top-left-radius:.5rem ; 
+   border-top-right-radius:.2rem ;
+   border-top-left-radius:.2rem ; 
  
     font-family: 'Poppins', sans-serif;
     height: 3.2rem;

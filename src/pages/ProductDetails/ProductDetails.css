@@ -143,6 +143,7 @@
     background-color: rgb(63, 63, 63);
     color:white;
     padding:.2rem;
+    margin-right: 2rem;
     height: 70%;
     border-radius: 0rem;
     border: 0px solid red;
@@ -151,6 +152,13 @@
     align-items: center;
    
   }
+
+  #pd-line{
+  height: 2px;
+  background-color: rgb(63, 63, 63);
+  width: 100%;
+  }
+
   .product-description{
     width: 80%;
     font-size: 1.1rem;

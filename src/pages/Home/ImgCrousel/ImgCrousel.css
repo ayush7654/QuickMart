@@ -1,0 +1,241 @@
+ .homeContent-Container{
+    position: relative;
+    width: 100vw;
+    
+   
+    border-left: 0px solid red;
+    display: flex;
+
+  }
+
+
+   .crousel-frame{
+    position: absolute;
+ width: 99vw;
+ height: 100%;
+ border-left: 0rem solid #eeeeee;
+ border-right:0rem solid #eeeeee;
+ z-index: 1;
+  }
+
+
+    .Nav-div{
+    position: absolute;
+    border: 0px solid red;
+    width: 99%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    top:50%;
+    transform: translate(0%, -50%);
+  }
+
+
+   .home-left-arrow{
+    width: 15rem;
+    height: 15rem;
+    color: #eeeeee9f;
+    background-color: #00000032; /* #716c6c4d; */
+    margin-left: -15%;
+    border: 1px solid #eeeeee9f;
+    border-radius: 20%;
+    padding:0;
+     transition: margin-left 1s;
+ 
+
+  }
+
+  .Nav-div:hover .home-left-arrow{
+     margin-left: -5%;
+  
+  }
+
+  .home-left-arrow:hover{
+    background-color:  #0000004d; /* #716c6c4d; */
+    color: #eeeeee;
+    border: 1px solid #ffffff;
+  }
+
+  .home-right-arrow{
+    width: 15rem;
+    height: 15rem;
+    color: #eeeeee9f;
+    border: 1px solid #eeeeee9f;
+    border-radius: 20%;
+    margin-right: -15%;
+    background-color: #00000032;
+     transition: margin-right 1s;; /* #716c6c4d; */
+
+  }
+
+  
+  .Nav-div:hover .home-right-arrow{
+     margin-right: -5%;
+  
+  }
+
+  .home-right-arrow:hover{
+    background-color:  #0000004d; /* #716c6c4d; */
+    color: #eeeeee;
+    border: 1px solid #ffffff;
+  }
+
+.homeCrousal{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border-bottom: 5px solid white;
+   
+
+  }
+
+
+.homeContent{
+    
+    
+    width: 100vw;
+    height: 85vh;
+   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+
+
+   .buy-link{
+    position:absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color:rgb(3, 3, 3);
+   
+    font-size: 1.4rem;
+    height: 1rem;
+    width:70%;
+    border: 0px rgb(0, 0, 0) solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    
+    margin-bottom: 4rem;
+   
+   
+    font-family:  'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+    z-index: 1;
+
+  }
+
+  
+
+
+  #buyLink-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  
+   
+   width: 25%;
+    font-size: 1.4rem;
+    height: 4rem;
+  }
+
+   #buyLink-btn:hover{
+    cursor: pointer;
+   }
+
+  .btn-discoverMore{
+      
+         color:#eeeeee;
+         border: 1px rgb(255, 255, 255) solid;
+  
+  }
+
+  .btn-discoverMore:hover{
+    color:white;
+  }
+
+  .btn-shopNow{
+    
+
+      background-color: #eeeeee;
+      color:rgb(0, 0, 0);
+      border: 1px rgb(0, 0, 0) solid;
+  }
+  .btn-shopNow:hover{
+    background-color: white;
+    color:black;
+  }
+
+
+  .CrousalNav-div{
+position: absolute;
+bottom: 0;
+    width: 100%;
+    height: 5rem;
+    border: 0px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .CrousalNav-content{
+    width: 30%;
+    height: 5%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+   .CrousalNav{
+    border: 0px solid black;
+    height:100% ;
+    width: 24%;
+    background-color: #ffffff72;
+   }
+
+   .CrousalNav:hover{
+    cursor: pointer;
+   }
+
+     .CrousalNav-selected{
+    border: 0px solid black;
+    height:100% ;
+    width: 24%;
+    background-color: rgb(255, 255, 255);
+   }
+
+ 
+  
+
+  .bgImgNav{
+    display: none;
+    border: 0px solid rgba(0, 0, 0, 0.873);
+    background-color: #eeeeee;
+    width: 100%;
+    height: .3rem;
+    color:rgb(0, 0, 0);
+    position: absolute;
+    margin: auto;
+    z-index: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    bottom:0rem;
+    left: 50%;
+  transform: translateX(-50%);
+  
+  }
+ 
+  .bgImgNav-slider{
+    width: 25%;
+    height: 100%;
+    border-radius: 1rem;
+ 
+    background-color: black;
+  }

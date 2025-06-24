@@ -3,6 +3,12 @@ import {NavLink, Link, useLocation,useNavigate} from 'react-router-dom'
 import { Search } from "react-feather";
 import { useFirebase } from "../../components/FirebaseContext/Firebase";
 import { AiFillHome } from 'react-icons/ai';
+import { HiOutlineUser, HiUser } from 'react-icons/hi';
+import { HiShoppingCart,HiOutlineShoppingCart } from 'react-icons/hi';
+ import { FaHeart } from 'react-icons/fa';    // Filled heart
+import { FiHeart } from 'react-icons/fi';   
+import { MdLogin } from 'react-icons/md';
+
 import './Header.css'
 export default function Header(){
 
@@ -13,9 +19,9 @@ export default function Header(){
 
     const elements = [
        
-        {title:"CART ", path:'/cart',logo:'QMicons/cartLogoOl2.png'},
-        {title:"WISHLIST ", path:'/wishList',logo:'QMicons/heartIconOl5.png'},
-        {title:firebase.isLoggedIn?'Name':'LOGIN',path:'/login',logo:firebase.isLoggedIn?'QMicons/userIconOl.png':'QMicons/LoginIconOl.png'}
+        {title:"CART ", path:'/cart',logo:<div className="header-cartLogo-div"><HiOutlineShoppingCart id="ol-header-logo" size={20}/><HiShoppingCart id="fd-header-logo" size={20}/></div>},/*'QMicons/cartLogoOl2.png'  */
+        {title:"WISHLIST ", path:'/wishlist',logo:<div className="header-wishlistLogo-div"><FiHeart  id="ol-header-logo" size={20}/><FaHeart id="fd-header-logo" size={20}/></div>},/*'QMicons/heartIconOl5.png'  */
+        {title:firebase.isLoggedIn?'NAME':'LOGIN',path:'/login',logo:firebase.isLoggedIn?<div className="header-userLogo-div"><HiOutlineUser  id="ol-header-logo" size={20}/><HiUser id="fd-header-logo" size={20}/></div>:<MdLogin size={20} />}/*'QMicons/userIconOl.png'  */
         ] 
 
 
@@ -89,7 +95,7 @@ export default function Header(){
         <div className="header-home">
 
         <div className="logo-title">
-        <img src='/QMSiteLogo39(1).png'  className="logoImg"  /> 
+        <img src='/QMSiteLogo46.png'  className="logoImg"  /> 
         <div  className="header-logo-name">
 
         </div>
@@ -116,7 +122,7 @@ export default function Header(){
 
 
          <div className='Home-Nav-Container'>
-            {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div id="header-icon">{<img src={`/${element.logo}`} id='header-nav-Icon'/> }</div> <div id='header-nav-name'>{element.title}</div>  <div></div></NavLink>)}
+            {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div id="header-icon">{element.logo}{/* {<img src={`/${element.logo}`} id='header-nav-Icon'/> } */}</div> <div id='header-nav-name'>{element.title}</div>  <div></div></NavLink>)}
          </div>
 
         <div className="header-backArrow"> <Link style={{color:'white'}} to={`/store${location.state?location.state:'?page=1'}`}  >←</Link> </div>

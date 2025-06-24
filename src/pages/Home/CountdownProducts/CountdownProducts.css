@@ -1,0 +1,46 @@
+
+  .Countdown-home-Products-div{
+    width: 100%;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+    .Countdown-home-Products-div  .product-price{
+
+    font-size: 1.2rem;
+        color: #555555;
+     font-weight: 400;
+       
+  }
+
+
+    .Countdown-home-Products-div .card-tag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+      top: 1rem;
+    left:0rem;
+    height: 1.5rem;
+    width: 30%;
+    border: 0px solid grey;
+    border-left: 0px;
+    background-color: rgb(49, 49, 49);
+    color:white;
+    font-size: .8rem;
+    box-shadow: 3px 3px 5px rgb(161, 161, 161);
+  }
+
+   .Countdown-home-Products-div .discount-tag{
+    display: none;
+   }
+
+    .Countdown-home-Products-div .discount-product-price{
+        display: none;
+    }
+
+   

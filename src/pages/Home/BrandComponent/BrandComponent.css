@@ -1,0 +1,47 @@
+.brand-carousel-container {
+  width: 100%;
+    overflow: hidden;
+    height: 10rem;
+    margin: 20px 0;
+    border: 0px solid red ;
+    background-color: white;
+  }
+  
+  .brand-carousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    animation: scroll-left linear infinite;
+    border: 0px solid rgb(0, 229, 255) ;
+    height: 100%;
+    
+    
+  }
+  
+  .brand-logo {
+    width:100%; /* Set your desired width */
+  height: 80%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:1rem;
+
+
+
+
+  }
+  
+  .brand-logo img {
+   width: 100%;
+    height: 100%;
+    object-fit: contain;
+ 
+  }
+  
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Moves half the width of the duplicated array */
+  }
+  

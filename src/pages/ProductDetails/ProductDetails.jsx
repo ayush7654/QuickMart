@@ -124,7 +124,7 @@ export default function ProductDetails(){
         <div className="product-title-div" >
           <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',border:'0px solid red',height:'2rem',width:'100%'}}>
             <div className="pd-brandName"> {product.brand && product.brand} </div>
-            <div style={{width:'85%',height:'.1rem',backgroundColor:'rgb(63, 63, 63)'}}></div>
+            <div id='pd-line'></div>
             </div>
           <div className="pd-title">{product.title}</div>
           </div> 
@@ -213,7 +213,7 @@ export default function ProductDetails(){
          {product.reviews.map(review=>
          <div className="reviews" >
             <div className="user-review">
-              <div style={{display:'flex',gap:'.7rem', alignItems:'center'}}>
+              <div>
               <img src='/QMicons/userIconGrey.webp' width='30px'/><span className="reviewer-name">{review.reviewerName}</span>
               </div> 
              
