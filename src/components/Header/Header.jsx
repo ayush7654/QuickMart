@@ -1,4 +1,4 @@
-import {useState,useEffect} from "react";
+import {useState,useEffect,useRef} from "react";
 import {NavLink, Link, useLocation,useNavigate} from 'react-router-dom'
 import { Search } from "react-feather";
 import { useFirebase } from "../../components/FirebaseContext/Firebase";
@@ -8,6 +8,7 @@ import { HiShoppingCart,HiOutlineShoppingCart } from 'react-icons/hi';
  import { FaHeart } from 'react-icons/fa';    // Filled heart
 import { FiHeart } from 'react-icons/fi';   
 import { MdLogin } from 'react-icons/md';
+import StoreFilter from "../../pages/Store/StoreFilter/StoreFilter";
 
 import './Header.css'
 export default function Header(){
@@ -19,9 +20,9 @@ export default function Header(){
 
     const elements = [
        
-        {title:"CART ", path:'/cart',logo:<div className="header-cartLogo-div"><HiOutlineShoppingCart id="ol-header-logo" size={20}/><HiShoppingCart id="fd-header-logo" size={20}/></div>},/*'QMicons/cartLogoOl2.png'  */
-        {title:"WISHLIST ", path:'/wishlist',logo:<div className="header-wishlistLogo-div"><FiHeart  id="ol-header-logo" size={20}/><FaHeart id="fd-header-logo" size={20}/></div>},/*'QMicons/heartIconOl5.png'  */
-        {title:firebase.isLoggedIn?'NAME':'LOGIN',path:'/login',logo:firebase.isLoggedIn?<div className="header-userLogo-div"><HiOutlineUser  id="ol-header-logo" size={20}/><HiUser id="fd-header-logo" size={20}/></div>:<MdLogin size={20} />}/*'QMicons/userIconOl.png'  */
+        {title:"Cart ", path:'/cart',logo:<div className="header-cartLogo-div"><HiOutlineShoppingCart id="ol-header-logo" size={20}/><HiShoppingCart id="fd-header-logo" size={20}/></div>},/*'QMicons/cartLogoOl2.png'  */
+        {title:"Wishlist ", path:'/wishlist',logo:<div className="header-wishlistLogo-div"><FiHeart  id="ol-header-logo" size={20}/><FaHeart id="fd-header-logo" size={20}/></div>},/*'QMicons/heartIconOl5.png'  */
+        {title:firebase.isLoggedIn?'Name':'Login',path:'/login',logo:firebase.isLoggedIn?<div className="header-userLogo-div"><HiOutlineUser  id="ol-header-logo" size={20}/><HiUser id="fd-header-logo" size={20}/></div>:<MdLogin size={20} />}/*'QMicons/userIconOl.png'  */
         ] 
 
 
@@ -88,25 +89,49 @@ export default function Header(){
     const location= useLocation()
     console.log(location)
 
+
+    
+      // Move up/down state
+      const [isIdle, setIsIdle] = useState(false);
+    
+      // For scroll detection
+      const lastScrollY = useRef(window.scrollY);
+
+       useEffect(() => {
+    let ticking = false;
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          if (currentScrollY > lastScrollY.current + 5) {
+            setIsIdle(true); // Move up
+          } else if (currentScrollY < lastScrollY.current - 5) {
+            setIsIdle(false); // Move down
+          }
+          lastScrollY.current = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+    
+
    
     return(<div className="sticky-header">
 
 
         <div className="header-home">
 
-        <div className="logo-title">
-        <img src='/QMSiteLogo46.png'  className="logoImg"  /> 
-        <div  className="header-logo-name">
-
-        </div>
-      
-        </div>
-
-     
-
-     
-
-        <div className="header-searchBar-div" >
+       
+    <div className="header-searchBar-div" >
             <div className="header-searchBar" >
             <input  className="header-search-box" placeholder="SEARCH" value={searchTerm} onChange={handleChange}/>
             <div style={{ position:'absolute',right:'10px'}} ><Link style={{color:'black'}} to={`/search/${searchTerm}` }> <Search style={{color:'grey'}}/></Link></div>
@@ -118,6 +143,19 @@ export default function Header(){
            
             
         </div> 
+     
+  <div className="logo-title">
+        <img src='/QMSiteLogo.png'  className="logoImg"  /> 
+      {/*   <div  className="header-logo-name">
+
+        </div>
+       */}
+        </div>
+     
+
+    
+
+       
 
 
 
@@ -129,13 +167,19 @@ export default function Header(){
          
         
     </div>
-    <div className="productDetails-nav-container">
-      <div className='blackLine'></div>
-     <div className="productDetails-nav">  
+    <div   style={{
+    transition: 'transform 0.8s ease, opacity 1s ease',
+    transform: isIdle ? 'translateY(-2.5rem)' : 'translateY(0)',
+    opacity: isIdle ? 0 : 1,
+    pointerEvents: isIdle ? 'none' : 'auto'
+  }}
+     className="page-nav-container">
+    
+     <div className="page-nav">  
    {/*  <Link to={`/store${location.state?location.state:'?page=1'}`} className="backToStore">←</Link> */} 
     {navElements 
   ? navElements.map(item => (
-      <NavLink to={item.path} className={({isActive})=>isActive?'productDetails-nav-item-selected':'productDetails-nav-item'}  key={item.path}>
+      <NavLink to={item.path} className={({isActive})=>isActive?'page-nav-item-selected':'page-nav-item'}  key={item.path}>
         {item.title}
       </NavLink>
     ))
@@ -143,6 +187,7 @@ export default function Header(){
 }
     </div>
      </div> 
+         
     </div>
     
     

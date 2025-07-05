@@ -1,0 +1,32 @@
+ .store-footer-info{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #ffffff;
+    width: 90%;
+    padding:1rem;
+    margin-top: 2rem;
+   
+    
+  }
+
+  .store-footer-heading{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    color:rgb(88, 87, 87);
+  }
+
+.store-footer-list{
+  display: flex;
+  flex-direction: column;
+  gap:2rem;
+ 
+}
+  #store-footer-subhead{
+    font-size: 1rem;
+    color:rgb(92, 92, 92);
+  }
+
+  #store-footer-products{
+    font-size: .9rem;
+    color:rgb(147, 145, 145);
+
+  }

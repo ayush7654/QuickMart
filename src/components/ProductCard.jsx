@@ -17,6 +17,9 @@ import { HiHeart, HiOutlineHeart } from 'react-icons/hi';
 
 
 function ProductCard({ classname, id, images, title, price, path,discount }) {
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   const [productBookmarked, setProductBookmarked] = useState(false);
   const [productWishlisted, setProductWishlisted] = useState(false);
 
@@ -56,15 +59,29 @@ function ProductCard({ classname, id, images, title, price, path,discount }) {
 
 
       <Link to={`/store/${id}`} state={path}>
-        <img src={images[0]} className="productImg" alt={title} />
-        <div className='productCard-detail' style={{ lineHeight: '2rem'}}>
-          <div className="Store-Product-title">{title}</div>
+        <div className="productImg-wrapper">
+  {!imageLoaded && <div className="image-placeholder" />}
+  <img
+    src={images[0]}
+    className="productImg"
+    alt={title}
+    style={{ display: imageLoaded ? 'block' : 'none' }}
+    onLoad={() => setImageLoaded(true)}
+  />
+</div>
+        <div className='productCard-detail' >
+         <div className="Store-Product-title-div"> <div className="Store-Product-title">{title}</div></div>
           <div className="price-div">
-            <span className="product-price">${price}</span>
             <span  className="discount-product-price">${(price*((100-discount)/100)).toFixed(2)}</span>
+            <span className="product-price">${price}</span>
           </div>
         </div>
       </Link>
+      <div className='productcard-links-div'>
+        <div id='pd-link' >Add to Cart</div>
+        <div  id='pd-link' style={{backgroundColor:'rgb(40,40,40)',color:'white'}}>Buy Now</div>
+
+      </div>
     </div>
   );
 }

@@ -33,6 +33,7 @@
     color:white;
     font-size: .8rem;
     box-shadow: 3px 3px 5px rgb(161, 161, 161);
+      z-index: 1;
   }
 
    .Countdown-home-Products-div .discount-tag{

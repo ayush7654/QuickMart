@@ -1,0 +1,135 @@
+.Store-filter{
+
+
+  
+
+
+  z-index: 1; 
+  
+    border:0px solid black;
+    display: flex;
+   
+  background-color: #eeeeee;
+ 
+    border: 1px solid #ffffff;
+ 
+ 
+ 
+
+    /* 3rem */
+  width: 100%;/* 100vw */
+ /*  font-family: 'Montserrat', sans-serif; */
+
+/*  background-color:#d3d9de;  */ /* #8ee0df;  */
+
+color:black;
+
+   
+  }
+
+.store-categories{
+  width: 100%;
+  margin-left: 2rem;
+
+flex:1;
+
+display: flex;
+flex-direction:column;
+align-items: end;
+
+
+}
+.store-category{
+  width: 90%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(55, 55, 55);
+  border-bottom: 1px solid #ffffff;
+  
+  padding:1rem;
+
+
+
+}
+
+.store-category:hover{
+  background-color: #ffffff;
+}
+
+.store-category-selected{
+    width: 90%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(55, 55, 55);
+  border-bottom: 1px solid #eeeeee;
+  
+  padding:1rem;
+ background-color: #ffffff;
+}
+/*
+
+
+  .store-categories{
+    border:1px solid rgb(203, 42, 42);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+
+    height: 3rem;
+    width:100%;
+    transition: translate 400ms ease-in-out;
+    background-color: aqua;
+    
+   
+ 
+    
+  
+   }
+   .store-category{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    max-width: fit-content;
+    height: 85%;
+   padding-left: .3rem;
+   padding-right: .3rem;
+    border-radius: 0rem;
+    color:rgb(0, 0, 0);
+    font-size: .9rem;
+    font-weight: 500;
+   
+    
+    
+   }
+   .store-category-selected{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    max-width: fit-content;
+    padding:0rem ;
+    height: 85%;
+border-bottom: 2px solid black;
+   
+ 
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+ 
+    
+    
+    
+   }
+   .store-category:hover{
+   
+    cursor: pointer;
+    border-bottom: 2px solid rgb(24, 23, 23);
+   }
+ */
