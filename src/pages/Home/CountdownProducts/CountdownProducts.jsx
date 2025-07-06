@@ -4,6 +4,7 @@ import ProductCard from '../../../components/ProductCard'
 export default function CountdownProducts() {
   return (
       <div className="Countdown-home-Products-div">
+        <div className='countdown-products-frame'></div>
           <div className="home-Products-heading-div" ><div className='home-Products-heading'>Countdown Deals -<span className="home-Products-tagline"> &nbsp; Grab It Before It’s Gone!</span></div></div>
           <div className="home-Products-container" >
          <ProductCard

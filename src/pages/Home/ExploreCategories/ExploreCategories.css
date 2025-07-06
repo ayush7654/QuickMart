@@ -34,8 +34,8 @@
     height: 70%;
     border-bottom: 0px solid rgb(22, 22, 22);
     color:rgb(22, 22, 22);
-     font-family:"Josefin Sans", sans-serif;
-    font-weight: 400;
+   font-family: 'Montserrat', sans-serif; 
+    font-weight: 500;
 
   }
 
@@ -49,23 +49,23 @@
      display: flex;
   /* background-color: white; */
     align-items: center;
-    justify-content: space-around;
+  justify-content: center;
+    background-color: rgb(31, 31, 31);
 
   }
 
-  .explore-categories-list{
+  .explore-categories-list1{
 /*     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     height: 55vh; */
-    display: grid;
-     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 2rem;
-    height: 70rem;
+   
+   
     border: 0px solid red;
-    width: 90%;
+    width: 100%;
+
+   
     
    
   /*   background-color: #eeeeee; */
@@ -76,7 +76,7 @@
 
   #explore-card-div{
     width:100%;
-    height: 100% ;
+   height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,39 +105,56 @@
   cursor: pointer;
  }
 
- #explore-card-name{
+ #explore-card-name-div{
   position: absolute;
- bottom: 5%;
+ bottom: 10%;
   left:50%;
-  transform: translate(-50%,-50%);
- width: 70%;
- height: 15%;
- font-size: 1.5rem;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  line-height: 4rem;
+
+
+ font-size: 7rem;
 font-family: 'Montserrat', sans-serif; 
- border: 2px solid white;
-
-background-color: transparent;
- display: flex;
-  justify-content: center;
-  align-items: center;
- color: white;
- z-index: 1;
-
+ border: 0px solid white;
+font-weight: 600;
+ transition: line-height 0.3s ease;
 
 }
 
- #explore-card-name:hover{
+#explore-card-div:hover #explore-card-name-div{
+  line-height: 4.5rem;
+}
+
+#explore-card-name1{
+  color:white;
+}
+
+
+#explore-card-name2{
+   color:rgba(255, 255, 255, 0.726);
+}
+
+
+#explore-card-name3{
+ color:rgba(255, 255, 255, 0.461);
+}
+
+ #explore-card-div:hover #explore-card-name{
    border: 0px solid rgb(22, 22, 22);
-   background-color: rgb(255, 255, 255);
-   color: black;
+   
+   color: rgb(255, 255, 255);
 
    
  }
 
 
+
+
   .exploreCard1{
  
-    background-image: url('QMbgImages/QM-explore-fitness4.jpg'); 
+    background-image: url('QMbgImages/QM-browse-fitness.jpg'); 
    
   }
 
@@ -148,7 +165,7 @@ background-color: transparent;
 
   .exploreCard2{
    
-    background-image: url('QMbgImages/QM-explore-Eco.jpg');
+    background-image: url('QMbgImages/QM-browse-style.jpg');
     
 
   }
@@ -161,7 +178,7 @@ background-color: transparent;
 
   .exploreCard3{
    
-    background-image: url('QMbgImages/QM-explore-health.jpg');
+    background-image: url('QMbgImages/QM-browse-healthtech.jpg');
  
   }
 
@@ -173,7 +190,7 @@ background-color: transparent;
 
   .exploreCard4{
   
-    background-image: url('QMbgImages/QM-explore-pets6.jpg');
+    background-image: url('QMbgImages/QM-browse-PetWellness.webp');
 
     
   }

@@ -7,6 +7,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+  
+  }
+
+  .discount-products-frame{
+    position: absolute;
+    border: 2px solid rgb(186, 186, 186);
+    height: 95%;
+    width: 92%;
+    z-index: 0;
+    bottom: 0;
+   
+/*   background:linear-gradient(to bottom, #eeeeee 10%, rgb(255, 255, 255));  */
   }
 
    .discount-home-Products-div .card-tag{
@@ -15,22 +28,23 @@
    }
 
    .discount-home-Products-div .product-price{
-    font-size: 1rem;
+    font-size: .9rem;
     text-decoration: line-through;
       text-decoration-thickness: .1rem;
-        color: #555555;
+        color: rgb(30,30,30);
 
 
    }
 
    .discount-home-Products-div .price-div{
     display: flex;
-  justify-content: center;
+  justify-content:flex-start;
     align-items: center;
     width:100%;
     gap: .8rem;
-    color: #555555;
+    color: rgb(30,30,30);
     padding:.2rem;
+    
       
   
 
@@ -40,9 +54,9 @@
 
    .discount-product-price{
      
-    font-size: 1.2rem;
+    font-size: 1rem;
  font-weight: 400;
-     color: #555555;
+     color:rgb(30,30,30);
         /* font-family:'Times New Roman', Times, serif; */
    }
 
@@ -87,7 +101,7 @@
     color:rgb(22, 22, 22);
 
 
-     font-family:"Josefin Sans", sans-serif;
+    font-family: 'Montserrat', sans-serif; 
    
     font-weight: 400;
   }

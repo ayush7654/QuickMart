@@ -33,9 +33,9 @@
     color:rgb(22, 22, 22);
 letter-spacing: 0rem;
 
-     font-family:"Josefin Sans", sans-serif;
    
-    font-weight: 400;
+   
+  
   }
 
 
@@ -50,13 +50,16 @@ letter-spacing: 0rem;
     justify-content: start;
     align-items: center;
   
-    font-size: 3rem;
-    height: 70%;
+    font-size: 2.5rem;
+    
     border-bottom: 0px solid rgb(22, 22, 22);
     color:rgb(22, 22, 22);
-     font-family:"Josefin Sans", sans-serif;
-    font-weight: 400;
+   font-family: 'Montserrat', sans-serif; 
+    font-weight: 500;
      margin-bottom: 1rem;
+    background-color: #eeeeee;
+    z-index: 1;
+    padding-right: 1rem;
 
 
   }
@@ -149,7 +152,7 @@ color:white;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400; /* or 400/500 depending on thickness */
     color: #363636;   /* light gray for that faded effect */
-    font-size:1.1rem;
+    font-size:1rem;
     padding:.2rem;
     line-height: 1.5rem;
     display: -webkit-box;
@@ -157,7 +160,13 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: flex;
+    justify-content: flex-start;
   
+  }
+
+  .Home .price-div{
+    display: flex;
   }
 
 

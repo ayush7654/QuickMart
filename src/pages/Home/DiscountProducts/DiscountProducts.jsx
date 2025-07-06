@@ -4,7 +4,8 @@ import ProductCard from '../../../components/ProductCard'
 export default function DiscountProducts() {
   return (
       <div className="discount-home-Products-div">
-              <div className="home-Products-heading-div" ><div className='home-Products-heading'>Absolute Steals -<span className="Products-tagline"> &nbsp; Offers Upto 50% Off</span></div></div>
+        <div className='discount-products-frame'></div>
+              <div className="home-Products-heading-div" ><div className='home-Products-heading'>Absolute Steals -<span className="home-Products-tagline"> &nbsp; Offers Upto 50% Off</span></div></div>
               <div className="home-Products-container" >
              <ProductCard
                   classname='home-product'
