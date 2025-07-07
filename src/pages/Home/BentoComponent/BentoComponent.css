@@ -9,29 +9,44 @@
 .bento-heading-div{
     
     width: 100%;
-    height: 4.5rem;
+    
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 0px solid rgb(142, 142, 142);
-    background-color: #eeeeee;
+   
   margin-bottom: 1rem;
+  position: relative;
+ 
    /* background-color: #ffffff; */ /* #cecece */
    
     
+  }
+
+  .bento-heading-frame{
+     position: absolute;
+    width: 100%;
+  height: 2px;
+  background-color: rgb(170, 170, 170);
+  z-index: 0;
+    top:50%;
   }
 
   .bento-heading{
     display: flex;
     justify-content: start;
     align-items: center;
-    width: 88%;
+
     font-size: 3rem;
     height: 70%;
     border-bottom: 0px solid rgb(22, 22, 22);
     color:rgb(22, 22, 22);
       font-family: 'Montserrat', sans-serif; 
     font-weight: 500;
+     z-index: 1;
+      background-color: #eeeeee;
+      padding-left: 1rem;
+      padding-right: 1rem;
 
   }
 
@@ -40,55 +55,6 @@
     font-size: 2rem;
   }
 
- 
-
-  #bento-btn-div{
-    position: absolute;
-    bottom: 25%;
-    display: flex; /* or whatever layout you want */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    justify-content: space-around;
-    width: 100%;
-    height: 10%;
-      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   
-   
-  }
-
-#card-bento:hover #bento-btn-div{
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0.2s;
-  }
-
-
-
-  #bento-btn1{
-
-
-    border: 2px solid rgb(255, 255, 255);
-    width:40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:rgb(255, 255, 255);
-     border-radius: .2rem;
-
-  }
-  #bento-btn2{
-
-    border: 0px solid rgb(0, 0, 0);
-    width:40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:rgb(0, 0, 0);
-    background-color: white;
-     border-radius: .2rem;
-
-  }
 
 
 
@@ -102,7 +68,7 @@ background-color: #eeeeee;
   }
 
   .bento-container{
-    margin-left:7rem;
+    margin-left:4rem;
  
     display: flex;
     flex-direction: row;
@@ -206,7 +172,8 @@ z-index: 999;
   #card-bento:hover  {
    
     transform: scale(1.02);
-    box-shadow: 5px 5px 10px rgb(126, 126, 126);
+    box-shadow: 0px 5px 10px rgb(126, 126, 126);
+    cursor: pointer;
   
   }
 
@@ -222,10 +189,10 @@ z-index: 999;
   left:50%;
   transform: translate(-50%,-50%);
   color:rgb(255, 255, 255);
-  width: 100%;
+  width: 80%;
 
   display: flex;
   justify-content: center;
-  border-top-right-radius: .5rem;
-  border-top-left-radius: .5rem;
+/*   border-top-right-radius: .5rem;
+  border-top-left-radius: .5rem; */
   }

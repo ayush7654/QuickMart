@@ -4,8 +4,11 @@ import './ExploreCategories.css'
 export default function ExploreCategories() {
   return (
      <div className="explore-categories">
-              <div className="explore-categories-head-div"><div className="explore-categories-head" >Browse Collections - <span className='explore-tagline'> &nbsp; Not Your Everyday Picks</span></div></div>
-      
+              <div className="explore-categories-head-div">
+                <div className="explore-categories-head" >Browse Collections - <span className='explore-tagline'> &nbsp; Trending Across the Aisles</span></div>
+              <div className='explore-category-frame'></div>
+              </div>
+               
 
               <div className="explore-categories-list-container">
     
@@ -24,6 +27,14 @@ export default function ExploreCategories() {
                 <span id="explore-card-name1">STYLE</span>
                 <span id="explore-card-name2">STYLE</span>
                 <span id="explore-card-name3">STYLE</span>
+                </div>
+             </div>
+              <div id="explore-card-div" >
+              <div className='exploreCard3' id='exploreCard'> </div>
+                   <div id="explore-card-name-div" >
+                <span id="explore-card-name1">LUXURY</span>
+                <span id="explore-card-name2">LUXURY</span>
+                <span id="explore-card-name3">LUXURY</span>
                 </div>
              </div>
            

@@ -12,10 +12,11 @@ export default function ImgCrousel() {
 
   
 const homeBGs = [
-    { id: 0, img1: 'QMbgImages/QMRolex3.jpg',img2:'QMbgImages/QMRolexSm.webp', product: './store/98' },
-    { id: 1, img1: 'QMbgImages/QMAirJordan5.webp',img2:'QMbgImages/AjSample2.jpg', product: './store/88' },
-    { id: 2, img1: 'QMbgImages/QMApple4.jpg',img2:'QMbgImages/homeBGiPhone.avif', product: './store/123' },
-    { id: 3, img1: 'QMbgImages/QMlevis8.png',img2:'QMbgImages/QMlevisSm.jpg', product: './store/84' }
+    { id: 0, img1: 'QMbgImages/QMWatch.avif',img2:'QMbgImages/QMRolexSm.webp', product: './store/98' },
+     { id: 1, img1: 'QMbgImages/QMLevis2.jpg',img2:'QMbgImages/QMlevisSm.jpg', product: './store/84' },
+    { id: 2, img1: 'QMbgImages/QMShoes5.jpg',img2:'QMbgImages/AjSample2.jpg', product: './store/88' },
+    { id: 3, img1: 'QMbgImages/QMApple2.jpg',img2:'QMbgImages/homeBGiPhone.avif', product: './store/123' },
+   
   ];
 
   const [currentBGImg,setCurrentBGImg]= useState(0);

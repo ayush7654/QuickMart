@@ -263,8 +263,8 @@ background-color: #5cccca41;
      width: 100%;
     
      border: 0px solid black;
-   background: linear-gradient(to bottom, #8de4e2 ,#9ae0df,#88cbc9);
-     border: 0px solid black;
+   /* background: linear-gradient(to bottom, #8de4e2 ,#9ae0df,#88cbc9); */
+   background-color: rgb(30,30, 30);
      
       
      
@@ -280,8 +280,9 @@ background-color: #5cccca41;
     width: 45%;
    border-top-right-radius:.2rem ;
    border-top-left-radius:.2rem ; 
- font-family:"Josefin Sans", sans-serif; 
+/*  font-family:"Josefin Sans", sans-serif;  */
 font-weight: 500;
+font-family:'Inter';
     /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
     height: 2.5rem;
     z-index: 1;
@@ -296,7 +297,7 @@ font-weight: 500;
      align-items: center;
      font-size: 1rem;
    
- color:rgb(51, 51, 51);
+ color:rgb(181, 181, 181);
  height: 80%;
 
    

@@ -1,6 +1,5 @@
-import {useState,useEffect,useRef} from "react";
+import {useRef} from "react";
 import { useLocation, Link } from "react-router-dom";
-
 import ImgCrousel from "./ImgCrousel/ImgCrousel";
 import BrandCarousel from "./BrandComponent/BrandComponent";
 import ExploreCategories from "./ExploreCategories/ExploreCategories"; 
@@ -10,14 +9,6 @@ import TrendingComponent from "./TrendingComponent/TrendingComponent";
 import BentoComponent from "./BentoComponent/BentoComponent";
 import HomeFooter from "./HomeFooter/HomeFooter";
 
-
-
- import StarRating from './../../components/StarRating';
-
-
-
-
-
 import './Home.css';
 
 
@@ -25,23 +16,35 @@ export default function Home(){
 
 const location = useLocation()
 
-
-
-
-
-
 const isFirstRender = useRef(true); // track initial mount
 
 
+    return(<>
+    
+  <div className="Home">
+ 
+      <ImgCrousel/>
+      <BrandCarousel/>
+      <ExploreCategories/>
+      <DiscountProducts/>
+      <TrendingComponent />
+      <CountdownProducts/>
+      
+      <BentoComponent/>
+      <HomeFooter/>
+   
+  </div>
+    
+ 
+    
+    </>
+        
+    )
+}
 
 
 
 
-
-
-
-
-  
  
  /*   useEffect(() => {
     const interval = setInterval(() => {
@@ -63,40 +66,3 @@ const isFirstRender = useRef(true); // track initial mount
       requestAnimationFrame(() => setTransition(true));
     }
   }, [currentBGImg]); */
-
-
- 
-
-
-   
-    return(<>
-    
-  <div className="Home">
-    
- 
-          
-
-       
-<ImgCrousel/>
-
-      <BrandCarousel/>
-
-      <ExploreCategories/>
-      <DiscountProducts/>
-      <CountdownProducts/>
-      <TrendingComponent />
-      <BentoComponent/>
-      <HomeFooter/>
-
-
-
-       
-     
-    </div>
-    
- 
-    
-    </>
-        
-    )
-}

@@ -13,7 +13,7 @@
 
   .discount-products-frame{
     position: absolute;
-    border: 2px solid rgb(186, 186, 186);
+    border: 3px solid rgb(186, 186, 186);
     height: 95%;
     width: 92%;
     z-index: 0;

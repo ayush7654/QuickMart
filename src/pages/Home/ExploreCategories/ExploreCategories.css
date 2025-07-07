@@ -2,7 +2,7 @@
 
   .explore-categories{
     width: 100%;
- 
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,14 +12,25 @@
     margin-bottom:2rem;
   }
 
+  .explore-category-frame{
+
+    position: absolute;
+    width: 100%;
+  height: 2px;
+  background-color: rgb(170, 170, 170);
+  z-index: 0;
+    top:50%;
+  }
+
   .explore-categories-head-div{
     
     width: 100%;
-    height: 4.5rem;
+   margin-bottom: .5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 0px solid rgb(142, 142, 142);
+     position: relative;
 
    
     
@@ -29,13 +40,17 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    width: 88%;
+  padding-left: 1rem;
+  padding-right: 1rem;
     font-size: 3rem;
     height: 70%;
     border-bottom: 0px solid rgb(22, 22, 22);
     color:rgb(22, 22, 22);
    font-family: 'Montserrat', sans-serif; 
     font-weight: 500;
+    z-index: 1;
+    background-color: #eeeeee;
+  
 
   }
 
@@ -178,7 +193,7 @@ font-weight: 600;
 
   .exploreCard3{
    
-    background-image: url('QMbgImages/QM-browse-healthtech.jpg');
+    background-image: url('QMbgImages/QM-browse-luxury.jpg');
  
   }
 

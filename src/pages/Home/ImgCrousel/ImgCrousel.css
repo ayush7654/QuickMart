@@ -164,7 +164,7 @@
 
       background-color: #eeeeee;
       color:rgb(0, 0, 0);
-      border: 1px rgb(0, 0, 0) solid;
+      border: 0px rgb(0, 0, 0) solid;
   }
   .btn-shopNow:hover{
     background-color: white;
