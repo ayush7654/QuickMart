@@ -1,3 +1,5 @@
+ @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+ 
  .homeContent-Container{
     position: relative;
     width: 100vw;
@@ -124,7 +126,8 @@
     margin-bottom: 4rem;
    
    
-    font-family:  'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+         font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
     z-index: 1;
 
   }
@@ -139,9 +142,9 @@
 
   
    
-   width: 25%;
-    font-size: 1.4rem;
-    height: 4rem;
+   width: 40%;
+    font-size: 2rem;
+   padding:1rem;
   }
 
    #buyLink-btn:hover{
@@ -150,25 +153,34 @@
 
   .btn-discoverMore{
       
-         color:#eeeeee;
-         border: 1px rgb(255, 255, 255) solid;
+         color:white;
+         border: 2px solid rgb(219, 219, 219) ;
+         background-color: transparent;
+             transition: all 0.4s ease;
+
   
   }
 
   .btn-discoverMore:hover{
     color:white;
+    backdrop-filter: blur(1px);
+   
+         border: 2px solid rgb(255, 255, 255) ;
+        
   }
 
   .btn-shopNow{
     
 
-      background-color: #eeeeee;
+      background-color: white;
       color:rgb(0, 0, 0);
-      border: 0px rgb(0, 0, 0) solid;
+      
+          transition: all 0.4s ease;
   }
   .btn-shopNow:hover{
-    background-color: white;
-    color:black;
+    background-color: #e3e3e3;
+     
+  
   }
 
 
@@ -185,7 +197,7 @@ bottom: 0;
 
   .CrousalNav-content{
     width: 30%;
-    height: 5%;
+    height: 3px;
 
     display: flex;
     flex-direction: row;
@@ -197,7 +209,8 @@ bottom: 0;
     border: 0px solid black;
     height:100% ;
     width: 24%;
-    background-color: #ffffff72;
+   /*  background-color: #ffffff72; */
+   background-color: rgba(0, 0, 0, 0.338);
    }
 
    .CrousalNav:hover{

@@ -21,12 +21,21 @@
 padding-top: 4rem;
   display: flex;
   justify-content: end;
+ 
+
 }
 .store-page-heading{
   font-size: 3rem;
-font-family:"Josefin Sans", sans-serif;
+        font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 500;
 
  width: 90%;
+}
+
+.storePage-tagline{
+  font-size: 2rem;
+  color:rgb(100,100,100);
+
 }
 
 .store-layout {
@@ -45,7 +54,7 @@ font-family:"Josefin Sans", sans-serif;
   overflow-y: scroll;
   scrollbar-width: none;
   width: 20%;
-  background-color: #f5f5f5;
+  background-color: rgb(225,225,225); /* #f5f5f5; */
   /* border-right: 1px solid #ddd; */
   border: 0px solid black;
   margin-top: 2rem;

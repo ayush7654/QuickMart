@@ -16,20 +16,24 @@ For mobile users, QuickMart’s responsive design and dedicated app ensure a sea
 
 Backed by strong customer support and a hassle-free return policy, QuickMart is committed to making online shopping not only convenient but also trustworthy. It’s the smart way to shop in today’s digital age.</p>
           </div>
+          <div className='homefooter-line-a'></div>
           <div className="site-Info-b">
             <div  id="homeInfo-subhead">QuickMart Plus</div>
             <p   id="homeInfo-para">QuickMart Plus is a premium membership service that unlocks exclusive benefits for QuickMart users. Members enjoy free express delivery, early access to sales, and exclusive deals across all categories. With QuickMart Plus, users get priority customer support, a faster checkout experience, and access to Plus-only products. The service also offers enhanced return policies and personalized shopping insights to make your experience smoother and smarter. Designed for frequent shoppers, QuickMart Plus adds value, convenience, and savings to every order. It’s the perfect upgrade for those who want more from their online shopping experience at QuickMart.</p>
           </div>
+           <div className='homefooter-line-a'></div>
           <div className="site-Info-c">
             <div  id="homeInfo-subhead">No Cost EMI</div>
             <p   id="homeInfo-para">
             QuickMart’s No Cost EMI feature lets you shop your favorite products without paying extra interest. Spread payments over easy monthly installments without hidden charges. It’s perfect for high-value purchases like electronics or appliances, making shopping more affordable and budget-friendly. Enjoy flexibility and convenience while keeping your finances in check—only on QuickMart.
             </p>
           </div>
+           <div className='homefooter-line-a'></div>
           <div className="site-Info-d">
             <div  id="homeInfo-subhead">EMI on Debit Cards</div>
             <p   id="homeInfo-para">QuickMart’s No Cost EMI feature lets you shop your favorite products without paying extra interest. Spread payments over easy monthly installments without hidden charges. It’s perfect for high-value purchases like electronics or appliances, making shopping more affordable and budget-friendly. Enjoy flexibility and convenience while keeping your finances in check—only on QuickMart.</p>
           </div>
+           <div className='homefooter-line-a'></div>
           <div className="site-Info-e">
             <div  id="homeInfo-subhead">Mobile Exchange Offers</div>
             <p   id="homeInfo-para">QuickMart’s Mobile Exchange lets you swap your old phone for instant discounts on a new one. Check your device’s value, apply the offer at checkout, and save instantly. It’s a smart, hassle-free upgrade option—only at QuickMart.</p>

@@ -41,7 +41,7 @@ function ProductCard({ classname, id, images, title, price, path,discount }) {
   return (
     <div className={classname} key={id}>
       <div className="bookmark-logo" onClick={handleClickBM}>
-        {productBookmarked ? <BsBookmarkFill color={'rgb(43, 43, 43)'} size={20} /> : <BsBookmark color={'gray'}  size={20}  />}
+        {productBookmarked ? <BsBookmarkFill color={'rgb(34, 89, 148)'} size={20} /> : <BsBookmark color={'rgb(50, 50, 50)'}  size={20}  />}
       </div>
 
       <div className='card-tag'>
@@ -53,7 +53,7 @@ function ProductCard({ classname, id, images, title, price, path,discount }) {
       </div>
 
       <div className='heart-div' onClick={handleClickWL}>
-       {productWishlisted? < FaHeart style={{ color: 'rgb(255, 91, 91)', fontSize: '24px' }} />:<FiHeart style={{ color: 'gray', fontSize: '24px' }} strokeWidth={1}/>}
+       {productWishlisted? < FaHeart style={{ color: 'rgb(216, 81, 81)', fontSize: '24px' }} />:<FiHeart style={{ color: 'rgb(50, 50, 50)', fontSize: '24px' }} strokeWidth={1}/>}
       </div>
 
 

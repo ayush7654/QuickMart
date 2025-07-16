@@ -5,7 +5,11 @@ export default function ExploreCategories() {
   return (
      <div className="explore-categories">
               <div className="explore-categories-head-div">
-                <div className="explore-categories-head" >Browse Collections - <span className='explore-tagline'> &nbsp; Trending Across the Aisles</span></div>
+                <div className="explore-categories-head-content">
+                  <div className='explore-categories-head'>Browse Collections.</div>
+                  
+                  <span className='explore-tagline'>Trending Across the Aisles</span>
+                </div>
               <div className='explore-category-frame'></div>
               </div>
                

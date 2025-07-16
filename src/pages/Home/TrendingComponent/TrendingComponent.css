@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@400;500&display=swap');
 
-  .trending-products-div{
- 
-  }
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
 
 
 
@@ -36,15 +33,18 @@
     justify-content: center;
     align-items: center;
     margin-top: 4rem;
+    margin-bottom: 2rem;
    
   }
+
+
 
   .trending-products-frame{
 
     position: absolute;
     width: 100%;
-  height: 2px;
-  background-color: rgb(170, 170, 170);
+  height: 1px;
+  background-color: rgb(200, 200, 200);
   z-index: 0;
     top:50%;
   }
@@ -57,37 +57,52 @@
     align-items: center;
      background-color: #eeeeee;
       width: 100%;
-      margin-bottom: .5rem;
+      margin-bottom: 1rem;
        position: relative;
       
+
+  }
+    .trending-products-heading-content{
+     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ 
+
+ 
+ white-space: nowrap;
+ border: 0px solid black;
+ padding-left: .5rem;
+ padding-right: .5rem;
+ background-color: #eeeeee;
+  width: 100%;
+
+
+
+
+  
 
   }
 
   .trending-products-heading{
 
-    font-size: 3rem;
-
-    color:rgb(31, 31, 31);
-    border-bottom: 0px solid rgb(22, 22, 22);
- 
-    height: 100%;
-    display: flex;
+     display: flex;
+    justify-content: end;
     align-items: center;
+
+    font-size: 3rem;
+    height: 100%;
+    border-bottom: 0px solid rgb(22, 22, 22);
+    color:rgb(22, 22, 22);
+   padding:.5rem;
     z-index: 1;
-    background-color: #eeeeee;
-    padding-left: 1rem;
-    padding-right: 1rem;
+            font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 600;
+    background-color: #ffffff;
+   
     
-    
-  
-
-       /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-        
-  font-family: 'Montserrat', sans-serif;  
-
-
-    font-weight: 500;
   }
+
 
  
 
@@ -121,7 +136,8 @@
   .trending-product-2{
        width: 100%;
     height: 100%;
-    background-image: url('/QM-Img-tp2.webp') ;
+
+    background-image: url('/QM-Img-tp3.webp') ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -130,31 +146,56 @@
     
   }
 
-  #trending-product:hover .trending-product-1 ,#trending-product:hover .trending-product-2{
-transform :scale(1.03);
-  }
+#tp-btn{
+     width:60%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+        font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 500;
+      font-size:3rem;
+    padding:1rem;
+}
 
   .tp-1-btn{
     position: absolute;
-    bottom: 15%;
-    right:2%;
+    bottom: 10%;
+    right:50%;
+    transform: translateX(50%);
     color:white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border: 0px solid white;
-    font-size: 4rem;
-    padding:1rem;
+    border: 2px solid rgb(255, 255, 255);
+
+
+      background: transparent;
+      transition: all 0.3s ease;
+  }
+
+  .trending-product-1:hover .tp-1-btn{
+    border: 2px solid rgb(0, 0, 0);
+   background-color: rgb(0, 0, 0);
+    cursor: pointer;
   }
 
   .tp-2-btn{
     position: absolute;
-    bottom: 15%;
-    left:2%;
-    color:rgb(32, 32, 32);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border: 0px solid rgb(0, 0, 0);
-    font-size: 4rem;
-    padding:1rem;
+    bottom: 10%;
+        right:50%;
+    transform: translateX(50%);
+    color:rgb(19, 19, 19);
+
+    border: 2px solid rgb(0, 0, 0);
+
+      background: transparent;
+ 
+      transition: all 0.3s ease;
     
+  }
+
+    .trending-product-2:hover .tp-2-btn{
+    border: 2px solid rgb(255, 255, 255);
+     background-color: white;
+       cursor: pointer;
   }
 
   

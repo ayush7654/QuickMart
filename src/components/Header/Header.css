@@ -264,7 +264,7 @@ background-color: #5cccca41;
     
      border: 0px solid black;
    /* background: linear-gradient(to bottom, #8de4e2 ,#9ae0df,#88cbc9); */
-   background-color: rgb(30,30, 30);
+   background-color: rgb(0, 0, 0);
      
       
      
@@ -297,7 +297,7 @@ font-family:'Inter';
      align-items: center;
      font-size: 1rem;
    
- color:rgb(181, 181, 181);
+ color:rgb(221, 221, 221);
  height: 80%;
 
    

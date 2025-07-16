@@ -5,22 +5,16 @@ import './BentoComponent.css'
 export default function BentoComponent() {
 
   const categoryImgs=[
+    {img:'/QMbgImages/QM-bento-clothing.jpg',name:'Clothing',path1:'',path2:''},
      {img:'/QMbgImages/QM-bento-shoes2.jpg',name:'Footwear',path1:'',path2:''},
+         {img:'/QMbgImages/QM-bento-sunglasses.jpg',name:'Shades',path1:'',path2:''},
      {img:'/QMbgImages/QM-bento-sports2.jpg',name:'Sports',path1:'',path2:''},
-       {img:'/QMbgImages/QM-bento-clothing.jpg',name:'Clothing',path1:'',path2:''},
+      
     {img:'/QMbgImages/QM-bento-decor.jpg',name:'Home Decor',path1:'',path2:''},
      {img:'/QMbgImages/QMElectronics.webp',name:'Electronics',path1:'',path2:''},
      
      {img:'/QMbgImages/QM-Watches.webp',name:'Watches',path1:'',path2:''},
-      
-    
-   
-  
-   
-   
-   
-    {img:'/QMbgImages/QM-bento-sunglasses.jpg',name:'Shades',path1:'',path2:''},
-    
+
     {img:'/QMbgImages/QM-bento-essentials.jpg',name:'Essentials',path1:'',path2:''},
     {img:'/QMbgImages/QM-HP-Skincare.jpg',name:'Skincare',path1:'',path2:''}
   ]
@@ -29,10 +23,14 @@ export default function BentoComponent() {
   return (
      <div className='bento-div' >
         
-    <div className="bento-heading-div" >
-      <div className='bento-heading'>Featured Categories -<span className="bento-tagline">&nbsp;Find What You Love</span> </div>
-      <div className='bento-heading-frame'></div>
-      </div>
+     <div className="explore-categories-head-div">
+                <div className="explore-categories-head-content">
+                  <div className='explore-categories-head'>FEATURED CATEGORIES.</div>
+                  
+                  <div className='explore-tagline'>Find What You Love</div>
+                </div>
+              <div className='explore-category-frame'></div>
+              </div>
 
 <div className="bento-container-div">
     <div className="bento-container-nav-div">
@@ -44,7 +42,7 @@ export default function BentoComponent() {
   <div style={{width:'100%', display:'flex'}}>
 
    <div style={{ transform: `translateX(-${390*categoryNav}px`}}  className="bento-container">{categoryImgs.map(card=><div  id='card-bento' style={{ backgroundImage: `url(${card.img})`}}>
-    <div id='card-bento-name'>{card.name} {'>'}</div>
+    <div id='card-bento-name'>{card.name} </div>
    
 
   

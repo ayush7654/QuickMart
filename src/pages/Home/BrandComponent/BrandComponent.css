@@ -1,11 +1,12 @@
 .brand-carousel-container {
-  width: 100%;
+  
     overflow: hidden;
-    height: 7rem;
+    height: 10rem;
+ 
     margin-top: 5rem;
     margin-bottom: 4rem;
     border: 0px solid red ;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
   }
   
   .brand-carousel {
@@ -16,18 +17,24 @@
     animation: scroll-left linear infinite;
     border: 0px solid rgb(0, 229, 255) ;
     height: 100%;
+    gap:0rem;
     
     
   }
   
   .brand-logo {
     width:100%; /* Set your desired width */
-  height: 80%;
+  height: 70%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   margin:1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
 
 
 
@@ -35,8 +42,8 @@
   }
   
   .brand-logo img {
-   width: 100%;
-    height: 100%;
+   width: 70%;
+    height: 70%;
     object-fit: contain;
  
   }

@@ -2,7 +2,7 @@
     display: flex;
     justify-content:center ;
     width: 100%;
-    background-color: #ffffff;
+ background-color: rgb(50, 50, 50);
     margin-top: 5rem;
 
   }
@@ -10,8 +10,8 @@
   .home-site-Info{
     border: 0px solid rgb(229, 29, 29) ;
     color:black;
-    background-color: white;
-    width: 90%;
+  background-color: rgb(50, 50, 50);
+    width: 95%;
     padding:2rem;
    
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -19,10 +19,22 @@
   }
 
   #homeInfo-subhead{
-    font-size: 1.5rem;
-    color:rgb(92, 92, 92);
+    font-size: 1.2rem;
+    color:rgb(220, 220, 220);
+    font-family:'Inter';
+  
   }
   #homeInfo-para{
-    font-size: 1rem;
-    color:grey;
+    font-size: .9rem;
+   color:rgb(171, 171, 171);
+      font-weight: 100;
+  }
+
+  .homefooter-line-a{
+  height: 1px;
+  width: 100%;
+  background-color: rgb(220, 220, 220);
+  transform: scaleY(0.5);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   }

@@ -4,18 +4,28 @@ import "./BrandComponent.css";
 const BrandCarousel = () => {
   // ✅ Move this up
   const brandLogos = [
-    'QM-home-brand11.png',
+    'QM-white-brand1.png',
+    'QM-white-brand2.png',
+    'QM-white-brand3.png',
+    'QM-white-brand4.png',
+    'QM-white-brand5.png',
+    'QM-white-brand6.png',
+    'QM-white-brand7.png'
+
+   
+  ];
+
+  /*  'QM-home-brand11.png',
     "QM-home-brand2.png",
     "QM-home-brand3.png",
     "QM-home-brand12.png",
     "QM-home-brand5.png",
     "QM-home-brand6.png",
     "QM-home-brand7.png",
-    "QM-home-brand13.png"
-  ];
+    "QM-home-brand13.png" */
 
   const logos = [...brandLogos, ...brandLogos]; // use it here AFTER declaration
-  const logoWidth = 150; // px per logo
+  const logoWidth = 200; // px per logo
   const totalWidth = logoWidth * brandLogos.length;
 
   return (

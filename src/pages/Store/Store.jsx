@@ -113,7 +113,7 @@ export default function Store() {
       <div className="store-page-heading-div">
         <div className="store-page-heading">{currentCategory?  <div >
   {currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)}
-</div>:<div>Store.<span style={{color:'rgb(100,100,100)',fontSize:'2rem'}} > The best way to buy the products you love.</span></div>}</div>
+</div>:<div>Store.<span className="storePage-tagline"  > The best way to buy the products you love.</span></div>}</div>
       </div>
       <div className="store-layout">
         <aside className="store-sidebar">
