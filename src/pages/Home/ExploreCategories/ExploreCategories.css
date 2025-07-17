@@ -68,8 +68,9 @@
   background-color: #ffffff;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 500;
-  margin-left: 0.5rem;
-  padding: .5rem 0;
+  padding-left:.5rem;
+
+ 
 }
 
   .explore-categories-list-container{

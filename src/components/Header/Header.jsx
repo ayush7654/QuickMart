@@ -129,6 +129,13 @@ export default function Header(){
 
 
         <div className="header-home">
+            <div className="logo-title">
+        <img src='/QMSiteLogo.png'  className="logoImg"  /> 
+      {/*   <div  className="header-logo-name">
+
+        </div>
+       */}
+        </div>
 
        
     <div className="header-searchBar-div" >
@@ -144,13 +151,7 @@ export default function Header(){
             
         </div> 
      
-  <div className="logo-title">
-        <img src='/QMSiteLogo.png'  className="logoImg"  /> 
-      {/*   <div  className="header-logo-name">
 
-        </div>
-       */}
-        </div>
      
 
     

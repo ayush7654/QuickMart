@@ -25,11 +25,12 @@ const isFirstRender = useRef(true); // track initial mount
  
       <ImgCrousel/>
       <BrandCarousel/>
+       <CountdownProducts/>
       <ExploreCategories/>
-      <DiscountProducts/>
+    
       <TrendingComponent />
-      <CountdownProducts/>
-      
+    
+         <DiscountProducts/>
       <BentoComponent/>
       <HomeFooter/>
    

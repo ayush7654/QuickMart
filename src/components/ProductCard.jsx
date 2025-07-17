@@ -78,8 +78,8 @@ function ProductCard({ classname, id, images, title, price, path,discount }) {
         </div>
       </Link>
       <div className='productcard-links-div'>
-        <div id='pd-link' >Add to Cart</div>
-        <div  id='pd-link' style={{backgroundColor:'rgb(40,40,40)',color:'white'}}>Buy Now</div>
+        <div id='pd-link' className='pd-AddtoCart' >Add to Cart</div>
+        <div  id='pd-link' className='pd-BuyNow'>Buy Now</div>
 
       </div>
     </div>

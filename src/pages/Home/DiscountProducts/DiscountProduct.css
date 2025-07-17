@@ -9,6 +9,7 @@
     align-items: center;
     margin-bottom: 2rem;
     position: relative;
+    overflow: hidden;
    
    
      
@@ -23,14 +24,14 @@ height: 85%;
 width: 100%;
 bottom:0rem;
 
-  background-color: rgb(230, 230, 230); 
+  background-color: rgb(240, 240, 240);
 
 
   }
 
   .discount-products-head-div{
        width: 100%;
-   margin-bottom: 1rem;
+ 
     display: flex;
     
     align-items: center;
@@ -76,7 +77,7 @@ bottom:0rem;
     height: 100%;
     border-bottom: 0px solid rgb(22, 22, 22);
     color:rgb(49, 49, 49);
-   padding:.5rem;
+
     z-index: 1;
    font-family: 'Roboto Condensed', sans-serif;
    font-weight: 600;
@@ -93,7 +94,8 @@ bottom:0rem;
     font-size: .9rem;
     text-decoration: line-through;
       text-decoration-thickness: .1rem;
-        color: rgb(30,30,30);
+      font-weight: 350;
+    
 
 
    }
@@ -104,8 +106,8 @@ bottom:0rem;
     align-items: center;
     width:100%;
     gap: .8rem;
-    color: rgb(30,30,30);
-    padding:.2rem;
+color: rgb(100, 100, 100); 
+   
     
       
   
@@ -116,9 +118,9 @@ bottom:0rem;
 
    .discount-product-price{
      
-    font-size: 1rem;
- font-weight: 400;
-     color:rgb(30,30,30);
+    font-size: 1.1rem;
+ font-weight: 350;
+  color: rgb(100, 100, 100); 
         /* font-family:'Times New Roman', Times, serif; */
    }
 

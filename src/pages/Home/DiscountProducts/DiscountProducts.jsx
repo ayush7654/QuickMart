@@ -8,7 +8,7 @@ export default function DiscountProducts() {
        
               <div className="discount-products-head-div">
                 <div className="discount-products-head-content">
-                  <div className='discount-products-head'>ABSOLUTE  STEALS.</div>
+                  <div className='discount-products-head'>Absolute Steals.</div>
                   
                   <div className='explore-tagline'>Offers Upto 50% Off </div>
                 </div>
@@ -17,29 +17,40 @@ export default function DiscountProducts() {
               <div className="home-Products-container" >
              <ProductCard
                   classname='home-product'
-                  key={79}
-                  id={79}
-                  images= {["https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/1.png"]}
+                  key={80}
+                  id={80}
+                  images= {["https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/1.webp"]}
     
-                  title="Asus Zenbook Pro Dual Screen Laptop"
-                  price={1799.99}
+                  title="Huawei Matebook X Pro"
+                  price={1399.99}
                   path={location.search}
                   discount={15}
                 />
-    
-               
-               <ProductCard
+      <ProductCard
                   classname='home-product'
-                  key={94}
-                  id={94}
-                  images= {['https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/1.webp']}
+                  key={155}
+                  id={155}
+                  images= {["https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/1.webp"]}
     
-                  title="Longines Master Collection"
-                  price={1499.99}
+                  title="Classic Sun Glasses"
+                  price={24.99}
                   path={location.search}
-                      discount={35}
+                  discount={35}
                 />
-               <ProductCard
+               
+          
+                  <ProductCard
+                              classname='home-product'
+                              key={98}
+                              id={98}
+                              images= {['https://cdn.dummyjson.com/product-images/home-decoration/decoration-swing/1.webp']}
+                
+                              title="Decoration Swing"
+                              price={59.99}
+                              path={location.search}
+                                 discount={40}
+                            />
+           {/*     <ProductCard
                   classname='home-product'
                   key={101}
                   id={101}
@@ -49,18 +60,8 @@ export default function DiscountProducts() {
                   price={549.99}
                   path={location.search}
                       discount={45}
-                />
-               <ProductCard
-                  classname='home-product'
-                  key={88}
-                  id={88}
-                  images= {['https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/1.webp']}
-    
-                  title="Nike Air Jordan 1 Red And Black"
-                  price={149.99}
-                  path={location.search}
-                      discount={25}
-                />
+                /> */}
+
              </div>
              </div>
   )
