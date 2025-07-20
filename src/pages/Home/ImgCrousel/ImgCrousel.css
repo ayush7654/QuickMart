@@ -37,10 +37,10 @@
     width: 15rem;
     height: 15rem;
     color: #eeeeee9f;
-    background-color: #00000032; /* #716c6c4d; */
+  /*   background-color: #00000032; */ /* #716c6c4d; */
     margin-left: -15%;
-    border: 1px solid #eeeeee9f;
-    border-radius: 20%;
+    border: 0px solid #eeeeee9f;
+    border-radius: 50%;
     padding:0;
      transition: margin-left 1s;
  
@@ -53,20 +53,20 @@
   }
 
   .home-left-arrow:hover{
-    background-color:  #0000004d; /* #716c6c4d; */
+
     color: #eeeeee;
-    border: 1px solid #ffffff;
+    border: 1px solid #cfcfcf;
   }
 
   .home-right-arrow{
     width: 15rem;
     height: 15rem;
-    color: #eeeeee9f;
-    border: 1px solid #eeeeee9f;
-    border-radius: 20%;
-    margin-right: -15%;
-    background-color: #00000032;
-     transition: margin-right 1s;; /* #716c6c4d; */
+  color: #eeeeee9f;
+   margin-right: -15%;
+    border: 0px solid #eeeeee9f;
+    border-radius: 50%;
+    padding:0;
+     transition: margin-right 1s;
 
   }
 
@@ -77,9 +77,9 @@
   }
 
   .home-right-arrow:hover{
-    background-color:  #0000004d; /* #716c6c4d; */
-    color: #eeeeee;
-    border: 1px solid #ffffff;
+ 
+  color: #eeeeee;
+    border: 1px solid #cfcfcf;
   }
 
 .homeCrousal{
@@ -98,7 +98,7 @@
     
     
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
    
     background-position: center;
     background-repeat: no-repeat;

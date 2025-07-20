@@ -19,10 +19,10 @@ export default function Header(){
     
 
     const elements = [
-       
-        {title:"Cart ", path:'/cart',logo:<div className="header-cartLogo-div"><HiOutlineShoppingCart id="ol-header-logo" size={20}/><HiShoppingCart id="fd-header-logo" size={20}/></div>},/*'QMicons/cartLogoOl2.png'  */
-        {title:"Wishlist ", path:'/wishlist',logo:<div className="header-wishlistLogo-div"><FiHeart  id="ol-header-logo" size={20}/><FaHeart id="fd-header-logo" size={20}/></div>},/*'QMicons/heartIconOl5.png'  */
-        {title:firebase.isLoggedIn?'Name':'Login',path:'/login',logo:firebase.isLoggedIn?<div className="header-userLogo-div"><HiOutlineUser  id="ol-header-logo" size={20}/><HiUser id="fd-header-logo" size={20}/></div>:<MdLogin size={20} />}/*'QMicons/userIconOl.png'  */
+
+        {title:"Cart ", path:'/cart',logo:<div className="header-cartLogo-div"><HiOutlineShoppingCart id="ol-header-logo" size={25} style={{ strokeWidth: '1.5' }}/><HiShoppingCart id="fd-header-logo" size={25}   /></div>},/*'QMicons/cartLogoOl2.png'  */
+        {title:"Wishlist ", path:'/wishlist',logo:<div className="header-wishlistLogo-div"><FiHeart  id="ol-header-logo" size={25} style={{ strokeWidth: '1.5' }}/><FaHeart id="fd-header-logo" size={25}/></div>},/*'QMicons/heartIconOl5.png'  */
+        {title:firebase.isLoggedIn?'Name':'Login',path:'/login',logo:firebase.isLoggedIn?<div className="header-userLogo-div"><HiOutlineUser  id="ol-header-logo" size={25} style={{ strokeWidth: '1.5' }}/><HiUser id="fd-header-logo" size={25}/></div>:<MdLogin size={25} />}/*'QMicons/userIconOl.png'  */
         ] 
 
 
@@ -93,91 +93,124 @@ export default function Header(){
     
       // Move up/down state
       const [isIdle, setIsIdle] = useState(false);
-    
+
+    const [isAtTop, setIsAtTop] = useState(true);
+
       // For scroll detection
       const lastScrollY = useRef(window.scrollY);
+      
+useEffect(() => {
+  let ticking = false;
+  // Define the distance from the top in pixels after which the header
+  // changes its base class (e.g., from transparent to solid background)
+  const headerClassChangeThreshold = 500; // You can adjust this value as needed
 
-       useEffect(() => {
-    let ticking = false;
+  // NEW: Define the scroll distance from the top *before* the header
+  // starts to consider hiding (becoming idle).
+  const hideHeaderStartThreshold = 50; // For example, hide after scrolling 200px from top
 
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY;
-          if (currentScrollY > lastScrollY.current + 5) {
-            setIsIdle(true); // Move up
-          } else if (currentScrollY < lastScrollY.current - 5) {
-            setIsIdle(false); // Move down
+  // NEW: Define the scroll distance before the header becomes idle/hidden,
+  // once the hideHeaderStartThreshold has been crossed.
+  const scrollDeltaForIdle = 10; // Adjust this value as needed (e.g., 50px, 100px)
+
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+
+        // Update isAtTop state (based on initial threshold)
+        if (currentScrollY <= headerClassChangeThreshold) {
+          setIsAtTop(true);
+        } else {
+          setIsAtTop(false);
+        }
+
+        // --- MODIFIED IDLE LOGIC ---
+        // Only start checking for idle/hide behavior AFTER scrolling past a certain point from the top
+        if (currentScrollY > hideHeaderStartThreshold) {
+          if (currentScrollY > lastScrollY.current + scrollDeltaForIdle) {
+            // Scrolled down sufficiently past the hide threshold
+            setIsIdle(true);
+          } else if (currentScrollY < lastScrollY.current - scrollDeltaForIdle) {
+            // Scrolled up sufficiently, show header
+            setIsIdle(false);
           }
-          lastScrollY.current = currentScrollY;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
+        } else {
+          // If we are above or at the hideHeaderStartThreshold, the header should never be idle (hidden)
+          setIsIdle(false);
+        }
+        // --- END MODIFIED IDLE LOGIC ---
 
-    window.addEventListener('scroll', onScroll);
+        lastScrollY.current = currentScrollY;
+        ticking = false;
+      });
 
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-    };
-  }, []);
-    
+      ticking = true;
+    }
+  };
+
+  window.addEventListener('scroll', onScroll);
+  return () => window.removeEventListener('scroll', onScroll);
+}, []);
+
+
 
    
-    return(<div className="sticky-header">
+    return(<div      
+className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-header-TopMounted": "sticky-header-ScrollUp"}
+    style={{
+      
+      transform: isIdle ? 'translateY(-5.5rem)' : 'translateY(0)',
+  
+      pointerEvents: isIdle ? 'none' : 'auto'
+    }}>
 
 
         <div className="header-home">
-            <div className="logo-title">
-        <img src='/QMSiteLogo.png'  className="logoImg"  /> 
-      {/*   <div  className="header-logo-name">
 
-        </div>
-       */}
-        </div>
-
-       
-    <div className="header-searchBar-div" >
-            <div className="header-searchBar" >
-            <input  className="header-search-box" placeholder="SEARCH" value={searchTerm} onChange={handleChange}/>
-            <div style={{ position:'absolute',right:'10px'}} ><Link style={{color:'black'}} to={`/search/${searchTerm}` }> <Search style={{color:'grey'}}/></Link></div>
-            </div>
-
-            <div className="suggestionBox">
-                {suggestionBox && searchTerm && suggestionComp?suggestionComp.map(item=><div onClick={()=>handleClick(item.name,item.slug)} key={item.name}><div className="suggestion">{item.name}</div></div>):null}
-            </div>
-           
+          <div className="QMSiteLogo">
             
-        </div> 
-     
+              <div className="logo-Img-title" >
+       <img
+        src="/HeaderBirdIconBl.png"
+        className={`logoImg ${
+          location.pathname !== '/' || !isAtTop ? 'fade-in' : 'fade-out'
+        }`}
+        alt="White Bird"
+      />
 
-     
-
-    
-
-       
-
-
-
-         <div className='Home-Nav-Container'>
-            {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div id="header-icon">{element.logo}{/* {<img src={`/${element.logo}`} id='header-nav-Icon'/> } */}</div> <div id='header-nav-name'>{element.title}</div>  <div></div></NavLink>)}
-         </div>
-
-        <div className="header-backArrow"> <Link style={{color:'white'}} to={`/store${location.state?location.state:'?page=1'}`}  >←</Link> </div>
+  
+      <img
+        src="/HeaderBirdIconWh.png"
+        className={`logoImg ${
+          location.pathname === '/' && isAtTop ? 'fade-in' : 'fade-out'
+        }`}
+        alt="Black Bird"
+      />
          
-        
-    </div>
-    <div   style={{
-    transition: 'transform 0.8s ease, opacity 1s ease',
-    transform: isIdle ? 'translateY(-2.5rem)' : 'translateY(0)',
-    opacity: isIdle ? 0 : 1,
-    pointerEvents: isIdle ? 'none' : 'auto'
-  }}
+        </div>  
+
+        <div  className="logo-text-title">
+       <span className="text-content">QUICKMART</span>
+          <img src='/QMSiteLogoBird6.png'  className="logoTextImg"  />  
+  
+        </div>
+
+          </div>
+
+        {/* 
+       
+          
+
+         */}
+
+           
+    <div  
+
      className="page-nav-container">
     
      <div className="page-nav">  
-   {/*  <Link to={`/store${location.state?location.state:'?page=1'}`} className="backToStore">←</Link> */} 
+  
     {navElements 
   ? navElements.map(item => (
       <NavLink to={item.path} className={({isActive})=>isActive?'page-nav-item-selected':'page-nav-item'}  key={item.path}>
@@ -188,6 +221,16 @@ export default function Header(){
 }
     </div>
      </div> 
+    
+         <div className='Home-Nav-Container'>
+          <Search size={25}  style={{ strokeWidth: '1', color:'rgb(224, 224, 224)'}} />
+            {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div  id="header-icon">{element.logo}{/* {<img src={`/${element.logo}`} id='header-nav-Icon'/> } */}</div> {/* <div id='header-nav-name'></div>   */}</NavLink>)}
+         </div>
+
+         
+        
+    </div>
+
          
     </div>
     
@@ -196,3 +239,24 @@ export default function Header(){
         
     )
 }
+
+
+
+
+ {/*  <Link to={`/store${location.state?location.state:'?page=1'}`} className="backToStore">←</Link> */} 
+
+  {/* <div className="header-searchBar-div" >
+            <div className="header-searchBar" >
+            <input  className="header-search-box" placeholder="SEARCH" value={searchTerm} onChange={handleChange}/>
+            <div style={{ position:'absolute',right:'10px'}} ><Link style={{color:'black'}} to={`/search/${searchTerm}` }> <Search style={{color:'grey'}}/></Link></div>
+            </div>
+
+            <div className="suggestionBox">
+                {suggestionBox && searchTerm && suggestionComp?suggestionComp.map(item=><div onClick={()=>handleClick(item.name,item.slug)} key={item.name}><div className="suggestion">{item.name}</div></div>):null}
+            </div>
+           
+            
+        </div>  */}
+
+        
+{/*         <div className="header-backArrow"> <Link style={{color:'white'}} to={`/store${location.state?location.state:'?page=1'}`}  >←</Link> </div> */}

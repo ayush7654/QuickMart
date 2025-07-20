@@ -12,7 +12,7 @@ export default function Home(){
     return(
     <div  className={`root${isHomePage ? 'home' : 'nothome'}`} style={{position:"relative"}}>
     <Header/>
-    <div className='outlet-container'>
+    <div className='outlet-container' style={{marginTop:isHomePage?'0rem':'4rem'}} >
     <Outlet />
     </div>
         <Footer />
