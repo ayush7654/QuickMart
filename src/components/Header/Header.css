@@ -96,7 +96,7 @@ background-color: white;
           font-weight: 500;
       font-family: 'Roboto Condensed';
                font-size: 2.5rem;
-      letter-spacing: .1rem;
+     /*  letter-spacing: .1rem; */
  color: rgb(255, 255, 255); 
  z-index: 1;
     
@@ -116,7 +116,7 @@ background-color: white;
           font-weight: 500;
       font-family: 'Roboto Condensed';
                font-size: 2.5rem;
-      letter-spacing: .1rem;
+      /* letter-spacing: .1rem; */
     color: rgb(0, 0, 0); 
     z-index: 1;
       /* text-shadow: 3px 2px rgb(169, 169, 169); */
@@ -124,6 +124,13 @@ background-color: white;
   }
   
   .text-content{
+    display: flex;
+ /* text-shadow: 2px 2px rgb(98, 212, 209); */
+    /* background:linear-gradient(to right, rgb(98, 212, 209), rgb(98, 212, 209)) ; */
+  }
+
+    .sticky-header-ScrollUp .text-content{
+    display: flex;
  /* text-shadow: 2px 2px rgb(98, 212, 209); */
     /* background:linear-gradient(to right, rgb(98, 212, 209), rgb(98, 212, 209)) ; */
   }
@@ -241,9 +248,21 @@ transform: translateY(-50%);
 
   }
 
+   .sticky-header-TopMounted .searchIcon{
+    color: rgb(200, 200, 200);
+   }
+
+    .sticky-header-TopMounted .searchIcon :hover{
+    color: rgb(255, 255, 255);
+   }
+
+    .sticky-header-ScrollUp  .searchIcon{
+    color: rgb(30, 30, 30);
+   }
+
 
   .sticky-header-TopMounted .navlink{
-    color: rgb(230, 230, 230);
+    color: rgb(200, 200, 200);
     display: flex;
     
     gap: .1rem;
@@ -256,7 +275,7 @@ height: 2rem;
   }
 
   .sticky-header-ScrollUp .navlink{
-    color: rgb(80, 80, 80);
+    color: rgb(30, 30, 30);
     display: flex;
     
     gap: .1rem;
@@ -401,12 +420,15 @@ gap: .1rem;
    border-top-right-radius:.2rem ;
    border-top-left-radius:.2rem ; 
 
-font-weight: 500;
+
+ font-weight: 500;
 /* font-family:'Inter'; */
-font-family: 'Roboto Condensed';
+font-family: 'Roboto';
     height: 2.5rem;
     z-index: 1;
     border: 0px solid rgb(30,30, 30);
+     font-size: 1.05rem;
+    
 
 
      
@@ -415,7 +437,7 @@ font-family: 'Roboto Condensed';
      display: flex;
      border: 0px solid red;
      align-items: center;
-     font-size: 1rem;
+    
    border-bottom: 1px solid transparent;
  color:rgb(198, 198, 198);
  height: 80%;
@@ -430,17 +452,18 @@ font-family: 'Roboto Condensed';
      display: flex;
      border: 0px solid red;
      align-items: center;
-     font-size: 1rem;
+   
    border-bottom: 1px solid transparent;
- color:rgb(52, 52, 52);
+ color:rgb(99, 99, 99);
  height: 80%;
  transition: all .5s ease;
 
    }
 
   .sticky-header-TopMounted .page-nav-item:hover{
-border-bottom: 1px solid rgb(229, 229, 229);
+border-bottom: 1px solid rgb(240, 240, 240);
  color:rgb(229, 229, 229);
+ 
 
  
    }
@@ -448,6 +471,7 @@ border-bottom: 1px solid rgb(229, 229, 229);
    .sticky-header-ScrollUp .page-nav-item:hover{
 border-bottom: 1px solid rgb(59, 59, 59);
  color:rgb(59, 59, 59);
+ 
 
  
    }
@@ -456,7 +480,7 @@ border-bottom: 1px solid rgb(59, 59, 59);
     display: flex;
     border: 0px solid red;
     align-items: center;
-    font-size: 1rem;
+  
     border-bottom: 2px solid rgb(255, 255, 255);
     margin-bottom: .1rem;
 color: white;
@@ -472,7 +496,7 @@ height: 70%;
     display: flex;
     border: 0px solid red;
     align-items: center;
-    font-size: 1rem;
+    
     border-bottom: 2px solid rgb(0, 0, 0);
     margin-bottom: .1rem;
 color: rgb(0, 0, 0);

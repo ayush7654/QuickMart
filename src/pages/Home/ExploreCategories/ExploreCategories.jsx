@@ -4,13 +4,15 @@ import './ExploreCategories.css'
 export default function ExploreCategories() {
   return (
      <div className="explore-categories">
-              <div className="explore-categories-head-div">
-                <div className="explore-categories-head-content">
-                  <div className='explore-categories-head'>Browse Collections.</div>
+         
+
+               <div className="home-head-div">
+                <div className="home-head-content">
+                  <div className='home-head'>BROWSE COLLECTIONS.</div>
                   
-                  <span className='explore-tagline'>Trending Across the Aisles</span>
+                  <div className='home-head-tagline'>Trending Across the Aisles.</div>
                 </div>
-              <div className='explore-category-frame'></div>
+              <div className='home-head-frame'></div>
               </div>
                
 

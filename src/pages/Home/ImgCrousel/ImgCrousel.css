@@ -7,18 +7,12 @@
    
     border-left: 0px solid red;
     display: flex;
+  
 
   }
 
 
-   .crousel-frame{
-    position: absolute;
- width: 99vw;
- height: 100%;
- border-left: 0rem solid #eeeeee;
- border-right:0rem solid #eeeeee;
- z-index: 1;
-  }
+
 
 
     .Nav-div{

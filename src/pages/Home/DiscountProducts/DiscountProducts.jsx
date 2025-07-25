@@ -6,13 +6,13 @@ export default function DiscountProducts() {
       <div className="discount-home-Products-div">
         <div className='home-Products-window'></div>
        
-              <div className="discount-products-head-div">
-                <div className="discount-products-head-content">
-                  <div className='discount-products-head'>Absolute Steals.</div>
+              <div className="home-head-div">
+                <div className="home-head-content">
+                  <div className='home-head'>ABSOLUTE STEALS.</div>
                   
-                  <div className='explore-tagline'>Offers Upto 50% Off </div>
+                  <div className='home-head-tagline'>Offers Upto 50% Off.</div>
                 </div>
-              <div className='explore-category-frame'></div>
+              <div className='home-head-frame'></div>
               </div>
               <div className="home-Products-container" >
              <ProductCard

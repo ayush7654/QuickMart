@@ -5,13 +5,13 @@ export default function CountdownProducts() {
   return (
       <div className="Countdown-home-Products-div">
        <div className='home-Products-window'></div>
-         <div className="countdown-products-head-div">
-                <div className="countdown-products-head-content">
-                  <div className='countdown-products-head'>Countdown Deals.</div>
+         <div className="home-head-div">
+                <div className="home-head-content">
+                  <div className='home-head'>COUNTDOWN DEALS.</div>
                   
-                  <div className='explore-tagline'>Grab It Before It's Gone</div>
+                  <div className='home-head-tagline'>Grab It Before It's Gone</div>
                 </div>
-              <div className='explore-category-frame'></div>
+              <div className='home-head-frame'></div>
               </div>
           <div className="home-Products-container" >
                  <ProductCard

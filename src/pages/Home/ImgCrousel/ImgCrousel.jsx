@@ -28,7 +28,7 @@ const homeBGs = [
 
   return (
    <div className="homeContent-Container">
-        {/*     <div className="crousel-frame"></div> */}
+        
             <div className="Nav-div">
               <ChevronLeft onClick={() =>setCurrentBGImg(prev => (prev > 0 ? prev - 1 : prev))} className="home-left-arrow" strokeWidth={.5} absoluteStrokeWidth />
               <ChevronRight onClick={() =>setCurrentBGImg(prev => (prev < homeBGs.length - 1 ? prev + 1 : prev))} className="home-right-arrow" strokeWidth={.5} absoluteStrokeWidth />

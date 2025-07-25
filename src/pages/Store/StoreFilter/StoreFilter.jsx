@@ -1,9 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight } from 'react-feather'
+
+
+import { X } from 'lucide-react';
+
 import './StoreFilter.css'
 
-export default function StoreFilter({ currentCategory, typeFilter, handleClickFilter, handleClickCategory }) {
+export default function StoreFilter({ currentCategory, typeFilter, handleClickFilter, handleClickCategory,sideBartoggled }) {
   const [productCategory, setProductCategory] = useState([]);
   const [CategoryNum, setCategoryNum] = useState(0);
 
@@ -68,16 +71,23 @@ export default function StoreFilter({ currentCategory, typeFilter, handleClickFi
       className="Store-filter"
     >
 
+<div className='Store-filter-head'>
+  <span>SELECT CATEGORY</span>
+  <span className='Store-filter-cancel'>
+    <X size={24} strokeWidth={1.5} onClick={sideBartoggled} />
 
+  </span>
+  
+</div>
       
-        <div className="store-categories" style={{ translate: `${-CategoryNum * 200}px` }}>
+        <div className="store-categories" style={{ translate: `${-CategoryNum * 200}px`}}>
           {productCategory && productCategory.map((item, index) =>
             <div
               onClick={() => handleClickFilter(item.slug)}
-              className={item.slug === typeFilter ? "store-category-selected" : "store-category"}
+           className='store-category-div'
               key={index}
             >
-              {item.name}
+              <span    className={item.slug === typeFilter ? "store-category-selected" : "store-category"}>{item.name}</span>
             </div>
           )}
         </div>

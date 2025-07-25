@@ -23,13 +23,13 @@ export default function BentoComponent() {
   return (
      <div className='bento-div' >
         
-     <div className="explore-categories-head-div">
-                <div className="explore-categories-head-content">
-                  <div className='explore-categories-head'>Featured Categories. </div>
+     <div className="home-head-div">
+                <div className="home-head-content">
+                  <div className='home-head'>FEATURED CATEGORIES.</div>
                   
-                  <div className='explore-tagline'> Find What You Love</div>
+                  <div className='home-head-tagline'>Find What You Love.</div>
                 </div>
-              <div className='explore-category-frame'></div>
+              <div className='home-head-frame'></div>
               </div>
 
 <div className="bento-container-div">

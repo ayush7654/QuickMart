@@ -7,7 +7,7 @@ import {
 } from "react";
 import { useSearchParams, useLocation } from "react-router-dom";
 import { getItems, getFilteredItems } from "../../api";
-
+ import { ChevronLeft,ChevronRight } from 'lucide-react'; 
 import ProductCard from "../../components/ProductCard";
 import StoreFilter from "./StoreFilter/StoreFilter";
 import StoreFooter from "./StoreFooter/StoreFooter";
@@ -26,6 +26,7 @@ export default function Store() {
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentCategory, setcurrentCategory] = useState("");
+  const [sideBartoggled, sideBarsetToggled] = useState(true);
 
   const typeFilter = searchParams.get("type");
 
@@ -33,6 +34,12 @@ export default function Store() {
     setcurrentCategory(category);
     setSearchParams({ type: category });
   };
+
+  const handleAllProducts =()=>{
+    setcurrentCategory('');
+   searchParams.delete('type'); // remove the key from the params
+setSearchParams(searchParams); // update the URL
+  }
 
   const loadBatch = async (batchNumber) => {
     if (ProductCache.current[batchNumber]) return;
@@ -110,18 +117,49 @@ export default function Store() {
 
   return (
     <div className="Store-Page">
-      <div className="store-page-heading-div">
-        <div className="store-page-heading">{currentCategory?  <div >
-  {currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)}
-</div>:<div>Store.<span className="storePage-tagline"  > The best way to buy the products you love.</span></div>}</div>
+      <div className="storePage-Offer-div">
+        <div style={{fontSize:'2rem'}}>FLAT 40% OFF | END OF SEASON SALE</div>
+        <div style={{fontSize:'1.2rem'}}>+Extra 10% off on orders of ₹4999 or more*</div>
       </div>
+      <div style={{display:sideBartoggled?'none':'flex'}} className="storePage-overlay"></div>
+      <div className="store-page-header">
+           <div className="filter-div">
+           
+      <div style={{marginLeft:'3.5rem',width:'6rem'}} id="button" onClick={() => sideBarsetToggled(false)}><span style={{ fontSize: '20px', cursor: 'pointer' }}>☰</span></div>
+          <div style={{marginRight:'4rem',width:'10rem'}}id="button" >SORT BY</div>
+        </div>
+             <div className="store-page-heading-div">
+              <div  className="allProductsBtn-div" onClick={handleAllProducts}><ChevronLeft className="allProductsBtn"  strokeWidth={2} absoluteStrokeWidth /></div>
+        <div className="store-page-heading">
+           
+          <div>STORE.<span className="storePage-tagline"  > {currentCategory?  <span>
+  {currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)}
+</span>:'The best way to buy the products you love.'}</span></div>
+</div>
+
+      </div>
+    
+      </div>
+ 
+
+{/* {currentCategory?  <div >
+  {currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)}
+</div>:<div>Store.<span className="storePage-tagline"  > The best way to buy the products you love.</span></div>} */}
+
+
       <div className="store-layout">
-        <aside className="store-sidebar">
+
+       
+        <aside className="store-sidebar"  style={{
+          transform: sideBartoggled ? 'translateX(0)' : 'translateX(100%)',
+          transition: 'transform 0.5s ease-in-out',
+        }}>
           <StoreFilter
             currentCategory={currentCategory}
             handleClickFilter={handleFilter}
             handleClickCategory={() => setcurrentCategory("")}
             typeFilter={typeFilter}
+            sideBartoggled={()=>sideBarsetToggled(true)}
           />
         </aside>
 

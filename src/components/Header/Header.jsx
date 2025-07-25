@@ -26,13 +26,13 @@ export default function Header(){
         ] 
 
 
-    const navElements= [{title:'HOME',path:'/'},{title:'STORE',path:'/store?page=1'},{title:'ABOUT',path:'/about'},{title:'BLOG',path:'/blog'},{title:'CONTACT',path:'/contact'}]
+    const navElements= [{title:'HOME',path:'/'},{title:'STORE',path:'/store'},{title:'ABOUT',path:'/about'},{title:'BLOG',path:'/blog'},{title:'CONTACT',path:'/contact'}]
 
     const [searchTerm,setSearchTerm]= useState('')
 
     const[suggestions,setSuggestions]= useState([])
 
-    const[suggestionBox,setSuggestionBox]= useState(false)
+    const[suggestionBox,setSuggestionBox]= useState(false);
 
     const[categories,setCategories]= useState(null)
 
@@ -107,11 +107,11 @@ useEffect(() => {
 
   // NEW: Define the scroll distance from the top *before* the header
   // starts to consider hiding (becoming idle).
-  const hideHeaderStartThreshold = 50; // For example, hide after scrolling 200px from top
+  const hideHeaderStartThreshold = 10; // For example, hide after scrolling 200px from top
 
   // NEW: Define the scroll distance before the header becomes idle/hidden,
   // once the hideHeaderStartThreshold has been crossed.
-  const scrollDeltaForIdle = 10; // Adjust this value as needed (e.g., 50px, 100px)
+  const scrollDeltaForIdle = 5; // Adjust this value as needed (e.g., 50px, 100px)
 
   const onScroll = () => {
     if (!ticking) {
@@ -223,7 +223,7 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
      </div> 
     
          <div className='Home-Nav-Container'>
-          <Search size={25}  style={{ strokeWidth: '1', color:'rgb(224, 224, 224)'}} />
+          <span className="searchIcon"><Search size={25}   style={{ strokeWidth: '1.5'}} /></span>
             {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div  id="header-icon">{element.logo}{/* {<img src={`/${element.logo}`} id='header-nav-Icon'/> } */}</div> {/* <div id='header-nav-name'></div>   */}</NavLink>)}
          </div>
 
