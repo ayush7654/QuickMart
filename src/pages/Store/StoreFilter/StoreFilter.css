@@ -34,7 +34,7 @@
     position: sticky;
     top: 0;
       width: 100%;
-  height: 5rem;
+  height: 5.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,15 +59,16 @@ z-index: 2;
     width: 2rem;
     height: 2rem;
     font-weight: 300;
-    border: 1px solid rgb(171, 171, 171);
+    border: 0px solid rgb(171, 171, 171);
     border-radius: 50%;
     color:rgb(151, 151, 151);
   
  
   }
   .Store-filter-cancel:hover{
-    color:rgb(30, 30, 30);
-      border: 1px solid rgb(31, 31, 31);
+    color:rgb(20, 20, 20);
+      border: 0px solid rgb(31, 31, 31);
+      background-color: rgb(231, 231, 231);
   }
 .store-categories{
   width: 100%;

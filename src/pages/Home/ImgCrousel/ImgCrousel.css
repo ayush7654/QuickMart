@@ -1,10 +1,14 @@
  @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
  
- .homeContent-Container{
-    position: relative;
+ .ImageCrousel-Container{
+    position: fixed;
     width: 100vw;
-    
+    height: 100vh;
+    z-index: 0;
+    top:0;
    
+    background-color: white;
+   overflow: hidden;
     border-left: 0px solid red;
     display: flex;
   

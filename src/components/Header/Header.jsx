@@ -11,7 +11,14 @@ import { MdLogin } from 'react-icons/md';
 import StoreFilter from "../../pages/Store/StoreFilter/StoreFilter";
 
 import './Header.css'
-export default function Header(){
+export default function Header({toggleSwitch,screenOverlay,toggleOverlay}){
+
+  
+        
+        const [searchTerm,setSearchTerm]= useState('')
+    
+        const[suggestions,setSuggestions]= useState([])
+    
 
     const firebase= useFirebase()
 
@@ -28,45 +35,22 @@ export default function Header(){
 
     const navElements= [{title:'HOME',path:'/'},{title:'STORE',path:'/store'},{title:'ABOUT',path:'/about'},{title:'BLOG',path:'/blog'},{title:'CONTACT',path:'/contact'}]
 
-    const [searchTerm,setSearchTerm]= useState('')
 
-    const[suggestions,setSuggestions]= useState([])
 
-    const[suggestionBox,setSuggestionBox]= useState(false);
+    
+
 
     const[categories,setCategories]= useState(null)
 
     
 
-    const navigate= useNavigate();
-
-    function handleChange(e){
-        setSearchTerm(e.target.value)
-        setSuggestionBox(true)
-       
-    }
-    
-    function handleClick(name,slug){
-        setSearchTerm(name)
-        setSuggestionBox(false)
-        navigate(`store?type=${slug}`)
-    }
     
 
-   useEffect(()=>{
-    const fetchData= async()=>{
-        try{
-            const response = await fetch('https://dummyjson.com/products/categories')
-            const result = await response.json()
-            setSuggestions(result)
-        }
-        catch(er){
-            console.error(er)
-        }
-    }
+   
+ 
 
-    fetchData();
-   },[searchTerm,suggestionBox])
+
+
 
    useEffect(()=>{
     const fetchCategory= async()=>{
@@ -78,7 +62,6 @@ export default function Header(){
     fetchCategory();
     },[])
 
-   const suggestionComp= suggestions?suggestions.filter(item=>item.name.toLowerCase().includes(searchTerm.toLowerCase())):null;
     
   
 
@@ -149,19 +132,25 @@ useEffect(() => {
     }
   };
 
+ 
+    
+
   window.addEventListener('scroll', onScroll);
   return () => window.removeEventListener('scroll', onScroll);
 }, []);
 
-
+ const suggestionComp= suggestions?suggestions.filter(item=>item.name.toLowerCase().includes(searchTerm.toLowerCase())):null;
 
    
     return(<div      
 className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-header-TopMounted": "sticky-header-ScrollUp"}
-    style={{
-      
+     style={{
+      // Dynamic transition based on 'isIdle' state
+      transition: isIdle
+        ? 'transform 0.5s ease-in, background-color 0.6s ease, box-shadow 1s ease' // When hiding (moving up/idle)
+        : 'transform 0.7s ease-out,  background-color 0.6s ease, box-shadow 1s ease', // When showing (moving down/active)
       transform: isIdle ? 'translateY(-5.5rem)' : 'translateY(0)',
-  
+     
       pointerEvents: isIdle ? 'none' : 'auto'
     }}>
 
@@ -198,13 +187,7 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
 
           </div>
 
-        {/* 
-       
-          
 
-         */}
-
-           
     <div  
 
      className="page-nav-container">
@@ -223,7 +206,7 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
      </div> 
     
          <div className='Home-Nav-Container'>
-          <span className="searchIcon"><Search size={25}   style={{ strokeWidth: '1.5'}} /></span>
+          <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon"><Search size={25}   style={{ strokeWidth: '1.5'}} /></span>
             {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div  id="header-icon">{element.logo}{/* {<img src={`/${element.logo}`} id='header-nav-Icon'/> } */}</div> {/* <div id='header-nav-name'></div>   */}</NavLink>)}
          </div>
 
@@ -245,18 +228,6 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
 
  {/*  <Link to={`/store${location.state?location.state:'?page=1'}`} className="backToStore">←</Link> */} 
 
-  {/* <div className="header-searchBar-div" >
-            <div className="header-searchBar" >
-            <input  className="header-search-box" placeholder="SEARCH" value={searchTerm} onChange={handleChange}/>
-            <div style={{ position:'absolute',right:'10px'}} ><Link style={{color:'black'}} to={`/search/${searchTerm}` }> <Search style={{color:'grey'}}/></Link></div>
-            </div>
-
-            <div className="suggestionBox">
-                {suggestionBox && searchTerm && suggestionComp?suggestionComp.map(item=><div onClick={()=>handleClick(item.name,item.slug)} key={item.name}><div className="suggestion">{item.name}</div></div>):null}
-            </div>
-           
-            
-        </div>  */}
 
         
 {/*         <div className="header-backArrow"> <Link style={{color:'white'}} to={`/store${location.state?location.state:'?page=1'}`}  >←</Link> </div> */}

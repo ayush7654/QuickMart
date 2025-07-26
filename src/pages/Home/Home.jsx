@@ -19,26 +19,30 @@ const location = useLocation()
 const isFirstRender = useRef(true); // track initial mount
 
 
-    return(<>
+    return(
     
   <div className="Home">
  
       <ImgCrousel/>
-      <BrandCarousel/>
-       <CountdownProducts/>
+      <div style={{width:'100%', backgroundColor:'white',zIndex:'1', position: 'relative',marginTop:'100vh'}}>
+         <CountdownProducts/>
       <ExploreCategories/>
     
       <TrendingComponent />
     
          <DiscountProducts/>
       <BentoComponent/>
+      <BrandCarousel/>
+
+      
       <HomeFooter/>
+            </div>
    
   </div>
     
  
     
-    </>
+   
         
     )
 }
