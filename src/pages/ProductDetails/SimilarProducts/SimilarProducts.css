@@ -1,0 +1,129 @@
+
+  .Product-Details-SimilarProducts{
+    width: 100%;
+    padding-top: 4rem;
+
+   
+  }
+  
+  .similarProducts-head{
+  font-size: 2rem;
+  width: 100%;
+  padding-top: 2rem;
+  font-weight: 500;
+  font-family: 'Roboto';
+  }
+
+  .pd-head-frame{
+      
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  bottom: 0rem;
+  margin-bottom: 1rem;
+  }
+ 
+.Product-Details-SimilarProducts-list{
+ 
+  background-color: white;
+ width: 100%;
+ display: flex;
+ padding:1rem;
+ 
+ justify-content: space-around;
+}
+.productDetails-product{
+
+      border:0px solid rgb(255, 255, 255);
+ 
+    position: relative;
+    justify-content: center;
+    align-content: center;
+width: 22%;
+  
+    color:black; 
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+
+
+
+
+  .productDetails-product .productImg-wrapper {
+  width: 100%;
+  height: 320px; /* match the height of your images */
+  position: relative;
+  overflow: hidden;
+}
+
+  .productDetails-product .productImg{
+    
+    background-color: rgb(245, 245, 245); 
+      transition: all 0.3s ease;
+              width: 100%;
+        height: 100%;
+/* background: radial-gradient(circle , white 40%, rgb(199, 199, 199));  */
+
+
+
+        border:1px solid rgb(220, 220, 220);
+
+    
+    
+  }
+
+   .productDetails-product .productImg:hover{
+ 
+    background-color: rgb(255, 255, 255);
+
+    
+    
+  }
+
+.productDetails-product .bookmark-logo{
+    display: none;
+   position: absolute;
+    top: 1rem;
+    right:1rem;
+    color:rgb(32, 32, 32);
+      z-index: 1;
+
+      
+  
+  }
+
+
+ .productDetails-product .heart-div{
+    display: none;
+    position: absolute;
+      top: .9rem;
+    right:3.5rem;
+      z-index: 1;
+
+  }
+.productDetails-product #pd-link{
+display: none;
+ }
+
+ .productDetails-product .discount-tag{
+    display: none;
+ }
+
+    .productDetails-product .discount-product-price{
+        display: none;
+    }
+
+  .productDetails-product .card-tag{
+    display: none;
+ }
+
+   .productDetails-product .productCard-detail{
+    font-family: 'Roboto Condensed';
+    padding:.5rem;
+    color:rgb(74, 74, 74)
+   }
+
+   .productDetails-product .Store-Product-title{
+    padding-top:.5rem;
+    padding-bottom:.5rem;
+   }

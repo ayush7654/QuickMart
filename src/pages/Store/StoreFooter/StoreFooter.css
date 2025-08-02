@@ -1,6 +1,6 @@
  .store-footer-info{
   
-     background-color: rgb(50, 50, 50);
+     background-color: rgb(10, 10, 10);
     width: 95%;
     padding:1rem;
     margin-top: 2rem;
@@ -24,16 +24,17 @@
  
 }
   #store-footer-subhead{
-    font-size: 1rem;
+    font-size: .9rem;
       color:rgb(220, 220, 220);
     font-family:'Inter';
+    font-weight: 500;
   }
 
   #store-footer-products{
-    font-size: .9rem;
-    color:rgb(171, 171, 171);
-      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
+    font-size: .85rem;
+    color:rgb(170, 170, 170);
+    line-height: 1.2rem;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
     .storefooter-line-a{

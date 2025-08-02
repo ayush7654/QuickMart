@@ -25,10 +25,10 @@ export default function Registration(){
 
 
  return(
-    <div className='registration-page' >
- <div className="register-page-In">
 
-       <div className='register-Img'></div>
+/*  <div className="register-page-In"> {/* <div className='register-Img'></div> */
+
+       
        <div className='register-page-div'>
       {firebase.isLoggedIn?<div className='reg-loggedIn'>
      
@@ -37,7 +37,7 @@ export default function Registration(){
        <Link className='regIn-link' to='/'>Get started →</Link>
       
       </div>: <div className='register-box' >
-              <div className='register-title'>Create an account</div>
+           {/*    <div className='register-title'>Create an account</div> */}
               <div className='reg-Email-div'>
                      <div>Email</div>
                      <input className='register-emailId' 
@@ -49,7 +49,7 @@ export default function Registration(){
        <div className='reg-password-div'>
               <div>Password</div>
               <input className='register-password'
-          placeholder='Password'
+          placeholder='--------------------'
           name="password"
           value={password}
           onChange={(e)=>setPassword(e.target.value)}/>
@@ -57,22 +57,22 @@ export default function Registration(){
    <div className='reg-Confirm-password'>
        <div>Confirm Password</div>
        <input className='register-ConfirmPassword'
-         placeholder='Confirm Password'
+         placeholder='--------------------'
           name="password"
           value={confirmPassword}
           onChange={(e)=>setConfirmPassword(e.target.value)}/>
    </div>
   
-   <button className="register-page-button" onClick={SignUp}>Register</button> 
+   <button className="register-page-button" onClick={SignUp}>SIGN IN</button> 
        </div>}
        </div>
 
 
-    </div>
+/*     </div> */
     
     
     
-    </div>
+  
     
  )
 }

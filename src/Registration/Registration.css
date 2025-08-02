@@ -23,11 +23,15 @@
 }
 .register-page-div{
     display: flex;
+      align-items: center;
+  justify-content: center;
+
+  height: 100%;
+    width: 100%;
+
+  
    
-    border: 0px solid rgb(0, 0, 0);
-    width: 40%;
-    height: 100%;
-    align-items: center;
+ 
    
     
 }
@@ -38,19 +42,16 @@
 }
 
 .register-box{
-    display: flex;
+
+        display: flex;
     flex-direction: column;
     height: 90%;
     width: 90%;
-    margin-left: auto; 
-    background-color: rgb(188, 202, 230);
-    box-shadow: -7px 7px rgb(127, 125, 125);
+    gap:2rem;
+    padding:0px;
+  
     align-items: center;
-    justify-content: center;
-    border: 0px solid rgb(0, 21, 255);
-    border-radius: 1rem;
-    gap: 2rem;
-    font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+   justify-content: center;
 }
 .reg-Email-div{
     width: 60%;
@@ -76,40 +77,52 @@
 }
 
 .register-emailId,.register-password,.register-ConfirmPassword{
-    height: 2.5rem;
+   height: 2.5rem;
     width: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(236, 236, 236);
     border: 0px;
-    color:rgba(43, 38, 38, 0.92);
+    color:rgba(41, 41, 41, 0.92);
     font-size: 1rem;
     padding-left:10px;
-    border-radius: .6rem;
+    margin-top:.2rem;
 }
 
-.register-emailId,.register-password,.register-ConfirmPassword:focus{
-    outline: none;
+.register-emailId:focus,.register-password:focus,.register-ConfirmPassword:focus{
+     outline: none;
+    background-color: white;
+    border: 1px solid rgb(200,200,200);
 }
 
 .register-page-button{
-    width:50%;
-    
+    width:60%;
+    height: 2.5rem;
     margin-top: 20px;
+    background-color: rgb(20, 20, 20);
+    color:white;
+    font: 500;
+    font-size: 1.2rem;
+    font-family: 'Roboto';
+    transition: all  .3s ease;
 
 }
+
+  .register-page-button:hover{
+background-color: rgb(59, 59, 59);
+color:rgb(255, 255, 255);
+border: 0px solid black;
+cursor: pointer;
+  }
 .reg-loggedIn{
-    display: flex;
+        display: flex;
     flex-direction: column;
-    height: 90%;
-    width: 90%;
-    margin-left: auto; 
-    background-color: rgb(188, 202, 230);
-    box-shadow: -7px 7px rgb(127, 125, 125);
+    gap:.6rem;
+    padding:0px;
     align-items: center;
     justify-content: center;
-    border: 0px solid rgb(0, 21, 255);
+font-family: 'Poppins';
     border-radius: 1rem;
-    gap: 2rem;
-    font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+    height:90%;
+    width: 90%;
  
 }
 

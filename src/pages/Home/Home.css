@@ -120,7 +120,7 @@ white-space: nowrap;
     position: relative;
     justify-content: center;
     align-content: center;
-    text-align: center;
+
     border-radius: .3rem;
     color:black; 
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -163,6 +163,7 @@ white-space: nowrap;
     right:1rem;
     color:rgb(32, 32, 32);
       z-index: 1;
+      display: none;
 
       
   
@@ -174,7 +175,7 @@ white-space: nowrap;
       top: .9rem;
     right:3.5rem;
       z-index: 1;
-
+display: none;
   }
 
   
@@ -317,7 +318,7 @@ background-color: rgb(248, 248, 248);
 
   .home-Products-window{
     position: absolute;
-height: 80%;
+height: 100%;
 width: 100%;
 bottom:0rem;
 
@@ -367,7 +368,36 @@ bottom:0rem;
 
 }
 
-  
+.bookmark-fill{
+
+ font-size:1.3rem;
+ color:rgb(40, 40, 40);
+}
+
+.bookmark-outline{
+   font-size:1.3rem;
+ color:rgb(190, 190, 190);
+}
+
+.bookmark-outline:hover{
+   font-size:1.3rem;
+ color:rgb(50, 50, 50);
+}
+
+.heart-fill{
+  font-size:1.5rem ;
+   color:rgb(40, 40, 40);
+}
+
+  .heart-outline{
+  font-size:1.5rem ;
+   color:rgb(190, 190, 190);
+}
+
+  .heart-outline:hover{
+  font-size:1.5rem ;
+ color:rgb(50, 50, 50);
+}
   
 
 

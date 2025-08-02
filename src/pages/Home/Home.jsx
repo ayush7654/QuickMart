@@ -1,6 +1,6 @@
 import {useRef} from "react";
 import { useLocation, Link } from "react-router-dom";
-import ImgCrousel from "./ImgCrousel/ImgCrousel";
+import ImgCarousel from "./ImgCarousel/ImgCarousel";
 import BrandCarousel from "./BrandComponent/BrandComponent";
 import ExploreCategories from "./ExploreCategories/ExploreCategories"; 
 import DiscountProducts from "./DiscountProducts/DiscountProducts";
@@ -23,7 +23,7 @@ const isFirstRender = useRef(true); // track initial mount
     
   <div className="Home">
  
-      <ImgCrousel/>
+      <ImgCarousel/>
       <div style={{width:'100%', backgroundColor:'white',zIndex:'1', position: 'relative',marginTop:'100vh'}}>
          <CountdownProducts/>
       <ExploreCategories/>

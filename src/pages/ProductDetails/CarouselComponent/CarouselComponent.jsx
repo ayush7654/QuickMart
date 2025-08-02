@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react'
 import { ChevronLeft, ChevronRight } from 'react-feather'
-
+import './CarouselComponent.css'
 export default function CarouselComponent({Imagelist}) {
   
   const [ImgId,setImgId]= useState(0);

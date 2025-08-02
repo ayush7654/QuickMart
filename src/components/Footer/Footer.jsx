@@ -62,8 +62,8 @@ export default function Footer() {
         <div>QuickMart Internet Private Ltd, </div>
         <div>Buildings Alyssa, Begonia &</div>
         <div>Clove Embassy Tech Village,</div>
-        <div>Bengaluru, 560103,</div>
-        <div>Karnataka,India</div>
+      {/*   <div>Bengaluru, 560103,</div>
+        <div>Karnataka,India</div> */}
         </div>
       
         <div>Social:</div>
@@ -79,8 +79,8 @@ export default function Footer() {
         <div>QuickMart Internet Private Ltd,</div>
         <div>Buildings Alyssa, Begonia &</div>
         <div>Clove Embassy Tech Village,</div>
-        <div>Bengaluru, 560103,</div>
-        <div>Karnataka,India</div>
+      {/*   <div>Bengaluru, 560103,</div>
+        <div>Karnataka,India</div> */}
         <div>CIN:U51109XYZXTC02245</div>
         <div>Telephone: <span style={{color:'blue'}}>044-9999999</span></div>
         </div>
@@ -89,10 +89,10 @@ export default function Footer() {
 </div>
         </div>
         <div className='footer-lower'>
-            <div id='footerIcon-div'>  <FaStore id='footerIcon'  style={{color:'rgb(147, 170, 213)'}}/> <span >Become a Seller</span></div>
-            <div id='footerIcon-div'>  <FaMagic  id='footerIcon' style={{color:'rgb(147, 170, 213)'}}/> <span>Advertise</span></div>
-            <div id='footerIcon-div'> <FaGift id='footerIcon' style={{color:'rgb(147, 170, 213)'}} /><span>Gift Cards</span></div>
-            <div id='footerIcon-div'>   <FaQuestionCircle id='footerIcon' style={{color:'rgb(147, 170, 213)'}} /><span>Help Center</span></div>
+            <div id='footerIcon-div'>  <FaStore id='footerIcon'  style={{color:'rgb(98, 212, 209)'}}/> <span >Become a Seller</span></div>
+            <div id='footerIcon-div'>  <FaMagic  id='footerIcon' style={{color:'rgb(98, 212, 209)'}}/> <span>Advertise</span></div>
+            <div id='footerIcon-div'> <FaGift id='footerIcon' style={{color:'rgb(98, 212, 209)'}} /><span>Gift Cards</span></div>
+            <div id='footerIcon-div'>   <FaQuestionCircle id='footerIcon' style={{color:'rgb(98, 212, 209)'}} /><span>Help Center</span></div>
           
        
       

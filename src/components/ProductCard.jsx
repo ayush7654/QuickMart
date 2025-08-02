@@ -1,9 +1,23 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BsBookmark, BsBookmarkFill } from 'react-icons/bs';
+import { FiBookmark } from 'react-icons/fi'
  import { FaHeart } from 'react-icons/fa';    // Filled heart
 import { FiHeart } from 'react-icons/fi';   
 
+import { MdBookmark, MdBookmarkBorder } from 'react-icons/md';
+
+// Bootstrap
+
+
+// Feather Icons
+
+
+// Lucide Icons
+import { LuBookmark, LuBookmarkMinus } from 'react-icons/lu';
+
+// Heroicons
+import { HiBookmark, HiOutlineBookmark } from 'react-icons/hi';
 
 
 
@@ -41,7 +55,8 @@ function ProductCard({ classname, id, images, title, price, path,discount }) {
   return (
     <div className={classname} key={id}>
       <div className="bookmark-logo" onClick={handleClickBM}>
-        {productBookmarked ? <BsBookmarkFill color={'rgb(34, 89, 148)'} size={20} /> : <BsBookmark color={'rgb(50, 50, 50)'}  size={20}  />}
+       {productBookmarked ?      <BsBookmarkFill className='bookmark-fill'  /> :     <BsBookmark className='bookmark-outline' strokeWidth={.1}  /> } 
+
       </div>
 
       <div className='card-tag'>
@@ -53,7 +68,7 @@ function ProductCard({ classname, id, images, title, price, path,discount }) {
       </div>
 
       <div className='heart-div' onClick={handleClickWL}>
-       {productWishlisted? < FaHeart style={{ color: 'rgb(216, 81, 81)', fontSize: '24px' }} />:<FiHeart style={{ color: 'rgb(50, 50, 50)', fontSize: '24px' }} strokeWidth={1}/>}
+       {productWishlisted? < FaHeart className='heart-fill' />:<FiHeart className='heart-outline'  strokeWidth={1}/>}
       </div>
 
 

@@ -117,10 +117,10 @@ setSearchParams(searchParams); // update the URL
 
   return (
     <div className="Store-Page">
-      <div className="storePage-Offer-div">
-        <div style={{fontSize:'2rem'}}>FLAT 40% OFF | END OF SEASON SALE</div>
+    { !typeFilter && <div  className="storePage-Offer-div">
+        <div style={{fontSize:'2rem',fontWeight:'700'}}>FLAT 40% OFF | END OF SEASON SALE</div>
         <div style={{fontSize:'1.2rem'}}>+Extra 10% off on orders of ₹4999 or more*</div>
-      </div>
+      </div>}
       <div style={{display:sideBartoggled?'none':'flex'}} className="storePage-overlay"></div>
       <div className="store-page-header">
            <div className="filter-div">

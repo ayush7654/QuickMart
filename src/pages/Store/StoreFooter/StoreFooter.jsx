@@ -2,9 +2,9 @@ import React from 'react'
 import './StoreFooter.css'
 export default function StoreFooter() {
   return (
-     <div style={{display:'flex',justifyContent:'center',width:'100%',backgroundColor:'rgb(50, 50, 50)',marginTop:'5rem'}}>
+     <div style={{display:'flex',justifyContent:'center',width:'100%',backgroundColor:'rgb(10, 10, 10)',marginTop:'5rem'}}>
       <div className="store-footer-info" >
-      <div className="store-footer-heading">Top Stories: Brand Directory</div>
+      <div className="store-footer-heading">Top Stories : Brand Directory</div>
       <div className="store-footer-list">
         <div id='store-footer-subhead' className="store-footer-info-a">
           <span>MOST SEARCHED FOR ON QUICKMART :</span><span id='store-footer-products'>&nbsp;&nbsp;SAMSUNG F16 | Summer Sale | Mobile | POCO M7 | Nothing Phone 3a | iPhone 16 | SAMSUNG Galaxy S25 Ultra | SAMSUNG Galaxy S25 Plus | SAMSUNG Galaxy S25 | iPhone 16e | iPhone 16 Plus | iPhone 16 Pro | iPhone 16 Pro Max | vivo V50 | OPPO Reno13 Pro | POCO X7 | realme 14 Pro Plus | REDMI Note 14 Pro+ 5G | Whoop Band | OPPO Find X8 | Flipkart Minutes | Flipkart Exchange | Flipkart Reset | Nothing Phone 2a Plus | Sarees | CMF by Nothing Phone 1 | Pocket Bazaar | Xiaomi 14 CIVI | Infinix Note 40 Pro 5G | Infinix Note 40 5G | iPhone 15 Plus | vivo X Fold3 Pro | Motorola g04s | Vivo x 100 | OnePlus Nord CE 3 Lite 5G | Spoyl Store | SAMSUNG Flip5 | SAMSUNG Fold5 | Flipkart Axis Bank Super Elite Credit card | 5G Mobile Phones | Primebook Laptops | Moto Edge 40 | Grievance Redressal | OPPO Reno7 Pro 5G | Help Centre | Track Orders | Manage Orders | Return Orders | Gift Cards Store | Flipkart Axis Bank Credit Card | Pay Later</span>

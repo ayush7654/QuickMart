@@ -1,0 +1,90 @@
+ 
+.carousel-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  height: 80vh;
+    width: 100%;
+    position: sticky;
+    top:0;
+    border: 0px solid red;
+ 
+    
+  }
+  .carousel-sub-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+   
+  }
+  .leftArrow,.rightArrow{
+  display:none;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  height: 2.5rem;
+  padding:.5rem;
+  border-radius: 20%;
+  background-color: #413c3c;
+  color: #ffffff;
+  border: 0px solid white;
+    
+  }
+  .ImageBox{
+  width:37.5rem;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  border: 0px solid black;
+  /* background-color: #eeeeee; */
+
+  user-select: none;
+  }
+ 
+  .currentImage{
+    transition: translate 400ms ease-in-out;
+    width: 600px;
+  }
+  .ImgSelecters{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap:5px;
+    top:40%;
+    right:5rem;
+    border: 0px solid red;
+     user-select: none;
+    
+  }
+  .imgBtn-div{
+    height:.8rem;
+    width:.8rem;
+    border-radius: 50%;
+    background-color: #eeeeee;
+    border:1px solid rgb(0, 0, 0);
+  }
+  .imgBtn-div:hover{
+    height:.8rem;
+    width:.8rem;
+   background-color:rgba(255, 255, 255, 0.713);
+   
+  }
+  .imgBtn-clicked-div{
+    height:.8rem;
+    width:.8rem;
+   background-color: rgb(255, 255, 255);
+   border-radius: 50%;
+   border:1px solid rgb(0, 0, 0);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+  .imgBtn-clicked-div .imgBtn{
+  background-color: rgb(79, 78, 78);
+  height:.6rem;
+  width:.6rem;
+  border-radius: 50%;
+}
+  
