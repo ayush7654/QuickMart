@@ -50,34 +50,46 @@ export default function Cart(){
 
     const cartElements=cartList? (cartList.map((product,index)=>(
         <div key={index} className="Cart-item">
-          <div className="cart-product-img"><img src={product.images[0]} width="200px"/></div> 
-          <div  className="cart-product-info"> 
+          <div className="cart-product-img"><img src={product.images[0]} width="250px"/></div> 
+          <div  className="cart-product-info">
+        
             <div className="cart-product-title">{product.title}</div>
             <div className="cart-product-price">Price: ${product.price}</div>
            <div className="cart-product-quantity">Quantity: {product.quantity}</div>
+           <div>{product.shippingInformation}.</div>
           <div className="cart-btn">
-          <button className="cart-buy-btn">Buy now</button>
-          <button className="cart-remove-btn" onClick={()=>handleRemove(product.title)}>Remove</button>
+          <button  id='cartButton' className="cart-remove-btn" onClick={()=>handleRemove(product.title)}>Remove</button>
+                 <button id='cartButton' className="cart-buy-btn">View Details</button>
           </div>
         
           </div>
            
         </div>))):"loading..";
    
-    return(<div className="Cart-page-In">
+    return(<div className="cart-page">
+      <div className="cart-page-title">CART.</div>
+          <div className="Cart-page-In">
 
     <div className="cart-item-list">{cartElements}</div>
+
     <div className="cart-In-BG">
-        <div className="checkout-info">
-          
+      <div className="cart-In-BG-title">Order Summary</div>
+      <div className="order-list">
+        {cartList.map(item=><div className="order-list-item">
+          <div id='order-item'>{item.title} x {item.quantity}</div>
+          <div id='order-item'>${item.price * item.quantity}</div>
+     {/*      <div id='order-item'>{item.quantity}</div> */}
+        </div>)}
+       
+      </div>
         
-        <div className="total-cost">Total cost: ${totalCost.toFixed(2)}</div>
-        </div>
-     
-        <button className="checkout-btn">Place order</button>
+      <div className="total-cost"><span>Total Cost</span> <span>${totalCost.toFixed(2)}</span></div>
+        <button className="checkout-btn">Place Order</button>
     </div>
     
     </div>
+    </div>
+
     
     )
 }

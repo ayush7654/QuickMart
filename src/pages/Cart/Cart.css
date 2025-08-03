@@ -1,3 +1,31 @@
+
+.cart-page{
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+.cart-page-title{
+font-size: 2.5rem;
+font-weight: 600;
+font-family: 'Roboto Condensed';
+margin-top: 2rem;
+width: 100%;
+display: flex;
+justify-content: start;
+align-items: center;
+/* position: sticky;
+top:0; */
+background-color: white;
+z-index: 1;
+height: 4.5rem;
+padding-left: 3rem;
+border-bottom: 0px solid rgb(220,220,220);
+
+}
+
 .Cart-page-Out{
 
     border: 0px red solid;
@@ -80,27 +108,82 @@
 
     .Cart-page-In{
      border: 0px solid black;
-      padding-left: 2rem;
+  width: 95%;
+
       display: flex;
+      
     }
     .cart-In-BG{
         border: 0px solid green;
         width: 40%;
-        height: 80vh;
-        margin-top: 3.6rem;
-        border-radius: 1rem;
-        border: 0px red solid;
- background-image: url('/QMbgImages/CartBGPh.jpg');
+        height: 70vh;
+        margin-top: 8.5rem;
+        margin-right: 3rem;
+             z-index: 1;
+         border: 0px solid rgb(220,220,220);
+       
+/*  background-image: url('/QMbgImages/CartBGPh.jpg');
 background-position: center;
 background-repeat: no-repeat;
-background-size: cover; 
+background-size: cover;  */
 position: fixed;
 right: 0;
 top:4rem;
 display: flex;
-justify-content: center;
-box-shadow: -5px 5px rgb(80, 125, 214);
+flex-direction: column;
+align-items: center;
 
+background-color: rgb(240,240,240);
+
+
+    }
+
+    .cart-In-BG-title{
+        width: 100%;
+        height: 5rem;
+        font-family:'Inter';
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+border-bottom: 1px solid rgb(220,220,220);
+       
+
+    }
+
+    .order-list{
+        width: 100%;
+   height: 55%;
+      padding:.5rem;
+        font-family: 'Poppins';
+  position: relative;
+         color: rgb(52, 52, 52);
+         font-weight: 300;
+  /*     background-color: rgb(245, 245, 245); */
+      overflow-y: scroll;
+      scrollbar-width: none;
+      border-bottom: 1px solid rgb(220,220,220);
+     
+
+    }
+
+    .order-list-item{
+display: flex;
+flex-direction: row;
+padding:.3rem;
+justify-content: space-between;
+    }
+
+    .total-cost{
+        position: absolute;
+        bottom: 6.5rem;
+        width: 100%;
+        padding:1rem;
+        display: flex;
+        justify-content: space-between;
+
+        font-family: 'Poppins';
     }
 
     .cart-product-title{
@@ -108,12 +191,12 @@ box-shadow: -5px 5px rgb(80, 125, 214);
         padding-bottom:1rem;
     }
     .cart-product-price{
-        font-size: 1rem;
+       
         padding-bottom:1rem;
     }
 
     .cart-product-quantity{
-        font-size: 1rem;
+   
         padding-bottom:1rem;
     }
  
@@ -128,7 +211,7 @@ box-shadow: -5px 5px rgb(80, 125, 214);
         overflow: auto;
         padding:1rem;
         z-index: 1;
-        font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+     
         background-color: rgba(255, 255, 255, 0.863);
         
 
@@ -140,12 +223,13 @@ box-shadow: -5px 5px rgb(80, 125, 214);
         left:7rem;
         right: 7rem;
         font-size: 1.5rem;
-        font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
-        background-color: rgba(36, 35, 35, 0.899);
-
+        height: 3rem;
+color: white;
+        background-color: rgb(10, 10, 10);
+font-family: 'Poppins';
     }
     .checkout-btn:hover{
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(30, 30, 30);
 
     }
 
@@ -154,26 +238,36 @@ box-shadow: -5px 5px rgb(80, 125, 214);
     display: flex;
     flex-direction: column;
     gap:2rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
+    
 }
     .Cart-item{
-border: 0px red solid;
-background-color: white;
-width: 50%;
+border: 0px rgb(203, 203, 203) solid;
+background-color: rgb(236, 236, 236);
+width: 55%;
 display: flex;
 padding: 0px;
-border-radius: .4rem;
-font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+
+/* border-radius: .4rem; */
+
     }
 
+    .cart-product-title{
+        color:rgb(30,30,30)
+    }
     
     .cart-product-info{
-        background-color: rgba(147, 170, 213, 0.67);
+    background-color: rgb(255, 255, 255); 
         width: 100%;
+      color:rgb(120, 120, 120);
      position: relative;
-        padding: 1rem;
-     border-top-right-radius: .4rem;
-     border-bottom-right-radius: .4rem;
+     padding-top: 1rem;
+        padding-left: 1.5rem;
+  /*    border-top-right-radius: .4rem;
+     border-bottom-right-radius: .4rem; */
+     font-family:'Inter';
+     font-size: .9rem;
+ 
 
     }
 
@@ -187,27 +281,43 @@ font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
         bottom:.5rem;
         right:1rem;
         
+        
     
         
          }
+
+         #cartButton{
+               width: 35%;
+height: 2rem;
+    font-size: .9rem;
+   
+    font-weight: 400;
+   font-family: 'Poppins';
+   transition: all .25s ease;
+ 
+         }
+
+#cartButton:hover{
+
+    background-color: #ffffff;
+  border: 1px solid rgb(30,30,30);
+    color:rgb(0, 0, 0);
+    cursor: pointer;
+         }
      
-    .cart-remove-btn{
-    width: 35%;
-    border-radius: .3rem;
-    font-size: .8rem;
-    background-color: rgba(36, 35, 35, 0.899);
-    font-weight: 600;
-    font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+ .cart-remove-btn{
+
+    background-color: rgb(30,30,30);
+  
+    color:white;
         
     }
 
     .cart-buy-btn{
-        width: 35%;
-        border-radius: .3rem;
-        font-size: .8rem;
-        background-color: rgba(36, 35, 35, 0.899);
-        font-weight: 600;
-        font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+     
+        background-color: rgb(90, 210, 210);
+      color: white;
+      border: 0px;
     }
 
     @media(max-width:1000px){
