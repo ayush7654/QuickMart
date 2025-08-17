@@ -38,6 +38,14 @@ export default function Registration(){
       
       </div>: <div className='register-box' >
            {/*    <div className='register-title'>Create an account</div> */}
+           <div className='reg-Email-div'>
+                     <div>Username</div>
+                     <input className='register-emailId' 
+          placeholder='Example Username'
+          name="email"
+          value={email}
+          onChange={(e)=>setEmail(e.target.value)}/>
+              </div>
               <div className='reg-Email-div'>
                      <div>Email</div>
                      <input className='register-emailId' 
@@ -49,7 +57,7 @@ export default function Registration(){
        <div className='reg-password-div'>
               <div>Password</div>
               <input className='register-password'
-          placeholder='--------------------'
+          placeholder='--------------'
           name="password"
           value={password}
           onChange={(e)=>setPassword(e.target.value)}/>
@@ -57,7 +65,7 @@ export default function Registration(){
    <div className='reg-Confirm-password'>
        <div>Confirm Password</div>
        <input className='register-ConfirmPassword'
-         placeholder='--------------------'
+         placeholder='--------------'
           name="password"
           value={confirmPassword}
           onChange={(e)=>setConfirmPassword(e.target.value)}/>

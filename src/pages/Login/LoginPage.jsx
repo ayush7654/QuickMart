@@ -68,11 +68,18 @@ export default function LoginPage(){
      <div className="Password">
        <div>Password</div>
        <input className="login-password"  
-            placeholder="-----------"
+            placeholder="--------------"
             name="password"        
             value={password}
             onChange={(e)=>setPassword(e.target.value)}/> 
      </div> 
+
+     <div className="forgot-pw"><span className="forgot-pw-text">Forgot Password?</span></div>
+     <div className="login-Or"><span className="or-line"></span><span className="or-line-text">Or</span></div>
+     <div className="google-login">
+        <div className="google-login-icon"></div>
+        <span className="google-login-text">Login with Google</span>
+     </div>
      
  
      <button className='login-button'onClick={SignIn} >LOG IN</button>
