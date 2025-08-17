@@ -5,9 +5,9 @@ export default function TrendingComponent() {
       <div className="trending-products-div">
         <div className="home-head-div">
                 <div className="home-head-content">
-                  <div className='home-head'>TRENDS IN FASHION.</div>
+                  <div className='home-head'>Trends In Fashion.</div>
                   
-                  <div className='home-head-tagline'>Style That Speaks Today.</div>
+                  <div className='home-head-tagline'>Style that speaks today.</div>
                 </div>
               <div className='home-head-frame'></div>
               </div>

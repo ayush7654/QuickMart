@@ -11,7 +11,9 @@ import { getItems, getFilteredItems } from "../../api";
 import ProductCard from "../../components/ProductCard";
 import StoreFilter from "./StoreFilter/StoreFilter";
 import StoreFooter from "./StoreFooter/StoreFooter";
-
+import { FaBars } from "react-icons/fa";
+import { HiOutlineMenu } from "react-icons/hi";
+import { RxHamburgerMenu } from "react-icons/rx";
 import "./Store.css";
 
 export default function Store() {
@@ -117,24 +119,29 @@ setSearchParams(searchParams); // update the URL
 
   return (
     <div className="Store-Page">
-    { !typeFilter && <div  className="storePage-Offer-div">
+        
+ {/*    { !typeFilter && <div  className="storePage-Offer-div">
         <div style={{fontSize:'2rem',fontWeight:'700'}}>FLAT 40% OFF | END OF SEASON SALE</div>
         <div style={{fontSize:'1.2rem'}}>+Extra 10% off on orders of ₹4999 or more*</div>
-      </div>}
+      </div>} */}
       <div style={{display:sideBartoggled?'none':'flex'}} className="storePage-overlay"></div>
-      <div className="store-page-header">
-           <div className="filter-div">
+      {/* <div className="filter-div">
            
-      <div style={{marginLeft:'3.5rem',width:'6rem'}} id="button" onClick={() => sideBarsetToggled(false)}><span style={{ fontSize: '20px', cursor: 'pointer' }}>☰</span></div>
+      <div style={{marginLeft:'3.5rem',width:'6rem'}} id="button" onClick={() => sideBarsetToggled(false)}><span style={{ fontSize: '15px', cursor: 'pointer' }}>☰</span></div>
+      <span style={{color:'white'}}>STORE</span>
           <div style={{marginRight:'4rem',width:'10rem'}}id="button" >SORT BY</div>
-        </div>
+        </div> */}
+      <div className="store-page-header">
+          
              <div className="store-page-heading-div">
-              <div  className="allProductsBtn-div" onClick={handleAllProducts}><ChevronLeft className="allProductsBtn"  strokeWidth={2} absoluteStrokeWidth /></div>
+            <div  className="allProductsBtn-div" onClick={handleAllProducts}><ChevronLeft className="allProductsBtn"  strokeWidth={1.5} absoluteStrokeWidth /></div>  
+               <div className="store-filter-button-div" onClick={() => sideBarsetToggled(false)}> <RxHamburgerMenu  className="store-filter-button"  /></div>
+          
         <div className="store-page-heading">
            
           <div>STORE.<span className="storePage-tagline"  > {currentCategory?  <span>
   {currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)}
-</span>:'The best way to buy the products you love.'}</span></div>
+</span>: '' }</span></div>
 </div>
 
       </div>

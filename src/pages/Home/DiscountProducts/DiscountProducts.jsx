@@ -3,14 +3,14 @@ import './DiscountProduct.css'
 import ProductCard from '../../../components/ProductCard'
 export default function DiscountProducts() {
   return (
-      <div className="discount-home-Products-div">
+      <div id='home-product-div' className="discount-home-Products-div">
         <div className='home-Products-window'></div>
        
-              <div className="home-head-div">
+              <div  className="home-head-div">
                 <div className="home-head-content">
-                  <div className='home-head'>ABSOLUTE STEALS.</div>
+                  <div className='home-head'>Absolute Steals.</div>
                   
-                  <div className='home-head-tagline'>Offers Upto 50% Off.</div>
+                  <div className='home-head-tagline'>Offers upto 50% off.</div>
                 </div>
               <div className='home-head-frame'></div>
               </div>

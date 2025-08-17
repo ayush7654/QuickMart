@@ -101,7 +101,7 @@ font-weight: 400;
     width: 90%;
     gap:2rem;
     padding:0px;
-  
+ 
     align-items: center;
    justify-content: center;
     /* background-color: #b9dbf2; */
@@ -117,9 +117,10 @@ font-weight: 400;
     align-items: center;
     justify-content: center;
 font-family: 'Poppins';
-    border-radius: 1rem;
+   
     height:90%;
-    width: 90%;
+    width: 100%;
+     background-color: rgb(235, 235, 235);
 
   
   }

@@ -53,7 +53,8 @@
   .home-left-arrow:hover{
 
     color: #eeeeee;
-    border: 1px solid #cfcfcf;
+    border: 0px solid #cfcfcf;
+        background-color: rgba(0, 0, 0, 0.2);
   }
 
   .home-right-arrow{
@@ -77,7 +78,8 @@
   .home-right-arrow:hover{
  
   color: #eeeeee;
-    border: 1px solid #cfcfcf;
+    border: 0px solid #cfcfcf;
+    background-color: rgba(0, 0, 0, 0.2);
   }
 
 .homeCrousal{
@@ -121,7 +123,7 @@
     align-items: center;
    
     
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
    
    
          font-family: 'Roboto Condensed', sans-serif;
@@ -195,7 +197,7 @@ bottom: 0;
 
   .CrousalNav-content{
     width: 30%;
-    height: 3px;
+    height: 4px;
 
     display: flex;
     flex-direction: row;

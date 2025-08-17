@@ -161,7 +161,7 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
             
               <div className="logo-Img-title" >
        <img
-        src="/HeaderBirdIconBl.png"
+        src="/HeaderBirdIconWh.png"
         className={`logoImg ${
           location.pathname !== '/' || !isAtTop ? 'fade-in' : 'fade-out'
         }`}

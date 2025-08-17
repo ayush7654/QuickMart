@@ -74,6 +74,7 @@ export default function StoreFilter({ currentCategory, typeFilter, handleClickFi
 <div className='Store-filter-head'>
   <span>SELECT CATEGORY</span>
   <span className='Store-filter-cancel'>
+
     <X size={24} strokeWidth={1.5} onClick={sideBartoggled} />
 
   </span>

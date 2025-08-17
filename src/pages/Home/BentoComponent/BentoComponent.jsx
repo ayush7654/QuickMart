@@ -25,9 +25,9 @@ export default function BentoComponent() {
         
      <div className="home-head-div">
                 <div className="home-head-content">
-                  <div className='home-head'>FEATURED CATEGORIES.</div>
+                  <div className='home-head'>Featured Categories.</div>
                   
-                  <div className='home-head-tagline'>Find What You Love.</div>
+                  <div className='home-head-tagline'>Find what you love.</div>
                 </div>
               <div className='home-head-frame'></div>
               </div>

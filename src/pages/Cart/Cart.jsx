@@ -51,7 +51,8 @@ export default function Cart(){
     const cartElements=cartList? (cartList.map((product,index)=>(
         <div key={index} className="Cart-item">
           <div className="cart-product-img"><img src={product.images[0]} width="250px"/></div> 
-          <div  className="cart-product-info">
+          <div className="cart-product-info-div">
+                <div  className="cart-product-info">
         
             <div className="cart-product-title">{product.title}</div>
             <div className="cart-product-price">Price: ${product.price}</div>
@@ -63,22 +64,24 @@ export default function Cart(){
           </div>
         
           </div>
+          </div>
+      
            
         </div>))):"loading..";
    
     return(<div className="cart-page">
-      <div className="cart-page-title">CART.</div>
+      <div className="cart-page-title"><div className="cart-page-heading">YOUR CART.</div></div>
           <div className="Cart-page-In">
 
     <div className="cart-item-list">{cartElements}</div>
 
-    <div className="cart-In-BG">
-      <div className="cart-In-BG-title">Order Summary</div>
+    <div className="order-summary-div">
+      <div className="order-summary-title">Order Summary</div>
       <div className="order-list">
         {cartList.map(item=><div className="order-list-item">
           <div id='order-item'>{item.title} x {item.quantity}</div>
           <div id='order-item'>${item.price * item.quantity}</div>
-     {/*      <div id='order-item'>{item.quantity}</div> */}
+   
         </div>)}
        
       </div>

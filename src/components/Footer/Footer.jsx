@@ -8,7 +8,7 @@ export default function Footer() {
   
   
   return (
-    <div className='footer-div'style={{display:location.pathname==='/cart'?'none':'block'}}>
+    <div className='footer-div'/* style={{display:location.pathname==='/cart'?'none':'block'}} */>
         <div className='footer-div-content'>
         <div className='footer-upper'>
 <div className='upper-left'>
