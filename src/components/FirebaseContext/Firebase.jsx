@@ -2,7 +2,7 @@
 
 import {useState,useEffect,createContext, useContext} from 'react'
 import { initializeApp } from "firebase/app";
-import { getAuth ,createUserWithEmailAndPassword , signInWithEmailAndPassword,signOut,onAuthStateChanged} from "firebase/auth";
+import { getAuth ,createUserWithEmailAndPassword , signInWithEmailAndPassword,signOut,onAuthStateChanged, updateProfile } from "firebase/auth";
 import { getFirestore ,doc, setDoc,getDocs, collection, deleteDoc } from 'firebase/firestore';
 //initilaizing services
 const firebaseConfig = {
@@ -44,9 +44,25 @@ export const FirebaseProvider=(props)=>{
 
   const isLoggedIn= currentUser?true:false
 
-  const SignUpUser=(email,password)=>{
+/*   const SignUpUser=(email,password)=>{
    return createUserWithEmailAndPassword(firebaseAuth,email,password)
-  }
+  } */
+
+const SignUpUser = async (email, password, username) => {
+  const userCredential = await createUserWithEmailAndPassword(firebaseAuth, email, password);
+  await updateProfile(userCredential.user, {
+    displayName: username
+  });
+
+  // 🔥 Force refresh currentUser so UI updates immediately
+  setCurrentUser({
+    ...userCredential.user,
+    displayName: username
+  });
+
+  return userCredential;
+};
+
   const SignInUser=(email,password)=>{
     return signInWithEmailAndPassword(firebaseAuth,email,password)
   }
