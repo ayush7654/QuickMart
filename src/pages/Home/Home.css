@@ -329,7 +329,8 @@ border: 1px solid rgb(220, 220, 220);
 
   #home-product-div  .home-head-div{
 background-color: rgb(90, 220, 220);
-  background-color: rgb(210, 210, 210); 
+  background-color: rgb(225, 225, 225); 
+
 
 
 
@@ -373,13 +374,17 @@ height: 100%;
 
 .home-head {
   font-weight: 500;
-  font-size:4.5rem;
+  font-size:5rem;
   border-bottom: 0px solid rgb(22, 22, 22);
   color: rgb(160, 160, 160);
   
   padding: .5rem 0;
   z-index: 1;
   font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Condensed';
+ 
+  
+  
    /* text-shadow: 4px 4px  rgb(90, 220, 220); */
 /*   font-family: 'Roboto Condensed' ;*/
 /*   font-family: 'Montserrat', sans-serif; 
@@ -392,7 +397,7 @@ height: 100%;
 }
  
   #home-product-div .home-head{
-   color: rgb(110, 110, 110);
+   color: rgb(50, 50, 50);
     /*  text-shadow: 3px 5px  rgb(150, 150, 150); */
     
 

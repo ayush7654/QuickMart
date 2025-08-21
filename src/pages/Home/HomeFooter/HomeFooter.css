@@ -21,8 +21,9 @@
 
   #homeInfo-subhead{
     font-size: 1.2rem;
-    color:rgb(220, 220, 220);
-    font-family:'Inter';
+    color:rgb(201, 201, 201);
+   
+    font-family: 'Poppins';
   
   }
   #homeInfo-para{

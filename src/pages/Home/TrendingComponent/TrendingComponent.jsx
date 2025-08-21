@@ -12,8 +12,9 @@ export default function TrendingComponent() {
               <div className='home-head-frame'></div>
               </div>
           <div className="trending-products">
-            <div id='trending-product'><div  className="trending-product-1"><span id ='tp-btn' className="tp-1-btn">Winter Collection</span></div></div>
-            <div id='trending-product'><div  className="trending-product-2"><span id ='tp-btn' className="tp-2-btn">Summer Collection</span></div></div>
+            <div id='trending-product'>
+              <div  className="trending-product-1"><span id ='tp-btn' className="tp-1-btn">WINTER COLLECTION</span></div></div>
+            <div id='trending-product'><div  className="trending-product-2"><span id ='tp-btn' className="tp-2-btn">SUMMER COLLECTION</span></div></div>
 
 
           </div>

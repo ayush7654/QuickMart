@@ -1,11 +1,11 @@
 .brand-carousel-container {
   
     overflow: hidden;
-    height: 15rem;
- margin-top: 2rem;
+    height: 20rem;
+/*  margin-top: 2rem; */
 /*     margin-top: 5rem;
     margin-bottom: 4rem; */
-  background-color:rgb(225, 225, 225);
+  background-color:rgb(235, 235, 235);
     border: 0px solid red ;
   }
   
