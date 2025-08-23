@@ -10,20 +10,7 @@ margin-bottom: 8rem;
 
 }
 .cart-page-title{
-/* font-size: 2.5rem;
-font-weight: 600;
-font-family: 'Roboto Condensed';
-margin-top: 2rem;
-width: 100%;
-display: flex;
-justify-content: start;
-align-items: center;
 
-background-color: white;
-z-index: 1;
-height: 4.5rem;
-padding-left: 3rem;
-border-bottom: 0px solid rgb(220,220,220); */
   width: 100%;
 /*     position: sticky;
   top: 0rem; */
@@ -54,49 +41,6 @@ margin-left: 3rem;
 }
 
 
-
-.Cart-page-Out{
-
-    border: 0px red solid;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-     
-      align-items: center;  
-      overflow-x: hidden;
-    }
-
-    .cartOut-img{
-        background-color: rgb(192, 206, 235);
-        border-radius: 50%;
-        padding:1rem;
-        width: 150px;
-      
-    }
-    .cartOut-text{
-     
-      height: 60%;
-      width: 40%;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      
-      border-radius: .2rem;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Trebuchet MS', 'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
-      z-index: 0;
-      border:0px solid rgb(68, 65, 65);
-      background-color: rgba(221, 230, 246, 0.785);
-    }
-
-    .cartOut-text-1{
-        font-size: 1.2rem;
-    }
-
-    .cartOut-text-2{
-        font-size: 1rem;
-    }
 
     .cart-Login-btn{
      border: 0px solid red;
@@ -130,10 +74,10 @@ border: 0px solid blue;
 
     .order-summary-div{
         border: 0px solid green;
-        width: 42%;
-        height: 75vh;
-        margin-top: 2rem;
-       
+        width: 45%;
+        height: 70vh;
+        
+       margin-top: 2rem;
              z-index: 1;
          border: 0px solid rgb(220,220,220);
        
@@ -148,21 +92,24 @@ display: flex;
 flex-direction: column;
 align-items: center;
 
-background-color: rgb(240,240,240);
+background-color: #eee;
+background-color: rgb(242,242,242);
 
 
     }
 
     .order-summary-title{
         width: 100%;
-        height: 5rem;
-        font-family:'Inter';
+        height: 4rem;
+        font-family:'Roboto Condensed';
         font-size: 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
         font-weight: 500;
 border-bottom: 1px solid rgb(220,220,220);
+
+
        
 
     }
@@ -173,7 +120,7 @@ border-bottom: 1px solid rgb(220,220,220);
       padding:.5rem;
         font-family: 'Poppins';
   position: relative;
-         color: rgb(52, 52, 52);
+         color: rgb(50, 50, 50);
          font-weight: 300;
   /*     background-color: rgb(245, 245, 245); */
       overflow-y: scroll;
@@ -239,6 +186,28 @@ transition: all .3s ease;
         cursor: pointer;
 
     }
+
+       .checkout-btn-out{
+        position: absolute;
+        bottom: 2rem;
+  
+        font-size: 1.5rem;
+        height: 3rem;
+        width: 60%;
+color: rgb(30, 30, 30);
+        
+font-family: 'Poppins';
+border: 1px solid black;
+transition: all .3s ease;
+    }
+
+     .checkout-btn-out:hover{
+ /*           background-color: rgb(50, 210, 210); 
+      border: none;
+        color:rgb(255, 255, 255); */
+       
+        cursor: not-allowed;
+     }
 
 .cart-item-list{
     width: 52%;
@@ -348,6 +317,32 @@ height: 2.1rem;
       color: white;
       border: 0px;
 
+    }
+
+
+    .empty-cart{
+        height: 90vh;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items:center;
+      gap: 2rem;
+        margin-top: 2rem;
+       
+    }
+
+    .emptyCart-img{
+            border-radius: 50%; 
+        padding:1rem;
+        width: 300px;
+        border: 1px solid rgb(220, 220, 220);
+        background-color: white;
+    }
+
+    .emptyCart-text1{
+font-size: 1.5rem;
+font-family: 'Roboto Condensed';
     }
 
     @media(max-width:1000px){

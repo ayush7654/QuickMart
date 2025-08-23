@@ -68,14 +68,20 @@ export default function Cart(){
       
            
         </div>))):"loading..";
+
+        console.log('list is',cartElements.length)
    
     return(<div className="cart-page">
       <div className="cart-page-title"><div className="cart-page-heading">YOUR CART.</div></div>
-          <div className="Cart-page-In">
+        <div className="Cart-page-In">
 
-    <div className="cart-item-list">{cartElements}</div>
+    {cartElements.length>0 ?<div className="cart-item-list">{cartElements}</div>:
+    <div className="empty-cart">
+      <img className="emptyCart-img" src='shopping-cart.gif' />
+      <div className="emptyCart-text1">Your cart is empty, let's change that.</div>
+      </div>}{/*   <img className="emptyCart-img" src='shopping-cart.gif' /> */}
 
-    <div className="order-summary-div">
+  <div className="order-summary-div">
       <div className="order-summary-title">Order Summary</div>
       <div className="order-list">
         {cartList.map(item=><div className="order-list-item">
@@ -87,7 +93,7 @@ export default function Cart(){
       </div>
         
       <div className="total-cost"><span>Total Cost</span> <span>${totalCost.toFixed(2)}</span></div>
-        <button className="checkout-btn">Place Order</button>
+        <button className={cartElements.length>0?"checkout-btn":"checkout-btn-out"}>Place Order</button>
     </div>
     
     </div>
