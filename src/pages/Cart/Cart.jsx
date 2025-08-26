@@ -80,9 +80,9 @@ export default function Cart(){
       <img className="emptyCart-img" src='shopping-cart.gif' />
       <div className="emptyCart-text1">Your cart is empty, let's change that.</div>
       </div>}{/*   <img className="emptyCart-img" src='shopping-cart.gif' /> */}
-
+<div className="Cart-page-In-midline"></div>
   <div className="order-summary-div">
-      <div className="order-summary-title">Order Summary</div>
+      <div className="order-summary-title">ORDER SUMMARY</div>
       <div className="order-list">
         {cartList.map(item=><div className="order-list-item">
           <div id='order-item'>{item.title} x {item.quantity}</div>
@@ -93,7 +93,7 @@ export default function Cart(){
       </div>
         
       <div className="total-cost"><span>Total Cost</span> <span>${totalCost.toFixed(2)}</span></div>
-        <button className={cartElements.length>0?"checkout-btn":"checkout-btn-out"}>Place Order</button>
+        <button className={cartElements.length>0?"checkout-btn":"checkout-btn-out"}>PLACE ORDER</button>
     </div>
     
     </div>
