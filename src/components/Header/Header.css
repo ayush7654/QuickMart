@@ -430,8 +430,8 @@ font-family: 'Poppins';
      border: 0px solid red;
      align-items: center;
     
-   border-bottom: 1px solid transparent;
- color:rgb(231, 231, 231);
+   border-bottom: 3px solid transparent;
+ color:rgb(255, 255, 255);
  height: 100%;
  transition: all .5s ease;
 
@@ -445,23 +445,23 @@ font-family: 'Poppins';
      border: 0px solid red;
      align-items: center;
    
-   border-bottom: 1px solid transparent;
- color:rgb(200, 200, 200);
+   border-bottom: 3px solid transparent;
+ color:rgb(230, 230, 230);
  height: 100%;
  transition: all .5s ease;
 
    }
 
   .sticky-header-TopMounted .page-nav-item:hover{
-border-bottom: 1px solid transparent;
- color:rgb(229, 229, 229);
+border-bottom: 3px solid rgb(80,230,230);
+ color:rgb(255, 255, 255);
  
 
  
    }
 
    .sticky-header-ScrollUp .page-nav-item:hover{
-border-bottom: 1px solid rgb(255, 255, 255);
+border-bottom: 3px solid rgb(255, 255, 255);
  color:rgb(255, 255, 255);
  
 
@@ -489,7 +489,7 @@ height: 100%;
     border: 0px solid red;
     align-items: center;
     
-    border-bottom: 4px solid rgb(0, 255, 255);
+    border-bottom: 4px solid  rgb(80,230,230);
     margin-bottom: 0rem;
 color: rgb(255, 255, 255);
 

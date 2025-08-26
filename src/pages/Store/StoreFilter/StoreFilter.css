@@ -95,9 +95,9 @@ align-items:center;
   display: flex;
   align-items: center;
   font-size: 1.1rem;
-  font-weight: 350;
+  font-weight: 400;
 /*   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-font-family: 'Roboto';
+ font-family: 'Poppins', sans-serif;
   color: rgb(80, 80, 80);
   border-bottom: 1px solid rgb(225, 225, 225);
 background-color: rgb(255, 255, 255);
@@ -121,11 +121,11 @@ background-color: rgb(255, 255, 255);
   align-items: center;
   font-size: 1.2rem;
   font-weight: 400;
- font-family: 'Roboto';
-  color: rgb(0, 0, 0);
+ font-family: 'Poppins', sans-serif;
+  color: rgb(255, 255, 255);
   border-bottom: 1px solid rgb(225, 225, 225);
 /*  box-shadow: -2px 2px 2px rgb(200, 200, 200);  */
- 
+ background-color: rgb(80,200,200);
   padding:2rem;
 
 }
