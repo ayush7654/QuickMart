@@ -135,14 +135,16 @@ setSearchParams(searchParams); // update the URL
           
              <div className="store-page-heading-div">
             <div  className="allProductsBtn-div" onClick={handleAllProducts}><ChevronLeft className="allProductsBtn"  strokeWidth={1.5} absoluteStrokeWidth /></div>  
-               <div className="store-filter-button-div" onClick={() => sideBarsetToggled(false)}> <RxHamburgerMenu  className="store-filter-button"  /></div>
+               
           
         <div className="store-page-heading">
            
-          <div>STORE.<span className="storePage-tagline"  > {currentCategory?  <span>
+          <div>{currentCategory?  <span>
   {currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)}
-</span>: '' }</span></div>
+</span>: 'STORE.' }<span className="storePage-tagline"  > </span></div>
 </div>
+
+<div className="store-filter-button-div" onClick={() => sideBarsetToggled(false)}> <RxHamburgerMenu  className="store-filter-button"  /></div>
 
       </div>
     
@@ -158,7 +160,7 @@ setSearchParams(searchParams); // update the URL
 
        
         <aside className="store-sidebar"  style={{
-          transform: sideBartoggled ? 'translateX(0)' : 'translateX(100%)',
+          transform: sideBartoggled ? 'translateX(0)' : 'translateX(-100%)',
           transition: 'transform 0.5s ease-in-out',
         }}>
           <StoreFilter

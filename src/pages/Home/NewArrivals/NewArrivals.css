@@ -1,5 +1,4 @@
-
-  .Countdown-home-Products-div{
+  .newArrivals-home-Products-div{
     width: 100%;
     padding-top: 2rem;
     display: flex;
@@ -13,8 +12,7 @@ border-bottom:1px solid rgb(220,220,220) ;
 margin-bottom: 4rem;
   }
 
-
-    .Countdown-home-Products-div  .product-price{
+    .newArrivals-home-Products-div  .product-price{
 
     font-size: 1.1rem;
     color: rgb(50, 50, 50); 
@@ -23,7 +21,7 @@ margin-bottom: 4rem;
   }
 
 
-    .Countdown-home-Products-div .card-tag{
+     .newArrivals-home-Products-div .new-tag{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,24 +29,20 @@ margin-bottom: 4rem;
       top: 1rem;
     left:0rem;
     height: 1.5rem;
-    width: 30%;
+    width: 20%;
     border: 0px solid grey;
     border-left: 0px;
-    background-color: rgb(49, 49, 49);
+    background-color: rgb(220, 55, 55);
     color:white;
     font-size: .8rem;
-  box-shadow: 3px 3px 5px rgb(70, 70, 70);
+   box-shadow: 3px 3px 5px rgb(50, 50, 50);
       z-index: 1;
   }
 
-   .Countdown-home-Products-div .discount-tag ,.new-tag{
+   .newArrivals-home-Products-div .card-tag ,.discount-tag{
     display: none;
    }
 
-
-
-    .Countdown-home-Products-div .discount-product-price{
+     .newArrivals-home-Products-div .discount-product-price{
         display: none;
     }
-
-   

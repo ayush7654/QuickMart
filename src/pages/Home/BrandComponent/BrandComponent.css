@@ -12,17 +12,18 @@
   .brand-carousel {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+  /*   justify-content: center; */
     align-items: center;
     animation: scroll-left linear infinite;
     border: 0px solid rgb(0, 229, 255) ;
     height: 100%;
-    gap:0rem;
+    gap:5rem;
     
     
   }
   
   .brand-logo {
+    flex-shrink: 0;
     width:10rem;
     height: 10rem; /* Set your desired width */
  /*  height: 70%; */
@@ -30,7 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin:1rem;
+/*   margin:1rem; */
 background-color: rgb(135, 135, 135);
 background-color: white;
   display: flex;

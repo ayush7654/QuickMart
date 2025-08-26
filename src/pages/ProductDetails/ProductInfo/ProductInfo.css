@@ -107,10 +107,10 @@ white-space: nowrap;
 
   .product-description{
     width: 80%;
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.7rem;
     color:rgb(118, 118, 118);
-    
+    padding:.5rem;
    font-family: 'Inter';
   }
 
@@ -261,16 +261,17 @@ align-items: center;
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 2.5rem;
+    bottom: 4rem;
     width: 100%;
  height: 2.5rem;
     font-weight: 500;
   font-family: 'Roboto';
    margin: 0.9rem auto 0 auto; /* Top, horizontal auto, bottom 0 */
    display: flex;
-   color:rgb(255, 255, 255);
-   background-color: rgb(50, 50, 50);
 
+  background-color: rgb(80, 220, 220);
+  color: white;
+  border: none;
   transition: background-color 0.3s ease;
     user-select: none;
    justify-content: center;
@@ -278,7 +279,7 @@ align-items: center;
    
    
   }
-  .addTocartBtn:hover{
+  .addTocartBtn:hover {
     background-color: rgb(255, 255, 255);
     cursor: pointer;
     color:rgb(50, 50, 50);
@@ -286,9 +287,38 @@ align-items: center;
 
   }
 
+
+
   .addTocartBtn.added {
-  background-color: black;
-  color: white;
+
+     color:rgb(255, 255, 255);
+   background-color: rgb(50, 50, 50);
 }
 
- 
+.addTocart-Out{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 3rem;
+    width: 100%;
+ height: 2.5rem;
+    font-weight: 500;
+  font-family: 'Roboto';
+   margin: 0.9rem auto 0 auto; /* Top, horizontal auto, bottom 0 */
+   display: flex;
+   color:rgb(50, 50, 50);
+   background-color: transparent;
+border: 2px solid rgb(50, 50, 50);
+  transition: background-color 0.3s ease;
+    user-select: none;
+   justify-content: center;
+   font-size: 1.15rem;
+}
+
+  .addTocart-Out:hover{
+     background-color: rgb(50, 50, 50);
+    cursor: pointer;
+    color:rgb(255, 255, 255);
+    border: 0px solid rgb(60,60,60);
+  }

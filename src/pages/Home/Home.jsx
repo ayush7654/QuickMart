@@ -5,6 +5,7 @@ import BrandCarousel from "./BrandComponent/BrandComponent";
 import ExploreCategories from "./ExploreCategories/ExploreCategories"; 
 import DiscountProducts from "./DiscountProducts/DiscountProducts";
 import CountdownProducts from "./CountdownProducts/CountdownProducts";
+import NewArrivals from "./NewArrivals/NewArrivals";
 import TrendingComponent from "./TrendingComponent/TrendingComponent";
 import BentoComponent from "./BentoComponent/BentoComponent";
 import HomeFooter from "./HomeFooter/HomeFooter";
@@ -27,7 +28,7 @@ const isFirstRender = useRef(true); // track initial mount
       <div style={{width:'100%', backgroundColor:'white',zIndex:'1', position: 'relative',marginTop:'100vh'}}>
           <BrandCarousel/>
              <ExploreCategories/>
-             
+             <NewArrivals/>
          <CountdownProducts/>
    
     

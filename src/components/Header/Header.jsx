@@ -33,7 +33,7 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay}){
         ] 
 
 
-    const navElements= [{title:'HOME',path:'/'},{title:'STORE',path:'/store'},{title:'ABOUT',path:'/about'},{title:'BLOG',path:'/blog'},{title:'CONTACT',path:'/contact'}]
+    const navElements= [{title:'HOME',path:'/'},{title:'STORE',path:'/store'},{title:'ABOUT',path:'/testing'},{title:'BLOG',path:'/blog'},{title:'CONTACT',path:'/contact'}]
 
 
 
@@ -207,7 +207,7 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
     
          <div className='Home-Nav-Container'>
           <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon"><Search size={25}   style={{ strokeWidth: '1.5'}} /></span>
-            {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div  id="header-icon">{element.logo}{/* {<img src={`/${element.logo}`} id='header-nav-Icon'/> } */}</div> {/* <div id='header-nav-name'></div>   */}</NavLink>)}
+            {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div  id="header-icon">{element.logo}</div> {/* <div id='header-nav-name'></div>  */}  </NavLink>)}
          </div>
 
          

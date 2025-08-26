@@ -154,18 +154,18 @@
   .btn-discoverMore{
       
          color:white;
-         border: 2px solid rgb(219, 219, 219) ;
+         border: 2px solid rgb(255, 255, 255) ;
          background-color: transparent;
-             transition: all 0.4s ease;
+             transition: all 0.3s ease;
 
   
   }
 
   .btn-discoverMore:hover{
-    color:white;
-    backdrop-filter: blur(1px);
-   
-         border: 2px solid rgb(255, 255, 255) ;
+ color:rgb(255, 255, 255);
+
+   background-color: rgb(20, 20, 20);
+        border: none;
         
   }
 
@@ -178,7 +178,9 @@
           transition: all 0.4s ease;
   }
   .btn-shopNow:hover{
-    background-color: #e3e3e3;
+  background-color: rgb(20, 20, 20);
+      color:rgb(255, 255, 255);
+      border: 0px solid rgb(255, 255, 255);
      
   
   }

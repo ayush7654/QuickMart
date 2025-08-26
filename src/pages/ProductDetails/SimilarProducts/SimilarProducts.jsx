@@ -6,7 +6,7 @@ export default function SimilarProducts({currentCategory,product}) {
      <div className="Product-Details-SimilarProducts">
    <div className="home-head-div">
                 <div className="home-head-content">
-                  <div className='home-head'>SIMILAR PRODUCTS.</div>
+                  <div className='home-head'>Similar Products.</div>
                   
                   <div className='home-head-tagline'>Discover Variants.</div>
                 </div>

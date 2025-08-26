@@ -4,7 +4,7 @@ import {useParams,useOutletContext,Link,useLocation} from 'react-router-dom'
 import ProductInfo from "./ProductInfo/ProductInfo";
 import ProductReview from "./ProductReview/ProductReview";
 import SimilarProducts from "./SimilarProducts/SimilarProducts";
-
+import { ChevronLeft,ChevronRight } from 'lucide-react'; 
 import CarouselComponent from "./CarouselComponent/CarouselComponent";
 
 
@@ -89,6 +89,7 @@ export default function ProductDetails(){
       
   
      <div className="product-page-container">
+     <div  className="pd-backButton"><ChevronLeft absoluteStrokeWidth={1.5}/></div> 
 { product? <div className="product-page-inner">
     <div className="product-left">
      <CarouselComponent Imagelist={product.images}/>  

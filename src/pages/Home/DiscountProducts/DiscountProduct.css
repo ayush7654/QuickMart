@@ -22,7 +22,7 @@
 
 
 
-   .discount-home-Products-div .card-tag{
+   .discount-home-Products-div .card-tag, .new-tag{
     display: none;
     
    }
@@ -82,10 +82,10 @@
     width: 30%;
     border: 0px solid grey;
     border-left: 0px;
-    background-color: rgb(49, 49, 49);
+    background-color: rgb(25, 47, 145);
     color:white;
     font-size: .8rem;
-    box-shadow: 3px 3px 5px rgb(161, 161, 161);
+    box-shadow: 3px 3px 5px rgb(50, 50, 50);
       z-index: 1;
    
   }

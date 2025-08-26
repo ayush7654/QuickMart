@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import { useFirebase } from '../../../components/FirebaseContext/Firebase';
+import { useNavigate } from 'react-router-dom';
 import './ProductInfo.css'
 import StarRating from '../../../components/StarRating'
 
@@ -10,6 +11,8 @@ export default function ProductInfo({product}) {
        const [AddedtoCart,setAddedtoCart]= useState(false)
 
    const [pdColor,setpdColor]= useState('Black')   
+
+   const navigate = useNavigate();
 
        const firebase= useFirebase()
        const userInfo = firebase.isLoggedIn?firebase.currentUser.email:null
@@ -39,7 +42,8 @@ export default function ProductInfo({product}) {
     };
    
     function handleClick() {
-        if (AddedtoCart) {
+        if (firebase.isLoggedIn){
+             if (AddedtoCart) {
             // If already added to cart, delete it
             deleteFromDataBase();
         } else {
@@ -48,6 +52,12 @@ export default function ProductInfo({product}) {
         }
         // Toggle the state
         setAddedtoCart(prev => !prev);
+        }
+
+        else{
+             navigate("/login");  
+        }
+       
     }
 
  
@@ -102,10 +112,7 @@ export default function ProductInfo({product}) {
        
            
            
-            <div id='pd-subHead' className="policy-ship-div" >
-                <span>Return Policy</span>
-                <span className='pd-subInfo'> {product.returnPolicy}</span>
-            </div>
+          
 
            <div id='pd-subHead' >
             <span>Shipment</span>
@@ -145,11 +152,11 @@ export default function ProductInfo({product}) {
         
      
         <div
-  className={`addTocartBtn ${AddedtoCart ? 'added' : ''}`}
+  className={firebase.isLoggedIn?`addTocartBtn ${AddedtoCart ? 'added' : ''}`:'addTocart-Out'}
   onClick={handleClick}
   
 >
-  {AddedtoCart ? 'ADDED TO CART' : 'ADD TO CART'}
+  {firebase.isLoggedIn? AddedtoCart  ? 'REMOVE FROM CART' : 'ADD TO CART':'LOG IN TO SHOP'}
 </div>
      
          </div>

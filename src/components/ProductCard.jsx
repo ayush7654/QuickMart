@@ -67,6 +67,8 @@ function ProductCard({ classname, id, images, title, price, path,discount }) {
        {discount}% Off
       </div>
 
+      <div className='new-tag'>New</div>
+
       <div className='heart-div' onClick={handleClickWL}>
        {productWishlisted? < FaHeart className='heart-fill' />:<FiHeart className='heart-outline'  strokeWidth={1}/>}
       </div>

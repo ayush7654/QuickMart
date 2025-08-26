@@ -15,6 +15,7 @@ import Layout from './components/Layout'
 import Authentication from './components/Authentication'
 import { FirebaseProvider } from './components/FirebaseContext/Firebase'
 import LoadingBird from './pages/LoadingPage';
+import Testing from './components/Testing/Testing';
 
 
 export const BreadCrumbContext = createContext()
@@ -39,6 +40,7 @@ function App() {
        </Route>
       <Route path="/login" element={<LoginPage/>}/>
       <Route path="/register" element={<Registration/>}/>
+       <Route path="/testing" element={<Testing/>}/>
       </Route>
       <Route path="*" element={<ErrorPage/>}/>
       
