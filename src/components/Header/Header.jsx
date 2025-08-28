@@ -27,13 +27,13 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay}){
 
     const elements = [
 
-        {title:"Cart ", path:'/cart',logo:<div className="header-cartLogo-div"><HiOutlineShoppingCart id="ol-header-logo" size={25} style={{ strokeWidth: '1.5' }}/><HiShoppingCart id="fd-header-logo" size={25}   /></div>},/*'QMicons/cartLogoOl2.png'  */
-        {title:"Wishlist ", path:'/wishlist',logo:<div className="header-wishlistLogo-div"><FiHeart  id="ol-header-logo" size={25} style={{ strokeWidth: '1.5' }}/><FaHeart id="fd-header-logo" size={25}/></div>},/*'QMicons/heartIconOl5.png'  */
-        {title:firebase.isLoggedIn?'Name':'Login',path:'/login',logo:firebase.isLoggedIn?<div className="header-userLogo-div"><HiOutlineUser  id="ol-header-logo" size={25} style={{ strokeWidth: '1.5' }}/><HiUser id="fd-header-logo" size={25}/></div>:<MdLogin size={25} />}/*'QMicons/userIconOl.png'  */
+        {title:"Cart ", path:'/cart',logo:<div className="header-cartLogo-div"><HiOutlineShoppingCart id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/><HiShoppingCart id="fd-header-logo"    /></div>},/*'QMicons/cartLogoOl2.png'  */
+        {title:"Wishlist ", path:'/wishlist',logo:<div className="header-wishlistLogo-div"><FiHeart  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/><FaHeart id="fd-header-logo" /></div>},/*'QMicons/heartIconOl5.png'  */
+        {title:firebase.isLoggedIn?'Name':'Login',path:'/login',logo:firebase.isLoggedIn?<div className="header-userLogo-div"><HiOutlineUser  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/><HiUser id="fd-header-logo" /></div>:<MdLogin  />}/*'QMicons/userIconOl.png'  */
         ] 
 
 
-    const navElements= [{title:'HOME',path:'/'},{title:'STORE',path:'/store'},{title:'ABOUT',path:'/testing'},{title:'BLOG',path:'/blog'},{title:'CONTACT',path:'/contact'}]
+    const navElements= [{title:'HOME',path:'/'},{title:'STORE',path:'/store'},{title:'ABOUT',path:'/testing'},{title:'CONTACT',path:'/contact'}]
 
 
 
@@ -159,29 +159,30 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
 
           <div className="QMSiteLogo">
             
-              <div className="logo-Img-title" >
+              <div className="logo-Img-div" >
        <img
         src="/HeaderBirdIconWh.png"
-        className={`logoImg ${
+     /*    className={`logoImg ${
           location.pathname !== '/' || !isAtTop ? 'fade-in' : 'fade-out'
-        }`}
+        }`} */
+        className="logoImg"
         alt="White Bird"
       />
 
   
-      <img
+{/*       <img
         src="/HeaderBirdIconWh.png"
         className={`logoImg ${
           location.pathname === '/' && isAtTop ? 'fade-in' : 'fade-out'
         }`}
         alt="Black Bird"
-      />
+      /> */}
          
         </div>  
 
         <div  className="logo-text-title">
-       <span className="text-content">QUICKMART</span>
-          <img src='/QMSiteLogoBird6.png'  className="logoTextImg"  />  
+          STORKMART
+
   
         </div>
 
@@ -206,8 +207,8 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
      </div> 
     
          <div className='Home-Nav-Container'>
-          <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon"><Search size={25}   style={{ strokeWidth: '1.5'}} /></span>
-            {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div  id="header-icon">{element.logo}</div> {/* <div id='header-nav-name'></div>  */}  </NavLink>)}
+          <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon-div"><Search className="searchIcon"    style={{ strokeWidth: '1.5'}} /></span>
+            {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div   id="header-icon">{element.logo}</div>   </NavLink>)}
          </div>
 
          
