@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-
+import { HiOutlineUser, HiUser } from 'react-icons/hi';
+import { HiShoppingCart,HiOutlineShoppingCart } from 'react-icons/hi';
 export default function Testing() {
      const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -26,6 +27,7 @@ export default function Testing() {
   return (
     <div>
       <h2>Products</h2>
+      <HiOutlineShoppingCart/>
       <ul>
         {products.map((item) => (
           <li key={item.id}>

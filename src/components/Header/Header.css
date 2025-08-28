@@ -260,9 +260,10 @@ height: 100%;
     align-items: center;
     font-weight:400;
     margin-right: 4rem;
- 
+
    z-index: 1;
     font-size: 1rem;
+    height: 100%;
 
   }
 
@@ -282,11 +283,12 @@ height: 100%;
     color: rgb(230, 230, 230);
     display: flex;
 
-    gap: .1rem;
+   
     align-items: center;
     justify-content: center;
   
-height: 2rem;
+
+
 
 
   }
@@ -304,6 +306,7 @@ height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    color:white;
 
 
   }
@@ -334,6 +337,7 @@ height: 2rem;
 .searchIcon{
   width: 1.5rem;
   height: 1.5rem;
+  margin-top: 0.2rem;
 }
 
 
@@ -544,19 +548,19 @@ letter-spacing: 0rem;
     
 .QMSiteLogo{
     
-    width: 9.2rem;
+    width:10.5rem;
  
     margin-left: .5rem;
 
   }
 
  .logo-text-title{
-font-size:1.1rem ;
-font-weight: 400;
+font-size:1.2rem ;
+font-weight: 500;
   }
 
  .logo-Img-div{
-     width: 2rem;
+     width: 2.5rem;
   }
 
       .page-nav-container{
@@ -586,8 +590,9 @@ font-weight: 400;
      color: rgb(80,230,230);
    }
 
-     .page-nav{
-       font-size: .6rem;
+     .page-nav{                
+      width: 80%;
+       font-size: .8rem;
 
   }
   
@@ -596,6 +601,7 @@ font-weight: 400;
 
           gap:.8rem;
           margin-right: .5rem;
+      
     }
   #header-icon{
   font-size: 1.1rem;
@@ -604,6 +610,7 @@ font-weight: 400;
   .searchIcon{
   width: 1.1rem;
   height: 1.1rem;
+
 }
 }
 

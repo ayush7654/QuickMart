@@ -23,12 +23,12 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay}){
     const firebase= useFirebase()
 
     console.log('username',firebase.currentUser)
-    
+    const pagelocation= useLocation();
 
     const elements = [
 
-        {title:"Cart ", path:'/cart',logo:<div className="header-cartLogo-div"><HiOutlineShoppingCart id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/><HiShoppingCart id="fd-header-logo"    /></div>},/*'QMicons/cartLogoOl2.png'  */
-        {title:"Wishlist ", path:'/wishlist',logo:<div className="header-wishlistLogo-div"><FiHeart  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/><FaHeart id="fd-header-logo" /></div>},/*'QMicons/heartIconOl5.png'  */
+        {title:"Cart ", path:'/cart',logo:pagelocation.pathname==='/cart'?<HiShoppingCart id="fd-header-logo"/>: <HiOutlineShoppingCart id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/>},/*'QMicons/cartLogoOl2.png'  */
+        {title:"Wishlist ", path:'/wishlist',logo:pagelocation.pathname==='/wishlist'?<FaHeart id="fd-header-logo" />:<FiHeart  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/>},/*'QMicons/heartIconOl5.png'  */
         {title:firebase.isLoggedIn?'Name':'Login',path:'/login',logo:firebase.isLoggedIn?<div className="header-userLogo-div"><HiOutlineUser  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/><HiUser id="fd-header-logo" /></div>:<MdLogin  />}/*'QMicons/userIconOl.png'  */
         ] 
 
