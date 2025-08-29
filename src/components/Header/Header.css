@@ -255,7 +255,7 @@ height: 100%;
     border: 0px solid black;
     display: flex;
     flex-direction: row;  
-    justify-content: center;
+    justify-content: space-evenly;
     gap:2rem;
     align-items: center;
     font-weight:400;
@@ -548,7 +548,7 @@ letter-spacing: 0rem;
     
 .QMSiteLogo{
     
-    width:10.5rem;
+    width:15.5rem;
  
     margin-left: .5rem;
 
@@ -592,19 +592,31 @@ font-weight: 500;
 
      .page-nav{                
       width: 80%;
-       font-size: .8rem;
+       font-size: .7rem;
+       
+    
 
   }
-  
+/* 
+  .wishlistIcon{
+   display: none; 
+
+
+  }
+   */
 
 .Home-Nav-Container{
 
           gap:.8rem;
           margin-right: .5rem;
-      
+          
+        
+   
+  
     }
   #header-icon{
   font-size: 1.1rem;
+
   }
 
   .searchIcon{

@@ -58,11 +58,11 @@ export default function SearchBar({ currentToggle, toggleSwitch, toggleOverlay }
         transition: 'transform 0.3s ease-in-out',
       }}
     >
-      <div className='searchBar-head'>
-        What are you looking for?
-        <span className='searchBar-cancel' onClick={handleCloseSearchBar}>
-          <X size={30} strokeWidth={1.5} />
-        </span>
+      <div className='searchBar-head-div'>
+       <div className='searchBar-head' >What are you looking for?</div> 
+        <div className='searchBar-cancel' onClick={handleCloseSearchBar}>
+          <X strokeWidth={1.5} />
+        </div>
       </div>
 
       <div className='header-searchBar-div'>
@@ -77,17 +77,17 @@ export default function SearchBar({ currentToggle, toggleSwitch, toggleOverlay }
             <div
               onClick={() => setSearchTerm('')}
               className='clearSearchBtn'
-              style={{ position: 'absolute', right: '50px' }}
+
             >
               Clear
             </div>
           )}
-          <div
-            style={{ position: 'absolute', right: '10px' }}
+          <div className='searchBar-seachIcon-div'
+        
             onClick={handleCloseSearchBar}
           >
-            <Link style={{ color: 'black' }} to={`/search/${searchTerm}`}>
-              <Search size={25} style={{ color: 'grey' }} />
+            <Link  to={`/search/${searchTerm}`}>
+              <Search className='searchIcon' style={{ color: 'rgb(170, 170, 170)',strokeWidth: '1.5' }} />
             </Link>
           </div>
         </div>
