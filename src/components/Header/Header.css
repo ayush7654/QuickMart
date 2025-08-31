@@ -486,6 +486,8 @@ letter-spacing: 0rem;
 
       .header-home{
     height: 4rem;
+      background-color: rgb(30,210,210);
+  color:white;
   }
       .page-nav-container{
       position: absolute;
@@ -500,6 +502,7 @@ letter-spacing: 0rem;
   .sticky-header-ScrollUp .page-nav-container {
   background-color: rgb(20, 20, 20);
   border-top: 1px solid rgb(180,180,180); 
+
    }
 
    .sticky-header-TopMounted  .page-nav-item-selected{

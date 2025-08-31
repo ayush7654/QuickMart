@@ -11,7 +11,6 @@
    overflow: hidden;
     border-left: 0px solid red;
     display: flex;
-  
 
   }
 
@@ -30,19 +29,18 @@
     transform: translate(0%, -50%);
   }
 
+ .Nav-div #nav-arrow{
+  width: 13rem;
+    height: 13rem;
+    color: #eeeeee9f;
+     border-radius: 50%;
+    padding:0;
+    transition: all 1s ease;
+ }
+
 
    .home-left-arrow{
-    width: 15rem;
-    height: 15rem;
-    color: #eeeeee9f;
-  /*   background-color: #00000032; */ /* #716c6c4d; */
     margin-left: -15%;
-    border: 0px solid #eeeeee9f;
-    border-radius: 50%;
-    padding:0;
-     transition: margin-left 1s;
- 
-
   }
 
   .Nav-div:hover .home-left-arrow{
@@ -50,24 +48,18 @@
   
   }
 
-  .home-left-arrow:hover{
-
-    color: #eeeeee;
-    border: 0px solid #cfcfcf;
-        background-color: rgba(0, 0, 0, 0.2);
-  }
 
   .home-right-arrow{
-    width: 15rem;
-    height: 15rem;
-  color: #eeeeee9f;
+    
    margin-right: -15%;
-    border: 0px solid #eeeeee9f;
-    border-radius: 50%;
-    padding:0;
-     transition: margin-right 1s;
 
   }
+  .Nav-div #nav-arrow:hover{
+
+    color: #eeeeee;
+   background-color: rgba(0, 0, 0, 0.2);
+  }
+
 
   
   .Nav-div:hover .home-right-arrow{
@@ -75,12 +67,6 @@
   
   }
 
-  .home-right-arrow:hover{
- 
-  color: #eeeeee;
-    border: 0px solid #cfcfcf;
-    background-color: rgba(0, 0, 0, 0.2);
-  }
 
 .homeCrousal{
    
@@ -89,7 +75,7 @@
     align-items: center;
     flex-shrink: 0;
     border-bottom: 5px solid white;
-   
+
 
   }
 
@@ -107,27 +93,36 @@
   }
 
 
-   .buy-link{
+  .buy-link-div{
+    width: 100%;
     position:absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 5rem;
+height: 4.5rem;
+    display: flex;
+    justify-content: center;
+
+  }
+
+
+   .ImageCrousel-Container .buy-link{
+    
+    /* left: 50%;
+    transform: translateX(-50%); */
     color:rgb(3, 3, 3);
-   
+ 
   
-    height: 1rem;
-    width:70%;
-    border: 0px rgb(0, 0, 0) solid;
+
+    width:60%;
+    border: 0px rgb(202, 42, 42) solid;
     display: flex;
     justify-content: space-between;
     align-items: center;
    
-    
-    margin-bottom: 5rem;
+    white-space: nowrap;
+
+   height: 100%;
    
-   
-         font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+         
     z-index: 1;
 
   }
@@ -139,12 +134,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-  
-   
    width: 40%;
+   height: 100%;
     font-size: 1.5rem;
    padding:1rem;
+   font-family: 'Poppins', sans-serif;
+  font-weight: 500;
   }
 
    #buyLink-btn:hover{
@@ -165,7 +160,7 @@
  color:rgb(0, 0, 0);
 
    background-color: rgb(255, 255, 255);
-        border: none;
+      
         
   }
 
@@ -177,6 +172,8 @@
       
           transition: all 0.4s ease;
   }
+
+
   .btn-shopNow:hover{
   background-color: transparent;
       color:rgb(255, 255, 255);
@@ -195,10 +192,11 @@ bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
 
   .CrousalNav-content{
-    width: 30%;
+    width: 40%;
     height: 4px;
 
     display: flex;
@@ -253,4 +251,78 @@ bottom: 0;
     border-radius: 1rem;
  
     background-color: black;
+  }
+
+  @media(max-width:950px){
+
+     .Nav-div #nav-arrow{
+    width: 10rem;
+    height: 10rem; 
+ }
+
+   .buy-link-div{
+
+    bottom: 4rem;
+   height: 4rem;
+  }
+
+  .ImageCrousel-Container .buy-link{
+    width:90%;
+ }
+
+ #buyLink-btn{
+    font-size: 1.2rem;
+      font-weight: 500;
+ }
+
+  }
+
+    @media(max-width:700px){
+      
+ .buy-link-div{
+
+    bottom: 4rem;
+   height: 3.5rem;
+  }
+
+    .btn-discoverMore , .btn-shopNow:hover{
+        border: 1px solid rgb(255, 255, 255) ;
+    }
+
+  .CrousalNav-content{
+       width: 50%;
+  }
+    }
+
+    @media(max-width:550px){
+
+     .Nav-div #nav-arrow{
+    width: 7rem;
+    height:7rem; 
+ }
+
+   .Nav-div:hover .home-left-arrow{
+     margin-left: -8%;
+  
+  }
+
+    .Nav-div:hover .home-right-arrow{
+     margin-right: -8%;
+  
+  }
+
+   .buy-link-div{
+
+    bottom: 4rem;
+   height: 3rem;
+  }
+
+  #buyLink-btn{
+    width: 45%;
+    font-size: 1rem;
+  }
+ .CrousalNav-content{
+       width: 90%;
+       height: 3px;
+  }
   }
