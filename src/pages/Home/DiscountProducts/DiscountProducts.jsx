@@ -32,7 +32,7 @@ export default function DiscountProducts() {
                   id={155}
                   images= {["https://i.imgur.com/0qQBkxX.jpg"]} /* https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/1.webp */
     
-                  title="Classic Sun Glasses"
+                  title="Pink-Tinted Sunglasses"
                   price={24.99}
                   path={location.search}
                   discount={35}

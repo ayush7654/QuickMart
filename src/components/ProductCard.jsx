@@ -88,9 +88,11 @@ function ProductCard({ classname, id, images, title, price, path,discount }) {
 </div>
         <div className='productCard-detail' >
          <div className="Store-Product-title-div"> <div className="Store-Product-title">{title}</div></div>
-          <div className="price-div">         
-            <span className="product-price">${price}</span>
-              <span  className="discount-product-price">${(price*((100-discount)/100)).toFixed(2)}</span>
+          <div className="price-div"> 
+                        <span className="product-price">${price}</span>
+                          <span  className="discount-product-price">${(price*((100-discount)/100)).toFixed(2)}</span>        
+
+
           </div>
         </div>
       </Link>
