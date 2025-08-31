@@ -4,16 +4,11 @@ import ProductCard from '../../../components/ProductCard'
 export default function CountdownProducts() {
   return (
       <div id='home-product-div' className="Countdown-home-Products-div">
-       <div className='home-Products-window'></div>
+{/*        <div className='home-Products-window'></div> */}
          <div  className="home-head-div">
-                <div className="home-head-content">
-                     
+                <div className="home-head-content"> 
                   <div className='home-head'>Cowntdown Deals.</div>
-                 
-                  
-               
-                </div>
-              <div className='home-head-frame'></div>
+                </div>  
               </div>
           <div className="home-Products-container" >
              <ProductCard

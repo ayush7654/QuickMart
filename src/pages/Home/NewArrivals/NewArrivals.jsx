@@ -6,15 +6,13 @@ import './NewArrivals.css'
 export default function NewArrivals() {
   return (
       <div id='home-product-div' className="newArrivals-home-Products-div">
-            <div className='home-Products-window'></div>
-           
+        
                   <div  className="home-head-div">
                     <div className="home-head-content">
                       <div className='home-head'>New Arrivals.</div>
                       
-                      <div className='home-head-tagline'>Offers upto 50% off.</div>
                     </div>
-                  <div className='home-head-frame'></div>
+
                   </div>
                   <div className="home-Products-container" >
 

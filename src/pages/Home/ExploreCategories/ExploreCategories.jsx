@@ -10,9 +10,9 @@ export default function ExploreCategories() {
                 <div className="home-head-content">
                   <div className='home-head'>Browse Collections.</div>
                   
-                  <div className='home-head-tagline'>Trending across the aisles.</div>
+
                 </div>
-              <div className='home-head-frame'></div>
+
               </div>
                
 
