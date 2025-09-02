@@ -20,7 +20,7 @@
   /* background-color: white; */
     align-items: center;
   justify-content: center;
-    background-color: rgb(31, 31, 31);
+
 
   }
 
@@ -68,8 +68,8 @@
   justify-content: center;
   align-items: center;
   background-position: center;
-  background-size: cover;
-  transition: transform 4s ease;
+  background-size: contain;
+  transition: transform 5s ease;
  }
  #exploreCard:hover{
   cursor: pointer;
@@ -125,12 +125,12 @@ font-weight: 600;
   .exploreCard1{
  
     background-image: url('QMbgImages/QM-browse-fitness.jpg'); 
-   
+
   }
 
-  #explore-card-div:hover .exploreCard1{
+  #explore-card-div:hover #exploreCard{
   
-    transform: scale(1.07);
+    transform: scale(1.2);
   }
 
   .exploreCard2{
@@ -140,10 +140,7 @@ font-weight: 600;
 
   }
 
-  #explore-card-div:hover .exploreCard2{
-  
-    transform: scale(1.07);
-  }
+ 
 
 
   .exploreCard3{
@@ -152,23 +149,7 @@ font-weight: 600;
  
   }
 
-  #explore-card-div:hover .exploreCard3{
-  
-    transform: scale(1.07);
-  }
 
-
-  .exploreCard4{
-  
-    background-image: url('QMbgImages/QM-browse-PetWellness.webp');
-
-    
-  }
-
-  #explore-card-div:hover .exploreCard4{
-  
-    transform: scale(1.05);
-  }
 
 
 
@@ -177,4 +158,41 @@ font-weight: 600;
     width: 100%;
     height: 100%;
    
+  }
+
+  @media(max-width:960px){
+#exploreCard{
+  background-size: cover;
+}
+  }
+
+  @media(max-width:700px){
+
+  .exploreCard1{
+ 
+    background-image: url('QM-browsePhone1.jpg'); 
+
+  }
+
+    .exploreCard2{
+ 
+    background-image: url('QM-browsePhone2.jpg'); 
+
+  }
+
+
+    .exploreCard3{
+ 
+    background-image: url('QM-browsePhone3.avif'); 
+
+  }
+
+   #explore-card-name-div{
+    font-size: 5rem;
+      line-height: 3rem;
+   }
+
+   #explore-card-div:hover #explore-card-name-div{
+  line-height: 3.5rem;
+}
   }
