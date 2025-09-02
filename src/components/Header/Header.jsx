@@ -29,7 +29,7 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay}){
 
         {title:"Cart ", path:'/cart',logo:pagelocation.pathname==='/cart'?<HiShoppingCart id="fd-header-logo"/>: <HiOutlineShoppingCart id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/>},/*'QMicons/cartLogoOl2.png'  */
 /*         {title:"Wishlist ", path:'/wishlist',logo:pagelocation.pathname==='/wishlist'?<FaHeart id="fd-header-logo" className="wishlistIcon" />:<FiHeart className="wishlistIcon"  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/>}, */
-        {title:firebase.isLoggedIn?'Name':'Login',path:'/login',logo:firebase.isLoggedIn?<HiOutlineUser  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/>:pagelocation.pathname==='/login'?<HiUser id="fd-header-logo" />:<MdLogin id="fd-header-logo"  />}/*'QMicons/userIconOl.png'  */
+        {title:'Login',path:'/login',logo:firebase.isLoggedIn? pagelocation.pathname==='/login'?<HiUser id="fd-header-logo" />:<HiOutlineUser  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/>:<MdLogin id="fd-header-logo"  />}/*'QMicons/userIconOl.png'  */
         ] 
 
 
