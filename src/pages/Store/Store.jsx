@@ -141,7 +141,7 @@ setSearchParams(searchParams); // update the URL
            
           <div>{currentCategory?  <span>
   {currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)}
-</span>: 'STORE.' }<span className="storePage-tagline"  > </span></div>
+</span>: 'STORE.' }<span className="storePage-tagline"  > </span>{window.innerWidth}</div>
 </div>
 
 <div className="store-filter-button-div" onClick={() => sideBarsetToggled(false)}> <RxHamburgerMenu  className="store-filter-button"  /></div>
