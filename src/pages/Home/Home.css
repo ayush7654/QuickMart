@@ -489,6 +489,12 @@ font-size: 2.8rem;
 
 @media(max-width:500px){
 
+  .Home .productcard-links-div{
+height: 2rem;
+font-size: .8rem;
+  }
+
+
   .home-head-div{
   height: 3rem;
 
@@ -501,6 +507,15 @@ margin-left: 1rem;
   .home-head{
 font-size: 1.8rem;
   }
+
+    .Home .productImg-wrapper{
+        height: 250px;
+    }
+
+    .home-product{
+ 
+    width: 250px;
+   }
 }
 
 

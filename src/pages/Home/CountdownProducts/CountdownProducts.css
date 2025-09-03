@@ -33,7 +33,7 @@ margin-bottom: 3rem;
     width: 30%;
     border: 0px solid grey;
     border-left: 0px;
-    background-color: rgb(49, 49, 49);
+    background-color: rgb(30, 30, 30);
     color:white;
     font-size: .8rem;
   box-shadow: 3px 3px 5px rgb(70, 70, 70);
@@ -50,4 +50,9 @@ margin-bottom: 3rem;
         display: none;
     }
 
+    @media(max-width:500px){
+      .Countdown-home-Products-div .card-tag{
+        font-size: .6rem;
+      }
+    }
    

@@ -35,17 +35,22 @@ export default function BentoComponent() {
 <div className="bento-container-div">
     <div className="bento-container-nav-div">
 {categoryNav>0?  <ChevronLeft onClick={() => setCategoryNav(prev => (prev > 0 ? prev - 1 : prev) )}
- className="bento-left"  strokeWidth={1.2} absoluteStrokeWidth />:<div></div>}
+ className="bento-left" id='bento-nav'  strokeWidth={1.2} absoluteStrokeWidth />:<div></div>}
   {categoryNav<6?     <ChevronRight   onClick={() => setCategoryNav(prev => (prev < 6 ? prev + 1 : prev))}
- className="bento-right"  strokeWidth={1.2} absoluteStrokeWidth />:<div></div>}
+ className="bento-right" id='bento-nav' strokeWidth={1.2} absoluteStrokeWidth />:<div></div>}
     </div>
   <div style={{width:'100%', display:'flex'}}>
 
-   <div style={{ transform: `translateX(-${390*categoryNav}px`}}  className="bento-container">{categoryImgs.map(card=><div  id='card-bento' style={{ backgroundImage: `url(${card.img})`}}>
+   <div style={{ transform: `translateX(-${
+    window.innerWidth > 400 
+      ? 390 * categoryNav 
+      : window.innerWidth * categoryNav
+  }px)`}}  className="bento-container">{categoryImgs.map(card=><div id='card-bento-div'><div  id='card-bento' style={{ backgroundImage: `url(${card.img})`}}>
     <div id='card-bento-name'>{card.name} </div>
    
 
   
+   </div>
    </div>)}</div> 
 
   </div>

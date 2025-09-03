@@ -38,7 +38,7 @@ setSearchBarToggle(i)
     <Outlet screenOverlay={showOverlay}
       toggleOverlay={setShowOverlay}/>
     </div>
-        <Footer />
+        {/* <Footer /> */}
     </div>
         
     )
