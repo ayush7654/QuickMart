@@ -486,7 +486,7 @@ letter-spacing: 0rem;
 
       .header-home{
     height: 4rem;
-      background-color: rgb(30,210,210);
+   /*    background-color: rgb(30,210,210); */
   color:white;
   }
   
@@ -552,7 +552,7 @@ letter-spacing: 0rem;
     
 .QMSiteLogo{
     
-    width:15.5rem;
+ width:10.5rem; 
  
     margin-left: .5rem;
 
@@ -561,6 +561,8 @@ letter-spacing: 0rem;
  .logo-text-title{
 font-size:1.2rem ;
 font-weight: 500;
+
+
   }
 
  .logo-Img-div{
@@ -610,10 +612,10 @@ font-weight: 500;
    */
 
 .Home-Nav-Container{
-
+position: absolute;
           gap:.8rem;
-          margin-right: .5rem;
-          
+    /*       margin-right: .5rem; */
+          right: .5rem;
         
    
   

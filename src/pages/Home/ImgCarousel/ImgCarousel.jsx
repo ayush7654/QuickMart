@@ -12,11 +12,11 @@ export default function ImgCrousel() {
 
   
 const homeBGs = [
-     { id: 0, img1: 'QMbgImages/QM-ImgCrousel-2.jpg',img2:'QMbgImages/QMlevisSm.jpg', product: './store/84' },
-    { id: 1, img1: 'QMbgImages/QM-ImgCrousel-5.webp',img2:'QMbgImages/QMRolexSm.webp', product: './store/98' },
+     { id: 0, img1: 'QMbgImages/QM-ImgCrousel-2.jpg',img2:'QMbgImages/QM-ImgCrousel-Ph1.jpg', product: './store/84' },
+    { id: 1, img1: 'QMbgImages/QM-ImgCrousel-5.webp',img2:'QMbgImages/QM-ImgCrousel-Ph8.jpg', product: './store/98' },
   
-    { id: 2, img1: 'QMbgImages/QMAirJordan5.webp',img2:'QMbgImages/AjSample2.jpg', product: './store/88' },
-    { id: 3, img1: 'QMbgImages/QMApple2.jpg',img2:'QMbgImages/homeBGiPhone.avif', product: './store/123' },
+    { id: 2, img1: 'QMbgImages/QMAirJordan5.webp',img2:'QMbgImages/QM-ImgCrousel-Ph4.jpg', product: './store/88' },
+    { id: 3, img1: 'QMbgImages/QMApple2.jpg',img2:'QMbgImages/QM-ImgCrousel-Ph6.jpg', product: './store/123' },
    
   ];
 
