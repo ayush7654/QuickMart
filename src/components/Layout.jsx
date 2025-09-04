@@ -27,13 +27,13 @@ setSearchBarToggle(i)
 {showOverlay && (
   <div className="screen-overlay" onClick={() => setShowOverlay(false)} />
 )}
-      <SearchBar currentToggle={searchBarToggle} 
+ {/*      <SearchBar currentToggle={searchBarToggle} 
       toggleSwitch={SearchToggle} 
       screenOverlay={showOverlay}
       toggleOverlay={setShowOverlay} />
     <Header toggleSwitch={SearchToggle} 
     screenOverlay={showOverlay}
-      toggleOverlay={setShowOverlay}/>
+      toggleOverlay={setShowOverlay}/> */}
     <div className='outlet-container' style={{paddingTop:isHomePage?'0rem':'4rem'}} >
     <Outlet screenOverlay={showOverlay}
       toggleOverlay={setShowOverlay}/>

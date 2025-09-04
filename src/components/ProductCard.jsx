@@ -54,7 +54,22 @@ function ProductCard({ classname, id, images, title, price, path,discount }) {
 
   return (
     <div className={classname} key={id}>
-      <div className="bookmark-logo" onClick={handleClickBM}>
+    
+
+
+
+      <Link to={`/store/${id}`} state={path}>
+        <div className="productImg-wrapper">
+  {!imageLoaded && <div className="image-placeholder" />}
+  <div className='productImg-container'>
+      <img
+    src={images[0]}
+    className="productImg"
+    alt={title}
+    style={{ display: imageLoaded ? 'block' : 'none' }}
+    onLoad={() => setImageLoaded(true)}
+  />
+   <div className="bookmark-logo" onClick={handleClickBM}>
        {productBookmarked ?      <BsBookmarkFill className='bookmark-fill'  /> :     <BsBookmark className='bookmark-outline' strokeWidth={.1}  /> } 
 
       </div>
@@ -72,19 +87,9 @@ function ProductCard({ classname, id, images, title, price, path,discount }) {
       <div className='heart-div' onClick={handleClickWL}>
        {productWishlisted? < FaHeart className='heart-fill' />:<FiHeart className='heart-outline'  strokeWidth={1}/>}
       </div>
+  </div>
 
-
-
-      <Link to={`/store/${id}`} state={path}>
-        <div className="productImg-wrapper">
-  {!imageLoaded && <div className="image-placeholder" />}
-  <img
-    src={images[0]}
-    className="productImg"
-    alt={title}
-    style={{ display: imageLoaded ? 'block' : 'none' }}
-    onLoad={() => setImageLoaded(true)}
-  />
+   
 </div>
         <div className='productCard-detail' >
          <div className="Store-Product-title-div"> <div className="Store-Product-title">{title}</div></div>

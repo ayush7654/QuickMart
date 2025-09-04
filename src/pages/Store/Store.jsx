@@ -125,12 +125,7 @@ setSearchParams(searchParams); // update the URL
         <div style={{fontSize:'1.2rem'}}>+Extra 10% off on orders of ₹4999 or more*</div>
       </div>} */}
       <div style={{display:sideBartoggled?'none':'flex'}} className="storePage-overlay"></div>
-      {/* <div className="filter-div">
-           
-      <div style={{marginLeft:'3.5rem',width:'6rem'}} id="button" onClick={() => sideBarsetToggled(false)}><span style={{ fontSize: '15px', cursor: 'pointer' }}>☰</span></div>
-      <span style={{color:'white'}}>STORE</span>
-          <div style={{marginRight:'4rem',width:'10rem'}}id="button" >SORT BY</div>
-        </div> */}
+
       <div className="store-page-header">
           
              <div className="store-page-heading-div">
@@ -139,9 +134,9 @@ setSearchParams(searchParams); // update the URL
           
         <div className="store-page-heading">
            
-          <div>{currentCategory?  <span>
+          {currentCategory?  <span>
   {currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)}
-</span>: 'STORE.' }<span className="storePage-tagline"  > </span>{window.innerWidth}</div>
+</span>: 'STORE.' }<span className="storePage-tagline"  > </span>
 </div>
 
 <div className="store-filter-button-div" onClick={() => sideBarsetToggled(false)}> <RxHamburgerMenu  className="store-filter-button"  /></div>
@@ -151,9 +146,7 @@ setSearchParams(searchParams); // update the URL
       </div>
  
 
-{/* {currentCategory?  <div >
-  {currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)}
-</div>:<div>Store.<span className="storePage-tagline"  > The best way to buy the products you love.</span></div>} */}
+
 
 
       <div className="store-layout">
