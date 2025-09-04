@@ -149,7 +149,9 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
       transition: isIdle
         ? 'transform 0.5s ease-in, background-color 0.6s ease, box-shadow 1s ease' // When hiding (moving up/idle)
         : 'transform 0.7s ease-out,  background-color 0.6s ease, box-shadow 1s ease', // When showing (moving down/active)
-      transform: isIdle ? 'translateY(-5.5rem)' : 'translateY(0)',
+      transform: isIdle ? window.innerWidth > 640
+        ? 'translateY(-100%)'
+        : 'translateY(-200%)' : 'translateY(0)',
      
       pointerEvents: isIdle ? 'none' : 'auto'
     }}>
