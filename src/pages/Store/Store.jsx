@@ -129,7 +129,7 @@ setSearchParams(searchParams); // update the URL
       <div className="store-page-header">
           
              <div className="store-page-heading-div">
-           <div className="allProductsBtn-div-container"><div  className="allProductsBtn-div" onClick={handleAllProducts}><ChevronLeft className="allProductsBtn"  strokeWidth={1.5} absoluteStrokeWidth /></div></div>   
+          {/*  <div className="allProductsBtn-div-container"><div  className="allProductsBtn-div" onClick={handleAllProducts}><ChevronLeft className="allProductsBtn"  strokeWidth={1.5} absoluteStrokeWidth /></div></div>  */}  
                
           
         <div className="store-page-heading">

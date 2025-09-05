@@ -40,7 +40,7 @@
      border-radius: 50%; 
         padding:1rem;
         width: 300px;
-        border: 5px solid rgb(40, 40, 40);
+        border: 2px solid rgb(0, 0, 0);
         background-color: white;
   
       
@@ -51,7 +51,7 @@
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
-      
+   
       
       justify-content: center;
       align-items: center;
@@ -73,9 +73,13 @@
     }
 
     .cart-Login-btn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
         width: 100%;
+        height: 3.5rem;
         font-family: 'Poppins';
-        font-size: 1.2rem;
+        font-size: 1rem;
         border-radius: 0rem;
         transition: all .3s ease;
                 border: 1px solid black;
@@ -85,3 +89,27 @@
         background-color: white;
         color:black;
     }
+
+  @media(max-width:650px){
+
+    .cartOut-info{
+      margin-top: 4rem;
+    }
+
+    .cartOut-img{
+         width: 200px;
+  }
+
+    .cartOut-text-1{
+        font-size: 1.6rem;
+      
+    }
+
+    .cartOut-text-2{
+        font-size: 1.1rem;
+           
+    }
+     .cart-Login-btn{
+      height: 3rem;
+     }
+}

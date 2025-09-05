@@ -91,7 +91,6 @@ height: 90%;
   align-items: center;
   justify-content: center;
 
- 
   color:rgb(50, 50, 50);
   transition: all .2s ease;
   cursor: pointer;
@@ -153,15 +152,12 @@ height: 2rem;
   height: 100%;
   display: flex;
   align-items: center;
-
   font-size: 2.5rem;
-       font-family: 'Poppins';
+   font-family: 'Poppins';
   font-weight: 500;
   color: rgb(0, 0, 0);
-
-    margin-left:2rem ;
+  margin-left:3rem ;
   padding:1rem;
-
  width: 95%;
 }
 
@@ -614,7 +610,9 @@ font-size: 2rem;
 
       @media(max-width:700px){
 
-   
+    .store-page-header{
+       margin-top: 3.5rem;
+    }
     .productList {
 
   grid-template-columns: repeat(2, 1fr);
@@ -641,10 +639,7 @@ font-size: 2rem;
 
    }
  @media(max-width:550px){
-     .store-page-header{
-       margin-top: 2rem;
-
-    }
+     
   .allProductsBtn-div-container{
     align-items: end;
     padding-bottom:.5rem;
@@ -672,7 +667,7 @@ height: 250px;
 }
       .store-page-heading{
 font-size: 1.8rem;
-    margin-left:.5rem ;
+    margin-left:1rem ;
     align-items: end;
     padding: 0rem;
     padding-bottom:.7rem;
@@ -707,7 +702,7 @@ padding: 0rem 0;
  @media(max-width:400px){
    
       .store-page-header{
-       margin-top: 1.5rem;
+       margin-top: 2.5rem;
 
     }
 

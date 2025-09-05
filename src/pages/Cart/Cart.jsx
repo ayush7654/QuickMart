@@ -50,14 +50,14 @@ export default function Cart(){
 
     const cartElements=cartList? (cartList.map((product,index)=>(
         <div key={index} className="Cart-item">
-          <div className="cart-product-img"><img src={product.images[0]} width="250px"/></div> 
+          <div className="cart-product-img-div"><img src={product.images[0]} className="cart-product-img" /></div> 
           <div className="cart-product-info-div">
                 <div  className="cart-product-info">
         
-            <div className="cart-product-title">{product.title}</div>
-            <div className="cart-product-price">Price: ${product.price}</div>
-           <div className="cart-product-quantity">Quantity: {product.quantity}</div>
-           <div>{product.shippingInformation}.</div>
+            <div id='cart-info-item' className="cart-product-title">{product.title}</div>
+            <div id='cart-info-item' className="cart-product-price">Price: ${product.price}</div>
+           <div id='cart-info-item' className="cart-product-quantity">Quantity: {product.quantity}</div>
+           <div id='cart-info-item'>{product.shippingInformation}.</div>
           <div className="cart-btn">
           <button  id='cartButton' className="cart-remove-btn" onClick={()=>handleRemove(product.title)}>Remove</button>
                  <button id='cartButton' className="cart-buy-btn">View Details</button>
@@ -65,7 +65,10 @@ export default function Cart(){
         
           </div>
           </div>
-      
+      <div className="cart-btn-ph">
+          <button  id='cartButton' className="cart-remove-btn" onClick={()=>handleRemove(product.title)}>Remove</button>
+                 <button id='cartButton' className="cart-buy-btn">View Details</button>
+          </div>
            
         </div>))):"loading..";
 
@@ -81,7 +84,7 @@ export default function Cart(){
       <div className="emptyCart-text1">Your cart is empty, let's change that.</div>
       </div>}{/*   <img className="emptyCart-img" src='shopping-cart.gif' /> */}
 <div className="Cart-page-In-midline"></div>
-  <div className="order-summary-div">
+  <div className={  cartElements.length < 1 && window.innerWidth < 500 ? "order-summary-empty-div":"order-summary-div"}>
       <div className="order-summary-title">ORDER SUMMARY</div>
       <div className="order-list">
         {cartList.map(item=><div className="order-list-item">
@@ -93,7 +96,7 @@ export default function Cart(){
       </div>
         
       <div className="total-cost"><span>Total Cost</span> <span>${totalCost.toFixed(2)}</span></div>
-        <button className={cartElements.length>0?"checkout-btn":"checkout-btn-out"}>PLACE ORDER</button>
+        <button className={cartElements.length>0?"checkout-btn":"checkout-btn-out"}>Place Order</button>
     </div>
     
     </div>
