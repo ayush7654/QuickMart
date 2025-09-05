@@ -5,26 +5,7 @@ import { FiBookmark } from 'react-icons/fi'
  import { FaHeart } from 'react-icons/fa';    // Filled heart
 import { FiHeart } from 'react-icons/fi';   
 
-import { MdBookmark, MdBookmarkBorder } from 'react-icons/md';
 
-// Bootstrap
-
-
-// Feather Icons
-
-
-// Lucide Icons
-import { LuBookmark, LuBookmarkMinus } from 'react-icons/lu';
-
-// Heroicons
-import { HiBookmark, HiOutlineBookmark } from 'react-icons/hi';
-
-
-
-
-
-
-import { HiHeart, HiOutlineHeart } from 'react-icons/hi';
 
 
 
@@ -54,21 +35,23 @@ function ProductCard({ classname, id, images, title, price, path,discount }) {
 
   return (
     <div className={classname} key={id}>
-    
+    {!imageLoaded && <div  className="image-placeholder" ></div>}
 
 
 
       <Link to={`/store/${id}`} state={path}>
+
         <div className="productImg-wrapper">
-  {!imageLoaded && <div className="image-placeholder" />}
+
   <div className='productImg-container'>
-      <img
+    <img
     src={images[0]}
     className="productImg"
     alt={title}
     style={{ display: imageLoaded ? 'block' : 'none' }}
     onLoad={() => setImageLoaded(true)}
-  />
+  /> 
+
    <div className="bookmark-logo" onClick={handleClickBM}>
        {productBookmarked ?      <BsBookmarkFill className='bookmark-fill'  /> :     <BsBookmark className='bookmark-outline' strokeWidth={.1}  /> } 
 

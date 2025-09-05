@@ -116,7 +116,9 @@ white-space: nowrap;
   position: relative;
   overflow: hidden;
 }
-
+ .Home .productImg-container{
+height: 100%;
+}
   .Home .productImg{
 background-color: white;
    
@@ -356,36 +358,6 @@ margin-left: 5rem;
 
 
 
-.bookmark-fill{
-
- font-size:1.3rem;
- color:rgb(0, 220, 220);
-}
-
-.bookmark-outline{
-   font-size:1.3rem;
- color:rgb(190, 190, 190);
-}
-
-.bookmark-outline:hover{
-   font-size:1.3rem;
- color:rgb(50, 50, 50);
-}
-
-.heart-fill{
-  font-size:1.5rem ;
- color:rgb(0, 0, 0);
-}
-
-  .heart-outline{
-  font-size:1.5rem ;
-   color:rgb(190, 190, 190);
-}
-
-  .heart-outline:hover{
-  font-size:1.5rem ;
- color:rgb(50, 50, 50);
-}
   
 
 @media(max-width:1200px){

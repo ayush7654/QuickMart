@@ -22,7 +22,7 @@ export default function Store() {
   const scrollPositionRef = useRef(0);
 
   const [batchCount, setBatchCount] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [renderTrigger, setRenderTrigger] = useState(0);
 
   const location = useLocation();
@@ -129,7 +129,7 @@ setSearchParams(searchParams); // update the URL
       <div className="store-page-header">
           
              <div className="store-page-heading-div">
-            <div  className="allProductsBtn-div" onClick={handleAllProducts}><ChevronLeft className="allProductsBtn"  strokeWidth={1.5} absoluteStrokeWidth /></div>  
+           <div className="allProductsBtn-div-container"><div  className="allProductsBtn-div" onClick={handleAllProducts}><ChevronLeft className="allProductsBtn"  strokeWidth={1.5} absoluteStrokeWidth /></div></div>   
                
           
         <div className="store-page-heading">
@@ -139,7 +139,7 @@ setSearchParams(searchParams); // update the URL
 </span>: 'STORE.' }<span className="storePage-tagline"  > </span>
 </div>
 
-<div className="store-filter-button-div" onClick={() => sideBarsetToggled(false)}> <RxHamburgerMenu  className="store-filter-button"  /></div>
+<div className="store-filter-button-div-container"><div className="store-filter-button-div" onClick={() => sideBarsetToggled(false)}> <RxHamburgerMenu  className="store-filter-button"  /></div></div>
 
       </div>
     
@@ -169,13 +169,13 @@ setSearchParams(searchParams); // update the URL
           <div className="productList-wrapper" style={{ position: "relative" }}>
             <div className="productList">{productElements}</div>
 
-            {isLoading && (
+{/*             {isLoading && (
               <div className="Loading-Overlay">
                 {[...Array(12)].map((_, i) => (
                   <div key={i} className="Loading-Product"></div>
                 ))}
               </div>
-            )}
+            )} */}
           </div>
 
          

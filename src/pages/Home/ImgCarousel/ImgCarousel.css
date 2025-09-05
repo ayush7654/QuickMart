@@ -210,7 +210,7 @@ bottom: 0;
     height:100% ;
     width: 24%;
    /*  background-color: #ffffff72; */
-   background-color: rgba(0, 0, 0, 0.338);
+   background-color: rgba(180, 180, 180, 0.5);
    }
 
    .CrousalNav:hover{
@@ -278,7 +278,15 @@ bottom: 0;
   }
 
     @media(max-width:700px){
-      
+       .home-left-arrow{
+    margin-left: -5%;
+  }
+   .home-right-arrow{
+    
+   margin-right: -5%;
+
+  }
+
  .buy-link-div{
 
     bottom: 4rem;
@@ -296,6 +304,7 @@ bottom: 0;
 
     @media(max-width:550px){
 
+ 
      .Nav-div #nav-arrow{
     width: 7rem;
     height:7rem; 
@@ -326,3 +335,27 @@ bottom: 0;
        height: 3px;
   }
   }
+
+@media(max-width:400px){
+
+              .home-left-arrow{
+    margin-left: -8%;
+  }
+   .home-right-arrow{
+    
+   margin-right: -8%;
+
+  }
+   .Nav-div #nav-arrow{
+    width: 5rem;
+    height:5rem; 
+ }
+
+ .buy-link-div{
+  bottom: 6rem;
+ }
+  .CrousalNav-div{
+    bottom: 1rem;
+  }
+
+      }
