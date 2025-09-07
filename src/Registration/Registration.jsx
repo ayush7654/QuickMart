@@ -41,7 +41,7 @@ export default function Registration(){
      
        <Link className='regIn-link' to='/'>Get Started →</Link>
       
-      </div>: <div className='register-box' >
+      </div>: <div className='login-box' >
            {/*    <div className='register-title'>Create an account</div> */}
            <div id='reg-input-div' className='reg-Username-div'>
                      <div>Username</div>

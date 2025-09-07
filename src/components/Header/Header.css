@@ -58,7 +58,7 @@ background-color: rgb(20, 20, 20);
 
   .QMSiteLogo{
     border:0px solid black;
-    width: 21rem;
+    width: 19rem;
     height: 100%;
     margin-left: 3rem;
     position: relative;
@@ -67,6 +67,7 @@ background-color: rgb(20, 20, 20);
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
   }
 
  
@@ -83,7 +84,7 @@ background-color: rgb(20, 20, 20);
           font-weight: 500;
       
      font-family: 'Montserrat', sans-serif; 
-               font-size: 2.5rem;
+               font-size: 2.2rem;
   
  color: rgb(255, 255, 255); 
  z-index: 1;
@@ -105,7 +106,7 @@ top: 50%;
 transform: translateY(-50%);
   */
 border: 0px solid red;
-   width: 5rem;
+   width: 4.5rem;
    height: 100%;
 
       
@@ -485,17 +486,18 @@ letter-spacing: 0rem;
 @media (max-width:640px){  /* Header layout changes */
 
       .header-home{
-    height: 4rem;
+    height: 3.5rem;
    /*    background-color: rgb(30,210,210); */
   color:white;
   }
   
       .page-nav-container{
       position: absolute;
-      top:4rem;
-      height: 3.5rem;
+      top:3.5rem;
+      height: 2.5rem;
       width: 100%;
       transition: all .3 ease;
+
 
   }
 

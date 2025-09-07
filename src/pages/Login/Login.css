@@ -3,15 +3,10 @@
     height:95vh;
     display: flex;
     flex-direction:row;
-   /*  align-items: start; */
+ 
    font-size: .9rem;
     justify-content:space-between;
     user-select: none;
-/*        background-image: url('/QM-BG-HP.jpg');
-   background-position: center;
-   background-repeat:no-repeat;
-   background-size: cover; */
-   /*  background-position: center calc(50% - 6rem); */
 
   }
 
@@ -44,8 +39,7 @@
     flex-direction: column;
     align-items: center;
   justify-content: center;
- /*  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
-/*  font-family:'Roboto'; */
+
  font-family: 'Inter'; 
 font-weight: 400;
   background-color: rgb(255, 255, 255);
@@ -55,11 +49,12 @@ font-weight: 400;
     .login-page-title{
        font-size: 2.5rem;
    font-family: 'Roboto Condensed';
-   font-weight:600;
+   font-weight:500;
    margin-bottom: 1rem;
   color:rgb(0, 0, 0);
   margin-top: 4rem;
   font-family: 'Poppins';
+
   }
 
 
@@ -73,6 +68,7 @@ font-weight: 400;
   font-family: 'Poppins'; 
   letter-spacing: .1rem;
   font-weight: 500;
+
  
 
   
@@ -82,7 +78,7 @@ font-weight: 400;
 
 .login-section-selected{
   border-bottom: 2px solid black;
-  color:rgb(30,30,30);
+  color:rgb(0, 0, 0);
 
   
 }
@@ -142,7 +138,7 @@ border: 0px solid black;
     display: flex;
     flex-direction: column;
     height: 90%;
-    width: 100%;
+    width: 60%;
     gap:2rem;
    
  position: relative;
@@ -162,7 +158,7 @@ border: 0px solid black;
 
 
   .Email{
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 
@@ -170,7 +166,7 @@ border: 0px solid black;
   }
   
   .Password{
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 
@@ -198,7 +194,7 @@ border: 0px solid black;
 
   .forgot-pw{
 
-width: 60%;
+width: 100%;
 font-size: .8rem;
 border:0px solid red;
 display: flex;
@@ -237,7 +233,7 @@ text-decoration: underline;
   }
 
   .login-Or{
-    width: 60%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -264,13 +260,13 @@ text-decoration: underline;
   }
 
   .login-alts{
-  width: 60%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   }
 
   .google-login,.apple-login{
-  width: 45%;
+  width: 47%;
 
     position: relative;
     display: flex;
@@ -339,7 +335,7 @@ background-image: url('/QM-home-brand1.png');
   
 
   #account-button{
-    width:60%;
+    width:100%;
     height: 3rem;
  
 
@@ -378,6 +374,7 @@ cursor: pointer;
    display: flex;
    flex-direction: row;
    gap:15px;
+
   }
   
   
@@ -408,18 +405,21 @@ font-family: 'Roboto Condensed';
     height:90%;
     width: 60%;
  color:rgb(69, 69, 69);
-
+  border: 0px solid black;
     gap:3rem;
 }
 
 .loggedIn-user-div{
   display: flex;
   flex-direction: row;
-  border: 0px solid black;
   align-items: center;
-  justify-content: space-between;
-  width: 70%;
-  height: 5rem;
+  justify-content: center;
+  border: 0px solid black;
+ gap: 1rem;
+  width: 100%;
+  padding:1rem;
+
+  
 
 
 
@@ -427,23 +427,31 @@ font-family: 'Roboto Condensed';
 
 .loggedIn-user-icon{
 /* background-color: rgb(220,220,220); */
-height: 4.5rem;
-width: 4.5rem;
+height: 4rem;
+width: 4rem;
 display: flex;
 justify-content: center;
 align-items: center;
 border-radius: 50%;
-  border: 1px solid rgb(80, 80, 80);
+  border: 1px solid rgb(150, 150, 150);
+  background-color: white;
 
 }
 
+.login-user-icon{
+  width: 2.5rem;
+  height: 2.5rem;
+  color:black;
+}
+
 .loggedIn-user-name{
-width: 70%;
-height: 4.5rem;
+
+
 display: flex;
-justify-content: start;
+justify-content: flex-start;
 align-items: center;
-font-size: 1.5rem;
+font-size: 1.4rem;
+
   
 }
 
@@ -451,6 +459,7 @@ font-size: 1.5rem;
 
     
     font-size: 1.2rem;
+   
 
 
   
@@ -458,7 +467,7 @@ font-size: 1.5rem;
 
   .loggedIn-user{
 
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-family: 'Roboto';
     padding-left: .2rem;
   }
@@ -485,12 +494,18 @@ cursor: pointer;
     background-color: rgb(20, 20, 20);
   }
 
-  .loggedIn-link{
-   width: 100%;
+  .success-btn-div{
+       width: 100%;
     height: 2.5rem;
-border: 1px solid black;
-       /*   background-color: rgb(80, 220, 220); */
-    color:rgb(30,30,30);
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  #loggedIn-link{
+   width: 45%;
+    height: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -500,14 +515,202 @@ border: 1px solid black;
     transition: all .3s ease;
   }
 
-  .loggedIn-link:hover{
-    background-color: rgb(80, 220, 220);
+  .about-btn{
+ border: 1px solid black;
+       /*   background-color: rgb(80, 220, 220); */
+    color:rgb(30,30,30);
+  }
+
+  .shop-btn{
+        background-color: rgb(80, 220, 220);
     border: none;
 
     color:rgb(255, 255, 255);
   }
 
+/*   .loggedIn-link:hover{
+    background-color: rgb(80, 220, 220);
+    border: none;
+
+    color:rgb(255, 255, 255);
+  } */
+
+
+  @media(max-width:1200px){
+
+    .LoginImg{
+      width: 50%;
+    }
+
+    .login-container{
+      width: 50%;
+    }
+    .loggedIn-user-name,  .loggedIn-user,.signOutBtn{
+      font-size: 1.2rem;
+    }
+     .loggedIn-text{
+      font-size: 1.1rem;
+     }
+     
+  }
+
+  @media(max-width:900px){
+
+.login-page-title{
+font-size: 2.2rem;
+  margin-top: 3rem;
+}
+  .LoginImg{
+
+   height: 100%;
+   width: 55%;
+
+   overflow: hidden;
+   background-image: url('/QMbgImages/QM-Login-Img-Ph.jpg');
+   background-position: center;
+   background-repeat:no-repeat;
+   background-size: cover;
+
+  }
+ .login-box,.login-success-box{
+  width: 80%;
+ }
+ .google-login,.apple-login{
+  height: 2.6rem;
+    width: 48%;
+ }
+   .google-login-icon{
+    width: 2.5rem;
+height: 2.5rem;
+   }
+   .apple-login-icon{
+       width: 2.1rem;
+height: 2.5rem; 
+   }
+ .google-login-text,.apple-login-text{
+  font-size: .8rem;
+  font-weight: 400;
+
+ }
+ #account-button{
+   height: 2.6rem;
+      bottom: 1.5rem;
+         font-size: 1rem;
+   
+ }
+
+      .loggedIn-user-icon{
+      height: 4rem;
+width: 4rem;
+     }
+     .login-user-icon{
+  width: 2rem;
+  height: 2rem;
+}
+
+  }
+
+    @media(max-width:750px){
+
+.login-page-title{
+font-size: 2rem;
+  margin-top: 3rem;
+  font-weight: 400;
+ 
+}
+          .LoginImg{
+      width: 45%;
+    }
+
+    .login-container{
+      width: 55%;
+    }
+     .login-box,.login-success-box{
+  width: 90%;
+ }
+
+    }
+
+    @media(max-width:600px){
+
+          .login-page-title{
+              margin-top: 5rem;
+            }
+
+          .LoginImg{
+      display: none;
+    }
+
+    .login-container{
+      width: 100%;
+    }
+     .login-box,.login-success-box{
+  width: 65%;
+ }
+    }
+
+     @media(max-width:500px){
+     .login-box,.login-success-box{
+  width: 75%;
+ }
+     }
+
+          @media(max-width:400px){
+
+        
+     .login-box,.login-success-box{
+  width: 80%;
+  font-size:.8rem ;
+ }
+ .login-page-switch{
+  font-weight: 400;
+ }                                 
+   input::placeholder{
+    color:rgb(160, 160, 160);
+    font-size: .8rem;
+  } 
+  .login-email,.login-password{
+    font-size: .8rem;
+    height: 2.2rem;
+  }
+ .google-login-icon{
+    width: 2.2rem;
+height: 2.2rem;
+   }
+   .apple-login-icon{
+       width: 2rem;
+height: 2.2rem; 
+   }
+  .google-login-text,.apple-login-text{
+  font-size: .7rem;
+     }
+     .forgot-pw{
+       font-size: .7rem;
+     }
+
+     .loggedIn-user{
+      font-size: 1rem;
+     }
+
+       .loggedIn-text{
+ 
+    font-size: .9rem;
+
+  }
+
+     #loggedIn-link{
+             width: 48%;
+      font-size: .9rem;
+      font-weight: 400;
+     }
+     .signOutBtn{
   
+      font-size: 1rem;
+     }
+
+    }
+
+  /* 
   @media(max-width:900px){
     .login-title{
       font-size: 1.5rem;
@@ -660,4 +863,4 @@ border: 1px solid black;
      .loggedIn-link{
         font-size: .8rem;
      }
-  }
+  } */

@@ -53,15 +53,19 @@ export default function LoginPage(){
    {sectionSwitch?   <div className="login-div">
      {firebase.isLoggedIn?<div className="login-success-box">
             <div className="loggedIn-user-div">
-                <div className="loggedIn-user-icon"> <FaUser size={40} color={'rgb(70, 70, 70)'} /></div>
+                <div className="loggedIn-user-icon"> <FaUser className="login-user-icon"  color={'rgba(175, 175, 175, 1)'} /></div>
                 <div className="loggedIn-user-name">{firebase.currentUser.displayName}</div>
                
                    
 
             </div>
             <div className="loggedIn-text">You are logged in with  <span className="loggedIn-user">{firebase.currentUser.email}</span> </div>
-           
-            <Link className="loggedIn-link" to='/store?page=1'>Shop Now →</Link>
+           <div className="success-btn-div">
+            <div id="loggedIn-link" className="about-btn">About us  →</div>
+            <Link id="loggedIn-link" className="shop-btn" to='/store?page=1'>Shop Now →</Link>
+            
+           </div>
+            
             <button className="signOutBtn" onClick={SignOut}>SIGN OUT</button>
       
         </div>:(

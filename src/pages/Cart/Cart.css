@@ -545,8 +545,8 @@ margin-top: 1rem;
 display: flex;
 position: absolute;
 bottom:-3rem;
-width: 100%;
-gap: 1rem;
+width: 90%;
+         gap: 1rem;
          }
 
           .order-summary-div{
