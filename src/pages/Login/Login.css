@@ -404,9 +404,9 @@ font-family: 'Roboto Condensed';
    
     height:90%;
     width: 60%;
- color:rgb(69, 69, 69);
+ color:rgb(49, 49, 49);
   border: 0px solid black;
-    gap:3rem;
+    gap:2.5rem;
 }
 
 .loggedIn-user-div{
@@ -417,7 +417,6 @@ font-family: 'Roboto Condensed';
   border: 0px solid black;
  gap: 1rem;
   width: 100%;
-  padding:1rem;
 
   
 
@@ -634,7 +633,7 @@ font-size: 2rem;
     @media(max-width:600px){
 
           .login-page-title{
-              margin-top: 5rem;
+              margin-top: 4rem;
             }
 
           .LoginImg{
@@ -646,6 +645,12 @@ font-size: 2rem;
     }
      .login-box,.login-success-box{
   width: 65%;
+
+
+ }
+ .loggedIn-user-div{
+  display: flex;
+  flex-direction: column;
  }
     }
 
@@ -694,7 +699,7 @@ height: 2.2rem;
 
        .loggedIn-text{
  
-    font-size: .9rem;
+    font-size: 1rem;
 
   }
 
