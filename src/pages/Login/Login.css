@@ -666,6 +666,7 @@ font-size: 2rem;
      .login-box,.login-success-box{
   width: 80%;
   font-size:.8rem ;
+  justify-content: flex-start;
  }
  .login-page-switch{
   font-weight: 400;
