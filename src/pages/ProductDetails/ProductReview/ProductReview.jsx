@@ -23,7 +23,7 @@ export default function ProductReview({product}) {
              <div className="reviews" >
                 <div className="user-review">
                   <div className='username-div'>
-                  <img src='/QMicons/userIconGrey.webp' width='30px' /><span className="reviewer-name">{review.reviewerName}</span>
+                  <img src='/QMicons/userIconGrey.webp' className='review-user-icon' /><span className="reviewer-name">{review.reviewerName}</span>
                   </div> 
                  
                    <div className='user-review-date'>Reviewed on: {formatDate(review.date)}</div>

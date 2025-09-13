@@ -25,7 +25,7 @@ export default function CarouselComponent({Imagelist}) {
 
   // Use effect to listen for resize and apply changes
   useEffect(() => {
-    updateImageWidth(); // Set initial width
+    updateImageWidth(); 
     window.addEventListener('resize', updateImageWidth); // Listen for window resize
 
     return () => {
@@ -62,21 +62,30 @@ export default function CarouselComponent({Imagelist}) {
   return (
  
     <div className="carousel-div">
-      <div className="carousel-sub-div">
-      <div className='leftArrow'  onClick={()=>handleSlide('left')} ><ChevronLeft className='left-arrow-content' /></div>
+      
+      
       <div className='ImageBox'>  
-       {Imagelist.map((img,index)=>  // We render all the images together side by side.
-       <img 
+       {Imagelist.map((img,index)=> 
+       <div className='currentImage-wrapper' style={{translate:`${-ImgId*100}%`}}>
+           <img 
        className='currentImage'
        key={index} 
        src={img}
-       style={{translate:`${-ImgId*imageWidth}px`}} //This property moves the image outside of the image box to a distance equal to its length.
-       />)}
+        //This property moves the image outside of the image box to a distance equal to its length.
+       />
+       </div> // We render all the images together side by side.
+    )}
       </div>
-      <div className='rightArrow'  onClick={()=>handleSlide('right')} ><ChevronRight className='right-arrow-content' /></div>
-      </div>
+   
+   <div className='crousal-navigation'>
+    <div id='crousal-nav' onClick={()=>handleSlide('left')} ><ChevronLeft/></div>
+    <div id='crousal-nav' onClick={()=>handleSlide('right')}><ChevronRight/></div>
+   </div>
+     
       <div className="ImgSelecters">
+        
       {Imagelist.map((item,index)=><div id={index} onClick={()=>handleClick(index)} className={ImgId===index?"imgBtn-clicked-div":'imgBtn-div'} key={index}><div className='imgBtn'></div></div>)}
+        
     </div>
     </div>
    

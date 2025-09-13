@@ -7,19 +7,19 @@ export default function CreditComponent() {
     <div className='credits-div'>
        
         <div id='credit'>
-            <div id='credit-logo'> <MdCheckCircle  color={'rgb(100, 100, 100)'} size={40} /></div>
+            <div id='credit-logo'> <MdCheckCircle   /></div>
             <div id='credit-text'>Check Check Authenticated</div>
         </div>
          <div id='credit'>
-            <div id='credit-logo'> <MdLocalShipping color={'rgb(100, 100, 100)'} size={40}/></div>
+            <div id='credit-logo'> <MdLocalShipping  /></div>
             <div id='credit-text'>Express Dilivery</div>
         </div>
          <div id='credit'>
-            <div id='credit-logo'><MdSecurity color={'rgb(100, 100, 100)'} size={40}/></div>
+            <div id='credit-logo'><MdSecurity/></div>
             <div id='credit-text'>Our Promise</div>
         </div>
          <div id='credit'>
-            <div id='credit-logo'><FaMoneyBillAlt color={'rgb(100, 100, 100)'} size={40} /></div>
+            <div id='credit-logo'><FaMoneyBillAlt  /></div>
             <div id='credit-text'>Money Back Guarantee</div>
         </div>
     </div>

@@ -86,7 +86,7 @@ export default function ProductInfo({product}) {
         <div className="price-num">${product.price}</div>
         <div  className="product-info-rating-div">
             
-            <StarRating rating={product.rating} starSize={30}/>
+            <StarRating rating={product.rating}  className='pd-star'/>
            
           
         </div>

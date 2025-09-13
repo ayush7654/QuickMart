@@ -20,7 +20,7 @@ height: 90vh;
    #pd-subHead{
    font-size: 1rem;
   font-weight: 450;
-  color: rgb(65, 65, 65);
+  color: rgb(99, 99, 99);
     padding-bottom:.3rem;
 /* font-family: 'Josefin Sans', sans-serif; 
     font-family: 'Montserrat', sans-serif;  */
@@ -75,7 +75,7 @@ font-weight: 400;
     width: 100%;
     display: flex;
     align-items: center;
-    height: 2rem;
+    height: 1.5rem;
 
     
     
@@ -88,9 +88,8 @@ font-weight: 400;
     color:rgb(255, 255, 255);
     padding:.4rem;
     margin-right: 2rem;
-    height: 1.6rem;
-    border-radius: 0rem;
-    border: 0px solid red;
+    height: 100%;
+
     display: flex;
     justify-content: center;
 white-space: nowrap;
@@ -112,6 +111,7 @@ white-space: nowrap;
     color:rgb(118, 118, 118);
     padding:.5rem;
    font-family: 'Inter';
+   
   }
 
   .pd-colorpick-div{
@@ -119,14 +119,7 @@ white-space: nowrap;
     width: 100%;
      
   }
-.pd-colorpick-head{
-  font-size: .8rem;
-  font-weight: 600;
-  color: rgb(98, 98, 98);
-    padding-bottom:.5rem;
-     font-family:  system-ui, Avenir, Helvetica, Arial, sans-serif;
-}
- 
+
 
 .pd-colorpick{
   width: 100%;
@@ -139,8 +132,8 @@ align-items: center;
 }
 
 .pd-color-div{
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.3rem;
+  height: 2.3rem;
   border-radius: 50%;
   background-color: #eeeeee;
   border: 1px solid rgb(99, 99, 99);
@@ -160,8 +153,8 @@ align-items: center;
 }
 
 .pd-color-div-selected{
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 2.6rem;
+  height: 2.6rem;
   border-radius: 50%;
   background-color: #eeeeee;
   border: 1px solid rgb(0, 0, 0);
@@ -172,6 +165,15 @@ align-items: center;
 
 
 
+  .product-info-price-div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+   justify-content: space-between;
+    align-items: center;
+
+    border: 0px red solid;
+  }
 
   .price-num{
     font-size: 1.5rem;
@@ -180,17 +182,11 @@ align-items: center;
        font-family: 'Josefin Sans', sans-serif;
 
   }
-  .product-info-price-div{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-   justify-content: space-between;
-    align-items: center;
-    font-size: 1.2rem;
 
-    
-    border: 0px red solid;
-  }
+.product-info-rating-div{
+font-size: 1.8rem;
+}
+
 
   
 
@@ -250,7 +246,7 @@ align-items: center;
   }
 
   .decrease-btn:hover,.increase-btn:hover{
-    background-color:rgb(63, 63, 63) ;
+    background-color:rgb(31, 31, 31) ;
     color:white;
   }
   
@@ -322,3 +318,57 @@ border: 2px solid rgb(50, 50, 50);
     color:rgb(255, 255, 255);
     border: 0px solid rgb(60,60,60);
   }
+
+  @media(max-width:1000px){
+      .pd-title{
+        font-size: 2rem;
+      }
+
+       .product-brandname-div{
+          height: 1.4rem;
+       }
+
+        .pd-brandName{
+           font-size: .9rem;
+        }
+
+          .product-description{
+  width: 90%;
+  font-size: .9rem;
+   line-height: 1.6rem;
+          }
+
+          .pd-color-div{
+            width: 2.2rem;
+  height: 2.2rem;
+          }
+
+          .price-num{
+font-size: 1.4rem;
+          }
+
+ .product-info-rating-div{
+font-size: 1.6rem;
+}
+#pd-subHead{
+  font-size: .9rem;
+}
+.pd-subInfo{
+  font-size: .85rem;
+}
+ .quantity-input{
+   width: 1.3rem;
+    height: 1.3rem;
+       font-size: .9rem;
+ }
+ .decrease-btn ,.increase-btn{
+   width: 1.3rem;
+    height: 1.3rem;
+        font-size: 1.2rem;
+ }
+
+ .addTocartBtn{
+  font-size: 1.1rem;
+ }
+  }
+

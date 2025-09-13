@@ -5,6 +5,7 @@
   grid-template-columns: 1fr 1fr; /* 2 columns */
   grid-template-rows: auto auto; /* 2 rows */
   gap: 1rem;
+  border: 0px solid red;
 
     
 
@@ -27,6 +28,8 @@
     justify-content: center;
     width: 4rem;
     height: 4rem;
+    font-size: 2.5rem;
+    color:rgb(100,100,100);
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
 }
@@ -35,11 +38,41 @@
     width: 60%;
     height: 90%;
     font-weight: 500;
+    font-size: 1rem;
     color:rgb(75, 75, 75);
         display: flex;
     justify-content: start;
     align-items: center;
      font-family: 'Poppins'; 
     
+}
+
+@media(max-width:1000px){
+
+    .credits-div{
+gap: .5rem;
+    }
+
+    #credit-logo{
+ width: 3.5rem;
+    height: 3.5rem;
+        font-size: 2.2rem;
+    }
+
+    #credit-text{
+            font-size: .9rem;
+    }
+}
+
+@media(max-width:450px){
+      #credit-logo{
+ width: 2.8rem;
+    height: 2.8rem;
+        font-size: 2rem;
+    }
+
+    #credit-text{
+            font-size: .8rem;
+    }
 }
 
