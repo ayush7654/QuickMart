@@ -88,3 +88,20 @@ background-color: white;
 
 
   }
+
+  
+    @media(max-width:400px){
+    .brand-carousel-container {
+      height: 6rem;
+    }
+  .brand-carousel{
+       gap:1.5rem;
+    
+  }
+     .brand-logo{
+  width:4rem;
+    height: 4rem; 
+      }
+
+
+  }

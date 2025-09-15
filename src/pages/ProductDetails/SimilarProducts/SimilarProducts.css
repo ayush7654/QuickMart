@@ -190,8 +190,21 @@ width: 100%;
 }
 
 .similar-productDetails-btn{
-  padding:0rem;
+  padding:.15rem;
+  width: 40%;
 }
+
+ .similar-productDetails-price-div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+
+ .similar-productDetails-rating{
+display: block;
+
+  }
 
     
    }
@@ -215,16 +228,15 @@ width: 100%;
     display: none;
   }
 
-  .similar-productDetails-price-div{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
+  .similar-productDetails-btn{
 
-  .similar-productDetails-rating{
-display: block;
+        margin-left: auto;
+     
 
-  }
+}
+
+ 
+ 
 
       }
 /* 

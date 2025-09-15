@@ -6,15 +6,11 @@ export default function HomeFooter() {
         <div className="home-site-Info">
           <div className="site-Info-a">
             <div id="homeInfo-subhead">QuickMart: The One-stop Destination</div>
-            <p id="homeInfo-para">QuickMart is a modern and user-friendly e-commerce platform designed to make online shopping fast, easy, and enjoyable. Whether you're browsing for electronics, fashion, home essentials, or groceries, QuickMart offers a wide selection of high-quality products at competitive prices. Its clean interface and intuitive navigation allow users to find what they need with just a few clicks.
+            <p id="homeInfo-para">QuickMart is a modern e-commerce platform built for fast, easy, and enjoyable shopping. From electronics and fashion to home essentials and groceries, it offers a wide range of quality products at competitive prices. Its clean interface and intuitive navigation help users find what they need quickly.
 
-One of QuickMart’s standout features is its personalized shopping experience. With smart recommendations and curated collections based on user preferences, customers can discover new products tailored to their interests. The platform also supports secure and flexible payment options, including credit/debit cards, digital wallets, and cash-on-delivery in select regions.
+Personalized recommendations and curated collections let customers discover products that match their interests. QuickMart supports secure payment methods, including cards, wallets, and cash-on-delivery, and ensures fast delivery with real-time tracking.
 
-QuickMart ensures fast delivery and real-time order tracking, giving customers peace of mind from checkout to doorstep. Registered users can create wishlists, save carts, and receive notifications about discounts, seasonal deals, and back-in-stock items.
-
-For mobile users, QuickMart’s responsive design and dedicated app ensure a seamless shopping experience on the go. The platform also includes customer reviews and detailed product descriptions, helping buyers make informed decisions.
-
-Backed by strong customer support and a hassle-free return policy, QuickMart is committed to making online shopping not only convenient but also trustworthy. It’s the smart way to shop in today’s digital age.</p>
+Mobile users enjoy a seamless experience through its responsive site and app. With wishlists, saved carts, reviews, and detailed descriptions, shoppers can make informed choices. Backed by reliable support and a simple return policy, QuickMart makes online shopping convenient and trustworthy.</p>
           </div>
           <div className='homefooter-line-a'></div>
           <div className="site-Info-b">

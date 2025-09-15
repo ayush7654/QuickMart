@@ -41,3 +41,20 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
   }
+
+
+  @media(max-width:700px){
+
+    #homeInfo-subhead{
+      font-size: 1rem;
+    }
+      #homeInfo-para{
+        font-size: .75rem;
+      }
+  }
+
+    @media(max-width:400px){
+ .home-site-Info{
+  padding:1rem;
+ }
+    }

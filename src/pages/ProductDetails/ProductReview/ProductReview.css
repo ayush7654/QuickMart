@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
  
-    gap:1.5rem;
+    gap:1rem;
 
   }
 
@@ -42,10 +42,12 @@
     flex-direction: column;
     gap: 0rem;
     border-bottom: 0px solid rgb(115, 115, 115);
-    padding:0rem;
+    padding:1rem;
     padding-left: 0rem;
+    padding-top: 0rem;
             
-    border:0px solid rgb(255, 255, 255);
+    border:0px solid rgb(148, 54, 54);
+    border-bottom: 1px solid rgb(220,220,220);
   }
 
 
@@ -67,7 +69,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: white;
-    padding:.5rem;
+    padding-bottom:.5rem;
 
       }
     .username-div{
@@ -78,23 +80,23 @@
     }
 
     .user-review-date{
-        font-size: .8rem;
-        color:rgb(70, 70, 70);
+        font-size: .7rem;
+        color:rgb(121, 121, 121);
         font-family: 'Inter';
     }
 
       .review-comment{
-        
- 
-        font-size: .85rem;
-        color:rgb(70, 70, 70);
-        font-weight: 300;
+         margin: 0 auto; 
+ width: 90%;
+        font-size: .8rem;
+        color:rgb(100, 100, 100);
+        font-weight: 400;
         font-family: 'Inter';
       padding:2rem;
       padding-left: .5rem;
       border-radius: 0rem;
-    /*   background-color: #eee; */
-    border: 1px solid rgb(220,220,220);
+     background-color: #eee;
+    border: 0px solid rgb(220,220,220);
 
         
       }
@@ -127,6 +129,10 @@
     width: 1.8rem;
   }
 
+   .username-div{
+        gap:.2rem;
+      }
+
     .user-review-date{
       font-size: .7rem;
     }
@@ -141,4 +147,25 @@
 
    @media(max-width:450px){
 
+      .user-review{
+        padding-left:0rem;
+        padding-right:0rem;
+      }
+
+ 
+
+        .review-user-icon{
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+         .reviewer-name{
+    font-size: .75rem;
+   }
+
+    .review-comment{
+        padding:1.5rem;
+         padding-left: .5rem;
+         font-size: .75rem;
+    }
    }

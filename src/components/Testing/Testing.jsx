@@ -22,11 +22,22 @@ export default function Testing() {
     fetchProducts(); // call the async function
   }, []); 
 
+
   if (loading) return <p>Loading...</p>;
 
   return (
     <div>
-      <h2>Products</h2>
+  
+</div>
+
+
+
+
+  );
+}
+
+
+  {/* <h2>Products</h2>
       <HiOutlineShoppingCart/>
       <ul>
         {products.map((item) => (
@@ -35,7 +46,4 @@ export default function Testing() {
             {item.title} - ${item.price}-{item.id}
           </li>
         ))}
-      </ul>
-    </div>
-  );
-}
+      </ul> */}

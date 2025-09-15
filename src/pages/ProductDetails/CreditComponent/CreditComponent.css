@@ -61,10 +61,16 @@ gap: .5rem;
 
     #credit-text{
             font-size: .9rem;
+            font-weight: 400;
     }
 }
 
 @media(max-width:450px){
+
+    .credits-div{
+        height: 80%;
+    }
+
       #credit-logo{
  width: 2.8rem;
     height: 2.8rem;
@@ -72,7 +78,8 @@ gap: .5rem;
     }
 
     #credit-text{
-            font-size: .8rem;
+            font-size: .75rem;
+            
     }
 }
 
