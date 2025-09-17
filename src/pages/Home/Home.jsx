@@ -4,7 +4,7 @@ import ImgCarousel from "./ImgCarousel/ImgCarousel";
 import BrandCarousel from "./BrandComponent/BrandComponent";
 import ExploreCategories from "./ExploreCategories/ExploreCategories"; 
 import DiscountProducts from "./DiscountProducts/DiscountProducts";
-import CountdownProducts from "./CountdownProducts/CountdownProducts";
+import AppleComponent from "./AppleComponent/AppleComponent";
 import NewArrivals from "./NewArrivals/NewArrivals";
 import TrendingComponent from "./TrendingComponent/TrendingComponent";
 import BentoComponent from "./BentoComponent/BentoComponent";
@@ -30,7 +30,7 @@ const isFirstRender = useRef(true); // track initial mount
               <NewArrivals/>
              <ExploreCategories/>
          
-         <CountdownProducts/>
+         <AppleComponent/>
    
     
       <TrendingComponent />

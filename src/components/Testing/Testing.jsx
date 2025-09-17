@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { HiOutlineUser, HiUser } from 'react-icons/hi';
 import { HiShoppingCart,HiOutlineShoppingCart } from 'react-icons/hi';
+import './Testing.css'
 export default function Testing() {
      const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,15 +20,49 @@ export default function Testing() {
       }
     };
 
-    fetchProducts(); // call the async function
+    /* fetchProducts(); */ // call the async function
   }, []); 
 
 
-  if (loading) return <p>Loading...</p>;
+ 
 
   return (
-    <div>
+    <div className="testing-div">
+ <h2>Products to add in home page </h2>
+
+
+  <h3>Apple section</h3>
+ <div>Apple macbook 14 pro</div> {/* done */}
+ <div>iPhone 13 pro</div> 
+  <div>Apple AirPods Max</div> {/* done */}
+
+    <h3>New Arrival</h3>
+
+ <div>Longines Master Watch</div>
+ <div>Nike Air Jordan 1</div>
+ <div>Blue prada bag</div> {/* done */}
+ <div>green short frock</div>
+
+
+
+
+
+    <h3>Absolute Steals</h3>
+ 
+ <div>wooden-white long sofa  </div> {/* done */}
+     <div>samsung galaxy tablet </div>
+  <div>blue black sun glasses</div>
+ <div>Amazon Echo plus</div> 
+
+
+ <div>
+
+ </div>
+
+
+
   
+
 </div>
 
 
