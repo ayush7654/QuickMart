@@ -97,9 +97,68 @@ grid-column: 6;
 }
 
 
-    @media(max-width:500px){
-      .Countdown-home-Products-div .card-tag{
-        font-size: .6rem;
-      }
-    }
-   
+@media(max-width:1300px){
+    .Apple-bento-container .box2 {
+   text-align: center;
+  font-size: 1.5rem;
+
+  font-weight: 500;
+  line-height: 2rem;
+
+  gap:.5rem;
+}
+}
+
+@media (max-width: 1024px) {
+  .Apple-bento-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    height: auto; /* let content decide height */
+  }
+
+  .Apple-bento-container .box1 {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+
+  .Apple-bento-container .box2 {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .Apple-bento-container .box3 {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+  }
+
+  .Apple-bento-container .box4 {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+  }
+
+  .Apple-bento-container .box5 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+/* ✅ Mobile (phones <768px) */
+@media (max-width: 768px) {
+  .Apple-bento-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+  }
+
+  .Apple-bento-container .box1,
+  .Apple-bento-container .box2,
+  .Apple-bento-container .box3,
+  .Apple-bento-container .box4,
+  .Apple-bento-container .box5 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+
+
