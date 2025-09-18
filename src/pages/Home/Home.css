@@ -417,6 +417,16 @@ font-size: 2.8rem;
    .Home .product-price{
     font-size: .9rem;
    }
+
+    .Home .productcard-links-div{
+      height: 2rem;
+   
+    }
+
+     .Home #pd-link{
+   font-weight: 400;
+   font-size: .9rem;
+     }
 }
 
 @media(max-width:850px){
@@ -443,7 +453,7 @@ font-size: 2.8rem;
       align-items: center;
 
  
-      gap: 4rem;
+      gap: 1rem;
     }
     
     .Home .productImg-wrapper{
@@ -457,6 +467,15 @@ font-size: 2.8rem;
     .Home .productImg-wrapper{
       width: 100%;
     } 
+
+    .Home .productcard-links-div{
+      display: none;
+    }
+       .Home  .productCard-detail{
+      flex-direction:row;
+    
+      gap: .5rem;
+     }
 }
 
 @media(max-width:500px){
@@ -481,13 +500,15 @@ font-size: 1.8rem;
   }
 
     .Home .productImg-wrapper{
-        height: 250px;
+        height: 220px;
     }
 
     .home-product{
  
-    width: 250px;
+    width: 310px;
    }
+
+   
 }
 
 

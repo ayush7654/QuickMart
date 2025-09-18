@@ -19,7 +19,7 @@ export default function DiscountProducts() {
                   classname='home-product'
                   key={80}
                   id={80}
-                  images= {["https://i.imgur.com/mp3rUty.jpeg"]} /* https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/1.webp */
+                  images= {["SamsungTablet.webp"]} /* https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/1.webp */
     
                   title="Huawei Matebook X Pro"
                   price={1399.99}
@@ -30,7 +30,7 @@ export default function DiscountProducts() {
                   classname='home-product'
                   key={155}
                   id={155}
-                  images= {["https://i.imgur.com/0qQBkxX.jpg"]} /* https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/1.webp */
+                  images= {["WhiteWoodenSofa4.webp"]} /* https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/1.webp */
     
                   title="Pink-Tinted Sunglasses"
                   price={24.99}
@@ -41,7 +41,7 @@ export default function DiscountProducts() {
                               classname='home-product'
                               key={98}
                               id={98}
-                              images= {['https://i.imgur.com/R3iobJA.jpeg']} /* https://cdn.dummyjson.com/product-images/home-decoration/decoration-swing/1.webp */
+                              images= {['AirJordan1.jpg']} /* https://cdn.dummyjson.com/product-images/home-decoration/decoration-swing/1.webp */
                 
                               title="Decoration Swing"
                               price={59.99}
