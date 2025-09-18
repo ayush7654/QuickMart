@@ -169,72 +169,27 @@ display: none;
  .Home  .productCard-detail{
 
   border: 0px solid rgb(255, 255, 255);
-
-
 display: flex;
 justify-content: space-between;
 align-items: center;
 width: 100%;
 padding-top:1rem;
 padding-bottom:1rem;
-
-
-  
-  }
-
- 
-
-.Home .Store-Product-title-div{
- 
-
  color: rgb(50, 50, 50); 
-
-
+font-family: 'Roboto Condensed', sans-serif;
+font-weight: 400;
+font-size:1.2rem;
  
-}
-
-
- 
+  }
 
 
   .Home .Store-Product-title{
-    
 
- 
-       /* light gray for that faded effect */
-    font-size:1.05rem;
-
-    text-overflow: ellipsis;
     display: flex;
     justify-content: start;
     white-space: nowrap;
-            font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 400;
 
-     
-  
   }
-
-  .Home .price-div{
-    display: flex;
-    justify-content: end;
-            font-family: 'Roboto Condensed', sans-serif;
-  font-weight: 400;
-
-    
-   
-  }
-
-   .Home .product-price{
-
-    font-size: 1.1rem;
-    color: rgb(50, 50, 50); 
-     font-weight: 350;
-       
-  }
-
-
-
 
 
   .Home .productcard-links-div{
@@ -382,6 +337,10 @@ font-size: 3rem;
     .Home .productImg-wrapper{
         height: 300px;
     }
+
+     .Home  .productCard-detail{
+      font-size:1rem;
+     }
 }
 
 
@@ -411,12 +370,7 @@ font-size: 2.8rem;
     .Home .productImg-wrapper{
         height: 250px;
     }
-      .Home .Store-Product-title{
-        font-size: .9rem;
-      }
-   .Home .product-price{
-    font-size: .9rem;
-   }
+
 
     .Home .productcard-links-div{
       height: 2rem;
@@ -427,6 +381,12 @@ font-size: 2.8rem;
    font-weight: 400;
    font-size: .9rem;
      }
+
+       .Home  .productCard-detail{
+      flex-direction: column;
+      align-items: start;
+      gap: .5rem;
+     }
 }
 
 @media(max-width:850px){
@@ -436,11 +396,7 @@ font-size: 2.8rem;
         height: 210px;
     }
 
-     .Home  .productCard-detail{
-      flex-direction: column;
-      align-items: start;
-      gap: .5rem;
-     }
+   
 
   
 /*    */
