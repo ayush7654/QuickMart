@@ -149,46 +149,36 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
       transition: isIdle
         ? 'transform 0.5s ease-in, background-color 0.6s ease, box-shadow 1s ease' // When hiding (moving up/idle)
         : 'transform 0.7s ease-out,  background-color 0.6s ease, box-shadow 1s ease', // When showing (moving down/active)
-      transform: isIdle ? window.innerWidth > 640
-        ? 'translateY(-100%)'
-        : 'translateY(-200%)' : 'translateY(0)',
+      transform: isIdle && window.innerWidth > 700
+  ? 'translateY(-100%)'
+  : 'translateY(0)',
      
       pointerEvents: isIdle ? 'none' : 'auto'
     }}>
 
 
         <div className="header-home">
-
-          <div className="QMSiteLogo">
-            
-              <div className="logo-Img-div" >
-       <img
-        src="/HeaderBirdIconWh.png"
-     /*    className={`logoImg ${
-          location.pathname !== '/' || !isAtTop ? 'fade-in' : 'fade-out'
-        }`} */
-        className="logoImg"
-        alt="White Bird"
-      />
-
-  
-{/*       <img
-        src="/HeaderBirdIconWh.png"
-        className={`logoImg ${
-          location.pathname === '/' && isAtTop ? 'fade-in' : 'fade-out'
-        }`}
-        alt="Black Bird"
-      /> */}
+          <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon-div-Ph"><Search className="searchIcon"    style={{ strokeWidth: '1.5'}} /></span>
+    
+   <div  className='site-logo-div' >
          
-        </div>  
-
-        <div  className="logo-text-title">
-          STORKMART
-
-  
-        </div>
-
-          </div>
+      <div id="testing-line" className="line1">ST&nbsp;&nbsp;&nbsp;&nbsp;RK</div>
+      <div className="StorkLogo-div"><img src='StorkLogo.png'  className="StorkLogo"/></div> 
+      <div id="testing-line" className="line2">ST&nbsp;&nbsp;&nbsp;&nbsp;RE</div>
+      
+      
+          
+        </div> 
+         <div className='site-logo-div-Ph' >
+         
+      <div id="testing-line" className="line1">STORK</div>
+      <div className="StorkLogo-div"><img src='StorkLogo.png'  className="StorkLogo"/></div> 
+      <div id="testing-line" className="line2">STORE</div>
+      
+      
+          
+        </div> 
+        
 
 
     <div  
@@ -217,7 +207,24 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
         
     </div>
 
-         
+    <div  className="page-nav-containerPh">
+
+    
+     <div className="page-nav">  
+  
+ {/*    {navElements 
+  ? navElements.map(item => (
+      <NavLink to={item.path} className={({isActive})=>isActive?'page-nav-item-selected':'page-nav-item'}  key={item.path}>
+        {item.title}
+      </NavLink>
+    ))
+  : <div>loading</div>
+} */}
+    <NavLink to='/' className={({isActive})=>isActive?'page-nav-item-selected':'page-nav-item'}>HOME</NavLink>
+    <NavLink  to='/store' className={({isActive})=>isActive?'page-nav-item-selected':'page-nav-item'}>STORE</NavLink>
+    <NavLink  to='/cart' className={({isActive})=>isActive?'page-nav-item-selected':'page-nav-item'}>CART</NavLink>
+    </div>
+     </div> 
     </div>
     
     

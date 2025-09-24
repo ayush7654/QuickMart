@@ -28,34 +28,16 @@ export default function Testing() {
 
   return (
     <div className="testing-div">
- <h2>Products to add in home page </h2>
 
-
-  <h3>Apple section</h3>
- <div>Apple macbook 14 pro</div> {/* done */}
- <div>iPhone 13 pro</div> 
-  <div>Apple AirPods Max</div> {/* done */}
-
-    <h3>New Arrival</h3>
-
- <div>Longines Master Watch</div>
- <div>Nike Air Jordan 1</div>
- <div>Blue prada bag</div> {/* done */}
- <div>green short frock</div>
-
-
-
-
-
-    <h3>Absolute Steals</h3>
- 
- <div>wooden-white long sofa  </div> {/* done */}
-     <div>samsung galaxy tablet </div>
-  <div>blue black sun glasses</div>
- <div>Amazon Echo plus</div> 
-
-
- <div>
+     <div  className='site-logo-div' style={{marginLeft:'2rem'}}>
+         
+      <div id="testing-line" className="line1">ST&nbsp;&nbsp;&nbsp;&nbsp;RK</div>
+      <div className="StorkLogo-div"><img src='StorkLogo.png' width='60px' className="StorkLogo"/></div> 
+      <div id="testing-line" className="line2">ST&nbsp;&nbsp;&nbsp;&nbsp;RE</div>
+      
+      
+          
+        </div>
 
  </div>
 
@@ -63,7 +45,7 @@ export default function Testing() {
 
   
 
-</div>
+
 
 
 
