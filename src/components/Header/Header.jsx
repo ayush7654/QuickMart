@@ -2,13 +2,12 @@ import {useState,useEffect,useRef} from "react";
 import {NavLink, Link, useLocation,useNavigate} from 'react-router-dom'
 import { Search } from "react-feather";
 import { useFirebase } from "../../components/FirebaseContext/Firebase";
-import { AiFillHome } from 'react-icons/ai';
+
 import { HiOutlineUser, HiUser } from 'react-icons/hi';
 import { HiShoppingCart,HiOutlineShoppingCart } from 'react-icons/hi';
- import { FaHeart } from 'react-icons/fa';    // Filled heart
-import { FiHeart } from 'react-icons/fi';   
+
 import { MdLogin } from 'react-icons/md';
-import StoreFilter from "../../pages/Store/StoreFilter/StoreFilter";
+
 
 import './Header.css'
 export default function Header({toggleSwitch,screenOverlay,toggleOverlay}){
@@ -25,12 +24,41 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay}){
     console.log('username',firebase.currentUser)
     const pagelocation= useLocation();
 
-    const elements = [
+  const elements = [
+  ...(window.innerWidth > 700
+    ? [
+        {
+          title: "Cart",
+          path: "/cart",
+          logo:
+            pagelocation.pathname === "/cart" ? (
+              <HiShoppingCart id="fd-header-logo" />
+            ) : (
+              <HiOutlineShoppingCart
+                id="ol-header-logo"
+                style={{ strokeWidth: "1.5" }}
+              />
+            ),
+        },
+      ]
+    : []),
+  {
+    title: "Login",
+    path: "/login",
+    logo: firebase.isLoggedIn ? (
+      pagelocation.pathname === "/login" ? (
+        <HiUser id="fd-header-logo" />
+      ) : (
+        <HiOutlineUser id="ol-header-logo" style={{ strokeWidth: "1.5" }} />
+      )
+    ) : (
+      <MdLogin id="fd-header-logo" />
+    ),
+  },
+];
 
-        {title:"Cart ", path:'/cart',logo:pagelocation.pathname==='/cart'?<HiShoppingCart id="fd-header-logo"/>: <HiOutlineShoppingCart id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/>},/*'QMicons/cartLogoOl2.png'  */
-/*         {title:"Wishlist ", path:'/wishlist',logo:pagelocation.pathname==='/wishlist'?<FaHeart id="fd-header-logo" className="wishlistIcon" />:<FiHeart className="wishlistIcon"  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/>}, */
-        {title:'Login',path:'/login',logo:firebase.isLoggedIn? pagelocation.pathname==='/login'?<HiUser id="fd-header-logo" />:<HiOutlineUser  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/>:<MdLogin id="fd-header-logo"  />}/*'QMicons/userIconOl.png'  */
-        ] 
+
+        /*         {title:"Wishlist ", path:'/wishlist',logo:pagelocation.pathname==='/wishlist'?<FaHeart id="fd-header-logo" className="wishlistIcon" />:<FiHeart className="wishlistIcon"  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/>}, */
 
 
     const navElements= [{title:'HOME',path:'/'},{title:'STORE',path:'/store'},{title:'ABOUT',path:'/testing'},{title:'CONTACT',path:'/contact'}]

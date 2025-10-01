@@ -20,7 +20,7 @@
    width: 55%;
 
    overflow: hidden;
-   background-image: url('/QMbgImages/QM-Login-Img.jpg');
+   background-image: url('LoginImg/Login-Img.jpg');
    background-position: center;
    background-repeat:no-repeat;
    background-size: cover;
@@ -314,14 +314,14 @@ height: 2.9rem;
   .google-login-icon{
 
 
-background-image: url('/GoogleLogo.png');
+background-image: url('QMicons/GoogleLogo.png');
 
 
   }
 
   .apple-login-icon{
 
-background-image: url('/apple-black-logo.png');
+background-image: url('QMicons/AppleLogo.png');
   }
 
   .google-login-text,.apple-login-text{
@@ -565,7 +565,7 @@ font-size: 2.2rem;
    width: 55%;
 
    overflow: hidden;
-   background-image: url('/QMbgImages/QM-Login-Img-Ph.jpg');
+   background-image: url('LoginImg/Login-Img-sm.jpg');
    background-position: center;
    background-repeat:no-repeat;
    background-size: cover;

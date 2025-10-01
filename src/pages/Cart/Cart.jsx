@@ -80,7 +80,7 @@ export default function Cart(){
 
     {cartElements.length>0 ?<div className="cart-item-list">{cartElements}</div>:
     <div className="empty-cart">
-      <img className="emptyCart-img" src='shopping-cart.gif' />
+      <img className="emptyCart-img" src='SiteGif/shopping-cart.gif' />
       <div className="emptyCart-text1">Your cart is empty, let's change that.</div>
       </div>}{/*   <img className="emptyCart-img" src='shopping-cart.gif' /> */}
 <div className="Cart-page-In-midline"></div>

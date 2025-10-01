@@ -7,7 +7,7 @@ import DiscountProducts from "./DiscountProducts/DiscountProducts";
 import AppleComponent from "./AppleComponent/AppleComponent";
 import NewArrivals from "./NewArrivals/NewArrivals";
 import TrendingComponent from "./TrendingComponent/TrendingComponent";
-import BentoComponent from "./BentoComponent/BentoComponent";
+import FeaturedCategories from "./FeaturedCategories/FeaturedCategories";
 import HomeFooter from "./HomeFooter/HomeFooter";
 
 import './Home.css';
@@ -36,7 +36,7 @@ const isFirstRender = useRef(true); // track initial mount
       <TrendingComponent />
     
          <DiscountProducts/>
-      <BentoComponent/>
+      <FeaturedCategories/>
      
 
       

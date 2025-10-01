@@ -9,7 +9,7 @@ export default function CartOut() {
         <div className="cart-BG">
     
         <div className="cartOut-info">
-        <img className="cartOut-img" src='carro-de-la-compra.gif' />
+        <img className="cartOut-img" src='SiteGif/Cart-out-gif.gif' />
             <div className="cartOut-text-1">Missing cart items?</div>
         <div className="cartOut-text-2">Login to see the items you added previously</div>
     <Link to="/login" className="cart-Login-btn"> LOGIN → </Link>

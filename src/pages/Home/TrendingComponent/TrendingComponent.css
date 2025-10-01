@@ -69,7 +69,7 @@ background-color: white;
 
   .trending-product-1{
         
-    background-image: url('/QMbgImages/QM-Img-tp1.jpg') ; /*  */
+    background-image: url('FashionTrend/QM-Img-tp1.jpg') ; /*  */
    
     
   }
@@ -77,7 +77,7 @@ background-color: white;
   .trending-product-2{
 
 
-    background-image: url('/QMbgImages/QM-Img-tp5.jpg ') ; /* */
+    background-image: url('FashionTrend/QM-Img-tp5.jpg ') ; /* */
    
     
   }
@@ -173,7 +173,7 @@ background-color: white;
   
   .trending-product-1{
         
-    background-image: url('/trendingImg1.jpg') ; /* /QMbgImages/QM-Img-tp1.jpg */
+    background-image: url('BG-Images-sm/trendingImg1-sm.jpg') ; 
    
     
   }
@@ -181,7 +181,7 @@ background-color: white;
     .trending-product-2{
 
 
-    background-image: url('/trendingImg2.jpg') ; /* /QMbgImages/QM-Img-tp5.jpg */
+    background-image: url('BG-Images-sm/trendingImg2-sm.jpg') ; 
    
     
   }

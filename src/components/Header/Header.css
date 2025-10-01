@@ -758,18 +758,18 @@ position: absolute;
 @media (max-width: 400px){
 
    .site-logo-div-Ph .StorkLogo-div{
-    padding:0rem;
+    padding:.1rem;
    }
 
   
    .site-logo-div-Ph .StorkLogo{
-    width: 25px;
+    width: 30px;
      background-color: transparent;
 }
 
  .site-logo-div-Ph #testing-line{
           font-weight: 800;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
 }
 
 .Home-Nav-Container{

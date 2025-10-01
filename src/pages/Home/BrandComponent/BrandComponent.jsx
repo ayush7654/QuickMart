@@ -4,13 +4,14 @@ import "./BrandComponent.css";
 const BrandCarousel = () => {
   // ✅ Move this up
   const brandLogos = [
-    'QM-home-brand1.png',
-    'QM-home-brand2.webp',
-    'QM-home-brand3.png',
-    'QM-home-brand4.png',
-    'QM-home-brand5.png',
-    'QM-home-brand6.png',
-    'QM-home-brand7.png'
+    'BrandComponentIcons/QM-home-brand1.png',
+    'BrandComponentIcons/QM-home-brand2.webp',
+    'BrandComponentIcons/QM-home-brand3.png',
+    'BrandComponentIcons/QM-home-brand4.png',
+    'BrandComponentIcons/QM-home-brand5.png',
+    'BrandComponentIcons/QM-home-brand6.png',
+    'BrandComponentIcons/QM-home-brand7.png',
+    'BrandComponentIcons/QM-home-brand8.png'
 
    
   ];

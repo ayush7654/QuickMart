@@ -124,7 +124,7 @@ font-weight: 600;
 
   .exploreCard1{
  
-    background-image: url('/QMbgImages/QM-browse-fitness.jpg'); 
+    background-image: url('ExploreImgs/Browse-Fitness.jpg'); 
 
   }
 
@@ -135,7 +135,7 @@ font-weight: 600;
 
   .exploreCard2{
    
-    background-image: url('/QMbgImages/QM-browse-style.jpg');
+    background-image: url('ExploreImgs/Browse-Style.jpg');
     
 
   }
@@ -145,7 +145,7 @@ font-weight: 600;
 
   .exploreCard3{
    
-    background-image: url('/QMbgImages/QM-browse-luxury.jpg');
+    background-image: url('ExploreImgs/Browse-Luxury.jpg');
  
   }
 
@@ -170,20 +170,20 @@ font-weight: 600;
 
   .exploreCard1{
  
-    background-image: url('/QMbgImages/QM-browsePhone1.jpg'); 
+    background-image: url('BG-Images-sm/Browse-Fitness-sm.jpg'); 
 
   }
 
     .exploreCard2{
  
-    background-image: url('/QMbgImages/QM-browsePhone2.jpg'); 
+    background-image: url('BG-Images-sm/Browse-Style-sm.jpg'); 
 
   }
 
 
     .exploreCard3{
  
-    background-image: url('/QMbgImages/QM-browsePhone3.avif'); 
+    background-image: url('BG-Images-sm/Browse-Luxury-sm.avif'); 
 
   }
 
