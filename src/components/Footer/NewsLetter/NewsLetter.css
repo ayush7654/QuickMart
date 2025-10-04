@@ -1,0 +1,131 @@
+.NL-div{
+background-color: rgb(224, 202, 202);
+background-color: rgb(255, 255, 255);
+color:rgb(225, 225, 225);
+padding: 2rem;
+height: 20vh;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap:8rem;
+position: relative;
+
+/*  background-color: rgb(65, 210, 210);  */
+/* background-image: url('QMbgImages/feathers.png');
+background-position: left;
+background-repeat: no-repeat;
+background-size: cover; */
+
+}
+
+.NL-head-div{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+
+
+   
+    
+}
+
+
+.NL-head{
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: 'Roboto';
+   /*  text-shadow: 1px 2px rgb(80, 80, 80) ;  */
+     color: rgb(0, 0, 0);
+    
+
+}
+
+
+
+
+
+.NL-gif-div{
+    position: absolute;
+      top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ width: 5rem;
+ height: 5rem;
+ border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ overflow: hidden;
+ border: 0px solid rgb(130, 130, 130);
+/*  box-shadow: 2px 2px rgb(130, 130, 130); */
+
+}
+
+
+.NL-gif{
+ width: 5rem;
+}
+
+.NL-input-div{
+    display: flex;
+align-items: center;
+justify-content: space-between;
+height: 2.5rem;
+width: 30%;
+}
+
+.NL-input{
+    width: 75%;
+    height: 100%;
+    font-size: 1.1rem;
+}
+
+.NL-button{
+   background-color:  rgb(25, 25, 25);
+    height: 100%;
+    width: 25%;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    transition: all .3s ease;
+    
+
+}
+
+
+.NL-button:hover{
+            background-color:  rgb(65, 210, 210);
+            cursor: pointer;
+}
+
+@media(max-width:1250px){
+    .NL-head{
+    font-size: 2rem;
+}
+
+.NL-button{
+    font-size: .9rem;
+}
+
+}
+
+@media(max-width:1000px){
+    .NL-head{
+    font-size: 1.6rem;
+}
+.NL-input-div{
+    width: 40%;
+}
+.NL-button{
+    font-size: .9rem;
+}
+
+}
+
+@media(max-width:800px){
+    .NL-div{
+        display: none;
+    }
+}

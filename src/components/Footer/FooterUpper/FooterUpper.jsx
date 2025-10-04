@@ -1,9 +1,16 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom';
 import './FooterUpper.css'
 import { FaFacebook, FaXTwitter, FaYoutube, FaInstagram } from "react-icons/fa6";
 export default function FooterUpper() {
+
+    const location = useLocation();
+
+    console.log('location is ,', location)
   return (
-     <div className='footer-upper'>
+     <div className='footer-upper' style={{  display: location.pathname === "/" || location.pathname === "/store"
+    ? "none"
+    : "flex"}}>
 <div className='upper-left'>
     <div className='left-a'>
         <div id='footer-title' className='left-a-title'>About</div>

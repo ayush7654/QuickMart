@@ -2,7 +2,7 @@
     display: flex;
     justify-content:center ;
     width: 100%;
- background-color: rgb(10, 10, 10);
+  background-color: rgb(35, 35,35);
     margin-top: 5rem;
     z-index: 1;
 
@@ -11,7 +11,7 @@
   .home-site-Info{
     border: 0px solid rgb(229, 29, 29) ;
     color:black;
-  background-color: rgb(10, 10, 10);
+  background-color: rgb(35, 35,35);
     width: 95%;
     padding:2rem;
    
@@ -21,7 +21,7 @@
 
   #homeInfo-subhead{
     font-size: 1.2rem;
-    color:rgb(201, 201, 201);
+    color:rgb(200, 200, 200);
    
     font-family: 'Poppins';
   

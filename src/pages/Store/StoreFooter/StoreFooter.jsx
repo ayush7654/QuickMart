@@ -2,7 +2,7 @@ import React from 'react'
 import './StoreFooter.css'
 export default function StoreFooter() {
   return (
-     <div style={{display:'flex',justifyContent:'center',width:'100%',backgroundColor:'rgb(10, 10, 10)',marginTop:'5rem'}}>
+     <div style={{display:'flex',justifyContent:'center',width:'100%',backgroundColor:'rgb(40, 40, 40)',marginTop:'5rem'}}>
       <div className="store-footer-info" >
       <div className="store-footer-heading">Top Stories : Brand Directory</div>
       <div className="store-footer-list">
