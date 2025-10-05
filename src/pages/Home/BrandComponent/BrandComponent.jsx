@@ -1,21 +1,39 @@
 import React from "react";
 import "./BrandComponent.css";
-
+import FlipCard from "./FlipCard/FlipCard";
 const BrandCarousel = () => {
   // ✅ Move this up
   const brandLogos = [
-    'BrandComponentIcons/QM-home-brand1.png',
+    'BrandComponentIcons/QM-home-brand10.png',
     'BrandComponentIcons/QM-home-brand2.webp',
     'BrandComponentIcons/QM-home-brand3.png',
-    'BrandComponentIcons/QM-home-brand4.png',
     'BrandComponentIcons/QM-home-brand5.png',
+    'BrandComponentIcons/QM-home-brand4.png',
     'BrandComponentIcons/QM-home-brand6.png',
     'BrandComponentIcons/QM-home-brand7.png',
-    'BrandComponentIcons/QM-home-brand8.png'
+    'BrandComponentIcons/QM-home-brand8.png',
+    'BrandComponentIcons/QM-home-brand9.png'
+   
 
    
   ];
 
+    const brandLogosSM = [
+    {front:'BrandComponentIcons/QM-home-brand10.png', back:'BrandComponentIcons/QM-white-brand4.png'},
+    {front:'BrandComponentIcons/QM-home-brand2.webp', back:'BrandComponentIcons/QM-white-brand6.png'},
+    {front:'BrandComponentIcons/QM-home-brand3.png', back:'BrandComponentIcons/QM-home-brand10.png'},
+    {front:'BrandComponentIcons/QM-home-brand5.png', back:'BrandComponentIcons/QM-home-brand10.png'},
+    {front:'BrandComponentIcons/QM-home-brand4.png', back:'BrandComponentIcons/QM-home-brand10.png'},
+    {front:'BrandComponentIcons/QM-home-brand6.png', back:'BrandComponentIcons/QM-home-brand10.png'},
+    {front:'BrandComponentIcons/QM-home-brand7.png', back:'BrandComponentIcons/QM-home-brand10.png'},
+    {front:'BrandComponentIcons/QM-home-brand8.png', back:'BrandComponentIcons/QM-home-brand10.png'},
+    {front:'BrandComponentIcons/QM-home-brand9.png', back:'BrandComponentIcons/QM-home-brand10.png'}
+
+   
+   
+
+   
+  ];
 
 
   const logos = [...brandLogos, ...brandLogos]; // use it here AFTER declaration
@@ -37,6 +55,15 @@ const BrandCarousel = () => {
             <img src={logo} alt={`Brand ${index % brandLogos.length + 1}`} />
           </div>
         ))}
+      </div>
+      <div className="brand-carousel-sm" >
+         {brandLogosSM .map((logo, index) => (
+  <FlipCard
+    key={index}
+    frontImage={logo.front}
+    backImage={logo.back}
+  />
+))}
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ export default function ImgCrousel() {
 const homeBGs = [
      { id: 0,  img1: 'ImageCrousel/IC-Fashion.JPG',img2:'BG-Images-sm/clothes.jpg', product: './store/84'  },
      { id: 1, img1: 'ImageCrousel/IC-Watch.webp',img2:'BG-Images-sm/watch.jpg', product: './store/98' },
-    { id: 2, img1: 'ImageCrousel/IC-Shoes.webp',img2:'BG-Images-sm/shoes4.avif', product: './store/88' },
+    { id: 2, img1: 'ImageCrousel/IC-Shoes.webp',img2:'BG-Images-sm/shoes.jpg', product: './store/88' },
     { id: 3, img1: 'ImageCrousel/IC-Apple.jpg',img2:'BG-Images-sm/IC-Apple-sm.avif', product: './store/123' }
    
   ];
