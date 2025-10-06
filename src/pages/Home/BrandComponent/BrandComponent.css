@@ -89,6 +89,7 @@ background-color: white;
       display: grid;
    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
   grid-template-rows: repeat(3, auto);   /* 3 rows, auto height */
+/*   grid-auto-flow: column; */
   place-items: center;
   gap: 1rem;
     }

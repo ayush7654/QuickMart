@@ -10,6 +10,7 @@
   background-color: white;
   border-radius: 50%;
   perspective: 1000px; /* enable 3D flip */
+  
 }
 
 /* flipping logic */
@@ -21,9 +22,9 @@
   transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner {
+/* .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
-}
+} */
 
 /* front and back faces */
 .flip-card-front,
@@ -39,15 +40,21 @@
 }
 
 .flip-card-back {
-background-color: red;
+background-color: rgb(35, 35, 35);
+background-color: white;
+
+  background-size: cover;
+  background-position: center;
+
 }
 
-.flip-card-front img,
-.flip-card-back img {
+.flip-card-front img {
   width: 80%;
   height: 80%;
   object-fit: contain;
 }
+
+
 
 /* back face rotation */
 .flip-card-back {

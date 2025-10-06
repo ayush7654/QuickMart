@@ -1,6 +1,6 @@
-import React from "react";
+import {useState, useEffect} from "react";
 import "./BrandComponent.css";
-import FlipCard from "./FlipCard/FlipCard";
+import BrandSM from "./BrandSM/BrandSM";
 const BrandCarousel = () => {
   // ✅ Move this up
   const brandLogos = [
@@ -18,27 +18,16 @@ const BrandCarousel = () => {
    
   ];
 
-    const brandLogosSM = [
-    {front:'BrandComponentIcons/QM-home-brand10.png', back:'BrandComponentIcons/QM-white-brand4.png'},
-    {front:'BrandComponentIcons/QM-home-brand2.webp', back:'BrandComponentIcons/QM-white-brand6.png'},
-    {front:'BrandComponentIcons/QM-home-brand3.png', back:'BrandComponentIcons/QM-home-brand10.png'},
-    {front:'BrandComponentIcons/QM-home-brand5.png', back:'BrandComponentIcons/QM-home-brand10.png'},
-    {front:'BrandComponentIcons/QM-home-brand4.png', back:'BrandComponentIcons/QM-home-brand10.png'},
-    {front:'BrandComponentIcons/QM-home-brand6.png', back:'BrandComponentIcons/QM-home-brand10.png'},
-    {front:'BrandComponentIcons/QM-home-brand7.png', back:'BrandComponentIcons/QM-home-brand10.png'},
-    {front:'BrandComponentIcons/QM-home-brand8.png', back:'BrandComponentIcons/QM-home-brand10.png'},
-    {front:'BrandComponentIcons/QM-home-brand9.png', back:'BrandComponentIcons/QM-home-brand10.png'}
-
    
-   
-
-   
-  ];
 
 
   const logos = [...brandLogos, ...brandLogos]; // use it here AFTER declaration
   const logoWidth = 200; // px per logo
   const totalWidth = logoWidth * brandLogos.length;
+
+
+
+
 
   return (
     <div className="brand-carousel-container">
@@ -56,15 +45,7 @@ const BrandCarousel = () => {
           </div>
         ))}
       </div>
-      <div className="brand-carousel-sm" >
-         {brandLogosSM .map((logo, index) => (
-  <FlipCard
-    key={index}
-    frontImage={logo.front}
-    backImage={logo.back}
-  />
-))}
-      </div>
+      <BrandSM/>
     </div>
   );
 };
