@@ -49,7 +49,7 @@ export default function BrandSM() {
 
     // Clear interval when component unmounts
     return () => clearInterval(intervalId);
-  }, 6000);
+  }, 2000);
 
   // Clear timeout if component unmounts before 6s
   return () => clearTimeout(delayTimer);
