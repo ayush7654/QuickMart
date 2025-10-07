@@ -170,20 +170,20 @@ font-weight: 600;
 
   .exploreCard1{
  
-    background-image: url('BG-Images-sm/Browse-Fitness-sm.jpg'); 
+    background-image: url('/BG-Images-sm/Browse-Fitness-sm.jpg'); 
 
   }
 
     .exploreCard2{
  
-    background-image: url('BG-Images-sm/Browse-Style-sm.jpg'); 
+    background-image: url('/BG-Images-sm/Browse-Style-sm.jpg'); 
 
   }
 
 
     .exploreCard3{
  
-    background-image: url('BG-Images-sm/Browse-Luxury-sm.avif'); 
+    background-image: url('/BG-Images-sm/Browse-Luxury-sm.avif'); 
 
   }
 
