@@ -1,10 +1,11 @@
 .footer-lower{
-    border-top:1px solid rgba(113, 111, 111, 0.849);  
+    border-top:1px solid rgb(70, 70, 70);  
     display: flex;
-    padding:3rem;
+    padding:2rem;
     justify-content: space-around;
     flex-wrap: wrap;
     background-color: rgb(20,20,20);
+    height: 20vh;
    
     
 }
@@ -77,9 +78,21 @@
 
 @media(max-width:400px){
 
+    .footer-lower{
+        height: 15vh;
+    }
+
 #footerIcon-wrapper{
 
         margin-left:15% ;
    
+}
+
+  #footerIcon-div{
+        font-size: .7rem;
+    }
+
+#footerIcon{
+    font-size: 18px;
 }
 }

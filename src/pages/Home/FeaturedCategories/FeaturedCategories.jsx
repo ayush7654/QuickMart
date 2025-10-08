@@ -21,6 +21,9 @@ export default function FeaturedCategories() {
   ]
 
   const [categoryNav,setCategoryNav] = useState(0);
+
+  const NavClicks = window.innerWidth>600? 6:8; 
+
   return (
      <div className='bento-div' >
         
@@ -37,7 +40,7 @@ export default function FeaturedCategories() {
     <div className="bento-container-nav-div">
 {categoryNav>0?  <ChevronLeft onClick={() => setCategoryNav(prev => (prev > 0 ? prev - 1 : prev) )}
  className="bento-left" id='bento-nav'  strokeWidth={1.2} absoluteStrokeWidth />:<div></div>}
-  {categoryNav<6?     <ChevronRight   onClick={() => setCategoryNav(prev => (prev < 6 ? prev + 1 : prev))}
+  {categoryNav<NavClicks?     <ChevronRight   onClick={() => setCategoryNav(prev => (prev < NavClicks ? prev + 1 : prev))}
  className="bento-right" id='bento-nav' strokeWidth={1.2} absoluteStrokeWidth />:<div></div>}
     </div>
   <div style={{width:'100%', display:'flex'}}>

@@ -472,7 +472,7 @@ letter-spacing: 0rem;
 @media (max-width:700px){  /* Header layout changes */
 
       .header-home{
-    height: 3.5rem;
+    height: 3.8rem;
    /*    background-color: rgb(30,210,210); */
   color:white;
   position: relative;
@@ -562,8 +562,8 @@ color:white;
 position: absolute;
 display: flex;
      justify-content: center;
-      top:3.5rem;
-      height: 2.2rem;
+      top:3.8rem;
+      height: 2rem;
       width: 100%;
       transition: all .6s ease;
      background-color: transparent;
