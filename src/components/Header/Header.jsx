@@ -202,7 +202,7 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
       <div id="testing-line" className="line1">STORK</div>
       <div className="StorkLogo-div"><img src='StorkLogo.png'  className="StorkLogo"/></div> 
       <div id="testing-line" className="line2">STORE</div>
-      
+      <div>{window.innerWidth}</div>
       
           
         </div> 

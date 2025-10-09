@@ -685,6 +685,30 @@ color:rgb(20, 20, 20);
           font-weight: 800;
         font-size: 1.6rem;
 }
+
+.site-logo-div-Ph .line1{
+
+color:rgb(20, 20, 20);
+     text-shadow: 
+      -0.5px -0.5px 0 rgb(255, 255, 255),
+   0.5px -0.5px 0 rgb(255, 255, 255),
+  -0.5px  0.5px 0 rgb(255, 255, 255),
+   0.5px  0.5px 0 rgb(255, 255, 255);
+  
+    
+}
+
+.sticky-header-ScrollUp .site-logo-div-Ph .line2{
+
+color:white;
+    text-shadow: 
+  -0.5px -0.5px 0 rgb(0, 0, 0),
+   0.5px -0.5px 0 rgb(0, 0, 0),
+  -0.5px  0.5px 0 rgb(0, 0, 0),
+   0.5px  0.5px 0 rgb(0, 0, 0);
+  
+    
+}
     
 
 
@@ -769,8 +793,10 @@ position: absolute;
 
  .site-logo-div-Ph #testing-line{
           font-weight: 800;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
 }
+
+  
 
 .Home-Nav-Container{
 position: absolute;
