@@ -101,10 +101,15 @@
     width: 100%;
     position:absolute;
     bottom: 5rem;
-height: 4.5rem;
+height: 4rem;
     display: flex;
     justify-content: center;
+       font-family: 'Poppins', sans-serif;
 
+  }
+
+  .buy-link-sm{
+display: none;
   }
 
 
@@ -138,11 +143,11 @@ height: 4.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-   width: 40%;
+   width: 30%;
    height: 100%;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
    padding:1rem;
-   font-family: 'Poppins', sans-serif;
+
   font-weight: 500;
   }
 
@@ -173,7 +178,7 @@ height: 4.5rem;
 
       background-color: white;
       color:rgb(0, 0, 0);
-      
+       border: 2px solid transparent;
           transition: all 0.4s ease;
   }
 
@@ -191,7 +196,7 @@ height: 4.5rem;
 position: absolute;
 bottom: 0;
     width: 100%;
-    height: 5rem;
+    height: 3rem;
     border: 0px solid black;
     display: flex;
     justify-content: center;
@@ -200,7 +205,7 @@ bottom: 0;
   }
 
   .CrousalNav-content{
-    width: 40%;
+    width: 32%;
     height: 4px;
 
     display: flex;
@@ -356,10 +361,32 @@ bottom: 0;
  }
 
  .buy-link-div{
-  bottom: 6rem;
+  bottom: 10rem;
  }
+  
+.buy-link-div .buy-link {
+  display: none;
+}
+
+ .buy-link-sm{
+display: flex;
+ width: 90%;
+
+ 
+ }
+
+ .buy-btn-sm{
+ width: 100%;
+ height: 100%;
+  display: flex;
+ justify-content: center;
+ align-items: center;
+ color: white;
+ border: 1px solid white;
+ }
+
   .CrousalNav-div{
-    bottom: 1rem;
+    bottom: 4rem;
   }
 
       }

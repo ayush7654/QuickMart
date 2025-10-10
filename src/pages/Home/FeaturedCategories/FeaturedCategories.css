@@ -28,7 +28,7 @@
     /* background-color: rgb(255, 255, 255); */
     width: 100vw;
      transition: transform 1000ms ease;
-     
+    
   /*   translate: -500px; */
 
      
@@ -109,18 +109,19 @@ z-index: 999;
     border: 0px solid black;
     flex-shrink: 0;
     border-radius: 1rem;
-   
+       background-color: white;
+    border: 1px solid rgb(210, 210, 210);
 
     /* box-shadow: 5px 5px 10px rgb(175, 175, 175); */
 /*     background-color: rgb(225, 225, 225); */
-border: 1px solid transparent;
- background-color: #eee;
+
  transition: all .8s ease;
 
   }
   #card-bento-div:hover{
-    background-color: white;
-    border-color: rgb(220, 220, 220);
+
+    border: 1px solid transparent;
+ background-color: #eee;
    }
 
 
@@ -222,6 +223,18 @@ border:0px solid white;
    #card-bento-div{
       width:70%;
        height:70vh;
+    }
+
+    .bento-container{
+       overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* enables smooth momentum scrolling on iOS */
+    }
+ .bento-container::-webkit-scrollbar {
+  display: none; /* hide scrollbar */
+}
+    .bento-container-nav-div{
+      display: none;
     }
   
     }

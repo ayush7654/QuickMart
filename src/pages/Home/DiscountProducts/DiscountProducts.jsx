@@ -8,7 +8,7 @@ export default function DiscountProducts() {
        
               <div  className="home-head-div">
                 <div className="home-head-content">
-                  <div className='home-head'>Absolute Steals.</div>
+                  <div className='home-head'>ABSOLUTE STEALS</div>
                   
                 
                 </div>

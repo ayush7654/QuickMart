@@ -1,11 +1,8 @@
 import  {useState} from 'react';
  import { ChevronLeft,ChevronRight } from 'lucide-react'; 
 import { Link } from "react-router-dom";
+import ScrollMouse from '../../../components/ScrollMouse/ScrollMouse';
  import './ImgCarousel.css';
-
-
-
-
 
 
 export default function ImgCrousel() {
@@ -27,7 +24,7 @@ const homeBGs = [
 
   return (
    <div className="ImageCrousel-Container">
-        
+        <ScrollMouse/>
             <div className="Nav-div">
               <ChevronLeft onClick={() =>setCurrentBGImg(prev => (prev > 0 ? prev - 1 : prev))} className="home-left-arrow" id='nav-arrow' strokeWidth={.5} absoluteStrokeWidth />
               <ChevronRight onClick={() =>setCurrentBGImg(prev => (prev < homeBGs.length - 1 ? prev + 1 : prev))} className="home-right-arrow" id='nav-arrow' strokeWidth={.5} absoluteStrokeWidth />
@@ -44,9 +41,13 @@ const homeBGs = [
 
 </div>)}
 <div  className="buy-link-div">
-  <div  className="buy-link">
+   <div  className="buy-link">
   <Link id='buyLink-btn' className="btn-discoverMore">DISCOVER MORE</Link>
   <Link id='buyLink-btn'  to={currentPath} className="btn-shopNow">SHOP NOW</Link>
+</div> 
+
+ <div className='buy-link-sm'>
+<Link className='buy-btn-sm'> SHOP NOW</Link>
 </div>
 </div>
 

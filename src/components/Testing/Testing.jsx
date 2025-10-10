@@ -11,18 +11,12 @@ export default function Testing() {
 
   return (
     <div className="testing-div">
-
-     {/*  <div className="test-image-div">
-
-      </div>
-
-     <img src='HeaderBirdIconBl.png' width='300px'/>
-
-        <FlipCard
-        frontImage="HeaderBirdIconBl.png"
-        backImage="HeaderBirdIconWh.png"
-      /> */}
-
+ 
+ <div className="heading-div">
+  <div id='head-div' className="head-1">NEW</div>
+  <div id='head-div'  className="head-2">ARRIVALS</div>
+ </div>
+  
  </div>
 
 

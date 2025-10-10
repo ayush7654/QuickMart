@@ -8,7 +8,7 @@ export default function ExploreCategories() {
 
                <div className="home-head-div">
                 <div className="home-head-content">
-                  <div className='home-head'>Explore Collections.</div>
+                  <div className='home-head'>EXPLORE COLLECTIONS</div>
                   
 
                 </div>
