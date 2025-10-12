@@ -206,8 +206,8 @@ border: 1px solid rgb(220, 220, 220);
     align-items: center;
     border-bottom: 1px solid rgb(220, 220, 220);
      position: relative;
-   
-     margin-bottom: 2rem;
+ 
+     margin-bottom: 1rem;
      background-color: rgb(220, 220, 220);
    /*   background: linear-gradient(to left , rgb(200, 200, 200) , white); */
 
@@ -330,7 +330,15 @@ height: 100%;
 
 @media(max-width:650px){
 
+  .home-head-div{
+    justify-content: flex-end;
+  }
 
+  .home-head-content{
+    border: 0px solid black;
+    width: 95%;
+    justify-content: flex-start;
+  }
 
  .home-Products-container{
       flex-direction: column;
@@ -394,8 +402,8 @@ font-size: .8rem;
 
 @media(max-width:400px){
   .home-head {
-  font-size: 1.2rem;
-    letter-spacing: .2rem;
+  font-size: 1.3rem;
+    letter-spacing: .05rem;
 }
 }
 

@@ -61,7 +61,7 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay}){
         /*         {title:"Wishlist ", path:'/wishlist',logo:pagelocation.pathname==='/wishlist'?<FaHeart id="fd-header-logo" className="wishlistIcon" />:<FiHeart className="wishlistIcon"  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/>}, */
 
 
-    const navElements= [{title:'HOME',path:'/'},{title:'STORE',path:'/store'},{title:'ABOUT',path:'/testing'},{title:'CONTACT',path:'/contact'}]
+    const navElements= [{title:'HOME',path:'/'},{title:'STORE',path:'/store'},{title:'ABOUT',path:'/testing'}]
 
 
 
@@ -186,8 +186,12 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
 
 
         <div className="header-home">
-          <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon-div-Ph"><Search className="searchIcon"    style={{ strokeWidth: '1.5'}} /></span>
+       <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon-div-Ph"><Search className="searchIcon"    style={{ strokeWidth: '1.5'}} /></span> 
     
+
+
+
+
    <div  className='site-logo-div' >
          
       <div id="testing-line" className="line1">ST&nbsp;&nbsp;&nbsp;&nbsp;RK</div>
@@ -197,19 +201,17 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
       
           
         </div> 
-         <div className='site-logo-div-Ph' >
+     <div className='site-logo-div-Ph' >
          
       <div id="testing-line" className="line1">STORK</div>
       <div className="StorkLogo-div"><img src='StorkLogo.png'  className="StorkLogo"/></div> 
       <div id="testing-line" className="line2">STORE</div>
-      <div>{window.innerWidth}</div>
+     
       
           
-        </div> 
+        </div>  
         
-
-
-    <div  
+  <div  
 
      className="page-nav-container">
     
@@ -225,6 +227,8 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
 }
     </div>
      </div> 
+ 
+ 
     
          <div className='Home-Nav-Container'>
           <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon-div"><Search className="searchIcon"    style={{ strokeWidth: '1.5'}} /></span>
