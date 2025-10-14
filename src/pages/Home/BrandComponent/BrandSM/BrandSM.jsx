@@ -55,8 +55,7 @@ export default function BrandSM() {
   return () => clearTimeout(delayTimer);
 }, []);
 
-   console.log(flipCounter)
-   console.log(unflipCounter)
+
 
   useEffect(() => {
   setBrands(prev =>

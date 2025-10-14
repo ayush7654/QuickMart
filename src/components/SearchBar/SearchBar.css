@@ -1,56 +1,70 @@
 .searchBar-div{
 position:fixed;
 top: -.1rem;
-    height: 12rem;
+    height: 40vh;
     width: 100%;
     background-color: white;
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
-   
+   gap:2rem;
     flex-direction: column;
   transform: translateY(-12rem);
 }
 .searchBar-head-div{
     width: 85%;
-position: relative;
+
     display: flex;
   align-items: center;
   justify-content: center;
     font-size: 2.5rem;
-    font-weight: 700;
-    color: rgb(200, 200, 200);
+    font-weight: 600;
+    color: rgb(60, 60, 60);
+
     user-select: none;
   border: 0px solid red;
-font-family: 'Poppins', sans-serif;
+font-family: 'Inter';
 
 
 }
 
-.searchBar-cancel{
+.searchBar-cancel-div{
  position: absolute;
-
-right: 0rem; 
+top:2rem;
+right: 2rem; 
  
-height: 2.5rem;
-width: 2.5rem;
+height: 2.8rem;
+width: 2.8rem;
 display: flex;
 justify-content: center;
 align-items: center;
 border-radius:50% ;
-color: rgb(151, 151, 151);
+color: rgb(130, 130, 130);
 border: 0px solid rgb(130, 130, 130);
+
 
 
 }
 
+.searchBar-cancel-div:hover{
+
+color:rgb(0, 0, 0);
+cursor: pointer;
+background-color:rgb(230, 230, 230);
+}
+.searchBar-cancel{
+width: 1.8rem;
+height: 1.8rem;
+}
+
 
 .header-searchBar-div{
-    width: 85%;
+    width: 100%;
     display:flex;
     flex-direction: column;
-    
+ align-items: center;
+    position: relative;
     margin-top: 2rem;
     border: 0px solid red;
 
@@ -59,104 +73,265 @@ border: 0px solid rgb(130, 130, 130);
   }
   .header-searchBar{
     border: 0px solid red;
-   width:100%;
+   width:85%;
     display:flex;
     position: relative;
     align-items: center;
     user-select: none;
+     border-bottom:1px solid rgb(210, 210, 210);
     
   }
   .header-search-box{
   
     width: 100%;
-    height: 2.5rem;
+   
     border: 0px;
     border-radius: 0rem;
 
-
+border: 0px solid blue;
     font-size: 1rem;
     padding:.5rem;
- border-bottom:1px solid rgb(210, 210, 210);
-    font-family: 'Poppins', sans-serif;
+
+    font-family: 'Inter', sans-serif;
 
    
    
   }
   .header-search-box:focus{
     outline: none;
-    border-bottom:0px solid rgb(159, 159, 159) ;
 
-    border-bottom:1px solid rgb(100, 100, 100) ;
+  }
+
+  .header-searchBar:focus-within {
+  border-bottom: 1px solid rgb(100, 100, 100);
+}
+
+
+  .searchBar-btn-div{
+    border: 0px solid red;
+   display: flex;
+    align-items: center;
+    gap: 1rem;
+       margin-right: .5rem;
   }
   
+.clearSearchBtn-div{
+   
+   display: flex;
+   align-items: center;
+
+  
+}
+
 .clearSearchBtn{
-    color: rgb(151, 151, 151);
-    font-family: 'Inter';
-    position: absolute;
-    right:3rem;
+color:rgb(150, 150, 150);
+  font-size: 1.5rem;
 }
 
 .clearSearchBtn:hover{
-    color: rgb(30, 30, 30);
-    
-}
-
-.searchBar-cancel:hover{
-
-color:rgb(0, 0, 0);
-
-background-color:rgb(230, 230, 230);
+color:rgb(100, 100, 100);
+  cursor: pointer;
 }
 
 
-  .searchBar-seachIcon-div{
-    position: absolute;
-    right:.5rem;
-    
-  }
 
   .searchBar-seachIcon-div .searchIcon{
 height: 1.5rem;
 width: 1.5rem;
+color:rgb(170, 170, 170);
+
+  }
+
+ .header-searchBar:focus-within .searchBar-seachIcon-div .searchIcon{
+    color:rgb(100, 100, 100);
   }
 
   .suggestionBox{
     border: 0px solid red;
     color: black;
-   width: 85%;
-   max-height: 50vh;
-   position: absolute;
-   margin-top: 2.7rem;
-   background-color: white;
+   width: 100%;
+  max-height: 80vh;
+  padding-bottom: 10rem;
+    position: absolute;
+   margin-top: 4rem; 
+   background-color: rgb(255, 255, 255);
   overflow: hidden;
   z-index: 999;
   font-family: 'Roboto';
   font-weight: 300;
   overflow-y: scroll;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   
   }
+
+  
+.category-suggestion-box{
+  border: 0px solid rgb(201, 201, 201);
+  width: 85%;
+  /* background-color:rgb(225, 225, 225); */
+  display: flex;
+    flex-wrap: wrap; 
+   
+  margin: .5rem;
+ 
+  gap:1rem;
+  padding:1rem;
+  padding-left: 0rem;
+
+
+
+
+}
+
+.category-suggestion{
+    border: 2px solid transparent;
+  padding:.4rem;
+background-color: rgb(195, 195, 195);
+  color:rgb(0, 0, 0);
+  border-radius: 5px;
+  font-weight: 400;
+   font-size: .85rem;
+  transition: all .3s ease;
+    background-color: rgb(140, 140, 140);
+    background-color:rgb(220, 220, 220);
+}
+
+.category-suggestion:hover{
+  
+  cursor: pointer;
+
+background-color: rgb(255, 255, 255);
+  color:rgb(20, 20, 20);
+      border: 1px solid rgb(20, 20, 20);
+  border: 2px solid  rgb(80,230,230);;
+}
+
+
+
+  .suggestion-div{
+    width: 85%;
+    display: flex;
+  align-items: center;
+ border-bottom: 1px solid rgb(220, 220, 220);
+ position: relative;
+   transition: all .3s ease;
+
+  }
+    .suggestion-div:hover{
+    background-color: #eee;
+     cursor: pointer;
+  }
+.suggestion-image-div{
+  height: 4rem;
+  width: 4rem;
+  border: 1px solid transparent;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+  margin:1rem;
+    transition: all .3s ease;
+  
+}
+
+.suggestion-div:hover .suggestion-image-div{
+        border: 1px solid rgb(80,230,230);
+        background-color: white;
+}
+
   .suggestion{
-    color: black;
+    color: rgb(0, 0, 0);
     padding: 1rem;
+    font-size: 1rem;
+   
   }
 
-  .suggestion:hover{
-    background-color: gainsboro;
+  .suggestion-arrow{
+    position: absolute;
+    right:1rem;
+    color:rgb(181, 181, 181);
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .suggestion-div:hover .suggestion-arrow{
+  color:rgb(80,230,230);
+  }
+
+  @media(max-width:1000px){
+
+ .suggestionBox{
+     margin-top: 3rem; 
+ }
+
+    .category-suggestion{
+        padding:.3rem;
+         font-size: .8rem;
+    }
+
+    .suggestion-image-div{
+        height: 3.5rem;
+  width: 3.5rem;
+    margin:.5rem;
+    }
+
+    .suggestion{
+       font-size: .9rem;
+    }
   }
 
   @media(max-width:780px){
 
   .searchBar-div{
-    height: 10rem;
+    height: 30vh;
+  gap:1rem;
   }
 
   .searchBar-head-div{
-       font-size: 2.2rem;
-      justify-content:start;
+       font-size: 2rem;
+      justify-content:center;
     
   
   }
+    .suggestion{
+          white-space: nowrap;          /* prevent text wrapping */
+  overflow: hidden;             /* hide overflowed text */
+  text-overflow: ellipsis;   
+  }
+
+}
+
+@media(max-width:650px){
+
+.category-suggestion-box{
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+    flex-wrap: nowrap; 
+    overflow-x: scroll;
+    scrollbar-width: none;
+    align-items: center;
+    margin: 1rem;
+}
+
+.category-suggestion{
+  white-space: nowrap; 
+}
+
+.searchBar-cancel-div{
+  height: 2.2rem;
+width: 2.2rem;
+}
+
+.searchBar-cancel{
+  width: 1.5rem;
+height: 1.5rem;
+}
+
+
 }
 
   @media(max-width:550px){
@@ -164,38 +339,72 @@ width: 1.5rem;
 
 
   .searchBar-head-div{
-       font-size: 1.2rem;
-       font-weight: 500;
+       font-size: 1.5rem;
+       font-weight: 600;
+
+       width: 85%;
 
   }
-  .searchBar-cancel{
-    height: 1.5rem;
-width: 1.5rem;
-  }
 
+   .searchBar-btn-div{
+      gap: .5rem;
+   }
 
+   .clearSearchBtn{
 
-  .header-search-box{
- height: 2rem;
- font-size: .9rem;
-  }
-  .clearSearchBtn{
-        right:2rem;
-    font-size: .9rem;
-  }
-    .searchBar-seachIcon-div{
-    position: absolute;
-    right:0px;
-  }
+  font-size: 1.3rem;
+}
+
+ 
     .searchBar-seachIcon-div .searchIcon{
 height: 1.3rem;
 width: 1.3rem;
   }
+
+
+  .suggestion-arrow{
+ 
+       width: 1.2rem;
+    height: 1.2rem;
+  }
 }
 
 @media(max-width:400px){
+  .searchBar-head-div{
+       font-size: 1.3rem;
+       font-weight: 600;
 
-  .searchBar-head-div, .header-searchBar-div{
-        width: 90%;
   }
+
+    .header-search-box{
+       font-size: .85rem;
+    }
+
+  .header-searchBar-div{
+    margin-top: 1rem;
+  }
+
+  .searchBar-cancel-div{
+    top:.6rem;
+right: .6rem; 
+ height: 2rem;
+width: 2rem;
+  }
+
+
+
+.searchBar-cancel{
+  width: 1.4rem;
+height: 1.4rem;
+}
+
+   .suggestion{
+
+    padding: .5rem;
+     font-size: .85rem;
+     margin-right: 2rem;
+
+  }
+
+
 }
