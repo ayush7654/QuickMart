@@ -62,6 +62,8 @@ export default function StoreFilter({ currentCategory, typeFilter, handleClickFi
     };
   }, []);
 
+  console.log(productCategory)
+
   return (
     <div
     /*   style={{
@@ -72,7 +74,7 @@ export default function StoreFilter({ currentCategory, typeFilter, handleClickFi
     >
 
 <div className='Store-filter-head'>
-  <span>SELECT CATEGORY</span>
+  <span>Select Category</span>
   <span className='Store-filter-cancel'>
 
     <X size={24} strokeWidth={1.5} onClick={sideBartoggled} />
@@ -84,7 +86,10 @@ export default function StoreFilter({ currentCategory, typeFilter, handleClickFi
         <div className="store-categories" style={{ translate: `${-CategoryNum * 200}px`}}>
           {productCategory && productCategory.map((item, index) =>
             <div
-              onClick={() => handleClickFilter(item.slug)}
+              onClick={() => {
+  handleClickFilter(item.slug);
+  sideBartoggled();
+}}
            className='store-category-div'
               key={index}
             >

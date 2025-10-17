@@ -5,7 +5,7 @@ import {
   useLayoutEffect,
   useMemo,
 } from "react";
-import { useSearchParams, useLocation } from "react-router-dom";
+import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
 import { getItems, getFilteredItems } from "../../api";
  import { ChevronLeft,ChevronRight } from 'lucide-react'; 
 import ProductCard from "../../components/ProductCard";
@@ -14,6 +14,7 @@ import StoreFooter from "./StoreFooter/StoreFooter";
 import { FaBars } from "react-icons/fa";
 import { HiOutlineMenu } from "react-icons/hi";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { X } from 'lucide-react';
 import "./Store.css";
 
 export default function Store() {
@@ -28,14 +29,22 @@ export default function Store() {
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentCategory, setcurrentCategory] = useState("");
+  const [categoryName, setCategoryName] = useState("");
   const [sideBartoggled, sideBarsetToggled] = useState(true);
 
   const typeFilter = searchParams.get("type");
+
+  const navigate = useNavigate();
 
   const handleFilter = (category) => {
     setcurrentCategory(category);
     setSearchParams({ type: category });
   };
+
+  const handleCancelFilter =()=>{
+    setcurrentCategory('')
+   navigate('/store')
+  }
 
   const handleAllProducts =()=>{
     setcurrentCategory('');
@@ -133,16 +142,38 @@ setSearchParams(searchParams); // update the URL
                
           
         <div className="store-page-heading">
-           
-          {currentCategory?  <span>
+           Store
+        {/*   {currentCategory?  <span>
   {currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)}
-</span>: 'STORE.' }<span className="storePage-tagline"  > </span>
+</span>: 'Store.' } */}
 </div>
 
-<div className="store-filter-button-div-container"><div className="store-filter-button-div" onClick={() => sideBarsetToggled(false)}> <RxHamburgerMenu  className="store-filter-button"  /></div></div>
+<div className="store-filter-button-div-container">
+
+  <div className="category-name-div">
+   <X strokeWidth={1.5} className="remove-category" onClick={handleCancelFilter}  style={{display:currentCategory?'flex':'none'}}/> 
+    {currentCategory? 
+  currentCategory
+  .split('-')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' '):"Select Category"}
+ 
+  </div>
+  <div className="store-filter-button-div" onClick={() => sideBarsetToggled(false)}>
+     <RxHamburgerMenu  className="store-filter-button"  />
+     </div>
+  </div>
 
       </div>
-    
+ {/*     <div  className="category-name-div">
+   <X strokeWidth={1.5} className="remove-category" onClick={handleCancelFilter}  style={{display:currentCategory?'flex':'none'}}/> 
+    {currentCategory? 
+  currentCategory
+  .split('-')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' '):"Select Category"}
+ 
+  </div> */}
       </div>
  
 

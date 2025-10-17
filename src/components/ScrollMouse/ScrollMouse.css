@@ -32,11 +32,11 @@
   background: linear-gradient(
     transparent 0%,
     transparent 50%,
-    #ffffff 50%,
-    #ffffff 100%
+    rgb(50,200,200) 50%,
+   rgb(50,200,200) 100%   /* #29cae6  */
   );
   background-size: 100% 200%;
-  animation: colorSlide 8s linear infinite, nudgeMouse 5s ease-out infinite;
+  animation: colorSlide 10s linear infinite, nudgeMouse 5s ease-out infinite;
 }
 
 /* Inner mouse body */
@@ -52,18 +52,18 @@
 .mouse::before {
   width: calc(52px - 6px);
   height: calc(88px - 6px);
-  background-color: rgb(25, 25, 25);
+  background-color: rgb(255, 255, 255);
   border-radius: 100px;
   
 }
 
 /* Trackball */
 .mouse::after {
-  background-color: #ffffff;
+  background-color: #000000;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  animation: trackBallSlide 8s linear infinite;
+  animation: trackBallSlide 10s linear infinite;
 }
 
 /* Animations */

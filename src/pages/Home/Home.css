@@ -84,11 +84,7 @@ background-color: white;
   }
 
   .Home .bookmark-logo{
-   position: absolute;
-    top: 1rem;
-    right:1rem;
-    color:rgb(32, 32, 32);
-      z-index: 1;
+
       display: none;
 
       
@@ -97,10 +93,7 @@ background-color: white;
 
 
   .Home .heart-div{
-    position: absolute;
-      top: .9rem;
-    right:3.5rem;
-      z-index: 1;
+   
 display: none;
   }
 
@@ -209,8 +202,7 @@ border: 1px solid rgb(220, 220, 220);
  
      margin-bottom: 1rem;
  background-color: rgb(220, 220, 220);  
-   /*   background: linear-gradient(to left , rgb(200, 200, 200) , white); */
-/*    background: linear-gradient(to bottom,white, rgb(225,225,225)); */
+
 
 
   }

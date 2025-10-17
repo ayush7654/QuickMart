@@ -40,12 +40,12 @@
   align-items: center;
   justify-content: space-between;
   font-size: 1.2rem;
-  font-weight:500;
+  font-weight:400;
 background-color: rgb(255, 255, 255);
 font-family: 'Roboto';
   color: rgb(0, 0, 0);
   border-bottom: 1px solid rgb(225, 225, 225);
-padding-left: 3rem;
+padding-left: 1rem;
 padding-right: 2rem;
 
 z-index: 2;
@@ -62,7 +62,7 @@ z-index: 2;
     font-weight: 300;
     border: 0px solid rgb(171, 171, 171);
     border-radius: 50%;
-    color:rgb(151, 151, 151);
+    color:rgb(50, 50, 50);
   
  
   }
@@ -90,18 +90,21 @@ align-items:center;
   justify-content: center;
 }
 .store-category{
-  width: 90%;
-  height: 3rem;
+  width: 100%;
+
   display: flex;
   align-items: center;
-  font-size: 1.1rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 300;
 /*   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
  font-family: 'Poppins', sans-serif;
-  color: rgb(80, 80, 80);
-  border-bottom: 1px solid rgb(225, 225, 225);
+ font-family: 'Inter';
+ font-family: 'Josefin Sans';
+ font-family: 'Roboto';
+  color: rgb(50, 50, 50);
+  border-bottom: 1px solid rgb(235, 235, 235);
 background-color: rgb(255, 255, 255);
-  padding:2rem;
+  padding:1.5rem;
 
 
 
@@ -115,47 +118,49 @@ background-color: rgb(255, 255, 255);
 }
 
 .store-category-selected{
-    width: 90%;
-  height: 3rem;
+    width: 100%;
+
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 400;
  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto';
   color: rgb(255, 255, 255);
   border-bottom: 1px solid rgb(225, 225, 225);
 /*  box-shadow: -2px 2px 2px rgb(200, 200, 200);  */
- background-color: rgb(80,200,200);
-  padding:2rem;
+ background-color: rgb(50,210,210);
+   padding:1.5rem;
 
 }
 
 
 @media(max-width:1200px){
-   .Store-filter-head{
-  padding-left: 2rem;
-padding-right: 1rem;
-  font-size: 1.1rem;
-   }
-   .store-category{
-    font-size: 1rem;
-    
-   }
+ 
 
 }
 
+@media(max-width:700px){
+
+  .Store-filter-head{
+    font-size: 1.1rem;
+  }
+
+  .store-category{
+    font-size: .9em;
+  }
+
+  .store-category-selected{
+    font-size: 1rem;
+  }
+
+}
+
+
+
 @media(max-width:400px){
 
-     .Store-filter-head{
-  padding-left: 1.5rem;
-
-  font-size: 1rem;
-   }
-     .store-category{
-         font-size: .9rem;
-     height: 4rem;
-     padding:1rem;
-   }
+  
 }
 /*
 
