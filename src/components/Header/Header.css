@@ -576,13 +576,11 @@ position: absolute;
 display: flex;
      justify-content: center;
       top:4rem;
-      height: 2.5rem;
+      height: 3rem;
       width: 100%;
       transition: all .6s ease;
      background-color: transparent;
-     /*   background-color: rgb(255, 255, 255); */
-      
-    
+
   }
 
    .sticky-header-ScrollUp .page-nav-containerPh{
@@ -689,19 +687,6 @@ color:rgb(20, 20, 20);
 
 @media (max-width: 480px){
 
-.site-logo-div-Ph{
-
-
-}
-
-
- .sticky-header-ScrollUp {
-
-   }
-
-
- 
-
 
 
 .site-logo-div-Ph .line2{
@@ -776,14 +761,14 @@ position: absolute;
 
 
 }
-.header-home{
+/* .header-home{
   height: 3.5rem;
 }
 
 .page-nav-containerPh{
      top:3.5rem;
       height: 2rem;
-}
+} */
 
 
   .site-logo-div{

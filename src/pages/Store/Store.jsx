@@ -136,17 +136,26 @@ setSearchParams(searchParams); // update the URL
       <div style={{display:sideBartoggled?'none':'flex'}} className="storePage-overlay"></div>
 
       <div className="store-page-header">
-          
+              {window.innerWidth< 400 && <div className="store-page-headingPh">Store</div>  }
              <div className="store-page-heading-div">
           {/*  <div className="allProductsBtn-div-container"><div  className="allProductsBtn-div" onClick={handleAllProducts}><ChevronLeft className="allProductsBtn"  strokeWidth={1.5} absoluteStrokeWidth /></div></div>  */}  
-               
+
+         
           
-        <div className="store-page-heading">
-           Store
-        {/*   {currentCategory?  <span>
-  {currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)}
-</span>: 'Store.' } */}
-</div>
+        {window.innerWidth>400 && <div className="store-page-heading">
+          Store
+         {/*   {window.innerWidth>400?'Store':
+            <div  className="category-name-divPh">
+   <X strokeWidth={1.5} className="remove-category" onClick={handleCancelFilter}  style={{display:currentCategory?'flex':'none'}}/> 
+    {currentCategory? 
+  currentCategory
+  .split('-')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' '):"All"}
+ 
+  </div> } */}
+        
+</div>}
 
 <div className="store-filter-button-div-container">
 
@@ -156,7 +165,7 @@ setSearchParams(searchParams); // update the URL
   currentCategory
   .split('-')
   .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-  .join(' '):"Select Category"}
+  .join(' '):"Browse All"}
  
   </div>
   <div className="store-filter-button-div" onClick={() => sideBarsetToggled(false)}>
@@ -165,15 +174,7 @@ setSearchParams(searchParams); // update the URL
   </div>
 
       </div>
- {/*     <div  className="category-name-div">
-   <X strokeWidth={1.5} className="remove-category" onClick={handleCancelFilter}  style={{display:currentCategory?'flex':'none'}}/> 
-    {currentCategory? 
-  currentCategory
-  .split('-')
-  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-  .join(' '):"Select Category"}
- 
-  </div> */}
+  
       </div>
  
 

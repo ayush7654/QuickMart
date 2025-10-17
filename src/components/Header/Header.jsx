@@ -175,9 +175,9 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
      style={{
       // Dynamic transition based on 'isIdle' state
       transition: isIdle
-        ? 'transform 0.5s ease-in, background-color 0.6s ease, box-shadow 1s ease' // When hiding (moving up/idle)
-        : 'transform 0.7s ease-out,  background-color 0.6s ease, box-shadow 1s ease', // When showing (moving down/active)
-      transform: isIdle && window.innerWidth > 700
+        ? 'transform 0.5s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
+        : 'transform 0.6s ease-out,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
+      transform: isIdle 
   ? 'translateY(-100%)'
   : 'translateY(0)',
      
