@@ -29,7 +29,7 @@ export default function FeaturedCategories() {
         
      <div className="home-head-div">
                 <div className="home-head-content">
-                  <div className='home-head'>Featured Categories</div>
+                  <div className='home-head'>EXPLORE OUR RANGE</div>
                   
 
                 </div>

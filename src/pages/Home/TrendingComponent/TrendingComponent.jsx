@@ -5,7 +5,7 @@ export default function TrendingComponent() {
       <div className="trending-products-div">
               <div  className="home-head-div">
                 <div className="home-head-content"> 
-                  <div className='home-head'>Trends In Fashion</div>
+                  <div className='home-head'>YEAR OF STYLE</div>
                 </div>  
               </div>
           <div className="trending-products">

@@ -3,14 +3,15 @@
  .ImageCrousel-Container{
     position: fixed;
     width: 100vw;
-    height: 100vh;
+  /*    height: 70vh; */
     z-index: 0;
     top:0;
-   
+/*    margin-top: 17vh; */
     background-color: white;
-   overflow: hidden;
+  /*  overflow: hidden; */
     border-left: 0px solid red;
     display: flex;
+  
 
   }
 
@@ -108,9 +109,13 @@ height: 4rem;
 
   }
 
-  .buy-link-sm{
-display: none;
-  }
+   .buy-link-sm{
+    display: none;
+   }
+
+ 
+
+
 
 
    .ImageCrousel-Container .buy-link{
@@ -124,9 +129,9 @@ display: none;
     width:60%;
     border: 0px rgb(202, 42, 42) solid;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-   
+   gap: 5rem;
     white-space: nowrap;
 
    height: 100%;
@@ -205,7 +210,7 @@ bottom: 0;
   }
 
   .CrousalNav-content{
-    width: 32%;
+    width: 40%;
     height: 4px;
 
     display: flex;
@@ -347,30 +352,50 @@ bottom: 0;
 
 @media(max-width:400px){
 
-              .home-left-arrow{
-    margin-left: -8%;
-  }
-   .home-right-arrow{
-    
-   margin-right: -8%;
+ .ImageCrousel-Container{
+
+  position: relative;
+     height: 65vh;
+
+   margin-top: 17vh;
+
+  
 
   }
-   .Nav-div #nav-arrow{
-    width: 5rem;
-    height:5rem; 
- }
+
+  .homeContent{
+    
+    
+    width: 100vw;
+    height: 55vh;
+   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+
+
+
 
  .buy-link-div{
-  bottom: 8rem;
+  bottom: .5rem;
+  font-size: .85rem;
+  height: 2.5rem;
+
  }
   
 .buy-link-div .buy-link {
   display: none;
+
 }
 
  .buy-link-sm{
 display: flex;
- width: 90%;
+ width: 50%;
+ background-color: rgb(255, 255, 255);
+
+
 
  
  }
@@ -381,12 +406,12 @@ display: flex;
   display: flex;
  justify-content: center;
  align-items: center;
- color: white;
- border: 1px solid white;
+ color: rgb(10,10,10);
+ border: 1px solid rgb(10,10,10);
  }
 
   .CrousalNav-div{
-    bottom: 4rem;
+    bottom: 3.5rem;
   }
 
       }

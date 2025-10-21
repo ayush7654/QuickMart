@@ -6,33 +6,34 @@ export default function ExploreCategories() {
      <div className="explore-categories">
          
 
-               <div className="home-head-div">
+             {/*   <div className="home-head-div">
                 <div className="home-head-content">
-                  <div className='home-head'>Explore Collections</div>
+                  <div className='home-head'>COLLECTIONS</div>
                   
 
                 </div>
 
-              </div>
-               
+              </div> */}
+                 <div className='explore-heading'>Explore Our Collection</div>
 
               <div className="explore-categories-list-container">
-    
+  
                 <div className="explore-categories-list1">
-                   <div id="explore-card-div" >
-              <div className='exploreCard1' id='exploreCard'></div>
-              <div id="explore-card-name-div" >
-                <span id="explore-card-name1">FITNESS</span>
-                <span id="explore-card-name2">FITNESS</span>
-                <span id="explore-card-name3">FITNESS</span>
-                </div>
-             </div>
+                
              <div id="explore-card-div" >
               <div className='exploreCard2' id='exploreCard'> </div>
                    <div id="explore-card-name-div" >
                 <span id="explore-card-name1">STYLE</span>
                 <span id="explore-card-name2">STYLE</span>
                 <span id="explore-card-name3">STYLE</span>
+                </div>
+             </div>
+                <div id="explore-card-div" >
+              <div className='exploreCard1' id='exploreCard'></div>
+              <div id="explore-card-name-div" >
+                <span id="explore-card-name1">FITNESS</span>
+                <span id="explore-card-name2">FITNESS</span>
+                <span id="explore-card-name3">FITNESS</span>
                 </div>
              </div>
               <div id="explore-card-div" >

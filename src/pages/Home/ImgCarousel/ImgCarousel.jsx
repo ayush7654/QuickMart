@@ -9,9 +9,9 @@ export default function ImgCrousel() {
 
   
 const homeBGs = [
-     { id: 0,  img1: 'ImageCrousel/IC-Fashion.JPG',img2:'BG-Images-sm/clothes.jpg', product: './store/84'  },
-     { id: 1, img1: 'ImageCrousel/IC-Watch.webp',img2:'BG-Images-sm/watch.jpg', product: './store/98' },
-    { id: 2, img1: 'ImageCrousel/IC-Shoes.webp',img2:'BG-Images-sm/shoes.jpg', product: './store/88' },
+     { id: 0,  img1: 'ImageCrousel/IC-Fashion.JPG',img2:'BG-Images-sm/fashion1.jpg', product: './store/84'  },
+     { id: 1, img1: 'ImageCrousel/IC-Watch.webp',img2:'BG-Images-sm/Rolex7.jpg', product: './store/98' },
+    { id: 2, img1: 'ImageCrousel/IC-Shoes.webp',img2:'BG-Images-sm/Nike12.jpg', product: './store/88' },
     { id: 3, img1: 'ImageCrousel/IC-Apple.jpg',img2:'BG-Images-sm/IC-Apple-sm.avif', product: './store/123' }
    
   ];
@@ -24,11 +24,11 @@ const homeBGs = [
 
   return (
    <div className="ImageCrousel-Container">
-        <ScrollMouse/>
-            <div className="Nav-div">
+      {/*   <ScrollMouse/> */}
+          {window.innerWidth>600 &&  <div className="Nav-div">
               <ChevronLeft onClick={() =>setCurrentBGImg(prev => (prev > 0 ? prev - 1 : prev))} className="home-left-arrow" id='nav-arrow' strokeWidth={.5} absoluteStrokeWidth />
               <ChevronRight onClick={() =>setCurrentBGImg(prev => (prev < homeBGs.length - 1 ? prev + 1 : prev))} className="home-right-arrow" id='nav-arrow' strokeWidth={.5} absoluteStrokeWidth />
-            </div>
+            </div>}
             {homeBGs.map(bg=><div key={bg.id} className="homeCrousal"  >
             <div
   className="homeContent"
@@ -57,7 +57,7 @@ const homeBGs = [
          <div className="CrousalNav-div">
           <div className="CrousalNav-content">{homeBGs.map(nav=><div onClick={()=>setCurrentBGImg(nav.id)} className={nav.id===currentBGImg?"CrousalNav-selected":"CrousalNav"}></div>) }</div>
          </div>
-      
+
         </div>
   )
 }

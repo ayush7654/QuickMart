@@ -25,7 +25,7 @@ const isFirstRender = useRef(true); // track initial mount
   <div className="Home">
  
       <ImgCarousel/>
-      <div style={{width:'100%', backgroundColor:'white',zIndex:'1', position: 'relative',marginTop:'100vh'}}>
+      <div className="Home-scroll-content">
           <BrandCarousel/>
                   <AppleComponent/>
               <NewArrivals/>

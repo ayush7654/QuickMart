@@ -136,14 +136,14 @@ setSearchParams(searchParams); // update the URL
       <div style={{display:sideBartoggled?'none':'flex'}} className="storePage-overlay"></div>
 
       <div className="store-page-header">
-              {window.innerWidth< 400 && <div className="store-page-headingPh">Store</div>  }
+              {window.innerWidth< 400 && <div className="store-page-headingPh"> THE VAULT</div>  }
              <div className="store-page-heading-div">
           {/*  <div className="allProductsBtn-div-container"><div  className="allProductsBtn-div" onClick={handleAllProducts}><ChevronLeft className="allProductsBtn"  strokeWidth={1.5} absoluteStrokeWidth /></div></div>  */}  
 
          
           
         {window.innerWidth>400 && <div className="store-page-heading">
-          Store
+          THE VAULT
          {/*   {window.innerWidth>400?'Store':
             <div  className="category-name-divPh">
    <X strokeWidth={1.5} className="remove-category" onClick={handleCancelFilter}  style={{display:currentCategory?'flex':'none'}}/> 

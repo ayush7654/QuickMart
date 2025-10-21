@@ -12,6 +12,17 @@
    
   }
 
+  .explore-heading{
+    font-size: 2.8rem;
+    padding: 2.5rem;
+ font-family: "Poppins";
+    width: 100%;
+    font-weight: 400;
+    text-align: center;
+    background-color: rgb(235,235,235);
+    color:rgb(40,40,40);
+  }
+
 
 
   .explore-categories-list-container{
@@ -25,20 +36,19 @@
   }
 
   .explore-categories-list1{
-/*     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    height: 55vh; */
+
    
    
     border: 0px solid red;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
    
     
    
-  /*   background-color: #eeeeee; */
+
  
   
 
@@ -68,7 +78,7 @@
   justify-content: center;
   align-items: center;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   transition: transform 5s ease;
  }
  #exploreCard:hover{
