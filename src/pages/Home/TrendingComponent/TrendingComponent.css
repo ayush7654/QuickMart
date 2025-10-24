@@ -18,18 +18,18 @@ background-color: white;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family:  'Gill Sans MT', Calibri,'Gill Sans' , sans-serif;
+    
 
   }
 
 
   
   .trending-products-div{
-    border: 0px solid rgb(229, 29, 29);
+    border: 0px solid rgb(233, 169, 169);
     width:100%;
    
     display: flex;
-    flex-direction: column;
+  flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 4rem;
@@ -37,15 +37,114 @@ background-color: white;
    
   }
 
+  .trend-div-heading{
+   font-size: 2.5rem;
+    padding: 1rem;
+ font-family: "Poppins";
+    width: 90%;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    background-color: rgb(245,245,245);
+    color:rgb(40,40,40);
+    border-bottom: 1px solid rgb(200, 200, 200);
+    background-color: white;
+  }
+
+
+  
+.trend-container{
+    border: 0px solid red ;
+    width: 90%;
+        height: 80vh;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+/*     background-color: #eee; */
+    justify-content: space-evenly;
+
+}
+
+#trend-div{
+    width: 50%;
+ height: 100%;
+     background-color: blue;
+     position: relative;
+}
+
+.trend-div1{
+    background-image: url('/FashionTrend/Men-clothing2.jpg ');
+    background-position: top;
+    background-size: cover;
+    
+}
+
+.trend-div2{
+    background-image: url('/FashionTrend/Women-clothing.jpg ');
+    background-position: top;
+    background-size: cover;
+    
+}
+
+
+#trend-name-div{
+    position: absolute;
+    bottom: .5rem;
+    border: 0px solid red;
+    width: 95%;
+   left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+#trend-name{
+    font-size: 1.8rem;
+    font-family: 'Montserrat';
+    color:white;
+    font-weight: 600;
+}
+
+
+#trend-button{
+   background-color: transparent;
+   border: 1px solid white;
+   height: 2.5rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 1rem;  
+   color:white;
+   font-family: 'Poppins';
+   font-weight: 300;
+   transition: all .3s ease;
+}
+
+#trend-div:hover #trend-button:hover{
+    cursor: pointer;
+    background-color: rgb(240,240,240);
+}
+
+#trend-div:hover #trend-button{
+    background-color: rgb(255, 255, 255);
+    color:rgb(10,10,10);
+}
+
+
+
+
+
 
   .trending-products{
     border: 0px solid rgb(10, 10, 10);
     width: 100%;
     height:75vh;
     display: flex;
-/* flex-direction: column; */
-    justify-content: space-between;
-    align-items: center;
+    
+ /* flex-direction: column;  */
+/*     justify-content: space-between;
+    align-items: center; */
   }
 
  
@@ -62,7 +161,7 @@ background-color: white;
     height: 100%;
      background-position: top center; 
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     position: relative;
     transition: transform .3s ease ;
   }
@@ -94,6 +193,7 @@ background-color: white;
    width: 80%;
         /* font-family: 'Montserrat', sans-serif;  */
         font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-family: 'Roboto Condensed';
   font-weight: 500;
       font-size:2.5rem;
       text-align: center;

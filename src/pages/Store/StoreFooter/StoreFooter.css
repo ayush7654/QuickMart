@@ -1,21 +1,32 @@
+ .store-footer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: rgb(240,240,240);
+  margin-top: 4rem;
+ }
+
+ 
  .store-footer-info{
   
-      background-color: rgb(40, 40, 40);
+
+        background-color: rgb(240,240,240);
     width: 95%;
     padding:2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       font-family:'Inter';
+     
    
     
   }
 
   .store-footer-heading{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding-bottom: 2rem;
        
-     color:rgb(220, 220, 220);
-    font-family:'Inter';
+      color:rgb(80,80,80);
+ 
   }
 
 .store-footer-list{
@@ -26,16 +37,19 @@
 }
   #store-footer-subhead{
     font-size: 1rem;
-     color:rgb(201, 201, 201);
- font-family: 'Poppins';
+
+      color:rgb(80,80,80);
+
     font-weight: 400;
   }
 
   #store-footer-products{
-    font-size: .85rem;
-    color:rgb(170, 170, 170);
-    line-height: 1.2rem;
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: .8rem;
+   
+        color:rgb(65, 65, 65);
+    line-height: 1.5rem;
+    font-weight: 300;
+
   }
 
     .storefooter-line-a{

@@ -14,7 +14,7 @@ export default function ExploreCategories() {
                 </div>
 
               </div> */}
-                 <div className='explore-heading'>Explore Our Collection</div>
+                        <div className='home-heading'>Explore Our Collection</div>
 
               <div className="explore-categories-list-container">
   

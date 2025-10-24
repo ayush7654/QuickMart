@@ -13,20 +13,22 @@
   }
 
   .explore-heading{
-    font-size: 2.8rem;
-    padding: 2.5rem;
- font-family: "Poppins";
-    width: 100%;
+  font-size: 2.5rem;
+    padding: 1rem;
+
+    width: 90%;
     font-weight: 400;
-    text-align: center;
-    background-color: rgb(235,235,235);
+    margin-bottom: 2rem;
+   font-family: "Questrial", sans-serif;
     color:rgb(40,40,40);
+    border-bottom: 1px solid rgb(200, 200, 200);
+    background-color: white;
   }
 
 
 
   .explore-categories-list-container{
-    width: 100%;
+    width: 90%;
      display: flex;
   /* background-color: white; */
     align-items: center;

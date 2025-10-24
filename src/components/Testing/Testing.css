@@ -1,45 +1,10 @@
 .testing-div{
-margin-top:5rem ;
+
 display: flex;
 justify-content: center;
 align-items: center;
-height: 100vh;
+flex-direction: column;
+margin-top:10rem ;
 
 }
-
-.heading-div{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(170, 170, 170);
-       padding: 1rem;
-}
-
-
-#head-div{
-    font-size: 3rem;
-    font-family: 'Montserrat' ; 
-    font-weight: 600;
-    line-height: 2.5rem;
-    letter-spacing: .3rem;
- 
-    
-}
-
-.head-1{
-color:rgb(98, 98, 98);
-}
-
-
-.head-2{
-color: rgb(207, 207, 207);
-/*   text-shadow: 
-    -1px -1px 0 rgb(0, 0, 0),  
-     1px -1px 0 rgb(0, 0, 0),
-    -1px  1px 0 rgb(0, 0, 0),
-     1px  1px 0 rgb(0, 0, 0);   */
-}
-
 

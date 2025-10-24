@@ -42,7 +42,7 @@ width: 100%;
     text-decoration: line-through;
       text-decoration-thickness: .1rem;
       font-weight: 350;
-      color:brown;
+      color:rgb(217, 57, 57);
 
 
 
@@ -96,13 +96,21 @@ width: 100%;
     border: 0px solid grey;
     border-left: 0px;
     
-     background-color: rgb(220, 55, 55);
+     
+        background-color: rgb(30, 30, 220,0.8);
+
     color:white;
     font-size: .7rem;
-       box-shadow: 2px 2px 5px rgb(100, 100, 100);
+       box-shadow: 2px 2px 5px rgb(160, 160, 160);
       z-index: 1;
    
   }
+
+   .discount-home-Products-div .home-product:hover .discount-tag{
+       
+            background-color: rgb(30, 30, 220);
+     box-shadow: 2px 2px 5px rgb(130, 130, 130);
+   }
 
 @media(max-width:950px){
     .discount-product-price{

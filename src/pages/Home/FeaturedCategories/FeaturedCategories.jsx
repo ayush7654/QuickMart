@@ -27,12 +27,8 @@ export default function FeaturedCategories() {
   return (
      <div className='bento-div' >
         
-     <div className="home-head-div">
-                <div className="home-head-content">
-                  <div className='home-head'>EXPLORE OUR RANGE</div>
-                  
-
-                </div>
+     <div className="bento-head-div">
+                   <div className='home-heading'>Explore Our Range</div>
 
               </div>
 

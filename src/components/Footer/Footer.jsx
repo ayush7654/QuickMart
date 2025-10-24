@@ -14,9 +14,9 @@ export default function Footer() {
     <div className='footer-div'/* style={{display:location.pathname==='/cart'?'none':'block'}} */>
      
       <FooterUpper/>
-       
+           
      <FooterLower/> 
-      <NewsLetter/>
+  <NewsLetter/>
      
       
        

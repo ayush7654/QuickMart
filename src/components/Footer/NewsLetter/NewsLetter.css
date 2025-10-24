@@ -1,27 +1,148 @@
-.NL-div{
-background-color: rgb(224, 202, 202);
+
+.NL-parent-div{
+    width: 100%;
+    height: 25vh;
+    display: flex;
+align-items: center;
+justify-content: center;
 background-color: rgb(255, 255, 255);
-color:rgb(225, 225, 225);
-padding: 2rem;
-height: 20vh;
+background-color: rgb(25, 25, 25);
+background-color: rgb(30,30,30);
+
+
+}
+
+.NL-div-content{
+
+height: 100%;
 display: flex;
+
 align-items: center;
 justify-content: space-between;
-gap:8rem;
-position: relative;
 
-/*  background-color: rgb(65, 210, 210);  */
-/* background-image: url('QMbgImages/feathers.png');
-background-position: left;
-background-repeat: no-repeat;
-background-size: cover; */
+position: relative;
+width: 90%;
+border: 0px solid white;
+
+
+
+}
+
+#NL-div{
+    
+    border: 0px solid blue;
+    height: 100%;
+  
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:1.5rem;
+
+   
+}
+
+.NL-div-left{
+  width: 30%;
+}
+
+.NL-div-right{
+  width: 30%;
+}
+
+.NL-div-middle{
+ width: 30%;
+      display: flex;
+      flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+   
+}
+
+
+
+.app-container{
+     display: flex;
+      flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  
+    width: 90%;
+}
+
+
+#app-img-div{
+    border: 0px solid red;
+    width: 40%;
+    height: 3rem;
+       background-position: center;
+    background-size: cover;
+     background-color: rgb(255, 255, 255);
+     border-radius: 5px;
+}
+#app-img-div:hover{
+    cursor: pointer;
+}
+.google-app{
+    background-image: url('/GetOnGoogle3.png');
+
+}
+
+.apple-app{
+    background-image: url('/app-store-white.png');
+ 
+}
+
+.icon-container{
+     display: flex;
+      flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 0px solid yellow;
+    width: 50%;
+}
+
+
+#app-icon-div{
+    border: 0px solid yellow;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+#app-icon{
+    font-size: 2rem;
+    color:rgb(160,160,160);
+    transition:all .2s ease;
+}
+
+#app-icon:hover{
+    color:rgb(235, 235, 235)
+}
+
+.NL-div-right{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+  padding-bottom: 0rem;
+   gap: 2rem;
+   z-index: 999;
+
+
 
 }
 
 .NL-head-div{
     display: flex;
     align-items: center;
+    flex-direction: column;
     gap: 1rem;
+     color:rgb(255, 255, 255);
     
 
 
@@ -30,12 +151,12 @@ background-size: cover; */
 }
 
 
-.NL-head{
-    font-size: 2.5rem;
-    font-weight: 600;
-    font-family: 'Roboto';
-   /*  text-shadow: 1px 2px rgb(80, 80, 80) ;  */
-     color: rgb(0, 0, 0);
+#NL-head{
+    color: rgb(185, 185, 185);
+    font-weight: 400;
+    letter-spacing: .05rem;
+    font-family: 'Poppins';
+
     
 
 }
@@ -44,88 +165,258 @@ background-size: cover; */
 
 
 
-.NL-gif-div{
-    position: absolute;
-      top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
- width: 5rem;
- height: 5rem;
- border-radius: 50%;
- display: flex;
- justify-content: center;
- align-items: center;
- overflow: hidden;
- border: 0px solid rgb(130, 130, 130);
-/*  box-shadow: 2px 2px rgb(130, 130, 130); */
 
-}
-
-
-.NL-gif{
- width: 5rem;
-}
 
 .NL-input-div{
     display: flex;
 align-items: center;
 justify-content: space-between;
 height: 2.5rem;
-width: 30%;
+width: 80%;
+    outline: none;
+    position: relative;
+
+    border-radius: 5px ;
+    overflow: hidden;
 }
 
 .NL-input{
     width: 75%;
     height: 100%;
-    font-size: 1.1rem;
+    font-size: .9rem;
+    outline: none;
+     border: none;
+  
+
 }
 
 .NL-button{
-   background-color:  rgb(25, 25, 25);
+
+  background-color:  rgb(150, 150, 150);
+
     height: 100%;
-    width: 25%;
+    width: 30%;
     color:white;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Poppins';
-    transition: all .3s ease;
-    
+    font-family: 'Inter';
+    transition: all .2s ease;
+    border: 3px solid white;
+    font-size: .8rem;
+        border-top-right-radius: 5px ;
+        border-bottom-right-radius: 5px ;
+    overflow: hidden;
 
 }
 
 
 .NL-button:hover{
-            background-color:  rgb(65, 210, 210);
+          
+background-color:  rgb(65, 210, 210);
             cursor: pointer;
 }
 
-@media(max-width:1250px){
-    .NL-head{
-    font-size: 2rem;
+
+@media(max-width:1200px){
+
+
+.NL-div-left{
+  width: 40%;
 }
 
-.NL-button{
-    font-size: .9rem;
+.NL-div-right{
+  width: 40%;
 }
-
 }
 
 @media(max-width:1000px){
-    .NL-head{
-    font-size: 1.6rem;
+
+#NL-div{
+    gap:1rem;
 }
+ .app-container{
+        width: 100%;  
+ }
+
+#app-img-div{
+    width: 45%;
+      height: 2.8rem;
+}
+
+#app-icon-div{
+     width: 2.5rem;
+    height: 2.5rem;
+}
+
+#app-icon{
+    font-size: 1.8rem;
+}
+
 .NL-input-div{
+    width: 100%;
+
+}
+
+.NL-button{
+    font-size: .7rem;
+}
+
+#NL-head{
+    font-size: .85rem;
+}
+}
+
+@media(max-width:850px){
+
+    .NL-div-middle{
+     width: 25%;
+    }
+
+    .NL-div-left{
+  width: 35%;
+}
+
+.NL-div-right{
+  width: 35%;
+}
+
+#app-img-div{
+ 
+      height: 2.5rem;
+}
+
+.icon-container{
+
+    justify-content:center;
+       
+    gap: 1rem;
     width: 40%;
 }
+#app-icon-div{
+    border: 0px solid yellow;
+    width: 2rem;
+    height: 2rem;
+}
+
+#app-icon{
+     font-size: 1.8rem;
+}
+}
+
+
+@media(max-width:700px){
+
+    .NL-parent-div{
+height: 60vh;
+    }
+ .NL-div-content{
+
+
+display: flex;
+flex-direction: column-reverse;
+align-items: center;
+justify-content: center;
+
+position: relative;
+width: 80%;
+height: 100%;
+border: 0px solid white;
+}
+
+
+#NL-div{
+    
+    border: 0px solid blue;
+    height: 30%;
+    width: 100%;
+   
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:.6rem;
+  
+
+   
+}
+
+.NL-input-div{
+
+height: 2.2rem;
+width: 70%;
+
+
+}
+
 .NL-button{
+    font-weight: 300;
+    font-size: .75rem;
+}
+
+
+.app-container{
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#app-img-div{
+    border: 0px solid red;
+    width: 30%;
+    height: 2.5rem;
+}
+
+
+
+#NL-head{
     font-size: .9rem;
 }
 
 }
 
-@media(max-width:800px){
-    .NL-div{
-        display: none;
-    }
+@media(max-width:450px){
+.NL-input-div{
+height: 2.2rem;
+width: 80%;
 }
+}
+
+@media(max-width:400px){
+
+.NL-parent-div{
+ height: 50vh;
+}
+
+   
+.NL-input-div{
+height: 2rem;
+width: 90%;
+}
+.NL-button{
+
+    font-size: .7rem;
+}
+
+#app-img-div{
+    border: 0px solid red;
+    width: 35%;
+    height: 2.2rem;
+}
+
+#app-icon-div{
+
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+#app-icon{
+     font-size: 1.5rem;
+}
+
+#NL-head{
+    font-size: .8rem;
+}
+}
+
+

@@ -9,6 +9,24 @@
 }
 
 
+  
+  .bento-head-div{
+    
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+     position: relative;
+     margin-bottom: 1rem;
+
+ background-color: white;
+
+
+
+  }
+
+
   .bento-container-div{
     display: flex;
 
@@ -20,7 +38,7 @@
   }
 
   .bento-container{
-    margin-left:4rem;
+    margin-left:7rem;
  
     display: flex;
     flex-direction: row;
@@ -230,6 +248,7 @@ border:0px solid white;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch; /* enables smooth momentum scrolling on iOS */
     }
+
  .bento-container::-webkit-scrollbar {
   display: none; /* hide scrollbar */
 }

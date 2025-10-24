@@ -5,21 +5,13 @@ export default function DiscountProducts() {
   return (
       <div id='home-product-div' className="discount-home-Products-div">
 
-       
-              <div  className="home-head-div">
-                <div className="home-head-content">
-                  <div className='home-head'>ABSOLUTE STEALS</div>
-                  
-                
-                </div>
-
-              </div>
+                     <div className='home-heading'>Absolute Steals</div>
               <div className="home-Products-container" >
              <ProductCard
                   classname='home-product'
                   key={80}
                   id={80}
-                  images= {["Home-products-img/SamsungTablet.webp"]} /* https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/1.webp */
+                  images= {["Home-products-img/SamsungTablet2.webp"]} /* https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/1.webp */
     
                   title="Huawei Matebook X Pro"
                   price={1399.99}
@@ -30,7 +22,7 @@ export default function DiscountProducts() {
                   classname='home-product'
                   key={155}
                   id={155}
-                  images= {["Home-products-img/WhiteWoodenSofa.webp "]} /* https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/1.webp */
+                  images= {["Home-products-img/DecorationSwing.jpg"]} /* https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/1.webp */
     
                   title="Pink-Tinted Sunglasses"
                   price={24.99}

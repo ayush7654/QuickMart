@@ -22,11 +22,12 @@ margin-bottom: 3rem;
   grid-template-columns: repeat(6, 1fr); /* left big box, two on top-right */
   grid-template-rows: 1.6fr 1.4fr;        /* taller first row, smaller second */
   gap: 10px; /* spacing between boxes */
-  height: 90vh; /* full viewport height */
+  height: 80vh; /* full viewport height */
   width: 100%;
-  padding: 20px;
+  padding-top: 15px;
+  padding-bottom: 10px;
   box-sizing: border-box;
-  background-color: rgb(230,230,230);
+  background-color: rgb(240,240,240);
 
 
 }

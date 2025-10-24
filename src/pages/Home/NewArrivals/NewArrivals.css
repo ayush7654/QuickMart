@@ -1,6 +1,6 @@
   .newArrivals-home-Products-div{
     width: 100%;
-    padding-top: 2rem;
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,12 +26,18 @@ margin-bottom: 4rem;
     width: 20%;
     border: 0px solid grey;
     border-left: 0px;
-   background-color: rgb(30, 50, 170);
+    background-color: rgba(245, 30, 30,0.7);
     color:white;
     font-size: .8rem;
-   box-shadow: 2px 2px 5px rgb(100, 100, 100);
+       box-shadow: 2px 2px 5px rgb(160, 160, 160);
       z-index: 1;
   }
+
+    .newArrivals-home-Products-div .home-product:hover .new-tag{
+       
+            background-color: rgba(245, 30, 30);
+     box-shadow: 2px 2px 5px rgb(130, 130, 130);
+   }
 
    .newArrivals-home-Products-div .card-tag ,.discount-tag{
     display: none;
