@@ -118,7 +118,7 @@ z-index: 999;
 
 
   #card-bento-div{
-    width:25%;
+    width:23%;
    /*  height: 450px; */
    height:70vh;
   display: flex;
@@ -146,8 +146,8 @@ z-index: 999;
 
 
   #card-bento{
-height: 90%;
-width: 90%;
+height: 100%;
+width: 100%;
  background-position: center;
    background-size: cover;
    background-repeat: no-repeat;

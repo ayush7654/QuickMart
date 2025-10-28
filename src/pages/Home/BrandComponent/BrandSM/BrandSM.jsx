@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import FlipCard from '../FlipCard/FlipCard'
+import './BrandSM.css'
 export default function BrandSM() {
 
  const [Brands,setBrands] = useState(
@@ -85,6 +86,8 @@ export default function BrandSM() {
     frontImage={logo.front}
     backImage={logo.back}
     isFlipped={logo.flipped}
+   propClass={'brand-logo-sm'}
+    
      
   />
 ))}

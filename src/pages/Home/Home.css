@@ -87,6 +87,7 @@
 }
  .Home .productImg-container{
 height: 100%;
+
 }
   .Home .productImg{
 background-color: white;
@@ -290,6 +291,9 @@ border: 1px solid rgb(220, 220, 220);
 
 @media(max-width:850px){
 
+  .home-heading{
+    font-size: 2rem;
+  }
 
     .Home .productImg-wrapper{
         height: 210px;
@@ -335,6 +339,15 @@ border: 1px solid rgb(220, 220, 220);
 
 @media(max-width:500px){
 
+  .home-heading{
+    font-size: 1.5rem;
+    padding-left: .5rem;
+  }
+
+    .home-Products-container{
+      padding-top: 0rem;
+          padding-bottom: 2rem;
+    }
 
 
   .Home .productcard-links-div{
@@ -366,6 +379,16 @@ font-size: .8rem;
     margin-top: 1rem;
 
   }
+
+      .Home .productImg-wrapper{
+        height: 200px;
+
+    }
+
+    .home-product{
+ 
+    width: 300px;
+   }
 
 
 }

@@ -212,10 +212,16 @@ width: 80%;
 
 
 .NL-button:hover{
-          
-background-color:  rgb(65, 210, 210);
+/*           
+background-color:  rgb(65, 210, 210); */
             cursor: pointer;
 }
+
+.NL-input:focus + .NL-button {
+  background-color: rgb(65, 210, 210);
+}
+
+
 
 
 @media(max-width:1200px){

@@ -1,9 +1,9 @@
 import React from "react";
 import "./FlipCard.css";
 
-const FlipCard = ({ frontImage, backImage, isFlipped }) => {
+const FlipCard = ({ frontImage, backImage, isFlipped ,propClass }) => {
   return (
-    <div className="brand-logo-sm flip-card">
+   <div className={`flip-card ${propClass}`}>
       <div className="flip-card-inner" style={{ transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)" }}>
         <div className="flip-card-front">
           <img src={frontImage} alt="Front logo" />
