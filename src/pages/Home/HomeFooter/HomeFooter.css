@@ -2,23 +2,21 @@
     display: flex;
     justify-content:center ;
     width: 100%;
-
-  background-color: rgb(240,240,240);
-    margin-top: 5rem;
+    background-color: rgb(255, 255, 255);
+    /* margin-top: 6rem; */
     z-index: 1;
 
   }
 
   .home-site-Info{
-    border: 0px solid rgb(229, 29, 29) ;
+    border: 0px solid rgb(210,210,210) ;
     color:black;
-
-  background-color: rgb(240,240,240);
+    background-color: rgb(255, 255, 255);
     width: 95%;
     padding:2rem;
    font-family: 'Inter';
 
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 
   #homeInfo-subhead{

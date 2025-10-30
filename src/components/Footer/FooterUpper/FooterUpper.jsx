@@ -8,9 +8,9 @@ export default function FooterUpper() {
 
     console.log('location is ,', location)
   return (
-     <div className='footer-upper' style={{  display: location.pathname === "/" || location.pathname === "/store"
+     <div className='footer-upper'/*  style={{  display: location.pathname === "/" || location.pathname === "/store"
     ? "none"
-    : "flex"}}>
+    : "flex"}} */>
 <div className='upper-left'>
     <div className='left-a'>
         <div id='footer-title' className='left-a-title'>About</div>

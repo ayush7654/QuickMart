@@ -1,5 +1,9 @@
 
 
+.Categories-div{
+    margin-top: 4rem;
+}
+
 .Categories-container{
 display: flex;
 justify-content: flex-start;
@@ -101,7 +105,7 @@ border: 0px solid yellow;
       linear-gradient(to bottom, rgb(240,240,240), rgb(255, 255, 255));
 ;
 
-  /* background-color: white; */
+
 
   /* 3D tilt */
   transform-origin: top;

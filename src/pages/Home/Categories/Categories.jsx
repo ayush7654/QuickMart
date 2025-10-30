@@ -5,28 +5,28 @@ import './Categories.css'
 
 export default function Categories() {
 
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(2);
     const [touchStartX, setTouchStartX] = useState(null);
     const [touchEndX, setTouchEndX] = useState(null);
       
      const cardsList=[
    
-        {id:5,img:'CategoriesImg/FC-Shades2.jpg',name:'Shades',capName:'SHADES',path1:'',path2:''},
+        {id:1,img:'CategoriesImg/FC-Shades2.jpg',name:'Shades',capName:'SHADES',path1:'',path2:''},
      
       {id:2,img:'CategoriesImg/FC-Clothing5.jpg',name:'Clothing',capName:'CLOTHING',path1:'',path2:''},
        {id:3,img:'CategoriesImg/FC-Electronics4.jpg',name:'Technology',capName:'TECHNOLOGY',path1:'',path2:''},
         {id:4,img:'CategoriesImg/FC-Skincare2.jpg',name:'Skincare',capName:'SKINCARE',path1:'',path2:''},
         
-    {id:9,img:'CategoriesImg/FC-Essentials2.webp',name:'Essentials',capName:'ESSENTIALS',path1:'',path2:''},
-         {id:1,img:'CategoriesImg/FC-Footwear3.jpg',name:'Footwear',capName:'FOOTWEAR',path1:'',path2:''},
-      {id:6,img:'CategoriesImg/FC-HomeDecor2.webp',name:'Decor',capName:'DECOR',path1:'',path2:''},
+    {id:5,img:'CategoriesImg/FC-Essentials2.webp',name:'Essentials',capName:'ESSENTIALS',path1:'',path2:''},
+         {id:6,img:'CategoriesImg/FC-Footwear3.jpg',name:'Footwear',capName:'FOOTWEAR',path1:'',path2:''},
+      {id:7,img:'CategoriesImg/FC-HomeDecor2.webp',name:'Decor',capName:'DECOR',path1:'',path2:''},
         
-     {id:7,img:'CategoriesImg/FC-Sports2.jpg',name:'Sports',capName:'SPORTS',path1:'',path2:''},
+     {id:8,img:'CategoriesImg/FC-Sports2.jpg',name:'Sports',capName:'SPORTS',path1:'',path2:''},
       
    
     
      
-     {id:8,img:'CategoriesImg/FC-Watches3.jpg',name:'Watches',capName:'WATCHES',path1:'',path2:''},
+     {id:9,img:'CategoriesImg/FC-Watches3.jpg',name:'Watches',capName:'WATCHES',path1:'',path2:''},
 
    
   ]// placeholders for div cards
@@ -82,20 +82,20 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
 <div className="carousel">
 {cardsList.map((item, i) => {
   const offset = i - index; // linear difference (no wrap-around)
-  const spacing = 300; // px distance between cards
+  const spacing = 310; // px distance between cards
   let transform = "";
   let zIndex = 1;
   let opacity = 1;
   let filter = "blur(0px) grayscale(0%)";
   let fontSize ='5rem';
-  let bottom ='-15rem';
+  let bottom ='-12rem';
   let rotate = 'rotateX(20deg)';
 
 
   // Cards too far left or right are hidden (off-screen)
   if (offset < -2 || offset > 2) {
     opacity = 0;
-    transform = `translateX(${offset * spacing}px) scale(0.8)`;
+    transform = `translateX(${offset * spacing}px) scale(0.7)`;
   } else {
     // Position cards relative to center
     transform = `translateX(${offset * spacing}px) scale(${1 - Math.abs(offset) * 0.12})`;
@@ -111,7 +111,7 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
     } else if (Math.abs(offset) === 1) {
       filter = "blur(0.5px) grayscale(20%)";
       fontSize= '3.5rem'
-      bottom ='-10rem';
+      bottom ='-9rem';
       rotate = 'rotateX(30deg)';
 
     } else if (Math.abs(offset) === 2) {
