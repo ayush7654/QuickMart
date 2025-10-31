@@ -5,7 +5,7 @@ import './Categories.css'
 
 export default function Categories() {
 
-    const [index, setIndex] = useState(2);
+    const [index, setIndex] = useState(window.innerWidth>450?2:0);
     const [touchStartX, setTouchStartX] = useState(null);
     const [touchEndX, setTouchEndX] = useState(null);
       
@@ -104,14 +104,14 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
     // Visual effects based on distance
     if (offset === 0) {
       filter = "blur(0px) grayscale(0%)";
-      fontSize= '5rem';
-      bottom ='-12rem';
+      fontSize= window.innerWidth>1000?'4.5rem':window.innerWidth>450?'3.5rem':'2.5rem';
+      bottom =window.innerWidth>1000?'-12rem':window.innerWidth>450?'-10rem':'-8rem';;
       rotate = 'rotateX(20deg)';
      
     } else if (Math.abs(offset) === 1) {
       filter = "blur(0.5px) grayscale(20%)";
-      fontSize= '3.5rem'
-      bottom ='-9rem';
+      fontSize= window.innerWidth>1000?'3.5rem':'2rem';
+      bottom =window.innerWidth>1000?'-9rem':'-5rem';
       rotate = 'rotateX(30deg)';
 
     } else if (Math.abs(offset) === 2) {
@@ -143,49 +143,6 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
 })}
 
     </div>
-
-<div style={{display:'none'}} className="name-carousel">
-{cardsList.map((item, i) => {
-const offset = ((i - index + count) % count);
-let transform = "";
-let zIndex = 0;
-let opacity = 1;
-let filter = "blur(0px)";
-
-
-if (offset === 0) {
-transform = "translateY(0) scale(1) rotateX(20deg)";
- filter = "blur(0px)";
-zIndex = 3;
-} else if (offset === 1 || offset === count - 1) {
-transform = `translateY(${offset === 1 ? 110 : -90}px) scale(0.6) rotateX(${offset === 1 ? "-40deg" : "40deg"})`;
-zIndex = 2;
- filter = "blur(1px)";
-opacity = .4;
-} else if (offset === 2 || offset === count - 2) {
-transform = `translateY(${offset === 2 ? 170 : -170}px) scale(0.7) rotateX(${offset === 2 ? "-20deg" : "20deg"})`;
-zIndex = 1;
- filter = "blur(1.5px)";
-opacity = 0;
-} else {
-opacity = 0;
-}
-
-
-return (
-<div
-key={i}
-className="name-carousel-card"
-style={{ transform, zIndex, opacity,filter}}
->
-
-<div className="carousel-card-name">{item.capName}</div>
-
-</div>
-);
-})}
-    </div> 
-
 
 <div className="carousel-controls">
 <button onClick={prev}>‹</button>
