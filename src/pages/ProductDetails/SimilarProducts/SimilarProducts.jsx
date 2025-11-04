@@ -5,12 +5,12 @@ import './SimilarProducts.css'
 export default function SimilarProducts({currentCategory,product}) {
   return (
      <div className="Product-Details-SimilarProducts">
-   <div className="home-head-div">
-                <div className="home-head-content">
-                  <div className='home-head'>Similar Products.</div>
+   <div className="sp-head-div">
+                
+                  <div className='home-heading'>Similar Products.</div>
                   
                   
-                </div>
+                
             
               </div>
  <div className="Product-Details-SimilarProducts-list">

@@ -44,7 +44,7 @@ export default function Registration(){
       </div>: <div className='login-box' >
            {/*    <div className='register-title'>Create an account</div> */}
            <div id='reg-input-div' className='reg-Username-div'>
-                     <div>Username</div>
+                     <div id='input-heading'>Username</div>
                      <input className='register-username' 
           placeholder='Example Username'
           name="username"
@@ -52,7 +52,7 @@ export default function Registration(){
           onChange={(e)=>setUsername(e.target.value)}/>
               </div>
               <div id='reg-input-div' className='reg-Email-div'>
-                     <div>Email</div>
+                     <div id='input-heading'>Email</div>
                      <input className='register-emailId' 
           placeholder='example@email.com'
           name="email"
@@ -60,7 +60,7 @@ export default function Registration(){
           onChange={(e)=>setEmail(e.target.value)}/>
               </div>
        <div id='reg-input-div' className='reg-password-div'>
-              <div>Password</div>
+              <div id='input-heading'>Password</div>
               <input className='register-password'
           placeholder='--------------'
           name="password"
@@ -68,7 +68,7 @@ export default function Registration(){
           onChange={(e)=>setPassword(e.target.value)}/>
        </div>
    <div id='reg-input-div' className='reg-Confirm-password'>
-       <div>Confirm Password</div>
+       <div id='input-heading'>Confirm Password</div>
        <input className='register-ConfirmPassword'
          placeholder='--------------'
           name="password"

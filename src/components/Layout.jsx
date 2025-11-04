@@ -33,8 +33,8 @@ setSearchBarToggle(i)
       toggleOverlay={setShowOverlay} />
     <Header toggleSwitch={SearchToggle} 
     screenOverlay={showOverlay}
-      toggleOverlay={setShowOverlay}/>
-    <div className='outlet-container' style={{paddingTop:isHomePage?'0rem':'4rem'}} >
+      toggleOverlay={setShowOverlay}/> 
+    <div className='outlet-container' style={{paddingTop:isHomePage?'0rem':'0rem'}} >
     <Outlet screenOverlay={showOverlay}
       toggleOverlay={setShowOverlay}/>
     </div>

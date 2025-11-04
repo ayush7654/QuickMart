@@ -46,12 +46,16 @@ line-height: 3rem;
 
 .store-page-header{
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
   z-index: 2;
+  height: 14rem;
  background-color: white;
  border: 0px solid red;
- margin-top: 4rem;
+ margin-top: 0rem;
  position: sticky;
- top:0rem;
+ top:-7rem;
  border-bottom: 1px solid rgb(225,225,225);
 
 
@@ -192,7 +196,7 @@ height: 2rem;
   color: rgb(50,50,50);
   padding: 1rem 0;
   z-index: 1;
- font-family: 'Roboto';
+
    font-family: "Questrial", sans-serif;
  font-size: 2rem;
 
@@ -408,7 +412,7 @@ padding: 0.3rem 0;
 
  .store-product:hover .productImg-wrapper {
 
- border: 1px solid rgb(225, 225, 225);
+ border: 1px solid rgb(190, 190, 190);
 
  }
 
@@ -573,7 +577,7 @@ padding: 0.2rem 0;
 
     width: 30%;
     height: 4rem;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(20, 20, 20);
     display: flex;
     justify-content: center;
     align-items: center;

@@ -99,12 +99,13 @@ export default function ProductInfo({product}) {
         </div>
 
         <div className="pd-colorpick-div">
+            <div className='pd-colorpick-head' id='pd-subHead'>Color /&nbsp; <div id='pd-subInfo'> {pdColor}</div></div>
           <div className="pd-colorpick">
 
             {pdColorArr.map(item=> <div onClick={()=>switchColor(item.colorName)} className={item.colorName==pdColor?"pd-color-div-selected":"pd-color-div"}><div id="pd-color" style={{backgroundColor:item.color}}></div></div>)}
 
           </div>
-            <div  id='pd-subHead'>Color  <span className='pd-subInfo'>{pdColor}</span></div>
+         {/*    <div  id='pd-subHead'>Color  <span className='pd-subInfo'>{pdColor}</span></div> */}
         </div>
        
      
@@ -122,8 +123,7 @@ export default function ProductInfo({product}) {
            <div id='pd-subHead' style={{display:'flex'}} className="stock-div">
             <span id='pd-subHead' >Stocks Left </span>
             <span  className='pd-subInfo'> {product.stock}</span>
-           </div>
-         
+           </div> 
          
         <div className="quantity-container-div">
            <div id='pd-subHead' >Select Quantity:</div>

@@ -41,7 +41,8 @@ export default function LoginPage(){
   
     {/*  <div className="LoginImg"></div> */}
     
-    return(<div className="Login-Page">
+    return(
+    <div className="Login-Page">
  <div className="LoginImg"></div>
 <div className="login-container">
      <div className="login-page-title">ACCOUNT</div>
@@ -73,7 +74,7 @@ export default function LoginPage(){
         <div className="login-box">
      
      <div className="Email">
-        <div>Email</div>
+        <div id='input-heading'>Email</div>
         <input className="login-email" 
             placeholder="example@email.com..." 
             name="email"
@@ -81,7 +82,7 @@ export default function LoginPage(){
             onChange={(e)=>setEmail(e.target.value)}/> 
      </div>
      <div className="Password">
-       <div>Password</div>
+       <div id='input-heading'>Password</div>
        <input className="login-password"  
             placeholder="--------------"
             name="password"        

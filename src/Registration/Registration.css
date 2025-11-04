@@ -27,7 +27,7 @@
 #reg-input-div input{
   height: 2.5rem;
     width: 100%;
-    background-color: rgb(236, 236, 236);
+       background-color: rgb(240, 240, 240);
     border: 0px;
     color:rgba(41, 41, 41, 0.92);
     font-size: 1rem;
@@ -40,7 +40,7 @@
 #reg-input-div input:focus{
      outline: none;
     background-color: white;
-    border: 1px solid rgb(200,200,200);
+      border-bottom: 1px solid rgb(200,200,200);
     
 }
 

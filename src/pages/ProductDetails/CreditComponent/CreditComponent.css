@@ -37,13 +37,15 @@
 #credit-text{
     width: 60%;
     height: 90%;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1rem;
     color:rgb(75, 75, 75);
+    line-height: 1.4rem;
         display: flex;
     justify-content: start;
     align-items: center;
-     font-family: 'Poppins'; 
+ 
+       font-family: 'Inter';
     
 }
 

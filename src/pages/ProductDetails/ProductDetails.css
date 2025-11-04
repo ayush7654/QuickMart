@@ -6,6 +6,7 @@
   width: 100%;
   background-color: white;
   position: relative;
+  margin-top: 0rem;
 }
 
 .product-page-inner {
@@ -47,10 +48,11 @@ user-select: none;
 }
 
 .info-box {
-  height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 7rem;
 }
 
 .credit-box{
@@ -73,7 +75,7 @@ border: 0px solid black;
 
 /* This appears after product section scrolls out */
 .next-section {
-  height: 100vh;
+  min-height: 90vh;
   background-color: #ffffff;
 
   width: 100%;

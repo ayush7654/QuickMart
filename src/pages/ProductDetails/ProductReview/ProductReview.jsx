@@ -31,7 +31,9 @@ export default function ProductReview({product}) {
               
             {/*     <StarRating rating={review.rating} starSize={20}/> */}
                
-                <div className="review-comment">{review.comment}</div>
+                <div className="review-comment">{review.comment}
+               
+                </div>
     
                 <div className="review-line-div"></div>
     

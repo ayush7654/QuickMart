@@ -6,14 +6,11 @@
    
   }
   
-  .similarProducts-head{
-  font-size: 2rem;
-  width: 100%;
-  padding-top: 2rem;
-  font-weight: 500;
-  font-family: 'Roboto';
-  }
-
+.sp-head-div{
+ display: flex;
+ width: 100%;
+ justify-content: center;
+}
   .pd-head-frame{
       
   width: 100%;
