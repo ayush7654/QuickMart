@@ -355,9 +355,9 @@ bottom: 0;
  .ImageCrousel-Container{
 
   position: relative;
-     height: 65vh;
+     height: 85vh;
 
-   margin-top: 17vh;
+   margin-top: 15vh;
 
   
 
@@ -367,9 +367,9 @@ bottom: 0;
     
     
     width: 100vw;
-    height: 55vh;
+    height: 75vh;
    
-    background-position: center;
+    background-position: top; /* center */
     background-repeat: no-repeat;
     background-size: cover;
   
@@ -392,8 +392,8 @@ bottom: 0;
 
  .buy-link-sm{
 display: flex;
- width: 50%;
- background-color: rgb(255, 255, 255);
+ width: 90%;
+ background-color: rgb(20, 20, 20);
 
 
 
@@ -406,7 +406,7 @@ display: flex;
   display: flex;
  justify-content: center;
  align-items: center;
- color: rgb(10,10,10);
+ color: rgb(255, 255, 255);
  border: 1px solid rgb(10,10,10);
  }
 
