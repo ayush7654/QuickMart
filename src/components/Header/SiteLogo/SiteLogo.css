@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Gruppo&family=Prosto+One&display=swap');
+
+  .site-logo-container{
+   position: absolute;
+   
+   border: 0px solid red;
+   width: 100%;
+   height: 100%;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: .6rem;
+  
+
+  }
+
+  .sun1-container{
+  border: 1px solid white;
+ height: 100%;
+  width: auto;
+
+  margin-bottom: 0rem;
+      position: relative;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   
+
+}
+
+.sticky-header-TopMounted .sun1 {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: white; 
+    border-radius: 50%;
+    overflow: hidden;
+  margin-bottom: -1rem;
+      clip-path: inset(0 0 35% 0); 
+      border: 0px solid white;
+     
+}
+
+    .sticky-header-ScrollUp .sun1 {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+  margin-bottom: -1rem;
+      clip-path: inset(0 0 35% 0); 
+      border: 3px solid rgb(255, 255, 255);
+  }
+
+  .triangle1 {
+ position: absolute;
+ left: 0;
+ top:2.6rem;
+  width: 0;
+  height: 0;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 20px solid rgb(255, 255, 255); /* color + length */
+}
+
+
+.triangle2 {
+ position: absolute;
+ right: 0;
+ top:.8rem;
+  width: 0;
+  height: 0;
+    border-top:2px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-right: 25px solid rgb(255, 255, 255);
+  
+}
+
+
+
+.triangle3 {
+ position: absolute;
+ right: 0;
+  width: 0;
+  height: 0;
+   top:1.8rem;
+border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-right: 25px solid rgb(255, 255, 255); /* color + length */
+}
+
+
+
+.StorkLogo-new{
+ width: 90px;
+ position: absolute;
+   top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+/*    filter: 
+    drop-shadow(0px 1px 0 rgb(255, 255, 255));  */
+ 
+}
+
+
+
+  .new-site-logo-name{
+ position: absolute;
+ bottom: 0.5rem;
+  border: 0px solid blue;
+    color:#eee;
+    font-size: 1.8rem;
+    letter-spacing: .8rem;
+    z-index: 999;
+font-weight: 400;
+/* margin-bottom: -0.2rem;
+margin-top: 0rem; */
+font-family: "Prosto One", sans-serif;
+
+
+  }
+
+
+  @media(max-width:900px){
+  
+  }
+
+  
+  @media(max-width:700px){
+   
+       .site-logo-container{
+              
+            transform:scale(1);
+               gap: 0rem;
+               justify-content: start;
+      }
+
+       
+
+        .new-site-logo-name{
+            bottom: .2rem;
+            font-size: 1.2rem;
+              letter-spacing: .4rem;
+   
+          }
+
+  }
+
+
+  @media(max-width:400px){
+
+    .StorkLogo-new{
+        width: 80px;
+    }
+
+       .new-site-logo-name{
+            bottom: .5rem;
+            font-size: 1.1rem;
+              letter-spacing: .4rem;
+   
+          }
+  }

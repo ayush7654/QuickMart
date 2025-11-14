@@ -82,7 +82,7 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
 <div className="carousel">
 {cardsList.map((item, i) => {
   const offset = i - index; // linear difference (no wrap-around)
-  const spacing = 310; // px distance between cards
+  const spacing =window.innerWidth>400?310:260; // px distance between cards
   let transform = "";
   let zIndex = 1;
   let opacity = 1;
@@ -136,6 +136,7 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
     }}
   >
     <div style={{fontSize,filter,bottom, transform:`${transform} ${rotate}`}} className='carousel-name'>{item.capName}</div>
+    <div className='carousel-name-sm'>{item.capName}</div>
    
 
   </div>

@@ -120,3 +120,11 @@ width: 100%;
    }
 }
 
+@media(max-width:400px){
+    .discount-home-Products-div .discount-tag{
+      background-color: rgb(30, 30, 210);
+      font-size: .7rem;
+      width: 25%;
+    }
+}
+

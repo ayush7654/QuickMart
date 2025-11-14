@@ -37,18 +37,7 @@ background-color: white;
    
   }
 
-  .trend-div-heading{
-   font-size: 2.5rem;
-    padding: 1rem;
- font-family: "Poppins";
-    width: 90%;
-    font-weight: 400;
-    margin-bottom: 2rem;
-   
-    color:rgb(40,40,40);
-    border-bottom: 1px solid rgb(200, 200, 200);
-    background-color: white;
-  }
+
 
 
   
@@ -136,108 +125,6 @@ background-color: white;
 
 
 
-  .trending-products{
-    border: 0px solid rgb(10, 10, 10);
-    width: 100%;
-    height:75vh;
-    display: flex;
-    
- /* flex-direction: column;  */
-/*     justify-content: space-between;
-    align-items: center; */
-  }
-
- 
-
-  #trending-product-div{
-    border: 0px solid rgb(229, 29, 29) ;
-    width: 100%;
-    height:100%;
-    overflow: hidden;
-  }
-
-   #trending-product{
-    width: 100%;
-    height: 100%;
-     background-position: top center; 
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: relative;
-    transition: transform .3s ease ;
-  }
-
-  .trending-product-1{
-
-
-    background-image: url('/FashionTrend/QM-Img-tp5.jpg ') ; /* */
-   
-    
-  }
-
-  .trending-product-2{
-        
-    background-image: url('/FashionTrend/QM-Img-tp1.jpg') ; /*  */
-   
-    
-  }
-
-
-
-
-
-#tp-btn{
-
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 80%;
-        /* font-family: 'Montserrat', sans-serif;  */
-        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-        font-family: 'Roboto Condensed';
-  font-weight: 500;
-      font-size:2.5rem;
-      text-align: center;
-   
-}
-
-  .tp-1-btn{
-    position: absolute;
-    bottom: 10%;
-    right:50%;
-    transform: translateX(50%);
-    color:rgba(255, 255, 255, 0.7);
-  
-
-
-    
-      transition: all 0.2s ease;
-  }
-
-  .trending-product-1:hover .tp-1-btn{
-    color:rgb(255, 255, 255);
-   
-    cursor: pointer;
-  }
-
-  .tp-2-btn{
-    position: absolute;
-    bottom: 10%;
-        right:50%;
-    transform: translateX(50%);
-      color:rgba(255, 255, 255, 0.715);
-
-   
-
- 
-      transition: all 0.3s ease;
-    
-  }
-
-    .trending-product-2:hover .tp-2-btn{
-  color:rgb(255, 255, 255);
-       cursor: pointer;
-  }
-
   @media(max-width:1000px){
     .trend-container{
               height: 70vh;
@@ -276,7 +163,8 @@ background-color: white;
     }
 
        #trend-button{
-    width: 60%;
+    width: 70%;
+    height: 2rem;
     
     }
 

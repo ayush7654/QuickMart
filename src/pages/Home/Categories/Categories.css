@@ -99,9 +99,7 @@ border: 0px solid yellow;
       rgb(225,225,225) 1px,
       transparent 1px,
       transparent 70px /* total horizontal repeat distance */
-    ),
-    
-      linear-gradient(to bottom, rgb(240,240,240), rgb(255, 255, 255));
+    );
 ;
 
 
@@ -195,10 +193,15 @@ border: 0px solid yellow;
     transition: all .6s ease;
     position: absolute;
     font-family: 'Montserrat';
-    font-weight: 300;
+  
+    font-weight:300;
     color:rgb(100,100,100);
     transform: rotateY('-20deg');
     text-shadow: 0px 40px 10px rgb(170, 170, 170);
+}
+
+.carousel-name-sm{
+    display: none;
 }
 
 
@@ -261,9 +264,28 @@ border: 0px solid yellow;
 @media(max-width:400px){
 
     .carousel-card {
-         width: 250px;
-  height: 375px;
+         width: 230px;
+  height: 345px;
     }
+
+    .carousel-name{
+        display: none;
+    }
+
+    .carousel-name-sm{
+    display: flex;
+    color:white;
+    font-family: 'Roboto Condensed';
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+.floor{
+    height:35vh;
+}
+
+
 
     
 }

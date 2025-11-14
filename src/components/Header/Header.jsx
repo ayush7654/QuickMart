@@ -2,12 +2,12 @@ import {useState,useEffect,useRef} from "react";
 import {NavLink, Link, useLocation,useNavigate} from 'react-router-dom'
 import { Search } from "react-feather";
 import { useFirebase } from "../../components/FirebaseContext/Firebase";
-
+import { RxHamburgerMenu } from "react-icons/rx";
 import { HiOutlineUser, HiUser } from 'react-icons/hi';
 import { HiShoppingCart,HiOutlineShoppingCart } from 'react-icons/hi';
 
 import { MdLogin } from 'react-icons/md';
-
+import SiteLogo from "./SiteLogo/SiteLogo";
 
 import './Header.css'
 export default function Header({toggleSwitch,screenOverlay,toggleOverlay}){
@@ -28,21 +28,6 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay}){
   ...(window.innerWidth > 700
     ? [
         {
-          title: "Cart",
-          path: "/cart",
-          logo:
-            pagelocation.pathname === "/cart" ? (
-              <HiShoppingCart id="fd-header-logo" />
-            ) : (
-              <HiOutlineShoppingCart
-                id="ol-header-logo"
-                style={{ strokeWidth: "1.5" }}
-              />
-            ),
-        },
-      ]
-    : []),
-  {
     title: "Login",
     path: "/login",
     logo: firebase.isLoggedIn ? (
@@ -54,7 +39,25 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay}){
     ) : (
       <MdLogin id="fd-header-logo" />
     ),
-  },
+  }
+      ,
+      ]
+    : []),
+
+      {
+          title: "Cart",
+          path: "/cart",
+          logo:
+            pagelocation.pathname === "/cart" ? (
+              <HiShoppingCart id="fd-header-logo" />
+            ) : (
+              <HiOutlineShoppingCart
+                id="ol-header-logo"
+                style={{ strokeWidth: "1.5" }}
+              />
+            ),
+        }
+,
 ];
 
 
@@ -186,34 +189,14 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
 
 
         <div className="header-home">
-       <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon-div-Ph"><Search className="searchIcon"    style={{ strokeWidth: '1.5'}} /></span> 
+    {/*    <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon-div-Ph"><Search className="searchIcon"    style={{ strokeWidth: '1.5'}} /></span>  */}
     
+    <div className="home-menu-ph">
+    <RxHamburgerMenu className="menu-icon"/>
+    </div>
 
 
-
-
-   <div  className='site-logo-div' >
-         
-      <div id="testing-line" className="line1">ST&nbsp;&nbsp;&nbsp;&nbsp;RK</div>
-      <div className="StorkLogo-div"><img src='StorkLogo.png'  className="StorkLogo"/></div> 
-      <div id="testing-line" className="line2">ST&nbsp;&nbsp;&nbsp;&nbsp;RE</div>
-      
-      
-          
-        </div> 
-     <div className='site-logo-div-Ph' >
-         
-      <div id="testing-line" className="line1">STORK</div>
-      <div className="StorkLogo-div"><img src='StorkLogo.png'  className="StorkLogo"/></div> 
-      <div id="testing-line" className="line2">STORE</div>
-     
-      
-          
-        </div>  
-        
-  <div  
-
-     className="page-nav-container">
+  <div className="page-nav-container">
     
      <div className="page-nav">  
   
@@ -227,9 +210,11 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
 }
     </div>
      </div> 
- 
- 
-    
+
+<SiteLogo/>
+
+
+     
          <div className='Home-Nav-Container'>
           <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon-div"><Search className="searchIcon"    style={{ strokeWidth: '1.5'}} /></span>
             {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div   id="header-icon">{element.logo}</div>   </NavLink>)}
