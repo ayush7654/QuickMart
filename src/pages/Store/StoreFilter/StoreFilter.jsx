@@ -73,7 +73,7 @@ export default function StoreFilter({ currentCategory, typeFilter, handleClickFi
       className="Store-filter"
     >
 
-<div className='Store-filter-head'>
+<div className='Store-filter-head-div'>
   <span>Select Category</span>
   <span className='Store-filter-cancel'>
 

@@ -1,0 +1,169 @@
+.sideBarNav{
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+   
+    border-right:1px solid rgb(200,200,200);
+
+}
+
+.sideBarNav-head-div{
+    height: 12rem;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid rgb(240, 240, 240);
+       
+    
+}
+
+
+.sideBar-cancel-div{
+    position: absolute;
+    right: 1rem;
+    top:1.5rem;
+    border-radius:50%;
+    border: 0px solid red;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sideBar-cancel-div:hover{
+
+color:rgb(0, 0, 0);
+cursor: pointer;
+background-color:rgb(230, 230, 230);
+}
+
+.sideBar-cancel{
+    color: rgb(25, 25, 25);
+}
+
+.sideBarNav-head-tagline{
+    font-size: .9rem;
+    font-family: 'Jost';
+
+       padding-top:1rem ;
+}
+
+.sideBarNav-head{
+    font-size: 1.6rem;
+    font-family: "Prosto One", sans-serif;
+    letter-spacing: .2rem;
+    color:rgb(50,50,50);
+   
+
+ 
+
+  
+
+}
+
+.SB-head-line1{
+     display: flex;
+    flex-direction: row;
+    border: 0px solid orange;
+    align-items: start;
+    width: 90%;
+    gap:.5rem;
+    
+   
+}
+
+.sideBar-userIcon-div{
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid rgb(175, 175, 175);
+    border-radius:10px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.SB-userIcon{
+    font-size: 2.5rem;
+}
+
+.sideBar-userInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 90%;
+    
+    height: 100%;
+ 
+    
+    
+}
+
+.sideBar-userName{
+font-family: "Questrial", sans-serif;
+   font-weight: 400;
+   font-size: 1.5rem;
+}
+
+.sideBar-userId{
+     font-size:1rem; 
+     font-family: 'Jost';
+     font-weight: 300;
+     color:rgb(80, 80, 80);
+     border: 0px solid red;
+     font-size: .85rem;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+.sideBarNav-element-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.sideBarNav-element{
+  /*   background-color: rgb(255, 255, 255); */
+    padding: 1rem;
+
+    border-bottom:1px solid rgb(240, 240, 240);
+    display: flex;
+
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    
+}
+
+.sideBarNav-Icon-div{
+    width: 2rem;
+    height: 2rem;
+    border: 0px solid yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#sideBar-icon{
+    font-size: 1.5rem;
+    
+}
+
+.sideBarNav-name{
+  font-family: 'Jost';
+  color: rgb(0, 0, 0);
+}
+

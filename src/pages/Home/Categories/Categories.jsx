@@ -104,13 +104,13 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
     // Visual effects based on distance
     if (offset === 0) {
       filter = "blur(0px) grayscale(0%)";
-      fontSize= window.innerWidth>1000?'4.5rem':window.innerWidth>450?'3.5rem':'2.5rem';
+      fontSize= window.innerWidth>1000?'4rem':window.innerWidth>450?'3.5rem':'2.5rem';
       bottom =window.innerWidth>1000?'-12rem':window.innerWidth>450?'-10rem':'-8rem';;
       rotate = 'rotateX(20deg)';
      
     } else if (Math.abs(offset) === 1) {
       filter = "blur(0.5px) grayscale(20%)";
-      fontSize= window.innerWidth>1000?'3.5rem':'2rem';
+      fontSize= window.innerWidth>1000?'2.5rem':'2rem';
       bottom =window.innerWidth>1000?'-9rem':'-5rem';
       rotate = 'rotateX(30deg)';
 

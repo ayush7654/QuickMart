@@ -10,13 +10,13 @@ import { MdLogin } from 'react-icons/md';
 import SiteLogo from "./SiteLogo/SiteLogo";
 
 import './Header.css'
-export default function Header({toggleSwitch,screenOverlay,toggleOverlay}){
+export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBarToggle}){
 
   
         
-        const [searchTerm,setSearchTerm]= useState('')
+     const [searchTerm,setSearchTerm]= useState('')
     
-        const[suggestions,setSuggestions]= useState([])
+     const[suggestions,setSuggestions]= useState([])
     
 
     const firebase= useFirebase()
@@ -180,7 +180,7 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
       transition: isIdle
         ? 'transform 0.5s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
         : 'transform 0.6s ease-out,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
-      transform: isIdle 
+      transform: isIdle && window.innerWidth>700
   ? 'translateY(-100%)'
   : 'translateY(0)',
      
@@ -191,8 +191,8 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
         <div className="header-home">
     {/*    <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon-div-Ph"><Search className="searchIcon"    style={{ strokeWidth: '1.5'}} /></span>  */}
     
-    <div className="home-menu-ph">
-    <RxHamburgerMenu className="menu-icon"/>
+    <div className="home-menu-ph" onClick={()=>sideBarToggle(true)}>
+    <RxHamburgerMenu className="menu-icon" />
     </div>
 
 
@@ -224,24 +224,7 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
         
     </div>
 
-    <div  className="page-nav-containerPh">
-
-    
-     <div className="page-nav">  
-  
- {/*    {navElements 
-  ? navElements.map(item => (
-      <NavLink to={item.path} className={({isActive})=>isActive?'page-nav-item-selected':'page-nav-item'}  key={item.path}>
-        {item.title}
-      </NavLink>
-    ))
-  : <div>loading</div>
-} */}
-    <NavLink to='/' className={({isActive})=>isActive?'page-nav-item-selected':'page-nav-item'}>HOME</NavLink>
-    <NavLink  to='/store' className={({isActive})=>isActive?'page-nav-item-selected':'page-nav-item'}>STORE</NavLink>
-    <NavLink  to='/cart' className={({isActive})=>isActive?'page-nav-item-selected':'page-nav-item'}>CART</NavLink>
-    </div>
-     </div> 
+ 
     </div>
     
     

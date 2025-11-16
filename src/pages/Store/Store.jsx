@@ -136,14 +136,14 @@ setSearchParams(searchParams); // update the URL
       <div style={{display:sideBartoggled?'none':'flex'}} className="storePage-overlay"></div>
 
       <div className="store-page-header">
-              {window.innerWidth< 400 && <div className="store-page-headingPh"> THE VAULT</div>  }
+              <div className="store-page-headingPh"> THE VAULT *fix store header*</div> 
              <div className="store-page-heading-div">
           {/*  <div className="allProductsBtn-div-container"><div  className="allProductsBtn-div" onClick={handleAllProducts}><ChevronLeft className="allProductsBtn"  strokeWidth={1.5} absoluteStrokeWidth /></div></div>  */}  
 
          
           
-        {window.innerWidth>400 && <div className="store-page-heading">
-          THE VAULT
+      <div className="store-page-heading">
+          The Vault 
          {/*   {window.innerWidth>400?'Store':
             <div  className="category-name-divPh">
    <X strokeWidth={1.5} className="remove-category" onClick={handleCancelFilter}  style={{display:currentCategory?'flex':'none'}}/> 
@@ -155,12 +155,18 @@ setSearchParams(searchParams); // update the URL
  
   </div> } */}
         
-</div>}
+</div>
 
 <div className="store-filter-button-div-container">
 
-  <div className="category-name-div">
-   <X strokeWidth={1.5} className="remove-category" onClick={handleCancelFilter}  style={{display:currentCategory?'flex':'none'}}/> 
+  <div className="category-name-div" onClick={() => sideBarsetToggled(false)}>
+   <X strokeWidth={1.5} 
+   className="remove-category" 
+      onClick={(e) => {
+      e.stopPropagation();   // ⛔ stops parent onClick
+      handleCancelFilter();  // ✔ your original function
+    }}
+   style={{display:currentCategory?'flex':'none'}}/> 
     {currentCategory? 
   currentCategory
   .split('-')
@@ -169,7 +175,7 @@ setSearchParams(searchParams); // update the URL
  
   </div>
   <div className="store-filter-button-div" onClick={() => sideBarsetToggled(false)}>
-     <RxHamburgerMenu  className="store-filter-button"  />
+     <RxHamburgerMenu  className="store-filter-button"/>
      </div>
   </div>
 
