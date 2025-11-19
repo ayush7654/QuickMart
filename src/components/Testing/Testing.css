@@ -23,4 +23,20 @@
     justify-content: center;
     background-color: rgb(76, 205, 37);
 }
+.div1 {
+  position: relative;   /* NOT sticky here */
+  height: 2000px;       /* just for demo */
+  background: #eee;
+}
 
+.div2 {
+  position: sticky;
+  top: 200px;           /* distance from viewport top */
+  background: lightblue;
+  padding: 20px;
+}
+
+.div3 {
+  height: 800px;
+  background: pink;
+}

@@ -15,6 +15,9 @@ import { FaBars } from "react-icons/fa";
 import { HiOutlineMenu } from "react-icons/hi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { X } from 'lucide-react';
+import { FiFilter } from "react-icons/fi";
+import { SlidersHorizontal } from "lucide-react";
+import MenuCancel from "../../components/MenuCancel/MenuCancel";
 import "./Store.css";
 
 export default function Store() {
@@ -35,6 +38,23 @@ export default function Store() {
   const typeFilter = searchParams.get("type");
 
   const navigate = useNavigate();
+
+   const [hide, setHide] = useState(false);
+  let lastY = 0;
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+
+      if (y > lastY) setHide(true);      // scrolling down → move up
+      else setHide(false);              // scrolling up → move back
+
+      lastY = y;
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const handleFilter = (category) => {
     setcurrentCategory(category);
@@ -129,65 +149,72 @@ setSearchParams(searchParams); // update the URL
   return (
     <div className="Store-Page">
         
- {/*    { !typeFilter && <div  className="storePage-Offer-div">
-        <div style={{fontSize:'2rem',fontWeight:'700'}}>FLAT 40% OFF | END OF SEASON SALE</div>
-        <div style={{fontSize:'1.2rem'}}>+Extra 10% off on orders of ₹4999 or more*</div>
-      </div>} */}
+
       <div style={{display:sideBartoggled?'none':'flex'}} className="storePage-overlay"></div>
 
-      <div className="store-page-header">
-              <div className="store-page-headingPh"> THE VAULT *fix store header*</div> 
+      <div 
+    /*   style={{
+        transform: hide ? "translateY(-100%)" : "translateY(0)",
+        transition: "transform 0.6s ease"
+      }} */ 
+      className="store-page-header">
+            
              <div className="store-page-heading-div">
           {/*  <div className="allProductsBtn-div-container"><div  className="allProductsBtn-div" onClick={handleAllProducts}><ChevronLeft className="allProductsBtn"  strokeWidth={1.5} absoluteStrokeWidth /></div></div>  */}  
 
          
           
       <div className="store-page-heading">
-          The Vault 
-         {/*   {window.innerWidth>400?'Store':
-            <div  className="category-name-divPh">
-   <X strokeWidth={1.5} className="remove-category" onClick={handleCancelFilter}  style={{display:currentCategory?'flex':'none'}}/> 
-    {currentCategory? 
-  currentCategory
-  .split('-')
-  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-  .join(' '):"All"}
+          The Vault  
+      </div>
+
+<div className="store-filter-button-div-container" onClick={() => sideBarsetToggled(false)}>
+
+  <div className="category-name-div" >
+  {window.innerWidth>400?'Shop by Category':'Categories'}
+  </div>
+  <div className="store-filter-button-div" >
+  <SlidersHorizontal className="category-icon" strokeWidth={1.5} />
+     </div>
+  </div>
+
  
-  </div> } */}
-        
-</div>
+    
+      </div>
+  
 
-<div className="store-filter-button-div-container">
+ 
+      </div>
+ 
 
-  <div className="category-name-div" onClick={() => sideBarsetToggled(false)}>
-   <X strokeWidth={1.5} 
-   className="remove-category" 
+{/* <span style={{fontSize:'1.5rem'}}>*create a useEffect that should set current category by param type chnage in url*</span> */} 
+
+
+      <div className="store-layout">
+
+   
+        <div className="sticky-category-container">
+          { currentCategory && <div className="current-category-container-div">
+        <div className="current-category-container">
+       <div className="current-category-div">
+      <div className="remove-category-div">
+         <X strokeWidth={1.5} 
+      className="remove-category" 
       onClick={(e) => {
       e.stopPropagation();   // ⛔ stops parent onClick
       handleCancelFilter();  // ✔ your original function
     }}
-   style={{display:currentCategory?'flex':'none'}}/> 
-    {currentCategory? 
+   />
+      </div>
+      <div className="current-category">{
   currentCategory
   .split('-')
   .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-  .join(' '):"Browse All"}
- 
+  .join(' ')}</div>
+    </div>
   </div>
-  <div className="store-filter-button-div" onClick={() => sideBarsetToggled(false)}>
-     <RxHamburgerMenu  className="store-filter-button"/>
-     </div>
-  </div>
-
-      </div>
-  
-      </div>
- 
-
-
-
-
-      <div className="store-layout">
+  </div>}
+        </div>
 
        
         <aside className="store-sidebar"  style={{
@@ -206,14 +233,6 @@ setSearchParams(searchParams); // update the URL
         <main className="store-content">
           <div className="productList-wrapper" style={{ position: "relative" }}>
             <div className="productList">{productElements}</div>
-
-{/*             {isLoading && (
-              <div className="Loading-Overlay">
-                {[...Array(12)].map((_, i) => (
-                  <div key={i} className="Loading-Product"></div>
-                ))}
-              </div>
-            )} */}
           </div>
 
          

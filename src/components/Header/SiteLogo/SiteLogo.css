@@ -137,12 +137,19 @@ font-family: "Prosto One", sans-serif;
                justify-content: start;
       }
 
+      .site-tagline{
+        font-family: "Jost";
+       display: none;
+        position: absolute;
+        bottom: 3rem;
+      }
+
        
 
         .new-site-logo-name{
-            bottom: .2rem;
-            font-size: 1.5rem;
-              letter-spacing: .4rem;
+            bottom: .5rem;
+            font-size: 1.8rem;
+            letter-spacing: .4rem;
    
           }
 

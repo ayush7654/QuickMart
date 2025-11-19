@@ -1,0 +1,27 @@
+
+.menu-btn {
+  width: 28px;
+  height: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+}
+
+.menu-btn span {
+  height: 1.5px;
+  background: black;
+  transition: 0.35s ease;
+  border-radius: 2px;
+}
+
+/* --- ANIMATION --- */
+.menu-btn.open span:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.menu-btn.open span:nth-child(2) {
+  transform: translateY(-4px) rotate(-45deg);
+}
+

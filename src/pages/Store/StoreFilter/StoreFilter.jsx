@@ -84,6 +84,7 @@ export default function StoreFilter({ currentCategory, typeFilter, handleClickFi
 </div>
       
         <div className="store-categories" style={{ translate: `${-CategoryNum * 200}px`}}>
+        
           {productCategory && productCategory.map((item, index) =>
             <div
               onClick={() => {
