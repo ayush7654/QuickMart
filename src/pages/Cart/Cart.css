@@ -430,9 +430,9 @@ font-family: 'Roboto Condensed';
 
     @media(max-width:1000px){
 
-        .cart-page-title{
+  /*       .cart-page-title{
  height: 5rem;
-        }
+        } */
 
         .cart-page-heading{
             font-size: 2rem;
