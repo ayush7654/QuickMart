@@ -104,18 +104,18 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
     // Visual effects based on distance
     if (offset === 0) {
       filter = "blur(0px) grayscale(0%)";
-      fontSize= window.innerWidth>1000?'4rem':window.innerWidth>450?'3.5rem':'2.5rem';
-      bottom =window.innerWidth>1000?'-12rem':window.innerWidth>450?'-10rem':'-8rem';;
+      fontSize= window.innerWidth>1000?'3.5rem':window.innerWidth>450?'3.5rem':'2.5rem';
+      bottom =window.innerWidth>1000?'-8rem':window.innerWidth>450?'-8rem':'-6rem';;
       rotate = 'rotateX(20deg)';
      
     } else if (Math.abs(offset) === 1) {
-      filter = "blur(0.5px) grayscale(20%)";
+      filter = "blur(0.5px) grayscale(80%)";
       fontSize= window.innerWidth>1000?'2.5rem':'2rem';
-      bottom =window.innerWidth>1000?'-9rem':'-5rem';
+      bottom =window.innerWidth>1000?'-7rem':'-5rem';
       rotate = 'rotateX(30deg)';
 
     } else if (Math.abs(offset) === 2) {
-      filter = "blur(1px) grayscale(50%)";
+      filter = "blur(1px) grayscale(100%)";
       fontSize= '2rem'
       bottom ='-8rem';
       rotate = 'rotateX(20deg)';
@@ -124,17 +124,19 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
   }
 
   return (
-    <div
-    key={i}
-    className="carousel-card"
-    style={{
-      transform,
-      zIndex,
-      opacity,
-      filter,
-      backgroundImage: `url(${item.img})`,
-    }}
-  >
+   <div
+  key={i}
+  className="carousel-card"
+  style={{
+    transform,
+    zIndex,
+    opacity,
+    filter,
+    backgroundImage: `url(${item.img})`,
+    "--shadowOpacity": offset === 0 ? 0 : 1,
+  }}
+>
+
     <div style={{fontSize,filter,bottom, transform:`${transform} ${rotate}`}} className='carousel-name'>{item.capName}</div>
     <div className='carousel-name-sm'>{item.capName}</div>
    

@@ -1,0 +1,373 @@
+.account-Page{
+
+    height:100vh;
+    display: flex;
+    flex-direction:row;
+    font-size: .9rem;
+    justify-content:space-between;
+    user-select: none;
+    margin-top: 5rem;
+
+  }
+
+  .Login-Page input:focus::placeholder {
+  color: transparent;
+}
+
+    .accountPageImg{
+
+   height: 100%;
+   width: 55%;
+
+   overflow: hidden;
+   background-image: url('LoginImg/Login-Img.jpg');
+   background-position: center;
+   background-repeat:no-repeat;
+   background-size: cover;
+
+  }
+
+
+
+  .account-container{
+   
+   height: 100%;
+    width: 45%;
+  border-top: 0px solid rgb(200,200,200);
+   border-bottom: 1px solid rgb(200,200,200);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  justify-content: center;
+
+ font-family: 'Inter'; 
+font-weight: 400;
+  background-color: rgb(255, 255, 255);
+
+  }
+
+    .account-page-title{
+       font-size: 2rem;
+
+   font-weight:400;
+   margin-bottom: 1rem;
+  color:rgb(50,50,50);
+  margin-top: 4rem;
+padding: 1rem;
+  font-family: "Questrial", sans-serif;
+
+  }
+
+
+.account-page-switch{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 3rem;
+ 
+  font-family: 'Poppins'; 
+ 
+  letter-spacing: .1rem;
+
+
+
+ 
+
+  
+  
+  
+}
+
+.account-section-selected{
+  border-bottom: 1px solid rgb(80, 80, 80);
+  color:rgb(0, 0, 0);
+  font-weight: 400;
+  background-color: white;
+   height: 3rem;
+
+  
+}
+
+.account-section{
+   border-bottom: 2px solid transparent;
+    color:rgb(130, 130, 130) ;
+     border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+#switch-section{
+  width: 50%;
+  height: 100%;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+
+/*  */
+  
+}
+
+#switch-section:hover{
+  cursor: pointer;
+  color:rgb(80,80,80);
+
+}
+
+
+
+
+ #input-heading{
+   font-family: "Questrial", sans-serif;
+   font-family: 'Poppins';
+   font-family: 'Roboto';
+   font-family: 'Montserrat';
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-family: 'Inter';
+   font-weight: 300;
+
+ }
+
+
+
+
+  
+
+  .account-div{
+    height: 100%;
+    width: 100%;
+border: 0px solid black;
+    display: flex;
+    align-items: center;
+  justify-content: center;
+  }
+
+
+  #user-Input-box{
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 60%;
+    gap:2rem;
+   
+ position: relative;
+    align-items: center;
+   justify-content:start;
+   
+
+
+    
+   
+  }
+
+  #account-input-div{
+            width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+  input::placeholder{
+    color:rgb(160, 160, 160);
+    font-size: .9rem;
+  } 
+
+
+
+  
+  
+ 
+
+ #account-input{
+    height: 2.5rem;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+
+    border: 0;
+
+    color:rgba(41, 41, 41, 0.92);
+    font-size: 1rem;
+    padding-left:10px;
+    margin-top: .5rem;
+    
+
+    
+  }
+
+  #account-input:focus{
+        outline: none;
+    background-color: white;
+    border-bottom: 1px solid rgb(200,200,200);
+  }
+
+
+
+  
+
+  #account-button{
+    width:100%;
+    height: 2.5rem;
+ 
+
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-family: 'Poppins';
+       font-family: "Questrial", sans-serif;
+    transition: all  .3s ease;
+   position: absolute;
+   bottom: 4.5rem;
+   
+  }
+
+   .account-button-active:hover{
+background-color: rgb(50, 210, 210);
+color:rgb(255, 255, 255);
+border: none;
+cursor: pointer;
+  }
+
+  .account-button-active{
+    background-color: rgb(35, 35, 35);
+    color:white;
+  }
+
+    .account-button-inactive{
+    background-color: transparent;
+    color:rgb(40, 40, 40);
+    cursor: not-allowed;
+    border: 1px solid black;
+  }
+
+  .account-loggedIn-div{
+      display: flex;
+    flex-direction: column;
+ position: relative;
+    align-items: start;
+    justify-content:start;
+font-family: 'Roboto Condensed';
+   
+    height:80%;
+    width: 60%;
+ color:rgb(49, 49, 49);
+  border: 0px solid black;
+    gap:2.5rem;
+}
+
+  
+
+
+
+
+  @media(max-width:1200px){
+
+    .accountPageImg{
+      width: 50%;
+    }
+
+    .account-container{
+      width: 50%;
+    }
+  
+     
+  }
+
+  @media(max-width:900px){
+
+.account-page-title{
+font-size: 2.2rem;
+  margin-top: 3rem;
+}
+  .accountPageImg{
+
+   height: 100%;
+   width: 55%;
+
+   overflow: hidden;
+   background-image: url('LoginImg/Login-Img-sm.jpg');
+   background-position: center;
+   background-repeat:no-repeat;
+   background-size: cover;
+
+  }
+ #user-Input-box,.account-loggedIn-div{
+  width: 80%;
+ }
+ 
+ #account-button{
+   height: 2.6rem;
+      bottom: 1.5rem;
+         font-size: 1rem;
+   
+ }
+
+
+  }
+
+    @media(max-width:750px){
+
+.account-page-title{
+font-size: 2rem;
+  margin-top: 3rem;
+  font-weight: 400;
+ 
+}
+          .accountPageImg{
+      width: 45%;
+    }
+
+     .account-container{
+      width: 55%;
+    }
+     #user-Input-box,.account-loggedIn-div{
+  width: 90%;
+ }
+
+    }
+
+    @media(max-width:600px){
+
+          .account-page-title{
+              margin-top: 4rem;
+            }
+
+          .accountPageImg{
+      display: none;
+    }
+
+     .account-container{
+      width: 100%;
+    }
+     #user-Input-box,.account-loggedIn-div{
+  width: 65%;
+
+
+ }
+
+    }
+
+     @media(max-width:500px){
+     #user-Input-box,.account-loggedIn-div{
+  width: 75%;
+ }
+     }
+
+          @media(max-width:400px){
+
+        
+     #user-Input-box,.account-loggedIn-div{
+  width: 80%;
+  font-size:.8rem ;
+  justify-content: flex-start;
+ }
+ .account-page-switch{
+  font-weight: 400;
+ }                                 
+   input::placeholder{
+    color:rgb(160, 160, 160);
+    font-size: .8rem;
+  } 
+  #account-input{
+    font-size: .8rem;
+    height: 2.2rem;
+  }
+
+
+    }
+

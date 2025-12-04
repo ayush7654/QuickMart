@@ -81,7 +81,8 @@ background-color: black;
    .page-nav{
     
     display: flex;
-    justify-content: space-between;
+   /* 
+    */
     align-items: center;
   
     width:100%;
@@ -98,6 +99,7 @@ font-family: 'Montserrat', sans-serif;
     border: 0px solid rgb(177, 104, 104);
      font-size: .9rem;
     letter-spacing: .1rem;
+    
 
    }
 
@@ -105,32 +107,47 @@ font-family: 'Montserrat', sans-serif;
  .page-nav-item{
     display: flex;  
    align-items: center;
-   border-bottom: 3px solid transparent;
- color:rgb(255, 255, 255);
+   justify-content: center;
+   border-bottom: 4px solid transparent;
+ 
  height: 100%;
  transition: all .3s ease;
+   flex: 1;
 
-  
+   }
+
+    .sticky-header-TopMounted .page-nav-item{
+      color:rgb(225, 225, 225);
+    }
+
+   .page-nav-item-selected{
+    justify-content: center;
+
    }
 
  
 
   .sticky-header-TopMounted .page-nav-item:hover{
 
-border-bottom: 3px solid rgb(255, 255, 255);
-
+/* border-bottom: 3px solid rgb(255, 255, 255);
+ */
+ color:white;
  
 
  
    }
 
    .sticky-header-ScrollUp .page-nav-item:hover{
-border-bottom: 3px solid rgb(0,230,230);
- color:rgb(235, 235, 235);
+/* border-bottom: 3px solid rgb(0,230,230); */
+ color:rgb(255, 255, 255);
 
 
  
    }
+
+.sticky-header-ScrollUp .page-nav-item{
+      color:rgb(170, 170, 170);
+    }
 
  .sticky-header-TopMounted  .page-nav-item-selected{
     display: flex;
@@ -140,7 +157,7 @@ border-bottom: 3px solid rgb(0,230,230);
     border-bottom: 3px solid rgb(255, 255, 255);
    
 color: white;
-
+flex: 1;
 height: 100%;
 
   
@@ -157,7 +174,7 @@ height: 100%;
 
 color: rgb(0,250,250);
 color:white;
-
+flex: 1;
 height: 100%;
 
   

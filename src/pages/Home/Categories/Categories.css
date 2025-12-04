@@ -2,6 +2,7 @@
 
 .Categories-div{
     margin-top: 4rem;
+ 
 }
 
 .Categories-container{
@@ -12,7 +13,9 @@ flex-direction: column;
 
 overflow-x: hidden;
 border: 0px solid yellow; 
-
+background-image: url('./flamingos_bw.jpg');
+background-position: bottom;
+background-size: cover;
 
 
 }
@@ -57,24 +60,7 @@ border: 0px solid yellow;
   height:55vh;
 
 
-   background-image: 
-    /* Horizontal lines (repeating from top) */
-    repeating-linear-gradient(
-      to bottom, 
-      rgb(225,225,225) , /* Grey line color */
-      rgb(225,225,225) 1px, /* Thickness of the line */
-      transparent 1px, /* Start of the gap/square */
-      transparent 70px /* Size of the square/gap (determines height) */
-    ),
-    /* Vertical lines (repeating from left) */
-    repeating-linear-gradient(
-      to right, 
-      rgb(225,225,225) , /* Grey line color */
-      rgb(225,225,225) 1px, /* Thickness of the line */
-      transparent 1px, /* Start of the gap/square */
-      transparent 70px /* Size of the square/gap (determines width) */
-    );
-      background-position: 0 100px;
+  
 }
 
 .floor {
@@ -82,24 +68,7 @@ border: 0px solid yellow;
   width: 100%;
   height:48vh;
 
-  background-image:
 
-    /* Horizontal lines */
-    repeating-linear-gradient(
-      to bottom,
-      rgb(225,225,225) 0px,
-      rgb(225,225,225) 1px, /* line thickness */
-      transparent 1px,
-      transparent 70px /* total vertical repeat distance */
-    ),
-    /* Vertical lines */
-    repeating-linear-gradient(
-      to right,
-      rgb(225,225,225) 0px,
-      rgb(225,225,225) 1px,
-      transparent 1px,
-      transparent 70px /* total horizontal repeat distance */
-    );
 ;
 
 
@@ -125,7 +94,7 @@ border: 0px solid yellow;
   height:65%;
   display: flex;
 
-  align-items: end;
+  align-items: center;
   justify-content: center;
   transition: transform 0.5s ease;
     border: 0px solid #ff0202;
@@ -141,6 +110,8 @@ border: 0px solid yellow;
   position: absolute;
   width: 280px;
   height: 420px;
+    width: 250px;
+  height: 375px;
   background-color: #f9f9f9;
   border: 1px solid #aaa;
   border-radius: 10px;
@@ -165,28 +136,36 @@ border: 0px solid yellow;
    
 
 }
-
 .carousel-card::after {
   content: "";
   position: absolute;
-  bottom: -3em; /* distance from div = “gap” */
+  bottom: -3em;
   left: 50%;
-  transform: translateX(-50%) scaleX(2); /* widen shadow for perspective */
+  transform: translateX(-50%) scaleX(2);
   width: 100%;
-  height: 1rem; /* shadow thickness */
+  height: 1rem;
   background: radial-gradient(
     ellipse at center,
-    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, .5),
     transparent 70%
   );
-  filter: blur(10px); /* soften edges */
-  z-index: 999; /* behind the div */
-  transition: opacity 1s ease; /* 👈 smooth fade-out transition */
-  z-index: 0; /* keep behind */
+  filter: blur(10px);
+  z-index: 0;
 
+  /* fade smoothly */
+  opacity: var(--shadowOpacity, 1);
+  transition: opacity 0.8s ease;
 }
+
 .carousel-card:hover::after {
   opacity: 0;
+}
+
+.no-shadow::after {
+  opacity: 0 !important;
+  filter: none !important;
+  background: none !important;
+    transition: all 1s ease;
 }
 
 .carousel-name{
@@ -194,12 +173,13 @@ border: 0px solid yellow;
     position: absolute;
     font-family: 'Montserrat';
     font-family: "Questrial", sans-serif;
-    font-family: 'Josefin Sans';
-       
+   /*  font-family: 'Josefin Sans'; */
+   font-family: "Prosto One", sans-serif;
+    letter-spacing: .3rem;
   
-    font-weight:300;
-    color:rgb(52, 52, 52);
-    transform: rotateY('-20deg');
+    font-weight:100;
+    color:rgb(255, 255, 255);
+ 
     text-shadow: 0px 0px 0px rgb(170, 170, 170);
 }
 
@@ -214,7 +194,7 @@ border: 0px solid yellow;
 
 .carousel-controls {
     position: absolute;
-    bottom: 20%;
+    bottom: 27%;
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;

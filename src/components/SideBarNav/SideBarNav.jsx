@@ -21,9 +21,9 @@ import { MdPerson } from "react-icons/md";
 export default function SideBarNav({sideBarState, sideBarToggle}) {
 
     const elements= [
-          {icon:< MdPerson id='sideBar-icon'/>,iconImg:'SBlogin.png',iconName:'Account',path:'/login'},
-        {icon:< AiFillHome id='sideBar-icon' />,iconImg:'SBhome.png',iconName:'Home',path:'/'},
+      {icon:< AiFillHome id='sideBar-icon' />,iconImg:'SBhome.png',iconName:'Home',path:'/'},
         {icon:< RiShoppingBasketFill id='sideBar-icon'/>,iconImg:'SBbasket.png',iconName:'Shop',path:'/store'},
+          {icon:< MdPerson id='sideBar-icon'/>,iconImg:'user.png',iconName:'Account',path:'/login'},
         {icon:<FaRegQuestionCircle id='sideBar-icon'/>,iconImg:'SBfaq.png',iconName:'FAQ',path:''},
         {icon:<RiCustomerService2Fill id='sideBar-icon' />,iconImg:'SBhelpdesk.png',iconName:'Customer Support',path:''}
     ]

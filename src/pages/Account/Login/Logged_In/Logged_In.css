@@ -1,0 +1,229 @@
+
+
+.loggedIn-user-div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 0px solid black;
+ gap: 1rem;
+  width: 100%;
+  padding: 0rem;
+/*   background-color: rgb(240, 240, 240); */
+
+  
+
+
+
+}
+
+.loggedIn-user-icon{
+/* background-color: rgb(220,220,220); */
+height: 5rem;
+width: 5rem;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+  border: 1px solid rgb(150, 150, 150);
+  background-color: white;
+
+}
+
+.login-user-icon{
+  width: 4rem;
+  height: 4rem;
+  color:rgb(50, 50, 50);
+}
+
+.loggedIn-user-name{
+
+
+display: flex;
+justify-content: flex-start;
+align-items: center;
+font-size: 1.4rem;
+
+  
+}
+
+  .loggedIn-text{
+
+    
+    font-size: 1.1rem;
+
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+
+    color:rgb(50, 50, 50);
+
+    width: 100%;
+    
+
+
+
+  
+  }
+
+  .exp-btn{
+    position: absolute;
+    border: 1px solid red;
+    top:2rem;
+    z-index:99;
+  }
+
+  .loggedIn-user{
+
+    font-size: 1.3rem;
+    font-family: 'Roboto';
+  
+        font-weight: 400;
+    color:rgb(18, 18, 18);
+    
+  }
+
+  .loggedIn-links-div{
+    width: 100%;
+    border: 0px solid black;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+  }
+
+  #logIn-link{
+    
+    border: 0px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    
+  }
+
+  #logIn-link-icon-div{
+    width: 3rem;
+    height: 3rem;
+    border: 0px solid green;
+  }
+
+  #logIn-Icon{
+  width: 3rem;
+  filter: grayscale(40%);
+  }
+
+    #logIn-Icon:hover{
+
+  filter: grayscale(0%);
+  cursor: pointer;
+  }
+
+  #logIn-link-name{
+
+  }
+
+  .signOutBtn{
+       width:100%;
+    height: 2.5rem;
+ border: 1px solid black;
+background-color: rgb(45, 45, 45);
+    color:rgb(255, 255, 255);
+    font: 500;
+    font-size: 1.2rem;
+    font-family: 'Poppins';
+    transition: all  .3s ease;
+ 
+
+  }
+
+  .signOutBtn:hover{
+
+color:rgb(255, 255, 255);
+border: 0px solid black;
+cursor: pointer;
+    background-color: rgb(20, 20, 20);
+  }
+
+  .success-btn-div{
+       width: 100%;
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  #loggedIn-link{
+   width: 45%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Poppins';
+    transition: all .3s ease;
+  }
+
+  .about-btn{
+ border: 1px solid black;
+       /*   background-color: rgb(80, 220, 220); */
+    color:rgb(30,30,30);
+  }
+
+  .shop-btn{
+        background-color: rgb(80, 220, 220);
+    border: none;
+
+    color:rgb(255, 255, 255);
+  }
+
+@media(max-width:1200px){
+
+      .loggedIn-user-name,  .loggedIn-user,.signOutBtn{
+      font-size: 1.2rem;
+    }
+     .loggedIn-text{
+      font-size: 1.1rem;
+     }
+
+  }
+
+ @media(max-width:900px){
+          .loggedIn-user-icon{
+      height: 4rem;
+width: 4rem;
+     }
+     .login-user-icon{
+  width: 2rem;
+  height: 2rem;
+}
+ }
+
+ @media(max-width:400px){
+    
+     .loggedIn-user{
+      font-size: 1rem;
+     }
+
+    .loggedIn-text{
+ 
+    font-size: 1rem;
+
+    }
+
+     #loggedIn-link{
+             width: 48%;
+      font-size: .9rem;
+      font-weight: 400;
+     }
+     .signOutBtn{
+  
+      font-size: 1rem;
+     }
+
+ }

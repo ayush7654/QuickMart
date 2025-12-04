@@ -1,0 +1,79 @@
+.regIn-User{
+     font-size: 1.8rem;
+ font-family: 'Roboto Condensed';
+ font-weight: 400;
+    color:rgb(75, 75, 75);
+}
+
+.regIn-Greeting{
+ font-size: 2.2rem;
+ font-family: 'Roboto Condensed';
+ font-weight: 500;
+
+ 
+
+} 
+.regIn-Para{
+color:rgb(75, 75, 75);
+
+ font-size: 1.1rem;
+
+ font-weight: 300;
+  font-family: 'Inter';
+ font-family: 'Roboto Condensed';
+ line-height: 1.5rem;
+
+
+
+}
+
+.regIn-link{
+
+    width: 100%;
+    height: 2.5rem;
+    background-color: rgb(80, 220, 220);
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+
+@media(max-width:1000px){
+ 
+    .regIn-User{
+    font-size: 1.5rem;
+}
+.regIn-Greeting{
+    font-size: 2rem;
+}
+.regIn-Para{
+ font-size: 1rem;
+}
+.regIn-link{
+     font-weight: 400;
+}
+}
+
+
+
+   @media(max-width:400px){
+
+
+
+.regIn-User{
+    font-size: 1.5rem;
+}
+.regIn-Greeting{
+    font-size: 2rem;
+}
+.regIn-Para{
+ font-size: 1rem;
+}
+.regIn-link{
+     font-weight: 400;
+}
+   }

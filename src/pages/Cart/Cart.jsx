@@ -75,7 +75,7 @@ export default function Cart(){
         console.log('list is',cartElements.length)
    
     return(<div className="cart-page">
-      <div className="cart-page-title"><div className="cart-page-heading">YOUR CART.</div></div>
+      <div className="cart-page-title"><div className="cart-page-heading">Your Cart.</div></div>
         <div className="Cart-page-In">
 
     {cartElements.length>0 ?<div className="cart-item-list">{cartElements}</div>:
@@ -85,7 +85,7 @@ export default function Cart(){
       </div>}{/*   <img className="emptyCart-img" src='shopping-cart.gif' /> */}
 <div className="Cart-page-In-midline"></div>
   <div className={  cartElements.length < 1 && window.innerWidth < 500 ? "order-summary-empty-div":"order-summary-div"}>
-      <div className="order-summary-title">ORDER SUMMARY</div>
+      <div className="order-summary-title">Order Summary</div>
       <div className="order-list">
         {cartList.map(item=><div className="order-list-item">
           <div id='order-item'>{item.title} x {item.quantity}</div>

@@ -1,0 +1,181 @@
+ .forgot-pw{
+
+width: 100%;
+font-size: .8rem;
+border:0px solid red;
+display: flex;
+justify-content: space-between;
+align-items: center;
+  }
+
+  .remember-checkmark{
+    display: flex;
+justify-content: space-between;
+align-items: center;
+  }
+
+    .forgot-pw:hover{
+
+
+cursor: pointer;
+
+
+  }
+
+  .forgot-pw-text{
+color:blue;
+
+  }
+
+  
+  .forgot-pw-text:hover{
+color:rgb(0, 0, 0);
+text-decoration: underline;
+  }
+
+  .forgot-pw input{
+    height: 15px;
+    width:15px;
+  }
+
+  .login-Or{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+
+  .or-line{
+     width: 45%;        /* full width, adjust if needed */
+  height: 1px;        /* thickness */
+  background-color: rgb(151, 151, 151);
+    transform: scaleY(0.5);
+    
+  }
+  .or-line-text{
+   
+    z-index: 2;
+ /*    background-color: white; */
+    width: 2rem;
+
+   color:rgb(181, 181, 181);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-alts{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  }
+
+  .google-login,.apple-login{
+  width: 47%;
+
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     height: 3rem;
+     font-family: 'Inter';
+   font-weight: 500;
+  transition: all .3s ease-in-out;
+       background-color: white;
+    color:rgb(50, 50, 50);
+     border: 1px solid rgb(160, 160, 160);
+     
+     
+  }
+
+
+
+   .google-login:hover {
+
+    cursor: pointer;
+
+       background-color: #4285F4;
+    border: 1px solid #4285F4;
+    color:white;
+   }
+
+  
+
+   .apple-login:hover{
+ cursor: pointer;
+
+       background-color: #222222;
+    border: 1px solid #000000;
+    color:white;
+   }
+
+#login-alt-icon{
+
+border: 0px solid red;
+object-fit: cover;
+background-position: center;
+background-repeat: no-repeat;
+ background-size: 80% 80%; 
+background-color: white;
+width: 2.9rem;
+height: 2.9rem;
+}
+
+  .google-login-icon{
+
+
+background-image: url('QMicons/GoogleLogo.png');
+
+
+  }
+
+  .apple-login-icon{
+
+background-image: url('QMicons/AppleLogo.png');
+  }
+
+  .google-login-text,.apple-login-text{
+
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    font-size: .9rem;
+  }
+
+@media(max-width:900px){
+
+    .google-login,.apple-login{
+  height: 2.6rem;
+    width: 48%;
+ }
+ 
+
+   #login-alt-icon{
+    width: 2.5rem;
+height: 2.5rem; 
+   }
+
+ .google-login-text,.apple-login-text{
+  font-size: .8rem;
+  font-weight: 400;
+
+ }
+}
+
+@media(max-width:400px){
+     .google-login-icon{
+    width: 2.2rem;
+height: 2.2rem;
+   }
+   .apple-login-icon{
+       width: 2rem;
+height: 2.2rem; 
+   }
+  .google-login-text,.apple-login-text{
+  font-size: .7rem;
+     }
+     .forgot-pw{
+       font-size: .7rem;
+     }
+}

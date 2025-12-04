@@ -6,8 +6,8 @@ import Home from './pages/Home/Home'
 
 import Store from './pages/Store/Store'
 import Cart from './pages/Cart/Cart'
-import LoginPage from './pages/Login/LoginPage'
-import Registration from './Registration/Registration'
+import Account from './pages/Account/Account'
+import Registration from './pages/Account/Registration/Registration'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
 import SearchResults from './pages/SearchResults/SearchResults'
 import ErrorPage from './pages/ErrorPage'
@@ -38,7 +38,7 @@ function App() {
       <Route element={<Authentication/>}>
        <Route path="/cart" element={<Cart/>}/>
        </Route>
-      <Route path="/login" element={<LoginPage/>}/>
+      <Route path="/login" element={<Account/>}/>
       <Route path="/register" element={<Registration/>}/>
        <Route path="/testing" element={<Testing/>}/>
       </Route>

@@ -153,13 +153,10 @@ setSearchParams(searchParams); // update the URL
       <div style={{display:sideBartoggled?'none':'flex'}} className="storePage-overlay"></div>
 
       <div 
-    /*   style={{
-        transform: hide ? "translateY(-100%)" : "translateY(0)",
-        transition: "transform 0.6s ease"
-      }} */ 
+
       className="store-page-header">
             
-             <div className="store-page-heading-div">
+        <div className="store-page-heading-div">
           {/*  <div className="allProductsBtn-div-container"><div  className="allProductsBtn-div" onClick={handleAllProducts}><ChevronLeft className="allProductsBtn"  strokeWidth={1.5} absoluteStrokeWidth /></div></div>  */}  
 
          
@@ -194,7 +191,7 @@ setSearchParams(searchParams); // update the URL
 
    
         <div className="sticky-category-container">
-          { currentCategory && <div className="current-category-container-div">
+          { typeFilter && <div className="current-category-container-div">
         <div className="current-category-container">
        <div className="current-category-div">
       <div className="remove-category-div">
@@ -207,7 +204,7 @@ setSearchParams(searchParams); // update the URL
    />
       </div>
       <div className="current-category">{
-  currentCategory
+  typeFilter
   .split('-')
   .map(word => word.charAt(0).toUpperCase() + word.slice(1))
   .join(' ')}</div>
@@ -230,7 +227,7 @@ setSearchParams(searchParams); // update the URL
           />
         </aside>
 
-        <main className="store-content">
+        <main className="store-content"  style={{ marginTop:window.innerWidth < 400 && typeFilter? "2rem": "0"}}>
           <div className="productList-wrapper" style={{ position: "relative" }}>
             <div className="productList">{productElements}</div>
           </div>

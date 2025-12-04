@@ -21,22 +21,90 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(76, 205, 37);
-}
-.div1 {
-  position: relative;   /* NOT sticky here */
-  height: 2000px;       /* just for demo */
-  background: #eee;
+
 }
 
-.div2 {
-  position: sticky;
-  top: 200px;           /* distance from viewport top */
-  background: lightblue;
-  padding: 20px;
+.tracking-div{
+  width: 40%;
+  height: 10rem;
+  border: 1px solid black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.div3 {
-  height: 800px;
-  background: pink;
+.tracking-path-div{
+ position: relative;
+  width: 100%;
+  height: .5rem;
+ 
+   
+    background-color: rgb(255, 255, 255);
 }
+
+
+#tracking-path{
+
+}
+
+.empty-path{
+ 
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+    /* Fill amount here */
+ 
+   /* Fill color */
+ background-color: rgb(210, 210, 210);
+
+}
+
+.filled-path{
+    position: absolute;
+  left: 0;
+  top: 0;
+width: 33%;
+height: 100%;
+background-color: rgb(80,220,220);
+
+}
+
+.stage-div-container{
+   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stage-div{
+  height: 1.5rem;
+  width: 1.5rem;
+ position: relative;
+  border-radius: 50%;
+  border: 0px solid rgb(150,150,150);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.stage-name{
+  position: absolute;
+  bottom: -1.5rem;
+  font-family: 'Roboto Condensed';
+  font-size: .9rem;
+}
+
+
+
+
+
+
