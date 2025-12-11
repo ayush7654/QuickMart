@@ -16,7 +16,7 @@ export default function SiteLogo() {
  <img src='./whiteStork5.png'  className="StorkLogo-new"/>
 
 
-  <div className='site-tagline'>Elevate your World with</div>
+ {/*  <div className='site-tagline'>Elevate your World with</div> */}
   <div className="new-site-logo-name" >SAARAS</div> 
   </div>
   )

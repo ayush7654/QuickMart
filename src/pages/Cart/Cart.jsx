@@ -1,11 +1,14 @@
 import {useEffect, useState} from "react";
-
+import TrackingOrder from "./TrackingOrder/TrackingOrder";
 import { useFirebase } from "../../components/FirebaseContext/Firebase";
 import './Cart.css'
 
 export default function Cart(){
     const[cartList,setcartList]= useState([])
     const [totalCost, setTotalCost] = useState(0); // Initialize total cost state
+
+  
+
 
     const firebase= useFirebase()
     const userInfo = firebase.isLoggedIn?firebase.currentUser.email:null
@@ -75,7 +78,7 @@ export default function Cart(){
         console.log('list is',cartElements.length)
    
     return(<div className="cart-page">
-      <div className="cart-page-title"><div className="cart-page-heading">Your Cart.</div></div>
+      <div className="cart-page-title"><div className="cart-page-heading">YOUR CART</div></div>
         <div className="Cart-page-In">
 
     {cartElements.length>0 ?<div className="cart-item-list">{cartElements}</div>:
@@ -86,9 +89,13 @@ export default function Cart(){
 <div className="Cart-page-In-midline"></div>
   <div className={  cartElements.length < 1 && window.innerWidth < 500 ? "order-summary-empty-div":"order-summary-div"}>
       <div className="order-summary-title">Order Summary</div>
+      <div className="order-list-section">
+        <div className="order-section-item">Item x Quantity</div>
+        <div className="order-section-price">Price</div>
+      </div>
       <div className="order-list">
         {cartList.map(item=><div className="order-list-item">
-          <div id='order-item'>{item.title} x {item.quantity}</div>
+          <div id='order-item'>{item.title} <span className="order-list-quantity">&nbsp;x &nbsp; {item.quantity}</span></div>
           <div id='order-item'>${item.price * item.quantity}</div>
    
         </div>)}
@@ -100,6 +107,9 @@ export default function Cart(){
     </div>
     
     </div>
+
+     <TrackingOrder/>
+   
     </div>
 
     

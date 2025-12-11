@@ -41,16 +41,82 @@ background-color: black;
  .header-home{
     position: relative;
     border:0px solid white;
-    height:7.5rem;
+    height:10rem;
    width: 90%;
-    border-bottom:0px solid white ;
+    color:white;
     display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: end; 
+    flex-direction: column;
+    justify-content: center;
+   
  background-color: transparent;
      z-index: 999;
     overflow: hidden;
+
+  }
+
+  .header-home-upper{
+    border: 0px solid red;
+    height: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .site-logo-div{
+    border: 0px solid purple;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+  }
+
+  .site-logo{
+    width: 100px;
+    margin-bottom: -.5rem;
+  }
+
+  .header-home-lower{
+    border: 0px solid green;
+      height:50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+       position: relative;
+  }
+
+  .site-name-div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color:#eee;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid pink;
+    
+  }
+
+  .site-tagline{
+   font-family: "Jost";
+   font-size: .9rem;
+   letter-spacing: .2rem;
+
+  }
+
+  .site-name{
+  font-size: 1.8rem;
+  font-size: 2.3rem;
+    letter-spacing: .8rem;
+    z-index: 999;
+font-weight: 400;
+/* margin-bottom: -0.2rem;
+margin-top: 0rem; */
+font-family: "Prosto One", sans-serif;
+margin-bottom: -.2rem;
 
   }
 
@@ -87,7 +153,7 @@ background-color: black;
   
     width:100%;
 
-height: 60%;
+height: 100%;
 
  font-weight: 400;
 font-family: 'Montserrat', sans-serif; 

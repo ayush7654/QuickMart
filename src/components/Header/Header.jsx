@@ -117,7 +117,7 @@ useEffect(() => {
   let ticking = false;
   // Define the distance from the top in pixels after which the header
   // changes its base class (e.g., from transparent to solid background)
-  const headerClassChangeThreshold = 500; // You can adjust this value as needed
+  const headerClassChangeThreshold = 10; // You can adjust this value as needed
 
   // NEW: Define the scroll distance from the top *before* the header
   // starts to consider hiding (becoming idle).
@@ -178,10 +178,10 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
      style={{
       // Dynamic transition based on 'isIdle' state
       transition: isIdle
-        ? 'transform 0.5s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
-        : 'transform 0.6s ease-out,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
-      transform: isIdle /*  && window.innerWidth>700  */
-  ? 'translateY(-100%)'
+        ? 'transform 0.4s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
+        : 'transform 0.5s ease-out,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
+      transform:!isAtTop  /*  && window.innerWidth>700  */
+  ? 'translateY(-50%)'
   : 'translateY(0%)',
      
       pointerEvents: isIdle ? 'none' : 'auto'
@@ -189,37 +189,51 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
 
 
         <div className="header-home">
-    {/*    <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon-div-Ph"><Search className="searchIcon"    style={{ strokeWidth: '1.5'}} /></span>  */}
-    
-    <div className="home-menu-ph" onClick={()=>sideBarToggle(true)}>
-    <RxHamburgerMenu className="menu-icon" />
-    </div>
+          <div className="header-home-upper">
+            <div className="site-logo-div"> 
+              <img src='./whiteStork5.png'  className="site-logo"/>
+            </div>          
+          </div>
+          <div className="header-home-lower">
+               
+                   {/*   <div className="home-menu-ph" onClick={()=>sideBarToggle(true)}>
+                    <RxHamburgerMenu className="menu-icon" />
+                        </div> */}
 
 
-  <div className="page-nav-container">
+                 <div className="page-nav-container">
     
-     <div className="page-nav">  
+                   <div className="page-nav">  
   
-    {navElements 
-  ? navElements.map(item => (
-      <NavLink to={item.path} className={({isActive})=>isActive?'page-nav-item-selected':'page-nav-item'}  key={item.path}>
-        {item.title}
-      </NavLink>
-    ))
-  : <div>loading</div>
-}
-    </div>
-     </div> 
+                     {navElements ? navElements.map(item => (
+                      <NavLink to={item.path} 
+                      className={({isActive})=>isActive?'page-nav-item-selected':'page-nav-item'}
+                      key={item.path}>
+                        {item.title}
+                        </NavLink>
+                         ))
+                        : <div>loading</div>
+                     }
+                  </div>
+                </div> 
 
-<SiteLogo/>
+                <div className="site-name-div">
+                  <div className="site-tagline">Elevate your World with</div>
+                  <div className="site-name">SAARAS</div>
+                </div>
+
+                  {/* <SiteLogo/> */}
 
 
      
-         <div className='Home-Nav-Container'>
-          <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon-div"><Search className="searchIcon"    style={{ strokeWidth: '1.5'}} /></span>
-            {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div   id="header-icon">{element.logo}</div>   </NavLink>)}
-         </div>
+               <div className='Home-Nav-Container'>
+                 <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon-div"><Search className="searchIcon"    style={{ strokeWidth: '1.5'}} /></span>
+                  {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div   id="header-icon">{element.logo}</div>   </NavLink>)}
+               </div>
 
+          </div>
+    
+ 
          
         
     </div>

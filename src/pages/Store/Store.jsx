@@ -162,10 +162,10 @@ setSearchParams(searchParams); // update the URL
          
           
       <div className="store-page-heading">
-          The Vault  
+         THE VAULT
       </div>
 
-<div className="store-filter-button-div-container" onClick={() => sideBarsetToggled(false)}>
+          <div className="store-filter-button-div-container" onClick={() => sideBarsetToggled(false)}>
 
   <div className="category-name-div" >
   {window.innerWidth>400?'Shop by Category':'Categories'}
@@ -174,6 +174,8 @@ setSearchParams(searchParams); // update the URL
   <SlidersHorizontal className="category-icon" strokeWidth={1.5} />
      </div>
   </div>
+
+
 
  
     
@@ -191,10 +193,22 @@ setSearchParams(searchParams); // update the URL
 
    
         <div className="sticky-category-container">
-          { typeFilter && <div className="current-category-container-div">
+         <div className="current-category-container-div">
         <div className="current-category-container">
+          <div>Category /</div>
        <div className="current-category-div">
-      <div className="remove-category-div">
+       
+      <div className="current-category">
+        
+        {
+        typeFilter?
+     
+  typeFilter
+  .split('-')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' '):'All'}</div>
+
+     { typeFilter && <div className="remove-category-div">
          <X strokeWidth={1.5} 
       className="remove-category" 
       onClick={(e) => {
@@ -202,15 +216,22 @@ setSearchParams(searchParams); // update the URL
       handleCancelFilter();  // ✔ your original function
     }}
    />
-      </div>
-      <div className="current-category">{
-  typeFilter
-  .split('-')
-  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-  .join(' ')}</div>
+      </div>}
+
+
     </div>
+
+{/*     <div className="store-filter-button-div-container" onClick={() => sideBarsetToggled(false)}>
+
+  <div className="category-name-div" >
+  {window.innerWidth>400?'Shop by Category':'Categories'}
   </div>
-  </div>}
+  <div className="store-filter-button-div" >
+  <SlidersHorizontal className="category-icon" strokeWidth={1.5} />
+     </div>
+  </div> */}
+  </div>
+  </div>
         </div>
 
        

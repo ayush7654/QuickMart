@@ -7,7 +7,7 @@ export default function NewArrivals() {
   return (
       <div id='home-product-div' className="newArrivals-home-Products-div">
         
-                  <div className='home-heading'>New Arrivals</div>
+                  <div className='home-heading'>NEW ARRIVALS</div>
                   <div className="home-Products-container" >
 
 

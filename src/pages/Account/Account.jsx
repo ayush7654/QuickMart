@@ -25,11 +25,11 @@ export default function Account(){
     <div className="account-Page">
        <div className="accountPageImg"></div>
          <div className="account-container">
-          <div className="account-page-title">Account</div>
+          <div className="account-page-title">ACCOUNT</div>
 
           <div className="account-page-switch">
-           <div id='switch-section' className={sectionSwitch?'account-section-selected':'account-section'} /* style={{borderBottom:sectionSwitch?'2px solid black':'2px solid transparent'}} */ onClick={()=>setSectionSwitch(true)} /* className="login-section" */>LOG IN</div>
-           <div id='switch-section'  className={sectionSwitch?'account-section':'account-section-selected'} onClick={()=>setSectionSwitch(false)} >REGISTER</div>
+           <div id='switch-section' className={sectionSwitch?'account-section-selected':'account-section'} /* style={{borderBottom:sectionSwitch?'2px solid black':'2px solid transparent'}} */ onClick={()=>setSectionSwitch(true)} /* className="login-section" */>Log In</div>
+           <div id='switch-section'  className={sectionSwitch?'account-section':'account-section-selected'} onClick={()=>setSectionSwitch(false)} >Register</div>
          </div>
    {sectionSwitch?<Login/>:<Registration/>}
         </div>
