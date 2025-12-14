@@ -3,7 +3,7 @@ import './TrackingOrder.css'
 
 export default function TrackingOrder() {
 
-      const [currentStage, setCurrentStage] = useState(1); // 0–3
+      const [currentStage, setCurrentStage] = useState(3); // 0–3
     
       const stages = [
         {stageName:'Ordered', stageGif:'orderedGif.gif',message:'Your order has been successfully placed.'},
@@ -18,7 +18,7 @@ export default function TrackingOrder() {
 
   return (
     <div className='order-tracking-div'>
-        <div className='tracking-head-div'>Previous Order Status : </div>
+        <div className='tracking-head-div'>Previous Order Status</div>
         <div  className='order-tracking-content'>
               <div className='trackGif-container'>
                 <div className='trackGif-div'>
@@ -36,11 +36,21 @@ export default function TrackingOrder() {
   }></div>
     </div>
     <div className='stage-div-container'>
-      {stages.map((item,i)=><div className='stage-div' style={{backgroundColor:currentStage>=i?'rgb(80,220,220)':'rgb(210, 210, 210)'}}>
+      {stages.map((item,i)=><div className='stage-div'
+       style={{backgroundColor:currentStage>=i?'rgb(80,220,220)':'rgb(210, 210, 210)'}}>
         <div className='stage-name' 
              style={{color:currentStage>=i?'rgba(0, 0, 0, 1)':'rgb(190, 190, 190)'}}>
             {item.stageName}
         </div>
+
+         <div className='stage-name-Ph' 
+             style={{color:currentStage>=i?'rgba(0, 0, 0, 1)':'rgb(190, 190, 190)',
+                fontSize:currentStage===i? '1.2rem':'1rem'
+             }}>
+                     
+            {item.stageName}
+        </div>
+
          {/* {currentStage===i && <div className='trackGif-div'>
             <img className='trackGif' src={`SiteGif/${item.stageGif}`}/>
         </div>} */}

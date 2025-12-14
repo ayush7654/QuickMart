@@ -4,6 +4,7 @@ import {
   useRef,
   useLayoutEffect,
   useMemo,
+ useContext
 } from "react";
 import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
 import { getItems, getFilteredItems } from "../../api";
@@ -18,6 +19,7 @@ import { X } from 'lucide-react';
 import { FiFilter } from "react-icons/fi";
 import { SlidersHorizontal } from "lucide-react";
 import MenuCancel from "../../components/MenuCancel/MenuCancel";
+import { WinScrollContext } from "../../components/WinScrollProvider/WinScrollProvider";
 import "./Store.css";
 
 export default function Store() {
@@ -34,6 +36,8 @@ export default function Store() {
   const [currentCategory, setcurrentCategory] = useState("");
   const [categoryName, setCategoryName] = useState("");
   const [sideBartoggled, sideBarsetToggled] = useState(true);
+
+  const { isIdle, isAtTop } = useContext(WinScrollContext);
 
   const typeFilter = searchParams.get("type");
 
@@ -146,6 +150,8 @@ setSearchParams(searchParams); // update the URL
     }
   }, [batchCount]);
 
+  console.log(isIdle)
+  
   return (
     <div className="Store-Page">
         
@@ -190,9 +196,15 @@ setSearchParams(searchParams); // update the URL
 
 
       <div className="store-layout">
-
+       
+       <div className="filter-Btn-Ph">
+          <SlidersHorizontal className="" strokeWidth={1.5} />
+       </div>
    
-        <div className="sticky-category-container">
+        <div style={{
+          transform: isIdle? 'translateY(-90%)':'translateY(0%)'
+        }} 
+        className="sticky-category-container">
          <div className="current-category-container-div">
         <div className="current-category-container">
           <div>Category /</div>

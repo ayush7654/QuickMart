@@ -5,8 +5,12 @@ import { useFirebase } from "../../components/FirebaseContext/Firebase";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { HiOutlineUser, HiUser } from 'react-icons/hi';
 import { HiShoppingCart,HiOutlineShoppingCart } from 'react-icons/hi';
-
+import MenuCancel from "../MenuCancel/MenuCancel";
 import { MdLogin } from 'react-icons/md';
+import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { HiShoppingBag } from "react-icons/hi2";
+
+
 import SiteLogo from "./SiteLogo/SiteLogo";
 
 import './Header.css'
@@ -49,9 +53,9 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
           path: "/cart",
           logo:
             pagelocation.pathname === "/cart" ? (
-              <HiShoppingCart id="fd-header-logo" />
+              <HiShoppingBag id="fd-header-logo" />
             ) : (
-              <HiOutlineShoppingCart
+              <HiOutlineShoppingBag
                 id="ol-header-logo"
                 style={{ strokeWidth: "1.5" }}
               />
@@ -184,7 +188,7 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
   ? 'translateY(-50%)'
   : 'translateY(0%)',
      
-      pointerEvents: isIdle ? 'none' : 'auto'
+     
     }}>
 
 
@@ -196,9 +200,10 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
           </div>
           <div className="header-home-lower">
                
-                   {/*   <div className="home-menu-ph" onClick={()=>sideBarToggle(true)}>
-                    <RxHamburgerMenu className="menu-icon" />
-                        </div> */}
+                    <div className="home-menu-ph" onClick={()=>sideBarToggle(true)}>
+                   {/*  <RxHamburgerMenu className="menu-icon" /> */}
+                   <MenuCancel/>
+                        </div>
 
 
                  <div className="page-nav-container">
@@ -218,7 +223,7 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
                 </div> 
 
                 <div className="site-name-div">
-                  <div className="site-tagline">Elevate your World with</div>
+                  <div className="site-logo-tagline">Elevate your World with</div>
                   <div className="site-name">SAARAS</div>
                 </div>
 

@@ -47,6 +47,7 @@ letter-spacing: .2rem;
     color:rgb(40,40,40);
     border-bottom: 1px solid rgb(200, 200, 200);
     background-color: white;
+    
 
   }
 
@@ -308,6 +309,10 @@ border: 1px solid rgb(220, 220, 220);
 
 @media(max-width:650px){
 
+
+    .home-heading{
+      text-align: center;
+    }
 
  .home-Products-container{
       flex-direction: column;

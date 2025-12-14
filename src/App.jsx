@@ -14,6 +14,7 @@ import ErrorPage from './pages/ErrorPage'
 import Layout from './components/Layout'
 import Authentication from './components/Authentication'
 import { FirebaseProvider } from './components/FirebaseContext/Firebase'
+import WinScrollProvider from "./components/WinScrollProvider/WinScrollProvider";
 import LoadingBird from './pages/LoadingPage';
 import Testing from './components/Testing/Testing';
 
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <WinScrollProvider>
     <FirebaseProvider >
     <ScrollToTop />
     <Routes>
@@ -47,6 +49,7 @@ function App() {
     </Routes>
   
     </FirebaseProvider>
+    </WinScrollProvider>
     </BrowserRouter>
   )
 }
