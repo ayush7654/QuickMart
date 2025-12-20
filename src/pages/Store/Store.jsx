@@ -20,6 +20,7 @@ import { FiFilter } from "react-icons/fi";
 import { SlidersHorizontal } from "lucide-react";
 import MenuCancel from "../../components/MenuCancel/MenuCancel";
 import { WinScrollContext } from "../../components/WinScrollProvider/WinScrollProvider";
+import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
 import "./Store.css";
 
 export default function Store() {
@@ -36,8 +37,10 @@ export default function Store() {
   const [currentCategory, setcurrentCategory] = useState("");
   const [categoryName, setCategoryName] = useState("");
   const [sideBartoggled, sideBarsetToggled] = useState(true);
-
+  const [currentSort,setCurrentSort] = useState('Price');
   const { isIdle, isAtTop } = useContext(WinScrollContext);
+
+  const SortArray= [{name:'Price'},{name:'Rating'},{name:'In Stock'},{name:'Fast Delivery'}];
 
   const typeFilter = searchParams.get("type");
 
@@ -168,17 +171,25 @@ setSearchParams(searchParams); // update the URL
          
           
       <div className="store-page-heading">
-         THE VAULT
+         <div 
+         
+         className="store-all-link"
+         onClick={(e) => { e.stopPropagation();   // ⛔ stops parent onClick
+                         handleCancelFilter();  // ✔ your original function
+      }}>The Vault</div>
+         /
+         <div>{ typeFilter?typeFilter.split('-')
+               .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+               .join(' '):'All'} 
+          </div>
       </div>
 
           <div className="store-filter-button-div-container" onClick={() => sideBarsetToggled(false)}>
 
-  <div className="category-name-div" >
-  {window.innerWidth>400?'Shop by Category':'Categories'}
-  </div>
-  <div className="store-filter-button-div" >
+   <div className="filter-button-head" > CATEGORIES</div>
+  <div className="store-filter-button-div">
   <SlidersHorizontal className="category-icon" strokeWidth={1.5} />
-     </div>
+  </div>
   </div>
 
 
@@ -197,18 +208,33 @@ setSearchParams(searchParams); // update the URL
 
       <div className="store-layout">
        
-       <div className="filter-Btn-Ph">
+       <div className="filter-Btn-Ph"onClick={() => sideBarsetToggled(false)}>
           <SlidersHorizontal className="" strokeWidth={1.5} />
        </div>
    
         <div style={{
-          transform: isIdle? 'translateY(-90%)':'translateY(0%)'
+          transform: window.innerWidth>500 && isIdle? 'translateY(-90%)':'translateY(0%)'
         }} 
-        className="sticky-category-container">
-         <div className="current-category-container-div">
-        <div className="current-category-container">
-          <div>Category /</div>
-       <div className="current-category-div">
+        className="sticky-sort-container">
+         <div className="current-sort-container-div">
+        <div className="current-sort-container">
+          <div className="sort-div-head">Sort By:</div>
+          <div className="sort-div-wrapper sorty-div">
+
+          {SortArray.map((item) => {
+               return  <AnimatedUnderline from="center" > <div onClick={()=>setCurrentSort(item.name)} id={currentSort===item.name?'sort-div-selected':'sort-div'}>{item.name}</div></AnimatedUnderline>;
+                              })}
+
+            
+
+          </div>
+         
+
+
+
+
+
+       <div className="current-sort-div">
        
       <div className="current-category">
         
@@ -218,9 +244,9 @@ setSearchParams(searchParams); // update the URL
   typeFilter
   .split('-')
   .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-  .join(' '):'All'}</div>
+  .join(' '):'Product Catalog'}</div>
 
-     { typeFilter && <div className="remove-category-div">
+    { typeFilter && <div className="remove-category-div">
          <X strokeWidth={1.5} 
       className="remove-category" 
       onClick={(e) => {
@@ -228,7 +254,7 @@ setSearchParams(searchParams); // update the URL
       handleCancelFilter();  // ✔ your original function
     }}
    />
-      </div>}
+      </div>} 
 
 
     </div>
@@ -260,7 +286,7 @@ setSearchParams(searchParams); // update the URL
           />
         </aside>
 
-        <main className="store-content"  style={{ marginTop:window.innerWidth < 400 && typeFilter? "2rem": "0"}}>
+        <main className="store-content"  /* style={{ marginTop:window.innerWidth < 400 && typeFilter? "2rem": "0"}} */>
           <div className="productList-wrapper" style={{ position: "relative" }}>
             <div className="productList">{productElements}</div>
           </div>

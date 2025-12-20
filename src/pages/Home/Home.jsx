@@ -29,7 +29,7 @@ const isFirstRender = useRef(true); // track initial mount
       <div className="Home-scroll-content">
       
      
-             <Categories/>
+             
           
               <NewArrivals/>
                       <AppleComponent/>
@@ -42,6 +42,8 @@ const isFirstRender = useRef(true); // track initial mount
     
          <DiscountProducts/>
 {/*       <FeaturedCategories/> */}
+
+<Categories/>
 
    
      

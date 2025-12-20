@@ -6,7 +6,7 @@
   width: 100%;
   background-color: white;
   position: relative;
-  margin-top: 0rem;
+  margin-top: 3rem;
 }
 
 .product-page-inner {
@@ -103,7 +103,7 @@ border: 0px solid black;
 
   .pd-backButton{
     position: fixed;
-    top: 10rem;
+    top: 12rem;
    
     z-index: 999;
     width: 3rem;
@@ -167,6 +167,10 @@ border: 0px solid black;
        padding-left: 1.5rem;
   padding-right: 1.5rem;
 
+    }
+
+    .info-box{
+      margin-top: 0rem;
     }
 
     

@@ -58,8 +58,8 @@ text-decoration: underline;
     z-index: 2;
  /*    background-color: white; */
     width: 2rem;
-
-   color:rgb(75,75,75);;
+ font-size: .8rem;
+   color:rgb(75,75,75);
     display: flex;
     justify-content: center;
     align-items: center;

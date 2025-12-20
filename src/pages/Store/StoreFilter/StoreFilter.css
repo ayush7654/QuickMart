@@ -35,36 +35,43 @@
     position: sticky;
     top: 0;
       width: 100%;
-  height: 7rem;
+  height: 10rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: end;
+  justify-content: center;
   font-size: 1.2rem;
   font-weight:400;
 background-color: rgb(255, 255, 255);
-font-family: 'Roboto';
+font-family: 'Jost';
 
-   font-family: "Questrial", sans-serif;
   color: rgb(0, 0, 0);
   border-bottom: 1px solid rgb(225, 225, 225);
-padding-left: 1rem;
-padding-right: 2rem;
 
+letter-spacing: .1rem;
 z-index: 2;
 
  
+  }
+
+  .Store-filter-head-content{
+    width: 90%;
+      display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
   }
 
   .Store-filter-cancel{
      display: flex;
   align-items: center;
   justify-content: center;
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     font-weight: 300;
     border: 0px solid rgb(171, 171, 171);
     border-radius: 50%;
     color:rgb(50, 50, 50);
+    transition: all .3s ease;
   
  
   }
@@ -72,6 +79,7 @@ z-index: 2;
     color:rgb(20, 20, 20);
       border: 0px solid rgb(31, 31, 31);
       background-color: rgb(231, 231, 231);
+      cursor: pointer;
   }
 .store-categories{
   width: 100%;
@@ -90,50 +98,87 @@ align-items:center;
   display: flex;
   align-items: center;
   justify-content: center;
+border: 0px solid green;
+height: 4.5rem;
 }
 .store-category{
   width: 100%;
-
+ height: 100%;
   display: flex;
   align-items: center;
-  font-size: 1rem;
-  font-weight: 300;
-/*   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
- font-family: 'Poppins', sans-serif;
- font-family: 'Inter';
- font-family: 'Josefin Sans';
- font-family: 'Roboto';
+  
+  font-size: 1.1rem;
+  font-weight: 400;
+
    font-family: 'Jost';
-  color: rgb(50, 50, 50);
-  border-bottom: 1px solid rgb(235, 235, 235);
-background-color: rgb(255, 255, 255);
-  padding:1.5rem;
+   
+  color: rgb(10,10,10);
+  border-bottom: 0px solid rgb(235, 235, 235);
+
+ padding-left:2rem; 
+  letter-spacing: .05rem;
+  transition: all .3s ease;
 
 
 
+}
+.store-category-text {
+  position: relative;
+  display: inline-block;
+}
+
+/* underline */
+.store-category-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: rgb(10,10,10);
+  transition: width 0.5s ease;
+}
+
+/* hover trigger */
+.store-category:hover .store-category-text::after {
+  width: 100%;
 }
 
 .store-category:hover{
 /*   background-color: #ffffff; */
   color: rgb(10, 10, 10);
-  background-color: rgb(235, 235, 235);
+/* background-color: rgb(240,240,240); */
   cursor: pointer;
+  font-size: 1.15rem;
+  letter-spacing: .1rem;
+/*    text-decoration: underline;
+ text-decoration-color: rgb(15, 15, 15);
+   text-underline-offset: 15px;
+   */
 }
 
 .store-category-selected{
-    width: 100%;
-
+    width: 85%;
+  height: 100%;
   display: flex;
   align-items: center;
-  font-size: 1.1rem;
+  justify-content: center;
+  font-size: 1.5rem;
   font-weight: 400;
  font-family: 'Poppins', sans-serif;
   font-family: 'Roboto';
-  color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgb(225, 225, 225);
-/*  box-shadow: -2px 2px 2px rgb(200, 200, 200);  */
- background-color: rgb(50,210,210);
-   padding:1.5rem;
+  font-family: 'Jost';
+   padding-left:1.5rem; 
+   color: rgb(10, 10, 10);
+  /*  background-color: rgb(240,240,240); */
+  border-bottom: 2px solid rgb(8, 8, 8);
+/*  box-shadow: -2px 2px 2px rgb(200, 200, 200);  */ 
+  /*  background-color: rgb(80,220,220);   */
+ letter-spacing: .1rem;
+/*  text-decoration: underline;
+ text-decoration-color: rgb(15, 15, 15);
+   text-underline-offset: 10px; */
+ 
 
 }
 
@@ -145,6 +190,10 @@ background-color: rgb(255, 255, 255);
 
 @media(max-width:700px){
 
+   .Store-filter-head-div{
+    height: 8rem;
+  }
+
   .Store-filter-head-div{
 
     font-size: 1.5rem;
@@ -155,7 +204,9 @@ background-color: rgb(255, 255, 255);
   }
 
   .store-category-selected{
-    font-size: 1rem;
+   justify-content: start;
+   padding-left: .5rem;
+    
   }
 
 }
@@ -164,6 +215,7 @@ background-color: rgb(255, 255, 255);
 
 @media(max-width:400px){
 
+ 
   
 }
 /*

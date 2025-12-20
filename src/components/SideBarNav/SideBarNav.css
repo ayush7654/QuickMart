@@ -25,12 +25,12 @@
 
 .sideBar-cancel-div{
     position: absolute;
-    right: 1rem;
-    top:1.5rem;
+    right: .5rem;
+    top:2.5rem;
     border-radius:50%;
     border: 0px solid red;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,6 +56,7 @@ background-color:rgb(230, 230, 230);
 .sideBarNav-head{
     font-size: 1.6rem;
     font-family: "Prosto One", sans-serif;
+   
     letter-spacing: .2rem;
     color:rgb(50,50,50);
    
@@ -73,6 +74,7 @@ background-color:rgb(230, 230, 230);
     align-items: start;
     width: 90%;
     gap:.5rem;
+    
     
    
 }
@@ -109,13 +111,14 @@ background-color:rgb(230, 230, 230);
 font-family: "Questrial", sans-serif;
    font-weight: 400;
    font-size: 1.5rem;
+    font-family: 'Jost';
 }
 
 .sideBar-userId{
      font-size:1rem; 
      font-family: 'Jost';
-     font-weight: 300;
-     color:rgb(80, 80, 80);
+     font-weight: 400;
+     color:rgb(15, 15, 15);
      border: 0px solid red;
      font-size: .85rem;
      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

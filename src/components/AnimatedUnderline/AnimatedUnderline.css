@@ -1,0 +1,36 @@
+.animated-underline {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* underline base */
+.animated-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: calc(-1 * var(--underline-offset));
+  width: 100%;
+  height: var(--underline-thickness);
+  background-color: var(--underline-color);
+  transform: scaleX(0);
+  transition: transform var(--underline-duration) ease;
+}
+
+/* hover */
+.animated-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* direction control */
+.from-left::after {
+  transform-origin: left;
+}
+
+.from-center::after {
+  transform-origin: center;
+}
+
+.from-right::after {
+  transform-origin: right;
+}

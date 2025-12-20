@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import './Categories.css'
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+
+
+
 
 
 
@@ -14,19 +18,19 @@ export default function Categories() {
         {id:1,img:'CategoriesImg/FC-Shades2.jpg',name:'Shades',capName:'SHADES',path1:'',path2:''},
      
       {id:2,img:'CategoriesImg/FC-Clothing5.jpg',name:'Clothing',capName:'CLOTHING',path1:'',path2:''},
-       {id:3,img:'CategoriesImg/FC-Electronics4.jpg',name:'Technology',capName:'TECHNOLOGY',path1:'',path2:''},
+       {id:3,img:'CategoriesImg/FC-Electronics4.jpg',name:'Tech',capName:'TECH',path1:'',path2:''},
         {id:4,img:'CategoriesImg/FC-Skincare2.jpg',name:'Skincare',capName:'SKINCARE',path1:'',path2:''},
         
-    {id:5,img:'CategoriesImg/FC-Essentials2.webp',name:'Essentials',capName:'ESSENTIALS',path1:'',path2:''},
-         {id:6,img:'CategoriesImg/FC-Footwear3.jpg',name:'Footwear',capName:'FOOTWEAR',path1:'',path2:''},
-      {id:7,img:'CategoriesImg/FC-HomeDecor2.webp',name:'Decor',capName:'DECOR',path1:'',path2:''},
+    {id:5,img:'CategoriesImg/FC-Essentials3.avif',name:'Essentials',capName:'ESSENTIALS',path1:'',path2:''},
+         {id:6,img:'CategoriesImg/FC-Footwear.jpg',name:'Footwear',capName:'FOOTWEAR',path1:'',path2:''},
+      {id:7,img:'CategoriesImg/FC-HomeDecor3.jpg',name:'Decor',capName:'DECOR',path1:'',path2:''},
         
-     {id:8,img:'CategoriesImg/FC-Sports2.jpg',name:'Sports',capName:'SPORTS',path1:'',path2:''},
+     {id:8,img:'CategoriesImg/FC-Sports3.jpg',name:'Sports',capName:'SPORTS',path1:'',path2:''},
       
    
     
      
-     {id:9,img:'CategoriesImg/FC-Watches3.jpg',name:'Watches',capName:'WATCHES',path1:'',path2:''},
+     {id:9,img:'CategoriesImg/FC-Watches4.jpg',name:'Watches',capName:'WATCHES',path1:'',path2:''},
 
    
   ]// placeholders for div cards
@@ -104,18 +108,18 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
     // Visual effects based on distance
     if (offset === 0) {
       filter = "blur(0px) grayscale(0%)";
-      fontSize= window.innerWidth>1000?'3.5rem':window.innerWidth>450?'3.5rem':'2.5rem';
+      fontSize= window.innerWidth>1000?'3rem':window.innerWidth>450?'3rem':'2.5rem';
       bottom =window.innerWidth>1000?'-8rem':window.innerWidth>450?'-8rem':'-6rem';;
       rotate = 'rotateX(20deg)';
      
     } else if (Math.abs(offset) === 1) {
-      filter = "blur(0.5px) grayscale(80%)";
+      filter = "blur(0.5px) grayscale(40%)";
       fontSize= window.innerWidth>1000?'2.5rem':'2rem';
       bottom =window.innerWidth>1000?'-7rem':'-5rem';
       rotate = 'rotateX(30deg)';
 
     } else if (Math.abs(offset) === 2) {
-      filter = "blur(1px) grayscale(100%)";
+      filter = "blur(1px) grayscale(80%)";
       fontSize= '2rem'
       bottom ='-8rem';
       rotate = 'rotateX(20deg)';
@@ -147,10 +151,13 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
 
     </div>
 
-<div className="carousel-controls">
-<button onClick={prev}>‹</button>
-<button onClick={next}>›</button>
+ <div className="carousel-controls">
+<button onClick={prev}><FiChevronLeft /></button>
+<div className="explore-btn">Explore</div>
+<button onClick={next}>< FiChevronRight/></button>
 </div>
+ 
+
 </div>
 
 

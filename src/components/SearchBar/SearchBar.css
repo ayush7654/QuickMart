@@ -27,6 +27,7 @@ top: -.1rem;
 font-family: 'Inter';
 
 
+
 }
 
 .searchBar-cancel-div{
@@ -40,7 +41,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 border-radius:50% ;
-color: rgb(130, 130, 130);
+color: rgb(75, 75, 75);
 border: 0px solid rgb(130, 130, 130);
 
 
@@ -78,7 +79,7 @@ height: 1.8rem;
     position: relative;
     align-items: center;
     user-select: none;
-     border-bottom:1px solid rgb(210, 210, 210);
+     border-bottom:1px solid rgb(185, 185, 185);
     
   }
   .header-search-box{
@@ -186,16 +187,16 @@ color:rgb(170, 170, 170);
 }
 
 .category-suggestion{
-    border: 2px solid transparent;
+    border: 1px solid transparent;
   padding:.4rem;
-background-color: rgb(195, 195, 195);
+
   color:rgb(0, 0, 0);
   border-radius: 5px;
   font-weight: 400;
    font-size: .85rem;
   transition: all .3s ease;
-    background-color: rgb(140, 140, 140);
-    background-color:rgb(225, 225, 225);
+
+    background-color:rgb(230, 230, 230);
 }
 
 .category-suggestion:hover{
@@ -205,7 +206,7 @@ background-color: rgb(195, 195, 195);
 background-color: rgb(255, 255, 255);
   color:rgb(20, 20, 20);
       border: 1px solid rgb(20, 20, 20);
-  border: 2px solid  rgb(80,230,230);
+  border: 1px solid  rgb(80,230,230);
 }
 
 
@@ -246,6 +247,7 @@ background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     padding: 1rem;
     font-size: 1rem;
+   
    
   }
 
@@ -315,6 +317,7 @@ background-color: rgb(255, 255, 255);
     scrollbar-width: none;
     align-items: center;
     margin: 1rem;
+    border: 0px solid red;
 }
 
 .category-suggestion{

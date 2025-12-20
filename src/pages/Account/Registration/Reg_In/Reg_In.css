@@ -1,8 +1,18 @@
+
+
+.regIn-greeting-div{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .regIn-User{
      font-size: 1.8rem;
  font-family: 'Roboto Condensed';
  font-weight: 400;
     color:rgb(75, 75, 75);
+    margin-top: 2rem;
+    
 }
 
 .regIn-Greeting{

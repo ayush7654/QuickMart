@@ -74,12 +74,15 @@ export default function StoreFilter({ currentCategory, typeFilter, handleClickFi
     >
 
 <div className='Store-filter-head-div'>
-  <span>Select Category</span>
+  <div className='Store-filter-head-content'>
+      <span>SELECT CATEGORY</span>
   <span className='Store-filter-cancel'>
 
     <X size={24} strokeWidth={1.5} onClick={sideBartoggled} />
 
   </span>
+  </div>
+
   
 </div>
       
@@ -94,7 +97,9 @@ export default function StoreFilter({ currentCategory, typeFilter, handleClickFi
            className='store-category-div'
               key={index}
             >
-              <span    className={item.slug === typeFilter ? "store-category-selected" : "store-category"}>{item.name}</span>
+              <span className={item.slug === typeFilter ? "store-category-selected" : "store-category"}>
+                <span className="store-category-text">{item.name}</span>
+                </span>
             </div>
           )}
         </div>

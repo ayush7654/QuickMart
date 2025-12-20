@@ -13,9 +13,9 @@ flex-direction: column;
 
 overflow-x: hidden;
 border: 0px solid yellow; 
-background-image: url('./flamingos_bw.jpg');
+/* background-image: url('./QM-BG-HP.jpg');
 background-position: bottom;
-background-size: cover;
+background-size: cover; */
 
 
 }
@@ -57,7 +57,13 @@ background-size: cover;
 .wall{
 
       width: 100%;
-  height:55vh;
+  height:57vh;
+  
+ background-color: #ffffff;
+  background-image:
+    linear-gradient(rgb(220,220,220) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(220,220,220) 1px, transparent 1px);
+  background-size: 70px 70px;
 
 
   
@@ -66,9 +72,13 @@ background-size: cover;
 .floor {
 
   width: 100%;
-  height:48vh;
+  height:40vh;
 
-
+ background-color: #ffffff;
+  background-image:
+    linear-gradient(rgb(220,220,220) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(220,220,220) 1px, transparent 1px);
+  background-size: 70px 70px;
 ;
 
 
@@ -79,7 +89,7 @@ background-size: cover;
 
   /* styling */
   border-top: 1px solid rgba(255,255,255,0.1);
-  box-shadow: inset 0 20px 60px rgba(85, 85, 85, 0.3);
+  box-shadow: inset 0 20px 40px rgba(85, 85, 85, 0.3);
 }
 
 
@@ -112,6 +122,7 @@ background-size: cover;
   height: 420px;
     width: 250px;
   height: 375px;
+
   background-color: #f9f9f9;
   border: 1px solid #aaa;
   border-radius: 10px;
@@ -139,7 +150,7 @@ background-size: cover;
 .carousel-card::after {
   content: "";
   position: absolute;
-  bottom: -3em;
+  bottom: -4em;
   left: 50%;
   transform: translateX(-50%) scaleX(2);
   width: 100%;
@@ -175,10 +186,19 @@ background-size: cover;
     font-family: "Questrial", sans-serif;
    /*  font-family: 'Josefin Sans'; */
    font-family: "Prosto One", sans-serif;
-    letter-spacing: .3rem;
+   font-family: 'Jost';
+   border: 0px solid red;
+   padding: .5rem;
+   width: 18rem;
+   text-align: center;
+   /* background-color: rgb(240,240,240); */
+
+
+
+    letter-spacing: .2rem;
   
-    font-weight:100;
-    color:rgb(255, 255, 255);
+    font-weight:300;
+    color:rgb(70, 70, 70);
  
     text-shadow: 0px 0px 0px rgb(170, 170, 170);
 }
@@ -194,13 +214,13 @@ background-size: cover;
 
 .carousel-controls {
     position: absolute;
-    bottom: 27%;
+    bottom: 17%;
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
-  z-index: 999;
+
+  z-index: 1;
    border: 0px solid red;
-   width: 50%;
+   width: 30rem;
 }
 
 .carousel-controls button {
@@ -208,21 +228,48 @@ background-size: cover;
   height: 45px;
   border: none;
   border-radius: 50%;
-  background-color: #ddd;
+  background-color: white;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 2.5rem;
   transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+     border: 0px solid red;
 }
 
 .carousel-controls button:hover {
-  background-color: #bbb;
+  background-color: rgb(230,230,230);
+}
+
+.explore-btn{
+
+  width: 18rem;
+  border: 1px solid black;
+  text-align: center;
+  height:3rem;
+  background-color: rgb(30,30,30);
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Jost';
+  font-size: 1.1rem;
+  letter-spacing: .05rem;
+  transition: all .3s ease;
+}
+
+.explore-btn:hover{
+  letter-spacing: .1rem;
+  cursor: pointer;
+  z-index: 99;
 }
 
 
 @media(max-width:1350px){
    .carousel-controls {
   
-   width: 60%;
+  
 } 
 }
 
@@ -235,7 +282,7 @@ background-size: cover;
 
    .carousel-controls {
   
-   width: 80%;
+
 } 
 }
 
@@ -266,6 +313,10 @@ background-size: cover;
 
 .floor{
     height:35vh;
+}
+
+.explore-btn{
+   bottom: 25%;
 }
 
 

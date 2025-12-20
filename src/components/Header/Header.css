@@ -68,12 +68,13 @@ background-color: black;
     display: flex;
     justify-content: center;
     align-items: end;
+    transition: all .6s ease;
 
   }
 
   .site-logo{
-    width: 100px;
-    margin-bottom: -.5rem;
+    width: 110px;
+    margin-bottom: -.6rem;
   }
 
   .header-home-lower{
@@ -188,7 +189,7 @@ font-family: 'Montserrat', sans-serif;
    }
 
     .sticky-header-TopMounted .page-nav-item{
-      color:rgb(225, 225, 225);
+      color:rgb(239, 239, 239);
     }
 
    .page-nav-item-selected{
@@ -218,7 +219,7 @@ font-family: 'Montserrat', sans-serif;
    }
 
 .sticky-header-ScrollUp .page-nav-item{
-      color:rgb(170, 170, 170);
+      color:rgb(210, 210, 210);
       height: 75%;
     }
 
@@ -615,16 +616,16 @@ font-size: 1.5rem;
  }
 
  .header-home{
-  height: 6.8rem;
+  /* height: 6.8rem; */
  }
 
    .site-logo{
-    width: 70px;
+    width: 85px;
   }
 
   .site-logo-tagline{
  
-   font-size: .7rem;
+   font-size: .6rem;
    letter-spacing: .1rem;
 
   }

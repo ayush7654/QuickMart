@@ -71,7 +71,8 @@ export default function ProductInfo({product}) {
   return (
      <div  className="product-info-pd">
           
-           
+          <div className='product-info-content'>
+                
         <div className="product-title-div" >
           <div className='product-brandname-div' >
             <div className="pd-brandName">
@@ -102,7 +103,11 @@ export default function ProductInfo({product}) {
             <div className='pd-colorpick-head' id='pd-subHead'>Color /&nbsp; <div id='pd-subInfo'> {pdColor}</div></div>
           <div className="pd-colorpick">
 
-            {pdColorArr.map(item=> <div onClick={()=>switchColor(item.colorName)} className={item.colorName==pdColor?"pd-color-div-selected":"pd-color-div"}><div id="pd-color" style={{backgroundColor:item.color}}></div></div>)}
+            {pdColorArr.map(item=> 
+            <div onClick={()=>switchColor(item.colorName)}
+             className="pd-color-div">
+                <div id={item.colorName==pdColor?"pd-color-selected":"pd-color"} style={{backgroundColor:item.color}}></div>
+            </div>)}
 
           </div>
          {/*    <div  id='pd-subHead'>Color  <span className='pd-subInfo'>{pdColor}</span></div> */}
@@ -148,6 +153,8 @@ export default function ProductInfo({product}) {
          
           
         </div>
+       
+          </div>
        
         
      

@@ -18,7 +18,7 @@
     .accountPageImg{
 
    height: 100%;
-   width: 55%;
+   width: 60%;
 
    overflow: hidden;
    background-image: url('LoginImg/Login-Img.jpg');
@@ -33,7 +33,7 @@
   .account-container{
    
    height: 100%;
-    width: 45%;
+    width: 40%;
   border-top: 0px solid rgb(200,200,200);
    border-bottom: 1px solid rgb(200,200,200);
     display: flex;
@@ -55,13 +55,13 @@ font-weight: 400;
    margin-bottom: 0rem;
   color:rgb(50,50,50);
   margin-top: 3.5rem;
-padding: 1rem;
+    padding: 1rem;
   font-family:'Jost';
     border: 0px solid blue;
     width: 100%;
     text-align: center;
     letter-spacing: .1rem;
-
+  
   }
 
 
@@ -73,6 +73,8 @@ padding: 1rem;
   height: 3rem;
  
   font-family: 'Poppins'; 
+  font-family: 'Jost';
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  
   letter-spacing: .05rem;
      border: 0px solid blue;
@@ -143,23 +145,28 @@ padding: 1rem;
     width: 100%;
 border: 0px solid black;
     display: flex;
-    align-items: center;
+    align-items: start;
   justify-content: center;
+  }
+
+  .account-loggedIn-div{
+  border: 0px solid red;
   }
 
 
   #user-Input-box-div{
     display: flex;
     flex-direction: column;
-    height: 90%;
-    width: 65%;
+    /* height: 90%; */
+    width: 70%;
     gap:1.6rem;
-   
- position: relative;
+    position: relative;
     align-items: center;
    justify-content:start;
      border: 0px solid red;
-   
+     margin-top: 2rem;
+      
+
   }
 
   #user-Input-box{
@@ -168,12 +175,12 @@ border: 0px solid black;
    width: 100%;
     gap:2rem;
     border: 0px solid red;
-    padding:1.8rem;
+     padding: 1.8rem; 
     background-color: rgb(245,245,245);
   }
 
   #account-input-div{
-            width: 100%;
+     width: 100%;
     display: flex;
     flex-direction: column;
  
@@ -202,7 +209,7 @@ border: 0px solid black;
     color:rgba(41, 41, 41, 0.92);
     font-size: .9rem;
     padding-left:0px;
-    margin-top: 1rem;
+    margin-top: .5rem;
     
 
     
@@ -257,14 +264,15 @@ cursor: pointer;
     flex-direction: column;
  position: relative;
     align-items: start;
-    justify-content:start;
+    justify-content:space-between;
 font-family: 'Roboto Condensed';
-   
-    height:80%;
+  
+ height:70%; 
     width: 60%;
  color:rgb(49, 49, 49);
   border: 0px solid black;
-    gap:2.5rem;
+    gap:2rem;
+    margin-top: 1rem;
 }
 
   
@@ -369,6 +377,7 @@ font-size: 2rem;
           @media(max-width:400px){
 
         .account-page-title{
+          display: none;
 font-size: 1.5rem;
 margin-top: 1rem;
  
@@ -383,6 +392,7 @@ margin-top: 1rem;
  }
  .account-page-switch{
   font-weight: 400;
+  margin-top: 2rem;
  }                                 
    input::placeholder{
     color:rgb(160, 160, 160);

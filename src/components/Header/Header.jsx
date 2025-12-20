@@ -194,7 +194,7 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
 
         <div className="header-home">
           <div className="header-home-upper">
-            <div className="site-logo-div"> 
+            <div className="site-logo-div" style={{scale:isAtTop?'1':'.5' , opacity:isAtTop?'1':'.4'}}> 
               <img src='./whiteStork5.png'  className="site-logo"/>
             </div>          
           </div>
