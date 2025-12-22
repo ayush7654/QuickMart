@@ -21,6 +21,7 @@ import { SlidersHorizontal } from "lucide-react";
 import MenuCancel from "../../components/MenuCancel/MenuCancel";
 import { WinScrollContext } from "../../components/WinScrollProvider/WinScrollProvider";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
+import { IoCloseCircle } from "react-icons/io5";
 import "./Store.css";
 
 export default function Store() {
@@ -40,7 +41,7 @@ export default function Store() {
   const [currentSort,setCurrentSort] = useState('Price');
   const { isIdle, isAtTop } = useContext(WinScrollContext);
 
-  const SortArray= [{name:'Price'},{name:'Rating'},{name:'In Stock'},{name:'Fast Delivery'}];
+  const SortArray= [{name:'Price'},{name:'Rating'},{name:'In Stock'},{name:'Delivery'}];
 
   const typeFilter = searchParams.get("type");
 
@@ -134,7 +135,9 @@ setSearchParams(searchParams); // update the URL
         images={product.images}
         title={product.title}
         price={product.price}
+        rating={product.rating}
         path={location.search}
+        
       />
     ));
   }, [FinalItems, location.search]);
@@ -218,11 +221,20 @@ setSearchParams(searchParams); // update the URL
         className="sticky-sort-container">
          <div className="current-sort-container-div">
         <div className="current-sort-container">
-          <div className="sort-div-head">Sort By:</div>
+          <div className="sort-div-head" >Sort By:</div>
           <div className="sort-div-wrapper sorty-div">
 
           {SortArray.map((item) => {
-               return  <AnimatedUnderline from="center" > <div onClick={()=>setCurrentSort(item.name)} id={currentSort===item.name?'sort-div-selected':'sort-div'}>{item.name}</div></AnimatedUnderline>;
+               return  <AnimatedUnderline from="center" >
+                 <div onClick={()=>setCurrentSort(item.name)} 
+                      id={currentSort===item.name?'sort-div-selected':'sort-div'}>
+                        {item.name}
+                     { currentSort===item.name &&  <IoCloseCircle   onClick={(e) => {
+    e.stopPropagation();
+    setCurrentSort("");
+  }} className="close-sort-div"  />}
+                 </div>
+                       </AnimatedUnderline>;
                               })}
 
             

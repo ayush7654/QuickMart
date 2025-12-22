@@ -4,14 +4,14 @@ import { BsBookmark, BsBookmarkFill } from 'react-icons/bs';
 import { FiBookmark } from 'react-icons/fi'
  import { FaHeart } from 'react-icons/fa';    // Filled heart
 import { FiHeart } from 'react-icons/fi';   
+import { MdStar, MdStarBorder, MdStarHalf } from 'react-icons/md';
 
 
 
 
 
 
-
-function ProductCard({ classname, id, images, title, price, path,discount }) {
+function ProductCard({ classname, id, images, title, price, path,discount, rating=0 }) {
 
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -53,7 +53,7 @@ function ProductCard({ classname, id, images, title, price, path,discount }) {
   /> 
 
    <div style={{display:'none'}} className="bookmark-logo" onClick={handleClickBM}>
-       {productBookmarked ?      <BsBookmarkFill className='bookmark-fill'  /> :     <BsBookmark className='bookmark-outline' strokeWidth={.1}  /> } 
+       {productBookmarked ?<BsBookmarkFill className='bookmark-fill'  />: <BsBookmark className='bookmark-outline' strokeWidth={.1}  /> } 
 
       </div>
 
@@ -77,9 +77,15 @@ function ProductCard({ classname, id, images, title, price, path,discount }) {
         <div className='productCard-detail' >
          <div className="Store-Product-title-div"> <div className="Store-Product-title">{title}</div></div>
           <div className="price-div"> 
-                        <span className="product-price">${price}</span>
-                          <span  className="discount-product-price">${(price*((100-discount)/100)).toFixed(2)}</span>        
-
+              <div className="product-price">${price}</div>
+              <div  className="discount-product-price">${(price*((100-discount)/100)).toFixed(2)}</div>        
+               <div className='productCard-rating-div'>
+                 <span>{rating.toFixed(1)}</span>
+                     <div className="productCard-star-wrapper">
+                      <MdStarBorder className="productCard-star empty" />
+                      <MdStar className="productCard-star filled" />
+                      </div>
+                </div>
 
           </div>
         </div>

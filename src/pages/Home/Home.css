@@ -157,6 +157,10 @@ font-size:1.2rem;
 
   }
 
+  .Home .productCard-rating-div{
+  display: none;
+  }
+
 
   .Home .productcard-links-div{
 

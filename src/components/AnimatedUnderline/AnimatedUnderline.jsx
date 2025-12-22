@@ -6,7 +6,7 @@ export default function AnimatedUnderline({
   from = "left", // "left" | "center" | "right"
   thickness = 1.5,
   offset = 0,
-  color = "rgb(100,100,100)",
+  color = "rgb(50,50,50)",
   duration = 0.5,
 }) {
   return (
