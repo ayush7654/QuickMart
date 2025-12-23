@@ -9,11 +9,13 @@ import MenuCancel from "../MenuCancel/MenuCancel";
 import { MdLogin } from 'react-icons/md';
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { HiShoppingBag } from "react-icons/hi2";
+import AnimatedUnderline from "../AnimatedUnderline/AnimatedUnderline";
 
 
 import SiteLogo from "./SiteLogo/SiteLogo";
 
 import './Header.css'
+import { head } from "lodash";
 export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBarToggle}){
 
   
@@ -29,24 +31,20 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
     const pagelocation= useLocation();
 
   const elements = [
-  ...(window.innerWidth > 700
-    ? [
+  
         {
     title: "Login",
     path: "/login",
-    logo: firebase.isLoggedIn ? (
+    logo:  
       pagelocation.pathname === "/login" ? (
         <HiUser id="fd-header-logo" />
       ) : (
         <HiOutlineUser id="ol-header-logo" style={{ strokeWidth: "1.5" }} />
       )
-    ) : (
-      <MdLogin id="fd-header-logo" />
-    ),
+    
   }
       ,
-      ]
-    : []),
+   
 
       {
           title: "Cart",
@@ -211,11 +209,23 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
                    <div className="page-nav">  
   
                      {navElements ? navElements.map(item => (
-                      <NavLink to={item.path} 
-                      className={({isActive})=>isActive?'page-nav-item-selected':'page-nav-item'}
-                      key={item.path}>
-                        {item.title}
-                        </NavLink>
+                 <AnimatedUnderline from="center" color= {pagelocation.pathname==='/'?'white':"rgb(0,250,250)"} thickness={pagelocation.pathname==='/'?3.5:4}>
+                         <NavLink
+        key={item.path}
+        to={item.path}
+        className={({ isActive }) =>
+          `${isActive ? 'page-nav-item-selected' : 'page-nav-item'} ${
+            item.title === 'ABOUT' ? 'desktop-only' : ''
+          }`
+        }
+      >
+        {item.title}
+      </NavLink>
+                 </AnimatedUnderline>
+                    
+                      
+                  
+                      
                          ))
                         : <div>loading</div>
                      }
@@ -232,8 +242,25 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
 
      
                <div className='Home-Nav-Container'>
-                 <span onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} className="searchIcon-div"><Search className="searchIcon"    style={{ strokeWidth: '1.5'}} /></span>
-                  {elements.map((element,index)=> <NavLink   key={index} className={({isActive})=>isActive?'navlink-selected':'navlink'} to={element.path}><div   id="header-icon">{element.logo}</div>   </NavLink>)}
+
+                 <div
+                 onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} 
+                 className="searchIcon-div"><Search className="searchIcon"    
+                 style={{ strokeWidth: '1.5'}} />
+                 </div>
+
+                  {elements.map((element,index)=> 
+                  <NavLink key={index} 
+                   className={({ isActive }) =>
+          `${isActive ? 'navlink-selected' : 'navlink'} ${
+            element.title === 'Login' ? 'desktop-only' : ''
+          }`
+        }
+                 
+                   to={element.path}>
+                    <div id="header-icon">{element.logo}</div>  
+                  </NavLink>)}
+
                </div>
 
           </div>
