@@ -5,6 +5,7 @@ import { FiBookmark } from 'react-icons/fi'
  import { FaHeart } from 'react-icons/fa';    // Filled heart
 import { FiHeart } from 'react-icons/fi';   
 import { MdStar, MdStarBorder, MdStarHalf } from 'react-icons/md';
+import AnimatedUnderline from './AnimatedUnderline/AnimatedUnderline';
 
 
 
@@ -91,8 +92,8 @@ function ProductCard({ classname, id, images, title, price, path,discount, ratin
         </div>
       </Link>
       <div className='productcard-links-div'>
-        <div id='pd-link' className='pd-AddtoCart' >Add to Cart</div>
-        <div  id='pd-link' className='pd-BuyNow'>Buy Now</div>
+     <AnimatedUnderline from='center'color='rgb(80,230,230)' duration={.4} thickness={2} ><div id='pd-link' className='pd-AddtoCart'>Add to Cart</div></AnimatedUnderline> 
+       <AnimatedUnderline from='center'color='rgb(80,230,230)' duration={.4} thickness={2} ><div  id='pd-link' className='pd-BuyNow'>Buy Now</div></AnimatedUnderline> 
 
       </div>
     </div>

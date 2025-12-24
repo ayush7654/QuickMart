@@ -1,11 +1,17 @@
+/* REAL wrapper, but layout-safe */
 .animated-underline {
   position: relative;
-  display: inline-block;
-  cursor: pointer;
- 
+  display: inline-flex;  
+
 }
 
-/* underline base */
+/* ensure child fills wrapper */
+.animated-underline > * {
+  width: 100%;
+  height: 100%;
+}
+
+/* underline */
 .animated-underline::after {
   content: "";
   position: absolute;
@@ -16,6 +22,7 @@
   background-color: var(--underline-color);
   transform: scaleX(0);
   transition: transform var(--underline-duration) ease;
+  pointer-events: none;
 }
 
 /* hover */
@@ -23,7 +30,7 @@
   transform: scaleX(1);
 }
 
-/* direction control */
+/* direction */
 .from-left::after {
   transform-origin: left;
 }

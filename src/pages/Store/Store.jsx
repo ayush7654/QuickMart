@@ -38,7 +38,7 @@ export default function Store() {
   const [currentCategory, setcurrentCategory] = useState("");
   const [categoryName, setCategoryName] = useState("");
   const [sideBartoggled, sideBarsetToggled] = useState(true);
-  const [currentSort,setCurrentSort] = useState('Price');
+  const [currentSort,setCurrentSort] = useState('');
   const { isIdle, isAtTop } = useContext(WinScrollContext);
 
   const SortArray= [{name:'Price'},{name:'Rating'},{name:'In Stock'},{name:'Delivery'}];

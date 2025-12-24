@@ -209,7 +209,7 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
                    <div className="page-nav">  
   
                      {navElements ? navElements.map(item => (
-                 <AnimatedUnderline from="center" color= {pagelocation.pathname==='/'?'white':"rgb(0,250,250)"} thickness={pagelocation.pathname==='/'?3.5:4}>
+                 <AnimatedUnderline  from="center" color= {pagelocation.pathname==='/'?'white':"rgb(0,250,250)"} thickness={pagelocation.pathname==='/'?3.5:4}>
                          <NavLink
         key={item.path}
         to={item.path}

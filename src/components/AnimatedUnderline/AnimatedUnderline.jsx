@@ -3,7 +3,7 @@ import "./AnimatedUnderline.css";
 
 export default function AnimatedUnderline({
   children,
-  from = "left", // "left" | "center" | "right"
+  from = "left",
   thickness = 1.5,
   offset = 0,
   color = "rgb(50,50,50)",

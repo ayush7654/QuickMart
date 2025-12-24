@@ -56,8 +56,16 @@ background-color: white;
 #trend-div{
     width: 50%;
  height: 100%;
-     background-color: blue;
+
      position: relative;
+}
+
+#trend-div:hover{
+  cursor: pointer;
+}
+
+#trend-div:hover .animated-underline::after {
+  transform: scaleX(1);
 }
 
 .trend-div1{
@@ -77,26 +85,36 @@ background-color: white;
 
 #trend-name-div{
     position: absolute;
-    bottom: .5rem;
+ 
     border: 0px solid red;
     width: 95%;
-   left: 50%;
-  transform: translateX(-50%);
+ 
+
   display: flex;
-  justify-content: space-between;
+  justify-content:center;
   align-items: center;
+    top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   
 }
 
 #trend-name{
-    font-size: 1.8rem;
-    font-family: 'Montserrat';
+    font-size: 2.5rem;
+       font-family: 'Montserrat';
     color:white;
     font-weight: 600;
+    letter-spacing: .05rem;
+    transition: all .3s ease;
+  
+}
+#trend-div:hover #trend-name{
+  font-size: 2rem;
 }
 
 
 #trend-button{
+ 
    background-color: transparent;
    border: 1px solid white;
    height: 2.5rem;

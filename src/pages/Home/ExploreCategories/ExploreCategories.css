@@ -60,7 +60,7 @@
 
   #explore-card-div{
     width:100%;
-   height: 80vh;
+   height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,7 +107,7 @@ font-weight: 600;
 
 }
 
-#explore-card-div:hover #explore-card-name-div{
+ #explore-card-name-div:hover{
   line-height: 4.5rem;
 }
 

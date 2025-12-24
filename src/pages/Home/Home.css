@@ -74,7 +74,7 @@ letter-spacing: .2rem;
     position: relative;
     justify-content: center;
     align-content: center;
-
+border: 0px solid red;
     color:black; 
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   }
@@ -143,6 +143,7 @@ padding-top:1rem;
 padding-bottom:1rem;
  color: rgb(50, 50, 50); 
 font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Jost';
 font-weight: 400;
 font-size:1.2rem;
  
@@ -168,11 +169,12 @@ display: flex;
     justify-content: space-between;
     height: 2.5rem;
     position: absolute;
-    width: 100%;
+   width: 100%;
     z-index: 0;
       transform: translateY(4rem);
   transition: all .7s ease;
   opacity: 0;
+  border: 0px solid red;
 
   }
 
@@ -182,47 +184,60 @@ transform: translateY(0);
    }
 
   .Home #pd-link{
-    width: 45%;
+    width: 8rem;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-             font-family: 'Poppins';
+     font-family: 'Poppins';
+     font-size: 'Jost';             
+    white-space: nowrap;
    transition: all .25s ease;
    font-weight: 400;
+   color:rgb(100,100,100);
+   border-bottom: 1px solid rgb(100,100,100);
+   letter-spacing: .02rem;
   }
 
+    .Home #pd-link:hover{
+      cursor: pointer;
+      color:black;
+      letter-spacing: .05rem;
+
+    }
+
   .pd-AddtoCart{
-background-color: #ffffff;
-  border: 1px solid rgb(30,30,30);
-    color:rgb(0, 0, 0);
+/* background-color: #ffffff;
+  border-bottom: 1px solid rgb(30,30,30);
+    color:rgb(0, 0, 0); */
 
    
   }
 
     .pd-AddtoCart:hover{
 
-
+/* 
     cursor: pointer;
  background-color: rgb(30,30,30);
   
     color:white;
-border: 1px solid rgb(220, 220, 220);
+border: 1px solid rgb(220, 220, 220); */
   }
 
   
   .pd-BuyNow{
  
-
-    background-color: rgb(90, 220, 220)  ; /* rgb(94,211,205) */
-    color: white;
+/*  border-bottom: 1px solid rgb(100,100,100) ;
+    background-color: rgba(90, 220, 220, 0)  ; 
+    color: rgb(100,100,100); */
   }
 
     .pd-BuyNow:hover{
  
 
-    background-color:rgb(50, 210, 210) ; /* rgb(94,211,205) */
-    color: white;
+   /*  background-color:rgba(50, 210, 210, 0) ;
+    color: rgb(0, 0, 0);
+    letter-spacing: .05rem; */
   }
 
 

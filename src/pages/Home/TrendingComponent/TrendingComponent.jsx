@@ -1,4 +1,5 @@
 import React from 'react'
+import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline'
 import './TrendingComponent.css'
 export default function TrendingComponent() {
   return (
@@ -9,15 +10,15 @@ export default function TrendingComponent() {
     <div id='trend-div' className="trend-div1">
       <div className="trend-img1-div"></div>
     <div id="trend-name-div">
-        <div id='trend-name'>MEN</div>
-        <div id='trend-button'>Shop Now</div>
+        <AnimatedUnderline color='white' from='center' offset={5} thickness={2}><div id='trend-name'>MEN</div></AnimatedUnderline>  
+        {/* <div id='trend-button'>Shop Now</div> */}
        </div> 
     </div>
     <div id='trend-div' className="trend-div2">
       <div className="trend-img2-div"></div>
     <div id="trend-name-div">
-        <div id='trend-name'>WOMEN</div>
-        <div id='trend-button'>Shop Now</div>
+      <AnimatedUnderline color='white' from='center' offset={5} thickness={2}><div id='trend-name'>WOMEN</div></AnimatedUnderline>  
+      {/*   <div id='trend-button'>Shop Now</div> */}
        </div> 
     </div>
 
