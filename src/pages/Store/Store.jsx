@@ -22,6 +22,7 @@ import MenuCancel from "../../components/MenuCancel/MenuCancel";
 import { WinScrollContext } from "../../components/WinScrollProvider/WinScrollProvider";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
 import { IoCloseCircle } from "react-icons/io5";
+import { FaCaretUp, FaCaretDown } from "react-icons/fa";
 import StoreHeader from "./StoreHeader/StoreHeader";
 import "./Store.css";
 
@@ -40,6 +41,7 @@ export default function Store() {
   const [categoryName, setCategoryName] = useState("");
   const [sideBartoggled, sideBarsetToggled] = useState(true);
   const [currentSort,setCurrentSort] = useState(null);
+  const [sortOrder,setSortOrder] = useState('asc')
   const { isIdle, isAtTop } = useContext(WinScrollContext);
 
 
@@ -83,12 +85,16 @@ export default function Store() {
 setSearchParams(searchParams); // update the URL
   }
 
+  const toggleSortOrder=()=>{
+    setSortOrder(prev=>(prev==='asc'?'desc':'asc'))
+  }
+
   const loadBatch = async (batchNumber) => {
     if (ProductCache.current[batchNumber]) return;
 
     try {
       setIsLoading(true);
-      const data = await getItems(batchNumber, 12, currentSort?.sort || "");
+      const data = await getItems(batchNumber, 12, currentSort?.sort || "",sortOrder);
       ProductCache.current[batchNumber] = data;
       setIsLoading(false);
       setRenderTrigger((prev) => prev + 1); // ✅ triggers re-render
@@ -102,7 +108,7 @@ useEffect(() => {
   ProductCache.current = {};      // clear old pages
   setRenderTrigger(prev => prev + 1);
   loadBatch(1);                   // reload from first page
-}, [currentSort]);
+}, [currentSort,sortOrder]);
 
   useEffect(() => {
     async function loadFilteredItem() {
@@ -118,7 +124,7 @@ useEffect(() => {
     if (typeFilter && FilteredItemsCache.current[typeFilter] === undefined) {
       loadFilteredItem();
     }
-  }, [currentCategory, typeFilter,currentSort]);
+  }, [currentCategory, typeFilter,currentSort,sortOrder]);
 
   const DisplayedItems = useMemo(() => {
     return Object.values(ProductCache.current).flat();
@@ -130,19 +136,33 @@ useEffect(() => {
       : DisplayedItems;
   }, [typeFilter, DisplayedItems]);
 
-const productElements = useMemo(() =>
-   { if (!FinalItems)  return null; 
+const productElements = useMemo(() => {
+  if (!FinalItems) return null;
 
-    return FinalItems.map((product) =>
-       ( <ProductCard classname="store-product"
-         key={product.id} 
-         id={product.id} 
-         images={product.images} 
-         title={product.title}
-          price={product.price} 
-          rating={product.rating} 
-          path={location.search} /> ));
-         }, [FinalItems, location.search]);
+  let items = [...FinalItems]; // copy to avoid mutation
+
+if (typeFilter && currentSort?.sort) {
+  items.sort((a, b) => {
+    return sortOrder === "asc"
+      ? a[currentSort.sort] - b[currentSort.sort]
+      : b[currentSort.sort] - a[currentSort.sort];
+  });
+}
+
+  return items.map((product) => (
+    <ProductCard
+      classname="store-product"
+      key={product.id}
+      id={product.id}
+      images={product.images}
+      title={product.title}
+      price={product.price}
+      rating={product.rating}
+      path={location.search}
+    />
+  ));
+}, [FinalItems, currentSort, typeFilter, location.search, sortOrder]);
+
 
 
   const handleLoadMore = async (e) => {
@@ -207,10 +227,19 @@ const productElements = useMemo(() =>
   }}
         id={isSelected ? "sort-div-selected" : "sort-div"}
       >
+
+
+        {isSelected && (
+         <div className="sort-order-div" id='sort-button' onClick={toggleSortOrder}>
+          {sortOrder==='asc'?<FaCaretUp/>:<FaCaretDown/>}
+         </div>
+        )}
+
         {item.name}
 
         {isSelected && (
-          <IoCloseCircle
+          <IoCloseCircle 
+          id='sort-button'
             onClick={(e) => {
               e.stopPropagation();
               setCurrentSort(null);

@@ -179,25 +179,43 @@ white-space: nowrap;
  justify-content: center;
  align-items: center;
    text-transform: uppercase;
-   letter-spacing: .1rem;
+   letter-spacing: .08rem;
    font-size: .85rem;
    transition: all .3s ease;
     border-bottom: 2px solid black;
 
 }
 
-.close-sort-div{
-  font-size: 1rem;
+#sort-button{
+
   position: absolute;
-  right: 0rem;
-    color:rgb(120,120,120);
+  
+    color:rgb(190, 190, 190);
     cursor: pointer;
+}
+
+#sort-div-selected:hover #sort-button{
+  color:rgb(100,100,100);
+}
+
+.close-sort-div{
+    font-size: 1rem;
+right: 0rem;
  
 }
 
-#sort-div-selected:hover .close-sort-div{
-  color:rgb(20,20,20);
+
+
+.sort-order-div{
+  font-size: 1.2rem;
+
+  left: 0rem;
+  
+    display: flex;
+    align-items: center;
+
 }
+
 
 
 
