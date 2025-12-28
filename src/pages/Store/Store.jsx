@@ -22,6 +22,7 @@ import MenuCancel from "../../components/MenuCancel/MenuCancel";
 import { WinScrollContext } from "../../components/WinScrollProvider/WinScrollProvider";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
 import { IoCloseCircle } from "react-icons/io5";
+import StoreHeader from "./StoreHeader/StoreHeader";
 import "./Store.css";
 
 export default function Store() {
@@ -35,13 +36,15 @@ export default function Store() {
 
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [currentCategory, setcurrentCategory] = useState("");
+  const [currentCategory, setcurrentCategory] = useState('');
   const [categoryName, setCategoryName] = useState("");
   const [sideBartoggled, sideBarsetToggled] = useState(true);
-  const [currentSort,setCurrentSort] = useState('');
+  const [currentSort,setCurrentSort] = useState(null);
   const { isIdle, isAtTop } = useContext(WinScrollContext);
 
-  const SortArray= [{name:'Price'},{name:'Rating'},{name:'In Stock'},{name:'Delivery'}];
+
+
+  const SortArray= [{name:'Price',sort:'price'},{name:'Rating',sort:'rating'},{name:'Discount',sort:'discountPercentage'},{name:'In Stock',sort:'stock'}];
 
   const typeFilter = searchParams.get("type");
 
@@ -85,7 +88,7 @@ setSearchParams(searchParams); // update the URL
 
     try {
       setIsLoading(true);
-      const data = await getItems(batchNumber, 12);
+      const data = await getItems(batchNumber, 12, currentSort?.sort || "");
       ProductCache.current[batchNumber] = data;
       setIsLoading(false);
       setRenderTrigger((prev) => prev + 1); // ✅ triggers re-render
@@ -95,9 +98,11 @@ setSearchParams(searchParams); // update the URL
     }
   };
 
-  useEffect(() => {
-    loadBatch(1); // ✅ Load first batch on mount
-  }, []);
+useEffect(() => {
+  ProductCache.current = {};      // clear old pages
+  setRenderTrigger(prev => prev + 1);
+  loadBatch(1);                   // reload from first page
+}, [currentSort]);
 
   useEffect(() => {
     async function loadFilteredItem() {
@@ -113,7 +118,7 @@ setSearchParams(searchParams); // update the URL
     if (typeFilter && FilteredItemsCache.current[typeFilter] === undefined) {
       loadFilteredItem();
     }
-  }, [currentCategory, typeFilter]);
+  }, [currentCategory, typeFilter,currentSort]);
 
   const DisplayedItems = useMemo(() => {
     return Object.values(ProductCache.current).flat();
@@ -125,22 +130,20 @@ setSearchParams(searchParams); // update the URL
       : DisplayedItems;
   }, [typeFilter, DisplayedItems]);
 
-  const productElements = useMemo(() => {
-    if (!FinalItems) return null;
-    return FinalItems.map((product) => (
-      <ProductCard
-        classname="store-product"
-        key={product.id}
-        id={product.id}
-        images={product.images}
-        title={product.title}
-        price={product.price}
-        rating={product.rating}
-        path={location.search}
-        
-      />
-    ));
-  }, [FinalItems, location.search]);
+const productElements = useMemo(() =>
+   { if (!FinalItems)  return null; 
+
+    return FinalItems.map((product) =>
+       ( <ProductCard classname="store-product"
+         key={product.id} 
+         id={product.id} 
+         images={product.images} 
+         title={product.title}
+          price={product.price} 
+          rating={product.rating} 
+          path={location.search} /> ));
+         }, [FinalItems, location.search]);
+
 
   const handleLoadMore = async (e) => {
     e.target.blur();
@@ -156,7 +159,7 @@ setSearchParams(searchParams); // update the URL
     }
   }, [batchCount]);
 
-  console.log(isIdle)
+ console.log('current sort is ', currentSort)
   
   return (
     <div className="Store-Page">
@@ -164,49 +167,17 @@ setSearchParams(searchParams); // update the URL
 
       <div style={{display:sideBartoggled?'none':'flex'}} className="storePage-overlay"></div>
 
-      <div 
 
-      className="store-page-header">
-            
-        <div className="store-page-heading-div">
-          {/*  <div className="allProductsBtn-div-container"><div  className="allProductsBtn-div" onClick={handleAllProducts}><ChevronLeft className="allProductsBtn"  strokeWidth={1.5} absoluteStrokeWidth /></div></div>  */}  
+      <StoreHeader
+      handleCancelFilter={handleCancelFilter}
+      typeFilter={typeFilter}
+      sideBarsetToggled={sideBarsetToggled}
+      />
 
-         
-          
-      <div className="store-page-heading">
-         <div 
-         
-         className="store-all-link"
-         onClick={(e) => { e.stopPropagation();   // ⛔ stops parent onClick
-                         handleCancelFilter();  // ✔ your original function
-      }}>The Vault</div>
-         /
-         <div>{ typeFilter?typeFilter.split('-')
-               .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-               .join(' '):'All'} 
-          </div>
-      </div>
-
-          <div className="store-filter-button-div-container" onClick={() => sideBarsetToggled(false)}>
-
-   <div className="filter-button-head" > CATEGORIES</div>
-  <div className="store-filter-button-div">
-  <SlidersHorizontal className="category-icon" strokeWidth={1.5} />
-  </div>
-  </div>
-
-
-
- 
-    
-      </div>
-  
-
- 
-      </div>
+   
  
 
-{/* <span style={{fontSize:'1.5rem'}}>*create a useEffect that should set current category by param type chnage in url*</span> */} 
+
 
 
       <div className="store-layout">
@@ -225,61 +196,43 @@ setSearchParams(searchParams); // update the URL
           <div className="sort-div-wrapper sorty-div">
 
           {SortArray.map((item) => {
-               return  <AnimatedUnderline from="center" >
-                 <div onClick={()=>setCurrentSort(item.name)} 
-                      id={currentSort===item.name?'sort-div-selected':'sort-div'}>
-                        {item.name}
-                     { currentSort===item.name &&  <IoCloseCircle   onClick={(e) => {
-    e.stopPropagation();
-    setCurrentSort("");
-  }} className="close-sort-div"  />}
-                 </div>
-                       </AnimatedUnderline>;
-                              })}
+  const isSelected = currentSort?.name === item.name;
 
-            
+  return (
+    <AnimatedUnderline from="center" key={item.name}>
+      <div
+        onClick={() => {
+    if (isSelected) return;
+    setCurrentSort(item);
+  }}
+        id={isSelected ? "sort-div-selected" : "sort-div"}
+      >
+        {item.name}
+
+        {isSelected && (
+          <IoCloseCircle
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrentSort(null);
+            }}
+            className="close-sort-div"
+          />
+        )}
+      </div>
+    </AnimatedUnderline>
+  );
+})}
+
+
+
+
+                             
+
 
           </div>
          
 
-
-
-
-
-       <div className="current-sort-div">
-       
-      <div className="current-category">
-        
-        {
-        typeFilter?
-     
-  typeFilter
-  .split('-')
-  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-  .join(' '):'Product Catalog'}</div>
-
-    { typeFilter && <div className="remove-category-div">
-         <X strokeWidth={1.5} 
-      className="remove-category" 
-      onClick={(e) => {
-      e.stopPropagation();   // ⛔ stops parent onClick
-      handleCancelFilter();  // ✔ your original function
-    }}
-   />
-      </div>} 
-
-
-    </div>
-
-{/*     <div className="store-filter-button-div-container" onClick={() => sideBarsetToggled(false)}>
-
-  <div className="category-name-div" >
-  {window.innerWidth>400?'Shop by Category':'Categories'}
-  </div>
-  <div className="store-filter-button-div" >
-  <SlidersHorizontal className="category-icon" strokeWidth={1.5} />
-     </div>
-  </div> */}
+  
   </div>
   </div>
         </div>
@@ -313,6 +266,8 @@ setSearchParams(searchParams); // update the URL
               </button>
             </div>
           )}
+
+
       <StoreFooter />
     </div>
   );
