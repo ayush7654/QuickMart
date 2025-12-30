@@ -182,7 +182,7 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
       transition: isIdle
         ? 'transform 0.4s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
         : 'transform 0.5s ease-out,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
-      transform:!isAtTop  /*  && window.innerWidth>700  */
+      transform:!isAtTop || location.pathname!=='/' /*  && window.innerWidth>700  */
   ? 'translateY(-50%)'
   : 'translateY(0%)',
      

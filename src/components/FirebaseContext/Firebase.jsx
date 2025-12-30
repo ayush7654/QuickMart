@@ -28,6 +28,8 @@ export const useFirebase=()=>useContext(FirebaseContext)
 export const FirebaseProvider=(props)=>{
 
   const [currentUser,setCurrentUser]= useState(null)
+  const [authLoading, setAuthLoading] = useState(true);
+
 
   useEffect(()=>{
     onAuthStateChanged(firebaseAuth,(user)=>{
@@ -42,11 +44,23 @@ export const FirebaseProvider=(props)=>{
     })
   },[])
 
+  useEffect(() => {
+  const unsub = onAuthStateChanged(firebaseAuth, (user) => {
+    if (user) {
+      setCurrentUser(user);
+    } else {
+      setCurrentUser(null);
+    }
+    setAuthLoading(false); // 🔑 auth resolved
+  });
+
+  return () => unsub();
+}, []);
+
+
   const isLoggedIn= currentUser?true:false
 
-/*   const SignUpUser=(email,password)=>{
-   return createUserWithEmailAndPassword(firebaseAuth,email,password)
-  } */
+
 
 const SignUpUser = async (email, password, username) => {
   const userCredential = await createUserWithEmailAndPassword(firebaseAuth, email, password);
@@ -92,7 +106,17 @@ const SignUpUser = async (email, password, username) => {
     await deleteDoc(docRef);
 };
   
-  return <FirebaseContext.Provider value={{SignUpUser,SignInUser,SignOutUser,currentUser,isLoggedIn,storeDataInFB,getDataFromFB, deleteDataInFB}}>
+  return <FirebaseContext.Provider 
+         value={{SignUpUser,
+         SignInUser,
+         SignOutUser,
+         currentUser,
+         isLoggedIn,
+         storeDataInFB,
+         getDataFromFB, 
+         deleteDataInFB,
+         authLoading
+         }}>
       {props.children}
   </FirebaseContext.Provider>
 }

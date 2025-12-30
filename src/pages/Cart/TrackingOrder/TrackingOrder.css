@@ -1,30 +1,32 @@
 .order-tracking-div{
         border: 0px solid green;
-        width: 93%;
+        border: 1px solid rgb(220,220,220);
+        width:100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
      
-        background-color: rgb(245,245,245);
-        margin-top: 4rem;
+       
+  
 
         
     }
 
     .tracking-head-div{
         padding: 1rem;
-        font-size: 1.3rem;
-        font-family: 'Jost';
-        letter-spacing: .1rem;
-        width: 98%;
-        border-bottom: 1px solid rgb(220,220,220);
-        
+        font-size: 1rem;
+        font-family: 'Roboto';
+       margin-top: 1rem;
+        width: 100%;
+        border-bottom: 0px solid rgb(220,220,220);
+        text-align: center;
+  
     }
 
     .order-tracking-content{
         width: 100%;
-           height: 20rem;
+           height: 22rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -135,9 +137,11 @@ background-color: rgb(80,220,220);
            width: 10rem;
     height: 10rem;
     
+    
  
     justify-content: center;
     align-items: center;
+
    
     }
 

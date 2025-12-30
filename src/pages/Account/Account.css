@@ -6,7 +6,7 @@
     font-size: .9rem;
     justify-content:space-between;
     user-select: none;
-    margin-top: 7rem;
+    margin-top: 5rem;
     border: 0px solid red;
 
   }
@@ -54,7 +54,7 @@ font-weight: 400;
    font-weight:400;
    margin-bottom: 0rem;
   color:rgb(50,50,50);
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
     padding: 1rem;
   font-family:'Jost';
     border: 0px solid blue;
@@ -70,42 +70,39 @@ font-weight: 400;
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 3rem;
- 
+  justify-content: center;
+  height: 2.5rem;
+
   font-family: 'Poppins'; 
   font-family: 'Jost';
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- 
-  letter-spacing: .05rem;
-     border: 0px solid blue;
+  border: 0px solid blue;
+    border-bottom: 1px solid rgb(220, 220, 220);
 
-
-
- 
-
-  
-  
-  
 }
 
 .account-section-selected{
-  border-bottom: 1px solid rgb(80, 80, 80);
-  color:rgb(0, 0, 0);
-  font-weight: 500;
-  background-color: white;
-   height: 3rem;
+  border-bottom: 0px solid rgb(80, 80, 80);
+       
+
+
+letter-spacing: .1rem;
+     height: 2.5rem;
 
   
+}
+
+.account-section-selected .animated-underline::after {
+  transform: scaleX(0);
 }
 
 .account-section{
    border-bottom: 2px solid transparent;
     color:rgb(130, 130, 130) ;
-     border-bottom: 1px solid rgb(225, 225, 225);
+   
 }
 
 #switch-section{
-  width: 50%;
+  width: 35%;
   height: 100%;
     display: flex;
   align-items: center;
@@ -121,19 +118,38 @@ font-weight: 400;
 
 }
 
+#switch-section-head{
+   height: 2.5rem;
+width: 9rem;
+font-size: .85rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+  border-bottom: 2px solid transparent;
+   letter-spacing: .05rem;
+   transition: all .3s ease;
+   color:rgb(130, 130, 130);
+
+
+}
+
+#switch-section-head:hover{
+  letter-spacing: .15rem;
+  color:rgb(0, 0, 0);
+}
+
+.account-section-selected #switch-section-head{
+  border-bottom: 2px solid rgb(80 230,230);
+  border-bottom: 2px solid rgb(0, 0, 0);
+  color:rgb(0, 0, 0);
+  letter-spacing: .08rem;
+  font-weight: 450;
+}
 
 
 
- #input-heading{
-   font-family: "Questrial", sans-serif;
-   font-family: 'Poppins';
-   font-family: 'Roboto';
-   font-family: 'Montserrat';
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   font-family: 'Inter';
-   font-weight: 300;
 
- }
+
 
 
 
@@ -165,43 +181,61 @@ border: 0px solid black;
    justify-content:start;
      border: 0px solid red;
      margin-top: 2rem;
+     height: 80%;
       
 
   }
 
+  #user-Input-content{
+
+    height: 80%;
+    width: 100%;
+
+
+    }
+
   #user-Input-box{
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
    width: 100%;
     gap:2rem;
     border: 0px solid red;
-     padding: 1.8rem; 
-    background-color: rgb(245,245,245);
+    padding: 1rem;
+    padding-top: 0rem;
+/*     background-color: rgb(245,245,245); */
   }
 
   #account-input-div{
      width: 100%;
     display: flex;
     flex-direction: column;
+      position: relative;
  
 }
 
-  input::placeholder{
-    color:rgb(160, 160, 160);
-    font-size: .9rem;
-  } 
+ #input-heading{
+ position: absolute;
+  left: 0rem;
+  top: 50%;
+  transform: translateY(-50%);
+    pointer-events: none;
+  transition: all 0.2s ease;
+   font-family: 'Inter';
+   font-family: 'Jost';
+   font-weight: 400;
+   color:rgb(130,130,130);
+   font-size: 1rem;
+
+ }
 
 
-
-  
-  
- 
 
  #account-input{
     height: 2.5rem;
     width: 100%;
     /* background-color: rgb(240, 240, 240); */
-     background-color: rgb(245,245,245);
+     /* background-color: rgb(245,245,245); */
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: 0;
      border-bottom: 1px solid rgb(220,220,220);
@@ -221,6 +255,20 @@ border: 0px solid black;
     /* border-bottom: 1px solid rgb(200,200,200); */
   }
 
+/* Focused */
+#account-input-div:focus-within #input-heading {
+  top: -0.45rem;
+  font-size: 0.85rem;
+  color: #000;
+}
+
+/* ✅ Input has value */
+#account-input-div:has(#account-input:not([value=""])) #input-heading {
+  top: -0.45rem;
+  font-size: 0.85rem;
+  color: #000;
+}
+
 
 
   
@@ -235,8 +283,8 @@ border: 0px solid black;
     font-family: 'Poppins';
        font-family: "Questrial", sans-serif;
     transition: all  .3s ease;
-   /* position: absolute;
-   bottom: 4.5rem; */
+/*    position: absolute;
+   bottom: 1.5rem;  */
    
   }
 

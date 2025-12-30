@@ -2,9 +2,8 @@ import {useState} from "react";
 import { useFirebase } from "../../components/FirebaseContext/Firebase";
 import Registration from "./Registration/Registration";
 import Login from "./Login/Login";
-import {Link} from "react-router-dom"
-import { MdPerson } from "react-icons/md";    
-import { FaUser } from "react-icons/fa";
+import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
+
 
 
 import './Account.css'
@@ -25,12 +24,27 @@ export default function Account(){
     <div className="account-Page">
        <div className="accountPageImg"></div>
          <div className="account-container">
-          <div className="account-page-title">ACCOUNT</div>
+          <div className="account-page-title">Account</div>
 
           <div className="account-page-switch">
-           <div id='switch-section' className={sectionSwitch?'account-section-selected':'account-section'} /* style={{borderBottom:sectionSwitch?'2px solid black':'2px solid transparent'}} */ onClick={()=>setSectionSwitch(true)} /* className="login-section" */>Log In</div>
-           <div id='switch-section'  className={sectionSwitch?'account-section':'account-section-selected'} onClick={()=>setSectionSwitch(false)} >Register</div>
+           <div id='switch-section' 
+           className={sectionSwitch?'account-section-selected':'account-section'} 
+            onClick={()=>setSectionSwitch(true)} >
+             <AnimatedUnderline from="center" color="rgba(50,50,50, 1)" thickness={1.5}>
+              <span id='switch-section-head' >LOG IN</span> 
+              </AnimatedUnderline> 
+             </div>
+              <span style={{fontSize:'1.2rem', color:'rgb(150,150,150)', fontWeight:'200'}}>|</span>
+           <div id='switch-section'
+             className={sectionSwitch?'account-section':'account-section-selected'} 
+             onClick={()=>setSectionSwitch(false)} >
+               <AnimatedUnderline from="center" color="rgba(50,50,50, 1)" thickness={1.5}>
+                <span id='switch-section-head' >REGISTER</span>
+                 </AnimatedUnderline> 
+             </div>
          </div>
+
+
    {sectionSwitch?<Login/>:<Registration/>}
         </div>
 

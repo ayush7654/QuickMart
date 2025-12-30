@@ -9,6 +9,7 @@
 .regIn-User{
      font-size: 1.8rem;
  font-family: 'Roboto Condensed';
+ font-family: 'Jost';
  font-weight: 400;
     color:rgb(75, 75, 75);
     margin-top: 2rem;
@@ -17,21 +18,25 @@
 
 .regIn-Greeting{
  font-size: 2.2rem;
- font-family: 'Roboto Condensed';
+ font-family: 'Roboto';
+ 
  font-weight: 500;
 
  
 
 } 
 .regIn-Para{
-color:rgb(75, 75, 75);
+color:rgb(120, 120, 120);
 
  font-size: 1.1rem;
 
- font-weight: 300;
+ font-weight: 350;
   font-family: 'Inter';
- font-family: 'Roboto Condensed';
- line-height: 1.5rem;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ font-family:'Jost';
+
+ line-height: 1.6rem;
+ letter-spacing: .02rem;
 
 
 

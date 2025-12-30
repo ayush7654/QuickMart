@@ -5,12 +5,12 @@
   justify-content:end;
   align-items: center;
   z-index: 2;
-  height: 15rem;
+  height: 10rem;
  background-color: white;
- border: 0px solid red;
+ border: 1px solid red;
  margin-top: 0rem;
  position: sticky;
- top:-5rem;
+ top:0rem;
  border-bottom: 0px solid rgb(225,225,225);
  padding-bottom: 0rem;
 

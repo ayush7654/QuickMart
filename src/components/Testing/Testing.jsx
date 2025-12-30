@@ -19,13 +19,18 @@ export default function Testing() {
   return (
     <div className='testing-div'>
 
-  < HiArrowUp size={30}/>
-  <  AiOutlineArrowUp size={30}/>
-  <   MdArrowUpward size={30}/>
-  <    FaCaretUp size={30}/>
-  <    AiFillCaretUp size={30}/>
-  <     BsCaretUpFill size={30}/>
-  <   IoCaretUp size={30}/>
+<div className="account-input-div">
+  <div className="input-heading">Email</div>
+  <input
+    className="account-input login-email"
+    placeholder=" "
+    name="email"
+   
+  />
+</div>
+
+
+
     </div>
   )
 }

@@ -154,6 +154,8 @@ white-space: nowrap;
    font-size: .85rem;
    transition: all .3s ease;
    border-bottom: 2px solid transparent;
+   color:rgb(100,100,100);
+  
 }
 
 #sort-div:hover{
@@ -161,7 +163,7 @@ white-space: nowrap;
   */
   cursor: pointer;
 
-
+ color:rgb(50,50,50);
   
    letter-spacing: .15rem;
  

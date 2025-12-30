@@ -3,11 +3,13 @@ import './Logged_Out.css'
 export default function Logged_Out({email,password,setEmail,setPassword,signIn}) {
   return (
     <div id='user-Input-box-div' >
-   <div id='user-Input-box'>
+      <div id='user-Input-content'>
+       
+       <div id='user-Input-box'>
      <div id='account-input-div' className="Email">
         <div id='input-heading'>Email</div>
         <input id='account-input' className="login-email" 
-            placeholder="example@email.com..." 
+           
             name="email"
             value={email}
             onChange={(e)=>setEmail(e.target.value)}/> 
@@ -15,7 +17,7 @@ export default function Logged_Out({email,password,setEmail,setPassword,signIn})
      <div id='account-input-div' className="Password">
        <div id='input-heading'>Password</div>
        <input id='account-input' className="login-password"  
-            placeholder=" — — — — — — — — "
+        
             name="password"        
             value={password}
             onChange={(e)=>setPassword(e.target.value)}/> 
@@ -41,6 +43,8 @@ export default function Logged_Out({email,password,setEmail,setPassword,signIn})
         <div className="apple-login-text">Login with Apple</div>
      </div>
      </div>
+      </div>
+ 
    
      
  
@@ -49,3 +53,6 @@ export default function Logged_Out({email,password,setEmail,setPassword,signIn})
         </div>
   )
 }
+
+
+/*    */

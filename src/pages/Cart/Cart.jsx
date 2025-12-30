@@ -1,11 +1,22 @@
 import {useEffect, useState} from "react";
+import { Link } from "react-router-dom";
 import TrackingOrder from "./TrackingOrder/TrackingOrder";
 import { useFirebase } from "../../components/FirebaseContext/Firebase";
+import CartItem from "./CartItem/CartItem";
+import OrderDetails from "./OrderDetails/OrderDetails";
+import CartLoading from "./CartLoading/CartLoading";
+import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
 import './Cart.css'
+
 
 export default function Cart(){
     const[cartList,setcartList]= useState([])
+
+    const [trackerOn,setTrackerOn] = useState(false)
     const [totalCost, setTotalCost] = useState(0); // Initialize total cost state
+
+    const [cartLoading, setCartLoading] = useState(true); // true while fetching
+
 
   
 
@@ -13,12 +24,21 @@ export default function Cart(){
     const firebase= useFirebase()
     const userInfo = firebase.isLoggedIn?firebase.currentUser.email:null
 
-    const fetchData=async()=>{
-        const cartItem= await firebase.getDataFromFB("users",userInfo,"CartItems")
-        cartItem.forEach(item=>setcartList(prev=>[...prev,item.data().Product]))
-       
-      
-    }
+const fetchData = async () => {
+  setCartLoading(true); // start loading
+  try {
+    const cartItem = await firebase.getDataFromFB("users", userInfo, "CartItems");
+
+    cartItem.forEach(item =>
+      setcartList(prev => [...prev, item.data().Product])
+    );
+  } catch (err) {
+    console.error("Failed to fetch cart items:", err);
+  } finally {
+    setCartLoading(false); // done loading
+  }
+};
+
 
     const calculateTotalCost = () => {
         const total = cartList.reduce((acc, item) => {
@@ -33,7 +53,7 @@ export default function Cart(){
   
 
    useEffect(()=>{
-    fetchData()
+  fetchData() 
 
    },[])
 
@@ -52,66 +72,89 @@ export default function Cart(){
 };
 
     const cartElements=cartList? (cartList.map((product,index)=>(
-        <div key={index} className="Cart-item">
-          <div className="cart-product-img-div"><img src={product.images[0]} className="cart-product-img" /></div> 
-          <div className="cart-product-info-div">
-                <div  className="cart-product-info">
-        
-            <div id='cart-info-item' className="cart-product-title">{product.title}</div>
-            <div id='cart-info-item' className="cart-product-price">Price: ${product.price}</div>
-           <div id='cart-info-item' className="cart-product-quantity">Quantity: {product.quantity}</div>
-           <div id='cart-info-item'>{product.shippingInformation}.</div>
-          <div className="cart-btn">
-          <button  id='cartButton' className="cart-remove-btn" onClick={()=>handleRemove(product.title)}>Remove</button>
-                 <button id='cartButton' className="cart-buy-btn">View Details</button>
-          </div>
-        
-          </div>
-          </div>
-      <div className="cart-btn-ph">
-          <button  id='cartButton' className="cart-remove-btn" onClick={()=>handleRemove(product.title)}>Remove</button>
-                 <button id='cartButton' className="cart-buy-btn">View Details</button>
-          </div>
-           
-        </div>))):"loading..";
+   <CartItem
+   index={index}
+   title={product.title}
+   images={product.images[0]}
+    price={product.price}
+    quantity={product.quantity}
+    shippingInformation={product.shippingInformation}
+    handleRemove={handleRemove}/>
+        ))):<div>loading</div>;
 
         console.log('list is',cartElements.length)
+    
+        if (cartLoading) {
+  return <CartLoading />; // your silhouette page
+}
    
     return(<div className="cart-page">
-      <div className="cart-page-title"><div className="cart-page-heading">YOUR CART</div></div>
-        <div className="Cart-page-In">
 
-    {cartElements.length>0 ?<div className="cart-item-list">{cartElements}</div>:
-    <div className="empty-cart">
+      <div className="cart-page-title"><div className="cart-page-heading">Your Cart</div></div>
+
+
+
+       {cartElements.length>0 ? <div className="Cart-page-In">
+
+   {/* <div className="cart-item-list">{cartElements}</div> */}
+       {/*  <TrackingOrder/> */}
+
+       <div className="cart-page-In-content">
+        <div className="cart-page-In-content-head-div">
+          <div onClick={()=>setTrackerOn(false)} 
+          className={`cart-content-head ${trackerOn?'':'cart-head-selected'}`}>
+           <AnimatedUnderline from="center" offset={0}>
+            <span className='cart-head-text'>Cart Items</span>
+            </AnimatedUnderline> 
+            </div>
+          <span style={{fontSize:'2rem'}}>|</span>
+          <div onClick={()=>setTrackerOn(true)} 
+          className={`cart-content-head ${trackerOn?'cart-head-selected':''}`}>
+            <AnimatedUnderline from="center" offset={0}>
+               <span className='cart-head-text' >Track Order</span>
+            </AnimatedUnderline>
+            
+            </div>
+        </div>
+    <div style={{ display: trackerOn ? "block" : "none" }}>
+  <TrackingOrder />
+</div>
+
+<div style={{ display: trackerOn ? "none" : "block" }}>
+  <div className="cart-item-list">{cartElements}</div>
+</div>
+       </div>
+   
+
+
+      
+<div className="Cart-page-In-midline"></div>
+
+
+  <OrderDetails
+   cartElements={cartElements}
+   cartList={cartList}
+   totalCost={totalCost}
+   />
+    
+    </div>:
+
+    <div className="Cart-page-In-empty">
+   <div className="empty-cart">
       <img className="emptyCart-img" src='SiteGif/shopping-cart.gif' />
       <div className="emptyCart-text1">Your cart is empty, let's change that.</div>
-      </div>}{/*   <img className="emptyCart-img" src='shopping-cart.gif' /> */}
-<div className="Cart-page-In-midline"></div>
-  <div className={  cartElements.length < 1 && window.innerWidth < 500 ? "order-summary-empty-div":"order-summary-div"}>
-      <div className="order-summary-title">Order Summary</div>
-      <div className="order-list-section">
-        <div className="order-section-item">Item x Quantity</div>
-        <div className="order-section-price">Price</div>
+      <Link to='/store' className="cart-store-button">Store</Link>
       </div>
-      <div className="order-list">
-        {cartList.map(item=><div className="order-list-item">
-          <div id='order-item'>{item.title} <span className="order-list-quantity">&nbsp;x &nbsp; {item.quantity}</span></div>
-          <div id='order-item'>${item.price * item.quantity}</div>
-   
-        </div>)}
-       
-      </div>
-        
-      <div className="total-cost"><span>Total Cost</span> <span>${totalCost.toFixed(2)}</span></div>
-        <button className={cartElements.length>0?"checkout-btn":"checkout-btn-out"}>Place Order</button>
-    </div>
-    
-    </div>
+    </div>}
 
-     <TrackingOrder/>
+ 
    
     </div>
 
     
     )
 }
+
+
+
+

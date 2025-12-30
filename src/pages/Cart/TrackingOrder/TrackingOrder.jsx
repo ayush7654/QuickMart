@@ -3,7 +3,7 @@ import './TrackingOrder.css'
 
 export default function TrackingOrder() {
 
-      const [currentStage, setCurrentStage] = useState(3); // 0–3
+      const [currentStage, setCurrentStage] = useState(4); // 0–3
     
       const stages = [
         {stageName:'Ordered', stageGif:'orderedGif.gif',message:'Your order has been successfully placed.'},
@@ -18,7 +18,7 @@ export default function TrackingOrder() {
 
   return (
     <div className='order-tracking-div'>
-        <div className='tracking-head-div'>Previous Order Status</div>
+        <div className='tracking-head-div'>This is the current status of your previous order.</div>
         <div  className='order-tracking-content'>
               <div className='trackGif-container'>
                 <div className='trackGif-div'>
