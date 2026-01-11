@@ -11,9 +11,16 @@ width: 100%;
 
     border-left: 0px solid red;
     display: flex;
-    
+
   
 
+  }
+
+  .home-crousel-frame{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5rem solid white;
   }
 
   .homeCrousal{
@@ -26,8 +33,7 @@ width: 100%;
    
      width: 100vw;
   height: 100vh;
-  padding: .5rem;
-  padding-right: 1.5rem;
+ 
 
 
 
@@ -41,17 +47,20 @@ width: 100%;
   position: relative;
   overflow: hidden;
   display: flex;
+  
   align-items: center;
-  justify-content: center;
+
   width: 100%;
   height: 100%;
-    border-radius: 20px;
+   /*  border-radius: 20px; */
   overflow: hidden;
  
 }
 
+
+
 /* picture must fill parent */
-.homeContent picture {
+.homeContent  picture {
   width: 100%;
   height: 100%;
   display: block;
@@ -59,12 +68,105 @@ width: 100%;
 }
 
 /* img behaves exactly like background-image */
-.homeContent img {
+.homeContent  img {
   width: 100%;
   height: 100%;
   object-fit: cover;        /* background-size: cover */
   object-position: top;     /* background-position: top */
   display: block;
+}
+
+
+
+.homeContent img {
+  
+/* 
+  filter: blur(8px) brightness(0.65);
+  transform: scale(1.05); */ /* prevents blur edge cutoff */
+}
+
+.homeContent::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 35%;
+
+  /* Glass blur — NOT smog */
+  backdrop-filter: blur(3px) saturate(0%);
+  -webkit-backdrop-filter: blur(3px) saturate(0%);
+
+  /* Glass tint */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0,.05)
+  );
+
+
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+
+
+
+.crousel-content{
+  position: absolute;
+left: 8rem;
+  bottom:2rem;
+
+  width:70%;
+  border: 0px solid red;
+  color:white;
+    z-index: 2; /* MUST be higher */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    
+
+
+}
+
+.crousel-head{
+font-size: 3em;
+font-family: 'Roboto Condensed';
+font-family: 'Raleway';
+
+
+
+}
+
+.crousel-head span{
+/*   color:rgb(70, 228, 236); */
+ /* font-family: "Prosto One", sans-serif;  */
+font-weight: 700;
+
+/*  font-size: 4rem; */
+}
+
+.crousel-info{
+  font-family: "Outfit";
+  width: 70%;
+  line-height: 1.5rem;
+  color:rgb(225,225,225);
+  margin-bottom: 1rem;
+  margin-top: .5rem;
+}
+
+.crousel-button{
+  width: 8rem;
+  border: 1px solid white;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4rem;
+  font-family: Outfit;
 }
 
   
@@ -142,11 +244,12 @@ width: 100%;
  */
 
   .buy-link-div{
+   
     width: 100%;
     position:absolute;
-    bottom: 2rem;
+    bottom: 6rem;
 height: 3rem;
-    display: flex;
+    display: none;
     justify-content: center;
        font-family: 'Poppins', sans-serif;
        
@@ -254,19 +357,19 @@ height: 3rem;
 
   .CrousalNav-div{
 position: absolute;
-bottom:7rem;
+bottom:3rem;
     width: 100%;
   
     border: 0px solid black;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: end;
+   
 
   }
 
   .CrousalNav-content{
-    width: 40rem;
-    height: 4px;
+    width: 6rem;
+    margin-right: 10rem;
 
     display: flex;
     flex-direction: row;
@@ -276,10 +379,12 @@ bottom:7rem;
 
    .CrousalNav{
     border: 0px solid black;
-    height:100% ;
-    width: 24%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid white;
    /*  background-color: #ffffff72; */
-   background-color: rgba(125, 125, 125, 0.700);
+
    }
 
    .CrousalNav:hover{
@@ -287,10 +392,9 @@ bottom:7rem;
    }
 
      .CrousalNav-selected{
-    border: 0px solid black;
-    height:100% ;
-    width: 24%;
-    background-color: rgb(255, 255, 255);
+    
+    
+    background-color: rgb(218, 113, 42);
    }
 
  

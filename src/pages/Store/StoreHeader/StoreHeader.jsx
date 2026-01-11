@@ -28,11 +28,12 @@ export default function StoreHeader({handleCancelFilter,typeFilter,sideBartoggle
       </div>
 
     <div className='store-category-head1'>
+      put sort here . make filter fixed 
     { typeFilter?typeFilter.split('-')
                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                .join(' '):'ALL'} 
           </div>   {/* UNCOMMENT THIS */}
-      
+     
 {/* 
     <div  className={`category-div ${
     typeFilter ? "category-div--selected" : "category-div--default"
