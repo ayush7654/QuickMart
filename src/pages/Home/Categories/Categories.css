@@ -231,30 +231,35 @@ background-size: cover; */
 
 .carousel-name{
     transition: all .3s ease;
-  
-    font-family: 'Montserrat';
-    font-family: "Questrial", sans-serif;
-   /*  font-family: 'Josefin Sans'; */
-   font-family: "Prosto One", sans-serif;
-   font-family: 'Jost';
+height: 100%;
    border: 0px solid red;
-   padding: .5rem;
-
-
    text-align: center;
-
     letter-spacing: .1rem;
     font-weight:500;
-    color:rgb(255, 255, 255);
-  font-size: 2rem;
-    font-family: 'Montserrat';
+   
+  font-size: 2.5rem;
+display: flex;
+align-items: center;
+    font-family: 'Raleway';
     
+
   
 }
 
+/* When the specific parent is hovered, trigger the button's internal styles */
+.carousel-name:hover .bracket-card:not(.is-inactive) {
+  height: var(--hover-height);
+  background-size: 100% 100%;
+}
+
+.carousel-name:hover .bracket-card:not(.is-inactive) .text-content {
+  color: var(--hover-text-color);
+}
+
 .carousel-card:hover .carousel-name{
-  font-size: 1.8rem ;
+
    letter-spacing: .05rem;
+   color:white;
 }
 
 .carousel-card:hover .animated-underline::after {
@@ -263,7 +268,7 @@ background-size: cover; */
 }
 
 .carousel-card .animated-underline{
-  margin-bottom: 4rem;
+  margin-bottom: 10rem;
 }
 
 
@@ -284,14 +289,14 @@ background-size: cover; */
 
   z-index: 1;
    border: 0px solid red;
-   width: 10rem;
+   width: 8rem;
 
    padding:1rem;
 }
 
 .carousel-controls button {
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   border: none;
   border-radius: 50%;
   background-color: white;
@@ -309,7 +314,7 @@ background-size: cover; */
 
 .carousel-controls button:hover {
   color:black;
-  background-color: rgb(230,230,230);
+  background-color: rgb(235,235,235);
    border: 1px solid transparent;
 }
 

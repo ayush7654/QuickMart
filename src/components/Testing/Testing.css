@@ -12,48 +12,102 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 
 .testing-div{
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 5rem;
+    margin-top: 10rem;
+    
 
 }
 
-.account-input-div {
-  position: relative;
-  width: 100%;
+.test-header{
+    width: 100%;
+    height: 5rem;
+    border: 1px solid red;
+    position: sticky;
+    top:10rem;
+    background: rgba(255, 255, 255, 0.35); /* translucent white */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); /* Safari support */
+
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.account-input {
-  width: 100%;
-  padding: 1.2rem 0.75rem 0.6rem;
-  font-size: 1rem;
+#div-test{
+    display: flex;
+    gap: 10rem;
+    
 }
 
-/* Label inside input */
-.input-heading {
-  position: absolute;
-  left: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #777;
-  font-size: 0.95rem;
-  pointer-events: none;
-  transition: all 0.2s ease;
-  background: white;
-  padding: 0 0.25rem;
+.test-heading1{
+ 
+    font-size: 2.5rem;
+    font-family: 'Raleway';
+     font-family: 'DidotCustom', serif;
+     font-family: "Prosto One", sans-serif;
+       font-family: "Bodoni Moda SC", serif;
+       font-weight: 600;
+    letter-spacing: .3rem;
+    
+ 
 }
 
-/* When focused OR input has value */
-.account-input-div:focus-within .input-heading,
-.account-input:not(:placeholder-shown) ~ .input-heading {
-  top: -0.45rem;
-  font-size: 0.75rem;
-  color: #000;
+.test-heading2{
+    font-family: 'Raleway';
+    font-size:1.5rem;
+       font-family: 'Outfit';
+       
+       font-weight: 300;
+
+}
+
+.test-text{
+    width: 40rem;
+    font-family: Jost;
+        font-family: 'Outfit';
+        font-family: Lato;
+}
+
+.test-link{
+    
+}
+
+#link-div{
+  
+    height: 2rem;
+     border-bottom: 1px solid rgb(201, 201, 201); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:rgb(100,100,100);
+      font-family: 'Outfit';
+         font-family: "Questrial", sans-serif;
+        
+         letter-spacing: .05rem;
+    font-weight: 400;
+    
+}
+
+#link-div:hover{
+ color:black;
+ cursor: pointer;
+
+
+
+}
+
+.test-button{
+    
 }
 

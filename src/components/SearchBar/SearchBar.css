@@ -194,9 +194,11 @@ color:rgb(170, 170, 170);
   border-radius: 5px;
   font-weight: 400;
    font-size: .85rem;
-  transition: all .3s ease;
+  transition: all .2s ease;
 
     background-color:rgb(230, 230, 230);
+    background-color: white;
+    border: 1px solid rgb(220, 220, 220);
 }
 
 .category-suggestion:hover{
@@ -205,8 +207,9 @@ color:rgb(170, 170, 170);
 
 background-color: rgb(255, 255, 255);
   color:rgb(20, 20, 20);
-      border: 1px solid rgb(20, 20, 20);
+    
   border: 1px solid  rgb(80,230,230);
+  border: 1px solid rgb(20, 20, 20);
 }
 
 

@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import './Reg_Out.css'
+import ScrollButton from '../../../../components/ScrollingButton/ScrollingButton'
 export default function Reg_Out({firebase}) {
 
 
@@ -61,7 +62,25 @@ export default function Reg_Out({firebase}) {
       </div>
         
   
-   <button id='account-button' className={email || password || username ?'account-button-active':'account-button-inactive'} onClick={SignUp}>SIGN IN</button> 
+ {/*   <button id='account-button'
+    className={email || password || username ?
+    'account-button-active':'account-button-inactive'}
+     onClick={SignUp}>SIGN IN</button> */} 
+
+
+    <div  
+     id='account-button' style={{pointerEvents:username||email || password?'auto':'none'}}
+    /*  className={email || password ?'account-button-active':'account-button-inactive'} */
+       onClick={SignUp}>
+          <ScrollButton
+  text='Sign In'
+  theme={email || password || username?'darkMode':'lightMode'}
+  color="#cf7729ff"
+  themeOnHover={email || password || username?'colorMode':'lightMode'}
+
+/>
+      </div> 
+
        </div>
   )
 }

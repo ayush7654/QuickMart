@@ -42,3 +42,16 @@
 .from-right::after {
   transform-origin: right;
 }
+
+
+.exit-opposite.from-left:not(:hover)::after {
+  transform-origin: right;
+}
+
+.exit-opposite.from-right:not(:hover)::after {
+  transform-origin: left;
+}
+
+.exit-opposite.from-center:not(:hover)::after {
+  transform-origin: center;
+}

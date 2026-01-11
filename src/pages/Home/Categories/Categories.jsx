@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import './Categories.css'
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import AnimatedUnderline from "../../../components/AnimatedUnderline/AnimatedUnderline";
-
+import BracketButton from "../../../components/BracketButton/BracketButton";
 
 
 
@@ -140,11 +140,26 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
   }}
 >
 
-   <AnimatedUnderline from="center" color='rgba(255, 255, 255, 1)' thickness={3} >
-    <div  /* style={{fontSize,filter,bottom, transform:`${transform} ${rotate}`}} */ className='carousel-name'>{item.capName}</div  >  
+  {/*  <AnimatedUnderline from="center" offset={5} color='rgba(255, 255, 255, 1)' thickness={2.5} >
+    <div className='carousel-name'>{item.capName}</div  >  
     </AnimatedUnderline> 
-    <div className='carousel-name-sm'>{item.capName}</div>
-   
+    <div className='carousel-name-sm'>{item.capName}</div> */}
+
+
+   <div className='carousel-name'>
+           <BracketButton 
+  height="35px" 
+  width="230px" 
+  bgColor="transparent" 
+  color="#ffffffae" 
+  hoverTextColor="white"
+  textContent={item.capName} 
+   hoverHeight='45px'
+   fontSize='1.8rem'
+  
+/> 
+</div  >  
+  
 
   </div>
   );
@@ -155,7 +170,7 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
  <div className="carousel-controls">
 <button onClick={prev}><FiChevronLeft /></button>
 {/* <div className="explore-btn">Explore</div> */}
-<button onClick={next}>< FiChevronRight/></button>
+<button onClick={next}><FiChevronRight/></button>
 </div>
  
 

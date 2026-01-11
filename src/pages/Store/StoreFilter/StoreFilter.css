@@ -35,14 +35,18 @@
     position: sticky;
     top: 0;
       width: 100%;
-  height: 10rem;
+  height: 5rem;
   display: flex;
-  align-items: end;
+  align-items:end;
   justify-content: center;
-  font-size: 1.2rem;
-  font-weight:400;
+  font-size: 1rem;
+  font-weight:600;
 background-color: rgb(255, 255, 255);
 font-family: 'Jost';
+font-family: 'Raleway';
+ font-family: 'Outfit';
+   font-family: "Questrial", sans-serif; 
+   
 
   color: rgb(0, 0, 0);
   border-bottom: 1px solid rgb(225, 225, 225);
@@ -56,9 +60,10 @@ z-index: 2;
   .Store-filter-head-content{
     width: 90%;
       display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
+margin-bottom: 1rem;
+  border: 0px solid red;
   }
 
   .Store-filter-cancel{
@@ -107,11 +112,12 @@ height: 4.5rem;
   display: flex;
   align-items: center;
   
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
 
    font-family: 'Jost';
-   
+    font-family: "Questrial", sans-serif;
+    font-family: 'Roboto';
   color: rgb(10,10,10);
   border-bottom: 0px solid rgb(235, 235, 235);
 
@@ -119,42 +125,24 @@ height: 4.5rem;
   letter-spacing: .05rem;
   transition: all .3s ease;
 
-
-
-}
-.store-category-text {
-  position: relative;
-  display: inline-block;
 }
 
-/* underline */
-.store-category-text::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 0;
-  height: 2px;
-  background-color: rgb(10,10,10);
-  transition: width 0.5s ease;
+
+.store-category:hover .animated-underline::after {
+  transform: scaleX(1);
 }
 
-/* hover trigger */
-.store-category:hover .store-category-text::after {
-  width: 100%;
-}
+
+
+
 
 .store-category:hover{
-/*   background-color: #ffffff; */
   color: rgb(10, 10, 10);
-/* background-color: rgb(240,240,240); */
+
   cursor: pointer;
   font-size: 1.15rem;
   letter-spacing: .1rem;
-/*    text-decoration: underline;
- text-decoration-color: rgb(15, 15, 15);
-   text-underline-offset: 15px;
-   */
+
 }
 
 .store-category-selected{
@@ -168,18 +156,43 @@ height: 4.5rem;
  font-family: 'Poppins', sans-serif;
   font-family: 'Roboto';
   font-family: 'Jost';
+    font-family: "Questrial", sans-serif;
+    font-family: 'Roboto';
    padding-left:1.5rem; 
    color: rgb(10, 10, 10);
-  /*  background-color: rgb(240,240,240); */
-  border-bottom: 2px solid rgb(8, 8, 8);
-/*  box-shadow: -2px 2px 2px rgb(200, 200, 200);  */ 
-  /*  background-color: rgb(80,220,220);   */
+ 
+  border-bottom:2px solid rgb(0, 0, 0);
+
  letter-spacing: .1rem;
-/*  text-decoration: underline;
- text-decoration-color: rgb(15, 15, 15);
-   text-underline-offset: 10px; */
+ pointer-events: none;
+
  
 
+}
+
+.filter-clear-div{
+  position: sticky;
+  bottom: 1rem;
+  width: 87%;
+  height: 3rem;
+border: 0px solid black;
+color:black;
+background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins';
+
+  border-radius:25px ;
+  overflow: hidden;
+  
+  
+}
+
+.filter-selected{
+  background-color: black;
+  color:white;
+  cursor: pointer;
 }
 
 

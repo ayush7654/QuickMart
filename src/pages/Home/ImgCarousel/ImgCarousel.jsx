@@ -2,6 +2,7 @@ import  {useState} from 'react';
  import { ChevronLeft,ChevronRight } from 'lucide-react'; 
 import { Link } from "react-router-dom";
 import ScrollMouse from '../../../components/ScrollMouse/ScrollMouse';
+import BracketButton from '../../../components/BracketButton/BracketButton';
  import './ImgCarousel.css';
 
 
@@ -58,12 +59,34 @@ const homeBGs = [
 
 <div  className="buy-link-div">
    <div  className="buy-link">
-  <Link id='buyLink-btn' className="btn-discoverMore">DISCOVER MORE</Link>
-  <Link id='buyLink-btn'  to={currentPath} className="btn-shopNow">SHOP NOW</Link>
+{/*   <Link id='buyLink-btn' className="btn-discoverMore">Discover More</Link>
+  <Link id='buyLink-btn'  to={currentPath} className="btn-shopNow">Shop Now</Link> */}
+        <BracketButton 
+  height="35px" 
+  width="200px" 
+  bgColor="white" 
+  color="#ffffffff" 
+  hoverTextColor="black"
+  textContent={'Discover More'} 
+   hoverHeight='45px'
+   fontSize='1rem'
+  
+/>
+
+    <BracketButton 
+  height="35px" 
+  width="200px" 
+  bgColor="white" 
+  color="#ffffffff" 
+  hoverTextColor="black"
+  textContent={'Shop Now'} 
+  hoverHeight='45px'
+  
+/>
 </div> 
 
  <div className='buy-link-sm'>
-<Link className='buy-btn-sm'> SHOP NOW</Link>
+<Link className='buy-btn-sm'> Shop Now</Link>
 </div>
 </div>
 

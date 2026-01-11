@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom";
+import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
+import ScrollButton from '../../../components/ScrollingButton/ScrollingButton';
 
 
 import { X } from 'lucide-react';
 
 import './StoreFilter.css'
 
-export default function StoreFilter({ currentCategory, typeFilter, handleClickFilter, handleClickCategory,sideBartoggled }) {
+export default function StoreFilter({ currentCategory, typeFilter, handleClickFilter, handleClickCategory,sideBartoggled,handleCancelFilter }) {
   const [productCategory, setProductCategory] = useState([]);
   const [CategoryNum, setCategoryNum] = useState(0);
 
@@ -92,19 +94,27 @@ export default function StoreFilter({ currentCategory, typeFilter, handleClickFi
             <div
               onClick={() => {
   handleClickFilter(item.slug);
-  sideBartoggled();
+   sideBartoggled(); 
 }}
            className='store-category-div'
               key={index}
             >
               <span className={item.slug === typeFilter ? "store-category-selected" : "store-category"}>
-                <span className="store-category-text">{item.name}</span>
+                <AnimatedUnderline from='left' exit='same' offset={8}><span className='store-category-text' >{item.name}</span></AnimatedUnderline>
                 </span>
             </div>
           )}
         </div>
    
-   
+   <div onClick={handleCancelFilter} style={{pointerEvents:typeFilter?'auto':'none'}} className={`filter-clear-div ${typeFilter?'filter-selected':''}`}>
+          <ScrollButton
+  text='Clear Filter'
+  theme={typeFilter?'darkMode':'lightMode'}
+  color="#cf7729ff"
+  themeOnHover={typeFilter?'colorMode':'lightMode'}
+
+/>
+   </div>
     </div>
   )
 }

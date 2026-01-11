@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ScrollButton from '../../../../components/ScrollingButton/ScrollingButton'
 import './Reg_In.css'
 export default function Reg_In({firebase}) {
   return (
@@ -13,7 +14,20 @@ export default function Reg_In({firebase}) {
      
        
      
-       <Link id='account-button' className='regIn-link' to='/'>Get Started →</Link>
+       {/* <Link id='account-button' className='regIn-link' to='/'>Get Started →</Link> */}
+
+            <Link  to='/'
+     id='account-button' 
+    /*  className={email || password ?'account-button-active':'account-button-inactive'} */
+      >
+          <ScrollButton
+  text='Get Started →'
+  theme={'colorMode'}
+  color="#cf7729ff"
+  themeOnHover={'lightMode'}
+
+/>
+      </Link>
       
       </div>
   )

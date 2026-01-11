@@ -22,8 +22,13 @@ import MenuCancel from "../../components/MenuCancel/MenuCancel";
 import { WinScrollContext } from "../../components/WinScrollProvider/WinScrollProvider";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
 import { IoCloseCircle } from "react-icons/io5";
+import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
+import { ArrowUpDown } from 'lucide-react';
 import { FaCaretUp, FaCaretDown } from "react-icons/fa";
+import BracketButton from "../../components/BracketButton/BracketButton";
+import ScrollButton from "../../components/ScrollingButton/ScrollingButton";
 import StoreHeader from "./StoreHeader/StoreHeader";
+import StoreSorting from "./StoreSorting/StoreSorting";
 import "./Store.css";
 
 export default function Store() {
@@ -46,7 +51,7 @@ export default function Store() {
 
 
 
-  const SortArray= [{name:'Price',sort:'price'},{name:'Rating',sort:'rating'},{name:'Discount',sort:'discountPercentage'},{name:'In Stock',sort:'stock'}];
+
 
   const typeFilter = searchParams.get("type");
 
@@ -187,13 +192,15 @@ if (typeFilter && currentSort?.sort) {
 
       <div style={{display:sideBartoggled?'none':'flex'}} className="storePage-overlay"></div>
 
+    
 
-      <StoreHeader
-      handleCancelFilter={handleCancelFilter}
-      typeFilter={typeFilter}
-      sideBarsetToggled={sideBarsetToggled}
-      />
+   <div className="store-head-div">
+    <div className="store-head">The Vault</div>
+    <div className="store-head-description">
+The Vault is a carefully guarded collection of premium products, chosen for those who value quality over quantity. Each item earns its place — nothing more, nothing less. 
+    </div>
 
+   </div>
    
  
 
@@ -202,69 +209,29 @@ if (typeFilter && currentSort?.sort) {
 
       <div className="store-layout">
        
+
+        <StoreHeader
+      handleCancelFilter={handleCancelFilter}
+      typeFilter={typeFilter}
+      sideBartoggled={sideBartoggled}
+      sideBarsetToggled={sideBarsetToggled}
+      /> 
+
        <div className="filter-Btn-Ph"onClick={() => sideBarsetToggled(false)}>
           <SlidersHorizontal className="" strokeWidth={1.5} />
        </div>
+
+      <StoreSorting
+      isIdle={isIdle}
+      currentSort={currentSort}
+      setCurrentSort={setCurrentSort}
+      sortOrder={sortOrder}
+      toggleSortOrder={toggleSortOrder} />
+
    
-        <div style={{
-          transform: window.innerWidth>500 && isIdle? 'translateY(-90%)':'translateY(0%)'
-        }} 
-        className="sticky-sort-container">
-         <div className="current-sort-container-div">
-        <div className="current-sort-container">
-          <div className="sort-div-head" >Sort By:</div>
-          <div className="sort-div-wrapper sorty-div">
 
-          {SortArray.map((item) => {
-  const isSelected = currentSort?.name === item.name;
-
-  return (
-    <AnimatedUnderline from="center" key={item.name}>
-      <div
-        onClick={() => {
-    if (isSelected) return;
-    setCurrentSort(item);
-  }}
-        id={isSelected ? "sort-div-selected" : "sort-div"}
-      >
-
-
-        {isSelected && (
-         <div className="sort-order-div" id='sort-button' onClick={toggleSortOrder}>
-          {sortOrder==='asc'?<FaCaretUp/>:<FaCaretDown/>}
-         </div>
-        )}
-
-        {item.name}
-
-        {isSelected && (
-          <IoCloseCircle 
-          id='sort-button'
-            onClick={(e) => {
-              e.stopPropagation();
-              setCurrentSort(null);
-            }}
-            className="close-sort-div"
-          />
-        )}
-      </div>
-    </AnimatedUnderline>
-  );
-})}
-
-
-
-
-                             
-
-
-          </div>
-         
-
-  
-  </div>
-  </div>
-        </div>
+     
+   
 
        
         <aside className="store-sidebar"  style={{
@@ -277,11 +244,14 @@ if (typeFilter && currentSort?.sort) {
             handleClickCategory={() => setcurrentCategory("")}
             typeFilter={typeFilter}
             sideBartoggled={()=>sideBarsetToggled(true)}
+            handleCancelFilter ={handleCancelFilter}
           />
         </aside>
 
         <main className="store-content"  /* style={{ marginTop:window.innerWidth < 400 && typeFilter? "2rem": "0"}} */>
+       
           <div className="productList-wrapper" style={{ position: "relative" }}>
+            
             <div className="productList">{productElements}</div>
           </div>
 
@@ -290,9 +260,17 @@ if (typeFilter && currentSort?.sort) {
       </div>
  {!typeFilter && (
             <div className="LoadMore-button-div" >
-              <button className="LoadMore-button" onClick={handleLoadMore}>
-                LOAD MORE
-              </button>
+              
+                  <div className="LoadMore-button" onClick={handleLoadMore}>
+            <ScrollButton
+  text='Load More'
+  theme={'lightMode'}
+  color="#cf7729ff"
+  themeOnHover={'colorMode'}
+/>
+              </div> 
+
+            
             </div>
           )}
 

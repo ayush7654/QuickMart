@@ -66,7 +66,7 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
         /*         {title:"Wishlist ", path:'/wishlist',logo:pagelocation.pathname==='/wishlist'?<FaHeart id="fd-header-logo" className="wishlistIcon" />:<FiHeart className="wishlistIcon"  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/>}, */
 
 
-    const navElements= [{title:'HOME',path:'/'},{title:'STORE',path:'/store'},{title:'ABOUT',path:'/testing'}]
+    const navElements= [{title:'Home',path:'/'},{title:'Store',path:'/store'},{title:'About',path:'/testing'}]
 
 
 
@@ -176,21 +176,28 @@ useEffect(() => {
 
    
     return(<div      
-className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-header-TopMounted": "sticky-header-ScrollUp"}
+      className='site-header-div' 
+/* className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-header-TopMounted": "sticky-header-ScrollUp"} */
      style={{
       // Dynamic transition based on 'isIdle' state
       transition: isIdle
         ? 'transform 0.4s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
         : 'transform 0.5s ease-out,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
-      transform:!isAtTop || location.pathname!=='/' /*  && window.innerWidth>700  */
-  ? 'translateY(-50%)'
-  : 'translateY(0%)',
+      transform:isIdle || location.pathname=='/login'
+ ? 'translate(-50%, -100%)'   /* ENABLE HEADER TOGGLE IN STORE PAGE */
+    : 'translate(-50%, 0%)'
+  
      
      
     }}>
 
 
-        <div className="header-home">
+        <div  className={`header-home ${isAtTop && location.pathname=='/'?'headerAtTop':''}`}
+        style={{
+            transition: isIdle
+        ? 'transform 0.4s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
+        : 'transform 0.5s ease-out,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
+        }}>
           <div className="header-home-upper">
             <div className="site-logo-div" style={{scale:isAtTop?'1':'.5' , opacity:isAtTop?'1':'.4'}}> 
               <img src='./whiteStork5.png'  className="site-logo"/>
@@ -204,24 +211,32 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
                         </div>
 
 
-                 <div className="page-nav-container">
+                 <div className="page-nav-wrapper-left">
     
-                   <div className="page-nav">  
+                   
   
                      {navElements ? navElements.map(item => (
-                 <AnimatedUnderline  from="center" color= {pagelocation.pathname==='/'?'white':"rgb(0,250,250)"} thickness={pagelocation.pathname==='/'?3.5:4}>
+                
                          <NavLink
         key={item.path}
         to={item.path}
         className={({ isActive }) =>
-          `${isActive ? 'page-nav-item-selected' : 'page-nav-item'} ${
-            item.title === 'ABOUT' ? 'desktop-only' : ''
+          `page-nav-left ${isActive?'page-nav-left-selected':''} ${
+            item.title === 'About' ? 'desktop-only' : ''
           }`
         }
       >
-        {item.title}
+      <AnimatedUnderline 
+                  from="left" 
+                  exit="opposite"
+                  color={location.pathname==='/' && isAtTop?'white':"rgba(0, 0, 0, 1)"}  
+                  thickness={1}
+                  duration={.3}
+                  offset={0}> 
+                  {item.title}
+                  </AnimatedUnderline>  
       </NavLink>
-                 </AnimatedUnderline>
+               
                     
                       
                   
@@ -229,30 +244,33 @@ className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-he
                          ))
                         : <div>loading</div>
                      }
-                  </div>
+                  
                 </div> 
 
                 <div className="site-name-div">
                   <div className="site-logo-tagline">Elevate your World with</div>
-                  <div className="site-name">SAARAS</div>
+                  <div className="site-name">SaraS</div>
                 </div>
 
                   {/* <SiteLogo/> */}
-
+{/*  <span style={{color:'black'}}>replicate the shrinking header design</span> */}
 
      
-               <div className='Home-Nav-Container'>
+               <div className='page-nav-wrapper-right'>
 
                  <div
                  onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} 
-                 className="searchIcon-div"><Search className="searchIcon"    
+                 className="page-nav-right">
+                 <div id="header-icon">
+                  <Search className="searchIcon"    
                  style={{ strokeWidth: '1.5'}} />
+                 </div> 
                  </div>
 
                   {elements.map((element,index)=> 
                   <NavLink key={index} 
                    className={({ isActive }) =>
-          `${isActive ? 'navlink-selected' : 'navlink'} ${
+          `page-nav-right ${isActive?'page-nav-right-selected':''} ${
             element.title === 'Login' ? 'desktop-only' : ''
           }`
         }

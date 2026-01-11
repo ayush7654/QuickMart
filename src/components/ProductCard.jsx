@@ -4,8 +4,11 @@ import { BsBookmark, BsBookmarkFill } from 'react-icons/bs';
 import { FiBookmark } from 'react-icons/fi'
  import { FaHeart } from 'react-icons/fa';    // Filled heart
 import { FiHeart } from 'react-icons/fi';   
+import { HiShoppingCart,HiOutlineShoppingCart } from 'react-icons/hi';
 import { MdStar, MdStarBorder, MdStarHalf } from 'react-icons/md';
 import AnimatedUnderline from './AnimatedUnderline/AnimatedUnderline';
+import BracketButton from './BracketButton/BracketButton';
+import ScrollButton from './ScrollingButton/ScrollingButton';
 
 
 
@@ -92,8 +95,22 @@ function ProductCard({ classname, id, images, title, price, path,discount, ratin
         </div>
       </Link>
       <div className='productcard-links-div'>
-     <AnimatedUnderline from='center'color='rgb(80,230,230)' duration={.4} thickness={2} ><div id='pd-link' className='pd-AddtoCart'>Add to Cart</div></AnimatedUnderline> 
-       <AnimatedUnderline from='center'color='rgb(80,230,230)' duration={.4} thickness={2} ><div  id='pd-link' className='pd-BuyNow'>Buy Now</div></AnimatedUnderline> 
+  
+
+<ScrollButton
+  text={<div className='AddToCardButton'><HiOutlineShoppingCart fontSize={'1.5rem'} strokeWidth={1.5} /> <span>Add To Cart</span></div>}
+  theme="darkMode"
+  color="#cf7729ff"
+  themeOnHover="colorMode"
+/>
+
+
+  {/*    <HiOutlineShoppingCart />
+      <div id='pd-link' className='pd-AddtoCart'>Add to Cart</div> */}
+    
+      {/*  <AnimatedUnderline from='left'color='rgb(80,230,230)' duration={.4} thickness={2} >
+        <div  id='pd-link' className='pd-BuyNow'>Buy Now</div>
+        </AnimatedUnderline>  */}
 
       </div>
     </div>

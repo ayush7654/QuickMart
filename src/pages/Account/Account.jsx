@@ -1,5 +1,6 @@
 import {useState} from "react";
 import { useFirebase } from "../../components/FirebaseContext/Firebase";
+import { Link } from "react-router-dom";
 import Registration from "./Registration/Registration";
 import Login from "./Login/Login";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
@@ -24,7 +25,11 @@ export default function Account(){
     <div className="account-Page">
        <div className="accountPageImg"></div>
          <div className="account-container">
-          <div className="account-page-title">Account</div>
+          <Link to='/' className="account-page-title-div">
+            <div className="account-page-title-tagline">Elevate your world with</div>
+            <div className="account-page-title">SaraS</div>
+          </Link>
+          
 
           <div className="account-page-switch">
            <div id='switch-section' 

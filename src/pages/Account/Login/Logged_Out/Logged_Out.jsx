@@ -1,11 +1,14 @@
 import React from 'react'
 import './Logged_Out.css'
+import BracketButton from '../../../../components/BracketButton/BracketButton'
+import ScrollButton from '../../../../components/ScrollingButton/ScrollingButton'
 export default function Logged_Out({email,password,setEmail,setPassword,signIn}) {
   return (
     <div id='user-Input-box-div' >
       <div id='user-Input-content'>
        
        <div id='user-Input-box'>
+        
      <div id='account-input-div' className="Email">
         <div id='input-heading'>Email</div>
         <input id='account-input' className="login-email" 
@@ -48,11 +51,23 @@ export default function Logged_Out({email,password,setEmail,setPassword,signIn})
    
      
  
-     <button  id='account-button' className={email || password ?'account-button-active':'account-button-inactive'} onClick={signIn} >LOG IN</button>
+      <div  
+     id='account-button' style={{pointerEvents:email || password?'auto':'none'}}
+    /*  className={email || password ?'account-button-active':'account-button-inactive'} */
+      onClick={signIn} >
+          <ScrollButton
+  text='Log In'
+  theme={email || password ?'darkMode':'lightMode'}
+  color="#cf7729ff"
+  themeOnHover={email || password ?'colorMode':'lightMode'}
+
+/>
+      </div> 
+
+
 
         </div>
   )
 }
 
 
-/*    */

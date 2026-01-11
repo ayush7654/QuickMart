@@ -23,11 +23,13 @@
 
 
    font-family: "Questrial", sans-serif;
+  
 
    z-index: 1;
    font-weight: 400;
    
-   border-bottom:1px solid rgb(210,210,210) ;
+   border-bottom:1px solid rgb(220,220,220) ;
+
   
   }
 
@@ -55,6 +57,7 @@
     border: 0px solid rgb(0, 229, 255) ;
     height: 70%;
     gap:5rem;
+ 
 
     
     

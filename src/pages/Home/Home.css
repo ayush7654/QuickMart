@@ -12,18 +12,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Questrial&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 .Home{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border: 0px solid black;
-    width: 100vw;
+    width: 100%;
    overflow-x: hidden;
    position: relative;
    background-color: #ffffff;
 
   }
+
+
 
   .Home-scroll-content{
     width:100%;
@@ -39,12 +48,23 @@
       font-size: 2rem;
     padding: 1rem;
 letter-spacing: .2rem;
+letter-spacing: .05rem;
     width: 90%;
     font-weight: 400;
     margin-bottom: 2rem;
    font-family: "Questrial", sans-serif;
    font-family: 'Jost';
-    color:rgb(40,40,40);
+   font-family: 'Raleway';
+
+   text-align: center;
+
+
+      
+      
+
+
+
+    color:rgb(0, 0, 0);
     border-bottom: 1px solid rgb(200, 200, 200);
     background-color: white;
     
@@ -166,7 +186,7 @@ font-size:1.2rem;
   .Home .productcard-links-div{
 
 display: flex;
-    justify-content: space-between;
+    justify-content:center;
     height: 2.5rem;
     position: absolute;
    width: 100%;
@@ -175,6 +195,9 @@ display: flex;
   transition: all .7s ease;
   opacity: 0;
   border: 0px solid red;
+    border-radius: 20px;
+  overflow: hidden;
+ 
 
   }
 
@@ -184,32 +207,42 @@ transform: translateY(0);
    }
 
   .Home #pd-link{
-    width: 8rem;
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
      font-family: 'Poppins';
-     font-size: 'Jost';             
+   font-family: "Questrial", sans-serif; 
+     
     white-space: nowrap;
    transition: all .25s ease;
    font-weight: 400;
-   color:rgb(100,100,100);
-   border-bottom: 1px solid rgb(100,100,100);
+   color:rgb(50,50,50);
+   border-bottom: 1px solid rgb(200,200,200);
    letter-spacing: .02rem;
   }
 
     .Home #pd-link:hover{
       cursor: pointer;
       color:black;
-      letter-spacing: .05rem;
+      
 
     }
 
-  .pd-AddtoCart{
+    .AddToCardButton{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: .5rem;
+    }
+
+ .scroll-btn .pd-AddtoCart{
 /* background-color: #ffffff;
   border-bottom: 1px solid rgb(30,30,30);
     color:rgb(0, 0, 0); */
+border: 1px solid red;
+
 
    
   }
