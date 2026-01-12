@@ -13,14 +13,38 @@ import { IoCaretUp, IoCaretDown } from "react-icons/io5";
 import { NavLink } from 'react-router-dom';
 import BracketButton from '../BracketButton/BracketButton';
 import ScrollButton from '../ScrollingButton/ScrollingButton';
+import { useScroll } from '../ScrollData/ScrollData';
 export default function Testing() {
+
+const { scrollY, direction, velocity, isScrolling } = useScroll();
+
+  // 1. Clamp progress between 0 and 1
+  const progress = Math.min(scrollY / 500, 1);
+
+  // 2. Interpolate values
+  const scale = 8 - progress * 6;          // from 8 → 2
+  const translateY = progress * -250;      // moves up slightly
+  const opacity = 1;                       // keep it solid
+
 
   const buttomElement= <div> <HiShoppingBag/> Add to cart</div>
 
+console.log('scroll Data' ,scrollY)
 
   return (
     <div className='testing-div'>
 
+
+        <div
+      className="scrolling-effect"
+      style={{
+        transform: `translate(-50%, -50%) translateY(${translateY}px) scale(${scale})`,
+        opacity
+      }}
+    >
+      SaraS
+    </div>
+{/* 
       <div className='test-header'>
         SAARAS
       </div>
@@ -38,7 +62,7 @@ export default function Testing() {
 <div id='div-test' className='test-link'>
   <span id='link-div'>Add to Cart</span>  <span id='link-div'>ADD TO CART</span></div>
 <div id='div-test' className='test-button'>
-  <span>Button</span>  <span>BUTTON</span></div>
+  <span>Button</span>  <span>BUTTON</span></div> */}
 
 
 

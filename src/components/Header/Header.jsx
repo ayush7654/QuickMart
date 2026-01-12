@@ -10,6 +10,7 @@ import { MdLogin } from 'react-icons/md';
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { HiShoppingBag } from "react-icons/hi2";
 import AnimatedUnderline from "../AnimatedUnderline/AnimatedUnderline";
+import { useScroll } from "../ScrollData/ScrollData";
 
 
 import SiteLogo from "./SiteLogo/SiteLogo";
@@ -119,11 +120,11 @@ useEffect(() => {
   let ticking = false;
   // Define the distance from the top in pixels after which the header
   // changes its base class (e.g., from transparent to solid background)
-  const headerClassChangeThreshold = 10; // You can adjust this value as needed
+  const headerClassChangeThreshold = 600; // You can adjust this value as needed
 
   // NEW: Define the scroll distance from the top *before* the header
   // starts to consider hiding (becoming idle).
-  const hideHeaderStartThreshold = 10; // For example, hide after scrolling 200px from top
+  const hideHeaderStartThreshold = 50; // For example, hide after scrolling 200px from top
 
   // NEW: Define the scroll distance before the header becomes idle/hidden,
   // once the hideHeaderStartThreshold has been crossed.
@@ -171,6 +172,22 @@ useEffect(() => {
   window.addEventListener('scroll', onScroll);
   return () => window.removeEventListener('scroll', onScroll);
 }, []);
+
+
+const { scrollY } = useScroll();
+
+  // 1. Clamp progress (0 → 1)
+  const progress = Math.min(scrollY / 300, 1);
+
+  // 2. Interpolate values
+  const scale = 8 - progress * 7;        // 8 → 1
+  const translateY = 200 - progress * 200; // 200px → 0
+
+  // 3. Apply transform ONLY while headerAtTop is true
+  const transformStyle = isAtTop
+    ? `translateY(${translateY}px) scale(${scale})`
+    : "translateY(0) scale(1)";
+
 
  const suggestionComp= suggestions?suggestions.filter(item=>item.name.toLowerCase().includes(searchTerm.toLowerCase())):null;
 
@@ -247,7 +264,9 @@ useEffect(() => {
                   
                 </div> 
 
-                <div className="site-name-div">
+                <div className="site-name-div" style={{
+        transform: location.pathname=='/'? transformStyle:''
+      }}>
                   <div className="site-logo-tagline">Elevate your World with</div>
                   <div className="site-name">SaraS</div>
                 </div>

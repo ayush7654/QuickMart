@@ -43,7 +43,7 @@ color:rgb(235, 235, 235);
    
  background-color: transparent;
      z-index: 999;
-    overflow: hidden;
+   /*  overflow: hidden; */
        background: rgba(255, 255, 255, 0.801); /* translucent white */
   backdrop-filter: blur(50px);
   -webkit-backdrop-filter: blur(50px); /* Safari support */
@@ -125,21 +125,23 @@ background-color: transparent;
   }
 
   .site-name{
-  font-size: 1.8rem;
+  
   font-size: 2rem;
     letter-spacing: .2rem;
     z-index: 999;
 font-weight: 500;
-/* margin-bottom: -0.2rem;
-margin-top: 0rem; */
+
 font-family: "Prosto One", sans-serif;
-  /* font-family: "Bodoni Moda SC", serif;  */
+
 color:black;
+  will-change: transform;
+    transform-origin: center center;
 
   }
 
    .headerAtTop .site-name{
-    color:white;
+    color:#ffffff;
+
    }
 
 
