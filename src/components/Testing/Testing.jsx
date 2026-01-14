@@ -16,18 +16,15 @@ import ScrollButton from '../ScrollingButton/ScrollingButton';
 import { useScroll } from '../ScrollData/ScrollData';
 export default function Testing() {
 
-const { scrollY, direction, velocity, isScrolling } = useScroll();
-
-  // 1. Clamp progress between 0 and 1
-  const progress = Math.min(scrollY / 500, 1);
-
-  // 2. Interpolate values
-  const scale = 8 - progress * 6;          // from 8 → 2
-  const translateY = progress * -250;      // moves up slightly
-  const opacity = 1;                       // keep it solid
 
 
-  const buttomElement= <div> <HiShoppingBag/> Add to cart</div>
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState('Select');
+  const options = ['Price', 'Discount', 'Rating', 'In Stock'];
+
+     const [isOrderOpen, setIsOrderOpen] = useState(false);
+     const [sortOrder,setSortOrder] = useState('asc')
+     
 
 console.log('scroll Data' ,scrollY)
 
@@ -35,15 +32,49 @@ console.log('scroll Data' ,scrollY)
     <div className='testing-div'>
 
 
-        <div
-      className="scrolling-effect"
-      style={{
-        transform: `translate(-50%, -50%) translateY(${translateY}px) scale(${scale})`,
-        opacity
+
+// ... inside your return:
+
+<div className="sort-dropdown-wrapper">
+  <div 
+    className={`sort-main-box ${isOrderOpen ? 'box-active' : ''}`} 
+    onClick={() => setIsOrderOpen(!isOrderOpen)}
+  >
+    <div className="sort-text-stack">
+      <span className="sort-label">ORDER</span>
+      <span className="sort-current">
+        {sortOrder === 'asc' ? 'Low → High' : sortOrder === 'desc' ? 'High → Low' : 'Select'}
+      </span>
+    </div>
+    <div className={`sort-chevron ${isOrderOpen ? 'rotate' : ''}`}></div>
+  </div>
+
+  <div className={`sort-options-panel ${isOrderOpen ? 'panel-visible' : ''}`}>
+    {/* Option 1: Low to High */}
+    <div
+      className={`sort-item-row ${sortOrder === 'asc' ? 'item-selected' : ''}`}
+      onClick={() => {
+        if (sortOrder !== 'asc') toggleSortOrder(); // Use your existing toggle function
+        setIsOrderOpen(false);
       }}
     >
-      SaraS
+      Low → High
     </div>
+
+    {/* Option 2: High to Low */}
+    <div
+      className={`sort-item-row ${sortOrder === 'desc' ? 'item-selected' : ''}`}
+      onClick={() => {
+        if (sortOrder !== 'desc') toggleSortOrder(); // Use your existing toggle function
+        setIsOrderOpen(false);
+      }}
+    >
+      High → Low
+    </div>
+  </div>
+</div>
+
+    
 {/* 
       <div className='test-header'>
         SAARAS

@@ -1,0 +1,135 @@
+.sorting-toolbar-wrapper {
+  display: flex;
+  gap: 15px; /* Spacing between the two menus */
+  align-items: flex-start;
+  user-select: none;
+}
+
+.sort-dropdown-container {
+  position: relative;
+  width: 180px; /* Slightly narrower to fit side-by-side */
+}
+
+/* Base Styles (Shared by both) */
+.sort-main-box {
+  background: white;
+  border: 1px solid #e0e0e0;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  min-height: 48px;
+  transition: all 0.3s ease;
+}
+
+.sort-main-box:hover, .box-active { border-color: #000; }
+
+.sort-text-stack { display: flex; flex-direction: column; }
+
+.sort-label {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #aaa;
+  margin-bottom: 2px;
+}
+
+.sort-current {
+  font-size: 13px;
+  font-weight: 500;
+  color: #222;
+}
+
+/* Clear Button */
+.clear-sort-div {
+  font-size: 11px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  margin: 0 10px;
+}
+
+.clear-sort-active { opacity: 1; visibility: visible; }
+
+/* Chevron */
+.sort-chevron {
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid #444;
+  border-bottom: 1.5px solid #444;
+  transform: rotate(45deg);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sort-chevron.rotate { transform: rotate(-135deg); }
+
+/* Panels */
+.sort-options-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #eee;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+}
+
+.panel-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* Item Rows & The Slide Effect */
+.sort-item-row {
+  padding: 12px 15px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #555;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.sort-item-row:hover {
+  background: #f9f9f9;
+  color: #000;
+  padding-left: 24px; /* The premium slide effect */
+}
+
+.item-selected {
+  background: #f5f5f5;
+  color: #000;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.clear-sort {
+    font-size: .8rem;
+    color:rgb(255, 255, 255);
+    pointer-events: none;
+    font-family: "Questrial", sans-serif; 
+
+    position: absolute;
+    right:2rem;
+   
+}
+
+.clear-sort-active{
+    color:rgb(115, 115, 115);
+       pointer-events: auto;
+}
+
+.clear-sort-active:hover{
+    color:black;
+}
+.order-box-disabled{
+   pointer-events: none;
+
+}
+
+.order-box-disabled .sort-current{
+    color:rgb(180, 180, 180);
+ 
+    
+}

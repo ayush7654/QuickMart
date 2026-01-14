@@ -1,12 +1,19 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import './StoreSorting.css'
+import { SlidersHorizontal } from 'lucide-react';
 import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
-export default function StoreSorting({isIdle,sortOrder,currentSort,setCurrentSort,toggleSortOrder}) {
+import ScrollButton from '../../../components/ScrollingButton/ScrollingButton';
+import SortDropdown from '../SortDropDown/SortDropDown';
+export default function StoreSorting({isIdle,sortOrder,currentSort,setCurrentSort,toggleSortOrder,typeFilter,sideBartoggled,sideBarsetToggled}) {
   const SortArray= [{name:'Price',sort:'price'},
                     {name:'Rating',sort:'rating'},
                     {name:'Discount',sort:'discountPercentage'},
                     {name:'In Stock',sort:'stock'}];
+    
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState('Select');
 
+console.log('sort order is ' , sortOrder)
 
   return (
          <div style={{
@@ -16,64 +23,47 @@ export default function StoreSorting({isIdle,sortOrder,currentSort,setCurrentSor
             className="sticky-sort-container">
              <div className="current-sort-container-div">
             <div className="current-sort-container">
-              <div className="sort-div-head" >SORT BY </div>
-              <div className="sort-div-wrapper sorty-div">
-    
-              {SortArray.map((item) => {
-      const isSelected = currentSort?.name === item.name;
-    
-      return (
-     
-         <div
-            onClick={() => {
-        if (isSelected) return;
-        setCurrentSort(item);
-      }}
-            className={`sort-div ${isSelected?'sort-div-selected':''}`}
-          >
-    
-       
-    
-          <AnimatedUnderline 
-          from="left" exit="opposite"
-          offset={2} 
-          key={item.name}
-          thickness={1}>  
-      {/*   <span className="sort-div-text">{item.name}</span> */}
-        {item.name}
-          </AnimatedUnderline> 
-         
-          </div> 
-        
-      );
-    })}
-    
-    
-    
-              </div>
+
+
+
+            
+
+            
+
+
+
+
+
+           
              
-    <div  className={`sort-div-buttons ${currentSort?'sort-active':''}`}>
-      <div className="order-sort-div"
-           onClick={toggleSortOrder}>
-           {/*  <ArrowUpDown className="sort-button" strokeWidth={1.5}/>  */}
-              <AnimatedUnderline 
-                  from="left"
-                   exit='opposite' 
-                   offset={5} 
-                   thickness={1}>{sortOrder==='asc'?'Low → High':'High  → Low'}</AnimatedUnderline>
-    
-            </div>
-      <div  onClick={(e) => {
-                  e.stopPropagation();
-                  setCurrentSort(null);
-                }} className="clear-sort-div">
-                  <AnimatedUnderline 
-                  from="left"
-                   exit='opposite' 
-                   offset={5} 
-                   thickness={1}>Clear</AnimatedUnderline></div>
-    </div>
+  
       
+
+
+
+<div className='sort-dropDown-div'>
+
+
+
+   <SortDropdown
+    currentSort={currentSort} 
+  setCurrentSort={setCurrentSort}
+  AnimatedUnderline={AnimatedUnderline}
+  sortOrder={sortOrder}
+  toggleSortOrder={toggleSortOrder}/>
+
+
+</div>
+
+
+<div className='category-div' onClick={() => sideBarsetToggled(false)}>
+       <ScrollButton
+  text={<div className='filter-button-content'><SlidersHorizontal className="select-category-icon" strokeWidth={1.5} />  <div className="select-category-head">FILTER</div></div>}
+  theme={!sideBartoggled ?"colorMode":'darkMode'}
+  color="#cf7729ff"
+  themeOnHover={'colorMode'}
+/></div> 
+
       </div>
       </div>
             </div>

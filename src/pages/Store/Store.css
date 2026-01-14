@@ -60,7 +60,7 @@
 
 
 .store-head-div{
-  position: fixed;
+  
   height: 80vh;
   color:black;
     border: 0px solid red;
@@ -119,7 +119,8 @@
     width: 100%;
  position: relative;
   gap: 0rem;
-  margin-top: 90vh;
+  margin-top: 1rem;
+ 
 }
 
 
@@ -153,7 +154,8 @@
    padding-top: 1rem;
    
    min-height: 100vh;
-   background-color: white;
+   background-color: rgb(255, 255, 255);
+   
 
 }
 
@@ -173,18 +175,79 @@
 
 
 
-/* .categorty-head-div{
-  height: 3rem;
-  border: 1px solid blue;
+.store-page-heading-wrapper{
+
   width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 0px solid red;
+
 }
 
-.category-head{
+.store-page-heading{
 
-} */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  height: 5rem;
+  gap:1rem;
+  color: rgb(20,20,20);
+  z-index: 1;
+  font-family: "Questrial", sans-serif;
+ 
+
+    width: 90%;
+ font-size: 1.5rem;
+ letter-spacing: .05rem;
+ border: 0px solid green;
+   border-bottom: 1px solid rgb(220, 220, 220);
+
+
+}
+
+
+.store-all-link{
+ white-space: nowrap;
+ color:rgb(150,150,150);
+ font-size: .8rem;
+ font-weight:600;
+font-family: 'Raleway';
+font-family:'Lato';
+ font-family: "Questrial", sans-serif; 
+ font-family: 'Outfit';
+ font-family: 'Roboto';
+      font-family: "Questrial", sans-serif;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+
+
+}
+
+.store-all-link:hover{
+cursor: pointer;
+  color: rgb(20,20,20);
+}
+
+.store-category-head{
+    font-family: 'Raleway';
+     font-family: 'Jost';
+     font-family: 'Roboto';
+     font-family: Outfit;
+/*   font-family: 'Outfit'; */
+/*    font-family: "Questrial", sans-serif; */
+ text-transform: capitalize;
+   font-size: 2rem;
+ font-weight:400;
+  letter-spacing: 1px;
+  
+}
+
+
 
 .productList-wrapper {
   position: relative;

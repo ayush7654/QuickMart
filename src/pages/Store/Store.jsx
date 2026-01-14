@@ -29,6 +29,7 @@ import BracketButton from "../../components/BracketButton/BracketButton";
 import ScrollButton from "../../components/ScrollingButton/ScrollingButton";
 import StoreHeader from "./StoreHeader/StoreHeader";
 import StoreSorting from "./StoreSorting/StoreSorting";
+import SortDropdown from "./SortDropDown/SortDropDown";
 import "./Store.css";
 
 export default function Store() {
@@ -46,7 +47,7 @@ export default function Store() {
   const [categoryName, setCategoryName] = useState("");
   const [sideBartoggled, sideBarsetToggled] = useState(true);
   const [currentSort,setCurrentSort] = useState(null);
-  const [sortOrder,setSortOrder] = useState('asc')
+  const [sortOrder,setSortOrder] = useState(null)
   const { isIdle, isAtTop } = useContext(WinScrollContext);
 
 
@@ -90,8 +91,8 @@ export default function Store() {
 setSearchParams(searchParams); // update the URL
   }
 
-  const toggleSortOrder=()=>{
-    setSortOrder(prev=>(prev==='asc'?'desc':'asc'))
+  const toggleSortOrder=(order)=>{
+    setSortOrder(order)
   }
 
   const loadBatch = async (batchNumber) => {
@@ -208,25 +209,47 @@ The Vault is a carefully guarded collection of premium products, chosen for thos
 
 
       <div className="store-layout">
-       
 
-        <StoreHeader
-      handleCancelFilter={handleCancelFilter}
-      typeFilter={typeFilter}
-      sideBartoggled={sideBartoggled}
-      sideBarsetToggled={sideBarsetToggled}
-      /> 
 
-       <div className="filter-Btn-Ph"onClick={() => sideBarsetToggled(false)}>
-          <SlidersHorizontal className="" strokeWidth={1.5} />
-       </div>
-
-      <StoreSorting
+        
+    <StoreSorting
       isIdle={isIdle}
       currentSort={currentSort}
       setCurrentSort={setCurrentSort}
       sortOrder={sortOrder}
-      toggleSortOrder={toggleSortOrder} />
+      toggleSortOrder={toggleSortOrder}
+      typeFilter={typeFilter} 
+      sideBartoggled={sideBartoggled}
+      sideBarsetToggled={sideBarsetToggled}/> 
+
+
+
+      
+       <div className="store-page-heading-wrapper">
+          <div className="store-page-heading">
+                 <div 
+                 
+                 className="store-all-link"
+                 onClick={(e) => { e.stopPropagation();   // ⛔ stops parent onClick
+                                 handleCancelFilter();  // ✔ your original function
+              }}>Product Catelog</div>
+        
+            
+                 
+                   <div className='store-category-head'>{ typeFilter?typeFilter.split('-')
+                       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                       .join(' '):'Home Accessories'} 
+                  </div>  
+              </div>
+            </div>
+
+    
+ 
+
+
+       <div className="filter-Btn-Ph"onClick={() => sideBarsetToggled(false)}>
+          <SlidersHorizontal className="" strokeWidth={1.5} />
+       </div>
 
    
 
@@ -250,6 +273,8 @@ The Vault is a carefully guarded collection of premium products, chosen for thos
 
         <main className="store-content"  /* style={{ marginTop:window.innerWidth < 400 && typeFilter? "2rem": "0"}} */>
        
+
+
           <div className="productList-wrapper" style={{ position: "relative" }}>
             
             <div className="productList">{productElements}</div>

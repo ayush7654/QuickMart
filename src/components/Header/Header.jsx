@@ -96,7 +96,7 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
     fetchCategory();
     },[])
 
-    
+  
   
 
  
@@ -106,7 +106,7 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
     const location= useLocation()
     console.log(location)
 
-
+      const { scrollY, direction, velocity } = useScroll();
     
       // Move up/down state
       const [isIdle, setIsIdle] = useState(false);
@@ -124,7 +124,7 @@ useEffect(() => {
 
   // NEW: Define the scroll distance from the top *before* the header
   // starts to consider hiding (becoming idle).
-  const hideHeaderStartThreshold = 50; // For example, hide after scrolling 200px from top
+  const hideHeaderStartThreshold = 500; // For example, hide after scrolling 200px from top
 
   // NEW: Define the scroll distance before the header becomes idle/hidden,
   // once the hideHeaderStartThreshold has been crossed.
@@ -174,7 +174,7 @@ useEffect(() => {
 }, []);
 
 
-const { scrollY } = useScroll();
+
 
   // 1. Clamp progress (0 → 1)
   const progress = Math.min(scrollY / 300, 1);
@@ -189,19 +189,21 @@ const { scrollY } = useScroll();
     : "translateY(0) scale(1)";
 
 
+    console.log('direction is ', direction)
+
  const suggestionComp= suggestions?suggestions.filter(item=>item.name.toLowerCase().includes(searchTerm.toLowerCase())):null;
 
    
     return(<div      
       className='site-header-div' 
-/* className={location.pathname!=='/'? "sticky-header-ScrollUp":isAtTop ?"sticky-header-TopMounted": "sticky-header-ScrollUp"} */
+
      style={{
       // Dynamic transition based on 'isIdle' state
       transition: isIdle
         ? 'transform 0.4s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
         : 'transform 0.5s ease-out,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
       transform:isIdle || location.pathname=='/login'
- ? `translate(-50%, ${location.pathname=='/store'? '-100%':'0%'}`   /* ENABLE HEADER TOGGLE IN STORE PAGE */
+ ? `translate(-50%, ${location.pathname=='/store'? '-00%':'0%'}`   /* ENABLE HEADER TOGGLE IN STORE PAGE */
     : 'translate(-50%, 0%)'
   
      

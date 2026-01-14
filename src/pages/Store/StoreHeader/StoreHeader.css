@@ -10,7 +10,7 @@
  border: 0px solid red;
  margin-top: 0rem;
  position: sticky;
- top:0rem;
+ top:5rem;
  border-bottom: 0px solid rgb(225,225,225);
  padding-bottom: 0rem;
 
@@ -54,7 +54,7 @@ position: relative;
 }
 
 .store-all-link{
-
+ white-space: nowrap;
  color:rgb(75, 75, 75);
  font-size: .8rem;
  font-weight:600;
@@ -209,7 +209,7 @@ font-weight: 500;
  
 }
 
-/* .sorting-test{
+.sorting-test{
   color:black;
   border: 0px solid red;
   position: absolute;
@@ -221,7 +221,7 @@ font-weight: 500;
   font-family: 'Roboto';
   font-size: .9rem;
   color:rgb(75, 75, 75);
-} */
+} 
 
 @media(max-width:500px){
   .store-page-header{
