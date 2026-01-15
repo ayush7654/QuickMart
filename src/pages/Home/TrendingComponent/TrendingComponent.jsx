@@ -4,21 +4,19 @@ import './TrendingComponent.css'
 export default function TrendingComponent() {
   return (
       <div className="trending-products-div">
-             <div className='home-heading'>CLOSET UPDATE</div>
+             <div className='home-heading'>Closet Update</div>
 
  <div className="trend-container">   
     <div id='trend-div' className="trend-div1">
       <div className="trend-img1-div"></div>
     <div id="trend-name-div">
         <AnimatedUnderline color='white' from='center' offset={5} thickness={2}><div id='trend-name'>MEN</div></AnimatedUnderline>  
-        {/* <div id='trend-button'>Shop Now</div> */}
        </div> 
     </div>
     <div id='trend-div' className="trend-div2">
       <div className="trend-img2-div"></div>
     <div id="trend-name-div">
       <AnimatedUnderline color='white' from='center' offset={5} thickness={2}><div id='trend-name'>WOMEN</div></AnimatedUnderline>  
-      {/*   <div id='trend-button'>Shop Now</div> */}
        </div> 
     </div>
 

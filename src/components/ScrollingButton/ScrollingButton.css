@@ -22,9 +22,9 @@
 
 /* ================= THEMES ================= */
 .scroll-btn--lightMode {
-  --bg: white;
+  --bg: none;
   --text: black;
-  --border: black;
+  --border: transparent;
 }
 
 .scroll-btn--darkMode {

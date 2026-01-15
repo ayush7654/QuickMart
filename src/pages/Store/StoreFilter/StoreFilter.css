@@ -175,7 +175,7 @@ height: 4.5rem;
   bottom: 1rem;
   width: 87%;
   height: 3rem;
-border: 0px solid black;
+
 color:black;
 background-color: white;
   display: flex;
@@ -185,15 +185,18 @@ background-color: white;
 
   border-radius:25px ;
   overflow: hidden;
-  
-  
+  border: 1px solid black;
+
 }
 
+
 .filter-selected{
-  background-color: black;
+
   color:white;
   cursor: pointer;
+   border: 1px solid transparent;
 }
+
 
 
 @media(max-width:1200px){

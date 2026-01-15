@@ -66,13 +66,13 @@ font-family: 'Roboto';
     letter-spacing: .05rem;
   gap:.7rem;
   transition: all .3s ease;
-      border-radius: 25px;
+      border-radius: 0px;
   overflow: hidden;
-  border: 0px solid rgb(50, 50, 50);;
+  border: 1px solid rgb(50, 50, 50);;
 
-  
-  
-
+}
+.category-div:hover{
+    border: 1px solid transparent;
 }
 
 .filter-button-content{
@@ -127,6 +127,7 @@ font-weight: 500;
   font-family: 'Raleway';
   font-family:'Lato';
    font-family: 'Outfit';
+   font-family: 'Poppins';
 
  
   
@@ -148,19 +149,6 @@ font-weight: 500;
   transition: all .15s ease;
  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .sort-dropDown-div{

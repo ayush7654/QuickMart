@@ -43,13 +43,13 @@ color:rgb(235, 235, 235);
    
  background-color: transparent;
      z-index: 999;
-   /*  overflow: hidden; */
-       background: rgba(255, 255, 255, 0.801); /* translucent white */
+   background-color: white;
+   /*     background: rgba(255, 255, 255, 0.801);
   backdrop-filter: blur(50px);
-  -webkit-backdrop-filter: blur(50px); /* Safari support */
+  -webkit-backdrop-filter: blur(50px);
 
-  /* border-radius: 16px; */
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  border: 1px solid rgba(255, 255, 255, 0.3); */
 
   }
 
@@ -132,6 +132,7 @@ background-color: transparent;
 font-weight: 500;
 
 font-family: "Prosto One", sans-serif;
+
 
 color:black;
   will-change: transform;

@@ -41,7 +41,7 @@ const isFirstRender = useRef(true); // track initial mount
       <TrendingComponent />
     
          <DiscountProducts/>
-{/*       <FeaturedCategories/> */}
+  {/*    <FeaturedCategories/>  */}
 
 <Categories/>
 

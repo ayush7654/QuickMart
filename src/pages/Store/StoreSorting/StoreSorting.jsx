@@ -28,18 +28,6 @@ console.log('sort order is ' , sortOrder)
 
             
 
-            
-
-
-
-
-
-           
-             
-  
-      
-
-
 
 <div className='sort-dropDown-div'>
 
@@ -58,10 +46,10 @@ console.log('sort order is ' , sortOrder)
 
 <div className='category-div' onClick={() => sideBarsetToggled(false)}>
        <ScrollButton
-  text={<div className='filter-button-content'><SlidersHorizontal className="select-category-icon" strokeWidth={1.5} />  <div className="select-category-head">FILTER</div></div>}
-  theme={!sideBartoggled ?"colorMode":'darkMode'}
+  text={<div className='filter-button-content'><SlidersHorizontal className="select-category-icon" strokeWidth={1.5} />  <div className="select-category-head">Filter</div></div>}
+  theme={!sideBartoggled || typeFilter ?"darkMode":'lightMode'}
   color="#cf7729ff"
-  themeOnHover={'colorMode'}
+  themeOnHover={typeFilter?'colorMode':'darkMode'}
 /></div> 
 
       </div>

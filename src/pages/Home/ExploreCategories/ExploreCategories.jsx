@@ -5,7 +5,7 @@ export default function ExploreCategories() {
   return (
      <div className="explore-categories">
 
-          <div className='home-heading'>OUR COLLECTION</div>
+          <div className='home-heading'>Our Collection</div>
 
               <div className="explore-categories-list-container">
   

@@ -5,7 +5,7 @@ export default function DiscountProducts() {
   return (
       <div id='home-product-div' className="discount-home-Products-div">
 
-                     <div className='home-heading'>ABSOLUTE STEALS</div>
+                     <div className='home-heading'>Absolute Steals</div>
               <div className="home-Products-container" >
              <ProductCard
                   classname='home-product'
@@ -17,6 +17,7 @@ export default function DiscountProducts() {
                   price={1399.99}
                   path={location.search}
                   discount={15}
+                  rating={0}
                 />
                       <ProductCard
                   classname='home-product'

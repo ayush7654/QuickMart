@@ -73,6 +73,7 @@ text-decoration: underline;
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
+  
   }
 
   .google-login,.apple-login{
@@ -84,7 +85,7 @@ text-decoration: underline;
     align-items: center;
      height: 3rem;
      font-family: 'Inter';
-
+  border-radius: 25px;
    font-weight: 400;
   transition: all .3s ease-in-out;
        background-color: white;
@@ -124,8 +125,9 @@ background-position: center;
 background-repeat: no-repeat;
  background-size: 80% 80%; 
 background-color: white;
-width: 2.9rem;
-height: 2.9rem;
+width: 2.80rem;
+height: 2.80rem;
+  border-radius: 25px;
 }
 
   .google-login-icon{

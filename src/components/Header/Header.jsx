@@ -198,6 +198,7 @@ useEffect(() => {
       className='site-header-div' 
 
      style={{
+      display:location.pathname=='/login'?'none':'flex',
       // Dynamic transition based on 'isIdle' state
       transition: isIdle
         ? 'transform 0.4s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)

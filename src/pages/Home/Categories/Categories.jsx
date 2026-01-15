@@ -64,7 +64,7 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
    return (
     <div className="Categories-div">
       <div className="Categories-head-div">
-                   <div className='home-heading'>EXPLORE OUR RANGE</div>
+                   <div className='home-heading'>Explore Our Range</div>
 
               </div>
     <div className="Categories-container"

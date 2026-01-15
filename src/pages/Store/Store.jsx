@@ -196,7 +196,7 @@ if (typeFilter && currentSort?.sort) {
     
 
    <div className="store-head-div">
-    <div className="store-head">The Vault</div>
+    <div className="store-head">THE VAULT</div>
     <div className="store-head-description">
 The Vault is a carefully guarded collection of premium products, chosen for those who value quality over quantity. Each item earns its place — nothing more, nothing less. 
     </div>

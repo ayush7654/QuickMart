@@ -21,12 +21,61 @@
    width: 60%;
 
    overflow: hidden;
-   background-image: url('LoginImg/Login-Img.jpg');
-   background-position: center;
+   background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('account-stock5.jpg');  /* LoginImg/Login-Img.jpg */
+   background-position: top;
    background-repeat:no-repeat;
    background-size: cover;
+   display: flex;
+   align-items: end;
 
   }
+
+  .account-head-div{
+     
+/*   margin-bottom: 5rem; */
+  margin-left: 5rem;
+  margin-bottom: 4rem;
+
+  color:white;
+  border: 0px solid red;
+     display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    
+  /* font-family: "Bodoni Moda SC", serif;  */
+  }
+
+  .account-head{
+     font-size: 4rem;
+  font-family: "Prosto One", sans-serif;
+  font-family: 'Raleway';
+  
+ /*  font-family: "Figtree", sans-serif;  */ /* second best*/
+  
+  font-weight: 500;
+  }
+
+  .account-head-description{
+  border: 0px solid blue;
+  color:white;
+  width: 50%;
+  
+
+   font-weight: 300;
+   font-size: 1.2rem;
+   font-family: 'Inter';
+   font-family: 'Roboto';
+   font-family: 'Outfit';
+   
+  
+   
+   line-height: 1.5rem;
+
+  }
+
+
+
 
 
 
@@ -311,30 +360,17 @@ border: 0px solid black;
     font-family: 'Poppins';
   font-family: 'Outfit';
     transition: all  .3s ease;
+    border: 1px solid black;
 /*    position: absolute;
    bottom: 1.5rem;  */
    
   }
 
-   .account-button-active:hover{
-background-color: rgb(50, 210, 210);
-color:rgb(255, 255, 255);
-border: none;
-cursor: pointer;
-  }
+   #account-button:hover{
+    border: 1px solid transparent;
+   }
 
-  .account-button-active{
-    background-color: rgb(35, 35, 35);
-    color:white;
-  }
-
-    .account-button-inactive{
-    background-color: transparent;
-    color:rgb(40, 40, 40);
-    cursor: not-allowed;
-    border: 1px solid black;
-  }
-
+ 
   .account-loggedIn-div{
       display: flex;
     flex-direction: column;

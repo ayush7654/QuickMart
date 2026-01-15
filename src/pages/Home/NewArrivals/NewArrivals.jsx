@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductCard from '../../../components/ProductCard'
+import ScrollButton from '../../../components/ScrollingButton/ScrollingButton'
 import './NewArrivals.css'
 
 
@@ -7,7 +8,7 @@ export default function NewArrivals() {
   return (
       <div id='home-product-div' className="newArrivals-home-Products-div">
         
-                  <div className='home-heading'>NEW ARRIVALS</div>
+                  <div className='home-heading'>New Arrivals </div>
                   <div className="home-Products-container" >
 
 
@@ -48,7 +49,16 @@ export default function NewArrivals() {
              
     
                  </div>
-                
+                <div className='view-more-button'>
+                              <ScrollButton
+  text='View More'
+  theme="lightMode"
+  color="#cf7729ff"
+  themeOnHover="colorMode"
+/>
+                </div>
+
+    
                  </div>
   )
 }
