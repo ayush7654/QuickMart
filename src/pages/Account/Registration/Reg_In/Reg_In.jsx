@@ -22,9 +22,9 @@ export default function Reg_In({firebase}) {
       >
           <ScrollButton
   text='Get Started →'
-  theme={'colorMode'}
+  theme={'darkMode'}
   color="#cf7729ff"
-  themeOnHover={'lightMode'}
+  themeOnHover={'colorMode'}
 
 />
       </Link>

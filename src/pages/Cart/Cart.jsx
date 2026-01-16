@@ -90,11 +90,21 @@ const fetchData = async () => {
    
     return(<div className="cart-page">
 
-      <div className="cart-page-title"><div className="cart-page-heading">Your Cart</div></div>
+       <div className="page-head-div"  
+         style={{
+    backgroundImage:
+      "linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('/Cart-head.webp')"
+  }}>
+    <div className="page-head">YOUR CART</div>
+    <div className="page-head-description">
+Review your selected items, adjust quantities, and get ready to check out securely.
+    </div>
+
+   </div>
 
 
 
-       {cartElements.length>0 ? <div className="Cart-page-In">
+        <div className="Cart-page-In">
 
    {/* <div className="cart-item-list">{cartElements}</div> */}
        {/*  <TrackingOrder/> */}
@@ -121,7 +131,14 @@ const fetchData = async () => {
 </div>
 
 <div style={{ display: trackerOn ? "none" : "block" }}>
-  <div className="cart-item-list">{cartElements}</div>
+ {cartElements.length>0? 
+ <div className="cart-item-list">{cartElements}</div>
+:
+    <div className="empty-cart">
+      <img className="emptyCart-img" src='SiteGif/shopping-cart.gif' />
+      <div className="emptyCart-text1">Your cart is empty, let's change that.</div>
+      <Link to='/store' className="cart-store-button">Store</Link>
+      </div>}
 </div>
        </div>
    
@@ -137,15 +154,15 @@ const fetchData = async () => {
    totalCost={totalCost}
    />
     
-    </div>:
+    </div>
 
-    <div className="Cart-page-In-empty">
+   {/* <div className="Cart-page-In-empty">
    <div className="empty-cart">
       <img className="emptyCart-img" src='SiteGif/shopping-cart.gif' />
       <div className="emptyCart-text1">Your cart is empty, let's change that.</div>
       <Link to='/store' className="cart-store-button">Store</Link>
       </div>
-    </div>}
+    </div>  */}
 
  
    

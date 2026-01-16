@@ -2,7 +2,7 @@ import React from 'react'
 import './OrderDetails.css'
 export default function OrderDetails({cartElements,cartList,totalCost}) {
   return (
-     <div className={  cartElements.length < 1 ? "order-summary-empty-div":"order-summary-div"}>
+     <div className="order-summary-div">
       <div className="order-summary-title">Order Details</div>
       <div className="order-list-section">
         <div className="order-section-item">Item x Quantity</div>
