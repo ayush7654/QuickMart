@@ -114,14 +114,14 @@ Review your selected items, adjust quantities, and get ready to check out secure
           <div onClick={()=>setTrackerOn(false)} 
           className={`cart-content-head ${trackerOn?'':'cart-head-selected'}`}>
            <AnimatedUnderline from="center" offset={0}>
-            <span className='cart-head-text'>Cart Items</span>
+            <span className='cart-head-text'>CART ITEMS</span>
             </AnimatedUnderline> 
             </div>
-          <span style={{fontSize:'2rem'}}>|</span>
+          <span style={{fontSize:'2rem', color:'rgb(180,180,180)'}}>|</span>
           <div onClick={()=>setTrackerOn(true)} 
           className={`cart-content-head ${trackerOn?'cart-head-selected':''}`}>
             <AnimatedUnderline from="center" offset={0}>
-               <span className='cart-head-text' >Track Order</span>
+               <span className='cart-head-text' >TRACK ORDER</span>
             </AnimatedUnderline>
             
             </div>
@@ -145,14 +145,17 @@ Review your selected items, adjust quantities, and get ready to check out secure
 
 
       
-<div className="Cart-page-In-midline"></div>
+{/* <div className="Cart-page-In-midline"></div> */}
 
-
-  <OrderDetails
+<div className="order-details-div">
+  
+    <OrderDetails
    cartElements={cartElements}
    cartList={cartList}
    totalCost={totalCost}
    />
+</div>
+
     
     </div>
 

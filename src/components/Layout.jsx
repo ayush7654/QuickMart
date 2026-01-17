@@ -5,6 +5,7 @@ import Header from './Header/Header'
 import Footer from './Footer/Footer'
 import SearchBar from './SearchBar/SearchBar';
 import SideBarNav from './SideBarNav/SideBarNav';
+import SideBarCart from './SideBarCart/SideBarCart';
 
 
 
@@ -17,6 +18,8 @@ export default function Home(){
 
    const [sideBarOn,setSideBarOn] = useState(false)
 
+       const [cartToggled,setCartToggled]= useState(false)
+
  const SearchToggle=(i)=>{
 setSearchBarToggle(i)
    }
@@ -27,7 +30,11 @@ setSearchBarToggle(i)
 
   const toggleSideBar=(i)=>{
  setSideBarOn(i)
- console.log('clicked side bar')
+
+  }
+
+  const toggleSideCart=(i)=>{
+    setCartToggled(i)
   }
    
     return(
@@ -42,10 +49,17 @@ setSearchBarToggle(i)
 
   <SideBarNav sideBarState={sideBarOn} sideBarToggle={toggleSideBar} />
 
+
+  <SideBarCart
+  cartToggled={cartToggled}
+  setCartToggled={setCartToggled}
+  toggleOverlay={setShowOverlay}/>
+
     <Header toggleSwitch={SearchToggle} 
     screenOverlay={showOverlay}
       toggleOverlay={setShowOverlay}
-      sideBarToggle={toggleSideBar}/> 
+      sideBarToggle={toggleSideBar}
+      setCartToggled={setCartToggled}/> 
     <div className='outlet-container' style={{paddingTop:isHomePage?'0rem':'0rem'}}>
     <Outlet screenOverlay={showOverlay}
       toggleOverlay={setShowOverlay}/>

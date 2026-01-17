@@ -3,8 +3,9 @@ import './OrderDetails.css'
 export default function OrderDetails({cartElements,cartList,totalCost}) {
   return (
      <div className="order-summary-div">
-      <div className="order-summary-title">Order Details</div>
-      <div className="order-list-section">
+      <div className="order-summary-title">ORDER DETAILS</div>
+      <div className='order-summary-content'>
+         <div className="order-list-section">
         <div className="order-section-item">Item x Quantity</div>
         <div className="order-section-price">Price</div>
       </div>
@@ -19,6 +20,8 @@ export default function OrderDetails({cartElements,cartList,totalCost}) {
         
       <div className="total-cost"><span>Total Cost</span> <span>${totalCost.toFixed(2)}</span></div>
         <button className={cartElements.length>0?"checkout-btn":"checkout-btn-out"}>Place Order</button>
+      </div>
+     
     </div>
   )
 }

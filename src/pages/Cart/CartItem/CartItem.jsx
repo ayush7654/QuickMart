@@ -1,5 +1,6 @@
 import React ,{useState} from 'react'
 import './CartItem.css'
+import { FiPlus, FiMinus } from "react-icons/fi";
 export default function CartItem({index,images,title,price,quantity,shippingInformation,handleRemove}) {
 
       const [imgLoaded, setImgLoaded] = useState(false);
@@ -22,8 +23,13 @@ export default function CartItem({index,images,title,price,quantity,shippingInfo
         
             <div id='cart-info-item' className="cart-product-title">{title}</div>
             <div id='cart-info-item' className="cart-product-price">Price: ${price}</div>
-           <div id='cart-info-item' className="cart-product-quantity">Quantity: {quantity}</div>
            <div id='cart-info-item'>{shippingInformation}.</div>
+            <div id='cart-info-ite' className="cart-product-quantity">
+                 <span className='cart-quantity-button'><FiMinus strokeWidth={1}/></span>
+                 <span>{quantity}</span> 
+                  <span className='cart-quantity-button'><FiPlus strokeWidth={1}/></span>
+                  </div>
+          
           <div className="cart-btn">
           <button  id='cartButton' className="cart-remove-btn" onClick={()=>handleRemove(title)}>Remove</button>
                  <button id='cartButton' className="cart-buy-btn">View Details</button>

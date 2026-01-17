@@ -17,7 +17,7 @@ import SiteLogo from "./SiteLogo/SiteLogo";
 
 import './Header.css'
 import { head } from "lodash";
-export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBarToggle}){
+export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBarToggle,setCartToggled}){
 
   
         
@@ -230,7 +230,12 @@ useEffect(() => {
                    <MenuCancel/>
                         </div>
 
-
+  <div className="site-name-div" style={{
+        transform: location.pathname=='/'? transformStyle:''
+      }}>
+                  <div className="site-logo-tagline">Elevate your World with</div>
+                  <div className="site-name">SARAS</div>
+                </div>
                  <div className="page-nav-wrapper-left">
     
                    
@@ -267,12 +272,7 @@ useEffect(() => {
                   
                 </div> 
 
-                <div className="site-name-div" style={{
-        transform: location.pathname=='/'? transformStyle:''
-      }}>
-                  <div className="site-logo-tagline">Elevate your World with</div>
-                  <div className="site-name">SaraS</div>
-                </div>
+              
 
                   {/* <SiteLogo/> */}
 {/*  <span style={{color:'black'}}>replicate the shrinking header design</span> */}
@@ -300,8 +300,10 @@ useEffect(() => {
                    to={element.path}>
                     <div id="header-icon">{element.logo}</div>  
                   </NavLink>)}
-
+ <div className="cart-toggle" onClick={()=>{setCartToggled(true),toggleOverlay(true)}}>CART</div>
                </div>
+
+              
 
           </div>
     

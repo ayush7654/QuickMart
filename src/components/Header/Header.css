@@ -5,6 +5,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 
+
+
+.cart-toggle{
+  height: 100%;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+
   .site-header-div{
     position: fixed;
     top: 0;
@@ -104,7 +114,7 @@ background-color: transparent;
     position: absolute;
     width: 100%;
     height: 100%;
-    text-align: center;
+    
     color:#ffffff; 
     z-index: -1;
     display: flex;

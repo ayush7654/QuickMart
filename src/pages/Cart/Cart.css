@@ -33,15 +33,19 @@ margin-bottom: 8rem;
 padding-top: 0rem;
       display: flex;
       border: 0px solid red;
-      justify-content: space-evenly;
+      justify-content: space-between;
+      margin-top:0rem;
+      min-height: 100vh;
       
     
       
     }
 
     .cart-page-In-content{
-        width: 50%;
+        width: 55%;
         position: relative;
+        margin-left: 4rem;
+            padding-top: 2rem;
       
    
     
@@ -51,20 +55,34 @@ padding-top: 0rem;
     .cart-page-In-content-head-div{
       
         width: 100%;
-        height: 4rem;
+        height: 5rem;
         display: flex;
         align-items: center;
         justify-content: center;
         border-bottom: 1px solid rgb(220,220,220);
         background-color: white;
-        margin-bottom: 2rem;
+   
+             position: sticky; 
+             top:5rem;
+             z-index: 9;
+           
+            
+           
         
     }
 
     .cart-content-head{
     
-        font-size: 1.2rem;
+        font-size: .9rem;
         font-family: 'Jost';
+        font-family: 'Roboto';
+        font-family: 'Raleway';
+        font-family: 'Outfit';
+         font-family: "Manrope", sans-serif; 
+        font-family: "Questrial", sans-serif;
+            
+              letter-spacing: 1px;
+        font-weight: 600;
         width: 50%;
         height: 100%;
         display: flex;
@@ -73,6 +91,7 @@ padding-top: 0rem;
         display: flex;
         align-items: center;
         transition: all .3s ease;
+     
         
         
         
@@ -91,7 +110,7 @@ padding-top: 0rem;
 }
 
     .cart-head-text{
-       height: 4rem;
+       height: 5rem;
         display: flex;
         align-items: center;
         transition: all .2s ease;
@@ -141,6 +160,7 @@ padding-top: 0rem;
 
     .cart-item-list{
 border: 0px solid blue;
+margin-top: 2rem;
 
     }
 
@@ -157,6 +177,22 @@ border: 0px solid blue;
   
     
 }
+
+.order-details-div{
+  width: 40%;
+  border: 0px solid blue;
+  background-color: rgb(245,245,245);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  
+
+   
+  
+}
+
+
     
 
 
