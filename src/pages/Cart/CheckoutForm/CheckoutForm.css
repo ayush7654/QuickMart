@@ -1,0 +1,184 @@
+.form-container {
+  max-width: 550px;
+  margin: 20px auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #333;
+}
+
+.form-section {
+  margin-bottom: 30px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0;
+  /* font-family: 'Outfit'; */
+
+
+}
+
+.login-link {
+  color: #1976d2;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+/* Input Styling */
+/* input[type="text"], 
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: 2px solid #1976d2;
+  border-color: transparent;
+} */
+
+.full-width {
+  width: 100%;
+}
+
+.input-group{
+    margin-bottom:12px;
+}
+
+/* Layout helpers */
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+/* Address search icon */
+.address-input {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  color: #888;
+}
+
+.floating-label-group {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.floating-input {
+  width: 100%;
+  padding: 20px 12px 6px 12px; /* Extra top padding for the label space */
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+/* The Blue Border on Focus */
+.floating-input:focus {
+  border: 2px solid #005bd3;
+  padding: 19px 11px 5px 11px; /* Adjust for the 2px border to prevent jumping */
+}
+
+/* The Label Styling */
+.floating-label {
+  position: absolute;
+  left: 12px;
+  top: 13px; /* Default position (mimicking placeholder) */
+  color: #707070;
+  pointer-events: none; /* Allows clicking "through" the label to the input */
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+/* Move label up when:
+   1. The input is focused 
+   2. The input is NOT showing the placeholder (meaning it has text) 
+*/
+.floating-input:focus + .floating-label,
+.floating-input:not(:placeholder-shown) + .floating-label {
+  top: 6px;
+  font-size: 0.75rem;
+  color: #707070;
+}
+
+/* Checkbox styling */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.checkbox-container input {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+}
+
+
+.input-select {
+  width: 100%;
+  height: 3rem; /* Matches the height of your floating inputs */
+  padding: 0 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box; /* Ensures padding doesn't add to width/height */
+  transition: border-color 0.1s ease;
+  
+  /* Custom Arrow Styling */
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23707070' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.input-select:focus {
+  outline: none;
+  /* Fixed Layout 2px Border Trick: 
+     We use a 2px border but adjust the 'margin' or 'padding' 
+     to compensate, OR simply use the border-color with 
+     an inset box-shadow to mimic thickness without shifting. */
+  border: 2px solid #005bd3;
+  padding: 0 11px; /* Subtract 1px to compensate for the thicker border */
+}
+
+/* Individual options styling is limited by browsers, 
+   but we can set the basic font */
+#input-option {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px;
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import './Logged_Out.css'
 import BracketButton from '../../../../components/BracketButton/BracketButton'
 import ScrollButton from '../../../../components/ScrollingButton/ScrollingButton'
+import FloatingInput from '../../../../components/FloatingInput/FloatingInput'
 export default function Logged_Out({email,password,setEmail,setPassword,signIn}) {
   return (
     <div id='user-Input-box-div' >
@@ -10,20 +11,35 @@ export default function Logged_Out({email,password,setEmail,setPassword,signIn})
        <div id='user-Input-box'>
         
      <div id='account-input-div' className="Email">
-        <div id='input-heading'>Email</div>
-        <input id='account-input' className="login-email" 
+      {/*   <div id='input-heading'>Email</div> */}
+        {/* <input id='account-input' className="login-email" 
            
             name="email"
             value={email}
-            onChange={(e)=>setEmail(e.target.value)}/> 
+            onChange={(e)=>setEmail(e.target.value)}/>  */}
+        <FloatingInput
+        name='email'
+        label='Email'
+        value={email}
+        onChange={(e)=>setEmail(e.target.value)}
+
+        />
+
      </div>
      <div id='account-input-div' className="Password">
-       <div id='input-heading'>Password</div>
-       <input id='account-input' className="login-password"  
+     {/*   <div id='input-heading'>Password</div> */}
+      {/*  <input id='account-input' className="login-password"  
         
             name="password"        
             value={password}
-            onChange={(e)=>setPassword(e.target.value)}/> 
+            onChange={(e)=>setPassword(e.target.value)}/>  */}
+        <FloatingInput
+        name='password'
+        label='Password'
+         value={password}
+            onChange={(e)=>setPassword(e.target.value)}
+
+        />
      </div> 
 
      <div className="forgot-pw">

@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import { useFirebase } from '../../../components/FirebaseContext/Firebase';
 import { useNavigate } from 'react-router-dom';
+import { useCartList } from '../../../components/CartListProvider';
 import './ProductInfo.css'
 import StarRating from '../../../components/StarRating'
 
@@ -16,6 +17,8 @@ export default function ProductInfo({product}) {
 
        const firebase= useFirebase()
        const userInfo = firebase.isLoggedIn?firebase.currentUser.email:null
+
+      const {handleRemove} = useCartList();
    
     const handleIncrease = () => {
         setQuantity(prevQuantity => prevQuantity + 1);
@@ -36,16 +39,18 @@ export default function ProductInfo({product}) {
         console.log('this is productInfo',productInfo)
         await firebase.storeDataInFB("users",userInfo,"CartItems",product.title,productInfo)
     }
-
+/* 
     const deleteFromDataBase = async () => {
         await firebase.deleteDataInFB("users", userInfo, "CartItems", product.title);
-    };
+    }; */
    
     function handleClick() {
         if (firebase.isLoggedIn){
              if (AddedtoCart) {
             // If already added to cart, delete it
-            deleteFromDataBase();
+           /*  deleteFromDataBase(); */
+           handleRemove(product.title);
+           console.log('the product was removed')
         } else {
             // If not added, add it to the database
             updataDataBase();

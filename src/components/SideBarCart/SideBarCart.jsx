@@ -1,7 +1,29 @@
 import React,{useState} from 'react'
 import './SideBarCart.css'
 import { X } from 'lucide-react';
+import { useCartList } from '../CartListProvider';
+import CartItem from './CartItem/CartItem';
+
+
 export default function SideBarCart({cartToggled,setCartToggled, toggleOverlay}) {
+
+
+
+  const { cartList, cartLoading ,handleRemove,updateDataBase} = useCartList();
+
+
+      const cartElements=cartList? (cartList.map((product,index)=>(
+     <CartItem
+     index={index}
+     title={product.title}
+     images={product.images[0]}
+      price={product.price}
+      quantity={product.quantity}
+      shippingInformation={product.shippingInformation}
+      discount={product.discountPercentage}
+      handleRemove={handleRemove}
+      updateDataBase={updateDataBase}/>
+          ))):<div>loading</div>;
 
 
   return (
@@ -13,15 +35,18 @@ export default function SideBarCart({cartToggled,setCartToggled, toggleOverlay})
         <div className='side-cart-head-div'>
             <div className='side-cart-head-content'>
                  <span className='side-cart-head'>YOUR CART</span>  
-          <span className='side-cart-cancel'>
-            
-         
-
-    <X size={24} strokeWidth={1.5} onClick={()=>{setCartToggled(false),toggleOverlay(false)}}  />
-
-  </span>
-  </div>
+                 <span className='side-cart-cancel'>
+                 <X size={24} strokeWidth={1.5} onClick={()=>{setCartToggled(false),toggleOverlay(false)}}  />
+                 </span>
+            </div>  
         </div>
+        <div className='side-cart-list-wrapper'>
+             <div className='side-cart-list'>
+           {cartElements.length>0 && cartElements }
+         </div>
+        </div>
+        
+
     </div>
   )
 }

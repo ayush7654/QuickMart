@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import './Reg_Out.css'
 import ScrollButton from '../../../../components/ScrollingButton/ScrollingButton'
+import FloatingInput from '../../../../components/FloatingInput/FloatingInput'
 export default function Reg_Out({firebase}) {
 
 
@@ -27,36 +28,64 @@ export default function Reg_Out({firebase}) {
         <div id='user-Input-content'>
         <div id='user-Input-box'>
                  <div id='account-input-div' className='reg-Username-div'>
-                     <div id='input-heading'>Username</div>
-                     <input id='account-input' className='register-username' 
+                    {/*  <div id='input-heading'>Username</div> */}
+                     {/* <input id='account-input' className='register-username' 
           
           name="username"
           value={username}
-          onChange={(e)=>setUsername(e.target.value)}/>
+          onChange={(e)=>setUsername(e.target.value)}/> */}
+           <FloatingInput
+        name='username'
+        label='Username'
+        value={username}
+        onChange={(e)=>setUsername(e.target.value)}
+
+        />
               </div>
               <div id='account-input-div' className='reg-Email-div'>
-                     <div id='input-heading'>Email</div>
-                     <input id='account-input' className='register-emailId' 
+                    {/*  <div id='input-heading'>Email</div> */}
+                     {/* <input id='account-input' className='register-emailId' 
        
           name="email"
           value={email}
-          onChange={(e)=>setEmail(e.target.value)}/>
+          onChange={(e)=>setEmail(e.target.value)}/> */}
+             <FloatingInput
+        name="email"
+          value={email}
+          onChange={(e)=>setEmail(e.target.value)}
+          label='Email'
+
+        />
               </div>
        <div id='account-input-div' className='reg-password-div'>
-              <div id='input-heading'>Password</div>
-              <input id='account-input' className='register-password'
+              {/* <div id='input-heading'>Password</div> */}
+             {/*  <input id='account-input' className='register-password'
        
           name="password"
           value={password}
-          onChange={(e)=>setPassword(e.target.value)}/>
+          onChange={(e)=>setPassword(e.target.value)}/> */}
+             <FloatingInput
+       name="password"
+          value={password}
+          onChange={(e)=>setPassword(e.target.value)}
+          label='Password'
+
+        />
        </div>
    <div id='account-input-div' className='reg-Confirm-password'>
-       <div id='input-heading'>Confirm Password</div>
-       <input id='account-input' className='register-ConfirmPassword'
+     {/*   <div id='input-heading'>Confirm Password</div> */}
+       {/* <input id='account-input' className='register-ConfirmPassword'
        
           name="password"
           value={confirmPassword}
-          onChange={(e)=>setConfirmPassword(e.target.value)}/>
+          onChange={(e)=>setConfirmPassword(e.target.value)}/> */}
+             <FloatingInput
+       name="password"
+          value={confirmPassword}
+          onChange={(e)=>setConfirmPassword(e.target.value)}
+          label='Confrim Password'
+
+        />
    </div>
    </div>
       </div>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './Testing.css'
-
+import FloatingInput from '../FloatingInput/FloatingInput'
 
 export default function Testing() {
 
@@ -13,7 +13,12 @@ export default function Testing() {
 
 
 
-
+<FloatingInput 
+        label="Display Name"
+        name="displayName"
+     
+      
+      />
 
 
 

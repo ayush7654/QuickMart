@@ -1,0 +1,67 @@
+.floating-label-group {
+  position: relative;
+  margin-bottom: 12px;
+  width: 100%;
+  /* Define a fixed height so the layout never moves */
+  height:3rem; 
+}
+
+.floating-input {
+  width: 100%;
+  height: 100%; /* Fill the container */
+  /* Padding stays the same ALWAYS to prevent layout jumps */
+  padding: 22px 12px 6px 12px; 
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Crucial: includes padding in height */
+/*   transition: border 0.1s ease; */
+  background: white;
+}
+
+/* Fix for the "overlapping" bug: 
+   We ensure the cursor and text start lower down from the start */
+.floating-input:placeholder-shown {
+  padding: 14px 12px; /* Center the cursor visually when empty */
+}
+
+.floating-input:focus {
+outline: none;
+  /* Use box-shadow for the blue border instead of increasing border-width.
+     Increasing border-width from 1px to 2px is what causes the "shaking" jump. */
+  border-color: #005bd3;
+   border: 2px solid  #005bd3;
+  padding: 22px 12px 6px 12px;
+}
+
+.floating-label {
+ position: absolute;
+  left: 12px;
+  /* Mathematical vertical center */
+  top: 50%;
+  transform: translateY(-50%);
+  
+  color: #707070;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  z-index: 1;
+
+}
+
+/* THE FIX: When focused OR has text, move label up and stay there */
+.floating-input:focus + .floating-label,
+.floating-input:not(:placeholder-shown) + .floating-label {
+  top: 14px; /* Fixed position at the top */
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.input-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}

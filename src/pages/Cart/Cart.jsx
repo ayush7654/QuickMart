@@ -2,20 +2,23 @@ import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import TrackingOrder from "./TrackingOrder/TrackingOrder";
 import { useFirebase } from "../../components/FirebaseContext/Firebase";
-import CartItem from "./CartItem/CartItem";
+import CartItem from "../../components/SideBarCart/CartItem/CartItem";
 import OrderDetails from "./OrderDetails/OrderDetails";
 import CartLoading from "./CartLoading/CartLoading";
+import CheckoutForm from "./CheckoutForm/CheckoutForm";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
+import { useCartList } from "../../components/CartListProvider";
 import './Cart.css'
 
 
 export default function Cart(){
-    const[cartList,setcartList]= useState([])
+   
 
     const [trackerOn,setTrackerOn] = useState(false)
     const [totalCost, setTotalCost] = useState(0); // Initialize total cost state
 
-    const [cartLoading, setCartLoading] = useState(true); // true while fetching
+      const { cartList, cartLoading ,handleRemove} = useCartList();
+  
 
 
   
@@ -24,20 +27,7 @@ export default function Cart(){
     const firebase= useFirebase()
     const userInfo = firebase.isLoggedIn?firebase.currentUser.email:null
 
-const fetchData = async () => {
-  setCartLoading(true); // start loading
-  try {
-    const cartItem = await firebase.getDataFromFB("users", userInfo, "CartItems");
 
-    cartItem.forEach(item =>
-      setcartList(prev => [...prev, item.data().Product])
-    );
-  } catch (err) {
-    console.error("Failed to fetch cart items:", err);
-  } finally {
-    setCartLoading(false); // done loading
-  }
-};
 
 
     const calculateTotalCost = () => {
@@ -50,26 +40,11 @@ const fetchData = async () => {
 
    
 
-  
-
-   useEffect(()=>{
-  fetchData() 
-
-   },[])
-
    useEffect(() => {
     calculateTotalCost();
   }, [cartList]); // Recalculate total cost whenever cartList changes
 
 
-   const handleRemove = async (productTitle) => {
-   
-     // Optimistically update the state
-     setcartList(prevCartList => prevCartList.filter(product => product.title !== productTitle));
-    
-     // Delete product from Firestore
-    await firebase.deleteDataInFB("users", userInfo, "CartItems", productTitle);
-};
 
     const cartElements=cartList? (cartList.map((product,index)=>(
    <CartItem
@@ -82,7 +57,7 @@ const fetchData = async () => {
     handleRemove={handleRemove}/>
         ))):<div>loading</div>;
 
-        console.log('list is',cartElements.length)
+
     
         if (cartLoading) {
   return <CartLoading />; // your silhouette page
@@ -109,7 +84,7 @@ Review your selected items, adjust quantities, and get ready to check out secure
    {/* <div className="cart-item-list">{cartElements}</div> */}
        {/*  <TrackingOrder/> */}
 
-       <div className="cart-page-In-content">
+       <div className="cart-page-left">
         <div className="cart-page-In-content-head-div">
           <div onClick={()=>setTrackerOn(false)} 
           className={`cart-content-head ${trackerOn?'':'cart-head-selected'}`}>
@@ -127,7 +102,8 @@ Review your selected items, adjust quantities, and get ready to check out secure
             </div>
         </div>
     <div style={{ display: trackerOn ? "block" : "none" }}>
-  <TrackingOrder />
+ {/*  <TrackingOrder /> */}
+ <CheckoutForm/>
 </div>
 
 <div style={{ display: trackerOn ? "none" : "block" }}>

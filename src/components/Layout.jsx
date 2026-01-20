@@ -6,6 +6,7 @@ import Footer from './Footer/Footer'
 import SearchBar from './SearchBar/SearchBar';
 import SideBarNav from './SideBarNav/SideBarNav';
 import SideBarCart from './SideBarCart/SideBarCart';
+import { CartListProvider } from './CartListProvider';
 
 
 
@@ -50,20 +51,31 @@ setSearchBarToggle(i)
   <SideBarNav sideBarState={sideBarOn} sideBarToggle={toggleSideBar} />
 
 
-  <SideBarCart
-  cartToggled={cartToggled}
-  setCartToggled={setCartToggled}
-  toggleOverlay={setShowOverlay}/>
+
 
     <Header toggleSwitch={SearchToggle} 
     screenOverlay={showOverlay}
       toggleOverlay={setShowOverlay}
       sideBarToggle={toggleSideBar}
       setCartToggled={setCartToggled}/> 
+
+<CartListProvider>
+
+  
     <div className='outlet-container' style={{paddingTop:isHomePage?'0rem':'0rem'}}>
     <Outlet screenOverlay={showOverlay}
       toggleOverlay={setShowOverlay}/>
     </div>
+
+      <SideBarCart
+  cartToggled={cartToggled}
+  setCartToggled={setCartToggled}
+  toggleOverlay={setShowOverlay}/>
+
+
+  </CartListProvider>
+
+
          <Footer /> 
     </div>
         
