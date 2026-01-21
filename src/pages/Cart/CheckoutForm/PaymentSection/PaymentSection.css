@@ -1,0 +1,60 @@
+.payment-text{
+    margin-bottom: 12px;
+}
+
+
+
+.credit-card-head{
+    height: 3rem;
+ border: 1px solid blue;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+
+
+.payment-input-wrapper{
+    padding: 12px;
+    border: 1px solid rgb(200,200,200);
+    border-top: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgb(240, 240, 240);
+    
+    
+}
+
+
+.payment-card-info {
+  display: flex;
+  gap: 1rem;          /* space between inputs */
+  width: 100%;
+}
+
+.payment-card-info > * {
+  flex: 1;            /* both take equal width */
+}
+
+/* keep icon layout intact */
+.input-icon-div {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pay-now-button{
+    height: 3rem;
+    border: 1px solid black;
+    margin-top: 1rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

@@ -21,6 +21,7 @@ export default function SideBarCart({cartToggled,setCartToggled, toggleOverlay})
       quantity={product.quantity}
       shippingInformation={product.shippingInformation}
       discount={product.discountPercentage}
+      returnPolicy={product.returnPolicy}
       handleRemove={handleRemove}
       updateDataBase={updateDataBase}/>
           ))):<div>loading</div>;

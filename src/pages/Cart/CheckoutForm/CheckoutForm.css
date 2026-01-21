@@ -1,8 +1,12 @@
-.form-container {
-  max-width: 550px;
+.checkout-form-container {
+ width: 60%;
   margin: 20px auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #333;
+  margin-bottom: 9rem;
+
+
+
 }
 
 .form-section {
@@ -69,15 +73,15 @@ input:focus, select:focus {
 }
 
 /* Address search icon */
-.address-input {
+.input-icon-div {
   position: relative;
 }
 
-.search-icon {
+.form-icon {
   position: absolute;
   right: 12px;
-  top: 12px;
-  color: #888;
+  top: 14px;
+  color: rgb(120, 120, 120);
 }
 
 .floating-label-group {
@@ -182,3 +186,6 @@ input:focus, select:focus {
   font-size: 1rem;
   padding: 10px;
 }
+
+
+

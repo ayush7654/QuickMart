@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './CheckoutForm.css';
+import PaymentSection from './PaymentSection/PaymentSection';
+import { FiSearch } from "react-icons/fi";
+
 import FloatingInput from '../../../components/FloatingInput/FloatingInput';
 const CheckoutForm = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +19,12 @@ const CheckoutForm = () => {
     saveInfo: false
   });
 
+  const CardIcons =[{name:'visa',icon:''},
+    {name:'mastercard',icon:''},
+    {name:'americanExpress',icon:''},
+    {name:'visa',icon:''}
+  ]
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -25,7 +34,7 @@ const CheckoutForm = () => {
   };
 
   return (
-    <div className="form-container">
+    <div className="checkout-form-container">
       {/* Contact Section */}
       <div className="form-section">
         <div className="section-header">
@@ -71,7 +80,7 @@ const CheckoutForm = () => {
          
 
              <FloatingInput
-        label='Last name'
+        label='Last name (optional)'
         name='lastName'
         onChange={handleChange}
         
@@ -79,7 +88,7 @@ const CheckoutForm = () => {
         />
         </div>
 
-        <div className="input-group address-input">
+        <div className="input-group input-icon-div">
        
               <FloatingInput
         label='Address'
@@ -88,7 +97,7 @@ const CheckoutForm = () => {
         
 
         />
-          <span className="search-icon">🔍</span>
+          <span className="form-icon">< FiSearch/></span>
         </div>
 
        
@@ -131,6 +140,10 @@ const CheckoutForm = () => {
           <span>Save this information for next time</span>
         </label>
       </div>
+      {/* Payment Section */}
+      <PaymentSection/>
+      
+      
     </div>
   );
 };

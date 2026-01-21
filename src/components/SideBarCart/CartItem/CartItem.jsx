@@ -4,7 +4,7 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 import { FiTrash2 } from "react-icons/fi";
 import { HiOutlineTrash } from "react-icons/hi";
 import { MdDeleteOutline } from "react-icons/md";
-export default function CartItem({index,images,title,price,quantity,shippingInformation,discount,handleRemove,updateDataBase}) {
+export default function CartItem({index,images,title,price,quantity,shippingInformation,returnPolicy,discount,handleRemove,updateDataBase}) {
 
       const [imgLoaded, setImgLoaded] = useState(false);
 
@@ -46,7 +46,7 @@ useEffect(() => {
            
           
            <div id='cart-info-item'>Color : {index%2===0?'Red':'Black'}</div>
-         <div id='cart-info-item'>{shippingInformation}.</div>
+         <div id='cart-info-item'>{returnPolicy}.</div>
             <div id='' className="cart-product-price-div">
                <span className='cart-item-price'> ${price}</span>
             <span className='discount-price'>${(price*((100-discount)/100)).toFixed(2)}</span> 

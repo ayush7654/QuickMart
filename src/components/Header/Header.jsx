@@ -203,8 +203,8 @@ useEffect(() => {
       transition: isIdle
         ? 'transform 0.4s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
         : 'transform 0.5s ease-out,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
-      transform:isIdle || location.pathname=='/login'
- ? `translate(-50%, ${location.pathname=='/store'? '-00%':'0%'}`   /* ENABLE HEADER TOGGLE IN STORE PAGE */
+      transform:isIdle 
+ ? `translate(-50%, ${location.pathname=='/store'? '-100%':'-100%'}`   /* ENABLE HEADER TOGGLE IN STORE PAGE */
     : 'translate(-50%, 0%)'
   
      

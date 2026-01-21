@@ -14,7 +14,7 @@ import './Cart.css'
 export default function Cart(){
    
 
-    const [trackerOn,setTrackerOn] = useState(false)
+    const [trackerOn,setTrackerOn] = useState(true)
     const [totalCost, setTotalCost] = useState(0); // Initialize total cost state
 
       const { cartList, cartLoading ,handleRemove} = useCartList();
@@ -79,51 +79,23 @@ Review your selected items, adjust quantities, and get ready to check out secure
 
 
 
-        <div className="Cart-page-In">
+        <div className="Cart-page-wrapper">
 
-   {/* <div className="cart-item-list">{cartElements}</div> */}
-       {/*  <TrackingOrder/> */}
+
 
        <div className="cart-page-left">
-        <div className="cart-page-In-content-head-div">
-          <div onClick={()=>setTrackerOn(false)} 
-          className={`cart-content-head ${trackerOn?'':'cart-head-selected'}`}>
-           <AnimatedUnderline from="center" offset={0}>
-            <span className='cart-head-text'>CART ITEMS</span>
-            </AnimatedUnderline> 
-            </div>
-          <span style={{fontSize:'2rem', color:'rgb(180,180,180)'}}>|</span>
-          <div onClick={()=>setTrackerOn(true)} 
-          className={`cart-content-head ${trackerOn?'cart-head-selected':''}`}>
-            <AnimatedUnderline from="center" offset={0}>
-               <span className='cart-head-text' >TRACK ORDER</span>
-            </AnimatedUnderline>
-            
-            </div>
-        </div>
-    <div style={{ display: trackerOn ? "block" : "none" }}>
- {/*  <TrackingOrder /> */}
+       
+    <div className="cart-page-left-head">
+      <span>SHIPPING DETAILS</span>
+      </div>
  <CheckoutForm/>
-</div>
 
-<div style={{ display: trackerOn ? "none" : "block" }}>
- {cartElements.length>0? 
- <div className="cart-item-list">{cartElements}</div>
-:
-    <div className="empty-cart">
-      <img className="emptyCart-img" src='SiteGif/shopping-cart.gif' />
-      <div className="emptyCart-text1">Your cart is empty, let's change that.</div>
-      <Link to='/store' className="cart-store-button">Store</Link>
-      </div>}
-</div>
+
+
        </div>
    
 
-
-      
-{/* <div className="Cart-page-In-midline"></div> */}
-
-<div className="order-details-div">
+<div className="cart-page-right">
   
     <OrderDetails
    cartElements={cartElements}
@@ -135,16 +107,6 @@ Review your selected items, adjust quantities, and get ready to check out secure
     
     </div>
 
-   {/* <div className="Cart-page-In-empty">
-   <div className="empty-cart">
-      <img className="emptyCart-img" src='SiteGif/shopping-cart.gif' />
-      <div className="emptyCart-text1">Your cart is empty, let's change that.</div>
-      <Link to='/store' className="cart-store-button">Store</Link>
-      </div>
-    </div>  */}
-
- 
-   
     </div>
 
     
