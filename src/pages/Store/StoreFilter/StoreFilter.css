@@ -170,6 +170,20 @@ height: 4.5rem;
 
 }
 
+
+.filter-clear-div-wrapper{
+  border: 0px solid red;
+  height: 8rem;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-top: 1px solid rgb(220,220,220);
+}
+
 .filter-clear-div{
   position: sticky;
   bottom: 1rem;

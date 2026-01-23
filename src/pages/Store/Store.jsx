@@ -47,8 +47,26 @@ export default function Store() {
   const [categoryName, setCategoryName] = useState("");
   const [sideBartoggled, sideBarsetToggled] = useState(true);
   const [currentSort,setCurrentSort] = useState(null);
+ /*  const [currentFilter,setCurrentFilter] = useState(null) */
   const [sortOrder,setSortOrder] = useState(null)
   const { isIdle, isAtTop } = useContext(WinScrollContext);
+
+
+    const [storeFilters,setStoreFilters] = useState([
+     {name:'In Stock',filter:'availabilityStatus',state:false},
+  {name:'Warrenty',filter:'warrantyInformation',state:false},
+{name:'Return Policy',filter:'returnPolicy',state:false}
+  ]
+   )
+
+
+   const filterLogicMap = {
+  availabilityStatus: value => value === "In Stock",
+  warrantyInformation: value => /\d/.test(value),
+  returnPolicy: value => /\d/.test(value),
+};
+
+
 
 
 
@@ -147,6 +165,12 @@ const productElements = useMemo(() => {
 
   let items = [...FinalItems]; // copy to avoid mutation
 
+items = items.filter(item =>
+  storeFilters
+    .filter(f => f.state)
+    .every(f => filterLogicMap[f.filter]?.(item[f.filter]))
+);
+
 if (typeFilter && currentSort?.sort) {
   items.sort((a, b) => {
     return sortOrder === "asc"
@@ -154,6 +178,8 @@ if (typeFilter && currentSort?.sort) {
       : b[currentSort.sort] - a[currentSort.sort];
   });
 }
+
+
 
   return items.map((product) => (
     <ProductCard
@@ -167,7 +193,7 @@ if (typeFilter && currentSort?.sort) {
       path={location.search}
     />
   ));
-}, [FinalItems, currentSort, typeFilter, location.search, sortOrder]);
+}, [FinalItems, currentSort, typeFilter, location.search, sortOrder,storeFilters]);
 
 
 
@@ -185,7 +211,10 @@ if (typeFilter && currentSort?.sort) {
     }
   }, [batchCount]);
 
- console.log('current sort is ', currentSort)
+
+
+
+
   
   return (
     <div className="Store-Page">
@@ -224,7 +253,10 @@ The Vault is a carefully guarded collection of premium products, chosen for thos
       toggleSortOrder={toggleSortOrder}
       typeFilter={typeFilter} 
       sideBartoggled={sideBartoggled}
-      sideBarsetToggled={sideBarsetToggled}/> 
+      sideBarsetToggled={sideBarsetToggled}
+      storeFilters={storeFilters}
+      setStoreFilters={setStoreFilters}
+     /*  setCurrentFilter={setCurrentFilter} *//> 
 
 
 

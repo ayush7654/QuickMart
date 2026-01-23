@@ -1,25 +1,30 @@
 import React from 'react'
 import './OrderDetails.css'
 import FloatingInput from '../../../components/FloatingInput/FloatingInput'
-export default function OrderDetails({cartElements,cartList,totalCost}) {
+import { X } from 'lucide-react'
+export default function OrderDetails({cartList,totalCost}) {
 
   console.log('cart list is ', cartList)
+
   return (
      <div className="order-summary-div">
-   {/*  <div className="order-summary-title">ORDER SUMMARY</div>  */}
+  
       <div className='order-summary-content'>
         <div className='order-list-wrapper'>
         {
           cartList.map((item)=><div className='order-item'>
             <div className='order-item-img-div'>
               <img src={item.thumbnail}/>
+              <span className='item-quantity'>{item.quantity}</span>
             </div>
             <div className='order-item-info'>
               <div className='order-item-title'>
                 <span>{item.title}</span>
-                <span>${item.price}</span>
+                <span>${item.price *item.quantity}</span>
                 </div>
-              <span className='order-item-details'>size/color</span>
+              <span className='order-item-details'>
+                 {item.returnPolicy}
+                </span>
               <span className='order-item-details'>{item.shippingInformation}</span>
             </div>
             {/* <div className='order-item-price'></div> */}
@@ -50,7 +55,7 @@ export default function OrderDetails({cartElements,cartList,totalCost}) {
             </div>
              <div  className='total-div'>
               <span >Total </span>
-              <span >${totalCost.toFixed(2)}</span>
+              <span >${(totalCost + 15).toFixed(2)}</span>
             </div>
 
            

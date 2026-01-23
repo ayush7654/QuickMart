@@ -9,7 +9,7 @@ export default function SideBarCart({cartToggled,setCartToggled, toggleOverlay})
 
 
 
-  const { cartList, cartLoading ,handleRemove,updateDataBase} = useCartList();
+  const { cartList, cartLoading ,totalCost,handleRemove,updateDataBase} = useCartList();
 
 
       const cartElements=cartList? (cartList.map((product,index)=>(
@@ -47,6 +47,16 @@ export default function SideBarCart({cartToggled,setCartToggled, toggleOverlay})
          </div>
         </div>
         
+        <div className='side-cart-checkout-wrapper'>
+          <div className='side-cart-subtotal-wrapper'>
+            <div>Subtotal</div>
+            <div className='subtotal-cost-wrapper'>
+              <span className='subtotal-cost'>${totalCost} USD</span>
+              <span className='subtotal-text'>Shipping & taxes calculated at checkout</span>
+            </div>
+          </div>
+          <div className='side-cart-checkout-btn'>Checkout</div>
+        </div>
 
     </div>
   )

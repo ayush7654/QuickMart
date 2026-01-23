@@ -3,11 +3,12 @@
   width: 100%;
  border: 0px solid blue;
   background-color: rgb(255, 255, 255);
-   top:5rem; 
+   top:0rem; 
   z-index: 9;
   margin-top: 0rem;
-  height: 4rem;
+  height: 5rem;
   transition: all .3s ease;
+/*   background-color: #eee; */
 
   
 
@@ -37,28 +38,30 @@ position: relative;
    border-bottom: 0px solid rgb(210,210,210);
  padding-left: 0rem;
  display: flex;
-justify-content:space-between;
-align-items: flex-start;
+justify-content:start;
+align-items:center;
  margin-bottom: .5rem;
 
  font-family: 'Raleway'; 
 font-family: "Questrial", sans-serif;
 font-family: 'Roboto';
+ font-family: "Rethink Sans", sans-serif;
+gap:1rem;
 
 
   
    
-   gap:.5rem;
+
 
 }
 
 
 .category-div {
   border: 0px solid red;
-  height: 3rem;
+  height: 2.5rem;
   width: 9rem;
-  position: absolute;
-  right: 0;
+ position: absolute;
+ right:0;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -68,7 +71,8 @@ font-family: 'Roboto';
   transition: all .3s ease;
       border-radius: 0px;
   overflow: hidden;
-  border: 1px solid rgb(50, 50, 50);;
+  border: 1px solid rgb(50, 50, 50);
+  border-radius: 20px;
 
 }
 .category-div:hover{
@@ -159,3 +163,49 @@ font-weight: 500;
     
 }
 
+.filter-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+}
+
+.filter-div{
+  width: 9rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+    border: 1px solid transparent;
+  border-radius: 20px;
+  font-size: .85rem;
+
+  background-color: rgb(240,240,240);
+  color:rgb(100,100,100);
+  transition: all .3s ease;
+  font-family: 'Outfit';
+  font-family: 'Inter';
+  font-family: sans-serif;
+  font-family: 'Manrope';
+   font-family: "Figtree", sans-serif;
+    font-family: "Rethink Sans", sans-serif; /* try this everywhrere */
+}
+
+.filter-div:hover{
+ background-color: white;
+ cursor: pointer;
+ border-color:black ;
+ color:black;
+}
+
+.filter-div-selected{
+  background-color: black;
+  color:white;
+}
+
+.filter-div-selected:hover{
+  background-color: rgb(40, 40, 40);
+  border-color:transparent ;
+  color:white;
+}

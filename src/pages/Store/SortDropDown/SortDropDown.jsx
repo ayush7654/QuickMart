@@ -10,8 +10,8 @@ const SortDropdown = ({ currentSort, setCurrentSort, sortOrder, toggleSortOrder 
   const SortArray = [
     { name: 'Price', sort: 'price' },
     { name: 'Rating', sort: 'rating' },
-    { name: 'Discount', sort: 'discountPercentage' },
-    { name: 'In Stock', sort: 'stock' }
+    { name: 'Discount', sort: 'discountPercentage' }
+  
   ];
 
   useEffect(() => {
@@ -31,29 +31,17 @@ const SortDropdown = ({ currentSort, setCurrentSort, sortOrder, toggleSortOrder 
       {/* LEFT SIDE: THE SORT TYPE DROPDOWN */}
       <div className="sort-dropdown-container">
         <div 
-          className={`sort-main-box ${isSortOpen ? 'box-active' : ''}`} 
+          className={`sort-main-box ${isSortOpen ? 'box-active' : ''} ${currentSort?'sort-box-selected':''}` } 
           onClick={() => { setIsSortOpen(!isSortOpen); setIsOrderOpen(false); }}
         >
           <div className="sort-text-stack">
-            {/* <span className="sort-label">SORT BY</span> */}
+           {/*  <span className="sort-label">SORT BY</span>  */}
             <span className="sort-current">{currentSort?.name || 'Sort By'}</span>
           </div>
 
           
 
-          <div 
-            onClick={(e) => {
-              e.stopPropagation();
-              setCurrentSort(null);
-               setIsSortOpen(false);
-        setIsOrderOpen(false);
-            }} 
-            className={`clear-sort ${currentSort ? "clear-sort-active" : ""}`}
-          >
-            <AnimatedUnderline from="left" exit='opposite' offset={2} thickness={1}>
-              Clear
-            </AnimatedUnderline> 
-          </div>
+          
           <div className={`sort-chevron ${isSortOpen ? 'rotate' : ''}`}></div>
         </div>
 
@@ -65,20 +53,35 @@ const SortDropdown = ({ currentSort, setCurrentSort, sortOrder, toggleSortOrder 
               onClick={() => {
                 setCurrentSort(item);
                 setIsSortOpen(false);
+                toggleSortOrder('asc');
               }}
             >
-              <AnimatedUnderline from="left" exit="opposite" offset={2} thickness={1}>  
-                {item.name}
+              <AnimatedUnderline from="right" exit="opposite" offset={2} thickness={1}>  
+                <span>{item.name}</span>
               </AnimatedUnderline> 
             </div>
           ))}
+
+           <div 
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrentSort(null);
+               setIsSortOpen(false);
+        setIsOrderOpen(false);
+        toggleSortOrder(null)
+            }} 
+            className={`clear-sort ${currentSort ? "clear-sort-active" : ""}`}
+          >
+        
+            <div className='clear-sort-btn'>Clear</div>
+          </div>
         </div>
       </div>
 
       {/* RIGHT SIDE: THE ORDER (ASC/DESC) DROPDOWN */}
-      <div className={`sort-dropdown-container ${currentSort?'':'order-box-disabled'}`}>
+      <div className={`sort-dropdown-container  ${currentSort?'':'order-box-disabled'}`}>
         <div 
-          className={` sort-main-box  ${isOrderOpen ? 'box-active' : ''}`} 
+          className={` sort-main-box  ${isOrderOpen ? 'box-active' : ''} ${currentSort?'sort-box-selected':''}`} 
           onClick={() => { setIsOrderOpen(!isOrderOpen); setIsSortOpen(false); }}
         >
           <div className="sort-text-stack">
@@ -89,19 +92,7 @@ const SortDropdown = ({ currentSort, setCurrentSort, sortOrder, toggleSortOrder 
           </div>
 
             
-          <div 
-            onClick={(e) => {
-              e.stopPropagation();
-              toggleSortOrder(null);
-               setIsSortOpen(false);
-        setIsOrderOpen(false);
-            }} 
-            className={`clear-sort ${sortOrder === null? "" : "clear-sort-active"}`}
-          >
-            <AnimatedUnderline from="left" exit='opposite' offset={2} thickness={1}>
-              Clear
-            </AnimatedUnderline> 
-          </div>
+      
 
           <div className={`sort-chevron ${isOrderOpen ? 'rotate' : ''}`}></div>
         </div>

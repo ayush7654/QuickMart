@@ -106,7 +106,8 @@ export default function StoreFilter({ currentCategory, typeFilter, handleClickFi
           )}
         </div>
    
-   <div onClick={handleCancelFilter} style={{pointerEvents:typeFilter?'auto':'none'}} className={`filter-clear-div ${typeFilter?'filter-selected':''}`}>
+   <div className='filter-clear-div-wrapper'>
+    <div onClick={handleCancelFilter} style={{pointerEvents:typeFilter?'auto':'none'}} className={`filter-clear-div ${typeFilter?'filter-selected':''}`}>
           <ScrollButton
   text='Clear Filter'
   theme={typeFilter?'darkMode':'lightMode'}
@@ -114,7 +115,9 @@ export default function StoreFilter({ currentCategory, typeFilter, handleClickFi
   themeOnHover={typeFilter?'colorMode':'lightMode'}
 
 />
+   </div> 
    </div>
+
     </div>
   )
 }

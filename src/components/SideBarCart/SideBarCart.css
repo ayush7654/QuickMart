@@ -82,3 +82,55 @@ margin-bottom: 1rem;
   .side-cart-list{
     width: 90%;
   }
+
+  .side-cart-checkout-wrapper{
+    height:9rem;
+    width: 100%;
+    border: 0px solid red;
+    position: sticky;
+    bottom: 0rem;
+    margin: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+   padding: 1rem 0rem;
+    font-family: 'Outfit';
+    border-top: 1px solid rgb(220,220,220);
+   
+
+  }
+
+  .side-cart-subtotal-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    font-size: 1.1rem;
+    }
+
+    .subtotal-cost-wrapper{
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+    }
+
+    .subtotal-cost{
+      font-size: 1.2rem;
+    }
+
+    .subtotal-text{
+      font-size: .8rem;
+      color:rgb(100, 100, 100);
+    }
+
+    .side-cart-checkout-btn{
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      color:white;
+      height: 3rem;
+      border-radius: 25px;
+    }

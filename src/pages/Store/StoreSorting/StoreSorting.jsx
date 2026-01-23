@@ -4,14 +4,9 @@ import { SlidersHorizontal } from 'lucide-react';
 import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
 import ScrollButton from '../../../components/ScrollingButton/ScrollingButton';
 import SortDropdown from '../SortDropDown/SortDropDown';
-export default function StoreSorting({isIdle,sortOrder,currentSort,setCurrentSort,toggleSortOrder,typeFilter,sideBartoggled,sideBarsetToggled}) {
-  const SortArray= [{name:'Price',sort:'price'},
-                    {name:'Rating',sort:'rating'},
-                    {name:'Discount',sort:'discountPercentage'},
-                    {name:'In Stock',sort:'stock'}];
-    
-  const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState('Select');
+export default function StoreSorting({isIdle,sortOrder,currentSort,setCurrentSort,toggleSortOrder,typeFilter,sideBartoggled,sideBarsetToggled,storeFilters,setStoreFilters}) {
+  
+
 
 console.log('sort order is ' , sortOrder)
 
@@ -39,6 +34,25 @@ console.log('sort order is ' , sortOrder)
   AnimatedUnderline={AnimatedUnderline}
   sortOrder={sortOrder}
   toggleSortOrder={toggleSortOrder}/>
+
+
+</div>
+
+<div className='filter-wrapper'>
+  {storeFilters.map((item)=>
+  <div className={`filter-div ${item.state?'filter-div-selected':''}`}
+   onClick={() =>
+      setStoreFilters(prev =>
+        prev.map(f =>
+          f.filter === item.filter
+            ? { ...f, state: !f.state }
+            : f
+        )
+      )
+    }
+     >
+    {item.name}
+    </div>)}
 
 
 </div>

@@ -12,6 +12,7 @@ export const CartListProvider = ({ children }) => {
 
   const [cartList, setCartList] = useState([]);
   const [cartLoading, setCartLoading] = useState(true);
+  const [totalCost, setTotalCost] = useState(0);
 
   const fetchCartData = async () => {
     if (!userInfo) {
@@ -73,12 +74,26 @@ const updateDataBase = useCallback(
   [firebase, userInfo]
 );
 
+const calculateTotalCost = () => {
+        const total = cartList.reduce((acc, item) => {
+          return acc + item.price * item.quantity;
+        }, 0);
+        setTotalCost(total);
+        console.log("Total Cost:", total);
+      };
+
+     useEffect(() => {
+    calculateTotalCost();
+  }, [cartList]); // Recalculate total cost whenever cartList changes
+
+
 
   return (
     <CartListContext.Provider
       value={{
         cartList,
         cartLoading,
+        totalCost,
         handleRemove,
         updateDataBase,
         refetchCart: fetchCartData
