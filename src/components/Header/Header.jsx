@@ -201,8 +201,8 @@ useEffect(() => {
       display:location.pathname=='/login'?'none':'flex',
       // Dynamic transition based on 'isIdle' state
       transition: isIdle
-        ? 'transform 0.4s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
-        : 'transform 0.5s ease-out,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
+        ? 'transform 0.2s ease, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
+        : 'transform 0.2s ease,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
       transform:isIdle 
  ? `translate(-50%, ${location.pathname=='/store'? '-100%':'-100%'}`   /* ENABLE HEADER TOGGLE IN STORE PAGE */
     : 'translate(-50%, 0%)'
@@ -212,7 +212,7 @@ useEffect(() => {
     }}>
 
 
-        <div  className={`header-home ${isAtTop && location.pathname=='/'?'headerAtTop':''}`}
+        <div  className={`header-home ${isAtTop /* && location.pathname=='/testing' */?'headerAtTop':''}`}
         style={{
             transition: isIdle
         ? 'transform 0.4s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
@@ -230,9 +230,9 @@ useEffect(() => {
                    <MenuCancel/>
                         </div>
 
-  <div className="site-name-div" style={{
+  <div className="site-name-div" /* style={{
         transform: location.pathname=='/'? transformStyle:''
-      }}>
+      }} */>
                   <div className="site-logo-tagline">Elevate your World with</div>
                   <div className="site-name">SARAS</div>
                 </div>
@@ -289,18 +289,33 @@ useEffect(() => {
                  </div> 
                  </div>
 
-                  {elements.map((element,index)=> 
-                  <NavLink key={index} 
-                   className={({ isActive }) =>
-          `page-nav-right ${isActive?'page-nav-right-selected':''} ${
-            element.title === 'Login' ? 'desktop-only' : ''
-          }`
-        }
-                 
-                   to={element.path}>
-                    <div id="header-icon">{element.logo}</div>  
-                  </NavLink>)}
- <div className="cart-toggle" onClick={()=>{setCartToggled(true),toggleOverlay(true)}}>CART</div>
+                 <NavLink to='/Login'
+                   className={({ isActive }) =>`page-nav-right ${isActive?'page-nav-right-selected':''} desktop-only`}>
+                      <div id="header-icon">
+                        { pagelocation.pathname == "/Login" ? 
+                          <HiUser  /> :
+                           <HiOutlineUser  style={{ strokeWidth: "1.5" }} />
+                          }                       
+                        </div>  
+                 </NavLink>
+
+                 <div  className={`page-nav-right ${location.pathname==='/cart'?'page-nav-right-selected':''}`}
+                  onClick={()=>{setCartToggled(true),toggleOverlay(true)}}>
+                <div id="header-icon">
+                    { pagelocation.pathname === "/cart" ? (
+              <HiShoppingBag   />
+            ) : (
+              <HiOutlineShoppingBag
+                
+                style={{ strokeWidth: "1.5" }}
+              />
+            )}
+                </div>
+                
+                 </div>
+
+               
+ 
                </div>
 
               

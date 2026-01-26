@@ -7,13 +7,6 @@
 
 
 
-.cart-toggle{
-  height: 100%;
-  color: black;
-  display: flex;
-  align-items: center;
-}
-
 
   .site-header-div{
     position: fixed;
@@ -136,7 +129,7 @@ background-color: transparent;
 
   .site-name{
   
-  font-size: 2rem;
+  font-size: 2.2rem;
     letter-spacing: .2rem;
     z-index: 999;
 font-weight: 500;
@@ -262,6 +255,15 @@ pointer-events: none;
  pointer-events: none;
   }
 
+  
+.cart-toggle{
+  height: 100%;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+
 
 
   #header-icon{
@@ -281,7 +283,7 @@ pointer-events: none;
   #header-icon:hover{
       background-color: rgb(235, 235, 235); 
       color:black;
-     transform: scale(1.1);
+
   }
 
   .page-nav-right-selected   #header-icon{

@@ -46,12 +46,13 @@ font-family: 'Jost';
 font-family: 'Raleway';
  font-family: 'Outfit';
    font-family: "Questrial", sans-serif; 
-   
-
+   font-family: 'Raleway';
+   font-weight: 600;
+letter-spacing: 1px;
   color: rgb(0, 0, 0);
   border-bottom: 1px solid rgb(225, 225, 225);
 
-letter-spacing: .1rem;
+
 z-index: 2;
 
  
@@ -104,7 +105,7 @@ align-items:center;
   align-items: center;
   justify-content: center;
 border: 0px solid green;
-height: 4.5rem;
+height: 4rem;
 }
 .store-category{
   width: 100%;
@@ -118,11 +119,12 @@ height: 4.5rem;
    font-family: 'Jost';
     font-family: "Questrial", sans-serif;
     font-family: 'Roboto';
+     font-family: "Rethink Sans", sans-serif; 
   color: rgb(10,10,10);
   border-bottom: 0px solid rgb(235, 235, 235);
 
  padding-left:2rem; 
-  letter-spacing: .05rem;
+  letter-spacing: 0px;
   transition: all .3s ease;
 
 }
@@ -137,11 +139,12 @@ height: 4.5rem;
 
 
 .store-category:hover{
-  color: rgb(10, 10, 10);
+  color: rgb(0, 0, 0);
 
   cursor: pointer;
   font-size: 1.15rem;
-  letter-spacing: .1rem;
+  letter-spacing: 1px;
+
 
 }
 
@@ -151,19 +154,19 @@ height: 4.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 400;
- font-family: 'Poppins', sans-serif;
-  font-family: 'Roboto';
-  font-family: 'Jost';
-    font-family: "Questrial", sans-serif;
-    font-family: 'Roboto';
-   padding-left:1.5rem; 
-   color: rgb(10, 10, 10);
- 
-  border-bottom:2px solid rgb(0, 0, 0);
+   font-family: "Rethink Sans", sans-serif; 
 
- letter-spacing: .1rem;
+
+
+   color: rgb(0, 0, 0);
+  text-decoration: underline;
+text-underline-offset: 10px;
+text-decoration-thickness: 1.5px;
+  /* border-bottom:2px solid rgb(0, 0, 0); */
+
+ letter-spacing: 0px;
  pointer-events: none;
 
  
@@ -196,6 +199,7 @@ background-color: white;
   justify-content: center;
   align-items: center;
   font-family: 'Poppins';
+  font-family: "Rethink Sans", sans-serif; 
 
   border-radius:25px ;
   overflow: hidden;

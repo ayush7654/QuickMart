@@ -72,8 +72,10 @@ a {
   margin-left: 5rem;
   font-family: "Prosto One", sans-serif;
   font-family: 'Raleway';
+/*   font-family: "Outfit"; */
 
-  
+
+  letter-spacing: 2px;
   font-weight: 500;
   color:white;
   border: 0px solid red;

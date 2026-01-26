@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { Link } from 'react-router-dom';
 import './SideBarCart.css'
 import { X } from 'lucide-react';
 import { useCartList } from '../CartListProvider';
@@ -55,7 +56,11 @@ export default function SideBarCart({cartToggled,setCartToggled, toggleOverlay})
               <span className='subtotal-text'>Shipping & taxes calculated at checkout</span>
             </div>
           </div>
-          <div className='side-cart-checkout-btn'>Checkout</div>
+          <Link to='/cart' 
+          onClick={()=>{setCartToggled(false),toggleOverlay(false)}} 
+          className='side-cart-checkout-btn'>
+            Checkout
+            </Link>
         </div>
 
     </div>

@@ -10,7 +10,7 @@ export default function ImgCrousel() {
 
   
 const homeBGs = [
-     { id: 0,  img1: 'ImageCrousel/IC-Fashion3.jpg',img2:'BG-Images-sm/fashion-sm.webp', product: './store/84', content:<>Discover the <span>hottest</span> brands. </> , info:'From rising labels to established favorites, discover the hottest brands shaping today’s market. Our selection is constantly updated so you never miss what’s new and in demand.'  },
+     { id: 0,  img1: 'homeImg1.jpg',img2:'BG-Images-sm/fashion-sm.webp', product: './store/84', content:<>Discover the <span>hottest</span> brands. </> , info:'From rising labels to established favorites, discover the hottest brands shaping today’s market. Our selection is constantly updated so you never miss what’s new and in demand.'  },
      { id: 1, img1: 'ImageCrousel/IC-Watch.webp',img2:'BG-Images-sm/Rolex10.jpg', product: './store/98',content:<>Browse <span>millions</span> of products. </> ,info:'Browse millions of products carefully organized to help you find exactly what you’re looking for. With detailed listings and smart navigation, discovering the right product feels effortless.' },
     { id: 2, img1: 'ImageCrousel/IC-Shoes.webp',img2:'BG-Images-sm/Nike14.jpg', product: './store/88',content:<>Find the <span>best</span> prices. </>, info:'Compare products easily and discover competitive pricing across our entire collection. We help you find great value without compromising on quality, so you can shop smarter every time.' },
     { id: 3, img1: 'ImageCrousel/IC-Apple.jpg',img2:'BG-Images-sm/IC-Apple-sm.avif', product: './store/123',content:<>Stay ahead with <span>latest</span> trends. </> , info:'Discover the latest trends as they emerge, with new products and styles added regularly. We keep our collection fresh so you can stay ahead of what’s popular and relevant.'}
@@ -25,22 +25,27 @@ const homeBGs = [
 
   return (
    <div className="ImageCrousel-Container">
+     {/*  <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/poster.jpg"
+        >
+          <source src="/AmiriSampleVid.mp4" type="video/mp4" />
+        </video> */}
 
          {homeBGs.map(bg => (
   <div key={bg.id} className="homeCrousal">
     <div
       className="homeContent"
-      style={{
+     /*  style={{
         transform: `translateX(-${currentBGImg * 100}vw)`,
-        transition: transition ? 'transform 2000ms ease-in-out' : 'none'
-      }}
+        transition: transition ? 'transform 1000ms ease' : 'none'
+      }} */
     >
-      <div className='crousel-content'>
-        <div className='crousel-head'>{bg.content}</div>
-        <div className='crousel-info'>{bg.info}</div>
-        <div className='crousel-button'>Explore More</div>
-        
-      </div>
+     
       
           <picture>
         {/* mobile image */}
@@ -59,6 +64,19 @@ const homeBGs = [
       
     
     </div>
+    <div className='crousel-content-wrapper'
+    style={{  /* move this out and put it in its own wrapper  */
+        transform: `translateX(-${currentBGImg * 100}vw)`,
+        transition: transition ? 'transform 1000ms ease' : 'none'
+      }}>
+      {/*   <div className='crousel-content'  >
+        <div className='crousel-head'>{bg.content}</div>
+        <div className='crousel-info'>{bg.info}</div>
+        <div className='crousel-button'>Explore More</div>
+        
+      </div> */}
+    </div>
+   
   </div>
 ))}
 
@@ -99,7 +117,12 @@ const homeBGs = [
 <div className="bgImgNav"><div className="bgImgNav-slider" style={{transform: transition?`translateX(${currentBGImg*100}%)`:`translateX(0%)`, transition:transition?'transform 2000ms ease-in-out':'none'}}></div></div>
        
          <div className="CrousalNav-div">
-          <div className="CrousalNav-content">{homeBGs.map(nav=><div onClick={()=>setCurrentBGImg(nav.id)} className={`CrousalNav ${nav.id===currentBGImg?"CrousalNav-selected":''}`}></div>) }</div>
+          <div className="CrousalNav-content">
+            {homeBGs.map(nav=><div onClick={()=>setCurrentBGImg(nav.id)} 
+            className={`CrousalNav ${nav.id===currentBGImg?"CrousalNav-selected":''}`}>
+
+            </div>) }
+            </div>
          </div>
 
         </div>

@@ -10,6 +10,7 @@ import TrendingComponent from "./TrendingComponent/TrendingComponent";
 import FeaturedCategories from "./FeaturedCategories/FeaturedCategories";
 import Categories from "./Categories/Categories";
 import HomeFooter from "./HomeFooter/HomeFooter";
+import HomeIntro from "./HomeIntro/HomeIntro";
 
 import './Home.css';
 
@@ -25,7 +26,9 @@ const isFirstRender = useRef(true); // track initial mount
     
   <div className="Home">
  
-      <ImgCarousel/>
+      {/*  <ImgCarousel/>  */}
+
+       <HomeIntro/> 
       <div className="Home-scroll-content">
       
      

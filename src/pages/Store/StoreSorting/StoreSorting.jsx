@@ -4,6 +4,9 @@ import { SlidersHorizontal } from 'lucide-react';
 import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
 import ScrollButton from '../../../components/ScrollingButton/ScrollingButton';
 import SortDropdown from '../SortDropDown/SortDropDown';
+import { HiOutlineCollection } from "react-icons/hi";
+import Categories from './../../Home/Categories/Categories';
+
 export default function StoreSorting({isIdle,sortOrder,currentSort,setCurrentSort,toggleSortOrder,typeFilter,sideBartoggled,sideBarsetToggled,storeFilters,setStoreFilters}) {
   
 
@@ -60,7 +63,9 @@ console.log('sort order is ' , sortOrder)
 
 <div className='category-div' onClick={() => sideBarsetToggled(false)}>
        <ScrollButton
-  text={<div className='filter-button-content'><SlidersHorizontal className="select-category-icon" strokeWidth={1.5} />  <div className="select-category-head">Filter</div></div>}
+  text={<div className='filter-button-content'><HiOutlineCollection className="select-category-icon" strokeWidth={1.5} />  
+  <div className="select-category-head">Categories</div>
+  </div>}
   theme={!sideBartoggled || typeFilter ?"darkMode":'lightMode'}
   color="#cf7729ff"
   themeOnHover={typeFilter?'colorMode':'darkMode'}

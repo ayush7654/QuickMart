@@ -1,0 +1,89 @@
+.Icon-button-wrapper{
+    
+/* Now you can change this to 15rem, 18rem, or 100% and it won't break */
+ width: var(--btn-width);
+  height: var(--btn-height);
+    display: flex;
+    justify-content: flex-end; /* Keeps the button anchored to the right */
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    
+    
+}
+
+.icon-circle-div{
+ width: var(--btn-height);
+  height: var(--btn-height);
+border: 1px solid var(--btn-content-color);
+color:blue;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 50%;
+ position: absolute;
+ left: 0; 
+ transition: all .3s ease;
+ z-index: 2;
+}
+
+.icon-circle{
+    width: 60%;
+    height: 60%;
+}
+
+.long-btn{
+/*  width: 75%;  */
+width: calc(100% - (var(--btn-height) + 0.2rem));
+
+height: var(--btn-height);
+display: flex;
+align-items: center;
+justify-content:end;
+border: 1px solid var(--btn-content-color);
+ transition: all .2s ease;
+ border-radius: 100px; /* High value keeps it pill-shaped at any height */
+ background-color: white;
+
+
+}
+.Icon-button-wrapper:hover .long-btn {
+    background-color: transparent;
+}
+
+.Icon-button-wrapper:hover .button-text{
+    color: var(--btn-content-color);
+}
+
+.button-text{
+     position: absolute;
+    right: 0%;
+    top:50%;
+    transform: translate(0,-50%); 
+ font-size: 1.1rem;
+width: calc(100% - (var(--btn-height) + 0.2rem));;
+font-family: 'Outfit';
+ display: flex;
+align-items: center;
+justify-content: center;
+color: var(--btn-content-color);
+color:black;
+
+}
+
+.Icon-button-wrapper:hover{
+    cursor: pointer;
+}
+
+.Icon-button-wrapper:hover .long-btn{
+width: 100%;
+
+}
+
+.Icon-button-wrapper:hover .icon-circle-div{
+     background-color: blue;
+     transform: scale(.85);
+     color:white;
+     border: 1px solid transparent;
+}
