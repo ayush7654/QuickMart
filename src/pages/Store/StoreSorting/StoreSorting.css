@@ -95,6 +95,7 @@ gap:1rem;
 
 .category-div--selected {
   background-color: rgb(0, 0, 0);
+ 
   color: white;
 }
 
@@ -205,6 +206,7 @@ font-weight: 500;
 
 .filter-div-selected{
   background-color: black;
+  background-color: blue;
   color:white;
 
 }

@@ -9,6 +9,7 @@ import { MdStar, MdStarBorder, MdStarHalf } from 'react-icons/md';
 import AnimatedUnderline from './AnimatedUnderline/AnimatedUnderline';
 import BracketButton from './BracketButton/BracketButton';
 import ScrollButton from './ScrollingButton/ScrollingButton';
+import IconButton from './IconButton/IconButton';
 
 
 
@@ -97,12 +98,18 @@ function ProductCard({ classname, id, images, title, price, path,discount, ratin
       <div className='productcard-links-div'>
   
 
-<ScrollButton
+{/* <ScrollButton
   text={<div className='AddToCardButton'><HiOutlineShoppingCart fontSize={'1.5rem'} strokeWidth={1.5} /> <span>Add To Cart</span></div>}
   theme="darkMode"
   color="#cf7729ff"
   themeOnHover="colorMode"
-/>
+/> */}
+
+<IconButton
+height='3rem'
+width='100%'
+text='Add to Cart'
+Icon= {HiShoppingCart}/>
 
 
   {/*    <HiOutlineShoppingCart />

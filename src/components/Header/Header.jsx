@@ -25,6 +25,7 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
     
      const[suggestions,setSuggestions]= useState([])
     
+     const [cursorOff, setCursorOff] = useState(true);
 
     const firebase= useFirebase()
 
@@ -189,13 +190,15 @@ useEffect(() => {
     : "translateY(0) scale(1)";
 
 
-    console.log('direction is ', direction)
+    console.log('cursor is ', cursorOff)
 
  const suggestionComp= suggestions?suggestions.filter(item=>item.name.toLowerCase().includes(searchTerm.toLowerCase())):null;
 
    
     return(<div      
       className='site-header-div' 
+     
+
 
      style={{
       display:location.pathname=='/login'?'none':'flex',
@@ -212,7 +215,9 @@ useEffect(() => {
     }}>
 
 
-        <div  className={`header-home ${isAtTop /* && location.pathname=='/testing' */?'headerAtTop':''}`}
+        <div  className={`header-home ${isAtTop && cursorOff ?'headerAtTop':''}`}
+            onMouseEnter={() => setCursorOff(false)}
+  onMouseLeave={() => setCursorOff(true)}
         style={{
             transition: isIdle
         ? 'transform 0.4s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
@@ -230,7 +235,7 @@ useEffect(() => {
                    <MenuCancel/>
                         </div>
 
-  <div className="site-name-div" /* style={{
+  <div className="site-name-div"   /* style={{
         transform: location.pathname=='/'? transformStyle:''
       }} */>
                   <div className="site-logo-tagline">Elevate your World with</div>
@@ -254,7 +259,7 @@ useEffect(() => {
       <AnimatedUnderline 
                   from="left" 
                   exit="opposite"
-                  color={location.pathname==='/' && isAtTop?'white':"rgba(0, 0, 0, 1)"}  
+                  color={'black'}  
                   thickness={1}
                   duration={.3}
                   offset={0}> 

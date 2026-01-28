@@ -20,6 +20,12 @@
     
 
 }
+
+.store-content-wrapper{
+  background-color: white;
+  z-index: 1;
+  width: 100%;
+}
 .storePage-overlay{
   
   height:100%;
@@ -146,9 +152,6 @@
   gap:1rem;
   color: rgb(20,20,20);
   z-index: 1;
-
- 
-
     width: 90%;
  font-size: 1.5rem;
  letter-spacing: .05rem;

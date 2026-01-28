@@ -1,6 +1,7 @@
 .floating-label-group {
   position: relative;
   margin-bottom: 12px;
+  margin-bottom: 0px;
   width: 100%;
   /* Define a fixed height so the layout never moves */
   height:3rem; 

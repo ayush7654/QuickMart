@@ -9,6 +9,7 @@ min-height: 100vh;
 
 
 
+
 }
 
 
@@ -27,6 +28,8 @@ min-height: 100vh;
       justify-content: space-between;
       margin-top:0rem;
       min-height: 100vh;
+      background-color: white;
+      z-index: 1;
       
       
     

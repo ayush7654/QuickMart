@@ -7,6 +7,7 @@ import OrderDetails from "./OrderDetails/OrderDetails";
 import CartLoading from "./CartLoading/CartLoading";
 import CheckoutForm from "./CheckoutForm/CheckoutForm";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
+import PageHeader from "../../components/PageHeader/PageHeader";
 import { useCartList } from "../../components/CartListProvider";
 import './Cart.css'
 
@@ -65,19 +66,12 @@ export default function Cart(){
    
     return(<div className="cart-page">
 
-       <div className="page-head-div"  
-         style={{
-    backgroundImage:
-      "linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('/Cart-head.webp')"
-  }}>
-    <div className="page-head">YOUR CART</div>
-    <div className="page-head-description">
-Review your selected items, adjust quantities, and get ready to check out securely.
-    </div>
+    
 
-   </div>
-
-
+   <PageHeader
+   bgImage='/Cart-head.webp'
+   pageHeadText={'Your Cart'}
+   pageHeadPara={'Review your selected items, adjust quantities, and get ready to check out securely.'}/>
 
         <div className="Cart-page-wrapper">
 

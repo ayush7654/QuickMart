@@ -6,7 +6,7 @@
     font-size: .9rem;
     justify-content:space-between;
     user-select: none;
-   
+  
     border: 0px solid red;
 
   }
@@ -21,7 +21,7 @@
    width: 60%;
 
    overflow: hidden;
-   background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('account-stock5.jpg');  /* LoginImg/Login-Img.jpg */
+   background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)), url('account-stock5.jpg');  /* LoginImg/Login-Img.jpg */
    background-position: top;
    background-repeat:no-repeat;
    background-size: cover;
@@ -89,7 +89,6 @@
     flex-direction: column;
     align-items: center;
   justify-content: center;
-
  font-family: 'Inter'; 
 font-weight: 400;
   background-color: rgb(255, 255, 255);
@@ -248,7 +247,7 @@ border: 0px solid black;
     flex-direction: column;
     /* height: 90%; */
     width: 70%;
-    gap:1.6rem;
+    gap:20px;
     position: relative;
     align-items: center;
    justify-content:start;

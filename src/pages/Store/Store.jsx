@@ -30,6 +30,7 @@ import ScrollButton from "../../components/ScrollingButton/ScrollingButton";
 import StoreHeader from "./StoreHeader/StoreHeader";
 import StoreSorting from "./StoreSorting/StoreSorting";
 import SortDropdown from "./SortDropDown/SortDropDown";
+import PageHeader from "../../components/PageHeader/PageHeader";
 import "./Store.css";
 
 export default function Store() {
@@ -224,22 +225,17 @@ if (typeFilter && currentSort?.sort) {
 
     
 
-   <div className="page-head-div" 
-    style={{
-    backgroundImage:
-      "linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('/accout-stock3.webp')"
-  }}>
-    <div className="page-head">THE VAULT</div>
-    <div className="page-head-description">
-The Vault is a carefully guarded collection of premium products, chosen for those who value quality over quantity. Each item earns its place — nothing more, nothing less. 
-    </div>
 
-   </div>
+
+   <PageHeader
+   bgImage='/VaultImg.webp'
+   pageHeadText={'The Vault'}
+   pageHeadPara={'The Vault is a carefully guarded collection of premium products, chosen for those who value quality over quantity. Each item earns its place — nothing more, nothing less.'}/>
    
  
 
 
-
+<div className="store-content-wrapper">
 
       <div className="store-layout">
 
@@ -337,6 +333,7 @@ The Vault is a carefully guarded collection of premium products, chosen for thos
 
 
       <StoreFooter />
+      </div>
     </div>
   );
 }

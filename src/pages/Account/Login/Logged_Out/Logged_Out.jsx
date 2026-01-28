@@ -3,6 +3,7 @@ import './Logged_Out.css'
 import BracketButton from '../../../../components/BracketButton/BracketButton'
 import ScrollButton from '../../../../components/ScrollingButton/ScrollingButton'
 import FloatingInput from '../../../../components/FloatingInput/FloatingInput'
+import IconButton from '../../../../components/IconButton/IconButton'
 export default function Logged_Out({email,password,setEmail,setPassword,signIn}) {
   return (
     <div id='user-Input-box-div' >
@@ -11,63 +12,43 @@ export default function Logged_Out({email,password,setEmail,setPassword,signIn})
        <div id='user-Input-box'>
         
      <div id='account-input-div' className="Email">
-      {/*   <div id='input-heading'>Email</div> */}
-        {/* <input id='account-input' className="login-email" 
+     <div id='input-heading'>Email</div> 
+         <input id='account-input' className="login-email" 
            
             name="email"
             value={email}
-            onChange={(e)=>setEmail(e.target.value)}/>  */}
-        <FloatingInput
+            onChange={(e)=>setEmail(e.target.value)}/>  
+     {/*    <FloatingInput
         name='email'
         label='Email'
         value={email}
         onChange={(e)=>setEmail(e.target.value)}
 
-        />
+        /> */}
 
      </div>
      <div id='account-input-div' className="Password">
-     {/*   <div id='input-heading'>Password</div> */}
-      {/*  <input id='account-input' className="login-password"  
+        <div id='input-heading'>Password</div> 
+        <input id='account-input' className="login-password"  
         
             name="password"        
             value={password}
-            onChange={(e)=>setPassword(e.target.value)}/>  */}
-        <FloatingInput
+            onChange={(e)=>setPassword(e.target.value)}/>  
+       {/*  <FloatingInput
         name='password'
         label='Password'
          value={password}
             onChange={(e)=>setPassword(e.target.value)}
 
-        />
+        /> */}
      </div> 
 
      <div className="forgot-pw">
         <div className="remember-checkmark"><input type="checkbox"   />Remember me</div>
         <span className="forgot-pw-text">Forgot Password?</span>
     </div>
-   </div>
-    
 
-
-     <div className="login-Or"><span className="or-line"></span><span className="or-line-text">Or</span><span className="or-line"></span></div>
-
-     <div className="login-alts">
-          <div className="google-login">
-        <div id='login-alt-icon' className="google-login-icon"></div>
-        <div className="google-login-text">Login with Google</div>
-     </div>
-       <div className="apple-login">
-        <div  id='login-alt-icon' className="apple-login-icon"></div>
-        <div className="apple-login-text">Login with Apple</div>
-     </div>
-     </div>
-      </div>
- 
-   
-     
- 
-      <div  
+        <div  
      id='account-button' style={{pointerEvents:email || password?'auto':'none'}}
     /*  className={email || password ?'account-button-active':'account-button-inactive'} */
       onClick={signIn} >
@@ -79,6 +60,41 @@ export default function Logged_Out({email,password,setEmail,setPassword,signIn})
 
 />
       </div> 
+   </div>
+    
+
+
+     <div className="login-Or">
+      <span className="or-line"></span>
+      <span className="or-line-text">Or Login With</span>
+      <span className="or-line"></span>
+      </div>
+
+      <IconButton/>
+
+     {/* <div className="login-alts">
+          <div className="google-login">
+        <div id='login-alt-icon' className="google-login-icon"></div>
+        <div className="google-login-text"> Google</div>
+     </div>
+       <div className="apple-login">
+        <div  id='login-alt-icon' className="apple-login-icon"></div>
+        <div className="apple-login-text"> Apple</div>
+     </div>
+     </div> */}
+
+{/* <div className='login-icon-wrapper'>
+  <div className='login-icon-div'><img src='QMicons/GoogleIcon.png'/></div>
+  <div className='login-icon-div'></div>
+  <div className='login-icon-div'></div>
+</div> */}
+
+      </div>
+ 
+   
+     
+ 
+  
 
 
 

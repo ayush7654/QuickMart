@@ -68,6 +68,10 @@ background-color: transparent;
    
   }
 
+/*   .headerAtTop:hover{
+    background-color: white;
+  } */
+
 
   .header-home-upper{
     border: 0px solid red;
@@ -249,6 +253,10 @@ pointer-events: none;
     justify-content: center;
 
     height: 100%;
+  }
+
+  .page-nav-right:hover{
+    cursor: pointer;
   }
 
   .page-nav-right-selected{
