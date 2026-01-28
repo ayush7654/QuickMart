@@ -61,7 +61,7 @@ text-decoration: underline;
     z-index: 2;
  /*    background-color: white; */
     width: 2rem;
- font-size: .8rem;
+ font-size: .75rem;
    color:rgb(75,75,75);
     display: flex;
     justify-content: center;
@@ -70,89 +70,6 @@ text-decoration: underline;
       /*  font-family: "Questrial", sans-serif; */ 
   }
 
-  .login-alts{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  gap:2rem;
-  
-  }
-
-  .google-login,.apple-login{
-  width: 20rem;
-
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-     height: 3rem;
-     font-family: 'Inter';
-  border-radius: 25px;
-   font-weight: 400;
-  transition: all .3s ease-in-out;
-       background-color: white;
-    color:rgb(50, 50, 50);
-     border: 1px solid rgb(160, 160, 160);
-    
-     
-     
-  }
-
-
-
-   .google-login:hover {
-
-    cursor: pointer;
-
-       background-color: #4285F4;
-    border: 1px solid #4285F4;
-    color:white;
-   }
-
-  
-
-   .apple-login:hover{
- cursor: pointer;
-
-       background-color: #222222;
-    border: 1px solid #000000;
-    color:white;
-   }
-
-#login-alt-icon{
-
-border: 0px solid red;
-object-fit: cover;
-background-position: center;
-background-repeat: no-repeat;
- background-size: 70% 70%; 
-background-color: white;
-width: 2.80rem;
-height: 2.80rem;
-  border-radius: 25px;
-}
-
-  .google-login-icon{
-
-
-background-image: url('QMicons/GoogleIcon.png');
-
-
-  }
-
-  .apple-login-icon{
-
-background-image: url('QMicons/AppleLogo.png');
-  }
-
-  .google-login-text,.apple-login-text{
-
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    font-size: .85rem;
-  }
 
   .login-icon-wrapper{
     display: flex;
@@ -162,53 +79,34 @@ background-image: url('QMicons/AppleLogo.png');
   }
 
   .login-icon-div{
-    border: 0px solid black;
+    border: 0px solid rgb(149, 149, 149);
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 1px 1px 10px rgb(189, 189, 189);
   }
 
   .login-icon-div img{
-    width: 90%;
-    height: 90%;
+    width: 70%;
+    height: 70%;
     object-fit: cover;
+  }
+
+  .login-icon-div  .phone-icon{
+  font-size: 1.8rem;
+  color:blue;
   }
 
 @media(max-width:900px){
 
-    .google-login,.apple-login{
-  height: 2.6rem;
-    width: 48%;
- }
  
-
-   #login-alt-icon{
-    width: 2.5rem;
-height: 2.5rem; 
-   }
-
- .google-login-text,.apple-login-text{
-  font-size: .8rem;
-  font-weight: 400;
-
- }
 }
 
 @media(max-width:400px){
-     .google-login-icon{
-    width: 2.2rem;
-height: 2.2rem;
-   }
-   .apple-login-icon{
-       width: 2rem;
-height: 2.2rem; 
-   }
-  .google-login-text,.apple-login-text{
-  font-size: .7rem;
-     }
+
      .forgot-pw{
        font-size: .7rem;
      }

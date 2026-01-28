@@ -8,28 +8,13 @@ import {
 } from "react";
 import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
 import { getItems, getFilteredItems } from "../../api";
- import { ChevronLeft,ChevronRight } from 'lucide-react'; 
 import ProductCard from "../../components/ProductCard";
 import StoreFilter from "./StoreFilter/StoreFilter";
 import StoreFooter from "./StoreFooter/StoreFooter";
-import { FaBars } from "react-icons/fa";
-import { HiOutlineMenu } from "react-icons/hi";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { X } from 'lucide-react';
-import { FiFilter } from "react-icons/fi";
 import { SlidersHorizontal } from "lucide-react";
-import MenuCancel from "../../components/MenuCancel/MenuCancel";
 import { WinScrollContext } from "../../components/WinScrollProvider/WinScrollProvider";
-import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
-import { IoCloseCircle } from "react-icons/io5";
-import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
-import { ArrowUpDown } from 'lucide-react';
-import { FaCaretUp, FaCaretDown } from "react-icons/fa";
-import BracketButton from "../../components/BracketButton/BracketButton";
 import ScrollButton from "../../components/ScrollingButton/ScrollingButton";
-import StoreHeader from "./StoreHeader/StoreHeader";
 import StoreSorting from "./StoreSorting/StoreSorting";
-import SortDropdown from "./SortDropDown/SortDropDown";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import "./Store.css";
 
@@ -233,6 +218,19 @@ if (typeFilter && currentSort?.sort) {
    pageHeadPara={'The Vault is a carefully guarded collection of premium products, chosen for those who value quality over quantity. Each item earns its place — nothing more, nothing less.'}/>
    
  
+ <aside className="store-sidebar"  style={{
+          transform: sideBartoggled ? 'translateX(0)' : 'translateX(-100%)',
+          transition: 'transform 0.5s ease-in-out',
+        }}>
+          <StoreFilter
+            currentCategory={currentCategory}
+            handleClickFilter={handleFilter}
+            handleClickCategory={() => setcurrentCategory("")}
+            typeFilter={typeFilter}
+            sideBartoggled={()=>sideBarsetToggled(true)}
+            handleCancelFilter ={handleCancelFilter}
+          />
+        </aside>
 
 
 <div className="store-content-wrapper">
@@ -265,12 +263,13 @@ if (typeFilter && currentSort?.sort) {
                  onClick={(e) => { e.stopPropagation();   // ⛔ stops parent onClick
                                  handleCancelFilter();  // ✔ your original function
               }}>Product Catelog</div>
+
         
             
                  
                    <div className='store-category-head'>{ typeFilter?typeFilter.split('-')
                        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                       .join(' '):'Home Accessories'} 
+                       .join(' '):'All Products'} 
                   </div>  
               </div>
             </div>
@@ -289,19 +288,7 @@ if (typeFilter && currentSort?.sort) {
    
 
        
-        <aside className="store-sidebar"  style={{
-          transform: sideBartoggled ? 'translateX(0)' : 'translateX(-100%)',
-          transition: 'transform 0.5s ease-in-out',
-        }}>
-          <StoreFilter
-            currentCategory={currentCategory}
-            handleClickFilter={handleFilter}
-            handleClickCategory={() => setcurrentCategory("")}
-            typeFilter={typeFilter}
-            sideBartoggled={()=>sideBarsetToggled(true)}
-            handleCancelFilter ={handleCancelFilter}
-          />
-        </aside>
+        
 
         <main className="store-content"  /* style={{ marginTop:window.innerWidth < 400 && typeFilter? "2rem": "0"}} */>
        

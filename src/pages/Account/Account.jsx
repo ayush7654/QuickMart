@@ -25,14 +25,14 @@ export default function Account(){
     <div className="account-Page">
        <div className="accountPageImg">
         <div className='account-head-div'>
-          <span className="account-head">ACCOUNT</span>
-          <span className="account-head-description">Create an account to personalize your experience and unlock everything the store has to offer.</span>
+          <h2 className="account-head">ACCOUNT</h2>
+          <p className="account-head-description">Create an account to personalize your experience and unlock everything the store has to offer.</p>
         </div>
        </div>
          <div className="account-container">
           <Link to='/' className="account-page-title-div">
             <div className="account-page-title-tagline">Elevate your world with</div>
-            <div className="account-page-title">SaraS</div>
+            <div className="account-page-title">SARAS</div>
           </Link>
           
 

@@ -6,7 +6,7 @@
     font-size: .9rem;
     justify-content:space-between;
     user-select: none;
-  
+  overflow: hidden;
     border: 0px solid red;
 
   }
@@ -63,10 +63,9 @@
   
 
    font-weight: 300;
-   font-size: 1.2rem;
-   font-family: 'Inter';
-   font-family: 'Roboto';
-   font-family: 'Outfit';
+   font-size: 1.3rem;
+   font-family: 'Jost';
+  
    
   
    
@@ -123,7 +122,7 @@ font-weight: 400;
     text-align: center;
     letter-spacing: .3rem;
      color:rgb(0, 0, 0);
- font-size: 2rem;
+ font-size: 2.5rem;
  font-weight:500;
 font-family: 'Raleway';
 font-family:'Lato';
@@ -289,7 +288,7 @@ border: 0px solid black;
  #input-heading{
  position: absolute;
   left: 0rem;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
     pointer-events: none;
   transition: all 0.2s ease;
@@ -319,10 +318,23 @@ border: 0px solid black;
     font-size: .9rem;
     padding-left:0px;
     margin-top: .5rem;
+ /*    border: 1px solid red; */
     
 
     
   }
+
+  .account-input-icon-div{
+    position: absolute;
+    right: 0rem;
+    top: 40%;
+    transform: translateY(0,-50%);
+  }
+
+   .account-input-icon{
+    font-size: 1.2rem;
+    color:rgb(185, 185, 185);
+   }
 
   #account-input:focus{
         outline: none;

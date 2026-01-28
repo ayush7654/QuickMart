@@ -201,7 +201,7 @@ useEffect(() => {
 
 
      style={{
-      display:location.pathname=='/login'?'none':'flex',
+      display:location.pathname=='/Login'?'none':'flex',
       // Dynamic transition based on 'isIdle' state
       transition: isIdle
         ? 'transform 0.2s ease, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)

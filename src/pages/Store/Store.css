@@ -15,17 +15,11 @@
   background-color: rgb(255, 255, 255);
   user-select: none;
   min-height: 100vh;
-  
-  
-    
+  border: 0px solid blue;
+  position: relative; /*  */
 
 }
 
-.store-content-wrapper{
-  background-color: white;
-  z-index: 1;
-  width: 100%;
-}
 .storePage-overlay{
   
   height:100%;
@@ -34,7 +28,15 @@
   top:0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.300);
-  z-index: 10;
+  z-index: 99;
+}
+
+
+.store-content-wrapper{
+  background-color: white;
+
+  width: 100%;
+  z-index: 9;
 }
 
 
@@ -46,26 +48,6 @@
 }
 
 
-
-
-
-
-
-
-
-.remove-category-div:hover{
-  cursor: pointer;
-}
-
-
-
-
-
-
-
-
-
-
 .store-layout {
   display: flex;
   flex-direction: column;
@@ -73,72 +55,23 @@
     width: 100%;
  position: relative;
   gap: 0rem;
-  margin-top: 1rem;
+  
  
 }
-
-
-
-
-.store-sidebar {  /* Make this slideable */
- 
-    position: fixed;
-  top: 0rem; 
-  right: 0;
-  align-self: flex-start;
-  height: 100vh;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  width: 30%;
-  translate: 100%;  
-  background-color: rgb(255, 255, 255); /* #f5f5f5; */
-  /* border-right: 1px solid #ddd; */
-  border: 0px solid black;
-  margin-top: 0rem;
-  z-index: 999;
-  
-
-  
-
-}
-
-.store-content {
-  flex: 1;
-   padding: 3.5rem;
-   padding-top: 1rem;
-   
-   min-height: 100vh;
-   background-color: rgb(255, 255, 255);
-   
-
-}
-
-
-.Loading-Overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* match product grid */
-  gap: 1rem;
-  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */
-  z-index: 10;
-  pointer-events: none;
-}
-
-
 
 .store-page-heading-wrapper{
 
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-bottom: 1rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
   border: 0px solid red;
+  background-color: white;
+   z-index: 1;
+
 
 }
 
@@ -147,16 +80,16 @@
   display: flex;
   flex-direction: column;
   align-items:center;
-  justify-content: start;
+  justify-content:start;
   height: 5rem;
   gap:1rem;
   color: rgb(20,20,20);
-  z-index: 1;
+ 
     width: 90%;
  font-size: 1.5rem;
  letter-spacing: .05rem;
  border: 0px solid green;
-   border-bottom: 0px solid rgb(220, 220, 220);
+   border-bottom: 1px solid rgb(220, 220, 220);
 
 
 }
@@ -184,13 +117,20 @@ cursor: pointer;
   color: rgb(20,20,20);
 }
 
+
+
 .store-category-head{
     font-family: 'Raleway';
      font-family: 'Jost';
      font-family: 'Roboto';
      font-family: Outfit;
       font-family: "Figtree", sans-serif;  /* second best*/
-      font-family: 'Raleway';
+      font-family: 'Raleway'; 
+   
+        font-family: "Questrial", sans-serif;  
+       /*   font-family: 'Marcellus'; */
+         
+     
       
    
       
@@ -198,12 +138,64 @@ cursor: pointer;
        
 
 
- text-transform: uppercase;
+ text-transform: capitalize;
    font-size: 2rem;
  font-weight:600;
   letter-spacing: 1px;
   
 }
+
+
+
+.store-sidebar {  /* Make this slideable */
+ 
+    position: fixed;
+  top: 0rem; 
+  right: 0;
+  align-self: flex-start;
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  width: 30%;
+  translate: 100%;  
+  background-color: rgb(255, 255, 255); /* #f5f5f5; */
+  /* border-right: 1px solid #ddd; */
+  border: 0px solid black;
+  margin-top: 0rem;
+  z-index:999;
+  
+
+  
+
+}
+
+.store-content {
+  flex: 1;
+   padding: 3.5rem;
+   padding-top: 1rem;
+   
+   min-height: 100vh;
+   background-color: rgb(255, 255, 255);
+   
+
+}
+
+
+.Loading-Overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* match product grid */
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */
+
+  pointer-events: none;
+}
+
+
+
 
 
 
