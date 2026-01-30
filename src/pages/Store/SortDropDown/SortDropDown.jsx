@@ -56,7 +56,7 @@ const SortDropdown = ({ currentSort, setCurrentSort, sortOrder, toggleSortOrder 
                 toggleSortOrder('asc');
               }}
             >
-              <AnimatedUnderline from="right" exit="opposite" offset={2} thickness={1}>  
+              <AnimatedUnderline from="right" exit="opposite" offset={2} thickness={.5}>  
                 <span>{item.name}</span>
               </AnimatedUnderline> 
             </div>
@@ -79,13 +79,13 @@ const SortDropdown = ({ currentSort, setCurrentSort, sortOrder, toggleSortOrder 
       </div>
 
       {/* RIGHT SIDE: THE ORDER (ASC/DESC) DROPDOWN */}
-      <div className={`sort-dropdown-container  ${currentSort?'':'order-box-disabled'}`}>
+     {/*  <div className={`sort-dropdown-container  ${currentSort?'':'order-box-disabled'}`}>
         <div 
           className={` sort-main-box  ${isOrderOpen ? 'box-active' : ''} ${currentSort?'sort-box-selected':''}`} 
           onClick={() => { setIsOrderOpen(!isOrderOpen); setIsSortOpen(false); }}
         >
           <div className="sort-text-stack">
-           {/*  <span className="sort-label">ORDER</span> */}
+          
             <span className="sort-current">
         {sortOrder === 'asc'  ? 'Low → High' : sortOrder === 'desc' ? 'High → Low'  : 'Order'}
             </span>
@@ -101,7 +101,7 @@ const SortDropdown = ({ currentSort, setCurrentSort, sortOrder, toggleSortOrder 
           <div 
             className={`sort-item-row ${sortOrder === 'asc' ? 'item-selected' : ''}`}
            onClick={() => {
-    toggleSortOrder('asc'); // Sends 'asc' string to your function
+    toggleSortOrder('asc'); 
     setIsOrderOpen(false);
   }}
           >
@@ -110,14 +110,14 @@ const SortDropdown = ({ currentSort, setCurrentSort, sortOrder, toggleSortOrder 
           <div 
             className={`sort-item-row ${sortOrder === 'desc' ? 'item-selected' : ''}`}
                     onClick={() => {
-    toggleSortOrder('desc'); // Sends 'desc' string to your function
+    toggleSortOrder('desc'); 
     setIsOrderOpen(false);
   }}
           >
             High → Low
           </div>
         </div>
-      </div>
+      </div> */}
 
     </div>
   );

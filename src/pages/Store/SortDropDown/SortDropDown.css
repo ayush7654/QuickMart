@@ -13,7 +13,7 @@
 /* Base Styles (Shared by both) */
 .sort-main-box {
   background: white;
-  background-color: rgb(240,240,240);
+  /* background-color: rgb(240,240,240); */
   border: 1px solid transparent;
   padding: 10px 15px;
   display: flex;
@@ -22,7 +22,8 @@
   cursor: pointer;
   min-height: 2.5rem;
   transition: all 0.3s ease;
-    border-radius: 20px;
+     border-radius: 20px; 
+     border: 1px solid black;
     
 }
 
@@ -81,14 +82,17 @@
   top: calc(100% + 8px);
   left: 0;
   width: 100%;
-  background: white;
+   background: rgba(255, 255, 255, 0.501);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid #eee;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 1000;
+  border-radius: 10px;
 }
 
 .panel-visible { opacity: 1; visibility: visible; transform: translateY(0); }
@@ -150,7 +154,7 @@ transition: all .3s ease;
 }
 
 .clear-sort-btn:hover{
- background-color: black;
+ background-color: rgb(50,50,50);
  color:white;
  cursor: pointer;
 }

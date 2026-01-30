@@ -63,7 +63,7 @@ gap:1rem;
  /*  height: 2.5rem;
   width: 9rem; */
  position: absolute;
- right:0;
+ right:left;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -165,6 +165,8 @@ font-weight: 500;
     display: flex;
     gap:2rem;
     align-items: center;
+    position: absolute;
+    right:0;
     
 }
 

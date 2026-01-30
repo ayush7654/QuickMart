@@ -8,7 +8,8 @@ import { HiOutlineCollection } from "react-icons/hi";
 import Categories from './../../Home/Categories/Categories';
 import IconButton from '../../../components/IconButton/IconButton';
 
-export default function StoreSorting({isIdle,sortOrder,currentSort,setCurrentSort,toggleSortOrder,typeFilter,sideBartoggled,sideBarsetToggled,storeFilters,setStoreFilters}) {
+
+export default function StoreSorting({isIdle,sortOrder,currentSort,setCurrentSort,toggleSortOrder,typeFilter,sideBartoggled, setSideBarToggled,setStoreFilters,storeFilters,setSideFilterToggled}) {
   
 
 
@@ -29,8 +30,14 @@ console.log('sort order is ' , sortOrder)
 
 
 <div className='sort-dropDown-div'>
+{/* 
+<IconButton
+text='Sort By'
+width='12rem'
+height='2.5rem'/> */}
+ 
 
-
+ <div>list</div>
 
    <SortDropdown
     currentSort={currentSort} 
@@ -42,7 +49,7 @@ console.log('sort order is ' , sortOrder)
 
 </div>
 
-<div className='filter-wrapper'>
+{/*   <div className='filter-wrapper'>
   {storeFilters.map((item)=>
   <div className={`filter-div ${item.state?'filter-div-selected':''}`}
    onClick={() =>
@@ -59,24 +66,31 @@ console.log('sort order is ' , sortOrder)
     </div>)}
 
 
+</div>  */}
+ 
+
+
+
+
+<div onClick={()=>setSideFilterToggled(false)}>
+  <IconButton
+text='Filters'
+height='2.5rem'
+width='12rem'
+
+/>
 </div>
 
-
-<div className='category-div' onClick={() => sideBarsetToggled(false)}>
-{/*        <ScrollButton
-  text={<div className='filter-button-content'><HiOutlineCollection className="select-category-icon" strokeWidth={1.5} />  
-  <div className="select-category-head">Categories</div>
-  </div>}
-  theme={!sideBartoggled || typeFilter ?"darkMode":'lightMode'}
-  color="#cf7729ff"
-  themeOnHover={typeFilter?'colorMode':'darkMode'}
-/> */}
-
-<IconButton
+<div onClick={() =>  setSideBarToggled(false)}>
+  <IconButton
 text='Categories'
 height='2.5rem'
 width='12rem'
+
+
 />
+
+
  
 </div> 
 

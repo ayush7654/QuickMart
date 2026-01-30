@@ -1,124 +1,88 @@
-import { useState, useEffect, useRef } from 'react'
-import { Link } from "react-router-dom";
-import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
-import ScrollButton from '../../../components/ScrollingButton/ScrollingButton';
-
-
+import React from 'react'
+import useStoreFilterData from '../useStoreFilterData'
 import { X } from 'lucide-react';
-
+import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
 import './StoreFilter.css'
 
-export default function StoreFilter({ currentCategory, typeFilter, handleClickFilter, handleClickCategory,sideBartoggled,handleCancelFilter }) {
-  const [productCategory, setProductCategory] = useState([]);
-  const [CategoryNum, setCategoryNum] = useState(0);
 
-  // Move up/down state
-  const [isIdle, setIsIdle] = useState(false);
+export default function StoreFilter({setSideFilterToggled,storeFilters,setStoreFilters}) {
 
-  // For scroll detection
-  const lastScrollY = useRef(window.scrollY);
+ /*  const {storeFilters,setStoreFilters,filterLogicMap} = useStoreFilterData(); */
 
-  const handleCategory = (direction) => {
-    setCategoryNum(prev => {
-      if (direction === "left") {
-        if (prev > 0) return prev - 1;
-      } else {
-        if (prev < 10) return prev + 1;
-      }
-      return prev;
-    });
-  };
-
-  useEffect(() => {
-    const fetchCategory = async () => {
-      const response = await fetch("https://dummyjson.com/products/categories");
-      const data = await response.json();
-      setProductCategory(data);
-    }
-    fetchCategory();
-  }, []);
-
-  useEffect(() => {
-    let ticking = false;
-
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY;
-          if (currentScrollY > lastScrollY.current + 5) {
-            setIsIdle(true); // Move up
-          } else if (currentScrollY < lastScrollY.current - 5) {
-            setIsIdle(false); // Move down
-          }
-          lastScrollY.current = currentScrollY;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', onScroll);
-
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-    };
-  }, []);
-
-  console.log(productCategory)
-
+ const ClearAllFilters=()=>{
+    setStoreFilters(prev =>
+    prev.map(filter => ({
+      ...filter,
+      state: false
+    }))
+  )
+ }
   return (
     <div
-    /*   style={{
-        transition: 'transform 0.5s ease',
-        transform: isIdle ? 'translateY(-3rem)' : 'translateY(0)'
-      }} */
-      className="Store-filter"
+     
+      className="store-Category"
     >
 
-<div className='Store-filter-head-div'>
-  <div className='Store-filter-head-content'>
-      <span>SELECT CATEGORY</span>
-  <span className='Store-filter-cancel'>
+<div className='store-Category-head-div'>
+  <div className='store-Category-head-content'>
+      <span>SELECT FILTERS</span>
+  <span className='store-Category-cancel'>
 
-    <X size={24} strokeWidth={1.5} onClick={sideBartoggled} />
+    <X size={24} strokeWidth={1.5} onClick={()=>setSideFilterToggled(true)} />
 
   </span>
   </div>
 
   
 </div>
-      
-        <div className="store-categories" style={{ translate: `${-CategoryNum * 200}px`}}>
+
+ <div className='store-categories-wrapper'>
+
+    <div className="store-categories" >
         
-          {productCategory && productCategory.map((item, index) =>
-            <div
-              onClick={() => {
-  handleClickFilter(item.slug);
-   sideBartoggled(); 
-}}
-           className='store-category-div'
+          {storeFilters.map((item, index) =>
+            <div className='store-category-div'
+               onClick={() =>
+      setStoreFilters(prev =>
+        prev.map(f =>
+          f.filter === item.filter
+            ? { ...f, state: !f.state }
+            : f
+        )
+      )
+    }
               key={index}
             >
-              <span className={item.slug === typeFilter ? "store-category-selected" : "store-category"}>
-                <AnimatedUnderline from='left' exit='same' offset={8}><span className='store-category-text' >{item.name}</span></AnimatedUnderline>
+              <span className={item.state === true ? "store-category-selected" : "store-category"}>
+                <AnimatedUnderline
+                 from='left' 
+                 exit='same' 
+                 offset={8}>
+                    <span className='store-category-text' >
+                        {item.name}
+                    </span>
+                 </AnimatedUnderline>
                 </span>
             </div>
           )}
         </div>
-   
-   <div className='filter-clear-div-wrapper'>
-    <div onClick={handleCancelFilter}
-     style={{pointerEvents:typeFilter?'auto':'none'}}
-      className={`filter-clear-div ${typeFilter?'filter-selected':''}`}>
-          <ScrollButton
+ </div>
+      
+        
+      <div className='category-clear-div-wrapper'>
+    <div onClick={ClearAllFilters}
+   /*   style={{pointerEvents:typeFilter?'auto':'none'}} */
+      className={`category-clear-div`}>
+   {/*        <ScrollButton
   text='Clear Category'
   theme={typeFilter?'darkMode':'lightMode'}
   color="#cf7729ff"
   themeOnHover={typeFilter?'colorMode':'lightMode'}
 
-/>
+/> */}
    </div> 
    </div>
+
 
     </div>
   )

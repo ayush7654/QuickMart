@@ -9,13 +9,15 @@ import {
 import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
 import { getItems, getFilteredItems } from "../../api";
 import ProductCard from "../../components/ProductCard";
-import StoreFilter from "./StoreFilter/StoreFilter";
+import StoreCategory from "./StoreCategory/StoreCategory";
 import StoreFooter from "./StoreFooter/StoreFooter";
 import { SlidersHorizontal } from "lucide-react";
 import { WinScrollContext } from "../../components/WinScrollProvider/WinScrollProvider";
 import ScrollButton from "../../components/ScrollingButton/ScrollingButton";
 import StoreSorting from "./StoreSorting/StoreSorting";
 import PageHeader from "../../components/PageHeader/PageHeader";
+import useStoreFilterData from "./useStoreFilterData";
+import StoreFilter from "./StoreFilter/StoreFilter";
 import "./Store.css";
 
 export default function Store() {
@@ -31,26 +33,16 @@ export default function Store() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentCategory, setcurrentCategory] = useState('');
   const [categoryName, setCategoryName] = useState("");
-  const [sideBartoggled, sideBarsetToggled] = useState(true);
+  const [sideBartoggled,   setSideBarToggled] = useState(true);
+  const [sideFiltertoggled,setSideFilterToggled] =useState(false)
   const [currentSort,setCurrentSort] = useState(null);
  /*  const [currentFilter,setCurrentFilter] = useState(null) */
   const [sortOrder,setSortOrder] = useState(null)
   const { isIdle, isAtTop } = useContext(WinScrollContext);
 
-
-    const [storeFilters,setStoreFilters] = useState([
-     {name:'In Stock',filter:'availabilityStatus',state:false},
-  {name:'Warrenty',filter:'warrantyInformation',state:false},
-{name:'Return Policy',filter:'returnPolicy',state:false}
-  ]
-   )
+  const {storeFilters,setStoreFilters,filterLogicMap} = useStoreFilterData()
 
 
-   const filterLogicMap = {
-  availabilityStatus: value => value === "In Stock",
-  warrantyInformation: value => /\d/.test(value),
-  returnPolicy: value => /\d/.test(value),
-};
 
 
 
@@ -79,12 +71,12 @@ export default function Store() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleFilter = (category) => {
+  const handleTypeFilter = (category) => {
     setcurrentCategory(category);
     setSearchParams({ type: category });
   };
 
-  const handleCancelFilter =()=>{
+  const handleCancelTypeFilter =()=>{
     setcurrentCategory('')
    navigate('/store')
   }
@@ -222,14 +214,26 @@ if (typeFilter && currentSort?.sort) {
           transform: sideBartoggled ? 'translateX(0)' : 'translateX(-100%)',
           transition: 'transform 0.5s ease-in-out',
         }}>
-          <StoreFilter
+          <StoreCategory
             currentCategory={currentCategory}
-            handleClickFilter={handleFilter}
+            handleTypeFilter={handleTypeFilter}
             handleClickCategory={() => setcurrentCategory("")}
             typeFilter={typeFilter}
-            sideBartoggled={()=>sideBarsetToggled(true)}
-            handleCancelFilter ={handleCancelFilter}
+            setSideBarToggled={()=>setSideBarToggled(true)}
+            handleCancelTypeFilter ={handleCancelTypeFilter}
           />
+        </aside>
+    
+   <aside className="store-sidebar"  style={{
+           transform:sideFiltertoggled ? 'translateX(0)' : 'translateX(-100%)',
+      
+          transition: 'transform 0.5s ease-in-out',
+        }}>
+         <StoreFilter
+         setSideFilterToggled={()=>setSideFilterToggled(true)}
+         storeFilters={storeFilters}
+         setStoreFilters={setStoreFilters}/>
+         
         </aside>
 
 
@@ -247,7 +251,9 @@ if (typeFilter && currentSort?.sort) {
       toggleSortOrder={toggleSortOrder}
       typeFilter={typeFilter} 
       sideBartoggled={sideBartoggled}
-      sideBarsetToggled={sideBarsetToggled}
+       setSideBarToggled={ setSideBarToggled}
+       sideFiltertoggled={sideFiltertoggled}
+       setSideFilterToggled={setSideFilterToggled}
       storeFilters={storeFilters}
       setStoreFilters={setStoreFilters}
      /*  setCurrentFilter={setCurrentFilter} *//> 
@@ -261,7 +267,7 @@ if (typeFilter && currentSort?.sort) {
                  
                  className="store-all-link"
                  onClick={(e) => { e.stopPropagation();   // ⛔ stops parent onClick
-                                 handleCancelFilter();  // ✔ your original function
+                                 handleCancelTypeFilter();  // ✔ your original function
               }}>Product Catelog</div>
 
         
@@ -278,7 +284,7 @@ if (typeFilter && currentSort?.sort) {
  
 
 
-       <div className="filter-Btn-Ph"onClick={() => sideBarsetToggled(false)}>
+       <div className="filter-Btn-Ph"onClick={() => setSideBarToggled(false)}>
           <SlidersHorizontal className="" strokeWidth={1.5} />
        </div>
 
