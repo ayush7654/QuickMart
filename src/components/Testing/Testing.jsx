@@ -2,52 +2,44 @@ import React ,{useState}from "react";
 import "./Testing.css";
 import IconButton from "../IconButton/IconButton";
 
+// Lucide
+import { DollarSign, Percent } from "lucide-react";
 
+
+// React Icons – FontAwesome
+import { FaDollarSign, FaPercentage } from "react-icons/fa";
+
+// React Icons – Material
+import { MdAttachMoney, MdPercent } from "react-icons/md";
 
 export default function Testing() {
 
-const [storeFilters,setStoreFilters] =useState([
-  { name: "Best Sellers" },
-  { name: "Latest Offers" },
-  { name: "Warrenty" },
-  { name: "Return Policy" },
-  { name: "In Stock" },
-  { name: "Fast Shipping" },
-  { name: "Limited Stock" },
-  { name: "COD Available" },
-  { name: "Free Shipping" }
-]
 
-)
+
+
 
   return (
     <div className="testing-div">
-   <div className="test-store-head-wrapper">
-    <div className="test-store-menu">
-        <IconButton
-    text="Filters"
-    width="10rem"
-    height="2.5rem"/>
+   
+     {/* DOLLAR ICONS */}
+      <h3>Dollar Icons</h3>
+      <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
+        <DollarSign size={24} strokeWidth={1.5} />
+        
+        <FaDollarSign size={22} />
+        <MdAttachMoney size={24} />
+      </div>
 
-    <div className="filter-panel">
-   {storeFilters.map((filter)=>
-   <div className="test-filter-div">
-    
-    {filter.name}
-   <div className="filter-selector"><span className="filter-selector-circle"></span></div>
-   </div>)}
+      <hr style={{ margin: "2rem 0" }} />
 
-   <div className="filter-btn-div">
-    <div className="test-filter-btn">Apply</div>
-    <div className="test-filter-btn" >Clear</div>
-   </div>
-    </div>
-    
-    </div>
-  
-   if the brick design doent work, try adding a circle fillig design , 
-   </div>
+      {/* PERCENT ICONS */}
+      <h3>Percentage Icons</h3>
+      <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
+        <Percent size={24} strokeWidth={1.5} />
      
+        <FaPercentage size={20} />
+        <MdPercent size={24} />
+      </div>
     </div>
   );
 };

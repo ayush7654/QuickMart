@@ -8,7 +8,7 @@ export default function IconButton({
      text = "Explore More" , 
      contentColor='rgb(0,0,0)',
      bgColor='transparent',
-   
+     strokeWidth=0,
      Icon =MdArrowOutward
      }) {
   return (
@@ -21,7 +21,7 @@ export default function IconButton({
       }}
    >
      <div className="icon-circle-div" >
-    < Icon  className="icon-circle"/>
+    < Icon  className="icon-circle" strokeWidth={strokeWidth} />
     </div> 
     <div className="long-btn">
 

@@ -34,10 +34,10 @@ export default function Store() {
   const [currentCategory, setcurrentCategory] = useState('');
   const [categoryName, setCategoryName] = useState("");
   const [sideBartoggled,   setSideBarToggled] = useState(true);
-  const [sideFiltertoggled,setSideFilterToggled] =useState(false)
+  const [sideFiltertoggled,setSideFilterToggled] =useState(true)
   const [currentSort,setCurrentSort] = useState(null);
  /*  const [currentFilter,setCurrentFilter] = useState(null) */
-  const [sortOrder,setSortOrder] = useState(null)
+  const [sortOrder,setSortOrder] = useState('asc')
   const { isIdle, isAtTop } = useContext(WinScrollContext);
 
   const {storeFilters,setStoreFilters,filterLogicMap} = useStoreFilterData()
