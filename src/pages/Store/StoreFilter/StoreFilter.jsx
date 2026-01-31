@@ -3,9 +3,11 @@ import useStoreFilterData from '../useStoreFilterData'
 import { X } from 'lucide-react';
 import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
 import './StoreFilter.css'
+import IconButton from '../../../components/IconButton/IconButton';
 
 
-export default function StoreFilter({setSideFilterToggled,storeFilters,setStoreFilters}) {
+
+export default function StoreFilter({setSideFilterToggled,storeFilters,setStoreFilters, filterActive}) {
 
  /*  const {storeFilters,setStoreFilters,filterLogicMap} = useStoreFilterData(); */
 
@@ -73,13 +75,13 @@ export default function StoreFilter({setSideFilterToggled,storeFilters,setStoreF
     <div onClick={ClearAllFilters}
    /*   style={{pointerEvents:typeFilter?'auto':'none'}} */
       className={`category-clear-div`}>
-   {/*        <ScrollButton
-  text='Clear Category'
-  theme={typeFilter?'darkMode':'lightMode'}
-  color="#cf7729ff"
-  themeOnHover={typeFilter?'colorMode':'lightMode'}
-
-/> */}
+  <IconButton
+  text='Clear All Filters'
+ 
+  width='100%'
+  state={filterActive?true:false}
+  strokeWidth={1.5}
+  Icon={X}/>
    </div> 
    </div>
 

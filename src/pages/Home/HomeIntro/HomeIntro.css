@@ -106,13 +106,16 @@ overflow: hidden;/* This hides the other 3 elements */
 
 .home-intro-explore{
     position: absolute;
-   
+
+   width: 100%;
     bottom: 5rem;
     left: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Outfit';
+    display: flex;
+    justify-content: start;
 }
 
 

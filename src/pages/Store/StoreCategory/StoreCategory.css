@@ -197,7 +197,7 @@ text-decoration-thickness: 1.5px;
 
 .category-clear-div-wrapper{
   border: 0px solid red;
-  height: 8rem;
+  height: 6.5rem;
   width: 90%;
   position: sticky;
   bottom: 0;
@@ -221,10 +221,9 @@ color:black;
   align-items: center;
   font-family: 'Poppins';
   font-family: "Rethink Sans", sans-serif; 
-
   border-radius:25px ;
   overflow: hidden;
-  border: 1px solid black;
+  
 
 }
 

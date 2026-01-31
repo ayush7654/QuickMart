@@ -1,5 +1,5 @@
 
-import { useState} from "react";
+import { useState,useMemo} from "react";
 
 export default function useStoreFilterData() {
   const [storeFilters, setStoreFilters] = useState([
@@ -14,7 +14,10 @@ export default function useStoreFilterData() {
    
   ]);
 
-
+const filterActive = useMemo(() => {
+  console.log('filter state calculating')
+    return storeFilters.some((f) => f.state === true);
+  }, [storeFilters]);
 
   const filterLogicMap = {
     availabilityStatus: value => value === "In Stock",
@@ -43,7 +46,8 @@ export default function useStoreFilterData() {
   return {
     storeFilters,
     setStoreFilters,
-    filterLogicMap
+    filterLogicMap,
+    filterActive
   
   };
 }

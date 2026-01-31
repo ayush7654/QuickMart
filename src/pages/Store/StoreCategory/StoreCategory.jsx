@@ -37,7 +37,7 @@ export default function StoreCategory({ currentCategory, typeFilter, handleTypeF
 
   
 
-  console.log(productCategory)
+ 
 
   return (
     <div
@@ -83,7 +83,7 @@ export default function StoreCategory({ currentCategory, typeFilter, handleTypeF
    
    <div className='category-clear-div-wrapper'>
     <div onClick={handleCancelTypeFilter}
-     style={{pointerEvents:typeFilter?'auto':'none'}}
+   /*   style={{pointerEvents:typeFilter?'auto':'none'}} */
       className={`category-clear-div ${typeFilter?'category-selected':''}`}>
 {/*           <ScrollButton
   text='Clear Category'
@@ -94,8 +94,10 @@ export default function StoreCategory({ currentCategory, typeFilter, handleTypeF
 /> */}
 <IconButton
 text='Clear Category'
-height='2.5rem'
+state={typeFilter?true:false}
 width='100%'
+  strokeWidth={1.5}
+  Icon={X}
 
 />
    </div> 

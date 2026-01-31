@@ -130,7 +130,7 @@ const productsComp = filterAndRankByTitle(products,searchTerm)
 
   
 
-    console.log('products are',filterAndRankByTitle(products,searchTerm))
+  
   return (
     <div
       className='searchBar-div'

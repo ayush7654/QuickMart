@@ -1,18 +1,12 @@
 import React ,{useState,  useEffect, useRef} from 'react'
 import './StoreSorting.css'
-import { SlidersHorizontal } from 'lucide-react';
-import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
-
-
 import { HiOutlineCollection } from "react-icons/hi";
-import Categories from './../../Home/Categories/Categories';
 import IconButton from '../../../components/IconButton/IconButton';
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
-import { MdSort, MdOutlineSwapVert } from "react-icons/md";
-import { MdFilterList, MdOutlineFilterAlt, MdOutlineTune } from "react-icons/md";
-import { MdStar, MdStarBorder, MdStarHalf } from 'react-icons/md';
+import { MdFilterList } from "react-icons/md";
+import { MdStar, MdStarBorder } from 'react-icons/md';
 import { MdAttachMoney, MdPercent } from "react-icons/md";
-export default function StoreSorting({isIdle,sortOrder,currentSort,setCurrentSort,toggleSortOrder,typeFilter,sideBartoggled, setSideBarToggled,setStoreFilters,storeFilters,setSideFilterToggled}) {
+export default function StoreSorting({isIdle,sortOrder,currentSort,setCurrentSort,toggleSortOrder,typeFilter,sideBartoggled, setSideBarToggled,setStoreFilters,storeFilters,setSideFilterToggled,sideFiltertoggled,filterActive}) {
   
   const SortArray = [
     { name: 'Price', sort: 'price' ,Icon: MdAttachMoney },
@@ -45,7 +39,7 @@ useEffect(() => {
 }, [isSortOpen]);
 
 
-console.log('sort is  ' , currentSort)
+
 
   return (
          <div style={{
@@ -62,10 +56,11 @@ console.log('sort is  ' , currentSort)
   <div onClick={()=>setSideFilterToggled(false)}>
   <IconButton
 text='Filters'
-height='2.5rem'
+
 width='12rem'
 Icon={HiOutlineAdjustmentsHorizontal}
 strokeWidth={1.5}
+ state = {filterActive || !sideFiltertoggled? true: false}
 
 />
 </div>
@@ -73,11 +68,11 @@ strokeWidth={1.5}
 <div onClick={() =>  setSideBarToggled(false)}>
   <IconButton
 text='Categories'
-height='2.5rem'
+
 width='12rem'
 Icon={ HiOutlineCollection}
 strokeWidth={1.5}
-
+state={typeFilter || !sideBartoggled?true:false}
 
 />
 
@@ -95,10 +90,11 @@ strokeWidth={1.5}
 
 <div   onClick={()=>setIsSortOpen(true)}>
    <IconButton
-  height='2.5rem'
+
  width='12rem'
   text={currentSort?currentSort.name: 'Sort By'}
   Icon={currentSort?currentSort.Icon: MdFilterList} 
+  state={currentSort || isSortOpen ?true:false}
 />
 </div>
  
@@ -106,8 +102,8 @@ strokeWidth={1.5}
 
   <div  ref={sortPanelRef} 
   className={`sorting-panel ${isSortOpen?'sort-panel-visible':''}`}>
- { SortArray.map((item)=>
- <div 
+ { SortArray.map((item,index)=>
+ <div key={index}
  className={`store-sort-div ${currentSort?.name===item.name?'store-sort-selected':''}`}
  onClick={()=>
   {setCurrentSort(item);

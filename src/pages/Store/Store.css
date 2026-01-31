@@ -164,13 +164,15 @@ cursor: pointer;
 /*   background-color: rgb(255, 255, 255); */ 
   /* border-right: 1px solid #ddd; */
 
-    background: rgba(255, 255, 255, 0.501);
+    background: rgba(255, 255, 255, 0.700);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 2px solid #eee;
+  border: 1px solid #eee;
  
   margin-top: 0rem;
   z-index:999;
+/*   box-shadow: -2px 0px 5px rgb(200, 200, 200); */
+box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 
 
   
@@ -325,7 +327,8 @@ padding: 0.3rem 0;
 
  .store-product:hover .productImg-wrapper {
 
- border: 1px solid rgb(190, 190, 190);
+/*  border: 1px solid rgb(190, 190, 190); */
+ border: 1px solid blue;
 
  }
 

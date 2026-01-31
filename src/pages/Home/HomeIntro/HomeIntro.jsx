@@ -131,10 +131,13 @@ useEffect(() => {
 
   <div className='home-intro-explore'>
    <IconButton
- width='15rem'
- height='3.5rem'
+ width='60%'
+ height='3rem'
  text='Explore More'
  contentColor='rgb(255,255,255)'
+ bgColor='white'
+ fontSize='1.1rem'
+ IconSize='60%'
  />
    </div>  
 

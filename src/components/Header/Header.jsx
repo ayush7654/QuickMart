@@ -29,40 +29,10 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
 
     const firebase= useFirebase()
 
-    console.log('username',firebase.currentUser)
+    
     const pagelocation= useLocation();
 
-  const elements = [
-  
-        {
-    title: "Login",
-    path: "/login",
-    logo:  
-      pagelocation.pathname === "/login" ? (
-        <HiUser id="fd-header-logo" />
-      ) : (
-        <HiOutlineUser id="ol-header-logo" style={{ strokeWidth: "1.5" }} />
-      )
-    
-  }
-      ,
-   
-
-      {
-          title: "Cart",
-          path: "/cart",
-          logo:
-            pagelocation.pathname === "/cart" ? (
-              <HiShoppingBag id="fd-header-logo" />
-            ) : (
-              <HiOutlineShoppingBag
-                id="ol-header-logo"
-                style={{ strokeWidth: "1.5" }}
-              />
-            ),
-        }
-,
-];
+ 
 
 
         /*         {title:"Wishlist ", path:'/wishlist',logo:pagelocation.pathname==='/wishlist'?<FaHeart id="fd-header-logo" className="wishlistIcon" />:<FiHeart className="wishlistIcon"  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/>}, */
@@ -102,10 +72,10 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
 
  
    const categoryArr= categories? (window.innerWidth>775? categories.slice(12,20): categories.slice(12,16)):'loading'
-   console.log('arr is',categoryArr)
+
 
     const location= useLocation()
-    console.log(location)
+  
 
       const { scrollY, direction, velocity } = useScroll();
     
@@ -190,7 +160,7 @@ useEffect(() => {
     : "translateY(0) scale(1)";
 
 
-    console.log('cursor is ', cursorOff)
+   
 
  const suggestionComp= suggestions?suggestions.filter(item=>item.name.toLowerCase().includes(searchTerm.toLowerCase())):null;
 

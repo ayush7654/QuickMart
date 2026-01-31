@@ -29,8 +29,8 @@ color:blue;
 }
 
 .icon-circle{
-    width: 60%;
-    height: 60%;
+    width: var(--btn-icon-size);
+    height:var(--btn-icon-size);
 }
 
 .long-btn{
@@ -44,15 +44,18 @@ justify-content:end;
 border: 1px solid var(--btn-content-color);
  transition: all .2s ease;
  border-radius: 100px; /* High value keeps it pill-shaped at any height */
- background-color: white;
+ background-color: var(--btn-bg-color);
 
 
 }
-.Icon-button-wrapper:hover .long-btn {
+.Icon-button-wrapper:hover .long-btn,
+.Icon-button-active .long-btn {
     background-color: transparent;
+    width: 100%;
 }
 
-.Icon-button-wrapper:hover .button-text{
+.Icon-button-wrapper:hover .button-text,
+.Icon-button-active .button-text{
     color: var(--btn-content-color);
 }
 
@@ -61,27 +64,26 @@ border: 1px solid var(--btn-content-color);
     right: 0%;
     top:50%;
     transform: translate(0,-50%); 
- font-size: 1.1rem;
+ font-size: var(--btn-font-size);
 width: calc(100% - (var(--btn-height) + 0.2rem));;
 font-family: 'Outfit';
  display: flex;
 align-items: center;
 justify-content: center;
-color: var(--btn-content-color);
+
 color:black;
 
 }
 
-.Icon-button-wrapper:hover{
+.Icon-button-wrapper:hover,
+.Icon-button-active{
     cursor: pointer;
 }
 
-.Icon-button-wrapper:hover .long-btn{
-width: 100%;
 
-}
 
-.Icon-button-wrapper:hover .icon-circle-div{
+.Icon-button-wrapper:hover .icon-circle-div,
+.Icon-button-active .icon-circle-div{
      background-color: blue;
      transform: scale(.85);
      color:white;

@@ -15,7 +15,7 @@ export default function SideBarCart({cartToggled,setCartToggled, toggleOverlay})
 
       const cartElements=cartList? (cartList.map((product,index)=>(
      <CartItem
-     index={index}
+     key={index}
      title={product.title}
      images={product.images[0]}
       price={product.price}

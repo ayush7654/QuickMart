@@ -40,12 +40,12 @@ export default function Store() {
   const [sortOrder,setSortOrder] = useState('asc')
   const { isIdle, isAtTop } = useContext(WinScrollContext);
 
-  const {storeFilters,setStoreFilters,filterLogicMap} = useStoreFilterData()
+  const {storeFilters,setStoreFilters,filterLogicMap,filterActive} = useStoreFilterData();
 
 
 
 
-
+console.log('is filter active', filterActive)
 
 
 
@@ -230,9 +230,11 @@ if (typeFilter && currentSort?.sort) {
           transition: 'transform 0.5s ease-in-out',
         }}>
          <StoreFilter
+         sideFiltertoggled={sideFiltertoggled}
          setSideFilterToggled={()=>setSideFilterToggled(true)}
          storeFilters={storeFilters}
-         setStoreFilters={setStoreFilters}/>
+         setStoreFilters={setStoreFilters}
+         filterActive={filterActive}/>
          
         </aside>
 
@@ -256,6 +258,7 @@ if (typeFilter && currentSort?.sort) {
        setSideFilterToggled={setSideFilterToggled}
       storeFilters={storeFilters}
       setStoreFilters={setStoreFilters}
+      filterActive={filterActive}
      /*  setCurrentFilter={setCurrentFilter} *//> 
 
 

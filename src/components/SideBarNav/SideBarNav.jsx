@@ -62,8 +62,8 @@ export default function SideBarNav({sideBarState, sideBarToggle}) {
             
         </div>
         <div className='sideBarNav-element-div'>
-              {elements.map((item)=>
-         <NavLink to={item.path} className='sideBarNav-element' onClick={()=>sideBarToggle(false)}>
+              {elements.map((item,index)=>
+         <NavLink key={index} to={item.path} className='sideBarNav-element' onClick={()=>sideBarToggle(false)}>
             <div className='sideBarNav-Icon-div'> <img src={item.iconImg} width={25}/> {/* {item.icon} */}</div>
             <div className='sideBarNav-name'>{item.iconName}</div>
          </NavLink>
