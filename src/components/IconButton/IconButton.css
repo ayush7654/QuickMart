@@ -16,8 +16,9 @@
 .icon-circle-div{
  width: var(--btn-height);
   height: var(--btn-height);
-border: 1px solid var(--btn-content-color);
-color:blue;
+border: 1px solid var(--btn-border-color);
+
+color:var(--btn-icon-color);
  display: flex;
  justify-content: center;
  align-items: center;
@@ -41,10 +42,11 @@ height: var(--btn-height);
 display: flex;
 align-items: center;
 justify-content:end;
-border: 1px solid var(--btn-content-color);
+border: 1px solid var(--btn-border-color);
  transition: all .2s ease;
  border-radius: 100px; /* High value keeps it pill-shaped at any height */
  background-color: var(--btn-bg-color);
+
 
 
 }
@@ -53,10 +55,16 @@ border: 1px solid var(--btn-content-color);
     background-color: transparent;
     width: 100%;
 }
+ 
+.Icon-button-wrapper:hover .button-text
+{
+    color: var(--btn-hoverText-color);
 
-.Icon-button-wrapper:hover .button-text,
-.Icon-button-active .button-text{
-    color: var(--btn-content-color);
+   
+}
+ 
+.Icon-button-active:hover .button-text{
+ color: blue;
 }
 
 .button-text{
@@ -71,7 +79,7 @@ font-family: 'Outfit';
 align-items: center;
 justify-content: center;
 
-color:black;
+color:var(--btn-content-color);
 
 }
 
@@ -84,7 +92,7 @@ color:black;
 
 .Icon-button-wrapper:hover .icon-circle-div,
 .Icon-button-active .icon-circle-div{
-     background-color: blue;
+     background-color: var(--btn-icon-color);
      transform: scale(.85);
      color:white;
      border: 1px solid transparent;

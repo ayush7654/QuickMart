@@ -118,6 +118,7 @@ align-items:center;
 
 
 
+
 }
 
 .store-category-div{
@@ -128,34 +129,26 @@ align-items:center;
 border: 0px solid green;
 height: 4rem;
 }
+
+
 .store-category{
   width: 100%;
  height: 100%;
   display: flex;
   align-items: center;
-  
   font-size: 1rem;
   font-weight: 400;
 
-   font-family: 'Jost';
-    font-family: "Questrial", sans-serif;
-    font-family: 'Roboto';
-     font-family: "Rethink Sans", sans-serif; 
+     font-family: 'Outfit';
+    
   color: rgb(10,10,10);
   border-bottom: 0px solid rgb(235, 235, 235);
 
  padding-left:2rem; 
   letter-spacing: 0px;
-  transition: all .3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 }
-
-
-.store-category:hover .animated-underline::after {
-  transform: scaleX(1);
-}
-
-
 
 
 
@@ -164,36 +157,33 @@ height: 4rem;
 
   cursor: pointer;
   font-size: 1.15rem;
-  letter-spacing: 1px;
+
+  transform: translateX(1rem);
+  
 
 
 }
 
 .store-category-selected{
-    width: 85%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+
   font-size: 1.3rem;
-  font-weight: 400;
-   font-family: "Rethink Sans", sans-serif; 
-
-
-
-   color: rgb(0, 0, 0);
+  font-weight: 500;
+   color: blue;
   text-decoration: underline;
 text-underline-offset: 10px;
 text-decoration-thickness: 1.5px;
-  /* border-bottom:2px solid rgb(0, 0, 0); */
-
- letter-spacing: 0px;
  pointer-events: none;
+   transition: all .3s ease;
+
 
  
 
 }
 
+.store-category:hover .animated-underline::after {
+  transform: scaleX(1);
+}
 
 .category-clear-div-wrapper{
   border: 0px solid red;
@@ -213,7 +203,7 @@ text-decoration-thickness: 1.5px;
   bottom: 1rem;
   width: 87%;
   height: 3rem;
-
+border: 1px solid black;
 color:black;
 /* background-color: white; */
   display: flex;
@@ -221,8 +211,10 @@ color:black;
   align-items: center;
   font-family: 'Poppins';
   font-family: "Rethink Sans", sans-serif; 
+  font-family: 'Outfit';
   border-radius:25px ;
   overflow: hidden;
+    transition: all .2s ease;
   
 
 }
@@ -233,6 +225,12 @@ color:black;
   color:white;
   cursor: pointer;
    border: 1px solid transparent;
+   background-color: black;
+   transition: all .2s ease;
+}
+
+.category-selected:hover{
+  background-color: rgb(40,40,40);
 }
 
 

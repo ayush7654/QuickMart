@@ -40,12 +40,12 @@ export default function Store() {
   const [sortOrder,setSortOrder] = useState('asc')
   const { isIdle, isAtTop } = useContext(WinScrollContext);
 
-  const {storeFilters,setStoreFilters,filterLogicMap,filterActive} = useStoreFilterData();
+  const {storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount} = useStoreFilterData();
 
 
 
 
-console.log('is filter active', filterActive)
+
 
 
 
@@ -87,9 +87,9 @@ console.log('is filter active', filterActive)
 setSearchParams(searchParams); // update the URL
   }
 
-  const toggleSortOrder=(order)=>{
-    setSortOrder(order)
-  }
+const toggleSortOrder = () => {
+  setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
+};
 
   const loadBatch = async (batchNumber) => {
     if (ProductCache.current[batchNumber]) return;
@@ -139,7 +139,7 @@ useEffect(() => {
   }, [typeFilter, DisplayedItems]);
 
 const productElements = useMemo(() => {
-  if (!FinalItems) return null;
+  if (!FinalItems) return 0;
 
   let items = [...FinalItems]; // copy to avoid mutation
 
@@ -191,7 +191,8 @@ if (typeFilter && currentSort?.sort) {
 
 
 
-
+console.log('product elements are', productElements)
+console.log('final items are ' , FinalItems)
 
   
   return (
@@ -211,7 +212,7 @@ if (typeFilter && currentSort?.sort) {
    
  
  <aside className="store-sidebar"  style={{
-          transform: sideBartoggled ? 'translateX(0)' : 'translateX(-100%)',
+          transform: sideBartoggled ? 'translateX(100%)' : 'translateX(0%)',
           transition: 'transform 0.5s ease-in-out',
         }}>
           <StoreCategory
@@ -225,7 +226,7 @@ if (typeFilter && currentSort?.sort) {
         </aside>
     
    <aside className="store-sidebar"  style={{
-           transform:sideFiltertoggled ? 'translateX(0)' : 'translateX(-100%)',
+           transform:sideFiltertoggled ? 'translateX(100%)' : 'translateX(0%)',
       
           transition: 'transform 0.5s ease-in-out',
         }}>
@@ -259,6 +260,9 @@ if (typeFilter && currentSort?.sort) {
       storeFilters={storeFilters}
       setStoreFilters={setStoreFilters}
       filterActive={filterActive}
+   
+      productCount={productElements.length}
+        activeFiltersCount={activeFiltersCount}
      /*  setCurrentFilter={setCurrentFilter} *//> 
 
 

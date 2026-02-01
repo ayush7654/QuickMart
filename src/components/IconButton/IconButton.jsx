@@ -3,15 +3,18 @@ import './IconButton.css'
 import { MdArrowOutward } from "react-icons/md";
 
 export default function IconButton({ 
-    width = "15rem", 
-    height = "2.65rem",
+    width = "10rem", 
+    height = "2.2rem",
      text = "Explore More" , 
      contentColor='rgb(0,0,0)',
+     borderColor='rgb(150,150,150)',
+     hoverText='black',
      bgColor='transparent',
      state= false,
      strokeWidth=0,
-     fontSize='1rem',
+     fontSize='.95rem',
      IconSize='55%',
+     IconColor='blue',
      Icon =MdArrowOutward
      }) {
 
@@ -27,6 +30,10 @@ export default function IconButton({
         "--btn-bg-color": bgColor,
         "--btn-font-size": fontSize,
         "--btn-icon-size": IconSize,
+        "--btn-icon-color": IconColor,
+        "--btn-border-color": borderColor,
+        "--btn-hoverText-color": hoverText,
+        
       }}
    >
      <div className="icon-circle-div" >

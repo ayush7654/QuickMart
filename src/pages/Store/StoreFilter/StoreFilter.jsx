@@ -55,7 +55,7 @@ export default function StoreFilter({setSideFilterToggled,storeFilters,setStoreF
     }
               key={index}
             >
-              <span className={item.state === true ? "store-category-selected" : "store-category"}>
+              <span className={`store-category ${item.state === true ? "store-category-selected" : ""}`}>
                 <AnimatedUnderline
                  from='left' 
                  exit='same' 
@@ -74,14 +74,17 @@ export default function StoreFilter({setSideFilterToggled,storeFilters,setStoreF
       <div className='category-clear-div-wrapper'>
     <div onClick={ClearAllFilters}
    /*   style={{pointerEvents:typeFilter?'auto':'none'}} */
-      className={`category-clear-div`}>
-  <IconButton
+      className={`category-clear-div ${filterActive?'category-selected':''}`}>
+        Clear Filters
+{/*   <IconButton
   text='Clear All Filters'
- 
+ height='3rem'
   width='100%'
   state={filterActive?true:false}
   strokeWidth={1.5}
-  Icon={X}/>
+  Icon={X}
+  IconColor='black'
+  /> */}
    </div> 
    </div>
 

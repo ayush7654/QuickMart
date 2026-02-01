@@ -71,7 +71,7 @@ export default function StoreCategory({ currentCategory, typeFilter, handleTypeF
            className='store-category-div'
               key={index}
             >
-              <span className={item.slug === typeFilter ? "store-category-selected" : "store-category"}>
+              <span className={`store-category ${item.slug === typeFilter ? "store-category-selected" : ""}`}>
                 <AnimatedUnderline from='left' exit='same' offset={8}><span className='store-category-text' >{item.name}</span></AnimatedUnderline>
                 </span>
             </div>
@@ -83,23 +83,19 @@ export default function StoreCategory({ currentCategory, typeFilter, handleTypeF
    
    <div className='category-clear-div-wrapper'>
     <div onClick={handleCancelTypeFilter}
-   /*   style={{pointerEvents:typeFilter?'auto':'none'}} */
+ 
       className={`category-clear-div ${typeFilter?'category-selected':''}`}>
-{/*           <ScrollButton
-  text='Clear Category'
-  theme={typeFilter?'darkMode':'lightMode'}
-  color="#cf7729ff"
-  themeOnHover={typeFilter?'colorMode':'lightMode'}
-
-/> */}
-<IconButton
+Clear Category
+{/* <IconButton
 text='Clear Category'
 state={typeFilter?true:false}
 width='100%'
+height='3rem'
   strokeWidth={1.5}
   Icon={X}
+  IconColor='black'
 
-/>
+/> */}
    </div> 
    </div>
 

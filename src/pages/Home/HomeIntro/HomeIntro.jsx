@@ -134,10 +134,12 @@ useEffect(() => {
  width='60%'
  height='3rem'
  text='Explore More'
- contentColor='rgb(255,255,255)'
+ contentColor='rgba(0, 0, 0)'
+ borderColor='white'
  bgColor='white'
  fontSize='1.1rem'
  IconSize='60%'
+ hoverText='white'
  />
    </div>  
 

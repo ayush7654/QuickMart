@@ -14,10 +14,14 @@ export default function useStoreFilterData() {
    
   ]);
 
-const filterActive = useMemo(() => {
-  console.log('filter state calculating')
-    return storeFilters.some((f) => f.state === true);
+// Calculate count first
+  const activeFiltersCount = useMemo(() => {
+    console.log('Calculating active count');
+    return storeFilters.reduce((count, f) => (f.state ? count + 1 : count), 0);
   }, [storeFilters]);
+
+  // Derive boolean from count (0 is falsy, any other number is truthy)
+  const filterActive = activeFiltersCount > 0;
 
   const filterLogicMap = {
     availabilityStatus: value => value === "In Stock",
@@ -47,7 +51,8 @@ const filterActive = useMemo(() => {
     storeFilters,
     setStoreFilters,
     filterLogicMap,
-    filterActive
+    filterActive,
+    activeFiltersCount
   
   };
 }
