@@ -9,7 +9,7 @@
   height: 6rem;
   transition: all .3s ease;
   border-bottom: 0px solid rgb(220,220,220);
-box-shadow: 0 10px 20px rgba(100,100,100, 0.1);
+box-shadow: 0 5px 5px rgba(150, 150, 150, 0.1);
 
 }
 
@@ -182,13 +182,14 @@ opacity: 1; visibility: visible; transform: translateY(0);
   display: flex;
   gap: 2rem;
   align-items: center;
-    font-size: .9rem;
+    font-size: .95rem;
+      font-family: "Figtree", sans-serif; 
 }
 
 .order-toggle-div{
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: .3rem;
   color:rgb(180, 180, 180);
 
 }

@@ -3,8 +3,8 @@ import './IconButton.css'
 import { MdArrowOutward } from "react-icons/md";
 
 export default function IconButton({ 
-    width = "10rem", 
-    height = "2.2rem",
+    width = "11rem", 
+    height = "2.5rem",
      text = "Explore More" , 
      contentColor='rgb(0,0,0)',
      borderColor='rgb(150,150,150)',

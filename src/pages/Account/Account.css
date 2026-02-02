@@ -138,7 +138,7 @@ font-family:'Lato';
 
 
 .account-page-switch{
-  width: 100%;
+  width: 65%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -147,11 +147,14 @@ font-family:'Lato';
 
   font-family: 'Poppins'; 
   font-family: 'Raleway';
+    
 /* font-family: 'Outfit'; */
   border: 0px solid blue;
-    border-bottom: 1px solid rgb(220, 220, 220);
+  border-bottom: 1px solid rgb(200,200,200);
+    
 
 }
+
 
 .account-section-selected{
   
@@ -170,7 +173,7 @@ font-family:'Lato';
 }
 
 #switch-section{
-  width: 35%;
+  width: 50%;
   height: 100%;
     display: flex;
   align-items: center;
@@ -185,19 +188,20 @@ font-family:'Lato';
   cursor: pointer;
   color:rgb(80,80,80);
 
+
 }
 
 #switch-section-head{
    height: 2.5rem;
-width: 7rem;
-font-size: .85rem;
 
+font-size: .85rem;
+font-weight: 500;
  display: flex;
  align-items: center;
  justify-content: center;
   border-bottom: 2px solid transparent;
    letter-spacing: .05rem;
-   transition: all .3s ease;
+   transition: all .2s ease;
    color:rgb(130, 130, 130);
 
 
@@ -206,6 +210,7 @@ font-size: .85rem;
 #switch-section-head:hover{
 
   color:rgb(0, 0, 0);
+    color:blue;
 
 }
 
@@ -251,7 +256,7 @@ border: 0px solid black;
     align-items: center;
    justify-content:start;
      border: 0px solid red;
-     margin-top: 2rem;
+     margin-top: 1rem;
      height: 90%;
       
 

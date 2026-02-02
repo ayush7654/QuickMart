@@ -43,7 +43,9 @@ export default function Store() {
   const {storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount} = useStoreFilterData();
 
 
+ const storeOverlayActive = !(sideBartoggled && sideFiltertoggled);
 
+ console.log(storeOverlayActive)
 
 
 
@@ -199,21 +201,23 @@ console.log('final items are ' , FinalItems)
     <div className="Store-Page">
         
 
-      <div style={{display:sideBartoggled?'none':'flex'}} className="storePage-overlay"></div>
+      <div style={{display:storeOverlayActive ?'flex':'none'}} className="storePage-overlay"></div>
 
     
 
 
 
    <PageHeader
-   bgImage='/VaultImg.webp'
+   bgImage='/HomeImg.jpg'
    pageHeadText={'The Vault'}
    pageHeadPara={'The Vault is a carefully guarded collection of premium products, chosen for those who value quality over quantity. Each item earns its place — nothing more, nothing less.'}/>
    
  
  <aside className="store-sidebar"  style={{
           transform: sideBartoggled ? 'translateX(100%)' : 'translateX(0%)',
-          transition: 'transform 0.5s ease-in-out',
+           opacity:sideBartoggled?'0':'1', 
+      
+          transition: 'all 0.6s ease',
         }}>
           <StoreCategory
             currentCategory={currentCategory}
@@ -227,8 +231,9 @@ console.log('final items are ' , FinalItems)
     
    <aside className="store-sidebar"  style={{
            transform:sideFiltertoggled ? 'translateX(100%)' : 'translateX(0%)',
+            opacity:sideFiltertoggled?'0':'1', 
       
-          transition: 'transform 0.5s ease-in-out',
+          transition: 'all 0.6s ease',
         }}>
          <StoreFilter
          sideFiltertoggled={sideFiltertoggled}
@@ -319,12 +324,13 @@ console.log('final items are ' , FinalItems)
             <div className="LoadMore-button-div" >
               
                   <div className="LoadMore-button" onClick={handleLoadMore}>
-            <ScrollButton
+                    Load More
+     {/*        <ScrollButton
   text='Load More'
   theme={'lightMode'}
   color="#cf7729ff"
   themeOnHover={'colorMode'}
-/>
+/> */}
               </div> 
 
             

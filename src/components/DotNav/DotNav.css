@@ -1,0 +1,61 @@
+.dot-nav-container {
+  width: 100%;
+  height: 100%;
+  margin: 0rem 0;
+  border: 0px solid green;
+  display:flex;
+  align-items: center;
+
+}
+
+.dot-nav-wrapper {
+  display: flex;
+  position: relative;
+  border-bottom: 0px solid #eeeeee;
+  padding-bottom: 4px;
+  border: 0px solid red;
+  width: 100%;
+}
+
+.dot-nav-item {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 10px 5px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: color 0.2s ease;
+  outline: none;
+  white-space: nowrap;
+}
+
+.dot-nav-item:hover {
+  color: var(--text-hover);
+}
+
+.dot-nav-item.active {
+  color: var(--dot-color);
+}
+
+.dot-track {
+  position: absolute;
+  bottom: -4px; /* Adjust based on your design's vertical spacing */
+  left: 0;
+  height: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  /* Fast start, inertia/overshoot at the end only */
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--dot-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

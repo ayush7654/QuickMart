@@ -64,7 +64,6 @@ background-color: transparent;
   background-color: rgba(0, 0, 0, 0);
     backdrop-filter: blur(00px);
   -webkit-backdrop-filter: blur(00px);
-   border: 1px solid transparent;
    
   }
 
@@ -169,9 +168,12 @@ color:black;
    gap: 1rem;
       font-family: 'Raleway'; 
       font-family: 'Roboto';
+    
+ font-family: 'Outfit';
+  font-family: "Figtree", sans-serif; 
   height: 100%;
      border: 0px solid rgb(145, 52, 52);
-  font-size: .9rem;
+  font-size: .95rem;
 
  width: 15rem;
  color:black;
@@ -195,12 +197,18 @@ color:black;
 border: 0px solid blue;
  transition: all .3s ease;
    flex: 1;
+   font-weight: 400;
 
 
    height:100%;
-   letter-spacing: .05rem;
+   
 
    }
+
+   .page-nav-left:hover{
+    color:blue;
+   }
+
 
  
 
@@ -209,7 +217,7 @@ border: 0px solid blue;
 
    .page-nav-left-selected{
   text-decoration: underline;
-text-decoration-thickness: 1px;
+text-decoration-thickness: 1.5px;
 text-decoration-color:rgb(0, 0, 0) ;
 text-underline-offset: 3px;
 pointer-events: none;
@@ -289,8 +297,8 @@ pointer-events: none;
   }
 
   #header-icon:hover{
-      background-color: rgb(235, 235, 235); 
-      color:black;
+   
+      color:blue;
 
   }
 
@@ -299,20 +307,12 @@ pointer-events: none;
   }
 
   .headerAtTop #header-icon{
-    color:rgb(235, 235, 235);
+    color:rgb(255, 255, 255);
     
   }
 
 
 
-.headerAtTop #header-icon:hover {
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  background-color: rgba(255, 255, 255, 0.145);
-
-  border-radius: 50%; 
-    color:rgb(255, 255, 255);
-}
 
 
 

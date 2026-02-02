@@ -11,12 +11,11 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { HiShoppingBag } from "react-icons/hi2";
 import AnimatedUnderline from "../AnimatedUnderline/AnimatedUnderline";
 import { useScroll } from "../ScrollData/ScrollData";
-
-
 import SiteLogo from "./SiteLogo/SiteLogo";
 
 import './Header.css'
 import { head } from "lodash";
+import DotNav from "../DotNav/DotNav";
 export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBarToggle,setCartToggled}){
 
   
@@ -31,6 +30,7 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
 
     
     const pagelocation= useLocation();
+    const navigate = useNavigate();
 
  
 
@@ -38,9 +38,16 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
         /*         {title:"Wishlist ", path:'/wishlist',logo:pagelocation.pathname==='/wishlist'?<FaHeart id="fd-header-logo" className="wishlistIcon" />:<FiHeart className="wishlistIcon"  id="ol-header-logo"  style={{ strokeWidth: '1.5' }}/>}, */
 
 
-    const navElements= [{title:'Home',path:'/'},{title:'Store',path:'/store'},{title:'About',path:'/testing'}]
+    const navElements= [{id:0,title:'Home',function:'/'},
+      {id:1,title:'Store',function:'/store'},
+      {id:2,title:'About',function:'/testing'}]
 
 
+
+   const handlePageNav=(func)=>{
+   
+    navigate(func);
+   }
 
     
 
@@ -159,7 +166,7 @@ useEffect(() => {
     ? `translateY(${translateY}px) scale(${scale})`
     : "translateY(0) scale(1)";
 
-
+ 
    
 
  const suggestionComp= suggestions?suggestions.filter(item=>item.name.toLowerCase().includes(searchTerm.toLowerCase())):null;
@@ -215,11 +222,11 @@ useEffect(() => {
     
                    
   
-                     {navElements ? navElements.map(item => (
+                    {/* {navElements ? navElements.map(item => (
                 
                          <NavLink
         key={item.path}
-        to={item.path}
+        to={item.function}
         className={({ isActive }) =>
           `page-nav-left ${isActive?'page-nav-left-selected':''} ${
             item.title === 'About' ? 'desktop-only' : ''
@@ -229,10 +236,10 @@ useEffect(() => {
       <AnimatedUnderline 
                   from="left" 
                   exit="opposite"
-                  color={'black'}  
-                  thickness={1}
+                  color={'blue'}  
+                  thickness={1.5}
                   duration={.3}
-                  offset={0}> 
+                  offset={2}> 
                   {item.title}
                   </AnimatedUnderline>  
       </NavLink>
@@ -243,8 +250,17 @@ useEffect(() => {
                       
                          ))
                         : <div>loading</div>
-                     }
+                     } */}
                   
+
+   <DotNav
+   sections={navElements}
+   textColor={isAtTop && cursorOff?"white":"rgb(80,80,80)"}
+   textColorHover="black"
+   dotColor={isAtTop && cursorOff?"white":"blue"}
+   handleClick={(func)=>handlePageNav(func)}
+   syncWithUrl={true}/>
+
                 </div> 
 
               

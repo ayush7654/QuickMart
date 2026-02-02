@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import Registration from "./Registration/Registration";
 import Login from "./Login/Login";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
-
-
+import DotNav from "../../components/DotNav/DotNav";
 
 import './Account.css'
 
@@ -18,8 +17,30 @@ export default function Account(){
     const [sectionSwitch,setSectionSwitch] = useState(true)
 
     const [createAccount,setCreateAccount]= useState(false);
+
+    const [activeTab, setActiveTab] = useState('login');
+
+    const [isRegister, setIsRegister] = useState(false);
    
-  
+    const accoutSections = [{id:0,title:'Log In',function:true},
+      {id:1,title:'Register',function:false}
+     ]
+
+     const handleSectionSwitch=(func)=>{
+      setSectionSwitch(func)
+     }
+
+ 
+    
+
+  // This ensures the dot position scales if the window is resized
+  const getTransform = () => {
+    const sectionWidth = 100 / sections.length;
+    // Calculate the center of the active section
+    const moveX = activeIndex * 100; 
+    return `translateX(${moveX}%)`;
+  };
+
     
     return(
     <div className="account-Page">
@@ -37,10 +58,10 @@ export default function Account(){
           
 
           <div className="account-page-switch">
-           <div id='switch-section' 
+          {/*  <div id='switch-section' 
            className={sectionSwitch?'account-section-selected':'account-section'} 
             onClick={()=>setSectionSwitch(true)} >
-             <AnimatedUnderline from="center" color="rgba(50,50,50, 1)" thickness={1.5}>
+             <AnimatedUnderline from="center" color="blue" thickness={1.5}>
               <span id='switch-section-head' >LOG IN</span> 
               </AnimatedUnderline> 
              </div>
@@ -48,10 +69,17 @@ export default function Account(){
            <div id='switch-section'
              className={sectionSwitch?'account-section':'account-section-selected'} 
              onClick={()=>setSectionSwitch(false)} >
-               <AnimatedUnderline from="center" color="rgba(50,50,50, 1)" thickness={1.5}>
+               <AnimatedUnderline from="center" color="blue" thickness={1.5}>
                 <span id='switch-section-head' >REGISTER</span>
                  </AnimatedUnderline> 
-             </div>
+             </div> */}
+  <DotNav
+   sections={accoutSections}
+   textColor="rgb(80,80,80)"
+   textColorHover="black"
+   dotColor="blue"
+   handleClick={(func)=>handleSectionSwitch(func)}
+   syncWithUrl={false}/>
          </div>
 
 
