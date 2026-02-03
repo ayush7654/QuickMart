@@ -67,7 +67,7 @@ state = {filterActive || !sideFiltertoggled? true: false}
 />
 </div>
 
-<div onClick={() =>  setSideBarToggled(false)}>
+<div onClick={() => setSideBarToggled(false)}>
   <IconButton
 text='Categories'
 Icon={ HiOutlineCollection}

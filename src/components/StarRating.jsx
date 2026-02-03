@@ -10,9 +10,9 @@ const StarRating = ({ rating, starSize }) => {
         return (
           <span key={index}>
             {rating > index ? (
-              <MdStar color="rgb(79, 78, 78)" size={starSize} />
+              <MdStar color="rgba(237, 189, 18, 1)" size={starSize} />
             ) : (
-              < MdStarBorder color="rgb(79, 78, 78)" size={starSize} /> 
+              < MdStarBorder color="rgba(237, 189, 18, 1)" size={starSize} /> 
             )}
           </span>
         );

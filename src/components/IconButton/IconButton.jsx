@@ -7,7 +7,7 @@ export default function IconButton({
     height = "2.5rem",
      text = "Explore More" , 
      contentColor='rgb(0,0,0)',
-     borderColor='rgb(150,150,150)',
+     borderColor='rgba(175, 175, 175, 1)',
      hoverText='black',
      bgColor='transparent',
      state= false,

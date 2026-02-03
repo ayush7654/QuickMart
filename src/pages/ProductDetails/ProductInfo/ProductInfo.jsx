@@ -1,9 +1,11 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import { useFirebase } from '../../../components/FirebaseContext/Firebase';
 import { useNavigate } from 'react-router-dom';
 import { useCartList } from '../../../components/CartListProvider';
 import './ProductInfo.css'
 import StarRating from '../../../components/StarRating'
+import { FiPlus, FiMinus } from "react-icons/fi";
+import IconButton from '../../../components/IconButton/IconButton';
 
 export default function ProductInfo({product}) {
 
@@ -11,14 +13,16 @@ export default function ProductInfo({product}) {
 
        const [AddedtoCart,setAddedtoCart]= useState(false)
 
-   const [pdColor,setpdColor]= useState('Black')   
+   const [pdColor,setpdColor]= useState('Brown')   
+
+   const [pdSize,setPdSize] = useState('M')
 
    const navigate = useNavigate();
 
        const firebase= useFirebase()
        const userInfo = firebase.isLoggedIn?firebase.currentUser.email:null
 
-      const {handleRemove} = useCartList();
+      const {handleRemove,cartList} = useCartList();
    
     const handleIncrease = () => {
         setQuantity(prevQuantity => prevQuantity + 1);
@@ -65,9 +69,34 @@ export default function ProductInfo({product}) {
        
     }
 
- 
+useEffect(() => {
+    // 1. Check if cartList exists and has items
+    if (cartList && cartList.length > 0) {
+        
+        // 2. Check if any item in the cart matches the current product ID
+        const isAlreadyInCart = cartList.some(item => item.id === product.id);
+        
+        // 3. Update the state
+        setAddedtoCart(isAlreadyInCart);
+        
+    } else {
+        // 4. If the cart is empty, the item definitely isn't in it
+        setAddedtoCart(false);
+    }
+}, [cartList, product.id]);
 
-    const pdColorArr=[{id:0,colorName:'Black',color:'rgb(0,0,0)'},{id:1,colorName:'Grey',color:'rgb(113, 113, 113)'},{id:2,colorName:'Blue',color:'rgb(0, 61, 130)'},{id:3,colorName:'Red',color:'rgb(135, 0, 0)'}]
+    const pdColorArr=[{id:0,colorName:'Brown',color:'rgba(110, 86, 86, 1)'},
+      {id:1,colorName:'Grey',color:'rgba(218, 218, 218, 1)'},
+      {id:2,colorName:'Blue',color:'rgba(0, 77, 165, 1)'},
+      {id:3,colorName:'Red',color:'rgb(135, 0, 0)'}]
+
+    const pdSizeArr=[{id:0,sizeLetter:'S',sizeNum:8},
+      {id:0,sizeLetter:'M',sizeNum:10},
+      {id:0,sizeLetter:'L',sizeNum:12},
+      {id:0,sizeLetter:'XL',sizeNum:14},
+      {id:0,sizeLetter:'XXL',sizeNum:16},
+    ]
+
 
      function switchColor(e){
      setpdColor(e)
@@ -76,100 +105,102 @@ export default function ProductInfo({product}) {
   return (
      <div  className="product-info-pd">
           
-          <div className='product-info-content'>
-                
-        <div className="product-title-div" >
-          <div className='product-brandname-div' >
-            <div className="pd-brandName">
-  {product.brand ? product.brand : product.category.charAt(0).toUpperCase() + product.category.slice(1)}
-</div>
+   
+   <div className='pd-brand-wrapper'>
+    {product.brand} - {product.category}
+   </div>
 
-            <div id='pd-line'></div>
-            </div>
-          <div className="pd-title">{product.title}</div>
-          </div> 
-          <div className="product-info-price-div">
-        <div className="price-num">${product.price}</div>
-        <div  className="product-info-rating-div">
-            
-            <StarRating rating={product.rating}  className='pd-star'/>
-           
-          
-        </div>
-        </div>
+   <h2 className='pd-title-wrapper'>
+    {product.title}
+   </h2>
 
+   <div id='pd-line-wrapper' className='pd-price-rating-wrapper'>
+    <div className='pd-price-wrapper'>
+      <span className='pd-price'>${(((100-product.discountPercentage)*product.price)/100).toFixed(2)}</span>
+      <span className='pd-old-price'>${product.price}</span>
+    </div>
 
-        <div style={{border:'0px solid red'}}>
-        
-        <div className="product-description" >{product.description}</div>
-        </div>
+    <div className='pd-rating-wrapper'>
+      <span>  <StarRating rating={product.rating}  className='pd-star'/></span>
+      <span>{product.rating}</span>
+    </div>
+   </div>
 
-        <div className="pd-colorpick-div">
-            <div className='pd-colorpick-head' id='pd-subHead'>Color /&nbsp; <div id='pd-subInfo'> {pdColor}</div></div>
-          <div className="pd-colorpick">
-
-            {pdColorArr.map(item=> 
-            <div onClick={()=>switchColor(item.colorName)}
-             className="pd-color-div">
-                <div id={item.colorName==pdColor?"pd-color-selected":"pd-color"} style={{backgroundColor:item.color}}></div>
-            </div>)}
-
-          </div>
-         {/*    <div  id='pd-subHead'>Color  <span className='pd-subInfo'>{pdColor}</span></div> */}
-        </div>
-       
-     
-      
-       
-           
-           
-          
-
-           <div id='pd-subHead' >
-            <span>Shipment</span>
-            <span  className='pd-subInfo'>{product.shippingInformation}</span>
-            </div>
-
-           <div id='pd-subHead' style={{display:'flex'}} className="stock-div">
-            <span id='pd-subHead' >Stocks Left </span>
-            <span  className='pd-subInfo'> {product.stock}</span>
-           </div> 
-         
-        <div className="quantity-container-div">
-           <div id='pd-subHead' >Select Quantity:</div>
-           <div className="quantity-container">
-           <div
-                className="decrease-btn" 
-                onClick={handleDecrease} 
-                disabled={quantity === 1}
-            >
-                -
-            </div>
-            <input 
-                type="text" 
-                className="quantity-input" 
-                value={quantity} 
-                readOnly
-            />
-            <div className="increase-btn" onClick={handleIncrease}>
-                +
-            </div>
-           </div>
-         
-          
-        </div>
-       
-          </div>
-       
-        
-     
-        <div
-  className={firebase.isLoggedIn?`addTocartBtn ${AddedtoCart ? 'added' : ''}`:'addTocart-Out'}
-  onClick={handleClick}
+ {/*   <div className='info-line-4'>
+    ---------------
+   </div> */}
   
->
-  {firebase.isLoggedIn? AddedtoCart  ? 'REMOVE FROM CART' : 'ADD TO CART':'LOG IN TO SHOP'}
+<div className='pd-description-wrapper'>
+  <div className='pd-description-head'> Description : </div>
+  <p> {product.description} </p>
 </div>
+
+<div className='pd-color-wrapper'>
+     <div >
+        <span id='pd-head'>Color :</span>
+        <span id='pd-head-info'> {pdColor}</span>
+      </div>
+    <div className='color-selector'>
+        {pdColorArr.map(item=> 
+            <div onClick={()=>switchColor(item.colorName)}
+             className={`pd-color-container ${item.colorName==pdColor?'selected-color':''}`}>
+                <div className="pd-color" style={{backgroundColor:item.color}}></div>
+            </div>)}
+    </div>
+   </div>
+
+
+   <div  className='pd-size-wrapper'>
+    <div id='pd-line-wrapper' className='size-head'>
+      <div >
+        <span id='pd-head'>Size :</span>
+        <span id='pd-head-info'> {pdSize}</span>
+      </div>
+      <span className='size-chart-link'>View Size Chart</span>
+      
+      </div>
+      <div className='size-selector'>
+      
+    {pdSizeArr.map(item=><span onClick={()=>setPdSize(item.sizeLetter)} className={`pd-size ${item.sizeLetter==pdSize?'selected-size':''}`}>{item.sizeLetter}</span>)}
+      </div>
+   </div>
+
+
+   
+
+
+   <div id='pd-line-wrapper' className='pd-button-wrapper'>
+    <div className='pd-quantity-wrapper'>
+      <span className='pd-quantity-btn' onClick={handleDecrease}><FiMinus/></span>
+      <span className='pd-quantity'>{quantity}</span>
+      <span className='pd-quantity-btn' onClick={handleIncrease}><FiPlus/></span>
+    </div>
+
+     <div  onClick={handleClick} className={`pd-Add-btn ${firebase.isLoggedIn? (AddedtoCart ? 'pd-added' : ''):'pd-Login'} `}>
+     {firebase.isLoggedIn? AddedtoCart  ? 'Remove From Cart' : 'Add To Cart':'Log In To Shop'}
+    </div> 
+   {/*  <IconButton
+    width='70%'
+    height='3rem'
+    text='Add To Cart'/> */}
+   </div>
+
+    
+
+
+   {/*   <div className='info-line-5'>
+      Description :
+   </div>
+
+   <p>
+    {product.description}
+   </p> */}
+
+   <div>
+
+   </div>
+
+    
      
          </div>
   )
