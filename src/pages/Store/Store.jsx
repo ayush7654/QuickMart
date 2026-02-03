@@ -9,7 +9,7 @@ import {
 import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
 import { getItems, getFilteredItems } from "../../api";
 import ProductCard from "../../components/ProductCard";
-import StoreCategory from "./StoreCategory/StoreCategory";
+import StoreCategory from "./StoreSidebar/StoreCategory/StoreCategory";
 import StoreFooter from "./StoreFooter/StoreFooter";
 import { SlidersHorizontal } from "lucide-react";
 import { WinScrollContext } from "../../components/WinScrollProvider/WinScrollProvider";
@@ -17,7 +17,7 @@ import ScrollButton from "../../components/ScrollingButton/ScrollingButton";
 import StoreSorting from "./StoreSorting/StoreSorting";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import useStoreFilterData from "./useStoreFilterData";
-import StoreFilter from "./StoreFilter/StoreFilter";
+import StoreFilter from "./StoreSidebar/StoreFilter/StoreFilter";
 import "./Store.css";
 
 export default function Store() {

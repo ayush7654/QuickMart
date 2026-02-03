@@ -29,6 +29,8 @@
   transition: color 0.2s ease;
   outline: none;
   white-space: nowrap;
+  font-family:sans-serif;
+ /*  font-family: 'Figtree'; */
 }
 
 .dot-nav-item:hover {

@@ -140,7 +140,7 @@ height: 4rem;
   font-weight: 400;
   font-family: 'Outfit';
   font-family: "Figtree", sans-serif; 
-   
+     font-family:sans-serif;
   color: rgb(10,10,10);
   border-bottom: 0px solid rgb(235, 235, 235);
  padding-left:2rem; 
@@ -169,6 +169,7 @@ height: 4rem;
   font-size: 1.3rem;
   font-weight: 500;
    color: blue;
+   border-right: 0px solid blue;
   text-decoration: underline;
 text-underline-offset: 10px;
 text-decoration-thickness: 1.5px;
@@ -176,9 +177,9 @@ text-decoration-thickness: 1.5px;
    transition: all .3s ease;
 
 
- 
-
 }
+
+
 
 .store-category:hover .animated-underline::after {
   transform: scaleX(1);
@@ -200,7 +201,7 @@ text-decoration-thickness: 1.5px;
 .category-clear-div{
   position: sticky;
   bottom: 1rem;
-  width: 87%;
+  width: 90%;
   height: 3rem;
 border: 1px solid black;
 color:black;
@@ -209,6 +210,8 @@ color:black;
   justify-content: center;
   align-items: center;
    font-family: "Figtree", sans-serif; 
+     font-family:sans-serif;
+     font-family: 'Outfit';
   border-radius:25px ;
   overflow: hidden;
     transition: all .2s ease;
@@ -232,97 +235,3 @@ color:black;
 
 
 
-@media(max-width:1200px){
- 
-
-}
-
-@media(max-width:700px){
-
-   .store-Category-head-div{
-    height: 8rem;
-  }
-
-  .store-Category-head-div{
-
-    font-size: 1.5rem;
-  }
-
-  .store-category{
-    font-size: 1rem;
-  }
-
-  .store-category-selected{
-   justify-content: start;
-   padding-left: .5rem;
-    
-  }
-
-}
-
-
-
-@media(max-width:400px){
-
- 
-  
-}
-/*
-
-
-  .store-categories{
-    border:1px solid rgb(203, 42, 42);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
-
-    height: 3rem;
-    width:100%;
-    transition: translate 400ms ease-in-out;
-    background-color: aqua;
-    
-   
- 
-    
-  
-   }
-   .store-category{
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    max-width: fit-content;
-    height: 85%;
-   padding-left: .3rem;
-   padding-right: .3rem;
-    border-radius: 0rem;
-    color:rgb(0, 0, 0);
-    font-size: .9rem;
-    font-weight: 500;
-   
-    
-    
-   }
-   .store-category-selected{
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    max-width: fit-content;
-    padding:0rem ;
-    height: 85%;
-border-bottom: 2px solid black;
-   
- 
-    color: rgb(0, 0, 0);
-    font-weight: 500;
- 
-    
-    
-    
-   }
-   .store-category:hover{
-   
-    cursor: pointer;
-    border-bottom: 2px solid rgb(24, 23, 23);
-   }
- */

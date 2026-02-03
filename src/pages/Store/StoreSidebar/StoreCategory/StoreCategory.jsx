@@ -1,30 +1,23 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom";
-import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
-import ScrollButton from '../../../components/ScrollingButton/ScrollingButton';
-
-
+import AnimatedUnderline from '../../../../components/AnimatedUnderline/AnimatedUnderline';
+import ScrollButton from '../../../../components/ScrollingButton/ScrollingButton';
+import '../StoreSidebar.css'
+import AlphabetBar from '../AlphabetBar/AlphabetBar';
 import { X } from 'lucide-react';
 
-import './StoreCategory.css'
-import IconButton from '../../../components/IconButton/IconButton';
+
+import IconButton from '../../../../components/IconButton/IconButton';
 
 export default function StoreCategory({ currentCategory, typeFilter, handleTypeFilter, handleClickCategory, setSideBarToggled,handleCancelTypeFilter }) {
+
+
+
   const [productCategory, setProductCategory] = useState([]);
 
+ const [selected, setSelected] = useState("");
 
 
-
-/*   const handleCategory = (direction) => {
-    setCategoryNum(prev => {
-      if (direction === "left") {
-        if (prev > 0) return prev - 1;
-      } else {
-        if (prev < 10) return prev + 1;
-      }
-      return prev;
-    });
-  }; */
 
   useEffect(() => {
     const fetchCategory = async () => {
@@ -35,15 +28,22 @@ export default function StoreCategory({ currentCategory, typeFilter, handleTypeF
     fetchCategory();
   }, []);
 
+  const isInitialLoading = productCategory.length === 0;
   
+  const filteredCategoryList = selected 
+  ? productCategory.filter(category => 
+      category.name.toLowerCase().startsWith(selected.toLowerCase())
+    )
+  : productCategory;
 
  
 
   return (
-    <div
-     
-      className="store-Category"
-    >
+    <div className="store-Category" >
+
+<AlphabetBar
+selected={selected}
+setSelected={setSelected}/>
 
 <div className='store-Category-head-div'>
   <div className='store-Category-head-content'>
@@ -62,7 +62,7 @@ export default function StoreCategory({ currentCategory, typeFilter, handleTypeF
 
    <div className="store-categories" >
         
-          {productCategory && productCategory.map((item, index) =>
+          {filteredCategoryList.length > 0? filteredCategoryList.map((item, index) =>
             <div
               onClick={() => {
   handleTypeFilter(item.slug);
@@ -75,7 +75,14 @@ export default function StoreCategory({ currentCategory, typeFilter, handleTypeF
                 <AnimatedUnderline from='left' exit='same' offset={8}><span className='store-category-text' >{item.name}</span></AnimatedUnderline>
                 </span>
             </div>
-          )}
+          ):
+          
+          isInitialLoading ? (
+    // SHOW A SPINNER OR NOTHING WHILE FETCHING
+    <p>Loading categories...</p>
+  ) : (
+    // ONLY SHOW THIS IF INITIAL LOAD IS DONE AND FILTER IS EMPTY
+    <p>No categories found for letter "{selected}"</p>)}
         </div>
 </div>
       

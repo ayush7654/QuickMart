@@ -1,9 +1,10 @@
 import React from 'react'
-import useStoreFilterData from '../useStoreFilterData'
+import useStoreFilterData from '../../useStoreFilterData'
 import { X } from 'lucide-react';
-import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
-import './StoreFilter.css'
-import IconButton from '../../../components/IconButton/IconButton';
+import AnimatedUnderline from '../../../../components/AnimatedUnderline/AnimatedUnderline';
+
+import '../StoreSidebar.css'
+import IconButton from '../../../../components/IconButton/IconButton';
 
 
 

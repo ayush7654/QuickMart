@@ -44,8 +44,8 @@ border: 0px solid red;
 
  font-family: 'Raleway'; 
 font-family: "Questrial", sans-serif;
-font-family: 'Roboto';
- font-family: "Rethink Sans", sans-serif;
+  font-family:sans-serif;
+ 
 gap:1rem;
 
 }
@@ -183,7 +183,7 @@ opacity: 1; visibility: visible; transform: translateY(0);
   gap: 2rem;
   align-items: center;
     font-size: .95rem;
-      font-family: "Figtree", sans-serif; 
+    
 }
 
 .order-toggle-div{

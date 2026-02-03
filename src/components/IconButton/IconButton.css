@@ -76,6 +76,7 @@ border: 1px solid var(--btn-border-color);
 width: calc(100% - (var(--btn-height) + 0.2rem));;
 font-family: 'Outfit';
   font-family: "Figtree", sans-serif; 
+    font-family:sans-serif;
  display: flex;
 align-items: center;
 justify-content: center;
