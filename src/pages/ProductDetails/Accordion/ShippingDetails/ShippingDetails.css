@@ -1,0 +1,65 @@
+.extra-pd-info{
+  width: 100%;
+  border: 0px solid blue;
+  display: flex;
+  padding: 1rem 0rem;
+
+  
+}
+
+.pd-delivery-wrapper{
+  width: 50%;
+  height: 100%;
+  border: 0px solid red;
+  display: flex;
+
+  align-items: center;
+  gap:1rem
+  
+
+}
+
+.pd-delivery-icon-wrapper{
+
+  width: 3rem;
+  height: 3rem;
+
+  font-size: 1.6rem;
+  position: relative;
+  border: 0px solid red;
+
+}
+
+.pd-delivery-icon{
+position: absolute;
+top: 55%;
+left:50%;
+transform: translate(-50%,-50%);
+color:black;
+}
+
+.pd-delivery-info{
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+font-family: 'Figtree';
+
+}
+
+#pd-extra-head{
+  font-weight: 600;
+  font-size: .95rem;
+  color:black;
+
+}
+
+#pd-extra-head-info{
+  font-size: .9rem;
+  color:rgb(52, 52, 52);
+  line-height: 1.1rem;
+  font-weight: 350;
+  
+  
+}

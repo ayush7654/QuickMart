@@ -1,10 +1,22 @@
 import {useState,useEffect} from 'react'
 import { ChevronLeft, ChevronRight } from 'react-feather'
+import ZoomImage from './ZoomImage';
+import { ZoomIn } from "lucide-react";
+import { FiZoomIn } from "react-icons/fi";
+import { FaSearchPlus } from "react-icons/fa";
+
 import './CarouselComponent.css'
-export default function CarouselComponent({Imagelist}) {
+export default function CarouselComponent({Imagelist,product}) {
   
   const [ImgId,setImgId]= useState(0);
   const [imageWidth, setImageWidth] = useState(600); // Default width
+
+  const [isZoomEnabled, setIsZoomEnabled] = useState(false);
+
+
+
+
+ 
 
   // Function to update the image width based on screen size
   const updateImageWidth = () => {
@@ -62,17 +74,21 @@ export default function CarouselComponent({Imagelist}) {
   return (
  
     <div className="carousel-div">
-      
+      <button 
+        className={`zoom-btn ${isZoomEnabled ? 'active' : ''}`}
+        onClick={() => setIsZoomEnabled(!isZoomEnabled)}
+      >
+        {isZoomEnabled ? '✕' : <FiZoomIn size={25} strokeWidth={1.5}/>}
+      </button>
+
+      {product.availabilityStatus!=='In Stock'?<div className='pd-out-of-stock'>{product.availabilityStatus}</div>:''}
       
       <div className='ImageBox'>  
        {Imagelist.map((img,index)=> 
-       <div className='currentImage-wrapper' style={{translate:`${-ImgId*100}%`}}>
-           <img 
-       className='currentImage'
-       key={index} 
-       src={img}
-        //This property moves the image outside of the image box to a distance equal to its length.
-       />
+       <div key={index} className='currentImage-wrapper' style={{translate:`${-ImgId*100}%`}}>
+       
+
+       <ZoomImage src={img} isZoomEnabled={isZoomEnabled} />
        </div> // We render all the images together side by side.
     )}
       </div>

@@ -1,0 +1,36 @@
+
+.additional-Info{
+    width: 100%;
+    border: 0px solid red;
+    display: flex;
+    flex-direction: column;  
+    font-family: 'Figtree';
+}
+
+
+
+
+.ai-wrapper{
+    display: flex;
+    flex-direction: row;
+  width: 100%;
+  padding: 6px 0rem;
+      font-size: .9rem;
+
+
+
+}
+.ai-head{
+    
+    font-weight: 600;
+    color:black;
+    white-space: nowrap;
+    width: 30%;
+
+
+}
+
+.ai-info{
+    text-transform: capitalize;
+    color:rgb(80,80,80);
+}

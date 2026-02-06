@@ -1,9 +1,9 @@
 
   .product-info-pd{
-    border: 0dvi solid black;
+    border: 0px solid black;
     width: 100%;
     user-select: none;
-   margin-bottom: 4rem;
+   margin-bottom: 1rem;
    font-size: 1rem;
     position: relative;
     display: flex;
@@ -14,11 +14,18 @@
  
   }
 
+  .pd-brand-wrapper{
+    background-color: #eee;
+    width: fit-content;
+    padding: 5px;
+  }
+
 
   #pd-line-wrapper{
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
 #pd-head{
@@ -87,9 +94,10 @@
 }
 
 .pd-description-wrapper p{
-  color:rgb(120,120,120);
-  font-family: 'Jost';
-  font-size: 1.1rem;
+  color:rgb(49, 49, 49);
+  line-height: 1.6rem;
+  font-size: 1rem;
+  font-weight: 350;
 }
 
 .pd-size-wrapper,.pd-color-wrapper{
@@ -246,5 +254,15 @@ font-weight: 500;}
 
 
 
+.pd-info-note{
+  font-size: .8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 5px;
+  margin-top: 1rem;
+color:rgb(52, 52, 52);
+  font-weight: 350;
+}
 
 

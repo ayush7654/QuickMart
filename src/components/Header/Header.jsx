@@ -192,7 +192,7 @@ useEffect(() => {
     }}>
 
 
-        <div  className={`header-home ${!isAtTop && cursorOff ?'headerAtTop':''}`}  /* REMOVE '!' */
+        <div  className={`header-home ${isAtTop && cursorOff ?'headerAtTop':''}`}  /* REMOVE '!' */
             onMouseEnter={() => setCursorOff(false)}
   onMouseLeave={() => setCursorOff(true)}
         style={{

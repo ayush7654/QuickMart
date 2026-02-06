@@ -12,11 +12,29 @@
 
 }
 
+.pd-navBar{
+  color:rgb(120, 120, 120);
+  height: 10rem;
+  width: 90%;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  padding-bottom: 2rem;
+  font-family: 'Figtree';
+  font-size: .9rem;
+    font-weight: 500;
+}
+
+.pd-navBar span{
+  color:black;
+
+}
+
 .product-page-inner {
   display: flex;
-  min-height: 200vh; /* enough height for scrolling effect */
+   /* enough height for scrolling effect */
   position: relative;
-  margin-top: 6rem;
+/*   margin-top: 6rem; */
   border: 0px solid red;
   width: 90%;
 
@@ -60,11 +78,11 @@ user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
+  
 }
 
 .credit-box{
-height: 30vh;
+
 width: 100%;
 border: 0px solid black;
  display: flex;
@@ -79,6 +97,27 @@ border: 0px solid black;
   justify-content: center;
 
 
+}
+
+.product-tags-wrapper{
+  border: 0px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 2rem;
+  font-family: 'Figtree';
+  font-size: .8rem;
+  font-weight: 500;
+  color:rgb(120,120,120);
+}
+
+#tag-head{
+ font-weight: 600;
+ color:black;
+}
+
+.product-tag{
+  text-transform: capitalize;
 }
 
 /* This appears after product section scrolls out */

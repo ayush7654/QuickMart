@@ -36,6 +36,8 @@ width: 80%;
   flex: 0 0 100%;
 border: 0px solid white;
   transition: translate 400ms ease-in-out;
+  border: 0px solid red;
+
   }
  
   .currentImage{
@@ -79,7 +81,7 @@ border: 0px solid white;
    align-items: center;
   }
   .imgBtn-clicked-div .imgBtn{
-  background-color: rgb(79, 78, 78);
+  background-color: blue;
   height:.6rem;
   width:.6rem;
   border-radius: 50%;
@@ -88,7 +90,75 @@ border: 0px solid white;
 .crousal-navigation{
   display: none;
 }
-  
+
+
+.ImageBox {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.currentImage-wrapper {
+  min-width: 100%; /* Ensures images stay side-by-side */
+  transition: translate 0.5s ease-in-out;
+}
+
+.zoomed {
+  transform: scale(2.5); /* Adjust zoom level here */
+  cursor: zoom-in;
+}
+
+.zoom-btn {
+  position: absolute;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 5px;
+  top: 15px;
+  right: 15px;
+  z-index: 20;
+  padding: 8px;
+
+  border: 1px solid #000000;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s ease;
+}
+
+.zoom-btn:hover{
+  border-color: blue;
+}
+
+.zoom-btn.active {
+  background: #000;
+  color: #fff;
+}
+
+.zoom-btn.active:hover{
+  opacity: .8;
+  border-color: transparent;
+}
+
+.pd-out-of-stock{
+  position: absolute;
+  top:5rem;
+  right:0rem;
+ padding:10px;
+  background-color: black;
+  color:white;
+  transform-origin: top right;
+  transform: rotate(90deg);
+translate: 0 8rem;
+border-radius:0px 0px 5px 5px ;
+font-family: 'Figtree';
+font-size: .9rem;
+z-index: 9;
+text-transform: uppercase;
+}
+
+
 @media(max-width:1200px){
 
     .ImgSelecters{

@@ -4,7 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { useCartList } from '../../../components/CartListProvider';
 import './ProductInfo.css'
 import StarRating from '../../../components/StarRating'
+
 import { FiPlus, FiMinus } from "react-icons/fi";
+import CornerImgWrapper from '../CornerImgWrapper/CornerImgWrapper';
 import IconButton from '../../../components/IconButton/IconButton';
 
 export default function ProductInfo({product}) {
@@ -43,10 +45,7 @@ export default function ProductInfo({product}) {
         console.log('this is productInfo',productInfo)
         await firebase.storeDataInFB("users",userInfo,"CartItems",product.title,productInfo)
     }
-/* 
-    const deleteFromDataBase = async () => {
-        await firebase.deleteDataInFB("users", userInfo, "CartItems", product.title);
-    }; */
+
    
     function handleClick() {
         if (firebase.isLoggedIn){
@@ -86,11 +85,12 @@ useEffect(() => {
 }, [cartList, product.id]);
 
     const pdColorArr=[{id:0,colorName:'Brown',color:'rgba(110, 86, 86, 1)'},
-      {id:1,colorName:'Grey',color:'rgba(218, 218, 218, 1)'},
+      {id:1,colorName:'Grey',color:'rgba(143, 143, 143, 1)'},
       {id:2,colorName:'Blue',color:'rgba(0, 77, 165, 1)'},
       {id:3,colorName:'Red',color:'rgb(135, 0, 0)'}]
 
-    const pdSizeArr=[{id:0,sizeLetter:'S',sizeNum:8},
+    const pdSizeArr=[
+      {id:0,sizeLetter:'S',sizeNum:8},
       {id:0,sizeLetter:'M',sizeNum:10},
       {id:0,sizeLetter:'L',sizeNum:12},
       {id:0,sizeLetter:'XL',sizeNum:14},
@@ -103,12 +103,10 @@ useEffect(() => {
     }
 
   return (
-     <div  className="product-info-pd">
-          
-   
-   <div className='pd-brand-wrapper'>
-    {product.brand} - {product.category}
-   </div>
+     <div  className="product-info-pd">        
+   <span className='pd-brand-wrapper'>
+    {product.brand}
+   </span>
 
    <h2 className='pd-title-wrapper'>
     {product.title}
@@ -126,9 +124,7 @@ useEffect(() => {
     </div>
    </div>
 
- {/*   <div className='info-line-4'>
-    ---------------
-   </div> */}
+
   
 <div className='pd-description-wrapper'>
   <div className='pd-description-head'> Description : </div>
@@ -176,29 +172,23 @@ useEffect(() => {
       <span className='pd-quantity-btn' onClick={handleIncrease}><FiPlus/></span>
     </div>
 
-     <div  onClick={handleClick} className={`pd-Add-btn ${firebase.isLoggedIn? (AddedtoCart ? 'pd-added' : ''):'pd-Login'} `}>
+     <div  onClick={handleClick} 
+     style={{opacity:product.availabilityStatus==='Out Of Stock'?.5:1}} 
+     className={`pd-Add-btn ${firebase.isLoggedIn? (AddedtoCart ? 'pd-added' : ''):'pd-Login'} `}>
      {firebase.isLoggedIn? AddedtoCart  ? 'Remove From Cart' : 'Add To Cart':'Log In To Shop'}
     </div> 
-   {/*  <IconButton
-    width='70%'
-    height='3rem'
-    text='Add To Cart'/> */}
+ 
    </div>
 
     
 
 
-   {/*   <div className='info-line-5'>
-      Description :
-   </div>
+<div className='pd-info-note'>
+  <span>Please note: delivery fees will be calculated at checkout</span>
+  <span>Free delivery for orders over D2000 incl. VAT.</span>
 
-   <p>
-    {product.description}
-   </p> */}
+</div>
 
-   <div>
-
-   </div>
 
     
      
