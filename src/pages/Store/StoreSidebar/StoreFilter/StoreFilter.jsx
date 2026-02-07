@@ -74,18 +74,9 @@ export default function StoreFilter({setSideFilterToggled,storeFilters,setStoreF
         
       <div className='category-clear-div-wrapper'>
     <div onClick={ClearAllFilters}
-   /*   style={{pointerEvents:typeFilter?'auto':'none'}} */
       className={`category-clear-div ${filterActive?'category-selected':''}`}>
         Clear Filters
-{/*   <IconButton
-  text='Clear All Filters'
- height='3rem'
-  width='100%'
-  state={filterActive?true:false}
-  strokeWidth={1.5}
-  Icon={X}
-  IconColor='black'
-  /> */}
+
    </div> 
    </div>
 

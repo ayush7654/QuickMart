@@ -6,8 +6,11 @@ import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { MdFilterList } from "react-icons/md";
 import { MdStar, MdStarBorder } from 'react-icons/md';
 import { MdAttachMoney, MdPercent } from "react-icons/md";
-import { ArrowDownUp, ArrowLeftRight, Repeat2 } from 'lucide-react';
-export default function StoreSorting({isIdle,sortOrder,currentSort,setCurrentSort,toggleSortOrder,typeFilter,sideBartoggled, setSideBarToggled,setStoreFilters,storeFilters,setSideFilterToggled,sideFiltertoggled,filterActive, productCount,activeFiltersCount}) {
+import { ArrowDownUp, ArrowLeftRight, Repeat2 ,ListFilter} from 'lucide-react';
+import StoreFilter from '../StoreSidebar/StoreFilter/StoreFilter';
+import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
+
+export default function StoreSorting({isIdle,sortOrder,currentSort,toggleSortOrder,typeFilter,sideBartoggled, setSideBarToggled,setSideFilterToggled,sideFiltertoggled,filterActive,activeFiltersCount,handleSort,currentCategory}) {
   
   const SortArray = [
     { name: 'Price', sort: 'price' ,Icon: MdAttachMoney },
@@ -53,45 +56,46 @@ useEffect(() => {
 
               <div className='store-header-blur-div'></div>
 
+              <div className='store-header-info-wrapper'>
+ 
 
-<div className='store-iconBtn-wrapper'>
 
-  <div onClick={()=>setSideFilterToggled(false)}>
-  <IconButton
-text={`Filters (${activeFiltersCount})`}
-Icon={HiOutlineAdjustmentsHorizontal}
-strokeWidth={1.5}
 
-state = {filterActive || !sideFiltertoggled? true: false}
+<div className='sort-head-title'>{typeFilter?currentCategory.replaceAll('-', ' '):'All Products'}</div>
 
-/>
+
 </div>
 
-<div onClick={() => setSideBarToggled(false)}>
-  <IconButton
-text='Categories'
-Icon={ HiOutlineCollection}
-strokeWidth={1.5}
-state={typeFilter || !sideBartoggled?true:false}
-
-/>
 
 
- 
-</div> 
-
-<div className='sort-dropDown-div'>
 
 
-<div   onClick={()=>setIsSortOpen(true)}>
-   <IconButton
- 
-  text={currentSort? currentSort.name: 'Sort By'} 
-/* text={`Sort By : ${currentSort?currentSort.name:''}` } */
-  Icon={currentSort?currentSort.Icon: MdFilterList} 
-  state={currentSort || isSortOpen ?true:false}
-/>
-</div>
+
+
+<div className='product-sort-wrapper'>
+  <div onClick={() => setSideBarToggled(false)} className={`product-sort ${typeFilter || !sideBartoggled?'sort-active':''}`} >
+   <span className='product-sort-icon'><HiOutlineCollection strokeWidth={1} /></span> 
+    <span>Categories</span>
+    </div>
+
+      <div onClick={()=>setSideFilterToggled(false)}  className={`product-sort ${filterActive || !sideFiltertoggled?'sort-active':''}`}>
+   <span className='product-sort-icon'>< HiOutlineAdjustmentsHorizontal strokeWidth={1} /></span> 
+    <span>{`Filters (${activeFiltersCount})`}</span>
+    </div>
+
+    
+
+    <div className='sort-dropDown-div'>
+
+
+
+
+  <div onClick={()=>setIsSortOpen(true)} className='product-sort'>
+   <span className='product-sort-icon'><ListFilter strokeWidth={1}  /></span> 
+    <span>Sort By </span>
+
+    
+    </div>
  
 
 
@@ -101,36 +105,24 @@ state={typeFilter || !sideBartoggled?true:false}
  <div key={index}
  className={`store-sort-div ${currentSort?.name===item.name?'store-sort-selected':''}`}
  onClick={()=>
-  {setCurrentSort(item);
+  {handleSort(item);
    setIsSortOpen(false);                 
  }
  
  }
  >
- <span className='sort-Icon'><item.Icon/></span>
- <span>{item.name}</span> 
+
+
+ {item.name}
+
+  <span className='sort-Icon'><item.Icon/></span>
   </div>)}
 
-  <div className='clear-store-sort-div' >
-  <span onClick={(e)=>{
-     e.stopPropagation();
-    setCurrentSort(null)
-    setIsSortOpen(false)}}>
-      Clear</span>
-  </div>
+
   </div>
 
 
 </div>
-
-</div>
-
-
-
-<div className='store-header-info-wrapper'>
- 
-
-
 
 <div className={`order-toggle-div ${currentSort?'order-visible':''}`} onClick={toggleSortOrder}>
   
@@ -140,17 +132,15 @@ state={typeFilter || !sideBartoggled?true:false}
 
 </div>
 
- <div className='product-count-div'>
-    Showing <span>{productCount} </span>products
-    </div>
 </div>
-
   
 
 
 
       </div>
       </div>
+
+
             </div>
   )
 }

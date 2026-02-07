@@ -91,6 +91,10 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
 
     const [isAtTop, setIsAtTop] = useState(true);
 
+   const headertp = ['/', '/store', '/cart'].includes(location.pathname);
+
+   console.log('header is ' , headertp)
+
       // For scroll detection
       const lastScrollY = useRef(window.scrollY);
       
@@ -192,7 +196,7 @@ useEffect(() => {
     }}>
 
 
-        <div  className={`header-home ${isAtTop && cursorOff ?'headerAtTop':''}`}  /* REMOVE '!' */
+        <div  className={`header-home ${isAtTop && cursorOff && headertp ?'headerAtTop':''}`}  /* REMOVE '!' */
             onMouseEnter={() => setCursorOff(false)}
   onMouseLeave={() => setCursorOff(true)}
         style={{
@@ -255,9 +259,9 @@ useEffect(() => {
 
    <DotNav
    sections={navElements}
-   textColor={isAtTop && cursorOff?"white":"rgb(80,80,80)"}
+   textColor={isAtTop && cursorOff && headertp?"white":"rgb(80,80,80)"}
    textColorHover="black"
-   dotColor={isAtTop && cursorOff?"white":"blue"}
+   dotColor={isAtTop && cursorOff && headertp?"white":"blue"}
    handleClick={(func)=>handlePageNav(func)}
    syncWithUrl={true}/>
 

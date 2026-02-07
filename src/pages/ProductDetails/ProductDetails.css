@@ -15,7 +15,7 @@
 .pd-navBar{
   color:rgb(120, 120, 120);
   height: 10rem;
-  width: 90%;
+  width: 85%;
   display: flex;
   justify-content: start;
   align-items: end;
@@ -36,7 +36,7 @@
   position: relative;
 /*   margin-top: 6rem; */
   border: 0px solid red;
-  width: 90%;
+  width: 85%;
 
 }
 
@@ -61,9 +61,6 @@
 .product-right {
   width: 45%;
 user-select: none;
-/*   padding-left: 2rem;
-  padding-right: 4rem;
-  padding-top: 2rem; */
   padding: 0rem 3rem;
   display: flex;
   flex-direction: column;
@@ -122,10 +119,12 @@ border: 0px solid black;
 
 /* This appears after product section scrolls out */
 .next-section {
-  min-height: 90vh;
+  min-height: 80vh;
   background-color: #ffffff;
-
+  margin: 2rem 0rem;
+  
   width: 100%;
+  border: 0px solid red;
 }
 
 

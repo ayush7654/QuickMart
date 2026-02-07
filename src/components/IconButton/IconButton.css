@@ -59,6 +59,7 @@ border: 1px solid var(--btn-border-color);
 .Icon-button-wrapper:hover .button-text
 {
     color: var(--btn-hoverText-color);
+   
 
    
 }

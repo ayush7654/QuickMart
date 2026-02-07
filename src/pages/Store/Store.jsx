@@ -47,7 +47,11 @@ export default function Store() {
 
  console.log(storeOverlayActive)
 
+const handleSort = (e) => {
 
+
+  setCurrentSort(prev => prev?.name === e.name ? null : e);
+};
 
 
 
@@ -255,6 +259,7 @@ console.log('final items are ' , FinalItems)
       isIdle={isIdle}
       currentSort={currentSort}
       setCurrentSort={setCurrentSort}
+      handleSort={(e)=>handleSort(e)}
       sortOrder={sortOrder}
       toggleSortOrder={toggleSortOrder}
       typeFilter={typeFilter} 
@@ -265,7 +270,7 @@ console.log('final items are ' , FinalItems)
       storeFilters={storeFilters}
       setStoreFilters={setStoreFilters}
       filterActive={filterActive}
-   
+    currentCategory={currentCategory}
       productCount={productElements.length}
         activeFiltersCount={activeFiltersCount}
      /*  setCurrentFilter={setCurrentFilter} *//> 
@@ -275,20 +280,15 @@ console.log('final items are ' , FinalItems)
       
        <div className="store-page-heading-wrapper">
           <div className="store-page-heading">
-                 <div 
-                 
-                 className="store-all-link"
-                 onClick={(e) => { e.stopPropagation();   // ⛔ stops parent onClick
-                                 handleCancelTypeFilter();  // ✔ your original function
-              }}>Product Catelog</div>
+            <div className="store-all-link">Product Catelog</div>
 
         
             
                  
-                   <div className='store-category-head'>{ typeFilter?typeFilter.split('-')
-                       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                       .join(' '):'All Products'} 
-                  </div>  
+                  
+                    <div className='product-count-div'>
+    Showing <span>{productElements.length} </span>products
+    </div>
               </div>
             </div>
 
@@ -308,7 +308,7 @@ console.log('final items are ' , FinalItems)
        
         
 
-        <main className="store-content"  /* style={{ marginTop:window.innerWidth < 400 && typeFilter? "2rem": "0"}} */>
+        <main className="store-content">
        
 
 
@@ -324,14 +324,7 @@ console.log('final items are ' , FinalItems)
             <div className="LoadMore-button-div" >
               
                   <div className="LoadMore-button" onClick={handleLoadMore}>
-                    Load More
-     {/*        <ScrollButton
-  text='Load More'
-  theme={'lightMode'}
-  color="#cf7729ff"
-  themeOnHover={'colorMode'}
-/> */}
-              </div> 
+                    Load More </div> 
 
             
             </div>

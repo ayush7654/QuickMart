@@ -7,7 +7,7 @@ export default function SimilarProducts({currentCategory,product}) {
      <div className="Product-Details-SimilarProducts">
    <div className="sp-head-div">
                 
-                  <div className='home-heading'>Similar Products.</div>
+                  <div className='home-heading'>Similar Products</div>
                   
                   
                 
@@ -17,15 +17,7 @@ export default function SimilarProducts({currentCategory,product}) {
         
  {currentCategory ? currentCategory.products.slice(0,window.innerWidth>850?5:4).map(item => 
   item.id !== product.id && (
-/*     <ProductCard
-      classname='productDetails-product'
-      key={item.id}
-      id={item.id}
-      images={item.images}
-      title={item.title}
-      price={item.price}
-      path={location.search}
-    /> */
+
     <div className='similar-product'>
       <div className='similar-productImg-div'>
         <img src={item.images[0]} className='similar-productImg'/>

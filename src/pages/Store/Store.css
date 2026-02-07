@@ -81,17 +81,17 @@
 .store-page-heading{
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items:center;
-  justify-content:start;
-  height: 5rem;
+  justify-content:space-between;
+  height: 3rem;
   gap:1rem;
   color: rgb(20,20,20);
- 
+  font-family: 'Figtree';
     width: 90%;
  font-size: 1.5rem;
- letter-spacing: .05rem;
- border: 0px solid green;
+
+
    border-bottom: 1px solid rgb(220, 220, 220);
 
 
@@ -100,45 +100,23 @@
 
 .store-all-link{
  white-space: nowrap;
- color:rgb(150,150,150);
- font-size: .8rem;
+ color:rgb(100, 100, 100);
+ font-size: .9rem;
  font-weight:600;
-font-family: 'Raleway';
-font-family:'Lato';
- font-family: "Questrial", sans-serif; 
- font-family: 'Outfit';
- font-family: 'Roboto';
-      font-family: "Questrial", sans-serif;
- letter-spacing: 1px;
  text-transform: uppercase;
 
-
-}
-
-.store-all-link:hover{
-cursor: pointer;
-  color: rgb(20,20,20);
 }
 
 
-
-.store-category-head{
-    font-family: 'Raleway';
-     font-family: 'Jost';
-     font-family: 'Roboto';
-     font-family: Outfit;
-      font-family: "Figtree", sans-serif;  /* second best*/
-      font-family: 'Raleway'; 
+.product-count-div{
+  color:black;
    
-        font-family: "Questrial", sans-serif;  
-       /*   font-family: 'Marcellus'; */
-         
+    border: 0px solid red;
+    font-size: 1rem;
+}
 
- text-transform: capitalize;
-   font-size: 2rem;
- font-weight:600;
-  letter-spacing: 1px;
-  
+.product-count-div span{
+  font-weight: 500;
 }
 
 
