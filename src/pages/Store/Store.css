@@ -139,7 +139,7 @@
   margin-top: 0rem;
   z-index:999;
 /*   box-shadow: -2px 0px 5px rgb(200, 200, 200); */
-box-shadow: 0 12px 10px rgb(225, 225, 225);
+box-shadow: 0 10px 20px rgba(50,50,50, 0.2);
 /* transition: all .8s ease; */
 
 

@@ -1,28 +1,24 @@
-import './ScrollingButton.css' 
+import './ScrollingButton.css';
 
+function ScrollButton({ 
+  text, 
+  color = "rgb(0,100,255)", 
+  theme = "buttonFilled",      // Default: Filled
+  themeOnHover = "buttonOutline", // Default Hover: Outline
+  className = "", 
+  style = {} 
 
-
-function ScrollButton({
-  text,
-  theme = "lightMode",
-  themeOnHover,
-  color = "#ff6b35", // used for colorMode
-  className = "",
-  style = {}
 }) {
   return (
     <div
       className={`
-        scroll-btn
-        scroll-btn--${theme}
-        ${themeOnHover ? `hover-${themeOnHover}` : ""}
+        scroll-btn 
+        theme-${theme} 
+        hover-${themeOnHover} 
         ${className}
       `}
       style={{
-        // Base theme color
-        ...(theme === "colorMode" && { "--btn-bg": color }),
-        // Hover theme color
-        ...(themeOnHover === "colorMode" && { "--btn-hover-bg": color }),
+        '--brand-color': color,
         ...style
       }}
     >

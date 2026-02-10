@@ -2,7 +2,7 @@ import React from 'react'
 import useStoreFilterData from '../../useStoreFilterData'
 import { X } from 'lucide-react';
 import AnimatedUnderline from '../../../../components/AnimatedUnderline/AnimatedUnderline';
-
+import ScrollButton from '../../../../components/ScrollingButton/ScrollingButton';
 import '../StoreSidebar.css'
 import IconButton from '../../../../components/IconButton/IconButton';
 
@@ -29,9 +29,10 @@ export default function StoreFilter({setSideFilterToggled,storeFilters,setStoreF
 <div className='store-Category-head-div'>
   <div className='store-Category-head-content'>
       <span>SELECT FILTERS</span>
-  <span className='store-Category-cancel'>
+  <span className='store-Category-cancel'
+        onClick={()=>setSideFilterToggled(true)}>
 
-    <X size={24} strokeWidth={1.5} onClick={()=>setSideFilterToggled(true)} />
+    <X size={24} strokeWidth={1.5}  />
 
   </span>
   </div>
@@ -73,9 +74,17 @@ export default function StoreFilter({setSideFilterToggled,storeFilters,setStoreF
       
         
       <div className='category-clear-div-wrapper'>
-    <div onClick={ClearAllFilters}
-      className={`category-clear-div ${filterActive?'category-selected':''}`}>
-        Clear Filters
+    <div
+     style={{pointerEvents:filterActive?'':'none'}}
+    onClick={ClearAllFilters}
+      className='category-clear-div'>
+       <ScrollButton
+       text='Clear Filters'
+       color={filterActive?'black':'rgba(65,65,65, 1)'}
+        theme="buttonFilled"
+        themeOnHover="buttonOutline"
+
+       />
 
    </div> 
    </div>

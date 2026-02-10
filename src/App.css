@@ -32,7 +32,7 @@ a {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4); /* semi-transparent dark */
+  background-color: rgba(0, 0, 0, 0.1); /* semi-transparent dark */
   z-index: 999; /* make sure it’s on top */
   backdrop-filter: blur(1px); /* optional blur */
 }

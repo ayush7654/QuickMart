@@ -4,21 +4,29 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    font-family: 'Figtree';
+     color: rgb(0, 0, 0);
 }
 
 .regIn-User{
      font-size: 1.8rem;
- font-family: 'Roboto Condensed';
- font-family: 'Jost';
+
  font-weight: 400;
-    color:rgb(75, 75, 75);
+   
     margin-top: 2rem;
+    
+}
+
+.regIn-User span{
+    color: rgb(125, 125, 125);
+    color:blue;
+    color:rgb(0, 100, 255);
     
 }
 
 .regIn-Greeting{
  font-size: 2.2rem;
- font-family: 'Roboto';
+
  
  font-weight: 500;
 
@@ -26,17 +34,24 @@
 
 } 
 .regIn-Para{
-color:rgb(120, 120, 120);
+color:rgb(125, 125, 125);
 
- font-size: 1.1rem;
+ font-size: 1rem;
 
- font-weight: 350;
+ font-weight: 400;
   font-family: 'Inter';
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  font-family:'Jost';
+font-family: 'Inter';
+font-family: sans-serif;
+
+
+
 
  line-height: 1.6rem;
  letter-spacing: .02rem;
+
+
 
 
 

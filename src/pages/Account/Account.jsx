@@ -58,32 +58,26 @@ export default function Account(){
           
 
           <div className="account-page-switch">
-          {/*  <div id='switch-section' 
-           className={sectionSwitch?'account-section-selected':'account-section'} 
-            onClick={()=>setSectionSwitch(true)} >
-             <AnimatedUnderline from="center" color="blue" thickness={1.5}>
-              <span id='switch-section-head' >LOG IN</span> 
-              </AnimatedUnderline> 
-             </div>
-              <span style={{fontSize:'1.2rem', color:'rgb(150,150,150)', fontWeight:'200'}}>|</span>
-           <div id='switch-section'
-             className={sectionSwitch?'account-section':'account-section-selected'} 
-             onClick={()=>setSectionSwitch(false)} >
-               <AnimatedUnderline from="center" color="blue" thickness={1.5}>
-                <span id='switch-section-head' >REGISTER</span>
-                 </AnimatedUnderline> 
-             </div> */}
+      
   <DotNav
    sections={accoutSections}
    textColor="rgb(80,80,80)"
    textColorHover="black"
-   dotColor="blue"
    handleClick={(func)=>handleSectionSwitch(func)}
    syncWithUrl={false}/>
          </div>
 
 
-   {sectionSwitch?<Login/>:<Registration/>}
+{/*    {sectionSwitch?<Login/>:<Registration/>} */}
+
+<div className="account-content-wrapper">
+  <div className="account-slider"style={{transform:`translateX(${sectionSwitch?'0%':'-50%'})`}} >
+  <Login/>
+  <Registration/>
+  </div>
+
+</div>
+
         </div>
 
     

@@ -32,6 +32,27 @@
 }
 
 
+.test-button{
+    width: 15rem;
+    border-radius: 100px;
+    overflow: hidden;
+}
 
 
+.testing-button{
+    width: 10rem;
+    height: 3rem;
+   
+    border-radius: 100px;
+   
+
+    font-family: 'Figtree';
+}
+
+.testing-button:hover{
+ background-color: transparent;
+ 
+
+
+}
 

@@ -9,7 +9,7 @@
   height: 6rem;
   transition: all .3s ease;
   border-bottom: 0px solid rgb(220,220,220);
-box-shadow: 0 5px 5px rgba(150, 150, 150, 0.1);
+  box-shadow: 0 2px 10px rgba(142, 142, 142, 0.2);
 
 }
 
@@ -44,6 +44,7 @@ border: 0px solid red;
 
  font-family: 'Figtree';
 gap:1rem;
+
 
 }
 
@@ -91,19 +92,13 @@ gap:1rem;
 }
 
 .product-sort:hover , .sort-active{
-  color:blue;
+  color:rgb(0,100,255);
   cursor: pointer;
 }
 
 .sort-default-option{
   color:rgb(130,130,130);
 }
-
-
-
-
-
-
 
 
 
@@ -162,7 +157,7 @@ opacity: 1; visibility: visible; transform: translateY(0);
 
 
  .store-sort-selected{
-  color:blue;
+  color:rgb(0,100,255);
 }
 
  .store-sort-selected:hover{
@@ -191,8 +186,8 @@ opacity: 1; visibility: visible; transform: translateY(0);
 
 .store-sort-div:hover .sort-Icon,
 .store-sort-selected .sort-Icon {
-  color: blue;
-  border-color: blue;
+  color: rgb(0,100,255);
+  border-color: rgb(0,100,255);
 
 }
 
@@ -227,7 +222,7 @@ color:black
 }
 
 .order-visible:hover{
-  color:blue;
+  color:rgb(0,100,255);
   cursor: pointer;
 }
 

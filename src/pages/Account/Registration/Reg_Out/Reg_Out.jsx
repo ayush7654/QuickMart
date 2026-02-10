@@ -80,22 +80,17 @@ export default function Reg_Out({firebase}) {
       </div>
         
   
- {/*   <button id='account-button'
-    className={email || password || username ?
-    'account-button-active':'account-button-inactive'}
-     onClick={SignUp}>SIGN IN</button> */} 
+
 
 
     <div  
-     id='account-button' style={{pointerEvents:username||email || password?'auto':'none'}}
-    /*  className={email || password ?'account-button-active':'account-button-inactive'} */
+     id='account-button' style={{pointerEvents:username||email || password?'auto':'none',padding:'0rem 1rem'}}
        onClick={SignUp}>
           <ScrollButton
   text='Sign Up'
-  theme={email || password || username?'darkMode':'lightMode'}
-  color="#cf7729ff"
-  themeOnHover={email || password || username?'colorMode':'lightMode'}
-
+   color={username || email || password || confirmPassword?'rgb(0,150,255)':'rgba(0, 150, 255, 0.6)'}
+  theme='buttonFilled'
+  themeOnHover='buttonOutline'
 />
       </div> 
 

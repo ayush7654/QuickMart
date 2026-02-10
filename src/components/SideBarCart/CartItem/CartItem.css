@@ -5,6 +5,7 @@ width: 100%;
 display: flex;
 padding-top: 2rem;
 padding-bottom: 2rem;
+font-family: 'Figtree';
 
     }
 
@@ -40,11 +41,8 @@ padding-bottom: 2rem;
  justify-content: center;
  gap: .5rem;
  
-
-     font-family:'Inter';
    
-     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     font-family: 'Outfit';
+    
      color:rgb(110, 110, 110);
 
      /* font-family: "Figtree", sans-serif;  */
@@ -68,9 +66,9 @@ padding-bottom: 2rem;
     .cart-product-title{
         color:rgb(0, 0, 0);
         font-size: 1rem;
-        font-family: 'Raleway';
+       
         font-weight: 400;
-         font-family: 'Outfit';
+   
          margin-bottom: .5rem;
     }
 

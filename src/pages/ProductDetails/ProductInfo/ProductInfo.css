@@ -10,7 +10,7 @@
     flex-direction: column;
     gap: 1rem;
     font-family: 'Figtree';
-   /*  font-family: sans-serif; */
+   
  
   }
 
@@ -224,6 +224,8 @@ font-weight: 500;}
   place-items: center;
   background-color: black;
     background-color: rgb(0, 150, 255);
+    background-color: rgb(0, 100, 255);
+   
   color:white;
   font-weight: 400;
   border-radius: 100px;

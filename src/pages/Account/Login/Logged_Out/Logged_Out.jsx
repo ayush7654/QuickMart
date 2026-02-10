@@ -63,9 +63,10 @@ export default function Logged_Out({email,password,setEmail,setPassword,signIn})
       onClick={signIn} >
           <ScrollButton
   text='Log In'
-  theme={email || password ?'darkMode':'lightMode'}
-  color="#cf7729ff"
-  themeOnHover={email || password ?'colorMode':'lightMode'}
+  color={email || password?'rgb(0,150,255)':'rgba(0, 150, 255, 0.6)'}
+  theme='buttonFilled'
+  themeOnHover='buttonOutline'
+  
 
 />
       </div> 

@@ -226,42 +226,13 @@ useEffect(() => {
     
                    
   
-                    {/* {navElements ? navElements.map(item => (
-                
-                         <NavLink
-        key={item.path}
-        to={item.function}
-        className={({ isActive }) =>
-          `page-nav-left ${isActive?'page-nav-left-selected':''} ${
-            item.title === 'About' ? 'desktop-only' : ''
-          }`
-        }
-      >
-      <AnimatedUnderline 
-                  from="left" 
-                  exit="opposite"
-                  color={'blue'}  
-                  thickness={1.5}
-                  duration={.3}
-                  offset={2}> 
-                  {item.title}
-                  </AnimatedUnderline>  
-      </NavLink>
-               
-                    
-                      
-                  
-                      
-                         ))
-                        : <div>loading</div>
-                     } */}
                   
 
    <DotNav
    sections={navElements}
    textColor={isAtTop && cursorOff && headertp?"white":"rgb(80,80,80)"}
    textColorHover="black"
-   dotColor={isAtTop && cursorOff && headertp?"white":"blue"}
+   dotColor={isAtTop && cursorOff && headertp?"white":"rgb(0, 100, 255)"}
    handleClick={(func)=>handlePageNav(func)}
    syncWithUrl={true}/>
 

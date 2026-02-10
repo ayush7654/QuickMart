@@ -6,7 +6,7 @@ const DotNav = ({
   sections = [], 
   textColor = '#666', 
   textColorHover = '#000', 
-  dotColor = '#007bff',
+  dotColor = 'rgb(0, 125, 255)',
   handleClick,
   syncWithUrl = false 
 }) => {

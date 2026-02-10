@@ -138,7 +138,7 @@ font-family:'Lato';
 
 
 .account-page-switch{
-  width: 65%;
+  width: 70%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -151,87 +151,11 @@ font-family:'Lato';
     
 /* font-family: 'Outfit'; */
   border: 0px solid blue;
-  border-bottom: 1px solid rgb(235, 235, 235);
+  border-bottom: 1px solid rgb(226, 226, 226);
     
 
 }
 
-
-.account-section-selected{
-  
-         border-bottom: 1px solid transparent;
-
-}
-
-.account-section-selected .animated-underline::after {
-  transform: scaleX(0);
-}
-
-.account-section{
-   border-bottom: 2px solid transparent;
-    color:rgb(130, 130, 130) ;
-   
-}
-
-#switch-section{
-  width: 50%;
-  height: 100%;
-    display: flex;
-  align-items: center;
-  justify-content: center;
-  
-
-/*  */
-  
-}
-
-#switch-section:hover{
-  cursor: pointer;
-  color:rgb(80,80,80);
-
-
-}
-
-#switch-section-head{
-   height: 2.5rem;
-
-font-size: .85rem;
-font-weight: 500;
- display: flex;
- align-items: center;
- justify-content: center;
-  border-bottom: 2px solid transparent;
-   letter-spacing: .05rem;
-   transition: all .2s ease;
-   color:rgb(130, 130, 130);
-
-
-}
-
-#switch-section-head:hover{
-
-  color:rgb(0, 0, 0);
-    color:blue;
-
-}
-
-.account-section-selected #switch-section-head{
-  border-bottom: 2px solid rgb(80 230,230);
-  border-bottom: 2px solid rgb(0, 0, 0);
-  color:rgb(0, 0, 0);
- 
-  font-weight: 500;
-}
-
-
-
-
-
-
-
-
-
-  
 
   .account-div{
     height: 100%;
@@ -240,10 +164,12 @@ border: 0px solid black;
     display: flex;
     align-items: start;
   justify-content: center;
+
   }
 
   .account-loggedIn-div{
   border: 0px solid red;
+
   }
 
 
@@ -369,43 +295,59 @@ border: 0px solid black;
   #account-button{
     width:100%;
     height: 2.5rem;
-  border-radius: 20px;
+  border-radius: 100px;
   overflow: hidden;
-
-    font-weight: 500;
+    font-weight: 300;
     font-size: 1rem;
-    font-family: 'Poppins';
-  font-family: 'Outfit';
-    transition: all  .3s ease;
-    border: 1px solid black;
-/*    position: absolute;
-   bottom: 1.5rem;  */
-   
+ font-family:'Figtree';
+
   }
 
-   #account-button:hover{
-    border: 1px solid transparent;
-   }
-
+  
  
   .account-loggedIn-div{
       display: flex;
     flex-direction: column;
  position: relative;
-    align-items: start;
-    justify-content:space-between;
-font-family: 'Roboto Condensed';
-  
- height:90%; 
+    align-items: center;
+    justify-content:start;
+
+ height:85%; 
     width: 70%;
- color:rgb(49, 49, 49);
+ color:rgb(0, 0, 0);
   border: 0px solid black;
     gap:2rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
+  /*   box-shadow: 0px -10px 20px rgb(214, 214, 214); */
+}
+
+.account-loggedIn-div #account-button{
+ position: absolute;
+ bottom: 1rem;
 }
 
   
 
+.account-content-wrapper{
+  width: 100%;
+  height: 90%;
+  border: 0px solid red;
+  overflow: hidden;
+  
+ 
+}
+
+.account-slider{
+
+  height: 100%;
+  width: 200%;
+  display: flex;
+ transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  
+  /* Performance optimization: tells the browser to use the GPU */
+  will-change: transform;
+ 
+}
 
 
 

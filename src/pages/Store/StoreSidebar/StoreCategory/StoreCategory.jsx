@@ -48,9 +48,9 @@ setSelected={setSelected}/>
 <div className='store-Category-head-div'>
   <div className='store-Category-head-content'>
       <span>SELECT CATEGORY</span>
-  <span className='store-Category-cancel'>
+  <span className='store-Category-cancel' onClick={setSideBarToggled}>
 
-    <X size={24} strokeWidth={1.5} onClick={setSideBarToggled} />
+    <X size={24} strokeWidth={1.5}  />
 
   </span>
   </div>
@@ -90,19 +90,25 @@ setSelected={setSelected}/>
    
    <div className='category-clear-div-wrapper'>
     <div onClick={handleCancelTypeFilter}
- 
-      className={`category-clear-div ${typeFilter?'category-selected':''}`}>
-Clear Category
-{/* <IconButton
-text='Clear Category'
-state={typeFilter?true:false}
-width='100%'
-height='3rem'
-  strokeWidth={1.5}
-  Icon={X}
-  IconColor='black'
 
-/> */}
+    style={{pointerEvents:typeFilter?'':'none'}}
+ 
+      className='category-clear-div'>
+
+
+
+
+  <ScrollButton
+ text='Clear Category'
+  color={typeFilter?'black':'rgba(65,65,65, 1)'}
+  theme="buttonFilled"
+  themeOnHover="buttonOutline"
+ 
+
+>
+
+  </ScrollButton>
+
    </div> 
    </div>
 
