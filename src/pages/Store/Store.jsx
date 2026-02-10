@@ -273,7 +273,7 @@ console.log('final items are ' , FinalItems)
     currentCategory={currentCategory}
       productCount={productElements.length}
         activeFiltersCount={activeFiltersCount}
-     /*  setCurrentFilter={setCurrentFilter} *//> 
+     /> 
 
 
 
@@ -324,7 +324,13 @@ console.log('final items are ' , FinalItems)
             <div className="LoadMore-button-div" >
               
                   <div className="LoadMore-button" onClick={handleLoadMore}>
-                    Load More </div> 
+                    <ScrollButton
+                    text='Load More'
+                    theme="buttonOutline"
+                    themeOnHover="buttonFilled"
+                    color='black'
+                    />
+                     </div> 
 
             
             </div>

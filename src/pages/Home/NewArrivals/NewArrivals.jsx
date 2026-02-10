@@ -52,9 +52,10 @@ export default function NewArrivals() {
                 <div className='view-more-button'>
                               <ScrollButton
   text='View More'
-  theme="lightMode"
-  color="#cf7729ff"
-  themeOnHover="colorMode"
+  theme="buttonOutline"
+   themeOnHover="buttonFilled"
+  color="#000000ff"
+ 
 />
                 </div>
 

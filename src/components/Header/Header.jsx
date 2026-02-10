@@ -11,6 +11,7 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { HiShoppingBag } from "react-icons/hi2";
 import AnimatedUnderline from "../AnimatedUnderline/AnimatedUnderline";
 import { useScroll } from "../ScrollData/ScrollData";
+import ExtraHeader from "./ExtraHeader/ExtraHeader";
 import SiteLogo from "./SiteLogo/SiteLogo";
 
 import './Header.css'
@@ -102,7 +103,7 @@ useEffect(() => {
   let ticking = false;
   // Define the distance from the top in pixels after which the header
   // changes its base class (e.g., from transparent to solid background)
-  const headerClassChangeThreshold = 600; // You can adjust this value as needed
+  const headerClassChangeThreshold = 400; // You can adjust this value as needed
 
   // NEW: Define the scroll distance from the top *before* the header
   // starts to consider hiding (becoming idle).
@@ -188,12 +189,14 @@ useEffect(() => {
         ? 'transform 0.2s ease, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
         : 'transform 0.2s ease,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
       transform:isIdle 
- ? `translate(-50%, ${location.pathname=='/store'? '-100%':'-100%'}`   /* ENABLE HEADER TOGGLE IN STORE PAGE */
+ ? `translate(-50%, ${location.pathname=='/store'? '0%':'0%'}`   
     : 'translate(-50%, 0%)'
   
      
      
     }}>
+ 
+ <ExtraHeader/>
 
 
         <div  className={`header-home ${isAtTop && cursorOff && headertp ?'headerAtTop':''}`}  /* REMOVE '!' */
@@ -202,7 +205,10 @@ useEffect(() => {
         style={{
             transition: isIdle
         ? 'transform 0.4s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
-        : 'transform 0.5s ease-out,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
+        : 'transform 0.5s ease-out,  background-color 0.4s ease, box-shadow 1s ease',
+        // When showing (moving down/active)
+
+        transform: isAtTop? 'translateY(0)':'translateY(-2.5rem)'
         }}>
           <div className="header-home-upper">
             <div className="site-logo-div" style={{scale:isAtTop?'1':'.5' , opacity:isAtTop?'1':'.4'}}> 
@@ -216,9 +222,7 @@ useEffect(() => {
                    <MenuCancel/>
                         </div>
 
-  <div className="site-name-div"   /* style={{
-        transform: location.pathname=='/'? transformStyle:''
-      }} */>
+  <div className="site-name-div"   >
                   <div className="site-logo-tagline">Elevate your World with</div>
                   <div className="site-name">SARAS</div>
                 </div>

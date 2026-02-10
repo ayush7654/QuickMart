@@ -98,26 +98,11 @@ function ProductCard({ classname, id, images, title, price, path,discount, ratin
       <div className='productcard-links-div'>
   
 
-{/* <ScrollButton
-  text={<div className='AddToCardButton'><HiOutlineShoppingCart fontSize={'1.5rem'} strokeWidth={1.5} /> <span>Add To Cart</span></div>}
-  theme="darkMode"
-  color="#cf7729ff"
-  themeOnHover="colorMode"
-/> */}
-
 <IconButton
 height='3rem'
 width='100%'
 text='Add to Cart'
 Icon= {HiShoppingCart}/>
-
-
-  {/*    <HiOutlineShoppingCart />
-      <div id='pd-link' className='pd-AddtoCart'>Add to Cart</div> */}
-    
-      {/*  <AnimatedUnderline from='left'color='rgb(80,230,230)' duration={.4} thickness={2} >
-        <div  id='pd-link' className='pd-BuyNow'>Buy Now</div>
-        </AnimatedUnderline>  */}
 
       </div>
     </div>

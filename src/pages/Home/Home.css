@@ -50,49 +50,17 @@
 
 
   .home-heading{
-      font-size: 2.2rem;
-    padding: 1rem;
-
+      font-size: 2.5rem;
+    padding: 2rem;
+    padding-left: 1rem;
     width: 90%;
-    font-weight: 400;
     margin-bottom: 2rem;
-   font-family: "Questrial", sans-serif;
-   font-family: 'Jost';
-   font-family: 'Raleway';
-   text-align: center;
+   text-align: start;
    text-transform: uppercase;
-    color:rgb(0, 0, 0);
     border-bottom: 1px solid rgb(200, 200, 200);
-    background-color: white;
-/* ------------------------------------- */
-
-    color:rgb(50, 50, 50);
-       font-family: "Questrial", sans-serif;
-        font-family: 'DidotCustom', serif;
-        font-family: 'Outfit';
-        font-family: 'Raleway';
-       /*  font-family: 'Lato';
-        font-family: 'Montserrat'; */
-          /* font-family: "Nunito", sans-serif;
-          font-family: "Manrope", sans-serif; */
-    
-           
-               font-family: "Cormorant Garamond", serif;  /* too much spike */
-              font-family: "Comfortaa", sans-serif; /* too goofy */
-                font-family: "Rethink Sans", sans-serif; /*  */
-                  
-                     font-family: "Manrope", sans-serif; 
-                   font-family: "Figtree", sans-serif;  /* second best*/
-  
-        font-family: "Marcellus", serif;  /* too royal */
-        font-family: 'Raleway';
-        
-        font-weight: 500;
-       letter-spacing: 1px;
-     /* font-family: "Prosto One", sans-serif; */
-/*        font-family: "Bodoni Moda SC", serif; */
-    
-    
+    color:rgb(50, 50, 50);         
+     font-family: 'Figtree';   
+     font-weight: 500;
 
   }
 
@@ -122,6 +90,7 @@
 border: 0px solid red;
     color:black; 
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    
   }
 
   .Home .productImg-wrapper {
@@ -179,18 +148,19 @@ display: none;
 
  .Home  .productCard-detail{
 
-  border: 0px solid rgb(255, 255, 255);
+  border: 0px solid rgb(223, 45, 45);
 display: flex;
 justify-content: space-between;
 align-items: center;
 width: 100%;
-padding-top:1rem;
-padding-bottom:1rem;
- color: rgb(50, 50, 50); 
+padding-top:1.5rem;
+padding-bottom:1.5rem;
+ color: rgb(0, 0, 0); 
 font-family: 'Roboto Condensed', sans-serif;
 font-family: 'Jost';
+font-family: 'Figtree';
 font-weight: 400;
-font-size:1.2rem;
+font-size:1.1rem;
  
   }
 
@@ -217,7 +187,7 @@ display: flex;
    width: 100%;
     z-index: 0;
       transform: translateY(4rem);
-  transition: all .7s ease;
+  transition: all .5s ease;
   opacity: 0;
   border: 0px solid red;
     border-radius: 20px;
@@ -231,90 +201,21 @@ transform: translateY(0);
   opacity: 1;
    }
 
-  .Home #pd-link{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-     font-family: 'Poppins';
-   font-family: "Questrial", sans-serif; 
-     
-    white-space: nowrap;
-   transition: all .25s ease;
-   font-weight: 400;
-   color:rgb(50,50,50);
-   border-bottom: 1px solid rgb(200,200,200);
-   letter-spacing: .02rem;
-  }
-
-    .Home #pd-link:hover{
-      cursor: pointer;
-      color:black;
-      
-
-    }
-
-    .AddToCardButton{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: .5rem;
-    }
-
- .scroll-btn .pd-AddtoCart{
-/* background-color: #ffffff;
-  border-bottom: 1px solid rgb(30,30,30);
-    color:rgb(0, 0, 0); */
-border: 1px solid red;
-
-
-   
-  }
-
-    .pd-AddtoCart:hover{
-
-/* 
-    cursor: pointer;
- background-color: rgb(30,30,30);
-  
-    color:white;
-border: 1px solid rgb(220, 220, 220); */
-  }
-
-  
-  .pd-BuyNow{
- 
-/*  border-bottom: 1px solid rgb(100,100,100) ;
-    background-color: rgba(90, 220, 220, 0)  ; 
-    color: rgb(100,100,100); */
-  }
-
-    .pd-BuyNow:hover{
- 
-
-   /*  background-color:rgba(50, 210, 210, 0) ;
-    color: rgb(0, 0, 0);
-    letter-spacing: .05rem; */
-  }
 
 .view-more-button{
   height: 3rem;
-
   display: flex;
   align-items: center;
   justify-content: center;
   width: 15rem;
   border-radius: 2rem;
   margin-top: 2rem;
-font-family: 'Outfit';
+font-family: 'Figtree';
 overflow: hidden;
-  transition: all .3s  ease;
-  border: 1px solid black;
+
+ 
 }
-.view-more-button:hover{
-border: 1px solid transparent;
-}
+
 
 
   
