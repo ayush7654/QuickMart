@@ -24,10 +24,10 @@ margin-bottom: 3rem;
   gap: 10px; /* spacing between boxes */
   height: 90vh; /* full viewport height */
   width: 100%;
-  padding-top: 15px;
+  padding-top: 10px;
   padding-bottom: 10px;
   box-sizing: border-box;
-  background-color: rgb(240,240,240);
+  background-color: #eee;
 
 
 }

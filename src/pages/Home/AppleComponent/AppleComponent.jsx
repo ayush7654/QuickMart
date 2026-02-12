@@ -3,7 +3,7 @@ import './AppleComponent.css'
 
 export default function CountdownProducts() {
   return (
-      <div id='home-product-div' className="Apple-container">
+      <div  className="Apple-container">
 
 
 

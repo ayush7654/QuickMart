@@ -12,13 +12,13 @@ const isAnimating = useRef(false);
 const {scrollY} = useScroll();
 const atTop = scrollY<100?true:false;
 
-console.log('scroll Y is' ,scrollY)
+
 
 const homeContent = [
-     { id: 0,   content:<>Discover the <span>hottest</span> brands. </> , info:'From rising labels to established favorites, discover the hottest brands shaping today’s market. Our selection is constantly updated so you never miss what’s new and in demand.'  },
-     { id: 1, content:<>Browse <span>millions</span> of products. </> ,info:'Browse millions of products carefully organized to help you find exactly what you’re looking for. With detailed listings and smart navigation, discovering the right product feels effortless.' },
-    { id: 2,content:<>Find the <span>best</span> prices. </>, info:'Compare products easily and discover competitive pricing across our entire collection. We help you find great value without compromising on quality, so you can shop smarter every time.' },
-    { id: 3,content:<>Stay ahead with <span>latest</span> trends. </> , info:'Discover the latest trends as they emerge, with new products and styles added regularly. We keep our collection fresh so you can stay ahead of what’s popular and relevant.'}
+     { id: 0,   content:<>Discover the <span>hottest</span> brands. </> , info:'From rising independent labels to established industry favorites, discover the hottest brands and visionary designers shaping today’s global market.'  },
+     { id: 1, content:<>Browse <span>millions</span> of products. </> ,info:'Browse millions of products carefully organized to help you find exactly what you’re looking for.' },
+    { id: 2,content:<>Find the <span>best</span> prices. </>, info:'Compare products easily and discover competitive pricing across our entire collection. ' },
+    { id: 3,content:<>Stay ahead with <span>latest</span> trends. </> , info:'Discover the latest trends as they emerge, with new products and styles added regularly.'}
    
   ];
 const handleNext = () => {
@@ -120,7 +120,7 @@ useEffect(() => {
       >
         {homeContent.map((item) => (
           <div key={item.id} className={`carousel-item `}>
-            <h2  style={{ transform: `translateY(-${activeIndex * 600}px)` }}>{item.content}</h2>
+            <div className='homeIntro-head'  style={{ transform: `translateY(-${activeIndex * 600}px)` }}>{item.content}</div>
             <p className={`${activeIndex===item.id?'':'blur-content'}`} style={{ transform: `translateY(-${activeIndex * 600}px)` }}>{item.info}</p>
           </div>
         ))}

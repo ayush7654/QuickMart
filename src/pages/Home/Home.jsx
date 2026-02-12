@@ -28,7 +28,7 @@ const isFirstRender = useRef(true); // track initial mount
  
       {/*  <ImgCarousel/>  */}
 
-       <HomeIntro/> 
+        <HomeIntro/> 
       <div className="Home-scroll-content">
       
      

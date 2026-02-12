@@ -65,9 +65,10 @@ overflow: hidden;/* This hides the other 3 elements */
   opacity: 1;
 }
 
-.carousel-item h2{
+.carousel-item .homeIntro-head{
     font-size: 4rem;
     font-family: Raleway;
+     font-family: 'Figtree';
     transition: transform 0.6s ease-in-out;
   
 }
@@ -75,12 +76,11 @@ overflow: hidden;/* This hides the other 3 elements */
 .carousel-item p{
     font-size: 1.3rem;
    transition: transform 0.8s ease-in-out, opacity 1s ease;
-   font-family: "Outfit";
-   font-weight: 300;
-   font-family: "Rethink Sans", sans-serif;
+      font-weight: 300;
+   font-family: 'Inter';
+   font-family: 'Figtree';
    font-family: 'Jost';
 
-    
 }
 
 .blur-content{
@@ -90,9 +90,9 @@ overflow: hidden;/* This hides the other 3 elements */
 
 
 .carousel-item span {
-  color: #ff4757; /* Highlight style for your <span> tags */
+ 
   color:blue;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .home-carousel-buttons{

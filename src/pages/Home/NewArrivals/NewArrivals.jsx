@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductCard from '../../../components/ProductCard'
 import ScrollButton from '../../../components/ScrollingButton/ScrollingButton'
+import HomeProduct from '../HomeProduct/HomeProduct'
 import './NewArrivals.css'
 
 
@@ -8,25 +9,61 @@ export default function NewArrivals() {
   return (
       <div id='home-product-div' className="newArrivals-home-Products-div">
         
-                  <div className='home-heading'>New Arrivals </div>
+                  <div className='home-heading'>New Arrivals
+                    <span className='view-collection-btn'>View Collection</span>
+                     </div>
                   <div className="home-Products-container" >
 
 
-                    <ProductCard
-                              classname='home-product'
-                              key={94}
-                              id={94}
-                              images= {['Home-products-img/ChanelPerfume.jpg']} /* https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/1.webp */
-                
-                              title="Modern Elegance Teal Armchair"
-                              price={149.99}
+                    <HomeProduct
+                             
+                              key={7}
+                              id={7}
+                              thumbnail='Home-products-img/ChanelPerfume.jpg' /* https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/1.webp */
+                              name="Coco Noir Eau De"
+                              price={129.99}
+                              brand='Chanel'
                               path={location.search}
                        />
-                                       <ProductCard
+
+                        <HomeProduct
+                             
+                              key={94}
+                              id={94}
+                              thumbnail='Home-products-img/SilverWatch.webp' /* https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/1.webp */
+                              name="Longines Master Collection"
+                              price={1499.99}
+                              brand='Longines'
+                              path={location.search}
+                       />
+
+                        <HomeProduct
+                             
+                              key={174}
+                              id={174}
+                              thumbnail='Home-products-img/BluePradaBag.jpg' /* https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/1.webp */
+                              name="Prada Women Bag"
+                              price={599.99}
+                              brand='Prada'
+                              path={location.search}
+                       />
+
+                         <HomeProduct
+                             
+                              key={101}
+                              id={101}
+                              thumbnail='Home-products-img/AirPod2.jpg' /* https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/1.webp */
+                              name="AirPods Max Silver"
+                              price={549.99}
+                              brand='Apple'
+                              path={location.search}
+                       />
+
+                {/*                        <ProductCard
               classname='home-product'
               key={160}
               id={160}
-              images= {['Home-products-img/SilverWatch.webp']}  /* https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/1.webp */
+              images= {['Home-products-img/SilverWatch.webp']} 
 
               title="Sleek Futuristic Electric Bicycle"
               price={599.99}
@@ -36,13 +73,13 @@ export default function NewArrivals() {
                   classname='home-product'
                   key={88}
                   id={88}
-                  images= {['Home-products-img/BluePradaBag.jpg']}  /* https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/1.webp */
+                  images= {['Home-products-img/BluePradaBag.jpg']}  
     
                   title="Chic Denim Espadrille Sandals"
                   price={39.99}
                   path={location.search}
                    
-                />
+                /> */}
 
                 
                 

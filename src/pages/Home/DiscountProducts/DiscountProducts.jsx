@@ -1,45 +1,66 @@
 import React from 'react'
 import './DiscountProduct.css'
 import ProductCard from '../../../components/ProductCard'
+import HomeProduct from '../HomeProduct/HomeProduct'
 export default function DiscountProducts() {
   return (
       <div id='home-product-div' className="discount-home-Products-div">
 
-                     <div className='home-heading'>Absolute Steals</div>
+                     <div className='home-heading'>Absolute Steals
+                       <span className='view-collection-btn'>View Collection</span>
+                     </div>
               <div className="home-Products-container" >
-             <ProductCard
-                  classname='home-product'
-                  key={80}
+
+        
+                                 <HomeProduct
+                                     
+                                      key={80}
                   id={80}
-                  images= {["Home-products-img/SamsungTablet2.webp"]} /* https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/1.webp */
-    
-                  title="Huawei Matebook X Pro"
-                  price={1399.99}
-                  path={location.search}
-                  discount={15}
-                  rating={0}
-                />
-                      <ProductCard
-                  classname='home-product'
+                                      thumbnail='Home-products-img/Tablet.jpg' /* https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/1.webp */
+                                      name="Samsung Galaxy Tab"
+                                      price={1399.99}
+                                      path={location.search}
+                                      discount={15}
+                                      brand='Samsung'
+                               />
+
+           
+                      <HomeProduct
+                 
                   key={155}
                   id={155}
-                  images= {["Home-products-img/DecorationSwing.jpg"]} /* https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/1.webp */
+                  thumbnail= "Home-products-img/WhiteSofa.jpg" 
     
-                  title="Pink-Tinted Sunglasses"
-                  price={24.99}
+                  name="Annibale Colombo Sofa"
+                  price={2499.99}
                   path={location.search}
                   discount={35}
+                    brand='Annibale'
                 />
-                  <ProductCard
-                              classname='home-product'
+                  <HomeProduct
+                           
                               key={98}
                               id={98}
-                              images= {['Home-products-img/AirJordan.jpg']} /* https://cdn.dummyjson.com/product-images/home-decoration/decoration-swing/1.webp */
+                              thumbnail= 'Home-products-img/AirJordan.jpg'
                 
-                              title="Decoration Swing"
+                              name="Decoration Swing"
                               price={59.99}
                               path={location.search}
                                  discount={40}
+                                   brand='Nike'
+                            />
+
+                    <HomeProduct
+                           
+                              key={98}
+                              id={98}
+                              thumbnail= 'Home-products-img/shirt.png'
+                
+                              name="Urban Chic Check Shirt"
+                              price={59.99}
+                              path={location.search}
+                                 discount={40}
+                                   brand='Urban Chic'
                             />
 
                
