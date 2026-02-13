@@ -189,14 +189,14 @@ useEffect(() => {
         ? 'transform 0.2s ease, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
         : 'transform 0.2s ease,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
       transform:isIdle 
- ? `translate(-50%, ${location.pathname=='/store'? '0%':'0%'}`   
+ ? `translate(-50%, ${location.pathname=='/store' || '/'? '-100%':'0%'}`   
     : 'translate(-50%, 0%)'
   
      
      
     }}>
  
- <ExtraHeader/>
+  <ExtraHeader/> 
 
 
         <div  className={`header-home ${isAtTop && cursorOff && headertp ?'headerAtTop':''}`}  /* REMOVE '!' */

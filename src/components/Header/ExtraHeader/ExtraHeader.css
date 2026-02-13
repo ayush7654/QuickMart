@@ -6,7 +6,8 @@
    display: grid;
    place-items: center;
     background-color: rgb(0, 0, 80);
-    color:white;
+    background-color: white;
+    color:rgb(0, 0, 0);
     font-family:'Figtree';
        font-family: "Questrial", sans-serif;
       position: relative;

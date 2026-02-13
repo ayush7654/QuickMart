@@ -2,6 +2,7 @@ import './ScrollingButton.css';
 
 function ScrollButton({ 
   text, 
+   textColor='black', 
   color = "rgb(0,100,255)", 
   theme = "buttonFilled",      // Default: Filled
   themeOnHover = "buttonOutline", // Default Hover: Outline
@@ -19,6 +20,7 @@ function ScrollButton({
       `}
       style={{
         '--brand-color': color,
+         '--filled-text-color':textColor, 
         ...style
       }}
     >

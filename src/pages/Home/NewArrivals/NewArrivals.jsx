@@ -59,42 +59,23 @@ export default function NewArrivals() {
                               path={location.search}
                        />
 
-                {/*                        <ProductCard
-              classname='home-product'
-              key={160}
-              id={160}
-              images= {['Home-products-img/SilverWatch.webp']} 
-
-              title="Sleek Futuristic Electric Bicycle"
-              price={599.99}
-              path={location.search}
-            />
-                           <ProductCard
-                  classname='home-product'
-                  key={88}
-                  id={88}
-                  images= {['Home-products-img/BluePradaBag.jpg']}  
-    
-                  title="Chic Denim Espadrille Sandals"
-                  price={39.99}
-                  path={location.search}
-                   
-                /> */}
+             
 
                 
                 
              
     
                  </div>
-                <div className='view-more-button'>
+           {/*      <div className='view-more-button'>
                               <ScrollButton
   text='View More'
   theme="buttonOutline"
    themeOnHover="buttonFilled"
   color="#000000ff"
+
  
 />
-                </div>
+                </div> */}
 
     
                  </div>

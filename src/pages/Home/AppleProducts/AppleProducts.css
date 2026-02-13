@@ -1,0 +1,28 @@
+.apple-Products{
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ border: 0px solid blue;
+ gap: 1rem;
+}
+
+.ap-head{
+  font-size: 2.5rem;
+  padding: 1rem 0rem;
+  font-family: 'Inter';
+  display: flex;
+  align-items: center;
+  gap:1rem;
+}
+
+.ap-head-img{
+    height: 2.5rem;
+    width: 2.5rem;
+    
+}
+
+.ap-head-img img{
+    width: 100%;
+    object-fit: contain;
+}

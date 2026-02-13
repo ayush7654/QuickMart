@@ -1,0 +1,18 @@
+{
+  version: 2,
+  mediaFileName: 'HomeIntroVid.mp4',
+  cutSegments: [
+    {
+      start: 0,
+      end: 7.311883520833334,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 42.167260473958336,
+      end: 47.43429521354167,
+      name: '',
+      selected: true,
+    },
+  ],
+}

@@ -15,7 +15,7 @@ const atTop = scrollY<100?true:false;
 
 
 const homeContent = [
-     { id: 0,   content:<>Discover the <span>hottest</span> brands. </> , info:'From rising independent labels to established industry favorites, discover the hottest brands and visionary designers shaping today’s global market.'  },
+     { id: 0,   content:<>Buy from the <span>hottest</span> brands. </> , info:'From rising independent labels to established industry favorites, buy from the hottest brands and visionary designers shaping today’s global market.'  },
      { id: 1, content:<>Browse <span>millions</span> of products. </> ,info:'Browse millions of products carefully organized to help you find exactly what you’re looking for.' },
     { id: 2,content:<>Find the <span>best</span> prices. </>, info:'Compare products easily and discover competitive pricing across our entire collection. ' },
     { id: 3,content:<>Stay ahead with <span>latest</span> trends. </> , info:'Discover the latest trends as they emerge, with new products and styles added regularly.'}
@@ -108,7 +108,7 @@ useEffect(() => {
           preload="metadata"
           poster="/poster.jpg"
         >
-          <source src="/AmiriSampleVid2.mp4" type="video/mp4" />
+          <source src="/HomeIntroAppleVid.mp4" type="video/mp4" />
         </video>
 
 

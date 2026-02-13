@@ -1,0 +1,24 @@
+{
+  version: 2,
+  mediaFileName: 'AppleWatchVid2.mp4',
+  cutSegments: [
+    {
+      start: 0,
+      end: 5.605860677083333,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 12.4669466796875,
+      end: 16.622595572916666,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 6.081140169270833,
+      end: 7.45823203125,
+      name: '',
+      selected: true,
+    },
+  ],
+}

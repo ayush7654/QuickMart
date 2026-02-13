@@ -21,21 +21,73 @@
 .testing-div{
     min-height: 100vh;
     display: flex;
-    
-    align-items: start;
+    flex-direction: column;
+    align-items:center;
     justify-content: center;
    margin-top: 20rem;
+   margin-bottom: 10rem;
     gap: 5rem;
   
     
 
 }
 
-.video-window{
-    width: 800px;
-    height: 500px;
-    border: 1px solid black;
+
+.macbook-wrapper{
+    width: 90%;
+    height: 600px;
+    border: 1px solid rgb(224, 224, 224);
+   padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+
 }
 
 
 
+.MacbookVid{
+ width: 60%;
+ height: 90%;
+ /* Or whatever size you want the parent to be */
+/*   height: 550px; */ /* Example height */
+}
+
+.macbook-info{
+ border: 0px solid rgb(185, 185, 185);
+ width: 30%;
+ height: 90%;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ font-family: 'Inter';
+ padding: 1rem;
+ border-radius: 10px;
+/*  background-color: #eee; */
+
+}
+
+.macbook-info h2{
+    font-size: 2.5rem;
+   
+}
+
+.macbook-info span{
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    color:rgb(130,130,130);
+    
+}
+.macbook-price{
+    font-size: 1rem;
+    font-weight: 500;
+    
+
+}
+
+.macbook-buy{
+    
+width: fit-content;
+    
+}

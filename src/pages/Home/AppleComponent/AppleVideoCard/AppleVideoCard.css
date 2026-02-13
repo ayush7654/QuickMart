@@ -1,0 +1,149 @@
+
+
+#video-window {
+ height: 650px;
+  overflow: hidden;
+  position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+  /* padding-left: 5rem; */
+}
+
+#video-window video {
+  width: 100%;
+  height: 100%;
+  
+  /* This is the magic line. It acts like 'background-size: cover' */
+  /* It fills the div without stretching the people/objects in the video */
+  object-fit: cover; 
+  
+  /* Ensures the video stays centered if the parent ratio changes */
+  object-position: top;
+}
+
+video {
+  transition: opacity 0.3s ease-in-out;
+  background-color: #000; /* Prevents white flash */
+}
+
+
+
+.apple-wrapper{
+    width: 85%;
+   height: 650px;
+    border: 1px solid rgb(224, 224, 224);
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+ 
+}
+
+.applePro-wrapper{
+    border: 0px solid red;
+    width: 100%;
+       position: relative;
+
+
+}
+
+.AppleProVid{
+    
+  /* height: 400px;  */
+}
+
+.AppleProInfo{
+    position: absolute;
+   overflow: hidden;
+    left:50%;
+    transform: translateX(-50%);
+     border: 1px solid rgb(255, 255, 255);
+    width: 80%;
+    bottom: 3rem;
+    color:white;
+    font-size: 1.1rem;
+    font-family: 'Inter';
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 1.5rem;
+    gap: 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05); /* Very faint white */
+  
+  /* 2. The Inset Shadow (The "Etched" Edge) */
+  /* Horizontal offset, Vertical offset, Blur radius, Spread, Color */
+  box-shadow: inset 0 0 15px 5px rgba(255, 255, 255, 0.3);
+  
+  /* 3. The "Frosted" Effect (Crucial for the premium look) */
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  
+  /* 4. Optional: A subtle outer border to define the shape */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+}
+
+/* The Sheen (Pseudo-element) */
+.AppleProInfo::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -150%; 
+  width: 100%;
+  height: 200%;
+  
+  /* The "Light Beam" Gradient */
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  
+  transform: rotate(30deg); /* Diagonal angle for the light */
+  pointer-events: none;      /* Ensures you can still click buttons underneath */
+}
+
+/* The Animation Trigger */
+/* When you hover over the whole card wrapper, the sheen in the info div moves */
+.applePro-wrapper:hover .AppleProInfo::after {
+  left: 150%;
+  transition: left 1s ease-in-out;
+}
+
+.AppleProInfo:hover{
+ backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.AppleProInfo h2{
+    font-size: 2.5rem;
+}
+
+.applePro-para{
+    width: 70%;
+    font-size: 1rem;
+    color: rgb(230, 230, 230);
+    line-height: 1.5rem;
+   
+}
+
+.applePro-price{
+    font-weight: 500;
+}
+
+.ApplePro-buy{
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.ApplePro-buy .apple-buy-btn{
+  width: fit-content;
+  
+}
+
