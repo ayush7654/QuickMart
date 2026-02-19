@@ -19,13 +19,14 @@ export default function Categories() {
      
       {id:2,img:'CategoriesImg/FC-Clothing5.jpg',name:'Clothing',capName:'CLOTHING',path1:'',path2:''},
        {id:3,img:'CategoriesImg/FC-Electronics4.jpg',name:'Tech',capName:'TECH',path1:'',path2:''},
-         {id:4,img:'CategoriesImg/FC-HomeDecor3.jpg',name:'Decor',capName:'DECOR',path1:'',path2:''},
-           {id:5,img:'CategoriesImg/FC-Watches4.jpg',name:'Watches',capName:'WATCHES',path1:'',path2:''},
+       {id:4,img:'CategoriesImg/FC-Footwear2.jpg',name:'Footwear',capName:'FOOTWEAR',path1:'',path2:''},
+     
+           {id:5,img:'CategoriesImg/FC-Watches5.jpg',name:'Watches',capName:'WATCHES',path1:'',path2:''},
               
         {id:6,img:'CategoriesImg/FC-Skincare2.jpg',name:'Skincare',capName:'SKINCARE',path1:'',path2:''},
-         {id:7,img:'CategoriesImg/FC-Footwear.jpg',name:'Footwear',capName:'FOOTWEAR',path1:'',path2:''},
-   {id:8,img:'CategoriesImg/FC-Sports3.jpg',name:'Sports',capName:'SPORTS',path1:'',path2:''},
-         {id:9,img:'CategoriesImg/FC-Essentials4.jpg',name:'Essentials',capName:'ESSENTIALS',path1:'',path2:''},
+             {id:7,img:'CategoriesImg/FC-HomeDecor3.jpg',name:'Decor',capName:'DECOR',path1:'',path2:''},
+   {id:8,img:'CategoriesImg/FC-Sports5.jpg',name:'Sports',capName:'SPORTS',path1:'',path2:''},
+         {id:9,img:'CategoriesImg/FC-Essentials5.jpg',name:'Essentials',capName:'ESSENTIALS',path1:'',path2:''},
 
    
   ]// placeholders for div cards
@@ -75,7 +76,7 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
       <div className="floor"></div>
      
       
-<div className="carousel-container">
+<div className="carousel-wrapper">
  
 
 <div className="carousel">
@@ -147,17 +148,7 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
 
 
    <div className='carousel-name'>
-           <BracketButton 
-  height="35px" 
-  width="230px" 
-  bgColor="transparent" 
-  color="#ffffffae" 
-  hoverTextColor="white"
-  textContent={item.capName} 
-   hoverHeight='45px'
-   fontSize='1.8rem'
-  
-/> 
+   {item.name}
 </div  >  
   
 

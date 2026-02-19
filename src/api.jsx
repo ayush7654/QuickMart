@@ -28,3 +28,17 @@ export  async function getFilteredItems(category){
        data.products
     )
 }
+
+
+export async function getProductById(id) {
+    const res = await fetch(`https://dummyjson.com/products/${id}`)
+    if (!res.ok) {
+        throw {
+            message: `Could not find product with ID: ${id}`,
+            statusText: res.statusText,
+            status: res.status
+        }
+    }
+    const data = await res.json()
+    return data // This returns the single product object
+}

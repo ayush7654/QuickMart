@@ -9,6 +9,7 @@ import {
 import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
 import { getItems, getFilteredItems } from "../../api";
 import ProductCard from "../../components/ProductCard";
+import StoreProductCard from "./StoreProductCard/StoreProductCard";
 import StoreCategory from "./StoreSidebar/StoreCategory/StoreCategory";
 import StoreFooter from "./StoreFooter/StoreFooter";
 import { SlidersHorizontal } from "lucide-react";
@@ -166,15 +167,10 @@ if (typeFilter && currentSort?.sort) {
 
 
   return items.map((product) => (
-    <ProductCard
-      classname="store-product"
-      key={product.id}
-      id={product.id}
-      images={product.images}
-      title={product.title}
-      price={product.price}
-      rating={product.rating}
-      path={location.search}
+    <StoreProductCard
+    key={product.id} 
+  product={product} 
+  path={location.search}
     />
   ));
 }, [FinalItems, currentSort, typeFilter, location.search, sortOrder,storeFilters]);

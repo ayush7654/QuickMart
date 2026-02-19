@@ -24,7 +24,7 @@ export default function ProductInfo({product}) {
        const firebase= useFirebase()
        const userInfo = firebase.isLoggedIn?firebase.currentUser.email:null
 
-      const {handleRemove,cartList} = useCartList();
+      const {handleRemove,updateDataBase,cartList} = useCartList();
    
     const handleIncrease = () => {
         setQuantity(prevQuantity => prevQuantity + 1);
@@ -36,7 +36,7 @@ export default function ProductInfo({product}) {
         }
     };
  
-    const updataDataBase=async()=>{
+ /*     const updateDataBase=async()=>{
 
         const productInfo = {
             ...product,
@@ -44,8 +44,8 @@ export default function ProductInfo({product}) {
         };
         console.log('this is productInfo',productInfo)
         await firebase.storeDataInFB("users",userInfo,"CartItems",product.title,productInfo)
-    }
-
+    } */
+ 
    
     function handleClick() {
         if (firebase.isLoggedIn){
@@ -56,7 +56,7 @@ export default function ProductInfo({product}) {
            console.log('the product was removed')
         } else {
             // If not added, add it to the database
-            updataDataBase();
+             updateDataBase(product, quantity);
         }
         // Toggle the state
         setAddedtoCart(prev => !prev);
@@ -77,12 +77,16 @@ useEffect(() => {
         
         // 3. Update the state
         setAddedtoCart(isAlreadyInCart);
+
+        updateDataBase(product,quantity)
+      
         
     } else {
         // 4. If the cart is empty, the item definitely isn't in it
         setAddedtoCart(false);
+      
     }
-}, [cartList, product.id]);
+}, [cartList, product.id,quantity]);
 
     const pdColorArr=[{id:0,colorName:'Brown',color:'rgba(110, 86, 86, 1)'},
       {id:1,colorName:'Grey',color:'rgba(143, 143, 143, 1)'},
@@ -168,7 +172,7 @@ useEffect(() => {
    <div id='pd-line-wrapper' className='pd-button-wrapper'>
     <div className='pd-quantity-wrapper'>
       <span className='pd-quantity-btn' onClick={handleDecrease}><FiMinus/></span>
-      <span className='pd-quantity'>{quantity}</span>
+      <span className='pd-quantity'>{product.quantity}</span>
       <span className='pd-quantity-btn' onClick={handleIncrease}><FiPlus/></span>
     </div>
 

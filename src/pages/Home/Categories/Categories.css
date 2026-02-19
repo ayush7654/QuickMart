@@ -2,6 +2,7 @@
 
 .Categories-div{
     margin-top: 4rem;
+    border: 0px solid red;
  
 }
 
@@ -35,9 +36,10 @@ background-size: cover; */
 
 
   }
-.carousel-container {
+.carousel-wrapper {
   
      position: absolute;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +61,8 @@ background-size: cover; */
       width: 100%;
   height:60vh;
   
- background-color: #ffffff;
+ background-color: #00164e;
+ background-color: white;
   background-image:
     linear-gradient(rgb(220,220,220) 1px, transparent 1px),
     linear-gradient(90deg, rgb(220,220,220) 1px, transparent 1px);
@@ -76,6 +79,7 @@ background-size: cover; */
   height:30vh;
 
  background-color: #ffffff;
+
   background-image:
     linear-gradient(rgb(220,220,220) 1px, transparent 1px),
     linear-gradient(90deg, rgb(220,220,220) 1px, transparent 1px);
@@ -122,11 +126,11 @@ background-size: cover; */
 .carousel-card {
   position: absolute;
 
-  width: 270px;
-  height: 375px;
+  width: 280px;
+  height: 430px;
 
   background-color: #f9f9f9;
-  border: 1px solid #aaa;
+  border: 0px solid #aaa;
   border-radius: 10px;
 
   display: flex;
@@ -147,7 +151,7 @@ background-size: cover; */
     opacity 0.6s ease,
     filter 1.2s ease;
 
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 00px 10px rgba(117, 117, 117, 0.671);
   
 }
 
@@ -167,7 +171,7 @@ background-size: cover; */
 }
 
 .carousel-card:hover::before {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.15);
 }
 
 /* ------------------------------------ */
@@ -230,46 +234,36 @@ background-size: cover; */
 
 
 .carousel-name{
+  width: 80%;
+  
     transition: all .3s ease;
-height: 100%;
-   border: 0px solid red;
+padding: 10px 1rem;
+
    text-align: center;
-    letter-spacing: .1rem;
-    font-weight:500;
-   
+  position: absolute;
+  bottom: 4rem;
+border-radius: 10px;
+    font-weight:400;
+
+   color:rgba(255, 255, 255, 0.8);
+  
   font-size: 2.5rem;
 display: flex;
 align-items: center;
-    font-family: 'Raleway';
-    
+justify-content: center;
 
-  
-}
-
-/* When the specific parent is hovered, trigger the button's internal styles */
-.carousel-name:hover .bracket-card:not(.is-inactive) {
-  height: var(--hover-height);
-  background-size: 100% 100%;
-}
-
-.carousel-name:hover .bracket-card:not(.is-inactive) .text-content {
-  color: var(--hover-text-color);
+    font-family: 'Figtree';
+overflow: hidden; 
+  left: 50%;
+  transform: translateX(-50%); /* Centers the absolute div */
+ 
 }
 
 .carousel-card:hover .carousel-name{
-
-   letter-spacing: .05rem;
-   color:white;
+  color: white;
 }
 
-.carousel-card:hover .animated-underline::after {
-  transform: scaleX(1);
 
-}
-
-.carousel-card .animated-underline{
-  margin-bottom: 10rem;
-}
 
 
 .carousel-name-sm{

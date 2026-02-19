@@ -4,7 +4,7 @@ import './TrendingComponent.css'
 export default function TrendingComponent() {
   return (
       <div className="trending-products-div">
-             <div className='home-heading'>Closet Update</div>
+             <div className='home-heading'>The Wardrobe Overhaul Series</div>
 
  <div className="trend-container">   
     <div id='trend-div' className="trend-div1">

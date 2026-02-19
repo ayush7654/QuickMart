@@ -56,25 +56,6 @@ function ProductCard({ classname, id, images, title, price, path,discount, ratin
     style={{ display: imageLoaded ? 'block' : 'none' }}
     onLoad={() => setImageLoaded(true)}
   /> 
-
-   <div style={{display:'none'}} className="bookmark-logo" onClick={handleClickBM}>
-       {productBookmarked ?<BsBookmarkFill className='bookmark-fill'  />: <BsBookmark className='bookmark-outline' strokeWidth={.1}  /> } 
-
-      </div>
-
-      <div className='card-tag'>
-    Expires In : 2d
-      </div>
-
-      <div className='discount-tag'>
-       {discount}% Off
-      </div>
-
-      <div className='new-tag'>New</div>
-
-      <div style={{display:'none'}} className='heart-div' onClick={handleClickWL}>
-       {productWishlisted? < FaHeart className='heart-fill' />:<FiHeart className='heart-outline'  strokeWidth={1}/>}
-      </div>
   </div>
 
    
@@ -83,7 +64,7 @@ function ProductCard({ classname, id, images, title, price, path,discount, ratin
          <div className="Store-Product-title-div"> <div className="Store-Product-title">{title}</div></div>
           <div className="price-div"> 
               <div className="product-price">${price}</div>
-              <div  className="discount-product-price">${(price*((100-discount)/100)).toFixed(2)}</div>        
+                     
                <div className='productCard-rating-div'>
                  <span>{rating.toFixed(1)}</span>
                      <div className="productCard-star-wrapper">
@@ -95,7 +76,7 @@ function ProductCard({ classname, id, images, title, price, path,discount, ratin
           </div>
         </div>
       </Link>
-      <div className='productcard-links-div'>
+{/*       <div className='productcard-links-div'>
   
 
 <IconButton
@@ -104,7 +85,7 @@ width='100%'
 text='Add to Cart'
 Icon= {HiShoppingCart}/>
 
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -15,20 +15,15 @@ export default function SideBarCart({cartToggled,setCartToggled, toggleOverlay})
 
 
       const cartElements=cartList? (cartList.map((product,index)=>(
-     <CartItem
-     key={index}
-     title={product.title}
-     images={product.images[0]}
-      price={product.price}
-      quantity={product.quantity}
-      shippingInformation={product.shippingInformation}
-      discount={product.discountPercentage}
-      returnPolicy={product.returnPolicy}
-      handleRemove={handleRemove}
-      updateDataBase={updateDataBase}/>
+  <CartItem
+  key={product.id} // Better to use product.id if you have it
+  product={product} 
+  handleRemove={handleRemove}
+  updateDataBase={updateDataBase}
+/>
           ))):<div>loading</div>;
 
-
+console.log('cartList is ', cartList)
   return (
     <div className='cart-sidebar' 
     style={{

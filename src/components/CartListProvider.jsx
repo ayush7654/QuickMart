@@ -57,17 +57,17 @@ export const CartListProvider = ({ children }) => {
 };
 
 const updateDataBase = useCallback(
-  async (productTitle, quantity) => {
+  async (product, quantity) => { // Accept the whole product object
     const productInfo = {
-      title: productTitle,
-      quantity
+      ...product,           // Spread all properties (id, price, images, etc.)
+      quantity: quantity    // Add/overwrite the quantity
     };
 
     await firebase.storeDataInFB(
       "users",
       userInfo,
       "CartItems",
-      productTitle,
+      product.title,        // Still use the title for the document name
       productInfo
     );
   },

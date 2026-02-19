@@ -4,8 +4,18 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 import { FiTrash2 } from "react-icons/fi";
 import { HiOutlineTrash } from "react-icons/hi";
 import { MdDeleteOutline } from "react-icons/md";
-export default function CartItem({index,images,title,price,quantity,shippingInformation,returnPolicy,discount,handleRemove,updateDataBase}) {
+export default function CartItem({product,handleRemove,updateDataBase}) {
 
+  const { 
+    id,
+    title, 
+    images, 
+    price, 
+    quantity, 
+    shippingInformation, 
+    returnPolicy, 
+    discountPercentage: discount // Alias discountPercentage to discount
+  } = product;
       const [imgLoaded, setImgLoaded] = useState(false);
 
       const[itemQuantity,setItemQuantity]= useState(quantity)
@@ -27,14 +37,14 @@ useEffect(() => {
 }, [itemQuantity, updateDataBase, title]);
 
   return (
-    <div key={index} className="Cart-item">
+    <div key={id} className="Cart-item">
 
           <div className="cart-product-img-div">
           
             
 
 
-            <img src={images} className="cart-product-img"
+            <img src={images[0]} className="cart-product-img"
                   />
             </div> 
 
@@ -45,7 +55,7 @@ useEffect(() => {
             <div id='' className="cart-product-title">{title}</div>
            
           
-           <div id='cart-info-item'>Color : {index%2===0?'Red':'Black'}</div>
+           <div id='cart-info-item'>Color :   </div>
          <div id='cart-info-item'>{returnPolicy}.</div>
             <div id='' className="cart-product-price-div">
                <span className='cart-item-price'> ${price}</span>

@@ -94,7 +94,7 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
 
    const headertp = ['/', '/store', '/cart'].includes(location.pathname);
 
-   console.log('header is ' , headertp)
+   
 
       // For scroll detection
       const lastScrollY = useRef(window.scrollY);
