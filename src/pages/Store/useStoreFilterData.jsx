@@ -16,7 +16,7 @@ export default function useStoreFilterData() {
 
 // Calculate count first
   const activeFiltersCount = useMemo(() => {
-    console.log('Calculating active count');
+
     return storeFilters.reduce((count, f) => (f.state ? count + 1 : count), 0);
   }, [storeFilters]);
 

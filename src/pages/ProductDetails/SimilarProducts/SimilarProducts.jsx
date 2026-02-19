@@ -15,10 +15,10 @@ export default function SimilarProducts({currentCategory,product}) {
               </div>
  <div className="Product-Details-SimilarProducts-list">
         
- {currentCategory ? currentCategory.products.slice(0,window.innerWidth>850?5:4).map(item => 
+ {currentCategory ? currentCategory.products.slice(0,window.innerWidth>850?5:4).map((item,index) => 
   item.id !== product.id && (
 
-    <div className='similar-product'>
+    <div key={index} className='similar-product'>
       <div className='similar-productImg-div'>
         <img src={item.images[0]} className='similar-productImg'/>
       </div>

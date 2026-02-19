@@ -15,7 +15,7 @@ const CreditArray =[{name:'Fully Authentic',img:'/PD-Img.png'},
 
   return (
     <div className='credits-div'>
-       {CreditArray.map(item=>  <div id='credit'>
+       {CreditArray.map((item,index)=>  <div key={index} id='credit'>
             <div id='credit-logo'> <img src={item.img}/></div>
             <div id='credit-text'>{item.name}</div>
         </div>)}

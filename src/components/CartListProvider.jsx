@@ -56,23 +56,24 @@ export const CartListProvider = ({ children }) => {
 
 };
 
-const updateDataBase = useCallback(
-  async (product, quantity) => { // Accept the whole product object
-    const productInfo = {
-      ...product,           // Spread all properties (id, price, images, etc.)
-      quantity: quantity    // Add/overwrite the quantity
-    };
+const updateDataBase = useCallback(async (product, quantity) => {
+  const productInfo = { ...product, quantity };
 
-    await firebase.storeDataInFB(
-      "users",
-      userInfo,
-      "CartItems",
-      product.title,        // Still use the title for the document name
-      productInfo
-    );
-  },
-  [firebase, userInfo]
-);
+  // 1. Update local state so Sidebar sees it IMMEDIATELY
+  setCartList(prev => {
+    const exists = prev.find(item => item.title === product.title);
+    if (exists) {
+      // Update existing item
+      return prev.map(item => item.title === product.title ? productInfo : item);
+    } else {
+      // Add new item to the array
+      return [...prev, productInfo];
+    }
+  });
+
+  // 2. Sync with Firebase
+  await firebase.storeDataInFB("users", userInfo, "CartItems", product.title, productInfo);
+}, [firebase, userInfo]);
 
 const calculateTotalCost = () => {
         const total = cartList.reduce((acc, item) => {

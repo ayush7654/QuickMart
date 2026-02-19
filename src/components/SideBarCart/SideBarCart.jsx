@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
 import './SideBarCart.css'
 import { X } from 'lucide-react';
@@ -7,7 +7,7 @@ import CartItem from './CartItem/CartItem';
 import ScrollButton from '../ScrollingButton/ScrollingButton';
 
 
-export default function SideBarCart({cartToggled,setCartToggled, toggleOverlay}) {
+export default function SideBarCart({cartToggled,setCartToggled,toggleOverlay}) {
 
 
 
@@ -23,7 +23,8 @@ export default function SideBarCart({cartToggled,setCartToggled, toggleOverlay})
 />
           ))):<div>loading</div>;
 
-console.log('cartList is ', cartList)
+
+
   return (
     <div className='cart-sidebar' 
     style={{
@@ -36,7 +37,7 @@ console.log('cartList is ', cartList)
             <div className='side-cart-head-content'>
                  <span className='side-cart-head'>YOUR CART</span>  
                  <span className='side-cart-cancel' onClick={()=>{setCartToggled(false),toggleOverlay(false)}}>
-                 <X size={24} strokeWidth={1.5}   />
+                 <X size={24} strokeWidth={1.5} />
                  </span>
             </div>  
         </div>

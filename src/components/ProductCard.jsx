@@ -76,16 +76,7 @@ function ProductCard({ classname, id, images, title, price, path,discount, ratin
           </div>
         </div>
       </Link>
-{/*       <div className='productcard-links-div'>
-  
 
-<IconButton
-height='3rem'
-width='100%'
-text='Add to Cart'
-Icon= {HiShoppingCart}/>
-
-      </div> */}
     </div>
   );
 }

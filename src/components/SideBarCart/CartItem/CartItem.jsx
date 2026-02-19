@@ -18,23 +18,25 @@ export default function CartItem({product,handleRemove,updateDataBase}) {
   } = product;
       const [imgLoaded, setImgLoaded] = useState(false);
 
-      const[itemQuantity,setItemQuantity]= useState(quantity)
+     /* const[itemQuantity,setItemQuantity]= useState(quantity)  */
 
-      const quantityIncrease=()=>{
-        setItemQuantity(prev=>prev+1)
+    const quantityIncrease = () => {
+    updateDataBase(product, product.quantity + 1);
+  };
 
-      }
+  const quantityDecrease = () => {
+    if (product.quantity > 1) {
+      updateDataBase(product, product.quantity - 1);
+    }
+  };
 
-    const quantityDecrease = () => {
-  setItemQuantity(prev => (prev > 1 ? prev - 1 : prev));
-  
-};
 
-useEffect(() => {
+
+/* useEffect(() => {
   if (itemQuantity !== quantity) {
-    updateDataBase(title, itemQuantity);
+    updateDataBase(product, itemQuantity);
   }
-}, [itemQuantity, updateDataBase, title]);
+}, [itemQuantity, updateDataBase,product]); */
 
   return (
     <div key={id} className="Cart-item">
@@ -65,17 +67,14 @@ useEffect(() => {
            <div className='cart-item-button-wrapper'>
               <div  className="cart-product-quantity">
                  <span className='cart-quantity-button' onClick={quantityDecrease}><FiMinus strokeWidth={1}/></span>
-                 <span className='cart-item-quantity' >{itemQuantity}</span> 
+                 <span className='cart-item-quantity' >{product.quantity}</span> 
                   <span className='cart-quantity-button' onClick={quantityIncrease}><FiPlus strokeWidth={1}/></span>
                   </div>
               <div onClick={()=>handleRemove(title)}><FiTrash2 className='remove-icon' strokeWidth={1.5}/></div>
            </div>
           
           
-        {/*   <div className="cart-btn">
-          <button  id='cartButton' className="cart-remove-btn" onClick={()=>handleRemove(title)}>Remove</button>
-                
-          </div> */}
+       
         
           </div>
           </div>

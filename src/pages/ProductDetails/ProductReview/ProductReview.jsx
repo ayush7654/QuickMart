@@ -36,7 +36,7 @@ export default function ProductReview() {
               
                
              {product?.reviews.map((review,index)=>
-             <div className={`reviews ${index < product.reviews?.length-1?' ':'end-review'}`} >
+             <div key={index} className={`reviews ${index < product.reviews?.length-1?' ':'end-review'}`} >
              <div className='user-img-wrapper'>
             
        

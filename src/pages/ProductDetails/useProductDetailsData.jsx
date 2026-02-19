@@ -18,7 +18,7 @@ const useProductDetailsData = (id) => {
                 const response = await fetch(`https://dummyjson.com/products/category/${product.category}`);
                 const data = await response.json();
                 setCurrentCategory(data);
-                console.log('currentCategory products', data);
+              
             } catch (error) {
                 console.error('Error fetching category products:', error);
             }

@@ -33,8 +33,8 @@ const dimensionString = width ? `${width} * ${height} * ${depth} ` : "N/A";
   return (
     <div className='additional-Info'>
       
-              {pdArray.map(item=>
-    <div className='ai-wrapper'>
+              {pdArray.map((item,index)=>
+    <div key={index} className='ai-wrapper'>
         <span className='ai-head'>{item.pdHead}</span>
          
         <span className='ai-info'>{item.pdDetail}</span>

@@ -4,6 +4,7 @@ import IconButton from '../../../components/IconButton/IconButton'
 import { HiShoppingCart,HiOutlineShoppingCart } from 'react-icons/hi';
 import ScrollButton from '../../../components/ScrollingButton/ScrollingButton';
 import { FaCartPlus } from "react-icons/fa";
+
 import { Link } from 'react-router-dom';
 export default function HomeProduct({images,thumbnail,name,price,tag,discount,brand,id,description}) {
 

@@ -17,8 +17,6 @@ export default function ProductDetails(){
     const {product,currentCategory} = useProductDetailsData(id)
  
 
-console.log(product)
-  console.log('current category' , currentCategory);
 
 
 

@@ -6,7 +6,7 @@ export default function FooterUpper() {
 
     const location = useLocation();
 
-    console.log('location is ,', location)
+
   return (
      <div className='footer-upper'/*  style={{  display: location.pathname === "/" || location.pathname === "/store"
     ? "none"
