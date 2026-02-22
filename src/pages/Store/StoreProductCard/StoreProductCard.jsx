@@ -23,7 +23,7 @@ function StoreProductCard({ product, path }) {
     const { id, images,thumbnail, title, price, rating = 0, discount } = product;
 
 
-    const {cartList} = useCartList()
+    const {cartList , updateDataBase } = useCartList()
 
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -103,7 +103,12 @@ console.log('cart list is',cartList)
   ))}
 </div>
 <div className={`sp-addToCart ${isItemInCart ? 'sp-added-btn' : ''}`}>
-        {isItemInCart ? <span className='sp-btn-content'><MdDoneAll size={18}/> Added To Cart</span> :<span className='sp-btn-content'><FaCartPlus/> Add To Cart</span> }
+        {isItemInCart ?
+         <span className='sp-btn-content'>
+          <MdDoneAll size={18}/>
+          Added To Cart
+          </span> :
+          <span className='sp-btn-content'><FaCartPlus/> Add To Cart</span> }
       </div>
         </div>
         <div className='sp-info-wrapper'>

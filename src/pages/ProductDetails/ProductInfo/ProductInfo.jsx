@@ -83,6 +83,8 @@ useEffect(() => {
         { id: 4, sizeLetter: 'XXL' },
     ]
 
+console.log('proudct is', product)
+
     return (
         <div className="product-info-pd">
             <span className='pd-brand-wrapper'>{product.brand}</span>

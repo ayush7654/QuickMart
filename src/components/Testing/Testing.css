@@ -33,61 +33,101 @@
 }
 
 
-.macbook-wrapper{
-    width: 90%;
-    height: 600px;
-    border: 1px solid rgb(224, 224, 224);
-   padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 10px;
+.sample-card-container {
+  position: relative;
+  width: 100%;
+  height:100%;
+  overflow: hidden;
+ 
+  background-color: #1a1a1a; /* Provides contrast during the fade */
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+ 
+}
 
+/* Image behavior */
+.sample-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s ease;
+  opacity: 1;
+}
+
+/* Overlay container */
+.sample-card-overlay {
+  position: absolute;
+  inset: 0; /* Shorthand for top/bottom/left/right: 0 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.5); /* Soft dark tint on hover */
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  pointer-events: none; /* Prevents overlay from blocking mouse events */
+}
+
+/* --- Hover States --- */
+
+.sample-card-container:hover .sample-card-image {
+  opacity: 0.3;
+  transform: scale(1.05); /* Slight zoom for extra polish */
+}
+
+.sample-card-container:hover .sample-card-overlay {
+  opacity: 1;
+}
+/* ... Keep the container, image, and overlay styles from before ... */
+
+.sample-fade-item {
+  color: #ffffff;
+  font-size: .85rem;
+     line-height: 1.1rem;
+  margin: 8px 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(15px);
+  /* Use a faster ease-out for a snappier feel */
+  transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1), 
+              transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.sample-card-container:hover .sample-fade-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered entry delays (When the CARD is hovered) */
+.sample-fade-item:nth-child(1) { transition-delay: 0.1s; }
+.sample-fade-item:nth-child(2) { transition-delay: 0.15s; }
+.sample-fade-item:nth-child(3) { transition-delay: 0.2s; }
+.sample-fade-item:nth-child(4) { transition-delay: 0.25s; }
+.sample-fade-item:nth-child(5) { transition-delay: 0.3s; } /* Reduced from 0.7s */
+
+.sample-action-btn {
+  margin-top: 15px;
+  padding: 8px 24px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  pointer-events: auto;
+  
+  /* CRITICAL: We only want the delay to apply to the FADE IN, 
+     not the background color change on hover. */
+  transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s ease, color 0.2s ease;
+  transition-delay: 0.3s, 0.3s, 0s, 0s; /* Delay for fade/transform, NO delay for colors */
+}
+
+.sample-action-btn:hover {
+  background: white !important;
+  color: black !important;
+  /* Ensure the button doesn't "wait" to change color when you hover it directly */
+  transition-delay: 0s !important; 
 }
 
 
-
-.MacbookVid{
- width: 60%;
- height: 90%;
- /* Or whatever size you want the parent to be */
-/*   height: 550px; */ /* Example height */
-}
-
-.macbook-info{
- border: 0px solid rgb(185, 185, 185);
- width: 30%;
- height: 90%;
- display: flex;
- flex-direction: column;
- justify-content: space-around;
- font-family: 'Inter';
- padding: 1rem;
- border-radius: 10px;
-/*  background-color: #eee; */
-
-}
-
-.macbook-info h2{
-    font-size: 2.5rem;
-   
-}
-
-.macbook-info span{
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-    color:rgb(130,130,130);
-    
-}
-.macbook-price{
-    font-size: 1rem;
-    font-weight: 500;
-    
-
-}
-
-.macbook-buy{
-    
-width: fit-content;
-    
-}

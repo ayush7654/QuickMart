@@ -414,7 +414,8 @@ font-family:'Figtree';
     bottom: 1rem;
     left: 50%;
     transform: translate(-50%, 5px); 
-    background-color: rgb(0,100,255);
+   background-color: rgb(0,100,255);
+
  
     
     color:white;

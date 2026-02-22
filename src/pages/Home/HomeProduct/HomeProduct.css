@@ -32,248 +32,193 @@
 }
 
 
-   .hp-tag-wrapper{
-    width: 90%;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-   padding-top: 15px;
-  
-   }
-
-   .hp-brand{
- font-size: .9rem;
- color: rgb(50,50,50);
-/* color:rgb(185,185,185);
-color: rgb(230, 230, 230); */
-}
-
-#hp-tag{
- /* position: absolute;
- top: 5px;
- right:5px; */
- text-transform: uppercase;
-font-family:sans-serif;
-font-family: 'Roboto';
-  
- font-size: .85rem;
-border-radius: 5px;
-  padding: 3px 1.2rem;
-   }
-
-   .newArrivals-home-Products-div  .hp-tag-new{
-   border: 1px solid rgb(0, 0, 255);
-    color:blue;
-   }
+.test-card {
  
-
- .newArrivals-home-Products-div .hp-tag-discount{
-    display: none;
-   }
-
-   .discount-home-Products-div .hp-tag-new{
-    display: none;
-   }
-
-   .discount-home-Products-div .hp-tag-discount{
-     border: 1px solid rgb(255, 35, 35);
-    color:rgb(255, 35, 35);
-   }
-
-.hp-content-wrapper{
-    width: 100%;
-     aspect-ratio: 1 / 1;
-    display: grid;
-    place-items: center;
-    border: 0px solid yellow;
-      cursor: pointer;
-    
-}
-
-
-.hp-img-wrapper {
- border: 0px solid rgb(201, 201, 201);
-display:flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
- width: 90%;
- aspect-ratio: 1 / 1;
- border-radius: 10px;
- overflow: hidden;
-
- 
-
-  
-
-}
-
-.hp-flipper {
   position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-style: preserve-3d;
-  border-radius: 10px;
-  background-color: transparent;
+  width: 320px;
+  height: 450px;
+/*   border-radius: 35px;  *//* Large smooth corners like reference */
+  /* background-image: url('/Home-products-img/airmax-test.jpg'); */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Pushes content to the bottom */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
 
+/* The Glass Effect Layer */
+.card-glass-content {
+  width: 100%;
+  height: 50%;
+  padding: 25px;
+  color: white;
+
+  /* 1. The Blur Layer */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* 2. The Tint */
+  background: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 0) 0%,   /* Fully transparent at the top edge */
+    rgba(0, 0, 0, 0.1) 15%, /* Subtle tint starts */
+    rgba(0, 0, 0, 0.2) 100% /* Solid glass look at the bottom */
+  );
+
+  /* 3. THE KEY: The Seamless Mask 
+     This tells the browser: "Only show the blur where the gradient is black"
+  */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,      /* No blur at the very top of this div */
+    rgba(0, 0, 0, 0.5) 15%,   /* Partial blur transition zone */
+    rgba(0, 0, 0, 1) 30%      /* Full blur from here to the bottom */
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 15%,
+    rgba(0, 0, 0, 1) 30%
+  );
+
+  /* 4. Overlap Fix: 
+     Position this div slightly higher so the 'fade' starts 
+     while the background is still visible behind it. 
+  */
+  margin-top: -60px; 
+}
+
+.card-content{
+  position: absolute;
+  padding: 20px;
+  color:white;
+   font-family: 'Figtree';
+   border: 0px solid red;
+  display: flex;
+  flex-direction: column;
+  gap:15px;
+  width: 100%;
+ background:linear-gradient(to bottom,transparent, rgba(0, 0, 0, 0.4));
+}
+
+/* Badge in top right */
+.card-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  color: white;
+}
+
+.brand-tag{
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  color: white;
+}
+
+
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ /*  margin-bottom: 12px; */
+}
+
+.product-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
  
 }
 
-/* Trigger the flip on hover */
-.hp-img-wrapper:hover .hp-flipper {
-  transform: rotateY(180deg);
+.price-tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 15px;
+  border-radius: 15px;
+  font-weight: 400;
+  font-size: .9rem;
 }
 
-/* Common styles for Front and Back */
-.hp-front, .hp-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; /* Important: hides the other side */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
+.product-desc {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  opacity: 0.7;
+display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+ /* 1. Hide the overflow and set the base height */
+  overflow: hidden;
+  max-height: 1.4rem; /* Exactly 1 line */
+  
+  /* 2. Transition everything with a custom Bezier for "snappy" feel */
+  transition: max-height .5s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.6s ease;
+
+  /* 3. The Mask: This creates a subtle fade at the end of the 1st line 
+     so it doesn't just cut off sharply. */
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   
 }
 
-/* The front side (Image) */
-.hp-front {
-  z-index: 2;
-  transform: rotateY(0deg);
-}
-
-.hp-front img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
- 
-  border: 0px solid rgb(200, 200, 200);
-
-}
-
-/* The back side (Description) */
-.hp-back {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-position: relative;
-  transform: rotateY(180deg);
-  background: rgba(255, 255, 255, 0.05); /* Matching your glass style */
-  backdrop-filter: blur(10px);
-  background-color: white;
-  background-color: rgb(235, 235, 235);
-  color: rgb(25, 25, 25);
-  padding: 20px;
-  text-align: center;
-  font-size: 0.85rem;
-  border: 0px solid rgba(255, 255, 255, 0.1);
-}
-
-.hp-description{
-    line-height: 1.1rem;
-
-}
-
-.hp-back-btn{
-background-color: rgb(0, 0, 0);
-color:rgb(255, 255, 255);
-
-padding: 10px;
-border-radius: 10px;
-overflow: hidden;
-transition: all .3s ease;
-position: absolute;
-bottom: 1rem;
-}
-
-.hp-back-btn:hover{
-transform: scale(.95);
-}
-
-
-
-.hp-info-wrapper{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-   
-    gap: 8px;
-    font-size: .95rem;
-   
-    border: 0px solid yellow;
- 
-}
-
-.hp-name{
-    font-weight: 500;
-     color:white;
-     color:black;
-}
-
-
-
-.hp-price{
- font-weight: 400;
- font-size: .9rem;
-  color: rgb(100,100,100);
-/* color:rgb(224, 224, 224); */
-
-}
-
-.hp-add-btn{
-    position: absolute;
-    bottom: 5px;
-    right:5px;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    color:rgb(150,150,150);
-    display: grid;
-    place-items: center;
-    font-size: 2rem;
-    font-weight: 300;
-    
-}
-
-.hp-add-btn:hover{
-    color:black;
-}
-
-
-  .hp-Add-button{
-
-display: flex;
-    justify-content:center;
-    align-items: center;
-    height:2.5rem;
-
-   width: 100%;
-    z-index: 0;
-      transform: translateY(3rem);
-  transition: all .5s ease;
-  opacity: 0;
-  border: 0px solid red;
-    border-radius: 100px;
-  overflow: hidden;
- cursor: pointer;
- 
- 
-  }
-
- .home-ProductCard:hover .hp-Add-button{
-transform: translateY(-5px);
+.test-card:hover .product-desc {
   opacity: 1;
-   }
+  /* 4. Expand to exactly 3 lines (1.4rem * 3) */
+  max-height: 4.2rem; 
+  
+  /* 5. Remove the mask on hover so all 3 lines are clear */
+  mask-image: linear-gradient(to bottom, black 100%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 100%, black 100%);
+}
 
-   .hp-cart-icon{
-     color:rgb(140, 140, 140);
-   }
 
-   .hp-cart-icon:hover{
-    color:rgb(60, 60, 60);
-   }
+.tag-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  /* margin-bottom: 15px; */
+}
+
+.info-tag {
+   
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+
+
+.add-to-cart-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  background: white;
+  color: black;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-family: 'Figtree';
+
+}
+
+.hp-addCart{
+  font-size: .9rem;
+}
+
 

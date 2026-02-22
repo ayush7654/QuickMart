@@ -4,51 +4,73 @@ import IconButton from '../../../components/IconButton/IconButton'
 import { HiShoppingCart,HiOutlineShoppingCart } from 'react-icons/hi';
 import ScrollButton from '../../../components/ScrollingButton/ScrollingButton';
 import { FaCartPlus } from "react-icons/fa";
+import { useCartList } from '../../../components/CartListProvider';
 
 import { Link } from 'react-router-dom';
-export default function HomeProduct({images,thumbnail,name,price,tag,discount,brand,id,description}) {
+export default function HomeProduct({ product, path }) {
+
+  const { 
+    id, 
+    thumbnail, 
+    name, 
+    price, 
+    brand, 
+    images, 
+    description, 
+    discount 
+  } = product;
+
+  
 
 
 console.log(images)
   return (
     <div className='home-ProductCard'>
-        <div className='hp-tag-wrapper'>
-           <span className='hp-brand'>{brand}</span>
-             <span id='hp-tag' className='hp-tag-new'>New</span>
-            <span id='hp-tag' className='hp-tag-discount'>-{discount}%</span>
-        </div>
+       <div className="test-card" style={{backgroundImage:`url(${thumbnail})`}}>
+    
+      <div className="card-badge">{discount?discount + '% Off':'New'}</div>
 
-        <Link to={`/store/${id}`} className='hp-content-wrapper'>
-             <div className='hp-img-wrapper'>
-         
-          <div className='hp-flipper'>
-    {/* FRONT SIDE */}
-    <div className='hp-front'>
-      <img src={thumbnail} alt={name} />
-    </div>
+        <span className="brand-tag">{brand}</span>
 
-    {/* BACK SIDE */}
-    <div className='hp-back'>
-      <p className='hp-description'>{description}</p>
-      <span className='hp-back-btn'>View Details</span>
-    </div>
-  </div>
+     
+      <div className="card-glass-content">
+       
+      </div>
+
+      <div className="card-content">
+ <div className="card-header">
+          <h2 className="product-title">{name}</h2>
           
         </div>
-        </Link>
+
+         <div className="product-desc">
+          {description}
+        </div> 
+
+        <div className="tag-row">
+        {/*  */}
+      
+          <span className="price-tag">${price}</span>
+      
+          <span className="info-tag">9 left</span>
+        </div>
+
+   {/*      <button className="add-to-cart-btn">Add To Cart</button> */}
+        <Link to={`/store/${id}`} className='hp-addCart'>
+          <ScrollButton
+          text='View Details'
+      
+          theme='buttonOutline'
+          themeOnHover='buttonFilled'
         
-       
-        <div className='hp-info-wrapper'>
-            <span className='hp-name'>{name} {id}</span>
-           {/*  <span className='hp-brand'>{brand}</span> */}
-            <span className='hp-price'>From ${price}</span>
-             <div className='hp-Add-button'>
-    
-      <FaCartPlus size={22} className='hp-cart-icon'/> 
- 
-        </div>
-        </div>
+          />
+        </Link>
+      </div>
+    </div>
        
     </div>
   )
 }
+
+
+
