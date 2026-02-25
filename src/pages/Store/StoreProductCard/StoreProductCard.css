@@ -307,26 +307,53 @@ height: 1.4rem;
 .store-ProductCard{
     width: 100%;
     border: 0px solid red;
+    position: relative;
     
    
 
 }
 
+.sp-brand-tag{
+position: absolute;
+top:10px;
+left:10px;
+z-index: 1;
+font-size: .8rem;
+font-family: 'Figtree';
+ background-color: rgb(235,235,235); 
+color:rgb(0, 0, 0);
+/* border: 1px solid black; */
+font-weight: 500;
+padding: 4px 10px;
+border-radius: 10px;
+opacity: 1;
+transition: opacity .4s ease;
+text-transform: capitalize;
+}
+
+.store-ProductCard:hover .sp-brand-tag{
+  opacity: 0;
+}
 
 .sp-img-wrapper{
     width: 100%;
     aspect-ratio:1/1;
-    background-color: rgb(235, 235, 235);
+    border: 1px solid rgb(230,230,230);
+    /* background-color: rgb(240,240,240); */ 
     position: relative;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
 }
 
 .sp-img-wrapper img{
-    width: 100%;
+    width: 80%;
 }
 
 .sp-info-wrapper{
 display: flex;
 flex-direction: column;
+
 padding:1rem 0rem;
 gap:10px;
 font-family:'Figtree';
@@ -410,18 +437,18 @@ font-family:'Figtree';
 
 .sp-addToCart{
     width: 90%;
+    border-radius: 100px;
     position: absolute;
     bottom: 1rem;
     left: 50%;
     transform: translate(-50%, 5px); 
    background-color: rgb(0,100,255);
-
- 
-    
     color:white;
     padding:10px;
     text-align: center;
     font-family: 'Figtree';
+    font-weight: 500;
+    font-size: 1rem;
     opacity: 0;
        transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -431,9 +458,15 @@ font-family:'Figtree';
 }
 
 .sp-added-btn{
-    background-color: rgb(255, 255, 255);
-    color:black;
-    font-weight: 600;
+  /*   background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 255, 0.644); */
+    background-color: transparent;
+    border: 2px solid rgb(0,100,250);
+    background-color:rgba(0, 100, 250, 0.075);
+
+    color:rgb(255, 255, 255);
+    color:rgb(0,100,250);
+    font-weight: 500;
     opacity: 1;
       transform: translate(-50%, 0px); 
 }
@@ -449,7 +482,7 @@ font-family:'Figtree';
  display: flex;
  justify-content: start;
  font-weight: 400;
- font-size: 1.1rem;
+ font-size: 1rem;
 }
 
 .sp-info-line2{

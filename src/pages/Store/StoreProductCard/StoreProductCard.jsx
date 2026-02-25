@@ -84,7 +84,7 @@ console.log('cart list is',cartList)
     onMouseEnter={()=>setCursorOnHover(true)}
     onMouseLeave={()=>setCursorOnHover(false)}>
      
-
+ <div className='sp-brand-tag'>{product.brand?product.brand:product.category}</div>
 
         <div className='sp-img-wrapper'>
             <img src={images[SPImgId]}/>
@@ -105,10 +105,11 @@ console.log('cart list is',cartList)
 <div className={`sp-addToCart ${isItemInCart ? 'sp-added-btn' : ''}`}>
         {isItemInCart ?
          <span className='sp-btn-content'>
+          In Cart
           <MdDoneAll size={18}/>
-          Added To Cart
+          
           </span> :
-          <span className='sp-btn-content'><FaCartPlus/> Add To Cart</span> }
+          <span className='sp-btn-content'>Add To Cart <FaCartPlus/></span> }
       </div>
         </div>
         <div className='sp-info-wrapper'>

@@ -19,6 +19,7 @@ import StoreSorting from "./StoreSorting/StoreSorting";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import useStoreFilterData from "./useStoreFilterData";
 import StoreFilter from "./StoreSidebar/StoreFilter/StoreFilter";
+import StoreBanner from "./StoreBanner/StoreBanner";
 import "./Store.css";
 
 export default function Store() {
@@ -204,13 +205,13 @@ console.log('final items are ' , FinalItems)
       <div style={{display:storeOverlayActive ?'flex':'none'}} className="storePage-overlay"></div>
 
     
+ <StoreBanner/>
 
 
-
-   <PageHeader
+ {/*   <PageHeader
    bgImage='/HomeImg.jpg'
    pageHeadText={'The Vault'}
-   pageHeadPara={'The Vault is a carefully guarded collection of premium products, chosen for those who value quality over quantity. Each item earns its place — nothing more, nothing less.'}/>
+   pageHeadPara={'The Vault is a carefully guarded collection of premium products, chosen for those who value quality over quantity. Each item earns its place — nothing more, nothing less.'}/> */}
    
  
  <aside className="store-sidebar"  style={{
@@ -275,13 +276,20 @@ console.log('final items are ' , FinalItems)
 
       
        <div className="store-page-heading-wrapper">
+
+       
+
+        {/* <div className="store-head-images">
+         <div className="store-head-img-wrapper"><img src='/store-img2.jpg'/></div>
+         <div className="store-head-img-wrapper"><img src='/store-img11.jpg'/></div>
+         <div className="store-head-img-wrapper"><img src='/store-img6.jpg'/></div>
+  
+             
+        </div> */}
+   {/*    <div className="store-page-main-head"> Shop All Products</div> */}
           <div className="store-page-heading">
             <div className="store-all-link">Product Catelog</div>
-
-        
-            
                  
-                  
                     <div className='product-count-div'>
     Showing <span>{productElements.length} </span>products
     </div>

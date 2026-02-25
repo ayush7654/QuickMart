@@ -47,7 +47,8 @@ color:rgb(235, 235, 235);
  background-color: transparent;
      z-index: 999;
    background-color: white;
-     border-bottom: 1px solid rgb(220, 220, 220);
+     border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+
 
 
   }
@@ -60,6 +61,7 @@ background-color: transparent;
   background-color: rgba(0, 0, 0, 0);
     backdrop-filter: blur(00px);
   -webkit-backdrop-filter: blur(00px);
+  
    
   }
 
@@ -98,6 +100,7 @@ background-color: transparent;
        position: relative;
        width: 90%;
        
+       
   }
 
   .site-name-div{
@@ -126,7 +129,7 @@ background-color: transparent;
 
   .site-name{
   
-  font-size: 2.2rem;
+  font-size: 2.5rem;
     letter-spacing: .2rem;
     z-index: 999;
 font-weight: 500;

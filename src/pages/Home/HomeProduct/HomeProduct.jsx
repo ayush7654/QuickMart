@@ -40,7 +40,7 @@ console.log(images)
       <div className="card-content">
  <div className="card-header">
           <h2 className="product-title">{name}</h2>
-          
+           <span className="price-tag">${price}</span>
         </div>
 
          <div className="product-desc">
@@ -50,18 +50,18 @@ console.log(images)
         <div className="tag-row">
         {/*  */}
       
-          <span className="price-tag">${price}</span>
+         
       
-          <span className="info-tag">9 left</span>
+         {/*  <span className="info-tag">9 left</span> */}
         </div>
 
    {/*      <button className="add-to-cart-btn">Add To Cart</button> */}
-        <Link to={`/store/${id}`} className='hp-addCart'>
+        <Link to={`/store/${id}`} className='hp-addCart-wrapper'>
           <ScrollButton
+          className='hp-addCart'
           text='View Details'
-      
-          theme='buttonOutline'
-          themeOnHover='buttonFilled'
+          theme='buttonFilled'
+          themeOnHover='buttonOutline'
         
           />
         </Link>

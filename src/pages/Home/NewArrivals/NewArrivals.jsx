@@ -20,7 +20,7 @@ export default function NewArrivals() {
     },
     13: { 
       brand: 'Annibale', 
-      name: "Annibale Colombo Sofa", 
+      name: "African Cherry Table", 
       thumbnail: "Home-products-img/hp-table.jpg" 
     },
       88: { brand: 'Nike', name: 'Nike Air Jordan 1', thumbnail: 'Home-products-img/hp-AJ1.jpg' }

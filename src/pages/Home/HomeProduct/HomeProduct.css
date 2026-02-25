@@ -51,13 +51,13 @@
 /* The Glass Effect Layer */
 .card-glass-content {
   width: 100%;
-  height: 50%;
+  height: 40%;
   padding: 25px;
   color: white;
 
   /* 1. The Blur Layer */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   
   /* 2. The Tint */
   background: linear-gradient(
@@ -186,7 +186,7 @@ display: -webkit-box;
 
 
 .tag-row {
-  display: flex;
+  display: none;
   justify-content: space-between;
   gap: 10px;
   /* margin-bottom: 15px; */
@@ -203,22 +203,25 @@ display: -webkit-box;
 
 
 .add-to-cart-btn {
-  width: 100%;
+  width: 60%;
   padding: 10px;
   border-radius: 30px;
   border: none;
-  background: white;
-  color: black;
+  border: 1px solid red;
   font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s ease;
   font-family: 'Figtree';
+  
 
 }
 
-.hp-addCart{
+.hp-addCart-wrapper{
+  width: 100%;
   font-size: .9rem;
+ margin: 0 auto;
+
 }
 
 

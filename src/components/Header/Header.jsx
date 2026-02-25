@@ -92,7 +92,7 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
 
     const [isAtTop, setIsAtTop] = useState(true);
 
-   const headertp = ['/', '/store', '/cart'].includes(location.pathname);
+   const headertp = ['/'].includes(location.pathname);
 
    
 
@@ -208,7 +208,7 @@ useEffect(() => {
         : 'transform 0.5s ease-out,  background-color 0.4s ease, box-shadow 1s ease',
         // When showing (moving down/active)
 
-        transform: isAtTop? 'translateY(0)':'translateY(-2.5rem)'
+        transform: isAtTop? 'translateY(0)':'translateY(-2rem)'
         }}>
           <div className="header-home-upper">
             <div className="site-logo-div" style={{scale:isAtTop?'1':'.5' , opacity:isAtTop?'1':'.4'}}> 

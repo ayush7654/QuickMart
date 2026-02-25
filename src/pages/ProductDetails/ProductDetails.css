@@ -14,15 +14,16 @@
 
 .pd-navBar{
   color:rgb(120, 120, 120);
-  height: 10rem;
+  height: 12rem;
   width: 85%;
   display: flex;
   justify-content: start;
   align-items: end;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   font-family: 'Figtree';
   font-size: .9rem;
     font-weight: 500;
+    border: 0px solid red;
 }
 
 .pd-navBar span{
