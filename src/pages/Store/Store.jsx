@@ -20,6 +20,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import useStoreFilterData from "./useStoreFilterData";
 import StoreFilter from "./StoreSidebar/StoreFilter/StoreFilter";
 import StoreBanner from "./StoreBanner/StoreBanner";
+import FilterSection from "./FilterSection/FilterSection";
 import "./Store.css";
 
 export default function Store() {
@@ -287,13 +288,13 @@ console.log('final items are ' , FinalItems)
              
         </div> */}
    {/*    <div className="store-page-main-head"> Shop All Products</div> */}
-          <div className="store-page-heading">
+          {/* <div className="store-page-heading">
             <div className="store-all-link">Product Catelog</div>
                  
                     <div className='product-count-div'>
     Showing <span>{productElements.length} </span>products
     </div>
-              </div>
+              </div> */}
             </div>
 
     
@@ -314,11 +315,23 @@ console.log('final items are ' , FinalItems)
 
         <main className="store-content">
        
-
+     <div className="side-filter">
+              <FilterSection/>
+            </div>
 
           <div className="productList-wrapper" style={{ position: "relative" }}>
+
+       <div className="store-page-heading">
+            <div className="store-all-link">Product Catelog</div>
+                 
+                    <div className='product-count-div'>
+    Showing <span>{productElements.length} </span>products
+    </div>
+              </div>
             
-            <div className="productList">{productElements}</div>
+            <div className="productList">
+              
+              {productElements}</div>
           </div>
 
          

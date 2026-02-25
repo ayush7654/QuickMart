@@ -1,24 +1,26 @@
-import { useEffect, useRef, useState } from "react";
-import "./Testing.css";
+import React from 'react'
 import { Check, CheckSquare } from 'lucide-react';
-import useStoreFilterData from "../../pages/Store/useStoreFilterData";
-import PriceFilter from "../../pages/Store/FilterSection/PriceFilter/PriceFilter";
-export default function Testing() {
+import useStoreFilterData from '../useStoreFilterData';
+import PriceFilter from './PriceFilter/PriceFilter';
+import './FilterSection.css'
 
-const {storeFilters} = useStoreFilterData();
 
-const storeColors = [
-  {name:'Black', color:'rgba(118, 118, 118, 1)'},
-  {name:'Gtey', color:'rgb(0,0,0)'},
-  {name:'Brown', color:'rgba(62, 15, 15, 1)'},
-  {name:'Green', color:'rgba(15, 55, 42, 1)'},
-  {name:'Copper', color:'rgba(66, 48, 24, 1)'},
-] 
+
+export default function FilterSection() {
+    
+    const {storeFilters} = useStoreFilterData();
+    
+    const storeColors = [
+      {name:'Black', color:'rgba(118, 118, 118, 1)'},
+      {name:'Gtey', color:'rgb(0,0,0)'},
+      {name:'Brown', color:'rgba(62, 15, 15, 1)'},
+      {name:'Green', color:'rgba(15, 55, 42, 1)'},
+      {name:'Copper', color:'rgba(66, 48, 24, 1)'},
+    ] 
 
   return (
-    <div className="testing-div">
-
-<div className="side-filter">
+    
+<div className="store-side-filter">
  <h2>Filter Products</h2>
 
  <div className="filter-section">
@@ -50,10 +52,5 @@ const storeColors = [
 </div>
 </div>
     
-
-
-
-
-</div>
-)
+  )
 }

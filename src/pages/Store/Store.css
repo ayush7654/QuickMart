@@ -11,6 +11,7 @@
  display: flex;
   flex-direction: column;
   align-items: center;
+  
   width: 100%;
   background-color: rgb(255, 255, 255);
   user-select: none;
@@ -41,6 +42,7 @@
 
   width: 100%;
   z-index: 9;
+
 }
 
 
@@ -55,7 +57,8 @@
 .store-layout {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  
     width: 100%;
  position: relative;
   gap: 0rem;
@@ -135,7 +138,7 @@ margin: 2rem 0rem;
   gap:1rem;
   color: rgb(20,20,20);
   font-family: 'Figtree';
-    width: 90%;
+    width: 100%;
  font-size: 1.5rem;
 
 
@@ -199,12 +202,12 @@ box-shadow: 0 10px 20px rgba(50,50,50, 0.2);
 .store-content {
   flex: 1;
   
-   width: 100%;
+   width: 90%;
    min-height: 100vh;
    background-color: rgb(255, 255, 255);
    display: flex;
-   justify-content: center;
-   border: 0px solid yellow;
+   justify-content: space-between;
+   border: 1px solid yellow;
   
    
 
@@ -232,22 +235,30 @@ box-shadow: 0 10px 20px rgba(50,50,50, 0.2);
 .productList-wrapper {
   position: relative;
   border: 0px solid red;
-  width: 90%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+ 
+  
 }
 
-
+.side-filter{
+  border: 1px solid rgb(230,230,230);
+  width: 22%;
+  border-radius: 10px;
+}
 
 
 .productList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4rem 1rem; 
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
     justify-items: center;
     
      margin-top: 0rem;
-     border: 0px solid blue;
+     border: 1px solid blue;
      
    
 }
