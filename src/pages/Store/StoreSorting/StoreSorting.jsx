@@ -7,11 +7,28 @@ import { MdFilterList } from "react-icons/md";
 import { MdStar, MdStarBorder } from 'react-icons/md';
 import { MdAttachMoney, MdPercent } from "react-icons/md";
 import { ArrowDownUp, ArrowLeftRight, Repeat2 ,ListFilter} from 'lucide-react';
+import { List, AlignLeft, Menu } from 'lucide-react';
+import { HiOutlineListBullet } from "react-icons/hi2"; // Heroicons (Clean/Modern)
+import { IoListOutline } from "react-icons/io5";       // Ionicons (Thin/Sharp)
+import { CiMenuKebab } from "react-icons/ci";
+import { HiRectangleGroup } from "react-icons/hi2";
+import { ArrowUpDown } from "lucide-react";
+import { LayoutPanelLeft } from 'lucide-react';
+import { ArrowsUpFromLine } from 'lucide-react';
+import { LayoutGrid } from 'lucide-react';
+import { HiArrowsUpDown } from "react-icons/hi2"; // Heroicons v2 (Very clean)
+import { IoSwapVertical } from "react-icons/io5";
+import { SortDesc } from 'lucide-react';
+import {  HiBarsArrowUp, HiBarsArrowDown } from "react-icons/hi2";
+import { FaSort, FaSortAmountUp, FaSortAmountDown } from "react-icons/fa";
 import StoreFilter from '../StoreSidebar/StoreFilter/StoreFilter';
 import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
 
 export default function StoreSorting({isIdle,sortOrder,currentSort,toggleSortOrder,typeFilter,sideBartoggled, setSideBarToggled,setSideFilterToggled,sideFiltertoggled,filterActive,activeFiltersCount,handleSort,currentCategory}) {
   
+
+const [isHovered, setIsHovered] = useState(false);
+
   const SortArray = [
     { name: 'Price', sort: 'price' ,Icon: MdAttachMoney },
   
@@ -21,7 +38,9 @@ export default function StoreSorting({isIdle,sortOrder,currentSort,toggleSortOrd
 
   ];
 
+
     const [isSortOpen, setIsSortOpen] = useState(false);
+
   const sortPanelRef = useRef(null);
 
 useEffect(() => {
@@ -54,49 +73,83 @@ useEffect(() => {
              <div className="current-sort-container-div">
             <div className="current-sort-container">
 
-              <div className='store-header-blur-div'></div>
+           {/*    <div className='store-header-blur-div'></div> */}
 
               <div className='store-header-info-wrapper'>
  
 
 
 
-<div className='sort-head-title'>{typeFilter?currentCategory.replaceAll('-', ' '):'All Products'}</div>
+<div className='sort-head-title'>{typeFilter?currentCategory.replaceAll('-', ' '):'Porduct Categlog'}</div>
 
 
 </div>
 
+increase its width upon scroll
 
 
 
 
 
+<div className='store-button-wrapper'>
 
-<div className='product-sort-wrapper'>
-  <div onClick={() => setSideBarToggled(false)} className={`product-sort ${typeFilter || !sideBartoggled?'sort-active':''}`} >
-   <span className='product-sort-icon'><HiOutlineCollection strokeWidth={1} /></span> 
-    <span>Categories</span>
+
+
+
+
+  <div onClick={() => setSideBarToggled(false)} 
+  className='store-category-toggle'
+     onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)} >
+ 
+
+
+<LayoutPanelLeft 
+  className={`category-icon ${isHovered || !sideBartoggled?'category-hovered':''}  ${typeFilter?'category-active':''}`}
+  size={30} 
+  strokeWidth={1} 
+
+
+ 
+/>
+
     </div>
 
-      <div onClick={()=>setSideFilterToggled(false)}  className={`product-sort ${filterActive || !sideFiltertoggled?'sort-active':''}`}>
-   <span className='product-sort-icon'>< HiOutlineAdjustmentsHorizontal strokeWidth={1} /></span> 
-    <span>{`Filters (${activeFiltersCount})`}</span>
-    </div>
-
-    
-
-    <div className='sort-dropDown-div'>
 
 
 
 
-  <div onClick={()=>setIsSortOpen(true)} className='product-sort'>
-   <span className='product-sort-icon'><ListFilter strokeWidth={1}  /></span> 
-    <span>Sort By </span>
+
+
+
+
+
+     <div className='sort-dropDown-div'>
+
+
+
+
+  <div onClick={()=>setIsSortOpen(true)} className='product-sort-wrapper'>
+
+    {/* <span className='sort-label'>Sort By </span> */}
+
+
+    <span className={`sort-toggle  ${isSortOpen?'sort-toggle-active':''} `}>
+      <span className="top-label">SORT BY</span>
+      <div className='sort-toggle-content'>
+            <span>{currentSort?currentSort.name:'Select'}</span>  
+      <span className={`sort-arrow ${isSortOpen? 'up' : 'down'}`}></span>
+      </div>
+
+    </span>
+
 
     
     </div>
  
+
+
+
 
 
   <div  ref={sortPanelRef} 
@@ -115,7 +168,7 @@ useEffect(() => {
 
  {item.name}
 
-  <span className='sort-Icon'><item.Icon/></span>
+
   </div>)}
 
 
@@ -124,13 +177,8 @@ useEffect(() => {
 
 </div>
 
-<div className={`order-toggle-div ${currentSort?'order-visible':''}`} onClick={toggleSortOrder}>
-  
-  <span>{sortOrder==='asc'?'Low':'High'}</span>
-  < ArrowLeftRight className='order-icon' strokeWidth={1.3}/>
-  <span>{sortOrder==='asc'?'High':'Low'}</span>
 
-</div>
+
 
 </div>
   
@@ -144,3 +192,10 @@ useEffect(() => {
             </div>
   )
 }
+
+
+
+
+
+/* 
+    */

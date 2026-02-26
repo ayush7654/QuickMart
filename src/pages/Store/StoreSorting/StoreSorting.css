@@ -3,9 +3,9 @@
   width: 100%;
  border: 0px solid blue;
 
-   top:0rem; 
+   top:1rem; 
   z-index: 9;
-  margin-top: 0rem;
+
   height: 6rem;
   transition: all .3s ease;
   border-bottom: 0px solid rgb(220,220,220);
@@ -23,7 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 0px solid rgb(230, 230, 230);
+  border-top: 0px solid rgb(0, 0, 0);
 
   
   
@@ -31,39 +31,62 @@
 
 }
 
-.current-sort-container{
-position: relative;
- width: 90%;
-  height: 75%;
-   border-bottom: 0px solid rgb(210,210,210);
- padding-left: 0rem;
- display: flex;
-justify-content:space-between;
-align-items:center;
-border: 1px solid rgb(0, 0, 0);
+.current-sort-container {
+  position: relative;
+  width: 90%;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  font-family: 'Figtree';
 
- font-family: 'Figtree';
-gap:1rem;
+  /* 1. Use a very subtle off-white to separate from the pure white background */
+  background: rgba(240,240,240, 0.4); 
 
-
-}
-
-.store-header-blur-div{
-   width: 100%;
-
-      position: absolute;
-      height: 100%;
-           background: rgba(255, 255, 255, 0.75);
+  
+  /* 2. Higher blur helps if there are any tiny elements or text passing behind */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+
+  /* 3. The "Keyline" - Use a slightly darker, thin border to define the shape */
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  /* 4. Soft Multi-layered Shadow - This is what makes it look like physical glass */
+/*   box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+    0 5px 10px -2px rgba(0, 0, 0, 0.05); */
+
+  /* 5. Optional: Add a white inner glow to make the edges feel "thick" */
+  outline: 1px solid rgba(255, 255, 255, 0.5);
+  outline-offset: -2px;
+
+    box-shadow: 
+    0 4px 6px 1px rgba(199, 199, 225, 0.389), 
+    0 5px 5px -2px rgba(130, 182, 202, 0.05);
+
+    background:  rgba(200, 200, 200, 0.209);
 }
 
-.store-header-info-wrapper,.product-sort-wrapper{
+.store-header-blur-dv{
+   width: 100%;
+border-radius: 10px;
+
+      position: absolute;
+      height:80%;
+           background: rgba(235, 235, 235, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgb(200,200,200);
+}
+
+.store-header-info-wrapper,.store-button-wrapper{
   z-index: 9;
   display: flex;
   align-items: center;
     font-size: .95rem;
-    gap:1rem
+    gap:2rem;
+    border: 0px solid red;
     
 }
 
@@ -71,55 +94,129 @@ gap:1rem;
 
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
-
-
-.product-sort{
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  border: 0px solid black;
-  padding: .5rem;
-}
-
-.product-sort-icon{
-  font-size: 1.4rem;
-  height: 100%;
-  display:grid;
+.store-category-toggle{
+  border: 0px solid blue;
+  display: grid;
   place-items: center;
+
 }
 
-.product-sort:hover , .sort-active{
-  color:rgb(0,100,255);
+.category-icon {
+  color: black;            /* This controls the 'color' prop / stroke */
+  fill:transparent;       /* This controls the 'fill' prop */
+  transition: all 0.2s ease; /* Makes the change smooth */
   cursor: pointer;
 }
 
-.sort-default-option{
-  color:rgb(130,130,130);
+.category-hovered {
+
+  color:rgb(0,100,255);        /* Change stroke color on hover */
+                      /* Change fill color on hover */
 }
+
+.category-active{
+    color: rgb(0,100,255);            /* This controls the 'color' prop / stroke */
+  fill: rgb(0,100,255);  
+}
+
+
+.product-sort-wrapper{
+  display: flex;
+  align-items: center;
+  gap:1rem
+}
+
+
+
+
 
 
 
 .sort-dropDown-div{
 
     display: flex;
-
+ 
     align-items: center;
     position: relative;
+    border: 0px solid rgb(213, 51, 78);
     
    
     
 }
 
+.sort-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(120, 120, 120);
+  position: absolute;
+  top:2px;
+
+}
+
+.sort-toggle{
+position: relative;
+    width: 9rem;
+  padding: 8px 10px;
+  background-color: #ffffff82;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap:2px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  transition: all 0.2s ease;
+
+
+}
+
+.sort-toggle:hover {
+  border-color: #007aff;
+}
+
+.sort-toggle-active {
+  border-color: #007aff;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.top-label {
+  font-size: 9px;        /* Very small */
+  font-weight: 600;       /* Extra bold */
+  letter-spacing: 0.05em; /* Spaced out for readability */
+  color: rgb(100, 100, 100);            /* Subdued color */
+  line-height: 1;
+}
+
+.sort-toggle-content{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sort-arrow {
+  border: solid #666;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transition: transform 0.3s ease;
+}
+
+.down { transform: rotate(45deg); }
+.up { transform: rotate(-135deg); }
+
 .sorting-panel{
 
-width: 10rem;
+width: 9rem;
 position: absolute;
-top:4.25rem;
-
-border-radius: 0px 0px 10px 10px;
+  top: calc(100% + 8px);
+right: 0;
+  padding: 6px;
+border-radius: 10px;
   border: 1px solid #eee;
   border-top: 0px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.2);
@@ -127,10 +224,21 @@ border-radius: 0px 0px 10px 10px;
   visibility: hidden;
   transform: translateY(-8px);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  background: rgba(255, 255, 255, 0.5); 
+  /* background: rgba(255, 255, 255, 0.5); */ 
+  background-color: white;
+  overflow: hidden;
+/*   backdrop-filter: blur(10px) ;
+  -webkit-backdrop-filter: blur(10px); */
 
-  backdrop-filter: blur(10px) ;
-  -webkit-backdrop-filter: blur(10px);
+
+
+
+  
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  list-style: none;
+
+  margin: 0;
+
 }
 
 .sort-panel-visible{
@@ -140,28 +248,34 @@ opacity: 1; visibility: visible; transform: translateY(0);
 }
 
 .store-sort-div{
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem;
+ padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all .25s ease;
+  color: #444;
+  transition: background 0.2s ease;
+  margin-bottom: 2px;
 }
 
 .store-sort-div:hover{
- padding-left: 25px;
+
+    background-color: #f5f5f7;
+  color: #007aff;
 
 }
 
 
  .store-sort-selected{
-  color:rgb(0,100,255);
+
+    background-color: #eef6ff;
+  color: #007aff;
+  font-weight: 600;
+
 }
 
  .store-sort-selected:hover{
- padding-left: 1rem;
+
+
 
 }
 
@@ -182,49 +296,21 @@ opacity: 1; visibility: visible; transform: translateY(0);
    
 }
 
-
-
-.store-sort-div:hover .sort-Icon,
-.store-sort-selected .sort-Icon {
-  color: rgb(0,100,255);
-  border-color: rgb(0,100,255);
-
+.store-sort-div:hover .sort-Icon{
+  transform: scale(1.2);
+  color:rgb(0,100,255)
 }
 
-.clear-store-sort-div{
-  width: 100%;
- 
-  height: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-   
-}
+ .store-sort-selected .sort-Icon{
+
+    
+ }
 
 
 
-.order-toggle-div{
-  display: flex;
-  align-items: center;
-  gap: .3rem;
-  color:rgb(180, 180, 180);
 
-}
 
-.order-visible{
 
-color:black
-}
-
-.order-icon{
-  width: 1rem;
-  
-}
-
-.order-visible:hover{
-  color:rgb(0,100,255);
-  cursor: pointer;
-}
 
 
 

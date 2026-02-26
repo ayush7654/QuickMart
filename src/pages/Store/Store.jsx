@@ -21,6 +21,8 @@ import useStoreFilterData from "./useStoreFilterData";
 import StoreFilter from "./StoreSidebar/StoreFilter/StoreFilter";
 import StoreBanner from "./StoreBanner/StoreBanner";
 import FilterSection from "./FilterSection/FilterSection";
+import { BsSortDown, BsSortUp } from "react-icons/bs";
+
 import "./Store.css";
 
 export default function Store() {
@@ -280,21 +282,9 @@ console.log('final items are ' , FinalItems)
 
        
 
-        {/* <div className="store-head-images">
-         <div className="store-head-img-wrapper"><img src='/store-img2.jpg'/></div>
-         <div className="store-head-img-wrapper"><img src='/store-img11.jpg'/></div>
-         <div className="store-head-img-wrapper"><img src='/store-img6.jpg'/></div>
-  
-             
-        </div> */}
-   {/*    <div className="store-page-main-head"> Shop All Products</div> */}
-          {/* <div className="store-page-heading">
-            <div className="store-all-link">Product Catelog</div>
-                 
-                    <div className='product-count-div'>
-    Showing <span>{productElements.length} </span>products
-    </div>
-              </div> */}
+      
+   <div className="store-page-main-head"> Shop All Products</div> 
+          
             </div>
 
     
@@ -322,12 +312,21 @@ console.log('final items are ' , FinalItems)
           <div className="productList-wrapper" style={{ position: "relative" }}>
 
        <div className="store-page-heading">
-            <div className="store-all-link">Product Catelog</div>
+            {/* <div className="store-all-link">Product Catelog</div> */}
                  
                     <div className='product-count-div'>
     Showing <span>{productElements.length} </span>products
     </div>
+
+    <div className={`store-order ${currentSort?'order-active':''}`} onClick={toggleSortOrder}>
+   
+{sortOrder==='asc'?<BsSortDown/>:<BsSortUp/>}
+    </div>
               </div>
+
+          <div>
+            <span>Applied Filters :</span>
+          </div>
             
             <div className="productList">
               
