@@ -21,6 +21,7 @@ import useStoreFilterData from "./useStoreFilterData";
 import StoreFilter from "./StoreSidebar/StoreFilter/StoreFilter";
 import StoreBanner from "./StoreBanner/StoreBanner";
 import FilterSection from "./FilterSection/FilterSection";
+import GridToggle from "./GridToggle/GridToggle";
 import { BsSortDown, BsSortUp } from "react-icons/bs";
 import { X } from "lucide-react";
 
@@ -48,6 +49,13 @@ export default function Store() {
 
   const [appliedFilters,setAppliedFilters] = useState(['Filter','Price','Color'])
 
+   const [activeLayout, setActiveLayout] = useState(3);
+    
+      const gridOptions = [
+        { id: 2, label: '2x2', icon: '/grid2x2.png' },
+        { id: 3, label: '3x3', icon: '/grid3x3.png' },
+        { id: 4, label: '4x4', icon: '/grid4x4.png' },
+      ];
 
   const { isIdle, isAtTop } = useContext(WinScrollContext);
 
@@ -57,7 +65,7 @@ export default function Store() {
 
  const storeOverlayActive = !(sideBartoggled && sideFiltertoggled);
 
- console.log(storeOverlayActive)
+
 
 const handleSort = (e) => {
 
@@ -326,16 +334,22 @@ console.log('final items are ' , FinalItems)
     Showing <span>{productElements.length} </span>results for '<span>{typeFilter?currentCategory:'All Products'}</span>'
     </div>
 
-
+   <div className="store-grid-toggle">
+   <GridToggle
+   activeLayout={activeLayout}
+   setActiveLayout={setActiveLayout}
+   gridOptions={gridOptions}/>
+   </div>
               </div>
 
                <div className="applied-filter-wrapper">
             <span>Applied Filters :</span>
-             {appliedFilters.map((filter,index)=>
+             {appliedFilters?appliedFilters.map((filter,index)=>
              <div key={index} className="applied-filter">
               <span>{filter}</span>
               <X className="cancel-filter"/>
-             </div>)}
+             </div>):
+             <div className="applied-filter">None</div>}
             
           </div>
             </div>
@@ -344,7 +358,10 @@ console.log('final items are ' , FinalItems)
 
          
             
-            <div className="productList">
+            <div className="productList"
+            style={{
+              gridTemplateColumns: `repeat(${activeLayout}, 1fr)`
+            }}>
               
               {productElements}</div>
           </div>

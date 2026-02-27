@@ -6,15 +6,17 @@ export default function Testing() {
 const [activeLayout, setActiveLayout] = useState(3);
 
   const options = [
-    { id: 2, label: '2x2', icon: <Grid2X2 size={20} /> },
-    { id: 3, label: '3x3', icon: <Grid3X3 size={20} /> },
-    { id: 4, label: '4x4', icon: <LayoutGrid size={20} /> },
+    { id: 2, label: '2x2', icon: '/grid2x2.png' },
+    { id: 3, label: '3x3', icon: '/grid3x3.png' },
+    { id: 4, label: '4x4', icon: '/grid4x4.png' },
   ];
 
   const handleSelect = (id) => {
     setActiveLayout(id);
     if (onChange) onChange(id);
   };
+
+
 
   return (
     <div className="testing-div">
@@ -33,9 +35,9 @@ const [activeLayout, setActiveLayout] = useState(3);
             className={`switcher-button ${activeLayout === option.id ? 'active' : ''}`}
             aria-label={`Switch to ${option.label} grid`}
           >
-            <img width={'10rem'} src='/grid2x2.png'/>
-            {/* {option.icon} */}
-           {/*  <span className="button-text">{option.label}</span> */}
+            <img width={'18rem'} src={option.icon} />
+         
+         
           </button>
         ))}
       </div>

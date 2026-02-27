@@ -1,0 +1,58 @@
+.switcher-container {
+  display: inline-flex;
+  padding: 5px;
+  background: rgba(240, 240, 240, 0.6);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.switcher-rail {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.switcher-button {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #666;
+  font-weight: 500;
+  transition: color 0.3s ease , opacity .2s ease;
+opacity: .2;
+
+}
+
+.switcher-button img{
+    width: 1.2rem;
+}
+
+.switcher-button:hover{
+  opacity: .8;
+}
+
+
+.switcher-button.active {
+  color: #000;
+  opacity: 1;
+}
+
+.switcher-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: calc(33.33% - 0px); /* Based on 3 options */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}

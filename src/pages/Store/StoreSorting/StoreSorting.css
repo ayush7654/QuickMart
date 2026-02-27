@@ -295,19 +295,13 @@ opacity: 1; visibility: visible; transform: translateY(0);
    
 }
 
-.store-sort-div:hover .sort-Icon{
-  transform: scale(1.2);
-  color:rgb(0,100,255)
-}
 
- .store-sort-selected .sort-Icon{
 
-    
- }
+
 
  .store-order{
     color:rgb(150, 150, 150);
-
+ opacity: .4;
  
     pointer-events: none;
    }
@@ -315,6 +309,7 @@ opacity: 1; visibility: visible; transform: translateY(0);
    .order-active{
     color:rgb(45, 45, 45);
     pointer-events:auto;
+     opacity: 1;
    }
 
 
