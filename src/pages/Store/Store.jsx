@@ -22,8 +22,10 @@ import StoreFilter from "./StoreSidebar/StoreFilter/StoreFilter";
 import StoreBanner from "./StoreBanner/StoreBanner";
 import FilterSection from "./FilterSection/FilterSection";
 import { BsSortDown, BsSortUp } from "react-icons/bs";
+import { X } from "lucide-react";
 
 import "./Store.css";
+import OrderToggle from "./OrderToggle/OrderToggle";
 
 export default function Store() {
   const ProductCache = useRef({});
@@ -43,9 +45,14 @@ export default function Store() {
   const [currentSort,setCurrentSort] = useState(null);
  /*  const [currentFilter,setCurrentFilter] = useState(null) */
   const [sortOrder,setSortOrder] = useState('asc')
+
+  const [appliedFilters,setAppliedFilters] = useState(['Filter','Price','Color'])
+
+
   const { isIdle, isAtTop } = useContext(WinScrollContext);
 
   const {storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount} = useStoreFilterData();
+
 
 
  const storeOverlayActive = !(sideBartoggled && sideFiltertoggled);
@@ -311,22 +318,31 @@ console.log('final items are ' , FinalItems)
 
           <div className="productList-wrapper" style={{ position: "relative" }}>
 
-       <div className="store-page-heading">
-            {/* <div className="store-all-link">Product Catelog</div> */}
+            <div className="productList-head-wrapper">
+                 <div className="store-page-heading">
+            
                  
                     <div className='product-count-div'>
-    Showing <span>{productElements.length} </span>products
+    Showing <span>{productElements.length} </span>results for '<span>{typeFilter?currentCategory:'All Products'}</span>'
     </div>
 
-    <div className={`store-order ${currentSort?'order-active':''}`} onClick={toggleSortOrder}>
-   
-{sortOrder==='asc'?<BsSortDown/>:<BsSortUp/>}
-    </div>
+
               </div>
 
-          <div>
+               <div className="applied-filter-wrapper">
             <span>Applied Filters :</span>
+             {appliedFilters.map((filter,index)=>
+             <div key={index} className="applied-filter">
+              <span>{filter}</span>
+              <X className="cancel-filter"/>
+             </div>)}
+            
           </div>
+            </div>
+
+    
+
+         
             
             <div className="productList">
               

@@ -1,5 +1,6 @@
 import React ,{useState,  useEffect, useRef} from 'react'
 import './StoreSorting.css'
+import OrderToggle from '../OrderToggle/OrderToggle';
 import { HiOutlineCollection } from "react-icons/hi";
 import IconButton from '../../../components/IconButton/IconButton';
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
@@ -135,14 +136,16 @@ increase its width upon scroll
 
 
     <span className={`sort-toggle  ${isSortOpen?'sort-toggle-active':''} `}>
-      <span className="top-label">SORT BY</span>
+      
       <div className='sort-toggle-content'>
+        <span className="sort-label">SORT BY</span>
             <span>{currentSort?currentSort.name:'Select'}</span>  
-      <span className={`sort-arrow ${isSortOpen? 'up' : 'down'}`}></span>
+      
       </div>
 
-    </span>
 
+<span className={`sort-arrow ${isSortOpen? 'up' : 'down'}`}></span>
+    </span>
 
     
     </div>
@@ -175,9 +178,12 @@ increase its width upon scroll
   </div>
 
 
+
 </div>
 
-
+   <div className={`store-order ${currentSort?'order-active':''}`} onClick={toggleSortOrder}>
+    <OrderToggle/>
+   </div>
 
 
 </div>
