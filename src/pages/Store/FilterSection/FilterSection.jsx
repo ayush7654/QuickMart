@@ -1,22 +1,25 @@
 import React from 'react'
 import { Check, CheckSquare } from 'lucide-react';
-import useStoreFilterData from '../useStoreFilterData';
+import { useStoreFilter } from '../../../components/StoreFilterContext';
 import PriceFilter from './PriceFilter/PriceFilter';
 import './FilterSection.css'
 
 
 
-export default function FilterSection({storeFilters, setStoreFilters,setAppliedFilters}) {
+
+export default function FilterSection() {
     
     
-    
-    const storeColors = [
-      {name:'Black', color:'rgb(161, 161, 161)'},
-      {name:'Gtey', color:'rgb(0,0,0)'},
-      {name:'Brown', color:'rgb(141, 42, 42)'},
-      {name:'Green', color:'rgb(35, 122, 95)'},
-      {name:'Copper', color:'rgb(55, 86, 174)'},
-    ] 
+    const {storeFilters,setStoreFilters,setAppliedFilters,storeFilterColors,setStoreFilterColors} = useStoreFilter();
+
+
+    const toggleColor = (id) => {
+  setStoreFilterColors(prevColors => 
+    prevColors.map(color => 
+      color.id === id ? { ...color, active: !color.active } : color
+    )
+  );
+};
 
   return (
     
@@ -57,9 +60,18 @@ export default function FilterSection({storeFilters, setStoreFilters,setAppliedF
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
       </div>
   <div className="store-color-wrapper">
-  {storeColors.map((color,index)=><div key={index} className="store-color"   >
-    <span style={{backgroundColor:color.color}}   className='store-color-content'></span>
-  </div>)}
+  {storeFilterColors.map((color) => (
+  <div 
+    key={color.id} 
+    className={`store-color ${color.active ? 'store-color-active' : ''}`}
+    onClick={() => toggleColor(color.id)}
+  >
+    <span 
+      style={{ backgroundColor: color.color }} 
+      className='store-color-content'
+    ></span>
+  </div>
+))}
   </div>
 </div>
 </div>

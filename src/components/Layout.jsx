@@ -7,7 +7,7 @@ import SearchBar from './SearchBar/SearchBar';
 import SideBarNav from './SideBarNav/SideBarNav';
 import SideBarCart from './SideBarCart/SideBarCart';
 import { CartListProvider } from './CartListProvider';
-
+import { StoreFilterProvider } from './StoreFilterContext';
 
 
 export default function Home(){
@@ -59,7 +59,8 @@ setSearchBarToggle(i)
       sideBarToggle={toggleSideBar}
       setCartToggled={setCartToggled}/> 
 
-<CartListProvider>
+<StoreFilterProvider>
+  <CartListProvider>
 
   
     <div className='outlet-container' style={{paddingTop:isHomePage?'0rem':'0rem'}}>
@@ -74,6 +75,8 @@ setSearchBarToggle(i)
 
 
   </CartListProvider>
+</StoreFilterProvider>
+
 
 
          <Footer /> 

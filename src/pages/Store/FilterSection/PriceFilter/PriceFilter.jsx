@@ -1,37 +1,31 @@
 import React, { useState } from 'react';
 import './PriceFilter.css';
-
+import { useStoreFilter } from '../../../../components/StoreFilterContext';
 const PriceFilter = () => {
-  // 1. Initialized to null as requested
-  const [minPrice, setMinPrice] = useState(null);
-  const [maxPrice, setMaxPrice] = useState(null);
+  const { minPrice, setMinPrice, maxPrice, setMaxPrice } = useStoreFilter();
   
-  // 2. Updated limits to 1 - 50,000
-  const minLimit = 1;
+  const minLimit = 0; // Better for math/steps
   const maxLimit = 50000;
+  const minGap = 1000;
 
   const handleMinChange = (e) => {
     const value = Number(e.target.value);
-    // If max is still null, we compare against maxLimit
-    const currentMax = maxPrice || maxLimit;
-    setMinPrice(Math.min(value, currentMax - 1000));
+    // Ensure we don't cross the max handle minus the gap
+    const newValue = Math.min(value, maxPrice - minGap);
+    setMinPrice(newValue);
   };
 
   const handleMaxChange = (e) => {
-  const value = Number(e.target.value);
-  const currentMin = minPrice || minLimit;
-  const minGap = 1000;
-
-  // 1. If we are within one 'step' of the max limit, force it to 50000
-  if (value > maxLimit - 500) {
-    setMaxPrice(maxLimit);
-  } 
-  // 2. Otherwise, enforce the gap logic
-  else {
-    const allowedValue = Math.max(value, currentMin + minGap);
-    setMaxPrice(allowedValue);
-  }
-};
+    const value = Number(e.target.value);
+    
+    // Snap to absolute end if close, otherwise maintain gap
+    if (value > maxLimit - 500) {
+      setMaxPrice(maxLimit);
+    } else {
+      const newValue = Math.max(value, minPrice + minGap);
+      setMaxPrice(newValue);
+    }
+  };
 
   return (
     <div className="price-filter-container">
@@ -74,9 +68,9 @@ const PriceFilter = () => {
         <div className="input-group">
           <label>From</label>
           <div className="price-box">
-            {/* Renders -- if null */}
-            {minPrice === null ? '--' : `$${minPrice.toLocaleString()}`}
-          </div>
+       {/* If minPrice is 0, we show $1 for better UX */}
+       {minPrice === null ? '--' : `$${(minPrice || 1).toLocaleString()}`}
+    </div>
         </div>
         <div className="input-group">
           <label>To</label>

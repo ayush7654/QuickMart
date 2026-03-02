@@ -110,20 +110,32 @@ cursor: pointer;
  width: 2rem;
  height: 2rem;
  border-radius: 50%;
- border: 0px solid rgb(0, 0, 0);
- display: grid;
- place-items: center;
+ border: 1px solid transparent;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+}
+
+.store-color-active{
+
+border-color: black;
 }
 
 .store-color:hover{
-  border-color: rgb(0,50,255);
-  cursor: pointer;
-  padding: 2px;
+  opacity: .9;
 }
+
+
 
 .store-color-content{
   width: 100%;
   height: 100%;
   border-radius: 50%;
   
+}
+
+.store-color-active .store-color-content{
+    width: 85%;
+  height: 85%;
 }

@@ -17,11 +17,12 @@ import { WinScrollContext } from "../../components/WinScrollProvider/WinScrollPr
 import ScrollButton from "../../components/ScrollingButton/ScrollingButton";
 import StoreSorting from "./StoreSorting/StoreSorting";
 import PageHeader from "../../components/PageHeader/PageHeader";
-import useStoreFilterData from "./useStoreFilterData";
-import StoreFilter from "./StoreSidebar/StoreFilter/StoreFilter";
+
+
 import StoreBanner from "./StoreBanner/StoreBanner";
 import FilterSection from "./FilterSection/FilterSection";
 import GridToggle from "./GridToggle/GridToggle";
+import { useStoreFilter } from "../../components/StoreFilterContext";
 import { BsSortDown, BsSortUp } from "react-icons/bs";
 import { X } from "lucide-react";
 
@@ -47,11 +48,10 @@ export default function Store() {
  /*  const [currentFilter,setCurrentFilter] = useState(null) */
   const [sortOrder,setSortOrder] = useState('asc')
 
-  const [appliedFilters,setAppliedFilters] = useState({
-    filters:[],
-    price:'',
-    colors:[]
-  })
+  
+
+  const { minPrice, setMinPrice, maxPrice, setMaxPrice,storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount,appliedFilters,setAppliedFilters,setStoreFilterColors} = useStoreFilter();
+
 
    const [activeLayout, setActiveLayout] = useState(3);
     
@@ -63,22 +63,9 @@ export default function Store() {
 
   const { isIdle, isAtTop } = useContext(WinScrollContext);
 
-  const {storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount} = useStoreFilterData();
+/*   const {storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount} = useStoreFilterData(); */
 
-useEffect(() => {
-  // 1. Filter the storeFilters to find objects where state is true
-  // 2. Map those objects to get just the 'name' string
-  const activeFilterNames = storeFilters
-    .filter(item => item.state === true)
-    .map(item => item.name);
 
-  // 3. Update the state while preserving price and colors
-  setAppliedFilters(prev => ({
-    ...prev,
-    filters: activeFilterNames
-  }));
-
-}, [storeFilters, setAppliedFilters]);
 
  const storeOverlayActive = !(sideBartoggled && sideFiltertoggled);
 
@@ -149,6 +136,22 @@ const toggleSortOrder = () => {
     }
   };
 
+  const removeFilter = (filterName) => {
+  setStoreFilters(prev => 
+    prev.map(item => 
+      item.name === filterName ? { ...item, state: false } : item
+    )
+  );
+};
+
+const handleRemoveColor = (colorName) => {
+  setStoreFilterColors(prev =>
+    prev.map(c => 
+      c.name === colorName ? { ...c, active: false } : c
+    )
+  );
+};
+
 useEffect(() => {
   ProductCache.current = {};      // clear old pages
   setRenderTrigger(prev => prev + 1);
@@ -182,34 +185,48 @@ useEffect(() => {
   }, [typeFilter, DisplayedItems]);
 
 const productElements = useMemo(() => {
-  if (!FinalItems) return 0;
+  if (!FinalItems) return []; // Changed 0 to [] to avoid mapping errors
 
-  let items = [...FinalItems]; // copy to avoid mutation
+  let items = [...FinalItems];
 
-items = items.filter(item =>
-  storeFilters
-    .filter(f => f.state)
-    .every(f => filterLogicMap[f.filter]?.(item[f.filter]))
-);
+  // 1. Filter by Checkboxes (Store Filters)
+  items = items.filter(item =>
+    storeFilters
+      .filter(f => f.state)
+      .every(f => filterLogicMap[f.filter]?.(item[f.filter]))
+  );
 
-if (typeFilter && currentSort?.sort) {
-  items.sort((a, b) => {
-    return sortOrder === "asc"
-      ? a[currentSort.sort] - b[currentSort.sort]
-      : b[currentSort.sort] - a[currentSort.sort];
+  // 2. Filter by Price Range (Min/Max)
+  items = items.filter(item => {
+    const itemPrice = item.price;
+    // Check if price is >= min and <= max. 
+    // If minPrice is null or 0, we effectively ignore the floor.
+    const matchesMin = minPrice === null || itemPrice >= minPrice;
+    const matchesMax = maxPrice === null || itemPrice <= maxPrice;
+    
+    return matchesMin && matchesMax;
   });
-}
 
+  // 3. Sorting Logic
+  if (typeFilter && currentSort?.sort) {
+    items.sort((a, b) => {
+      return sortOrder === "asc"
+        ? a[currentSort.sort] - b[currentSort.sort]
+        : b[currentSort.sort] - a[currentSort.sort];
+    });
+  }
 
-
+  // 4. Return the mapped components
   return items.map((product) => (
     <StoreProductCard
-    key={product.id} 
-  product={product} 
-  path={location.search}
+      key={product.id}
+      product={product}
+      path={location.search}
     />
   ));
-}, [FinalItems, currentSort, typeFilter, location.search, sortOrder,storeFilters]);
+  
+  // Added minPrice and maxPrice to the dependency array
+}, [FinalItems, currentSort, typeFilter, location.search, sortOrder, storeFilters, minPrice, maxPrice]);
 
 
 
@@ -270,12 +287,12 @@ console.log('applied filters are ',appliedFilters)
       
           transition: 'all 0.6s ease',
         }}>
-         <StoreFilter
+         {/* <StoreFilter
          sideFiltertoggled={sideFiltertoggled}
          setSideFilterToggled={()=>setSideFilterToggled(true)}
          storeFilters={storeFilters}
          setStoreFilters={setStoreFilters}
-         filterActive={filterActive}/>
+         filterActive={filterActive}/> */}
          
         </aside>
 
@@ -352,9 +369,27 @@ console.log('applied filters are ',appliedFilters)
             {appliedFilters?appliedFilters.filters.map((filter,index)=>
              <div key={index} className="applied-filter">
               <span>{filter}</span>
-              <X className="cancel-filter"/>
+              <X className="cancel-filter"
+              onClick={() => removeFilter(filter)}/>
              </div>):
              <div className="applied-filter">None</div>} 
+
+            
+         <div className="applied-filter">
+          <span>${appliedFilters.price.lowRange} - ${appliedFilters.price.highRange}</span>
+          <X className="cancel-filter"/>
+          </div> 
+
+  
+            
+             {appliedFilters?appliedFilters.colors.map((color,index)=>
+             <div key={index} className="applied-filter">
+              <span>{color}</span>
+              <X className="cancel-filter"
+              onClick={() => handleRemoveColor(color)}/>
+             </div>):
+             <div className="applied-filter">None</div>}
+             
            </div>
           </div> 
 

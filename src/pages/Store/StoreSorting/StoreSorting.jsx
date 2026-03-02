@@ -1,29 +1,12 @@
 import React ,{useState,  useEffect, useRef} from 'react'
 import './StoreSorting.css'
 import OrderToggle from '../OrderToggle/OrderToggle';
-import { HiOutlineCollection } from "react-icons/hi";
-import IconButton from '../../../components/IconButton/IconButton';
-import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
-import { MdFilterList } from "react-icons/md";
 import { MdStar, MdStarBorder } from 'react-icons/md';
 import { MdAttachMoney, MdPercent } from "react-icons/md";
-import { ArrowDownUp, ArrowLeftRight, Repeat2 ,ListFilter} from 'lucide-react';
-import { List, AlignLeft, Menu } from 'lucide-react';
-import { HiOutlineListBullet } from "react-icons/hi2"; // Heroicons (Clean/Modern)
-import { IoListOutline } from "react-icons/io5";       // Ionicons (Thin/Sharp)
-import { CiMenuKebab } from "react-icons/ci";
-import { HiRectangleGroup } from "react-icons/hi2";
-import { ArrowUpDown } from "lucide-react";
 import { LayoutPanelLeft } from 'lucide-react';
-import { ArrowsUpFromLine } from 'lucide-react';
-import { LayoutGrid } from 'lucide-react';
-import { HiArrowsUpDown } from "react-icons/hi2"; // Heroicons v2 (Very clean)
-import { IoSwapVertical } from "react-icons/io5";
-import { SortDesc } from 'lucide-react';
-import {  HiBarsArrowUp, HiBarsArrowDown } from "react-icons/hi2";
-import { FaSort, FaSortAmountUp, FaSortAmountDown } from "react-icons/fa";
-import StoreFilter from '../StoreSidebar/StoreFilter/StoreFilter';
-import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
+
+
+
 
 export default function StoreSorting({isIdle,currentSort,toggleSortOrder,typeFilter,sideBartoggled, setSideBarToggled,handleSort,currentCategory}) {
   
@@ -93,9 +76,6 @@ increase its width upon scroll
 
 
 <div className='store-button-wrapper'>
-
-
-
 
 
   <div onClick={() => setSideBarToggled(false)} 
