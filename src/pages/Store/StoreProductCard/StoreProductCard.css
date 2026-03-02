@@ -99,12 +99,14 @@ padding: 0.3rem 0;
 /*  border: 1px solid rgb(190, 190, 190); */
  border: 1px solid rgb(180, 180, 180);
  
+ 
 
  }
 
 .productImg-container{
  position: relative;
 border: 0px solid blue;
+
  
 
  }
@@ -436,15 +438,16 @@ font-family:'Figtree';
 
 
 .sp-addToCart{
-    width: 90%;
-    border-radius: 100px;
+ 
+  
+ 
     position: absolute;
     bottom: 1rem;
-    left: 50%;
+    right: 0%;
     transform: translate(-50%, 5px); 
-   background-color: rgb(0,100,255);
-    color:white;
-    padding:10px;
+   
+
+   
     text-align: center;
     font-family: 'Figtree';
     font-weight: 500;
@@ -457,16 +460,10 @@ font-family:'Figtree';
      transform: translate(-50%, 0);
 }
 
-.sp-added-btn{
-  /*   background-color: rgba(0, 0, 0, 0.4);
-    background-color: rgba(0, 0, 255, 0.644); */
-    background-color: transparent;
-    border: 2px solid rgb(0,100,250);
-    background-color:rgba(0, 100, 250, 0.075);
 
-    color:rgb(255, 255, 255);
-    color:rgb(0,100,250);
-    font-weight: 500;
+
+.sp-added-btn{
+ 
     opacity: 1;
       transform: translate(-50%, 0px); 
 }

@@ -4,22 +4,11 @@
   font-family: 'Inter', sans-serif;
 }
 
-.filter-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 700;
-  margin-bottom: 30px;
-  background: #f8f8f8;
-  padding: 10px 15px;
-  border-radius: 20px;
-}
-
-/* Slider Track Logic */
 .slider-wrapper {
   position: relative;
   height: 5px;
-  margin: 0 10px 40px 10px;
+  /* Keep your original margin, but ensure the track width is correct */
+  margin: 0 10px 40px 10px; 
 }
 
 .slider-track {
@@ -39,15 +28,22 @@
   z-index: 2;
 }
 
-/* Custom Thumb/Handle Styling */
 .thumb {
   position: absolute;
-  width: 100%;
-  pointer-events: none; /* Allows clicking through to both inputs */
+  /* This is the secret: make the input slightly wider than 100% 
+     to account for the thumb's radius (9px on each side) */
+  width: calc(100% + 18px); 
+  left: -9px; 
+  pointer-events: none;
   appearance: none;
   height: 0;
   outline: none;
   z-index: 3;
+}
+
+/* Ensure the left thumb is clickable when handles overlap at the start */
+.thumb-left {
+  z-index: 4;
 }
 
 .thumb::-webkit-slider-thumb {
@@ -58,10 +54,9 @@
   background: #fff;
   border: 3px solid #000;
   cursor: pointer;
-  pointer-events: auto; /* Reactivates click for the handle itself */
+  pointer-events: auto;
 }
 
-/* Input Boxes at the Bottom */
 .price-input-row {
   display: flex;
   gap: 20px;
@@ -85,4 +80,12 @@
   font-size: 14px;
   font-weight: 500;
   text-align: center;
+  /* Added a color transition for the null state */
+  color: #000;
+  transition: color 0.2s ease;
+}
+
+/* Optional: Make the -- slightly lighter than the numbers */
+.price-box:contains('--') {
+  color: #aaa;
 }

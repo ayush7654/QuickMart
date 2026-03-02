@@ -32,10 +32,16 @@
 
 }
 
-
-
-
-
-@media (max-width: 600px) {
-  .button-text { display: none; } /* Show only icons on mobile */
+.test-add{
+  width: 3rem;
+  height: 3rem;
+  background-color: black;
+  border-radius: 100px;
+  transition: all .3s ease;
 }
+
+.test-add:hover{
+  width: 6rem;
+}
+
+

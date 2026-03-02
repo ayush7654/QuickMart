@@ -68,17 +68,6 @@
     background:  rgba(200, 200, 200, 0.209);
 }
 
-.store-header-blur-dv{
-   width: 100%;
-border-radius: 10px;
-
-      position: absolute;
-      height:80%;
-           background: rgba(235, 235, 235, 0.75);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgb(200,200,200);
-}
 
 .store-header-info-wrapper,.store-button-wrapper{
   z-index: 9;

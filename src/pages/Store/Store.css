@@ -134,14 +134,31 @@ margin: 2rem 0rem;
 
 
 
+.applied-filter-section{
+ display: flex;
+
+ gap:1rem;
+margin-top: 1rem;
+ border: 0px solid red;
+
+}
+
+.applied-filters-head{
+  height: 100%;
+  white-space: nowrap;
+  padding-top:5px ;
+
+  
+}
+
 .applied-filter-wrapper{
  display: flex;
- align-items: center;
- gap:1rem;
- padding-top: 1rem ;
+  flex-wrap: wrap;
+   gap:1rem;
 }
 
 .applied-filter{
+ 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -150,9 +167,10 @@ margin: 2rem 0rem;
   padding:2px 14px;
   border-radius: 100px;
   font-size: .85rem;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
     color:black;
+    white-space: nowrap;
   
 }
 .applied-filter:hover{
@@ -208,6 +226,7 @@ box-shadow: 0 10px 20px rgba(50,50,50, 0.2);
    display: flex;
    justify-content: space-between;
    border: 0px solid yellow;
+
   
    
 
@@ -243,9 +262,13 @@ box-shadow: 0 10px 20px rgba(50,50,50, 0.2);
 }
 
 .side-filter{
-  border: 1px solid rgb(230,230,230);
+
   width: 22%;
-  border-radius: 10px;
+
+ 
+ 
+
+  
 }
 
 

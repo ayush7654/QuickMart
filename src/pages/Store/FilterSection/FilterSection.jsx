@@ -6,16 +6,16 @@ import './FilterSection.css'
 
 
 
-export default function FilterSection() {
+export default function FilterSection({storeFilters, setStoreFilters,setAppliedFilters}) {
     
-    const {storeFilters} = useStoreFilterData();
+    
     
     const storeColors = [
-      {name:'Black', color:'rgba(118, 118, 118, 1)'},
+      {name:'Black', color:'rgb(161, 161, 161)'},
       {name:'Gtey', color:'rgb(0,0,0)'},
-      {name:'Brown', color:'rgba(62, 15, 15, 1)'},
-      {name:'Green', color:'rgba(15, 55, 42, 1)'},
-      {name:'Copper', color:'rgba(66, 48, 24, 1)'},
+      {name:'Brown', color:'rgb(141, 42, 42)'},
+      {name:'Green', color:'rgb(35, 122, 95)'},
+      {name:'Copper', color:'rgb(55, 86, 174)'},
     ] 
 
   return (
@@ -29,12 +29,22 @@ export default function FilterSection() {
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
       </div>
  <div className="filter-wrapper">
-  {storeFilters.map((filter,index)=>
-  <div key={index} className="filter-check">
-    <span className={`filter-checkbox ${filter.state?'filter-ticked':''}`}>
+  {storeFilters.map((item,index)=>
+  <div key={index} className="filter-check"
+       onClick={() =>
+      setStoreFilters(prev =>
+        prev.map(f =>
+          f.filter === item.filter
+            ? { ...f, state: !f.state }
+            : f
+        )
+      )
+    }
+  >
+    <span className={`filter-checkbox ${item.state?'filter-ticked':''}`}>
        <Check className='filter-checkbox-icon'/>
       </span>
-    <span>{filter.name}</span>
+    <span>{item.name}</span>
   </div>)}
  </div>
  </div>
@@ -47,7 +57,9 @@ export default function FilterSection() {
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
       </div>
   <div className="store-color-wrapper">
-  {storeColors.map((color,index)=><div key={index} className="store-color" style={{backgroundColor:color.color}}></div>)}
+  {storeColors.map((color,index)=><div key={index} className="store-color"   >
+    <span style={{backgroundColor:color.color}}   className='store-color-content'></span>
+  </div>)}
   </div>
 </div>
 </div>

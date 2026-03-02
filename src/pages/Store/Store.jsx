@@ -42,12 +42,16 @@ export default function Store() {
   const [currentCategory, setcurrentCategory] = useState('');
   const [categoryName, setCategoryName] = useState("");
   const [sideBartoggled,   setSideBarToggled] = useState(true);
-  const [sideFiltertoggled,setSideFilterToggled] =useState(true)
+  const [sideFiltertoggled,setSideFilterToggled] = useState(true)
   const [currentSort,setCurrentSort] = useState(null);
  /*  const [currentFilter,setCurrentFilter] = useState(null) */
   const [sortOrder,setSortOrder] = useState('asc')
 
-  const [appliedFilters,setAppliedFilters] = useState(['Filter','Price','Color'])
+  const [appliedFilters,setAppliedFilters] = useState({
+    filters:[],
+    price:'',
+    colors:[]
+  })
 
    const [activeLayout, setActiveLayout] = useState(3);
     
@@ -61,11 +65,24 @@ export default function Store() {
 
   const {storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount} = useStoreFilterData();
 
+useEffect(() => {
+  // 1. Filter the storeFilters to find objects where state is true
+  // 2. Map those objects to get just the 'name' string
+  const activeFilterNames = storeFilters
+    .filter(item => item.state === true)
+    .map(item => item.name);
 
+  // 3. Update the state while preserving price and colors
+  setAppliedFilters(prev => ({
+    ...prev,
+    filters: activeFilterNames
+  }));
+
+}, [storeFilters, setAppliedFilters]);
 
  const storeOverlayActive = !(sideBartoggled && sideFiltertoggled);
 
-
+console.log(storeFilters)
 
 const handleSort = (e) => {
 
@@ -212,8 +229,7 @@ if (typeFilter && currentSort?.sort) {
 
 
 
-console.log('product elements are', productElements)
-console.log('final items are ' , FinalItems)
+console.log('applied filters are ',appliedFilters)
 
   
   return (
@@ -270,25 +286,16 @@ console.log('final items are ' , FinalItems)
 
 
         
-    <StoreSorting
-      isIdle={isIdle}
-      currentSort={currentSort}
-      setCurrentSort={setCurrentSort}
-      handleSort={(e)=>handleSort(e)}
-      sortOrder={sortOrder}
-      toggleSortOrder={toggleSortOrder}
-      typeFilter={typeFilter} 
-      sideBartoggled={sideBartoggled}
-       setSideBarToggled={ setSideBarToggled}
-       sideFiltertoggled={sideFiltertoggled}
-       setSideFilterToggled={setSideFilterToggled}
-      storeFilters={storeFilters}
-      setStoreFilters={setStoreFilters}
-      filterActive={filterActive}
-    currentCategory={currentCategory}
-      productCount={productElements.length}
-        activeFiltersCount={activeFiltersCount}
-     /> 
+   <StoreSorting
+  isIdle={isIdle}
+  currentSort={currentSort}
+  handleSort={handleSort}
+  toggleSortOrder={toggleSortOrder}
+  typeFilter={typeFilter}
+  sideBartoggled={sideBartoggled}
+  setSideBarToggled={setSideBarToggled}
+  currentCategory={currentCategory}
+/>
 
 
 
@@ -312,16 +319,13 @@ console.log('final items are ' , FinalItems)
 
    
 
-     
-   
-
-       
-        
-
         <main className="store-content">
        
-     <div className="side-filter">
-              <FilterSection/>
+         <div className="side-filter">
+              <FilterSection
+              storeFilters={storeFilters}
+              setStoreFilters={setStoreFilters}
+              setAppliedFilters={setAppliedFilters} />
             </div>
 
           <div className="productList-wrapper" style={{ position: "relative" }}>
@@ -342,16 +346,19 @@ console.log('final items are ' , FinalItems)
    </div>
               </div>
 
-               <div className="applied-filter-wrapper">
-            <span>Applied Filters :</span>
-             {appliedFilters?appliedFilters.map((filter,index)=>
+               <div className="applied-filter-section">
+            <div className="applied-filters-head">Applied Filters :</div>
+           <div className="applied-filter-wrapper">
+            {appliedFilters?appliedFilters.filters.map((filter,index)=>
              <div key={index} className="applied-filter">
               <span>{filter}</span>
               <X className="cancel-filter"/>
              </div>):
-             <div className="applied-filter">None</div>}
-            
-          </div>
+             <div className="applied-filter">None</div>} 
+           </div>
+          </div> 
+
+          
             </div>
 
     

@@ -12,6 +12,7 @@ import { IoCheckmarkDone } from "react-icons/io5";
 import { useCartList } from '../../../components/CartListProvider';
 import { FaCartPlus } from "react-icons/fa";
 import './StoreProductCard.css'
+import AddProductButton from './AddProductButton/AddProductButton';
 
 
 
@@ -103,13 +104,9 @@ console.log('cart list is',cartList)
   ))}
 </div>
 <div className={`sp-addToCart ${isItemInCart ? 'sp-added-btn' : ''}`}>
-        {isItemInCart ?
-         <span className='sp-btn-content'>
-          In Cart
-          <MdDoneAll size={18}/>
-          
-          </span> :
-          <span className='sp-btn-content'>Add To Cart <FaCartPlus/></span> }
+ <AddProductButton isItemInCart={isItemInCart }/>
+ 
+     
       </div>
         </div>
         <div className='sp-info-wrapper'>

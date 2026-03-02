@@ -25,7 +25,7 @@ import { FaSort, FaSortAmountUp, FaSortAmountDown } from "react-icons/fa";
 import StoreFilter from '../StoreSidebar/StoreFilter/StoreFilter';
 import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
 
-export default function StoreSorting({isIdle,sortOrder,currentSort,toggleSortOrder,typeFilter,sideBartoggled, setSideBarToggled,setSideFilterToggled,sideFiltertoggled,filterActive,activeFiltersCount,handleSort,currentCategory}) {
+export default function StoreSorting({isIdle,currentSort,toggleSortOrder,typeFilter,sideBartoggled, setSideBarToggled,handleSort,currentCategory}) {
   
 
 const [isHovered, setIsHovered] = useState(false);
@@ -74,7 +74,7 @@ useEffect(() => {
              <div className="current-sort-container-div">
             <div className="current-sort-container">
 
-           {/*    <div className='store-header-blur-div'></div> */}
+         
 
               <div className='store-header-info-wrapper'>
  
