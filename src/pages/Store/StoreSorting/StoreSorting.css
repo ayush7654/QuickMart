@@ -41,31 +41,25 @@
   border-radius: 12px;
   font-family: 'Figtree';
 
-  /* 1. Use a very subtle off-white to separate from the pure white background */
-  background: rgba(240,240,240, 0.4); 
+   color: white;
+  background: transparent;
+  backdrop-filter: blur(0px);
+  border-radius: 10px;
+  /* This makes the transition feel slow and premium */
+  transition: 
+    color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+  will-change: transform, width; /* Performance boost */
 
-  
-  /* 2. Higher blur helps if there are any tiny elements or text passing behind */
+}
+
+.current-sort-blurred{
+  color: black;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  /* 3. The "Keyline" - Use a slightly darker, thin border to define the shape */
-  border: 1px solid rgba(0, 0, 0, 0.08);
-
-  /* 4. Soft Multi-layered Shadow - This is what makes it look like physical glass */
-/*   box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.05), 
-    0 5px 10px -2px rgba(0, 0, 0, 0.05); */
-
-  /* 5. Optional: Add a white inner glow to make the edges feel "thick" */
-  outline: 1px solid rgba(255, 255, 255, 0.5);
-  outline-offset: -2px;
-
-    box-shadow: 
-    0 4px 6px 1px rgba(199, 199, 225, 0.389), 
-    0 5px 5px -2px rgba(130, 182, 202, 0.05);
-
-    background:  rgba(200, 200, 200, 0.209);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 

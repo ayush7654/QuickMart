@@ -92,7 +92,7 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
 
     const [isAtTop, setIsAtTop] = useState(true);
 
-   const headertp = ['/'].includes(location.pathname);
+   const headertp = ['/','/store','/testing'].includes(location.pathname);
 
    
 
@@ -196,7 +196,7 @@ useEffect(() => {
      
     }}>
  
-  <ExtraHeader/> 
+ {/*  <ExtraHeader/>  */}
 
 
         <div  className={`header-home ${isAtTop && cursorOff && headertp ?'headerAtTop':''}`}  /* REMOVE '!' */

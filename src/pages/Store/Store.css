@@ -16,10 +16,24 @@
   background-color: rgb(255, 255, 255);
   user-select: none;
   min-height: 100vh;
-  border: 1px solid blue;
+  border: 0px solid blue;
   position: relative; /*  */
-  margin-top: 6rem;
+  /* margin-top: 6rem; */
 
+}
+
+
+.store-header-wrapper{
+  position: fixed;
+  width: 100%;
+  top:2rem;
+z-index: 999;
+}
+
+.scrolling-animation-wrapper{
+  width: 100%;
+  height: 320vh;
+  
 }
 
 .storePage-overlay{

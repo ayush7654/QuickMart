@@ -4,12 +4,38 @@ import OrderToggle from '../OrderToggle/OrderToggle';
 import { MdStar, MdStarBorder } from 'react-icons/md';
 import { MdAttachMoney, MdPercent } from "react-icons/md";
 import { LayoutPanelLeft } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useScroll } from '../../../components/ScrollData/ScrollData';
+gsap.registerPlugin(ScrollTrigger);
+
 
 
 
 
 export default function StoreSorting({isIdle,currentSort,toggleSortOrder,typeFilter,sideBartoggled, setSideBarToggled,handleSort,currentCategory}) {
   
+
+   const{ scrollY} = useScroll();
+
+  console.log(scrollY)
+
+useEffect(() => {
+  const ctx = gsap.context(() => {
+    gsap.to(".current-sort-container", {
+      scrollTrigger: {
+        trigger: ".scroll-section", // Syncs with your video component's class
+        start: "top top",
+        end: "+=500",               // Shrinks over the first 500px of scroll
+        scrub: 1,
+      },
+      width: "65%",                 // Your requested target width
+      ease: "power2.out",
+    });
+  });
+
+  return () => ctx.revert();
+}, []);
 
 const [isHovered, setIsHovered] = useState(false);
 
@@ -55,7 +81,8 @@ useEffect(() => {
             }} 
             className="sticky-sort-container">
              <div className="current-sort-container-div">
-            <div className="current-sort-container">
+
+            <div className={`current-sort-container ${scrollY===0?'':'current-sort-blurred'}`}>
 
          
 
@@ -69,7 +96,7 @@ useEffect(() => {
 
 </div>
 
-increase its width upon scroll
+
 
 
 

@@ -28,6 +28,7 @@ import { X } from "lucide-react";
 
 import "./Store.css";
 import OrderToggle from "./OrderToggle/OrderToggle";
+import ScrollingAnimation from "../../components/ScrollingAnimation/ScrollingAnimation";
 
 export default function Store() {
   const ProductCache = useRef({});
@@ -251,12 +252,31 @@ console.log('applied filters are ',appliedFilters)
   
   return (
     <div className="Store-Page">
-        
+
+      <div className="store-header-wrapper">
+                   <StoreSorting
+  isIdle={isIdle}
+  currentSort={currentSort}
+  handleSort={handleSort}
+  toggleSortOrder={toggleSortOrder}
+  typeFilter={typeFilter}
+  sideBartoggled={sideBartoggled}
+  setSideBarToggled={setSideBarToggled}
+  currentCategory={currentCategory}
+/>
+      </div>
+
 
       <div style={{display:storeOverlayActive ?'flex':'none'}} className="storePage-overlay"></div>
 
     
- <StoreBanner/>
+{/*  <StoreBanner/>   */}
+
+
+
+<div className="scrolling-animation-wrapper">
+ <ScrollingAnimation/> 
+</div>
 
 
  {/*   <PageHeader
@@ -287,12 +307,6 @@ console.log('applied filters are ',appliedFilters)
       
           transition: 'all 0.6s ease',
         }}>
-         {/* <StoreFilter
-         sideFiltertoggled={sideFiltertoggled}
-         setSideFilterToggled={()=>setSideFilterToggled(true)}
-         storeFilters={storeFilters}
-         setStoreFilters={setStoreFilters}
-         filterActive={filterActive}/> */}
          
         </aside>
 
@@ -303,7 +317,7 @@ console.log('applied filters are ',appliedFilters)
 
 
         
-   <StoreSorting
+{/*    <StoreSorting
   isIdle={isIdle}
   currentSort={currentSort}
   handleSort={handleSort}
@@ -312,7 +326,7 @@ console.log('applied filters are ',appliedFilters)
   sideBartoggled={sideBartoggled}
   setSideBarToggled={setSideBarToggled}
   currentCategory={currentCategory}
-/>
+/> */}
 
 
 
@@ -384,7 +398,7 @@ console.log('applied filters are ',appliedFilters)
             
              {appliedFilters?appliedFilters.colors.map((color,index)=>
              <div key={index} className="applied-filter">
-              <span>{color}</span>
+              <span>{color}</span>           
               <X className="cancel-filter"
               onClick={() => handleRemoveColor(color)}/>
              </div>):
