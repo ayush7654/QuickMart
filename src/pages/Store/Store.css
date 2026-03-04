@@ -25,14 +25,23 @@
 
 .store-header-wrapper{
   position: fixed;
-  width: 100%;
-  top:2rem;
+  width: 95%;
+  top:1rem;
 z-index: 999;
+transform: translateY(0%);
+opacity: 0;
+transition: all .8s ease;
+}
+
+.store-header-visible{
+  transform: translateY(0%);
+  opacity: 1;
+
 }
 
 .scrolling-animation-wrapper{
   width: 100%;
-  height: 320vh;
+  height: 380vh;
   
 }
 

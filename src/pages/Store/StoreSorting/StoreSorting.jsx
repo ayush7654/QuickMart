@@ -24,18 +24,22 @@ useEffect(() => {
   const ctx = gsap.context(() => {
     gsap.to(".current-sort-container", {
       scrollTrigger: {
-        trigger: ".scroll-section", // Syncs with your video component's class
-        start: "top top",
-        end: "+=500",               // Shrinks over the first 500px of scroll
-        scrub: 1,
+        trigger: ".scroll-section", 
+        start: "top top",      
+        end: "+=700",           
+        // Changing scrub to a small number (like 0.5) adds "weight" or inertia.
+        // It still starts instantly but follows the scroll with a soft follow-through.
+        scrub: 0.8,            
+        immediateRender: false,
       },
-      width: "65%",                 // Your requested target width
-      ease: "power2.out",
+      width:'65%',    /* typeFilter?"100%": "65%" */
+      // 'power2.out' creates the inertia effect (fast start, slow finish)
+      ease: "power2.out",    
     });
   });
 
   return () => ctx.revert();
-}, []);
+}, []);   /* typeFilter */
 
 const [isHovered, setIsHovered] = useState(false);
 

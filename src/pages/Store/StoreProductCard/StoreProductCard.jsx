@@ -60,7 +60,7 @@ useEffect(() => {
 
 }, [cursorOnHover, images.length]);
 
-console.log('cart list is',cartList)
+
 
 
   function handleClickBM(e) {

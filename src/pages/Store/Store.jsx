@@ -247,13 +247,13 @@ const productElements = useMemo(() => {
 
 
 
-console.log('applied filters are ',appliedFilters)
+console.log('store scrollY is ',scrollY)
 
   
   return (
     <div className="Store-Page">
 
-      <div className="store-header-wrapper">
+      <div className={`store-header-wrapper ${isAtTop?'':'store-header-visible'}`}>
                    <StoreSorting
   isIdle={isIdle}
   currentSort={currentSort}

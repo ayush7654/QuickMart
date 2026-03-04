@@ -1,8 +1,8 @@
 .sticky-sort-container{
   position: sticky;
-  width: 100%;
- border: 0px solid blue;
-
+  width: 30%;
+ border: 1px solid blue;
+width: 100%;
    top:1rem; 
   z-index: 9;
 
@@ -33,7 +33,7 @@
 
 .current-sort-container {
   position: relative;
-  width: 90%;
+  width: 100%;
   padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -45,6 +45,7 @@
   background: transparent;
   backdrop-filter: blur(0px);
   border-radius: 10px;
+
   /* This makes the transition feel slow and premium */
   transition: 
     color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
@@ -55,11 +56,20 @@
 
 }
 
-.current-sort-blurred{
+.current-sort-blurred {
   color: black;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(220, 220, 220, 0.4); 
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+
+  /* CHANGE THIS: List only the slow properties. DO NOT use 'all' */
+  transition: 
+    color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    backdrop-filter 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 

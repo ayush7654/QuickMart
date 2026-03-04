@@ -107,7 +107,7 @@ useEffect(() => {
 
   // NEW: Define the scroll distance from the top *before* the header
   // starts to consider hiding (becoming idle).
-  const hideHeaderStartThreshold = 500; // For example, hide after scrolling 200px from top
+  const hideHeaderStartThreshold = 0; // For example, hide after scrolling 200px from top
 
   // NEW: Define the scroll distance before the header becomes idle/hidden,
   // once the hideHeaderStartThreshold has been crossed.
