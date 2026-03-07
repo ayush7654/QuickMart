@@ -29,6 +29,7 @@ import { X } from "lucide-react";
 import "./Store.css";
 import OrderToggle from "./OrderToggle/OrderToggle";
 import ScrollingAnimation from "../../components/ScrollingAnimation/ScrollingAnimation";
+import ExpandingStoreHeader from "./ExpandingStoreHeader/ExpandingStoreHeader";
 
 export default function Store() {
   const ProductCache = useRef({});
@@ -254,7 +255,7 @@ console.log('store scrollY is ',scrollY)
     <div className="Store-Page">
 
       <div className={`store-header-wrapper ${isAtTop?'':'store-header-visible'}`}>
-                   <StoreSorting
+   {/*                 <StoreSorting
   isIdle={isIdle}
   currentSort={currentSort}
   handleSort={handleSort}
@@ -263,7 +264,9 @@ console.log('store scrollY is ',scrollY)
   sideBartoggled={sideBartoggled}
   setSideBarToggled={setSideBarToggled}
   currentCategory={currentCategory}
-/>
+/> */}
+
+<ExpandingStoreHeader/>
       </div>
 
 

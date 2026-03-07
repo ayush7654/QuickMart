@@ -1,27 +1,27 @@
 import { useEffect, useRef, useState } from "react";
-import "./Testing.css";
+
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import StoreSorting from "../../pages/Store/StoreSorting/StoreSorting";
 import { useScroll } from "../ScrollData/ScrollData";
 import ScrollingAnimation from "../ScrollingAnimation/ScrollingAnimation";
-import StoreCategory from "../../pages/Store/StoreSidebar/StoreCategory/StoreCategory";
 gsap.registerPlugin(ScrollTrigger);
 
 
-export default function Testing() {
+export default function TestCache() {
 
-
-
-
+    
+   
   return (
-    <div className="testing-div">
+    <div 
+      className={`floating-pill ${isOpen ? "pill-expanded" : ""}`}
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      <div className="pill-content">
 
-</div>
-)
+        <StoreSorting/> 
+       
+      </div>
+    </div>
+  )
 }
-
-
-
-
- 

@@ -20,26 +20,26 @@ export default function StoreSorting({isIdle,currentSort,toggleSortOrder,typeFil
 
   console.log(scrollY)
 
-useEffect(() => {
-  const ctx = gsap.context(() => {
-    gsap.to(".current-sort-container", {
-      scrollTrigger: {
-        trigger: ".scroll-section", 
-        start: "top top",      
-        end: "+=700",           
-        // Changing scrub to a small number (like 0.5) adds "weight" or inertia.
-        // It still starts instantly but follows the scroll with a soft follow-through.
-        scrub: 0.8,            
-        immediateRender: false,
-      },
-      width:'65%',    /* typeFilter?"100%": "65%" */
-      // 'power2.out' creates the inertia effect (fast start, slow finish)
-      ease: "power2.out",    
-    });
-  });
+// useEffect(() => {
+//   const ctx = gsap.context(() => {
+//     gsap.to(".current-sortcontainer", {  /* .current-sort-container - correct one*/
+//       scrollTrigger: {
+//         trigger: ".scroll-section", 
+//         start: "top top",      
+//         end: "+=700",           
+//         // Changing scrub to a small number (like 0.5) adds "weight" or inertia.
+//         // It still starts instantly but follows the scroll with a soft follow-through.
+//         scrub: 0.8,            
+//         immediateRender: false,
+//       },
+//       width:'65%',    /* typeFilter?"100%": "65%" */
+//       // 'power2.out' creates the inertia effect (fast start, slow finish)
+//       ease: "power2.out",    
+//     });
+//   });
 
-  return () => ctx.revert();
-}, []);   /* typeFilter */
+//   return () => ctx.revert();
+// }, []);   /* typeFilter */
 
 const [isHovered, setIsHovered] = useState(false);
 
@@ -88,28 +88,11 @@ useEffect(() => {
 
             <div className={`current-sort-container ${scrollY===0?'':'current-sort-blurred'}`}>
 
-         
-
-              <div className='store-header-info-wrapper'>
- 
+    
 
 
 
-<div className='sort-head-title'>{typeFilter?currentCategory.replaceAll('-', ' '):'Porduct Categlog'}</div>
-
-
-</div>
-
-
-
-
-
-
-
-<div className='store-button-wrapper'>
-
-
-  <div onClick={() => setSideBarToggled(false)} 
+       <div onClick={() => setSideBarToggled(false)} 
   className='store-category-toggle'
      onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)} >
@@ -126,6 +109,28 @@ useEffect(() => {
 />
 
     </div>
+
+
+
+              <div className='store-header-info-wrapper'>
+ 
+
+
+
+<div className='sort-head-title'>{typeFilter?currentCategory.replaceAll('-', ' '):'Porduct Categlog'}</div>
+
+
+</div>
+
+
+
+
+
+
+<div className='store-button-wrapper'>
+
+
+
 
 
 
@@ -192,9 +197,9 @@ useEffect(() => {
 
 </div>
 
-   <div className={`store-order ${currentSort?'order-active':''}`} onClick={toggleSortOrder}>
+   {/* <div className={`store-order ${currentSort?'order-active':''}`} onClick={toggleSortOrder}>
     <OrderToggle/>
-   </div>
+   </div> */}
 
 
 </div>

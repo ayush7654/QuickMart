@@ -1,0 +1,193 @@
+
+.floating-pill {
+  /* 1. Fixed Position */
+  position: fixed;
+  top: 0px; /* Your exact distance from top */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Figtree';
+  /* 2. Initial State */
+  width: 65%;
+  height: 5rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow: hidden;
+  cursor: pointer;
+
+  /* 3. The "Inertia" Transition */
+  /* Starts fast, slows at the end for that premium feel */
+  transition: 
+    width 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 0.4s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 4. Expanded State */
+.pill-expanded {
+  width: calc(100% - 15px) !important;
+  height: calc(99vh - 15px) !important; /* Grows to bottom of screen */
+  border-radius: 12px;
+  cursor: default;
+}
+
+.pill-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.category-layout {
+  display: flex;
+  width: 100%;
+  height: 80%; /* Adjusted to leave room for StoreSorting header if needed */
+  margin-top: 2rem;
+}
+
+/* 40% Sidebar */
+.subgroup-sidebar {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  padding-left: 5%;
+}
+
+.subgroup-item {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.subgroup-item.active {
+  color: #000;
+  transform: translateX(15px);
+}
+
+/* The Main 60% Container */
+.category-grid-container {
+  flex: 0 0 60%;
+  height: 100%;
+  padding: 10px; /* Space from edges */
+  box-sizing: border-box;
+}
+
+.grid-wrapper {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  gap: 5px; /* Space between cards */
+}
+
+/* 1. HERO LAYOUT (1 Item) */
+/* Fills the entire 60% space */
+.layout-hero {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+/* 2. TRIAD LAYOUT (3 Items) */
+/* 1 large vertical card on left, 2 stacked on right */
+.layout-triad {
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    "big small-1"
+    "big small-2";
+}
+.layout-triad .card-0 { grid-area: big; }
+.layout-triad .card-1 { grid-area: small-1; }
+.layout-triad .card-2 { grid-area: small-2; }
+
+/* 3. QUAD LAYOUT (4 Items) */
+/* 2x2 symmetrical grid, but we'll make it slightly editorial */
+.layout-quad {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+/* 4. MOSAIC LAYOUT (5 Items) */
+/* A complex 'bento' style layout */
+.layout-mosaic {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+  /* 3 columns: 1st is the large pillar, next 2 are for the 2x2 grid */
+  grid-template-columns: 1.2fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    "pillar item-1 item-2"
+    "pillar item-3 item-4";
+}
+
+/* Assigning the Areas */
+.layout-mosaic .card-0 { grid-area: pillar; }
+.layout-mosaic .card-1 { grid-area: item-1; }
+.layout-mosaic .card-2 { grid-area: item-2; }
+.layout-mosaic .card-3 { grid-area: item-3; }
+.layout-mosaic .card-4 { grid-area: item-4; }
+
+.category-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden; /* Essential: clips the zoomed image */
+  position: relative;
+  cursor: pointer;
+}
+
+/* Move the background logic here */
+.category-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Use inheritance to get the style from the inline style on the div */
+  background-image: inherit; 
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 0;
+}
+
+/* Zoom effect on hover */
+.category-card:hover::before {
+  transform: scale(1.08); /* Adjust zoom level here */
+}
+
+/* Ensure content stays above the background */
+.card-overlay, .card-content {
+  position: relative;
+  z-index: 1;
+}
+
+.card-overlay{
+    width: 100%;
+    height:100%;
+    background-color: rgba(40,40,40,0.15);
+    display: flex;
+    align-items: end;
+    padding: 1rem;
+    font-family: sans-serif;
+}
+
+.card-overlay .category-name{
+ font-size: 1.3rem;
+ color: rgb(255, 255, 255);
+ 
+}

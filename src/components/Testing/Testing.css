@@ -24,59 +24,9 @@
     
    margin-top: 0rem;
    margin-bottom: 100vh;
-
+background-color: aquamarine;
 
   
     
 
-}
-
-.test-bg{
-  border: 1px solid red;
-  height: 100vh;
-  width: 100vw;
-  background-image: url('/Cart-head2.webp');
-  background-position: center;
-}
-
-
-.test-header-wrapper{
-  position: fixed;
-  top: 2rem;
-  z-index: 999;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 7rem;
-  border: 0px solid red;
-  height: 5rem;
-
-}
-
-
-.test-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 85%;
-  padding: 0px 40px;
-  color: white;
-  background: transparent;
-  backdrop-filter: blur(0px);
-  border-radius: 10px;
-  /* This makes the transition feel slow and premium */
-  transition: 
-    color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    background 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    
-  will-change: transform, width; /* Performance boost */
-}
-
-/* When the state is active, this class is applied */
-.test-header.test-header-blurred {
-  color: black;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
