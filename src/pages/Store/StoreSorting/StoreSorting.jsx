@@ -1,4 +1,4 @@
-import React ,{useState,  useEffect, useRef} from 'react'
+import React ,{useState,  useEffect, useRef,useContext} from 'react'
 import './StoreSorting.css'
 import OrderToggle from '../OrderToggle/OrderToggle';
 import { MdStar, MdStarBorder } from 'react-icons/md';
@@ -7,13 +7,14 @@ import { LayoutPanelLeft } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useScroll } from '../../../components/ScrollData/ScrollData';
+import { WinScrollContext } from '../../../components/WinScrollProvider/WinScrollProvider';
 gsap.registerPlugin(ScrollTrigger);
 
 
 
 
 
-export default function StoreSorting({isIdle,currentSort,toggleSortOrder,typeFilter,sideBartoggled, setSideBarToggled,handleSort,currentCategory}) {
+export default function StoreSorting({currentSort,toggleSortOrder,typeFilter,handleSort,currentCategory,setIsOpen,isOpen}) {
   
 
    const{ scrollY} = useScroll();
@@ -42,6 +43,8 @@ export default function StoreSorting({isIdle,currentSort,toggleSortOrder,typeFil
 // }, []);   /* typeFilter */
 
 const [isHovered, setIsHovered] = useState(false);
+
+  const { isIdle } = useContext(WinScrollContext);
 
   const SortArray = [
     { name: 'Price', sort: 'price' ,Icon: MdAttachMoney },
@@ -90,9 +93,33 @@ useEffect(() => {
 
     
 
+      <div className='store-header-info-wrapper'>
+ 
 
 
-       <div onClick={() => setSideBarToggled(false)} 
+
+<div className='sort-head-title'>{typeFilter?currentCategory.replaceAll('-', ' '):'Porduct Categlog'}</div>
+
+
+</div>
+
+
+   
+
+
+
+        
+
+
+
+
+
+<div className='store-button-wrapper'>
+
+
+    <div /* onClick={() => setSideBarToggled(false)}  */
+
+    onClick={()=>setIsOpen(prev=>!prev)}
   className='store-category-toggle'
      onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)} >
@@ -100,7 +127,7 @@ useEffect(() => {
 
 
 <LayoutPanelLeft 
-  className={`category-icon ${isHovered || !sideBartoggled?'category-hovered':''}  ${typeFilter?'category-active':''}`}
+  className={`category-icon ${isHovered ?'category-hovered':''}  ${typeFilter || isOpen?'category-active':''}`}
   size={30} 
   strokeWidth={1} 
 
@@ -112,41 +139,25 @@ useEffect(() => {
 
 
 
-              <div className='store-header-info-wrapper'>
- 
 
 
 
-<div className='sort-head-title'>{typeFilter?currentCategory.replaceAll('-', ' '):'Porduct Categlog'}</div>
-
-
+{/* 
+<div className='store-header-btn'>
+  <span>Sort By</span>
+  <span>Order</span>
 </div>
-
-
-
-
-
-
-<div className='store-button-wrapper'>
-
-
-
-
-
-
-
-
-
-
-
-
+ */}
 
      <div className='sort-dropDown-div'>
 
 
 
 
-  <div onClick={()=>setIsSortOpen(true)} className='product-sort-wrapper'>
+  <div onClick={() => {
+  // This prevents the floating-pill's onClick from firing
+    setIsSortOpen(true);
+  }} className='product-sort-wrapper'>
 
     {/* <span className='sort-label'>Sort By </span> */}
 
@@ -154,8 +165,8 @@ useEffect(() => {
     <span className={`sort-toggle  ${isSortOpen?'sort-toggle-active':''} `}>
       
       <div className='sort-toggle-content'>
-        <span className="sort-label">SORT BY</span>
-            <span>{currentSort?currentSort.name:'Select'}</span>  
+        
+            <span>{currentSort?currentSort.name:'Sort By'}</span>
       
       </div>
 
@@ -178,7 +189,8 @@ useEffect(() => {
  className={`store-sort-div ${currentSort?.name===item.name?'store-sort-selected':''}`}
  onClick={()=>
   {handleSort(item);
-   setIsSortOpen(false);                 
+   setIsSortOpen(false); 
+   console.log('clicked')                
  }
  
  }
@@ -197,15 +209,16 @@ useEffect(() => {
 
 </div>
 
-   {/* <div className={`store-order ${currentSort?'order-active':''}`} onClick={toggleSortOrder}>
+   <div className={`store-order ${currentSort?'order-active':''}`} onClick={toggleSortOrder}>
     <OrderToggle/>
-   </div> */}
+   </div> 
 
 
 </div>
   
 
-
+{/* <span className="sort-label">SORT BY</span>
+            <span>{currentSort?currentSort.name:'Select'}</span>   */}
 
       </div>
       </div>

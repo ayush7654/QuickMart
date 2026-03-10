@@ -12,7 +12,7 @@ const OrderToggle = () => {
     >
       <div className="btn-inner-content">
         {/* Label anchored to top left */}
-        <span className="btn-label-top">ORDER</span>
+{/*         <span className="btn-label-top">ORDER</span> */}
         
         <div className="value-window">
           <div className={`value-stack ${isHigh ? 'slide-up' : 'slide-down'}`}>

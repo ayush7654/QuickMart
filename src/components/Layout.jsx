@@ -8,7 +8,7 @@ import SideBarNav from './SideBarNav/SideBarNav';
 import SideBarCart from './SideBarCart/SideBarCart';
 import { CartListProvider } from './CartListProvider';
 import { StoreFilterProvider } from './StoreFilterContext';
-
+import { StoreDataProvider } from './StoreDataContext';
 
 export default function Home(){
     const location = useLocation();
@@ -39,6 +39,8 @@ setSearchBarToggle(i)
   }
    
     return(
+
+      <StoreDataProvider>
     <div  className={`root${isHomePage ? 'home' : 'nothome'}`} style={{position:"relative"}}>
 {showOverlay && (
   <div className="screen-overlay" onClick={() => setShowOverlay(false)} />
@@ -81,6 +83,7 @@ setSearchBarToggle(i)
 
          <Footer /> 
     </div>
+    </StoreDataProvider>
         
     )
 }

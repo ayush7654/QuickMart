@@ -1,12 +1,12 @@
 .order-morph-btn {
   /* Dimensions and Base Style */
 
-   width: 9rem;
+   
   padding: 6px 10px;
   background: #ffffff;
     border: 1px solid #d4d4d4;
   /* color: #fff; */
-
+gap:1rem;
   border-radius: 10px;
   position: relative;
   display: flex;

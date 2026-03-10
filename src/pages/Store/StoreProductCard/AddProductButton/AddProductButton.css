@@ -13,10 +13,11 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
   /* The depth shadow for that 'carved' look */
-  box-shadow: 
+ /*  box-shadow: 
     0 0px 10px rgba(0, 0, 0, 0.2),
-    inset 0 0 6px rgba(255, 255, 255, 0.1);
+    inset 0 0 6px rgba(255, 255, 255, 0.1); */
   overflow: hidden;
+
 }
 
 .minimal-cart-btn:hover {
@@ -24,6 +25,7 @@
   background-color: rgb(0,100,255);
   border-color: rgba(255, 255, 255, 0.4);
   transform: scale(1.08);
+     
 
 }
 
@@ -34,13 +36,16 @@
 /* Success state: White background, black icon */
 .minimal-cart-btn.added {
   background: #fff;
-  color: rgb(140,140,140);
-  border-color: #fff;
+  color: rgb(100,100,100);
+
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
 }
 
 .minimal-cart-btn.added:hover {
   
   color: rgb(0, 0, 0);
+
 
 }
 

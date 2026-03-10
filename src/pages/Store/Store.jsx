@@ -3,33 +3,25 @@ import {
   useEffect,
   useRef,
   useLayoutEffect,
-  useMemo,
- useContext
+  useMemo
 } from "react";
 import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
 import { getItems, getFilteredItems } from "../../api";
-import ProductCard from "../../components/ProductCard";
 import StoreProductCard from "./StoreProductCard/StoreProductCard";
 import StoreCategory from "./StoreSidebar/StoreCategory/StoreCategory";
 import StoreFooter from "./StoreFooter/StoreFooter";
 import { SlidersHorizontal } from "lucide-react";
-import { WinScrollContext } from "../../components/WinScrollProvider/WinScrollProvider";
 import ScrollButton from "../../components/ScrollingButton/ScrollingButton";
-import StoreSorting from "./StoreSorting/StoreSorting";
-import PageHeader from "../../components/PageHeader/PageHeader";
-
-
-import StoreBanner from "./StoreBanner/StoreBanner";
 import FilterSection from "./FilterSection/FilterSection";
 import GridToggle from "./GridToggle/GridToggle";
 import { useStoreFilter } from "../../components/StoreFilterContext";
-import { BsSortDown, BsSortUp } from "react-icons/bs";
 import { X } from "lucide-react";
-
-import "./Store.css";
-import OrderToggle from "./OrderToggle/OrderToggle";
 import ScrollingAnimation from "../../components/ScrollingAnimation/ScrollingAnimation";
 import ExpandingStoreHeader from "./ExpandingStoreHeader/ExpandingStoreHeader";
+import { useStoreData } from "../../components/StoreDataContext";
+import "./Store.css";
+import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
+
 
 export default function Store() {
   const ProductCache = useRef({});
@@ -41,16 +33,17 @@ export default function Store() {
   const [renderTrigger, setRenderTrigger] = useState(0);
 
   const location = useLocation();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [currentCategory, setcurrentCategory] = useState('');
-  const [categoryName, setCategoryName] = useState("");
-  const [sideBartoggled,   setSideBarToggled] = useState(true);
-  const [sideFiltertoggled,setSideFilterToggled] = useState(true)
-  const [currentSort,setCurrentSort] = useState(null);
- /*  const [currentFilter,setCurrentFilter] = useState(null) */
-  const [sortOrder,setSortOrder] = useState('asc')
 
-  
+  const { isAtTop,
+    currentSort,
+    sortOrder,
+    currentCategory,
+    typeFilter,
+    storeOverlayActive,
+    handleSort,
+    toggleSortOrder,
+    handleTypeFilter,
+    handleCancelTypeFilter} = useStoreData()
 
   const { minPrice, setMinPrice, maxPrice, setMaxPrice,storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount,appliedFilters,setAppliedFilters,setStoreFilterColors} = useStoreFilter();
 
@@ -63,28 +56,7 @@ export default function Store() {
         { id: 4, label: '4x4', icon: '/grid4x4.png' },
       ];
 
-  const { isIdle, isAtTop } = useContext(WinScrollContext);
 
-/*   const {storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount} = useStoreFilterData(); */
-
-
-
- const storeOverlayActive = !(sideBartoggled && sideFiltertoggled);
-
-console.log(storeFilters)
-
-const handleSort = (e) => {
-
-
-  setCurrentSort(prev => prev?.name === e.name ? null : e);
-};
-
-
-
-
-  const typeFilter = searchParams.get("type");
-
-  const navigate = useNavigate();
 
    const [hide, setHide] = useState(false);
   let lastY = 0;
@@ -103,25 +75,7 @@ const handleSort = (e) => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleTypeFilter = (category) => {
-    setcurrentCategory(category);
-    setSearchParams({ type: category });
-  };
 
-  const handleCancelTypeFilter =()=>{
-    setcurrentCategory('')
-   navigate('/store')
-  }
-
-  const handleAllProducts =()=>{
-    setcurrentCategory('');
-   searchParams.delete('type'); // remove the key from the params
-setSearchParams(searchParams); // update the URL
-  }
-
-const toggleSortOrder = () => {
-  setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
-};
 
   const loadBatch = async (batchNumber) => {
     if (ProductCache.current[batchNumber]) return;
@@ -255,18 +209,16 @@ console.log('store scrollY is ',scrollY)
     <div className="Store-Page">
 
       <div className={`store-header-wrapper ${isAtTop?'':'store-header-visible'}`}>
-   {/*                 <StoreSorting
-  isIdle={isIdle}
+ 
+
+<ExpandingStoreHeader
+
   currentSort={currentSort}
   handleSort={handleSort}
   toggleSortOrder={toggleSortOrder}
   typeFilter={typeFilter}
-  sideBartoggled={sideBartoggled}
-  setSideBarToggled={setSideBarToggled}
-  currentCategory={currentCategory}
-/> */}
 
-<ExpandingStoreHeader/>
+  currentCategory={currentCategory}/>
       </div>
 
 
@@ -282,36 +234,22 @@ console.log('store scrollY is ',scrollY)
 </div>
 
 
- {/*   <PageHeader
-   bgImage='/HomeImg.jpg'
-   pageHeadText={'The Vault'}
-   pageHeadPara={'The Vault is a carefully guarded collection of premium products, chosen for those who value quality over quantity. Each item earns its place — nothing more, nothing less.'}/> */}
-   
+
  
- <aside className="store-sidebar"  style={{
-          transform: sideBartoggled ? 'translateX(100%)' : 'translateX(0%)',
-           opacity:sideBartoggled?'0':'1', 
-      
-          transition: 'all 0.6s ease',
-        }}>
+ {/*  <aside className="store-sidebar"  >
           <StoreCategory
             currentCategory={currentCategory}
             handleTypeFilter={handleTypeFilter}
             handleClickCategory={() => setcurrentCategory("")}
             typeFilter={typeFilter}
-            setSideBarToggled={()=>setSideBarToggled(true)}
+           
             handleCancelTypeFilter ={handleCancelTypeFilter}
           />
         </aside>
     
-   <aside className="store-sidebar"  style={{
-           transform:sideFiltertoggled ? 'translateX(100%)' : 'translateX(0%)',
-            opacity:sideFiltertoggled?'0':'1', 
-      
-          transition: 'all 0.6s ease',
-        }}>
+   <aside className="store-sidebar"  >
          
-        </aside>
+        </aside>  */}
 
 
 <div className="store-content-wrapper">
@@ -320,18 +258,6 @@ console.log('store scrollY is ',scrollY)
 
 
         
-{/*    <StoreSorting
-  isIdle={isIdle}
-  currentSort={currentSort}
-  handleSort={handleSort}
-  toggleSortOrder={toggleSortOrder}
-  typeFilter={typeFilter}
-  sideBartoggled={sideBartoggled}
-  setSideBarToggled={setSideBarToggled}
-  currentCategory={currentCategory}
-/> */}
-
-
 
       
        <div className="store-page-heading-wrapper">
@@ -347,7 +273,7 @@ console.log('store scrollY is ',scrollY)
  
 
 
-       <div className="filter-Btn-Ph"onClick={() => setSideBarToggled(false)}>
+       <div className="filter-Btn-Ph">
           <SlidersHorizontal className="" strokeWidth={1.5} />
        </div>
 
@@ -369,7 +295,14 @@ console.log('store scrollY is ',scrollY)
             
                  
                     <div className='product-count-div'>
-    Showing <span>{productElements.length} </span>results for '<span>{typeFilter?currentCategory:'All Products'}</span>'
+                      <div className="product-count-content">  Showing <span>{productElements.length} </span>results for '<span>{typeFilter?currentCategory:'All Products'}</span>' . </div>
+ {typeFilter && <AnimatedUnderline
+  thickness={1}
+  offset={1}
+  color='rgb(0,100,255)'>
+      <span onClick={handleCancelTypeFilter} className="clear-category-btn">Clear Category</span>
+  </AnimatedUnderline>}
+  
     </div>
 
    <div className="store-grid-toggle">

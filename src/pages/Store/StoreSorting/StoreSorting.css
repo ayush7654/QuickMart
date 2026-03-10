@@ -2,9 +2,9 @@
 /*   position: sticky;
      top:1rem;  */
   width: 30%;
- border: 1px solid blue;
+ border: 0px solid blue;
 width: 100%;
-
+height: 5rem;
   z-index: 9;
 
   /* height: 6rem; */
@@ -59,12 +59,12 @@ width: 100%;
 
 .current-sort-blurred {
   color: black;
-  background: rgba(220, 220, 220, 0.4); 
+  background: rgba(230, 230, 230, 0); 
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+  border: 0px solid rgba(0, 0, 0, 0.05);
 
+height: 5rem;
   /* CHANGE THIS: List only the slow properties. DO NOT use 'all' */
   transition: 
     color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
@@ -100,16 +100,13 @@ width: 100%;
 
 .category-icon {
   color: black;            /* This controls the 'color' prop / stroke */
-  fill:transparent;       /* This controls the 'fill' prop */
+  fill:transparent;
+  fill:black;       /* This controls the 'fill' prop */
   transition: all 0.2s ease; /* Makes the change smooth */
   cursor: pointer;
+ 
 }
 
-.category-hovered {
-
-  color:rgb(0,100,255);        /* Change stroke color on hover */
-                      /* Change fill color on hover */
-}
 
 .category-active{
     color: rgb(0,100,255);            /* This controls the 'color' prop / stroke */
@@ -124,14 +121,17 @@ width: 100%;
 }
 
 
-
+.store-header-btn{
+  display: flex;
+  gap: 1rem;
+}
 
 
 
 
 .sort-dropDown-div{
 
-    display: flex;
+    display:flex;
  
     align-items: center;
     position: relative;
@@ -152,15 +152,15 @@ font-size: 9px;
 
 .sort-toggle{
 position: relative;
-    width: 9rem;
+   
   padding: 8px 10px;
   background-color: #ffffff82;
-  border: 1px solid #e0e0e0;
+  border: 0px solid #e0e0e0;
   border-radius: 8px;
   display: flex;
  justify-content: space-between;
  align-items: center;
-  gap:3px;
+  gap:1rem;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
@@ -180,7 +180,7 @@ position: relative;
 
 .sort-toggle-active {
   border-color: #007aff;
-  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+ /*  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1); */
 }
 
 
@@ -204,15 +204,16 @@ position: relative;
 
 .sorting-panel{
 
-width: 9rem;
+width: 8rem;
 position: absolute;
-  top: calc(100% + 8px);
-right: 0;
+  top: calc(100% + 30px);
+left: 0;
   padding: 6px;
 border-radius: 10px;
   border: 1px solid #eee;
   border-top: 0px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  
     opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
@@ -228,6 +229,7 @@ border-radius: 10px;
 
   
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px -10px rgba(110, 80, 255, 0.3);
   list-style: none;
 
   margin: 0;
@@ -253,6 +255,7 @@ opacity: 1; visibility: visible; transform: translateY(0);
 .store-sort-div:hover{
 
     background-color: #f5f5f7;
+    background-color: #eef6ff;
   color: #007aff;
 
 }

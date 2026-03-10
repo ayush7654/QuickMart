@@ -5,13 +5,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import StoreCategory from "../StoreSidebar/StoreCategory/StoreCategory";
 import StoreSorting from "../StoreSorting/StoreSorting";
 import CategoryDataProvider from "./CategoryDataProvider";
+import { useStoreData } from "../../../components/StoreDataContext";
 gsap.registerPlugin(ScrollTrigger);
 
 
 export default function ExpandingStoreHeader() {
 
- const [isOpen, setIsOpen] = useState(false);
+const {currentSort,toggleSortOrder,typeFilter,handleSort,currentCategory,handleTypeFilter} = useStoreData()
 
+ const [isOpen, setIsOpen] = useState(false);
 const { categorizedData, loading } = CategoryDataProvider();
 const [activeGroup, setActiveGroup] = useState(null);
 
@@ -45,7 +47,7 @@ const currentItems = categorizedData && activeGroup ? categorizedData[activeGrou
         scrub: 0.8,            
         immediateRender: false,
       },
-      width:'65%',    /* typeFilter?"100%": "65%" */
+      width:'50%',    /* typeFilter?"100%": "65%" */
       // 'power2.out' creates the inertia effect (fast start, slow finish)
       ease: "power2.out",    
     });
@@ -59,11 +61,20 @@ const currentItems = categorizedData && activeGroup ? categorizedData[activeGrou
   return (
      <div 
           className={`floating-pill ${isOpen ? "pill-expanded" : ""}`}
-          onClick={() => setIsOpen(!isOpen)}
+          /* onClick={() => setIsOpen(!isOpen)} */
         >
           <div className="pill-content">
     
-    <StoreSorting/>
+    <StoreSorting
+
+  currentSort={currentSort}
+  handleSort={handleSort}
+  toggleSortOrder={toggleSortOrder}
+  typeFilter={typeFilter}
+
+  currentCategory={currentCategory}
+     isOpen={isOpen}
+     setIsOpen={setIsOpen}/> 
 
 <div className="category-layout">
   {loading ? (
@@ -99,6 +110,10 @@ const currentItems = categorizedData && activeGroup ? categorizedData[activeGrou
               key={item.slug} 
               className={`category-card card-${index}`}
               style={{ backgroundImage: `url(${item.backgroundImage})` }}
+                        onClick={() => {
+  handleTypeFilter(item.slug);
+ setIsOpen(false)
+}}
             >
               <div className="card-overlay">
                 <span className="category-name">{item.name}</span>

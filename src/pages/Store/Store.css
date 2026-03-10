@@ -145,12 +145,23 @@ margin: 2rem 0rem;
 
 
   
+.product-count-div{
+  display: flex;
+  align-items: center;
+  gap: 5px;
 
 
-.product-count-div span{
+}
+
+.product-count-content span{
   font-weight: 600;
   color:black;
 }
+
+.clear-category-btn{
+    color:rgb(0,100,255);
+    cursor: pointer;
+   }
 
 
 
@@ -364,6 +375,8 @@ box-shadow: 0 10px 20px rgba(50,50,50, 0.2);
  background-color: #e0e0e0;
    }
 
+
+   
 
 
   @media(max-width:1200px){

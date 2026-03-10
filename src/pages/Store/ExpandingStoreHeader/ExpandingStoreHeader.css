@@ -9,12 +9,12 @@
   /* 2. Initial State */
   width: 65%;
   height: 5rem;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   z-index: 1000;
-  overflow: hidden;
+  
   cursor: pointer;
 
   /* 3. The "Inertia" Transition */
@@ -27,6 +27,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    box-shadow: 0 10px 20px -10px rgba(110, 80, 255, 0.3);
 }
 
 /* 4. Expanded State */
@@ -43,6 +45,14 @@
   display: flex;
   flex-direction: column;
 
+}
+
+.floating-pill .category-layout{
+ opacity: 0;
+}
+
+.pill-expanded .category-layout{
+ opacity: 1;
 }
 
 .category-layout {

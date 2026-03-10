@@ -12,19 +12,28 @@
       border: 1px solid rgb(230,230,230);
    border-radius: 10px;
    overflow-y: auto; /* Adds a scrollbar ONLY if content is too tall */
-  
- 
   scrollbar-width: none;
    
+}
+
+
+.store-side-filter h2{
+
+  padding-left:20px ;
 }
 
 
 
 .filter-section{
   border: 0px solid red;
+  padding: 20px;
 
 }
 
+.filter-section 
+.filter-header{
+  margin-bottom: 20px;
+}
 
 
 .filter-header {
@@ -32,10 +41,12 @@
   justify-content: space-between;
   align-items: center;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   background: rgba(240, 240, 240, 0.6);
+  background-color: white;
   padding: 10px 15px;
   border-radius: 20px;
+    box-shadow: 0px 0px 10px -0px rgba(12, 19, 232, 0.2);
 }
 
 .filter-wrapper{
@@ -43,7 +54,7 @@
   flex-direction: column;
   gap:0rem;
 
-  padding: 0px 18px;
+  padding: 0px 10px;
 }
 
 
