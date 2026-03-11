@@ -45,18 +45,28 @@ transition: all .8s ease;
   
 }
 
-.storePage-overlay{
-  
-  height:100%;
-  width: 100%;
-  position: absolute;
-  top:0;
+.storePage-overlay {
+  position: fixed; /* Use fixed to cover the entire viewport regardless of scroll */
+  top: 0;
   left: 0;
-
-   background: linear-gradient(to right , rgba(0, 0, 0, 0.1) 40%,transparent); 
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px); /* Optional: adds a nice premium glass effect */
+  
+  /* 1. The Setup */
+  opacity: 0;
+  pointer-events: none; /* Mouse clicks pass through to content below */
   z-index: 99;
+  
+  /* 2. The Transition */
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  /*    background-color: rgba(59, 59, 59, 0.1);  */
+.storePage-overlay.is-visible {
+  /* 3. The Active State */
+  opacity: 1;
+  pointer-events: auto; /* Now it blocks clicks and becomes interactive */
 }
 
 

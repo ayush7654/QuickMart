@@ -9,8 +9,9 @@ export const StoreDataProvider = ({ children }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   
   // 1. UI & Scroll States
+   const [isOpen, setIsOpen] = useState(false);
   const { isAtTop } = useContext(WinScrollContext);
-  const storeOverlayActive = false; // Constant as per your snippet
+  const storeOverlayActive = isOpen; // BRING ISOPEN HERE , RENAME IT , MAKE THIS DEPENDENT ON IT
 
   // 2. Filter & Category States
   // Initialize from URL params so refresh doesn't lose data
@@ -63,7 +64,8 @@ export const StoreDataProvider = ({ children }) => {
     handleSort,
     toggleSortOrder,
     handleTypeFilter,
-    handleCancelTypeFilter
+    handleCancelTypeFilter,
+    isOpen, setIsOpen
   };
 
   return (

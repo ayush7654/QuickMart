@@ -7,13 +7,13 @@
   transform: translateX(-50%);
   font-family: 'Figtree';
   /* 2. Initial State */
-  width: 65%;
-  height: 5rem;
+  width: 70%;
+  height: 3.5rem;
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(5px);
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  z-index: 1000;
+  z-index: 99;
   
   cursor: pointer;
 
@@ -37,6 +37,7 @@
   height: calc(99vh - 15px) !important; /* Grows to bottom of screen */
   border-radius: 12px;
   cursor: default;
+  background-color: rgb(255, 255, 255,.7);
 }
 
 .pill-content {
@@ -64,12 +65,14 @@
 
 /* 40% Sidebar */
 .subgroup-sidebar {
-  flex: 0 0 40%;
+  flex: 0 0 35%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-right: 1px solid rgba(0, 0, 0, 0.05);
   padding-left: 5%;
+  
+ 
 }
 
 .subgroup-item {
@@ -90,15 +93,32 @@
 .category-grid-container {
   flex: 0 0 60%;
   height: 100%;
-  padding: 10px; /* Space from edges */
+ background-color: rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
+  position: relative; /* Keep this */
+  overflow: hidden; /* Prevent scaling cards from creating scrollbars */
+  border: 0px solid red;
+  border-radius: 12px;
 }
 
 .grid-wrapper {
+  position: absolute; 
+  /* Use inset to ensure it pins to all four corners of the container */
+  inset: 5px; 
   display: grid;
-  width: 100%;
-  height: 100%;
-  gap: 5px; /* Space between cards */
+  gap: 5px;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  
+  /* ADD THIS: Ensure the grid itself doesn't shift when cards scale */
+  transform-origin: center center;
+}
+.grid-wrapper.visible {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 10;
+    inset: 5px; 
 }
 
 /* 1. HERO LAYOUT (1 Item) */
@@ -132,8 +152,7 @@
 /* A complex 'bento' style layout */
 .layout-mosaic {
   display: grid;
-  width: 100%;
-  height: 100%;
+
   gap: 5px;
   /* 3 columns: 1st is the large pillar, next 2 are for the 2x2 grid */
   grid-template-columns: 1.2fr 1fr 1fr; 
@@ -154,9 +173,60 @@
   width: 100%;
   height: 100%;
   border-radius: 12px;
-  overflow: hidden; /* Essential: clips the zoomed image */
+  overflow: hidden;
   position: relative;
+  opacity: 0;
+  clip-path: inset(var(--from-top, 100%) var(--from-right, 0%) var(--from-bottom, 0%) var(--from-left, 100%));
   cursor: pointer;
+  /* Optimization: Prevents the "jump" by pre-calculating the layer */
+  will-change: transform, opacity, clip-path;
+}
+
+/* 3. THE FIX: Only animate the grid when it is FIRST MADE VISIBLE */
+/* Because we use the 'visited' cache, once the animation finishes and 
+   stays in the DOM, it won't re-trigger when you toggle the 'visible' class 
+   back and forth. */
+.grid-wrapper.visible .category-card {
+  animation: dynamicBloom 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes dynamicBloom {
+  0% {
+    opacity: 0;
+    /* Starting from the corner variables you defined */
+    clip-path: inset(var(--from-top, 100%) var(--from-right, 0%) var(--from-bottom, 0%) var(--from-left, 100%));
+    transform: scale(0.92); /* Slightly deeper scale-down makes the growth feel longer */
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0% 0% 0% 0%);
+    transform: scale(1);
+  }
+}
+/* 2. Assign Corners to specific cards */
+
+/* Card 0: Top-Left Bloom */
+.card-0 {
+  --from-top: 0%;
+  --from-right: 100%;
+  --from-bottom: 100%;
+  --from-left: 0%;
+  animation-delay: 0.05s;
+}
+
+/* Card 0 (The big Pillar on the left): Blooms from Top-Left */
+.is-active .card-0 { --from-top: 0%; --from-right: 100%; --from-bottom: 100%; --from-left: 0%; animation-delay: 0.3s; }
+
+/* Card 1 (Top Square): Blooms from Top-Right */
+.is-active .card-1 { --from-top: 0%; --from-right: 0%; --from-bottom: 100%; --from-left: 100%; animation-delay: 0.15s; }
+
+/* Card 2 (Bottom Square): Blooms from Bottom-Right */
+.is-active .card-2 { --from-top: 100%; --from-right: 0%; --from-bottom: 0%; --from-left: 100%; animation-delay: 0.2s; }
+
+/* Card 3 & 4 (Remaining): Bloom from Center for variety */
+.is-active .card-3, .is-active .card-4 { 
+  --from-top: 50%; --from-right: 50%; --from-bottom: 50%; --from-left: 50%; 
+  animation-delay: 0.25s; 
 }
 
 /* Move the background logic here */
@@ -173,6 +243,7 @@
   background-position: center;
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   z-index: 0;
+
 }
 
 /* Zoom effect on hover */

@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState ,useLayoutEffect} from "react";
 import './ExpandingStoreHeader.css'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import StoreCategory from "../StoreSidebar/StoreCategory/StoreCategory";
+
 import StoreSorting from "../StoreSorting/StoreSorting";
 import CategoryDataProvider from "./CategoryDataProvider";
 import { useStoreData } from "../../../components/StoreDataContext";
@@ -11,9 +11,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ExpandingStoreHeader() {
 
-const {currentSort,toggleSortOrder,typeFilter,handleSort,currentCategory,handleTypeFilter} = useStoreData()
+const {currentSort,toggleSortOrder,typeFilter,handleSort,currentCategory,handleTypeFilter,isOpen, setIsOpen} = useStoreData()
 
- const [isOpen, setIsOpen] = useState(false);
+ 
 const { categorizedData, loading } = CategoryDataProvider();
 const [activeGroup, setActiveGroup] = useState(null);
 
@@ -47,7 +47,7 @@ const currentItems = categorizedData && activeGroup ? categorizedData[activeGrou
         scrub: 0.8,            
         immediateRender: false,
       },
-      width:'50%',    /* typeFilter?"100%": "65%" */
+      width:'60%',    /* typeFilter?"100%": "65%" */
       // 'power2.out' creates the inertia effect (fast start, slow finish)
       ease: "power2.out",    
     });
@@ -57,11 +57,36 @@ const currentItems = categorizedData && activeGroup ? categorizedData[activeGrou
 }, []); 
 
 
+const [visitedGroups, setVisitedGroups] = useState([]);
+
+// 1. Logic to add the active group to the cache
+useEffect(() => {
+  if (activeGroup && !visitedGroups.includes(activeGroup)) {
+    setVisitedGroups((prev) => [...prev, activeGroup]);
+  }
+}, [activeGroup, visitedGroups]);
+
+useEffect(() => {
+  // When the header closes, we wipe the cache.
+  // This ensures the next time they open the store, it feels "fresh" and blooms again.
+  if (!isOpen) {
+    setVisitedGroups([]);
+  }
+}, [isOpen]);
+
+// This separate effect ensures that as soon as it opens OR changes, 
+// the active group is added to the cache to trigger the bloom.
+useEffect(() => {
+  if (isOpen && activeGroup && !visitedGroups.includes(activeGroup)) {
+    setVisitedGroups((prev) => [...prev, activeGroup]);
+  }
+}, [activeGroup, isOpen, visitedGroups]);
+
 
   return (
      <div 
           className={`floating-pill ${isOpen ? "pill-expanded" : ""}`}
-          /* onClick={() => setIsOpen(!isOpen)} */
+     
         >
           <div className="pill-content">
     
@@ -98,22 +123,29 @@ const currentItems = categorizedData && activeGroup ? categorizedData[activeGrou
         ))}
       </div>
 
-      {/* Right Section: 70% Grid Display */}
-      <div className="category-grid-container">
-        {/* We use a key on the wrapper so GSAP can trigger animations on change */}
+     
+      <div className={`category-grid-container ${isOpen ? 'is-active' : ''}`}>
+    {/* We map through ALL data, but we only physically render the HTML 
+      if the group has been visited. This is the "Lazy Cache".
+    */}
+    {Object.entries(categorizedData).map(([groupName, items]) => {
+      const isVisited = visitedGroups.includes(groupName);
+      const isActive = activeGroup === groupName;
+
+      // If it's never been hovered, don't even put it in the DOM yet
+      if (!isVisited) return null;
+
+      return (
         <div 
-          key={activeGroup} 
-          className={`grid-wrapper ${getLayoutClass(currentItems.length)}`}
+          key={groupName} 
+          className={`grid-wrapper ${getLayoutClass(items.length)} ${isActive ? 'visible' : 'hidden'}`}
         >
-          {currentItems.map((item, index) => (
+          {items.map((item, index) => (
             <div 
               key={item.slug} 
               className={`category-card card-${index}`}
               style={{ backgroundImage: `url(${item.backgroundImage})` }}
-                        onClick={() => {
-  handleTypeFilter(item.slug);
- setIsOpen(false)
-}}
+              onClick={()=>{handleTypeFilter(item.slug),setIsOpen(false)}}
             >
               <div className="card-overlay">
                 <span className="category-name">{item.name}</span>
@@ -121,7 +153,9 @@ const currentItems = categorizedData && activeGroup ? categorizedData[activeGrou
             </div>
           ))}
         </div>
-      </div>
+      );
+    })}
+  </div>
     </>
   )}
 </div>
@@ -136,10 +170,3 @@ const currentItems = categorizedData && activeGroup ? categorizedData[activeGrou
 
 
 
-/*   <div>
-        <h1>divide this by 3:7</h1>
-        <h1> render the sub group list </h1>
-        <h1>  Design the grid layouts for 1,3,4,5 grid sub group </h1>
-        <h1>render grid</h1>
-        <h1>re design sorting btn </h1>          
-    </div> */

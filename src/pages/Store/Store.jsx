@@ -43,7 +43,8 @@ export default function Store() {
     handleSort,
     toggleSortOrder,
     handleTypeFilter,
-    handleCancelTypeFilter} = useStoreData()
+    handleCancelTypeFilter,
+  setIsOpen} = useStoreData()
 
   const { minPrice, setMinPrice, maxPrice, setMaxPrice,storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount,appliedFilters,setAppliedFilters,setStoreFilterColors} = useStoreFilter();
 
@@ -222,7 +223,10 @@ console.log('store scrollY is ',scrollY)
       </div>
 
 
-      <div style={{display:storeOverlayActive ?'flex':'none'}} className="storePage-overlay"></div>
+     <div className={`storePage-overlay ${storeOverlayActive ? 'is-visible' : ''}`} 
+     onClick={() => setIsOpen(false)}>
+      
+      </div> 
 
     
 {/*  <StoreBanner/>   */}
@@ -236,20 +240,7 @@ console.log('store scrollY is ',scrollY)
 
 
  
- {/*  <aside className="store-sidebar"  >
-          <StoreCategory
-            currentCategory={currentCategory}
-            handleTypeFilter={handleTypeFilter}
-            handleClickCategory={() => setcurrentCategory("")}
-            typeFilter={typeFilter}
-           
-            handleCancelTypeFilter ={handleCancelTypeFilter}
-          />
-        </aside>
-    
-   <aside className="store-sidebar"  >
-         
-        </aside>  */}
+
 
 
 <div className="store-content-wrapper">

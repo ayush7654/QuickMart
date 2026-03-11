@@ -91,33 +91,7 @@ useEffect(() => {
 
             <div className={`current-sort-container ${scrollY===0?'':'current-sort-blurred'}`}>
 
-    
-
-      <div className='store-header-info-wrapper'>
- 
-
-
-
-<div className='sort-head-title'>{typeFilter?currentCategory.replaceAll('-', ' '):'Porduct Categlog'}</div>
-
-
-</div>
-
-
-   
-
-
-
-        
-
-
-
-
-
-<div className='store-button-wrapper'>
-
-
-    <div /* onClick={() => setSideBarToggled(false)}  */
+      <div /* onClick={() => setSideBarToggled(false)}  */
 
     onClick={()=>setIsOpen(prev=>!prev)}
   className='store-category-toggle'
@@ -135,26 +109,43 @@ useEffect(() => {
  
 />
 
+
     </div>
 
+      
+ 
+
+
+
+<div className='sort-head-title'>{typeFilter?currentCategory.replaceAll('-', ' '):'Porduct Categlog'}</div>
 
 
 
 
 
-{/* 
-<div className='store-header-btn'>
-  <span>Sort By</span>
-  <span>Order</span>
-</div>
- */}
+   
+
+
+
+        
+
+  
+
+
+
+
+<div className='store-button-wrapper'>
+
+
+
+
+
 
      <div className='sort-dropDown-div'>
 
 
 
-
-  <div onClick={() => {
+<div onClick={() => {
   // This prevents the floating-pill's onClick from firing
     setIsSortOpen(true);
   }} className='product-sort-wrapper'>
@@ -176,6 +167,8 @@ useEffect(() => {
 
     
     </div>
+  
+ 
  
 
 
@@ -209,10 +202,10 @@ useEffect(() => {
 
 </div>
 
-   <div className={`store-order ${currentSort?'order-active':''}`} onClick={toggleSortOrder}>
+   {/* <div className={`store-order ${currentSort?'order-active':''}`} onClick={toggleSortOrder}>
     <OrderToggle/>
    </div> 
-
+ */}
 
 </div>
   

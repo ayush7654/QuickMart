@@ -6,7 +6,7 @@ const OrderToggle = () => {
   const [isHigh, setIsHigh] = useState(true);
 
   return (
-    <button
+    <div
       className="order-morph-btn" 
       onClick={() => setIsHigh(!isHigh)}
     >
@@ -26,7 +26,7 @@ const OrderToggle = () => {
         {isHigh ? <ChevronDown size={14} /> : <ChevronUp size={14} />}
       </div> */}
             <span className={`sort-arrow ${isHigh? 'up' : 'down'}`}></span>
-    </button>
+    </div>
   );
 };
 
