@@ -16,16 +16,14 @@ const OrderToggle = () => {
         
         <div className="value-window">
           <div className={`value-stack ${isHigh ? 'slide-up' : 'slide-down'}`}>
-            <span className="value-text">Low To High</span>
-            <span className="value-text">High To Low</span>
+            <span className="value-text">A → Z</span>
+            <span className="value-text">Z → A</span>
           </div>
         </div>
       </div>
-    {/*   
-      <div className="btn-icon-area">
-        {isHigh ? <ChevronDown size={14} /> : <ChevronUp size={14} />}
-      </div> */}
-            <span className={`sort-arrow ${isHigh? 'up' : 'down'}`}></span>
+
+      
+         
     </div>
   );
 };

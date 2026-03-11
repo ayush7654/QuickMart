@@ -94,17 +94,24 @@ height: 3.5rem;
   transform: translateX(-50%);
 }
 
-.store-category-toggle{
+.store-toggle-wrapper{
   border: 0px solid blue;
-  display: grid;
-  place-items: center;
+display: flex;
+align-items: center;
+gap:3rem;
 
 }
 
+.partialToggle-wrapper{
+  border: 0px solid red;
+  padding: 10px;
+  display: grid;
+  place-items: center;
+}
+
 .category-icon {
-  color: black;            /* This controls the 'color' prop / stroke */
-  fill:transparent;
-  fill:black;       /* This controls the 'fill' prop */
+   color: rgb(0,100,255);            /* This controls the 'color' prop / stroke */
+  fill: rgb(0,100,255);       /* This controls the 'fill' prop */
   transition: all 0.2s ease; /* Makes the change smooth */
   cursor: pointer;
  
@@ -163,7 +170,7 @@ position: relative;
   display: flex;
  justify-content: space-between;
  align-items: center;
-  gap:1rem;
+  gap:10px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
@@ -180,25 +187,28 @@ position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     height: 100%;
+
 }
 
-.sort-arrow {
-  border: solid #666;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 3px;
+
+
+.dropdownIcon{
   transition: transform 0.3s ease;
+  border: 0px solid red;
+  display: grid;
+  place-items: center;
 }
 
-.down { transform: rotate(45deg); }
-.up { transform: rotate(-135deg); }
+.down { transform: rotate(0deg); }
+.up { transform: rotate(180deg); }
 
 .sorting-panel{
 
 width: 8rem;
 position: absolute;
-  top: calc(100% + 20px);
+  top: calc(100% + 10px);
 left: 0;
   padding: 6px;
 border-radius: 10px;
@@ -302,6 +312,8 @@ z-index: 999;
     pointer-events:auto;
      opacity: 1;
    }
+
+   
 
 
 

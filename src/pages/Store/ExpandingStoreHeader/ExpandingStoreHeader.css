@@ -33,23 +33,34 @@
 
 /* 4. Expanded State */
 .pill-expanded {
-  width: calc(100% - 15px) !important;
-  height: calc(99vh - 15px) !important; /* Grows to bottom of screen */
+  width: calc(100% - 15px) ;
+  height: calc(99vh - 15px) ;
   border-radius: 12px;
   cursor: default;
   background-color: rgb(255, 255, 255,.7);
+
 }
+
+ .partial {
+  width: calc(100% - 15px) ;
+  height: calc(69vh - 15px);
+
+
+} 
 
 .pill-content {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
+ 
+
 
 }
 
 .floating-pill .category-layout{
  opacity: 0;
+     overflow: hidden;
 }
 
 .pill-expanded .category-layout{

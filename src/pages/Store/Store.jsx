@@ -212,14 +212,7 @@ console.log('store scrollY is ',scrollY)
       <div className={`store-header-wrapper ${isAtTop?'':'store-header-visible'}`}>
  
 
-<ExpandingStoreHeader
-
-  currentSort={currentSort}
-  handleSort={handleSort}
-  toggleSortOrder={toggleSortOrder}
-  typeFilter={typeFilter}
-
-  currentCategory={currentCategory}/>
+<ExpandingStoreHeader/>
       </div>
 
 

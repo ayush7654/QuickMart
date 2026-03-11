@@ -11,11 +11,23 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ExpandingStoreHeader() {
 
-const {currentSort,toggleSortOrder,typeFilter,handleSort,currentCategory,handleTypeFilter,isOpen, setIsOpen} = useStoreData()
+const {handleTypeFilter,isOpen, setIsOpen} = useStoreData()
 
  
 const { categorizedData, loading } = CategoryDataProvider();
 const [activeGroup, setActiveGroup] = useState(null);
+
+const [partialPill,setPartialPill] = useState(false)
+const [hoveredIndex, setHoveredIndex] = useState(null);
+
+
+const storeMenuOptions=['Payment Methods','Cancel Order' ,'Become a Seller' ,'FAQ']
+
+const storeMenuGrids= [
+  {name:'Track Order', backgroundImage:'trackOrderImg2.jpg'},
+  {name:'Select delivery location', backgroundImage:'DeliveryLocation.jpg'},
+  {name:'Connect with us', backgroundImage:'connectImg.jpg'},
+]
 
 // Automatically set the first group as active once data arrives
 useEffect(() => {
@@ -35,26 +47,28 @@ const currentItems = categorizedData && activeGroup ? categorizedData[activeGrou
 
  console.log('categary subgroups are' , categorizedData)
 
-    useEffect(() => {
+   useEffect(() => {
+  // If the store is open, we DON'T want the scroll to fight the expansion.
+  // We return early so the ScrollTrigger isn't even created.
+  if (isOpen) return;
+
   const ctx = gsap.context(() => {
     gsap.to(".floating-pill", {
       scrollTrigger: {
-        trigger: ".scroll-section", 
-        start: "top top",      
-        end: "+=700",           
-        // Changing scrub to a small number (like 0.5) adds "weight" or inertia.
-        // It still starts instantly but follows the scroll with a soft follow-through.
-        scrub: 0.8,            
+        trigger: ".scroll-section",
+        start: "top top",
+        end: "+=700",
+        scrub: 0.8,
         immediateRender: false,
       },
-      width:'60%',    /* typeFilter?"100%": "65%" */
-      // 'power2.out' creates the inertia effect (fast start, slow finish)
-      ease: "power2.out",    
+      // When not open, it follows the scroll to this width
+      width: '60%', 
+      ease: "power2.out",
     });
   });
 
   return () => ctx.revert();
-}, []); 
+}, [isOpen]); // Re-run when the store opens/closes
 
 
 const [visitedGroups, setVisitedGroups] = useState([]);
@@ -85,21 +99,14 @@ useEffect(() => {
 
   return (
      <div 
-          className={`floating-pill ${isOpen ? "pill-expanded" : ""}`}
+          className={`floating-pill ${isOpen ? "pill-expanded" : ""} ${partialPill?'partial':''}`}
      
         >
           <div className="pill-content">
     
-    <StoreSorting
-
-  currentSort={currentSort}
-  handleSort={handleSort}
-  toggleSortOrder={toggleSortOrder}
-  typeFilter={typeFilter}
-
-  currentCategory={currentCategory}
-     isOpen={isOpen}
-     setIsOpen={setIsOpen}/> 
+    <StoreSorting 
+    partialPill={partialPill}
+    setPartialPill={setPartialPill}/> 
 
 <div className="category-layout">
   {loading ? (
@@ -112,7 +119,7 @@ useEffect(() => {
     <>
       {/* Left Section: 30% Sidebar */}
       <div className="subgroup-sidebar">
-        {Object.keys(categorizedData).map((groupName) => (
+      { !partialPill?  Object.keys(categorizedData).map((groupName) => (
           <div
             key={groupName}
             className={`subgroup-item ${activeGroup === groupName ? "active" : ""}`}
@@ -120,7 +127,24 @@ useEffect(() => {
           >
             <span className="subgroup-text">{groupName}</span>
           </div>
-        ))}
+        ))
+:
+
+       storeMenuOptions.map((item, index) => (
+  <div
+    key={index}
+    className={`subgroup-item ${hoveredIndex === index ? 'active' : ''}`}
+    onMouseEnter={() => setHoveredIndex(index)}
+    onMouseLeave={() => setHoveredIndex(null)}
+  >
+    {item}
+  </div>
+))
+        
+        }
+
+
+
       </div>
 
      
@@ -128,11 +152,13 @@ useEffect(() => {
     {/* We map through ALL data, but we only physically render the HTML 
       if the group has been visited. This is the "Lazy Cache".
     */}
-    {Object.entries(categorizedData).map(([groupName, items]) => {
+
+   
+     {!partialPill? Object.entries(categorizedData).map(([groupName, items]) => {
       const isVisited = visitedGroups.includes(groupName);
       const isActive = activeGroup === groupName;
 
-      // If it's never been hovered, don't even put it in the DOM yet
+   
       if (!isVisited) return null;
 
       return (
@@ -154,7 +180,25 @@ useEffect(() => {
           ))}
         </div>
       );
-    })}
+    }) 
+    
+:
+  <div className={`grid-wrapper ${getLayoutClass(storeMenuGrids.length)} visible`}>
+
+{storeMenuGrids.map((item, index) => (
+            <div 
+              key={index} 
+              className={`category-card card-${index}`}
+              style={{ backgroundImage: `url(${item.backgroundImage})` }}
+              
+            >
+              <div className="card-overlay">
+                <span className="category-name">{item.name}</span>
+              </div>
+            </div>
+          ))}
+  </div>}
+
   </div>
     </>
   )}

@@ -8,41 +8,25 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useScroll } from '../../../components/ScrollData/ScrollData';
 import { WinScrollContext } from '../../../components/WinScrollProvider/WinScrollProvider';
+import MenuCancel from './../../../components/MenuCancel/MenuCancel';
+import { useStoreData } from '../../../components/StoreDataContext';
+import { ChevronUp, ChevronDown } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 
 
 
 
-export default function StoreSorting({currentSort,toggleSortOrder,typeFilter,handleSort,currentCategory,setIsOpen,isOpen}) {
+export default function StoreSorting({setPartialPill,partialPill}) {
   
 
    const{ scrollY} = useScroll();
 
-  console.log(scrollY)
+  const {currentSort,toggleSortOrder,typeFilter,handleSort,currentCategory,handleTypeFilter,isOpen, setIsOpen} = useStoreData()
 
-// useEffect(() => {
-//   const ctx = gsap.context(() => {
-//     gsap.to(".current-sortcontainer", {  /* .current-sort-container - correct one*/
-//       scrollTrigger: {
-//         trigger: ".scroll-section", 
-//         start: "top top",      
-//         end: "+=700",           
-//         // Changing scrub to a small number (like 0.5) adds "weight" or inertia.
-//         // It still starts instantly but follows the scroll with a soft follow-through.
-//         scrub: 0.8,            
-//         immediateRender: false,
-//       },
-//       width:'65%',    /* typeFilter?"100%": "65%" */
-//       // 'power2.out' creates the inertia effect (fast start, slow finish)
-//       ease: "power2.out",    
-//     });
-//   });
 
-//   return () => ctx.revert();
-// }, []);   /* typeFilter */
 
-const [isHovered, setIsHovered] = useState(false);
+
 
   const { isIdle } = useContext(WinScrollContext);
 
@@ -78,7 +62,37 @@ useEffect(() => {
   };
 }, [isSortOpen]);
 
+const handleExpandedToggle = () => {
+  if (!isOpen) {
+    // Stage 1: If it's closed, open it.
+    setIsOpen(true);
+  } else {
+    // Stage 2: It's already open, check the partial state.
+    if (partialPill) {
+      // If it's in the shorter 'partial' state, expand it fully.
+      setPartialPill(false);
+    } else {
+      // If it's already full height, close the whole thing.
+      setIsOpen(false);
+    }
+  }
+};
 
+
+const handlePartialToggle = () => {
+  if (!isOpen) {
+    // Stage 1: If closed, open directly into partial mode
+    setIsOpen(true);
+    setPartialPill(true);
+  } else if (isOpen && !partialPill) {
+    // Stage 2: If fully open, shrink it down to partial
+    setPartialPill(true);
+  } else {
+    // Stage 3: If already in partial, close the whole pill
+    setIsOpen(false);
+    setPartialPill(false);
+  }
+};
 
 
   return (
@@ -93,21 +107,24 @@ useEffect(() => {
 
       <div /* onClick={() => setSideBarToggled(false)}  */
 
-    onClick={()=>setIsOpen(prev=>!prev)}
-  className='store-category-toggle'
-     onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)} >
  
-
+  className='store-toggle-wrapper'
+     
+       >
+ 
+<div className='partialToggle-wrapper' onClick={handlePartialToggle}>
+  <MenuCancel state={partialPill}  /*   *//>
+</div>
 
 <LayoutPanelLeft 
-  className={`category-icon ${isHovered ?'category-hovered':''}  ${typeFilter || isOpen?'category-active':''}`}
+  className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
   size={30} 
   strokeWidth={1} 
-
-
- 
+  onClick={handleExpandedToggle}
+    
 />
+
+
 
 
     </div>
@@ -141,28 +158,27 @@ useEffect(() => {
 
 
 
-     <div className='sort-dropDown-div'>
+     <div className='sort-dropDown-div'
+     onMouseEnter={() => {setIsSortOpen(true)}} onMouseLeave={() => {setIsSortOpen(false)}}>
 
 
 
-<div onClick={() => {
-  // This prevents the floating-pill's onClick from firing
-    setIsSortOpen(true);
-  }} className='product-sort-wrapper'>
+<div 
+ className='product-sort-wrapper'>
 
-    {/* <span className='sort-label'>Sort By </span> */}
 
 
     <span className={`sort-toggle  ${isSortOpen?'sort-toggle-active':''} `}>
       
       <div className='sort-toggle-content'>
         
-            <span>{currentSort?currentSort.name:'Sort By'}</span>
+            <span>{currentSort?currentSort.name:'View by'}</span>
       
       </div>
 
 
-<span className={`sort-arrow ${isSortOpen? 'up' : 'down'}`}></span>
+
+<span className={`dropdownIcon ${isSortOpen? 'up' : 'down'}`}>< ChevronDown size={20}/></span>
     </span>
 
     
@@ -183,7 +199,7 @@ useEffect(() => {
  onClick={()=>
   {handleSort(item);
    setIsSortOpen(false); 
-   console.log('clicked')                
+             
  }
  
  }
@@ -202,10 +218,10 @@ useEffect(() => {
 
 </div>
 
-   {/* <div className={`store-order ${currentSort?'order-active':''}`} onClick={toggleSortOrder}>
+ <div className={`store-order ${currentSort?'order-active':''}`} onClick={toggleSortOrder}>
     <OrderToggle/>
    </div> 
- */}
+
 
 </div>
   
