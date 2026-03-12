@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useStoreData } from '../../../components/StoreDataContext';
 
 const SUBGROUP_MAPPING = {
   "Clothing & Apparel": [
@@ -49,6 +50,29 @@ const SUBGROUP_MAPPING = {
 const CategoryDataProvider = () => {
   const [categorizedData, setCategorizedData] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const { currentCategory } = useStoreData();
+
+  const selectedGroup = (categorizedData && currentCategory) 
+    ? Object.keys(categorizedData).find(group => 
+        categorizedData[group].some(item => 
+          // Using a case-insensitive/dash-friendly check just in case
+          item.slug.toLowerCase() === currentCategory.toLowerCase()
+        )
+      ) 
+    : null;
+
+ /*  const [selectedSlug, setSelectedSlug] = useState(null);
+
+  const selectCategory = (slug) => {
+    setSelectedSlug(slug);
+    console.log('slug selected')
+   
+  };
+
+  const selectedGroup = Object.keys(categorizedData || {}).find(group => 
+  categorizedData[group].some(item => item.slug === selectedSlug)
+); */
 
   useEffect(() => {
     const getOrganizedCategories = async () => {
@@ -102,7 +126,11 @@ const CategoryDataProvider = () => {
     getOrganizedCategories();
   }, []);
 
-  return { categorizedData, loading };
+  return { 
+    categorizedData,
+    loading ,
+    selectedGroup,
+    };
 };
 
 export default CategoryDataProvider;

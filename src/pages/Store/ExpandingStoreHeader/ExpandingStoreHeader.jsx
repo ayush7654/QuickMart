@@ -11,10 +11,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ExpandingStoreHeader() {
 
-const {handleTypeFilter,isOpen, setIsOpen} = useStoreData()
+const {handleTypeFilter,isOpen, setIsOpen,currentCategory} = useStoreData()
 
  
-const { categorizedData, loading } = CategoryDataProvider();
+const { categorizedData, loading} = CategoryDataProvider();
 const [activeGroup, setActiveGroup] = useState(null);
 
 const [partialPill,setPartialPill] = useState(false)
@@ -45,7 +45,7 @@ const getLayoutClass = (count) => {
 // Guard: Current items based on activeGroup
 const currentItems = categorizedData && activeGroup ? categorizedData[activeGroup] : [];
 
- console.log('categary subgroups are' , categorizedData)
+ console.log('curret categary info ' , currentItems)
 
    useEffect(() => {
   // If the store is open, we DON'T want the scroll to fight the expansion.
@@ -122,7 +122,7 @@ useEffect(() => {
       { !partialPill?  Object.keys(categorizedData).map((groupName) => (
           <div
             key={groupName}
-            className={`subgroup-item ${activeGroup === groupName ? "active" : ""}`}
+            className={`subgroup-item ${activeGroup === groupName ? "active" : ""} `}
             onMouseEnter={() => setActiveGroup(groupName)}
           >
             <span className="subgroup-text">{groupName}</span>
@@ -169,12 +169,12 @@ useEffect(() => {
           {items.map((item, index) => (
             <div 
               key={item.slug} 
-              className={`category-card card-${index}`}
+              className={`category-card card-${index} ${item.name===currentCategory?'card-selected':''}`}
               style={{ backgroundImage: `url(${item.backgroundImage})` }}
-              onClick={()=>{handleTypeFilter(item.slug),setIsOpen(false)}}
+              onClick={()=>{handleTypeFilter(item),setIsOpen(false)}}
             >
               <div className="card-overlay">
-                <span className="category-name">{item.name}</span>
+                <span className='category-name'>{item.name}</span>
               </div>
             </div>
           ))}

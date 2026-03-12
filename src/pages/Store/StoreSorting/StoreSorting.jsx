@@ -1,5 +1,6 @@
 import React ,{useState,  useEffect, useRef,useContext} from 'react'
 import './StoreSorting.css'
+import { Link } from 'react-router-dom';
 import OrderToggle from '../OrderToggle/OrderToggle';
 import { MdStar, MdStarBorder } from 'react-icons/md';
 import { MdAttachMoney, MdPercent } from "react-icons/md";
@@ -11,6 +12,7 @@ import { WinScrollContext } from '../../../components/WinScrollProvider/WinScrol
 import MenuCancel from './../../../components/MenuCancel/MenuCancel';
 import { useStoreData } from '../../../components/StoreDataContext';
 import { ChevronUp, ChevronDown } from 'lucide-react';
+import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -116,13 +118,14 @@ const handlePartialToggle = () => {
   <MenuCancel state={partialPill}  /*   *//>
 </div>
 
-<LayoutPanelLeft 
-  className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
-  size={30} 
-  strokeWidth={1} 
-  onClick={handleExpandedToggle}
-    
-/>
+<div className='product-catelog-btn'  onClick={handleExpandedToggle}>
+  <AnimatedUnderline
+  offset={3}
+  color='rgb(0,100,255)'
+  > Catalog</AnimatedUnderline>
+  </div>
+
+
 
 
 
@@ -134,9 +137,17 @@ const handlePartialToggle = () => {
 
 
 
-<div className='sort-head-title'>{typeFilter?currentCategory.replaceAll('-', ' '):'Porduct Categlog'}</div>
+{/* <div className='sort-head-title'>{typeFilter?currentCategory.replaceAll('-', ' '):'Porduct Categlog'}</div> */}
+
+<Link to='/store'>
+<LayoutPanelLeft 
+  className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
+  size={25} 
+  strokeWidth={1} 
 
 
+    
+/></Link>
 
 
 

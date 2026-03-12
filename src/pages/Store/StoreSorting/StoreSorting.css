@@ -73,6 +73,17 @@ height: 3.5rem;
     box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.product-catelog-btn{
+  font-size: .95rem;
+  font-weight: 500;
+  transition: color .3s ease;
+  cursor: pointer;
+
+}
+
+.product-catelog-btn:hover{
+  color:rgb(0,100,255);
+}
 
 .store-button-wrapper{
 
@@ -110,8 +121,8 @@ gap:3rem;
 }
 
 .category-icon {
-   color: rgb(0,100,255);            /* This controls the 'color' prop / stroke */
-  fill: rgb(0,100,255);       /* This controls the 'fill' prop */
+   color: rgb(0, 0, 0);            /* This controls the 'color' prop / stroke */
+  fill: rgb(0, 0, 0);       /* This controls the 'fill' prop */
   transition: all 0.2s ease; /* Makes the change smooth */
   cursor: pointer;
  

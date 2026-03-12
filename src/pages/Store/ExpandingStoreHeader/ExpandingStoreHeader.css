@@ -37,7 +37,7 @@
   height: calc(99vh - 15px) ;
   border-radius: 12px;
   cursor: default;
-  background-color: rgb(255, 255, 255,.7);
+  background-color: rgb(255, 255, 255);
 
 }
 
@@ -47,6 +47,8 @@
 
 
 } 
+
+
 
 .pill-content {
   width: 100%;
@@ -99,6 +101,10 @@
   color: #000;
   transform: translateX(15px);
 }
+
+/* .subgroup-item.selected{
+  color:blue !important;
+} */
 
 /* The Main 60% Container */
 .category-grid-container {
@@ -193,6 +199,8 @@
   will-change: transform, opacity, clip-path;
 }
 
+
+
 /* 3. THE FIX: Only animate the grid when it is FIRST MADE VISIBLE */
 /* Because we use the 'visited' cache, once the animation finishes and 
    stays in the DOM, it won't re-trigger when you toggle the 'visible' class 
@@ -200,6 +208,12 @@
 .grid-wrapper.visible .category-card {
   animation: dynamicBloom 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
+
+
+.card-selected{
+ transform: scale(.95) !important;
+ border: 3px solid rgb(0,100,255);
+} 
 
 @keyframes dynamicBloom {
   0% {

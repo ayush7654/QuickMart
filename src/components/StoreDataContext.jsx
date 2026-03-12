@@ -34,8 +34,8 @@ export const StoreDataProvider = ({ children }) => {
   };
 
   const handleTypeFilter = (category) => {
-    setcurrentCategory(category);
-    setSearchParams({ type: category });
+    setcurrentCategory(category.name);
+    setSearchParams({ type: category.slug });
   };
 
   const handleCancelTypeFilter = () => {
@@ -45,12 +45,12 @@ export const StoreDataProvider = ({ children }) => {
   };
 
   // Sync state if URL changes externally (e.g., back button)
-/*   useEffect(() => {
+  useEffect(() => {
     const type = searchParams.get("type");
     if (type !== currentCategory) {
       setcurrentCategory(type || '');
     }
-  }, [searchParams]); */
+  }, [searchParams]); 
 
   const value = {
     isAtTop,

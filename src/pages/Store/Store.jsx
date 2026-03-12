@@ -19,6 +19,7 @@ import { X } from "lucide-react";
 import ScrollingAnimation from "../../components/ScrollingAnimation/ScrollingAnimation";
 import ExpandingStoreHeader from "./ExpandingStoreHeader/ExpandingStoreHeader";
 import { useStoreData } from "../../components/StoreDataContext";
+import CategoryDataProvider from "./ExpandingStoreHeader/CategoryDataProvider";
 import "./Store.css";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
 
@@ -45,6 +46,11 @@ export default function Store() {
     handleTypeFilter,
     handleCancelTypeFilter,
   setIsOpen} = useStoreData()
+
+  const {selectedGroup} = CategoryDataProvider();
+
+
+
 
   const { minPrice, setMinPrice, maxPrice, setMaxPrice,storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount,appliedFilters,setAppliedFilters,setStoreFilterColors} = useStoreFilter();
 
@@ -249,11 +255,23 @@ console.log('store scrollY is ',scrollY)
        
 
       
-   <div className="store-page-main-head"> Shop All Products</div> 
+   {/* <div className="store-page-main-head"> {currentCategory?currentCategory:'Shop All Products'} : {selectedGroup}</div>  */}
+<div className="store-page-title-wrapper">
+  
+   <div className="store-page-title">
+    
+    <span className="selected-group"> {currentCategory?selectedGroup: 'THE STORE'}</span>
+    <span className="selected-category">
+     {currentCategory?currentCategory.replace(/-/g, ' '):'Browse All '} 
+    </span>
+   </div>
+  
+</div>
+  
           
             </div>
 
-    
+  
  
 
 
