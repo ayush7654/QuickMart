@@ -13,9 +13,10 @@
     font-family:'Figtree';
        font-family: "Questrial", sans-serif;
       position: relative;
-
+transition: opacity .5s ease;
     font-size: .74rem;
     font-weight: 400;
+
     
      
   }

@@ -44,7 +44,6 @@ height: 3.5rem;
 
    color: white;
   background: transparent;
-  backdrop-filter: blur(0px);
   border-radius: 10px;
 
   /* This makes the transition feel slow and premium */
