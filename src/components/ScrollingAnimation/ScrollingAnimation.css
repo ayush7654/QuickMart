@@ -4,6 +4,7 @@
   position: relative;
   overflow: hidden;
   display: flex;
+ 
 
 }
 
@@ -68,13 +69,17 @@
 .item-3 { bottom:28%; left: 13%;  width: 320px;height: 230px; }
 .item-4 { bottom: 3%; right: 9%;  width: 380px;height: 250px;}
 
-.hero-title {
+.store-scroll-down-wrapper{
   position: absolute;
-  bottom: 10%;
-  font-size: 12vw;
-  color: white;
-  z-index: 20;
-  font-weight: 800;
-  text-transform: uppercase;
-  pointer-events: none;
+  color:white;
+bottom: 0;
+  z-index: 10;
+ border-top:1px solid white;
+  width: 95%;
+  display:flex;
+  justify-content: space-between;
+  padding: 1.5rem 10px;
+  font-family: 'Figtree';
+  font-size: .8rem;
+  transition: opacity .3s ease;
 }

@@ -233,7 +233,8 @@ console.log('store scrollY is ',scrollY)
 
 
 <div className="scrolling-animation-wrapper">
- <ScrollingAnimation/> 
+ <ScrollingAnimation isAtTop={isAtTop}/> 
+  <h1 className="hero-title2">Refine Living</h1>
 </div>
 
 
@@ -255,7 +256,7 @@ console.log('store scrollY is ',scrollY)
        
 
       
-   {/* <div className="store-page-main-head"> {currentCategory?currentCategory:'Shop All Products'} : {selectedGroup}</div>  */}
+ 
 <div className="store-page-title-wrapper">
   
    <div className="store-page-title">

@@ -1,11 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import "./ScrollingAnimation.css";
+import { FaArrowDown } from "react-icons/fa";
+import { FiArrowDown } from "react-icons/fi";
+import { MdArrowDownward } from "react-icons/md";
+import { BiArrowToBottom } from "react-icons/bi";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ScrollingAnimation() {
+export default function ScrollingAnimation({isAtTop}) {
 
 const sectionRef = useRef(null); // For the pinned video section
  
@@ -20,7 +24,7 @@ useEffect(() => {
         trigger: sectionRef.current,
         start: "top top",
         end: "+=2000",
-        scrub: 1.5, // Increased slightly for smoother video motion
+        scrub: 1, // Increased slightly for smoother video motion
         pin: true,
       }
     });
@@ -98,9 +102,14 @@ useEffect(() => {
     playsInline
     className="hero-video"
   />
+  
 </div>
 
-        <h1 className="hero-title">Go Further</h1>
+    <div style={{opacity:isAtTop?1:0}} className="store-scroll-down-wrapper">
+      <span style={{fontSize:'1.1rem'}}>↓</span>
+      <span>Scroll Down</span>
+    </div>
+        
       </div>
     </div>
   )
