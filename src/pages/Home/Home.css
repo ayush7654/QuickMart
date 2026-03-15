@@ -31,7 +31,7 @@
     justify-content: center;
     border: 0px solid black;
     width: 100%;
-   overflow-x: hidden;
+   overflow-x: clip;
    position: relative;
    background-color: #ffffff;
 

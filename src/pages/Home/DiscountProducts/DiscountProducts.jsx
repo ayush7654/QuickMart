@@ -11,7 +11,7 @@ export default function DiscountProducts() {
 
   // 1. Define your hardcoded overrides
   const productOverrides = {
-    94: { brand: 'Longines', name: 'Longines Master Collection', thumbnail: 'Home-products-img/hp-watch3.jpg' },
+    94: { brand: 'Longines', name: 'Longines Master Collection', thumbnail: 'hp-watch.jpg' },
     87: { brand: 'Urban Chic', name: 'Urban Chic Check Shirt', thumbnail: 'Home-products-img/hp-shirt.jpg' },
    174: {  brand: 'Prada',  name: "Prada Women Bag",  thumbnail: 'Home-products-img/hp-Prada.avif' },
     101: { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'Home-products-img/hp-airmax.jpg' }
@@ -41,7 +41,7 @@ export default function DiscountProducts() {
   }, []);
 
   return (
-    <div id='home-product-div' className="discount-home-Products-div">
+    <div  id='home-product-div' className="discount-home-Products-div">
       <div id='home-product-head'>
         Absolute Steals
         <span className='view-collection-btn'>View Collection →</span>

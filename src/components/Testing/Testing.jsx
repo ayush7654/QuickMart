@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from 'framer-motion';
+
 import "./Testing.css";
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import StoreSorting from "../../pages/Store/StoreSorting/StoreSorting";
-import { useScroll } from "../ScrollData/ScrollData";
-import ScrollingAnimation from "../ScrollingAnimation/ScrollingAnimation";
-import StoreCategory from "../../pages/Store/StoreSidebar/StoreCategory/StoreCategory";
-gsap.registerPlugin(ScrollTrigger);
+import StackingEffect from "../StackingEffect/StackingEffect";
+
+
 
 
 export default function Testing() {
@@ -16,7 +14,7 @@ export default function Testing() {
 
   return (
     <div className="testing-div">
-
+<StackingEffect/>
 </div>
 )
 }

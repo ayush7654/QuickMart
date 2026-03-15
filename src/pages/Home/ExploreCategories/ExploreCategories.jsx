@@ -1,14 +1,14 @@
-import React ,{useState} from 'react'
+import React from 'react'
 import './ExploreCategories.css'
 
 export default function ExploreCategories() {
 
 
-const [collections,setCOllections] = useState([
+const collections = [
    {name:'FITNESS',img1:'/ExploreImgs/Browse-Fitness.jpg',img2:''},
    {name:'STYLE',img1:'/ExploreImgs/Browse-Style.jpg',img2:''},
    {name:'LUXURY',img1:'/ExploreImgs/Browse-Luxury.jpg',img2:''},
-])
+];
 
   return (
      <div className="explore-categories">

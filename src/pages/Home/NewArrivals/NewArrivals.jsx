@@ -16,7 +16,7 @@ export default function NewArrivals() {
     100: { 
       brand: 'Apple', 
       name: "Apple Airpods", 
-      thumbnail: 'Home-products-img/hp-airpod.jpg' 
+      thumbnail: 'hp-airpod.jpg' 
     },
     13: { 
       brand: 'Annibale', 

@@ -18,6 +18,7 @@ import WinScrollProvider from "./components/WinScrollProvider/WinScrollProvider"
 import  {ScrollData}  from './components/ScrollData/ScrollData';
 import LoadingBird from './pages/LoadingPage';
 import Testing from './components/Testing/Testing';
+import SmoothScroll from './components/SmoothScrolling';
 
 
 export const BreadCrumbContext = createContext()
@@ -27,6 +28,7 @@ function App() {
 
 
   return (
+    <SmoothScroll>
     <BrowserRouter>
      <ScrollData>
     <WinScrollProvider>
@@ -54,6 +56,7 @@ function App() {
     </WinScrollProvider>
     </ScrollData>
     </BrowserRouter>
+    </SmoothScroll>
   )
 }
 

@@ -32,13 +32,12 @@
 }
 
 
+
 .test-card {
  
   position: relative;
   width: 320px;
   height: 450px;
-/*   border-radius: 35px;  *//* Large smooth corners like reference */
-  /* background-image: url('/Home-products-img/airmax-test.jpg'); */
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -46,51 +45,29 @@
   flex-direction: column;
   justify-content: flex-end; /* Pushes content to the bottom */
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+
 }
+
+
+
 
 /* The Glass Effect Layer */
 .card-glass-content {
+  display: flex;
   width: 100%;
-  height: 40%;
+  height: 100%;
   padding: 25px;
   color: white;
+ background-color: rgba(0, 0, 0, 0);
 
-  /* 1. The Blur Layer */
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  
-  /* 2. The Tint */
-  background: linear-gradient(
-    to bottom, 
-    rgba(0, 0, 0, 0) 0%,   /* Fully transparent at the top edge */
-    rgba(0, 0, 0, 0.1) 15%, /* Subtle tint starts */
-    rgba(0, 0, 0, 0.2) 100% /* Solid glass look at the bottom */
-  );
-
-  /* 3. THE KEY: The Seamless Mask 
-     This tells the browser: "Only show the blur where the gradient is black"
-  */
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,      /* No blur at the very top of this div */
-    rgba(0, 0, 0, 0.5) 15%,   /* Partial blur transition zone */
-    rgba(0, 0, 0, 1) 30%      /* Full blur from here to the bottom */
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.5) 15%,
-    rgba(0, 0, 0, 1) 30%
-  );
-
-  /* 4. Overlap Fix: 
-     Position this div slightly higher so the 'fade' starts 
-     while the background is still visible behind it. 
-  */
-  margin-top: -60px; 
+  transition: background-color .3s ease;
 }
 
-.card-content{
+.home-ProductCard:hover .card-glass-content{
+ background-color: rgba(0, 0, 0, .3);
+}
+
+.home-ProductCard .card-content{
   position: absolute;
   padding: 20px;
   color:white;
@@ -100,8 +77,13 @@
   flex-direction: column;
   gap:15px;
   width: 100%;
- background:linear-gradient(to bottom,transparent, rgba(0, 0, 0, 0.4));
+
+
 }
+
+/* .home-ProductCard:hover .card-content{
+background:linear-gradient(to bottom,transparent, rgba(0, 0, 0, 0.4));
+} */
 
 /* Badge in top right */
 .card-badge {
@@ -157,7 +139,7 @@
   line-height: 1.4;
   opacity: 0.7;
 display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;  
  /* 1. Hide the overflow and set the base height */
   overflow: hidden;
@@ -177,7 +159,7 @@ display: -webkit-box;
 .test-card:hover .product-desc {
   opacity: 1;
   /* 4. Expand to exactly 3 lines (1.4rem * 3) */
-  max-height: 4.2rem; 
+  max-height: 6.2rem; 
   
   /* 5. Remove the mask on hover so all 3 lines are clear */
   mask-image: linear-gradient(to bottom, black 100%, black 100%);
@@ -218,10 +200,14 @@ display: -webkit-box;
 }
 
 .hp-addCart-wrapper{
+  display: none;
   width: 100%;
-  font-size: .9rem;
+  font-size: .95rem;
  margin: 0 auto;
+ font-weight: 600;
 
+
+ border-radius: 100px;
 }
 
 

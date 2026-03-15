@@ -5,8 +5,9 @@ import { HiShoppingCart,HiOutlineShoppingCart } from 'react-icons/hi';
 import ScrollButton from '../../../components/ScrollingButton/ScrollingButton';
 import { FaCartPlus } from "react-icons/fa";
 import { useCartList } from '../../../components/CartListProvider';
-
 import { Link } from 'react-router-dom';
+
+
 export default function HomeProduct({ product, path }) {
 
   const { 
@@ -25,7 +26,7 @@ export default function HomeProduct({ product, path }) {
 
 console.log(images)
   return (
-    <div className='home-ProductCard'>
+    <Link to={`/store/${product.id}`} className='home-ProductCard'>
        <div className="test-card" style={{backgroundImage:`url(${thumbnail})`}}>
     
       <div className="card-badge">{discount?discount + '% Off':'New'}</div>
@@ -60,15 +61,18 @@ console.log(images)
           <ScrollButton
           className='hp-addCart'
           text='View Details'
-          theme='buttonFilled'
-          themeOnHover='buttonOutline'
+          theme='buttonOutline'
+          themeOnHover='buttonFilled'
+          
+      
+          
         
           />
         </Link>
       </div>
     </div>
        
-    </div>
+    </Link>
   )
 }
 
