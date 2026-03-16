@@ -6,12 +6,15 @@
     width: 100%;
    
 }
+
+
+
 .main-stack-area {
   position: relative;
   /* Reduced height slightly to make the transitions feel tighter */
 /*  height: 500vh;    */
   width: 100%;
-  border: 1px solid red;
+  border: 0px solid red;
 
  
 }
@@ -40,11 +43,11 @@
   background-size: cover;
   background-position: center;
   transform-origin: top;
-  box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 -5px 20px rgba(30,30,30, 0.3);
 
   /* --- THE STACKING OFFSET --- */
   /* Each card stops 30px lower than the one before it */
-  margin-top: calc(var(--index) * 30px); 
+  margin-top: calc(var(--index) * 50px); 
 
   /* MOVEMENT LOGIC */
   --move-progress: clamp(0, (var(--scroll-progress) - (var(--start) - var(--card-window))) / var(--card-window), 1);
@@ -73,6 +76,18 @@
  top:50%;
  left:50%;
  transform: translate(-50%,-50%);
+ display: flex;
+ flex-direction: column;
+ font-size: 8rem;
+   line-height: 5rem;
+
+cursor: pointer;
+
+font-family: 'Montserrat', sans-serif; 
+
+font-weight: 600;
+ transition: line-height 0.3s ease;
+
 }
 
 .stack-card-title{
@@ -85,4 +100,20 @@
  /* mix-blend-mode:hue; */
 
     
+}
+
+
+#explore-card-name1{
+  color:white;
+  
+}
+
+
+#explore-card-name2{
+   color:rgba(255, 255, 255, 0.6);
+}
+
+
+#explore-card-name3{
+ color:rgba(255, 255, 255, 0.3);
 }

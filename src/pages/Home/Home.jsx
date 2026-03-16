@@ -12,7 +12,7 @@ import Categories from "./Categories/Categories";
 import AppleProducts from "./AppleProducts/AppleProducts";
 import HomeFooter from "./HomeFooter/HomeFooter";
 import HomeIntro from "./HomeIntro/HomeIntro";
-import StackingEffect from "../../components/StackingEffect/StackingEffect";
+import StackingEffect from "./ExploreCategories/StackingEffect/StackingEffect";
 
 import './Home.css';
 
@@ -35,8 +35,8 @@ const isFirstRender = useRef(true); // track initial mount
        <NewArrivals/>
        <TrendingComponent />
                    <AppleProducts/>
-          {/* <ExploreCategories/> */}
-          <StackingEffect/>
+       <ExploreCategories/> 
+        
             <DiscountProducts/>
                <Categories/>
                 

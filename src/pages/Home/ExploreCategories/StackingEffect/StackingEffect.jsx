@@ -23,9 +23,9 @@ export const StackingEffect = () => {
 
   return (
     <div className="page-wrapper">
-      <div className="spacer"><h1>Scroll to Explore</h1></div>
       
       <div ref={containerRef} className="main-stack-area">
+        
         {cards.map((card, i) => (
           <div 
             key={card.id} 
@@ -33,14 +33,18 @@ export const StackingEffect = () => {
             style={{ '--index': i, '--total': cards.length }}
           >
             <div className="stack-card" style={{ backgroundImage: `url(${card.img})` }}>
-              {/* <div className="card-overlay"><h2>{card.title}</h2></div> */}
-             <div className='stack-card-title-wrapper'>
-                <h1 className='stack-card-title'>{card.title}</h1></div> 
+            
+               <div className='stack-card-title-wrapper'>
+                <span id="explore-card-name1">{card.title}</span>
+                <span id="explore-card-name2">{card.title}</span>
+                <span id="explore-card-name3">{card.title}</span>
+                </div>
+                
             </div>
           </div>
         ))}
       </div>
-      <div className="spacer"><h1>Footer</h1></div>
+     
     </div>
   );
 };
