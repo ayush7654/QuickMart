@@ -20,7 +20,7 @@ const SUBGROUP_MAPPING = {
     
   ],
   "Electronics & Tech": [
-    { slug: "laptops", img: "laptops2.jpg" },
+    { slug: "laptops", img: "laptops3.jpg" },
     { slug: "mobile-accessories", img: "moblie-accessories5.jpg" },
     { slug: "smartphones", img: "smartphones3.jpg" },
     { slug: "tablets", img: "tablets3.avif" }

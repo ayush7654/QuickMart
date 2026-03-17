@@ -1,119 +1,62 @@
-:root {
-  --scroll-progress: 0;
+.page-wrapper {
+  width: 100%;
 }
-
-.page-wrapper{
-    width: 100%;
-   
-}
-
-
 
 .main-stack-area {
   position: relative;
-  /* Reduced height slightly to make the transitions feel tighter */
-/*  height: 500vh;    */
   width: 100%;
-  border: 0px solid red;
-
- 
-}
-
-.card-sticky-container {
-  position: sticky;
-  /* This ensures the 'docking' point is at the top of the viewport */
-  top: 0; 
-  height: 100vh;
-  width: 100%;
+  /* Create enough scroll space for 3 cards */
+  height: 350vh; 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  
-  --card-window: calc(1 / var(--total));
-  --start: calc(var(--index) * var(--card-window));
+
 }
 
 .stack-card {
-  position: relative;
-  width: 80%;
-/*   max-width: 1100px; */
-  height: 80vh;
+  position: sticky;
+  top: 10vh; /* Where the cards 'dock' */
+  
+  /* Initial width for the first card */
+  width: 75%; 
+  height: 75vh;
 
-  border-radius: 24px;
+  border-radius: 15px;
   background-size: cover;
   background-position: center;
-  transform-origin: top;
-  box-shadow: 0 -5px 20px rgba(30,30,30, 0.3);
-
-  /* --- THE STACKING OFFSET --- */
-  /* Each card stops 30px lower than the one before it */
-  margin-top: calc(var(--index) * 50px); 
-
-  /* MOVEMENT LOGIC */
-  --move-progress: clamp(0, (var(--scroll-progress) - (var(--start) - var(--card-window))) / var(--card-window), 1);
+  transform-origin: top center;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
   
-  /* SHRINKING LOGIC */
-  --shrink-progress: clamp(0, (var(--scroll-progress) - var(--start)) / var(--card-window), 1);
-
-  /* Apply transformations */
-  /* Note: We keep the scale subtle so the top edges stay aligned nicely */
-  transform: 
-    translateY(calc((1 - var(--move-progress)) * 100vh))
-    scale(calc(1 - (var(--shrink-progress) * 0.08)));
-
   display: flex;
-  align-items: flex-end;
-  will-change: transform;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  will-change: transform, width, filter;
+  margin-bottom: 5vh; /* Space between cards in the flow */
+  will-change: transform, width, filter;
+  overflow: hidden;
+  filter: brightness(1); /* Set initial state here too */
+  transition: none !important; /* Stop CSS from fighting GSAP */
 }
 
-/* Ensure Card 0 doesn't try to slide in from 100vh on page load */
-.card-sticky-container[style*="--index: 0"] .stack-card {
-  --move-progress: 1;
-}
-
-.stack-card-title-wrapper{
- position: absolute;
- top:50%;
- left:50%;
- transform: translate(-50%,-50%);
- display: flex;
- flex-direction: column;
- font-size: 8rem;
-   line-height: 5rem;
-
-cursor: pointer;
-
-font-family: 'Montserrat', sans-serif; 
-
-font-weight: 600;
- transition: line-height 0.3s ease;
+/* Titles */
+.stack-card-title-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  font-size: 8rem;
+  line-height: 5.5rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  pointer-events: none;
 
 }
 
-.stack-card-title{
-
- color:white;
- font-family: 'Figtree';
- font-family: 'Roboto Condensed';
- font-size: 10rem;
- font-weight: 600;
- /* mix-blend-mode:hue; */
-
-    
-}
-
-
-#explore-card-name1{
-  color:white;
-  
-}
-
-
-#explore-card-name2{
-   color:rgba(255, 255, 255, 0.6);
-}
-
-
-#explore-card-name3{
- color:rgba(255, 255, 255, 0.3);
-}
+#explore-card-name1 { color: white; }
+#explore-card-name2 { color: rgba(255, 255, 255, 0.5); }
+#explore-card-name3 { color: rgba(255, 255, 255, 0.25); }

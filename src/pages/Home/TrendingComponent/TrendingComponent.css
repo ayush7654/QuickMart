@@ -54,34 +54,54 @@ background-color: white;
 }
 
 #trend-div{
-    width: 50%;
+    width: 45%;
  height: 100%;
-
+overflow: hidden;
      position: relative;
+     cursor: pointer;
+      border-radius: 15px;
+ overflow: hidden;
 }
 
-#trend-div:hover{
-  cursor: pointer;
-}
+
 
 #trend-div:hover .animated-underline::after {
   transform: scaleX(1);
 }
 
-.trend-div1{
-    background-image: url('/FashionTrend/Men-clothing2.jpg ');
-    background-position: top;
-    background-size: cover;
-    
+.trend-div1::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Fills the container */
+  background-image: url('/FashionTrend/Men-clothing2.jpg');
+  background-position: top;
+  background-size: cover;
+  
+  /* The Transition */
+  transition: transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
+ 
 }
 
-.trend-div2{
-    background-image: url('/FashionTrend/Women-clothing.jpg ');
-    background-position: top;
-    background-size: cover;
-    
+
+
+
+
+.trend-div2::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Fills the container */
+  background-image: url('/FashionTrend/Women-clothing.jpg');
+  background-position: top;
+  background-size: cover;
+  
+  /* The Transition */
+  transition: transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
+ 
 }
 
+#trend-div:hover::before {
+  transform: scale(1.05); /* Adjust 1.15 for more/less zoom */
+}
 
 #trend-name-div{
     position: absolute;

@@ -7,17 +7,20 @@ const SmoothScroll = ({ children }) => {
   useEffect(() => {
     // 1. Initialize Lenis
     const lenis = new Lenis({
-      duration: 1.5,     // How long the 'stop' takes (seconds)
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth easing
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
-      lerp: 0.08,        // LOWER = more inertia (train-like). Try 0.05 for more weight.
+      lerp: 0.08, // The 'Train' inertia
     });
 
-    // 2. Sync Lenis with GSAP ScrollTrigger
-    // This is vital if you have other GSAP animations on the page
+    // 2. EXPOSE TO WINDOW 
+    // This allows your HomeIntro component to call lenis.stop() and lenis.start()
+    window.lenis = lenis;
+
+    // 3. Sync Lenis with GSAP ScrollTrigger
     lenis.on('scroll', ScrollTrigger.update);
 
     gsap.ticker.add((time) => {
@@ -26,9 +29,11 @@ const SmoothScroll = ({ children }) => {
 
     gsap.ticker.lagSmoothing(0);
 
+    // 4. Cleanup
     return () => {
       lenis.destroy();
       gsap.ticker.remove(lenis.raf);
+      window.lenis = null; // Clean up global reference
     };
   }, []);
 
