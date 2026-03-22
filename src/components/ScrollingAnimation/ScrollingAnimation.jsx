@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./ScrollingAnimation.css";
-import { FaArrowDown } from "react-icons/fa";
-import { FiArrowDown } from "react-icons/fi";
-import { MdArrowDownward } from "react-icons/md";
-import { BiArrowToBottom } from "react-icons/bi";
+
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 

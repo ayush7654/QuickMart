@@ -5,17 +5,18 @@
     border: 0px solid red;
    display: grid;
    place-items: center;
-/*  background-color: rgb(0, 0, 80);
-    background-color: rgb(18, 18, 222);  */
-   /*  background-color: white; */
-  background: linear-gradient(to right, rgb(0, 0, 100), rgb(1, 1, 145) , rgb(0,0, 100));
-    color:rgb(255, 255, 255);
+border-bottom: 1px solid rgb(0, 0, 0,.1);
+/*   background: linear-gradient(to right, rgb(0, 0, 100), rgb(1, 1, 145) , rgb(0,0, 100));  */
+    color:rgb(0, 0, 0);
     font-family:'Figtree';
        font-family: "Questrial", sans-serif;
       position: relative;
 transition: opacity .5s ease;
     font-size: .74rem;
     font-weight: 400;
+background-color: white;
+
+    
 
     
      

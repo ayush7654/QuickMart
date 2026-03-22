@@ -12,8 +12,8 @@ export default function DiscountProducts() {
   // 1. Define your hardcoded overrides
   const productOverrides = {
     94: { brand: 'Longines', name: 'Longines Master Collection', thumbnail: 'hp-watch.jpg' },
-    87: { brand: 'Urban Chic', name: 'Urban Chic Check Shirt', thumbnail: 'Home-products-img/hp-shirt.jpg' },
-   174: {  brand: 'Prada',  name: "Prada Women Bag",  thumbnail: 'Home-products-img/hp-Prada.avif' },
+    87: { brand: 'Urban Chic', name: 'Urban Chic Check Shirt', thumbnail: 'Home-products-img/Green-shirt.jpg' },
+   174: {  brand: 'Prada',  name: "Prada Women Bag",  thumbnail: 'Home-products-img/blue-prada.jpg' },
     101: { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'Home-products-img/hp-airmax.jpg' }
   };
 

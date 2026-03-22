@@ -1,7 +1,7 @@
 
 
 #video-window {
- height: 650px;
+ height: 90vh;
   overflow: hidden;
   position: relative;
     border-radius: 10px;

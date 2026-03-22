@@ -51,19 +51,12 @@ transition: all .8s ease;
   width: 100%;
   text-align: center;
   font-family: Inter;
-/*   font-family: 'Arial Narrow Bold', sans-serif; */
   font-size: 15rem;
   color: rgb(0, 0, 0);
    font-weight: 400;
   text-transform: capitalize;
   pointer-events: none;
 
-/* color: #1a1a1a;
- 
-  text-shadow: 
-    0 10px 20px rgba(0,0,0,0.05),
-    0 4px 6px rgba(0,0,0,0.1);
-  opacity: 0.9; */
 position: sticky;
   bottom: 30%; 
    mix-blend-mode: exclusion; /* This makes the text change color based on what's behind it */

@@ -4,7 +4,7 @@
  flex-direction: column;
  align-items: center;
  border: 0px solid blue;
- gap: 1rem;
+ gap: 2rem;
  margin-top: 5rem;
 }
 
@@ -18,8 +18,8 @@
 }
 
 .ap-head-img{
-    height:3rem;
-    width: 3rem;
+    height:20rem;
+    width: 20rem;
     
 }
 

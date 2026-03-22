@@ -33,7 +33,7 @@
   margin-left: auto;
   margin-right: auto;
   will-change: transform, width, filter;
-  margin-bottom: 5vh; /* Space between cards in the flow */
+  margin-bottom: 10vh; /* Space between cards in the flow */
   will-change: transform, width, filter;
   overflow: hidden;
   filter: brightness(1); /* Set initial state here too */

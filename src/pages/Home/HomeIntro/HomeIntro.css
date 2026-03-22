@@ -1,5 +1,5 @@
 .homeIntro{
- height: 100vh;
+ height: 110vh;
  width: 100%;
 
 }
@@ -12,8 +12,7 @@
 width: 100%;
 height: 100vh;
   overflow: hidden;
-  margin-top: 2rem;
- 
+
 }
 
 .video-hero video {

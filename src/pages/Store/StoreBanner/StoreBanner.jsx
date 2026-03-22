@@ -21,7 +21,7 @@ const [index, setIndex] = useState(0);
 
   return (
     <div className="test-store-banner">
-      <h1 className="banner-typography">ORIGINALS</h1>
+      <h1 className="banner-typography">Originals</h1>
 
       {/* Changing the 'key' here is the secret. 
         It tells React "This is a brand new element", 

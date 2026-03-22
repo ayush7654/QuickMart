@@ -9,7 +9,9 @@ import CheckoutForm from "./CheckoutForm/CheckoutForm";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import { useCartList } from "../../components/CartListProvider";
+
 import './Cart.css'
+import StoreBanner from './../Store/StoreBanner/StoreBanner';
 
 
 export default function Cart(){
@@ -68,10 +70,7 @@ export default function Cart(){
 
     
 
-   <PageHeader
-   bgImage='/Cart-head.webp'
-   pageHeadText={'Your Cart'}
-   pageHeadPara={'Review your selected items, adjust quantities, and get ready to check out securely.'}/>
+
 
         <div className="Cart-page-wrapper">
 

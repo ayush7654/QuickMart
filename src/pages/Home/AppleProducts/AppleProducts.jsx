@@ -3,7 +3,7 @@ import AppleVideoCard from '../AppleComponent/AppleVideoCard/AppleVideoCard'
 import './AppleProducts.css'
 export default function AppleProducts() {
   return (
-    <div className='apple-Products'>
+    <div className='apple-Products' >
 
 <h2 className='ap-head' >
     <div className='ap-head-img'><img src='AppleProductsMedia/AppleLogo.png'/></div>
