@@ -6,8 +6,8 @@ import ScrollButton from '../../../components/ScrollingButton/ScrollingButton';
 import { FaCartPlus } from "react-icons/fa";
 import { useCartList } from '../../../components/CartListProvider';
 import { Link } from 'react-router-dom';
-
-
+import TextAnimation from '../../../components/TextAnimation';
+import { motion } from 'framer-motion';
 export default function HomeProduct({ product, path }) {
 
   const { 
@@ -21,12 +21,15 @@ export default function HomeProduct({ product, path }) {
     discount 
   } = product;
 
-  
+  const MotionLink = motion(Link);  
 
 
 console.log(images)
   return (
-    <Link to={`/store/${product.id}`} className='home-ProductCard'>
+    <MotionLink  to={`/store/${product.id}`} 
+    initial="hidden" 
+    whileHover="visible"
+    className='home-ProductCard'>
        <div className="test-card" style={{backgroundImage:`url(${thumbnail})`}}>
     
       <div className="card-badge">{discount?discount + '% Off':'New'}</div>
@@ -44,35 +47,44 @@ console.log(images)
            <span className="price-tag">${price}</span>
         </div>
 
-         <div className="product-desc">
-          {description}
-        </div> 
+       
+  <div className="product-desc">
 
-        <div className="tag-row">
-        {/*  */}
-      
-         
-      
-         {/*  <span className="info-tag">9 left</span> */}
-        </div>
+      <TextAnimation text={description} delay={0.1} />
+     </div>
 
-   {/*      <button className="add-to-cart-btn">Add To Cart</button> */}
-        <Link to={`/store/${id}`} className='hp-addCart-wrapper'>
-          <ScrollButton
-          className='hp-addCart'
-          text='View Details'
-          theme='buttonOutline'
-          themeOnHover='buttonFilled'
-          
-      
-          
-        
-          />
-        </Link>
+<motion.div
+  variants={{
+    hidden: { 
+      width: "0%", 
+      opacity: 0 
+    },
+    visible: { 
+      width: "100%", 
+      opacity: 1, 
+      transition: { 
+        duration: 1.2, 
+        ease: [0.22, 1, 0.36, 1] 
+      } 
+    }
+  }}
+  style={{
+    height: "1px",
+    backgroundColor: "rgba(255, 255, 255, 0.8)",
+    /* Center the element so width expansion is symmetrical */
+    marginLeft: "auto",
+    marginRight: "auto",
+    /* The hairline fix */
+    scaleY: 0.5,
+    /* Ensures the 'growth' logic starts from the middle */
+    transformOrigin: "center" 
+  }}
+/>
       </div>
+
     </div>
        
-    </Link>
+    </MotionLink>
   )
 }
 

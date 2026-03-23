@@ -54,6 +54,18 @@ border: 1px solid var(--btn-border-color);
 .Icon-button-active .long-btn {
     background-color: transparent;
     width: 100%;
+    background: rgba(255, 255, 255, 0.05); /* Very faint white */
+  
+  /* 2. The Inset Shadow (The "Etched" Edge) */
+  /* Horizontal offset, Vertical offset, Blur radius, Spread, Color */
+  box-shadow: inset 0 0 10px 5px rgba(255, 255, 255, 0.3);
+  
+  /* 3. The "Frosted" Effect (Crucial for the premium look) */
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  
+  /* 4. Optional: A subtle outer border to define the shape */
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
  
 .Icon-button-wrapper:hover .button-text

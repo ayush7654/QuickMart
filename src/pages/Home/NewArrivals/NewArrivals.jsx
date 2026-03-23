@@ -13,15 +13,13 @@ export default function NewArrivals() {
       name: "Coco Noir Eau De", 
       thumbnail: 'Home-products-img/hp-chanel.jpg' 
     },
-    100: { 
+   
+   
+     87: { brand: 'Urban Chic', name: 'Urban Chic Check Shirt', thumbnail: 'Home-products-img/Green-shirt.jpg' },
+     100: { 
       brand: 'Apple', 
       name: "Apple Airpods", 
       thumbnail: 'hp-airpod.jpg' 
-    },
-    13: { 
-      brand: 'Annibale', 
-      name: "African Cherry Table", 
-      thumbnail: "Home-products-img/hp-table.jpg" 
     },
       88: { brand: 'Nike', name: 'Nike Air Jordan 1', thumbnail: 'Home-products-img/hp-AJ1.jpg' }
    
@@ -30,7 +28,7 @@ export default function NewArrivals() {
   useEffect(() => {
     async function fetchAllProducts() {
       try {
-        const idsToFetch = [7, 100, 13, 88];
+        const idsToFetch = [7, 87, 100, 88];
         const loadedProducts = [];
 
         for (const id of idsToFetch) {

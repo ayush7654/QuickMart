@@ -16,17 +16,7 @@
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0px 0px 15px rgb(200, 200, 200);
-    /*    background: rgba(255, 255, 255, 0.05); 
-  
-
-  box-shadow: inset 0 0 15px 5px rgba(255, 255, 255, 0.2);
-  
-
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  
-
-  border: 1px solid rgba(255, 255, 255, 0.3); */
+ cursor: pointer;
 
    
 }
@@ -77,15 +67,18 @@
   flex-direction: column;
   gap:15px;
   width: 100%;
+  transition: backdrop-filter .5s ease;
 
+   
 
 }
 
 /* .home-ProductCard:hover .card-content{
-background:linear-gradient(to bottom,transparent, rgba(0, 0, 0, 0.4));
+    backdrop-filter: blur(5px);
 } */
 
-/* Badge in top right */
+
+
 .card-badge {
   position: absolute;
   top: 15px;
@@ -133,81 +126,46 @@ background:linear-gradient(to bottom,transparent, rgba(0, 0, 0, 0.4));
   font-weight: 400;
   font-size: .9rem;
 }
-
 .product-desc {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  opacity: 0.7;
-display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;  
- /* 1. Hide the overflow and set the base height */
+  font-size: 0.85rem;
+  line-height: 1.3;
+  opacity: 1; /* Start at 0 so it fades in while growing */
   overflow: hidden;
-  max-height: 1.4rem; /* Exactly 1 line */
-  
-  /* 2. Transition everything with a custom Bezier for "snappy" feel */
-  transition: max-height .5s cubic-bezier(0.4, 0, 0.2, 1), 
-              opacity 0.6s ease;
+  max-height: 0rem; 
+  color:white;
+  font-weight: 400;
 
-  /* 3. The Mask: This creates a subtle fade at the end of the 1st line 
-     so it doesn't just cut off sharply. */
-  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-  
+
+  /* 1. Use a more 'linear' ease for the growth so it doesn't snap */
+  /* 2. Shorten the max-height value to be closer to actual text height */
+transition: 
+    /* The "Quartic Out" curve: Fast start, very long smooth finish */
+    max-height 1.1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+    opacity 0.9s ease-in-out,
+    margin-top 0.6s ease;
 }
 
-.test-card:hover .product-desc {
+ .home-ProductCard:hover .product-desc {
   opacity: 1;
-  /* 4. Expand to exactly 3 lines (1.4rem * 3) */
-  max-height: 6.2rem; 
+ 
+  max-height: 6rem; 
+  margin-top: 10px;
+} 
+
+
+.card-line {
+  height: 1px;
+  width: 90%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  bottom: 1rem;
   
-  /* 5. Remove the mask on hover so all 3 lines are clear */
-  mask-image: linear-gradient(to bottom, black 100%, black 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 100%, black 100%);
+  /* Shrink it vertically by half */
+  transform: scaleY(0.5); 
+  /* Ensure it stays anchored correctly */
+  transform-origin: bottom; 
 }
 
 
-.tag-row {
-  display: none;
-  justify-content: space-between;
-  gap: 10px;
-  /* margin-bottom: 15px; */
-}
-
-.info-tag {
-   
-  background: rgba(255, 255, 255, 0.2);
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-}
-
-
-
-.add-to-cart-btn {
-  width: 60%;
-  padding: 10px;
-  border-radius: 30px;
-  border: none;
-  border: 1px solid red;
-  font-weight: 500;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  font-family: 'Figtree';
-  
-
-}
-
-.hp-addCart-wrapper{
-  display: none;
-  width: 100%;
-  font-size: .95rem;
- margin: 0 auto;
- font-weight: 600;
-
-
- border-radius: 100px;
-}
 
 
