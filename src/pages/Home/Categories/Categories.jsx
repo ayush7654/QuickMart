@@ -3,13 +3,14 @@ import './Categories.css'
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import AnimatedUnderline from "../../../components/AnimatedUnderline/AnimatedUnderline";
 import BracketButton from "../../../components/BracketButton/BracketButton";
-
+import { motion } from 'framer-motion';
+import { slideUpVariants,standardViewport } from "../../../components/AnimationVariants";
 
 
 
 export default function Categories() {
 
-    const [index, setIndex] = useState(window.innerWidth>450?2:0);
+    const [index, setIndex] = useState(window.innerWidth>450?1:0);
     const [touchStartX, setTouchStartX] = useState(null);
     const [touchEndX, setTouchEndX] = useState(null);
       
@@ -81,18 +82,21 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
 <div className="carousel-wrapper">
  
 
-<div className="carousel">
+<div
+className="carousel">
 {cardsList.map((item, i) => {
   const offset = i - index; // linear difference (no wrap-around)
-  const spacing = window.innerWidth>400?510:260; // px distance between cards
+  const spacing = window.innerWidth>400?810:260; // px distance between cards
   let transform = "";
   let zIndex = 1;
   let opacity = 1;
   let filter = "blur(0px) grayscale(0%)";
-  let fontSize ='5rem';
-  let bottom ='-12rem';
-  let rotate = 'rotateX(20deg)';
 
+  let rotate = 'rotateX(20deg)';
+ 
+  if (offset===0){
+    transform = `scale(0.7)`;
+  }
 
   // Cards too far left or right are hidden (off-screen)
   if (offset < -2 || offset > 2) {
@@ -102,34 +106,31 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
 
   else {
     // Position cards relative to center
-    transform = `translateX(${offset * spacing}px) scale(${1 - Math.abs(offset) * 0.1})`;
+    transform = `translateX(${offset * spacing}px) scale(${1 - Math.abs(offset) * 0.3})`;
     zIndex = 10 - Math.abs(offset);
 
     // Visual effects based on distance
     if (offset === 0) {
       filter = "blur(0px) grayscale(0%)";
-      fontSize= window.innerWidth>1000?'2.5rem':window.innerWidth>450?'3rem':'2.5rem';
-      bottom =window.innerWidth>1000?'-7.5rem':window.innerWidth>450?'-8rem':'-6rem';;
-      rotate = 'rotateX(0deg)';
+       
+      rotate = 'rotateX(50deg)';
       
      
     } else if (Math.abs(offset) === 1) {
       filter = "blur(0.5px) grayscale(40%)";
-      fontSize= window.innerWidth>1000?'2.5rem':'2rem';
-      bottom =window.innerWidth>1000?'-7rem':'-5rem';
+   
       rotate = 'rotateX(30deg)';
        
     } else if (Math.abs(offset) === 2) {
       filter = "blur(1px) grayscale(50%)";
-      fontSize= '2rem'
-      bottom ='-8rem';
+      
       rotate = 'rotateX(20deg)';
 
     }
   }
 
   return (
-   <div
+   <motion.div
   key={i}
   className="carousel-card"
   style={{
@@ -137,24 +138,29 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
     zIndex,
     opacity,
     filter,
+   
     backgroundImage: `url(${item.img})`,
     "--shadowOpacity": offset === 0 ? 0 : 1,
     pointerEvents:offset===0?'auto':'none'
   }}
+
+  
+
+
+
+  
+
+  
+
+
 >
-
-  {/*  <AnimatedUnderline from="center" offset={5} color='rgba(255, 255, 255, 1)' thickness={2.5} >
-    <div className='carousel-name'>{item.capName}</div  >  
-    </AnimatedUnderline> 
-    <div className='carousel-name-sm'>{item.capName}</div> */}
-
 
    <div className='carousel-name'>
    {item.name}
 </div  >  
   
 
-  </div>
+  </motion.div>
   );
 })}
 
@@ -162,7 +168,7 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
 
  <div className="carousel-controls">
 <button onClick={prev}><FiChevronLeft /></button>
-{/* <div className="explore-btn">Explore</div> */}
+
 <button onClick={next}><FiChevronRight/></button>
 </div>
  

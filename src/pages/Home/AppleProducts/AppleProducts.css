@@ -8,18 +8,24 @@
  margin-top: 5rem;
 }
 
-.ap-head{
+.ap-head-wrapper{
+    width: 85%;
   font-size: 3rem;
-  padding: 2rem 0rem;
+  padding: 4rem 0rem;
   font-family: 'Inter';
   display: flex;
   align-items: center;
+  justify-content: center;
   gap:1rem;
+  border: 0px solid red;
+  position: relative;
+
 }
 
 .ap-head-img{
-    height:20rem;
-    width: 20rem;
+    height:8rem;
+    width: 8rem;
+
     
 }
 

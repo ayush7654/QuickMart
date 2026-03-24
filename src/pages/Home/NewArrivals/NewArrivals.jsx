@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import HomeProduct from '../HomeProduct/HomeProduct';
+import { motion } from 'framer-motion';
+import { slideUpVariants } from '../../../components/AnimationVariants';
 import './NewArrivals.css';
 import { getProductById } from '../../../api';
 
@@ -61,12 +63,21 @@ export default function NewArrivals() {
 
       <div className="home-Products-container">
         {/* 3. Map through the products cleanly */}
-        {homeProducts.map((product) => (
-          <HomeProduct
-     key={product.id}
-    product={product} // Passing the whole object
-    path={window.location.search}
-          />
+        {homeProducts.map((product,index) => (
+
+       <motion.div
+    key={product.id}
+  variants={slideUpVariants}
+   custom={index * 0.1} // Car
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.5 }}
+  >
+    <HomeProduct
+      product={product}
+      path={window.location.search}
+    />
+  </motion.div>
         ))}
       </div>
     </div>

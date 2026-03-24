@@ -21,23 +21,28 @@ export default function HomeProduct({ product, path }) {
     discount 
   } = product;
 
-  const MotionLink = motion(Link);  
+  const MotionLink = motion(Link); 
+  
 
 
-console.log(images)
+
+
   return (
     <MotionLink  to={`/store/${product.id}`} 
-    initial="hidden" 
+     initial="hidden" 
     whileHover="visible"
+   
     className='home-ProductCard'>
-       <div className="test-card" style={{backgroundImage:`url(${thumbnail})`}}>
+       <div className="test-card"
+        style={{backgroundImage:`url(${thumbnail})`}}>
     
       <div className="card-badge">{discount?discount + '% Off':'New'}</div>
 
         <span className="brand-tag">{brand}</span>
 
      
-      <div className="card-glass-content">
+      <div
+       className="card-glass-content">
        
       </div>
 
@@ -50,7 +55,7 @@ console.log(images)
        
   <div className="product-desc">
 
-      <TextAnimation text={description} delay={0.1} />
+      <TextAnimation text={description} delay={0.1} staggerDelay={.01}/>
      </div>
 
 <motion.div

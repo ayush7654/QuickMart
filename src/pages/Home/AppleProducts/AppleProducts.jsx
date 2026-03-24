@@ -1,13 +1,78 @@
 import React from 'react'
 import AppleVideoCard from '../AppleComponent/AppleVideoCard/AppleVideoCard'
 import './AppleProducts.css'
+import { motion } from 'framer-motion';
+import TextAnimation from '../../../components/TextAnimation';
 export default function AppleProducts() {
+const expandVariants = {
+  hidden: { 
+    opacity: 0,
+    clipPath: 'inset(0% 50% 0% 50%)',
+    transition: { duration: 0.5 } // Fast reset
+  },
+  visible: { 
+    opacity: 1,
+    clipPath: 'inset(0% 0% 0% 0%)',
+    transition: { 
+      duration: 1.2, 
+      ease: [1, 1, 0.5, 1], // Quartic Out
+      // Staggering the opacity slightly helps the "glow" look
+      opacity: { duration: 0.8, ease: "linear" } 
+    } 
+  }
+};
+
+
   return (
     <div className='apple-Products' >
 
-<h2 className='ap-head' >
-    <div className='ap-head-img'><img src='AppleProductsMedia/AppleLogo.png'/></div>
-    Experiences only Apple can deliver. </h2>
+ <motion.div 
+initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 'some' }}
+className='ap-head-wrapper'>
+  <motion.div className='ap-head-img'
+  variants={{
+        hidden: { scale:.3 }, 
+        visible: { 
+       scale:1 ,opacity:1,
+          transition: { duration: 1, ease: [1, 1, 0.5, 1] }
+        }
+      }}
+  >
+    <img src='AppleProductsMedia/AppleLogo.png'/>
+    </motion.div> 
+   
+
+  
+ {/*  <motion.h2
+        variants={expandVariants}
+        initial="hidden"
+        whileInView="visible"
+        // amount: "some" is more forgiving than a percentage
+        viewport={{ once: true, amount:'some'}} 
+        style={{
+          fontSize: '3rem',
+          textAlign: 'center',
+          whiteSpace: 'nowrap',
+          display: 'block'
+       
+        }}
+      >
+      Experiences only Apple can deliver.
+      </motion.h2> */}
+
+ <TextAnimation text={'Experiences only Apple can deliver.'} delay={0.1} staggerDelay={.15}/>
+
+    </motion.div> 
+
+
+<h1>create a comman animation component for slide up animation , use that in every component for uniformity
+  --- staggered slide up where each word/line/card/element slides up after a delay
+</h1>
+
+
+
         <AppleVideoCard
         videoSrc="AppleProductsMedia/MacBookProVid.mp4"
         poster="AppleProductsMedia/MacBookImgHD.jpg"

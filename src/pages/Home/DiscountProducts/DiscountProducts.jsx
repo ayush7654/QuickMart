@@ -2,9 +2,10 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import './DiscountProduct.css'
 import ProductCard from '../../../components/ProductCard'
+import { slideUpVariants } from '../../../components/AnimationVariants';
 import HomeProduct from '../HomeProduct/HomeProduct'
 import { getProductById } from '../../../api'
-
+import { motion } from 'framer-motion';
 
 export default function DiscountProducts() {
   const [homeProducts, setHomeProducts] = useState([]);
@@ -53,12 +54,20 @@ export default function DiscountProducts() {
       
       <div className="home-Products-container">
         {/* 3. Map directly over the merged array */}
-        {homeProducts.map((product) => (
-          <HomeProduct
+        {homeProducts.map((product,index) => (
+           <motion.div
             key={product.id}
-    product={product} // Passing the whole object
-    path={window.location.search}
-          />
+          variants={slideUpVariants}
+           custom={index * 0.1} // Car
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            <HomeProduct
+              product={product}
+              path={window.location.search}
+            />
+          </motion.div>
         ))}
       </div>
     </div>

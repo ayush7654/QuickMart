@@ -2,6 +2,8 @@ import React from 'react'
 import { useRef } from "react";
 import ScrollButton from '../../../../components/ScrollingButton/ScrollingButton';
 import './AppleVideoCard.css'
+import { motion } from 'framer-motion';
+import { slideUpVariants ,standardViewport} from '../../../../components/AnimationVariants';
 export default function AppleVideoCard({ videoSrc, poster, title, description, price }) {
 
     const videoRef = useRef(null);
@@ -17,7 +19,14 @@ export default function AppleVideoCard({ videoSrc, poster, title, description, p
 
 
   return (
-   <div className="apple-wrapper" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+   <motion.div 
+    
+ variants={slideUpVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={standardViewport}
+   
+   className="apple-wrapper" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className="applePro-wrapper">
         <div id="video-window" className="AppleProVid" >
           <video ref={videoRef} muted loop playsInline poster={poster}>
@@ -33,6 +42,6 @@ export default function AppleVideoCard({ videoSrc, poster, title, description, p
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

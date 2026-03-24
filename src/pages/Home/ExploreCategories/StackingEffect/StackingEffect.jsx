@@ -40,7 +40,7 @@ useEffect(() => {
     }, 
     { 
       y: i * 40,
-      width: "75%", 
+      width: "65%", 
       ease: "power1.out", // Adding an ease makes the start of the growth feel smoother
       scrollTrigger: {
         trigger: i === 0 ? container : card,
