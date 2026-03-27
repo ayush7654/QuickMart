@@ -80,7 +80,8 @@ const prev = () => setIndex((prev) => Math.max(prev - 1, 0));
      
       
 <div className="carousel-wrapper">
- 
+
+
 
 <div
 className="carousel">

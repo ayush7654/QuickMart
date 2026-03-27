@@ -20,16 +20,25 @@
 
 .testing-div{
     min-height: 100vh;
-    display: flex;
+
     width: 100%;
    margin-top: 0rem;
    margin-bottom: 100vh;
-   display: grid ;
-   place-items: center;
+
 color:black;
+display: flex;
+justify-content: center;
+align-items: center;
 
   
     
 
+}
+
+
+.box-test{
+    width: 500px;
+    height: 500px;
+    background-color: brown;
 }
 

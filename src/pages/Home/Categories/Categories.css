@@ -2,7 +2,7 @@
 
 .Categories-div{
     margin-top: 4rem;
-    border: 0px solid red;
+    border: 1px solid red;
  
 }
 
@@ -13,7 +13,7 @@ align-items: center;
 flex-direction: column;
 
 overflow-x: hidden;
-border: 0px solid yellow; 
+border: 1px solid yellow; 
 /* background-image: url('./QM-BG-HP.jpg');
 background-position: bottom;
 background-size: cover; */
@@ -29,7 +29,7 @@ background-size: cover; */
     align-items: center;
 
      position: relative;
-     margin-bottom: 1rem;
+    
 
  background-color: white;
 

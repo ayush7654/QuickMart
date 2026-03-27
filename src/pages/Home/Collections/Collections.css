@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100..900&display=swap');
 
-  .explore-categories{
+  .collections-wrapper{
     width: 100%;
 
     display: flex;
@@ -13,7 +13,7 @@
    
   }
 
- .explore-head{
+ .collection-head{
  font-size: 3rem;
  font-family: sans-serif;
 margin-bottom: 3rem;
@@ -21,7 +21,7 @@ margin-bottom: 3rem;
 
  
 
-
+/* 
 
   @media(max-width:700px){
 
@@ -70,4 +70,4 @@ margin-bottom: 3rem;
     font-size: 4rem;
       line-height: 3rem;
    }
-  }
+  } */

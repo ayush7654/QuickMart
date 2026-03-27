@@ -120,7 +120,7 @@ export default function HomeIntro() {
         </div>
 
         <div className="CrousalNav-div">
-          <div className="CrousalNav-content">
+          {/* <div className="CrousalNav-content">
             {homeContent.map(nav => (
               <div 
                 key={nav.id}
@@ -128,7 +128,17 @@ export default function HomeIntro() {
                 className={`CrousalNav ${nav.id === activeIndex ? "CrousalNav-selected" : ''}`}
               />
             ))}
-          </div>
+          </div> */}
+          <div className="CrousalNav-content">
+  {homeContent.map((nav, index) => (
+    <div 
+      key={nav.id}
+      // Use index if your activeIndex is 0-based, or nav.id if it matches exactly
+      onClick={() => setActiveIndex(index)} 
+      className={`CrousalNav ${index === activeIndex ? "CrousalNav-selected" : ''}`}
+    />
+  ))}
+</div>
         </div>
       </div>
     </div>

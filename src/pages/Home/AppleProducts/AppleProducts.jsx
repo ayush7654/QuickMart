@@ -4,23 +4,6 @@ import './AppleProducts.css'
 import { motion } from 'framer-motion';
 import TextAnimation from '../../../components/TextAnimation';
 export default function AppleProducts() {
-const expandVariants = {
-  hidden: { 
-    opacity: 0,
-    clipPath: 'inset(0% 50% 0% 50%)',
-    transition: { duration: 0.5 } // Fast reset
-  },
-  visible: { 
-    opacity: 1,
-    clipPath: 'inset(0% 0% 0% 0%)',
-    transition: { 
-      duration: 1.2, 
-      ease: [1, 1, 0.5, 1], // Quartic Out
-      // Staggering the opacity slightly helps the "glow" look
-      opacity: { duration: 0.8, ease: "linear" } 
-    } 
-  }
-};
 
 
   return (

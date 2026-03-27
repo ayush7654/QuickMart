@@ -2,8 +2,9 @@ import {useRef} from "react";
 import { useLocation, Link } from "react-router-dom";
 import ImgCarousel from "./ImgCarousel/ImgCarousel";
 import BrandCarousel from "./BrandComponent/BrandComponent";
-import ExploreCategories from "./ExploreCategories/ExploreCategories"; 
+import Collections from "./Collections/Collections";
 import DiscountProducts from "./DiscountProducts/DiscountProducts";
+import ExploreCategory from "./ExploreCategory/ExploreCategory";
 import AppleComponent from "./AppleComponent/AppleComponent";
 import NewArrivals from "./NewArrivals/NewArrivals";
 import TrendingComponent from "./TrendingComponent/TrendingComponent";
@@ -12,9 +13,10 @@ import Categories from "./Categories/Categories";
 import AppleProducts from "./AppleProducts/AppleProducts";
 import HomeFooter from "./HomeFooter/HomeFooter";
 import HomeIntro from "./HomeIntro/HomeIntro";
-import StackingEffect from "./ExploreCategories/StackingEffect/StackingEffect";
+import StackingEffect from "./Collections/StackingEffect/StackingEffect";
 
 import './Home.css';
+
 
 
 export default function Home(){
@@ -33,13 +35,14 @@ const isFirstRender = useRef(true); // track initial mount
       <div className="Home-scroll-content">
       
        <NewArrivals/>
-        <ExploreCategories/> 
+        <Collections/> 
        <TrendingComponent />
                    <AppleProducts/>
       
         
             <DiscountProducts/>
-               <Categories/>
+            <ExploreCategory/>
+              {/*  <Categories/> */}
                 
                 
                 

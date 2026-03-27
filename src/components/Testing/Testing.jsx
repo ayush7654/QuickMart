@@ -1,6 +1,7 @@
 
 
-import React, { useState } from 'react';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import "./Testing.css";
 
 
@@ -9,13 +10,29 @@ import "./Testing.css";
 
 export default function Testing() {
 
+const cursorRef = useRef(null);
 
+  useEffect(() => {
+    const cursor = cursorRef.current;
 
+    // 1. Move the cursor element to the mouse position
+    const moveCursor = (e) => {
+      gsap.to(cursor, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.1, // This small delay makes it feel 'fluid'
+        ease: "power2.out"
+      });
+    };
+
+    window.addEventListener("mousemove", moveCursor);
+    return () => window.removeEventListener("mousemove", moveCursor);
+  }, []);
 
   return (
     <div className="testing-div">
-
-
+<div ref={cursorRef} className="custom-cursor"></div>
+<div className='box-test'></div>
       
 
 </div>
