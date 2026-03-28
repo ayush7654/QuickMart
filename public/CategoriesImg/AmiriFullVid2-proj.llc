@@ -1,0 +1,30 @@
+{
+  version: 2,
+  mediaFileName: 'AmiriFullVid2.mp4',
+  cutSegments: [
+    {
+      start: 0,
+      end: 2.9521679687500004,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 7.644355468750001,
+      end: 11.5740625,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 14.8194921875,
+      end: 17.595703125,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 19.41392578125,
+      end: 20.411015625,
+      name: '',
+      selected: true,
+    },
+  ],
+}

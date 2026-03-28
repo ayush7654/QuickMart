@@ -15,7 +15,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
- 
+  border: 1px solid red;
+
   
 }
 
@@ -64,10 +65,16 @@
 }
 
 /* Position satellite images around center */
-.item-1 { top: 5%; left:9%;  width: 380px;height: 250px;}
-.item-2 { top: 27%; right: 13%;  width: 320px;height: 230px; }
-.item-3 { bottom:28%; left: 13%;  width: 320px;height: 230px; }
-.item-4 { bottom: 3%; right: 9%;  width: 380px;height: 250px;}
+.item-1 { top: 10%; left:13%;  width: 320px;height: 230px;}
+.item-2 { top: 30%; right: 11%;  width: 350px;height: 250px; }
+.item-3 { bottom:23%; left:11%;  width: 350px;height: 250px; }
+.item-4 { bottom: 3%; right:13%;  width: 320px;height: 230px;}
+
+
+/* .item-1 { top: 10%; left:13%;  width: 320px;height: 230px;}
+.item-2 { top: 30%; right: 11%;  width: 350px;height: 250px; }
+.item-3 { bottom:23%; left:11%;  width: 350px;height: 250px; }
+.item-4 { bottom: 3%; right:13%;  width: 320px;height: 230px;} */
 
 .store-scroll-down-wrapper{
   position: absolute;

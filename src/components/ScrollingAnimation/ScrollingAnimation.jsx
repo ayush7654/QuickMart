@@ -30,14 +30,16 @@ useEffect(() => {
       { 
         width: "98vw", 
         height: "98vh", 
-        borderRadius: "10px" 
+        borderRadius: "10px",
+        marginTop:'0rem' 
       }, 
       { 
         width: "30vw", 
         height: "80vh", 
         borderRadius: "20px",
         ease: "expo.out", // High initial movement rate
-        immediateRender: false
+        immediateRender: false,
+        marginTop:'0rem' 
       }
     );
 
@@ -84,15 +86,15 @@ useEffect(() => {
         
 
 
-        <div className="grid-item item-1"><img src="/AmiriImg9.jpg" alt="" /></div>
-        <div className="grid-item item-2"><img src="/AmiriImg7.jpg" alt="" /></div>
-        <div className="grid-item item-3"><img src="/AmiriImg6.jpg" alt="" /></div>
-        <div className="grid-item item-4"><img src="/AmiriImg10.png" alt="" /></div>
+        <div className="grid-item item-1"><img src="/AmiriSnap1.webp" alt="" /></div>
+        <div className="grid-item item-2"><img src="/AmiriSnap2.webp" alt="" /></div>
+        <div className="grid-item item-3"><img src="/AmiriSnap3.webp" alt="" /></div>
+        <div className="grid-item item-4"><img src="/AmiriSnap4.webp" alt="" /></div>
 
         
         <div className="main-image-wrapper" ref={mainImgRef}>
   <video 
-    src="/AmiriSampleVid2.mp4" 
+    src="/AmiriVidFinalCut.mp4" 
     muted 
     autoPlay 
     loop 

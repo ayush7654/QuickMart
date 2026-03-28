@@ -3,7 +3,7 @@ import { useStoreData } from '../../../components/StoreDataContext';
 
 const SUBGROUP_MAPPING = {
   "Clothing & Apparel": [
-      { slug: "womens-dresses", img: "women-dresses.jpg" },
+      { slug: "womens-dresses", img: "women-dresses2.jpg" },
     { slug: "mens-shirts", img: "mens-shirt.jpg" },
 
     { slug: "tops", img: "women-top.jpg" },

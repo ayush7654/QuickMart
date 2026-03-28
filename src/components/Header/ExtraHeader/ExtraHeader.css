@@ -1,7 +1,7 @@
 
   .extra-header-wrapper{
     width: 100%;
-    height: 2rem;
+    height: 1.8rem;
     border: 0px solid red;
    display: grid;
    place-items: center;
@@ -14,7 +14,9 @@ border-bottom: 1px solid rgb(0, 0, 0,.1);
 transition: opacity .5s ease;
     font-size: .74rem;
     font-weight: 400;
-background-color: white;
+background-color: rgba(255, 255, 255);
+/* background-color: rgba(0, 0, 255, 0.601); */
+
 
     
 
