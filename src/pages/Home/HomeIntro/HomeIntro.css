@@ -1,6 +1,8 @@
 .homeIntro{
- height: 110vh;
+ height: 100vh;
  width: 100%;
+ display: grid;
+ place-items: center;
 
 }
 
@@ -9,9 +11,10 @@
 
 .video-hero {
   position: relative;
-width: 100%;
-height: 100vh;
+width: 99%;
+height: 98vh;
   overflow: hidden;
+  border-radius: 10px;
 
 }
 

@@ -92,9 +92,9 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
 
     const [isAtTop, setIsAtTop] = useState(true);
 
-   const headertp = ['/','/store','/testing'].includes(location.pathname);
+   const headertp = ['/','/store'].includes(location.pathname);
 
-   const extraHeaderVisible =['/'].includes(location.pathname);
+   const extraHeaderVisible =['/','/store'].includes(location.pathname);
 
  
 
@@ -200,12 +200,12 @@ useEffect(() => {
      
     }}>
 
-   <ExtraHeader extraHeaderVisible={extraHeaderVisible}/>  
+   <ExtraHeader extraHeaderVisible={extraHeaderVisible} isAtTop={isAtTop} />  
 
 
 
 
-        <div  className={`header-home ${isAtTop && cursorOff && headertp ?'headerAtTop':''}`}  /* REMOVE '!' */
+        <div  className={`header-home ${isAtTop /* && cursorOff */ && headertp ?'headerAtTop':''}`}  /* REMOVE '!' */
             onMouseEnter={() => setCursorOff(false)}
   onMouseLeave={() => setCursorOff(true)}
         style={{
@@ -214,13 +214,13 @@ useEffect(() => {
         : 'transform 0.5s ease-out,  background-color 0.4s ease, box-shadow 1s ease',
         // When showing (moving down/active)
 
-        transform:isAtTop && location.pathname === '/'  ? 'translateY(0)':'translateY(-2rem)'
+       transform:isAtTop && extraHeaderVisible  ? 'translateY(0)':'translateY(-2rem)' 
         }}>
-          <div className="header-home-upper">
+          {/* <div className="header-home-upper">
             <div className="site-logo-div" style={{scale:isAtTop?'1':'.5' , opacity:isAtTop?'1':'.4'}}> 
               <img src='./whiteStork5.png'  className="site-logo"/>
             </div>          
-          </div>
+          </div> */}
           <div className="header-home-lower">
                
                     <div className="home-menu-ph" onClick={()=>sideBarToggle(true)}>
@@ -229,8 +229,8 @@ useEffect(() => {
                         </div>
 
   <div className="site-name-div"   >
-                  <div className="site-logo-tagline">Elevate your World with</div>
-                  <div className="site-name">SARAS</div>
+             
+                  <div className="site-name" style={{color:isAtTop && headertp?'white':'black'}}>SARAS</div>
                 </div>
                  <div className="page-nav-wrapper-left">
     
@@ -240,9 +240,9 @@ useEffect(() => {
 
    <DotNav
    sections={navElements}
-   textColor={isAtTop && cursorOff && headertp?"white":"rgb(80,80,80)"}
-   textColorHover="black"
-   dotColor={isAtTop && cursorOff && headertp?"white":"rgb(0, 100, 255)"}
+   textColor={isAtTop && headertp /* && cursorOff && headertp */?"white":"rgb(80,80,80)"}
+   textColorHover={isAtTop && headertp?'white':"black"}
+   dotColor={isAtTop && headertp/* && cursorOff && headertp */?"white":"rgb(0, 100, 255)"}
    handleClick={(func)=>handlePageNav(func)}
    syncWithUrl={true}/>
 

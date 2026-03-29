@@ -22,6 +22,7 @@ import { useStoreData } from "../../components/StoreDataContext";
 import CategoryDataProvider from "./ExpandingStoreHeader/CategoryDataProvider";
 import "./Store.css";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
+import HomeIntro from "../Home/HomeIntro/HomeIntro";
 
 
 export default function Store() {
@@ -232,12 +233,12 @@ console.log('store scrollY is ',scrollY)
 
 
 
-<div className="scrolling-animation-wrapper">
+{/* <div className="scrolling-animation-wrapper">
  <ScrollingAnimation isAtTop={isAtTop}/> 
   <h1 className="hero-title2">Refine Living</h1>
-</div>
+</div> */}
 
-
+<HomeIntro/>
 
  
 

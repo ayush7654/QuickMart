@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Globe } from 'lucide-react';
 import './ExtraHeader.css'
-export default function ExtraHeader({extraHeaderVisible}) {
+export default function ExtraHeader({extraHeaderVisible,isAtTop}) {
 
 const [showFirst, setShowFirst] = useState(true);
 
@@ -15,7 +15,7 @@ const [showFirst, setShowFirst] = useState(true);
   }, []);
 
   return (
-      <div className="extra-header-wrapper" style={{opacity:extraHeaderVisible?1:0}}>
+      <div className="extra-header-wrapper" style={{opacity:extraHeaderVisible && isAtTop ?1:0}}>
 
     <div className={`extra-link-wrapper ${showFirst ? 'visible' : 'hidden'}`}>
         <span id="extra-link" className="underline">Coming Soon : The Summer Collection 26.</span>

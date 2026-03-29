@@ -14,7 +14,8 @@ import AppleProducts from "./AppleProducts/AppleProducts";
 import HomeFooter from "./HomeFooter/HomeFooter";
 import HomeIntro from "./HomeIntro/HomeIntro";
 import StackingEffect from "./Collections/StackingEffect/StackingEffect";
-
+import ScrollingAnimation from "../../components/ScrollingAnimation/ScrollingAnimation";
+import { useStoreData } from "../../components/StoreDataContext";
 import './Home.css';
 
 
@@ -25,13 +26,18 @@ const location = useLocation()
 
 const isFirstRender = useRef(true); // track initial mount
 
+const {isAtTop} = useStoreData();
 
     return(
     
   <div className="Home">
  
 
-      <HomeIntro/>    
+      {/* <HomeIntro/>     */}
+      <div className="scrolling-animation-wrapper">
+ <ScrollingAnimation isAtTop={isAtTop}/> 
+  <h1 className="hero-title2">Refine Living</h1>
+</div>
       <div className="Home-scroll-content">
       
        <NewArrivals/>

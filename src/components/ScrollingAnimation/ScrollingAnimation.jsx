@@ -34,8 +34,8 @@ useEffect(() => {
         marginTop:'0rem' 
       }, 
       { 
-        width: "30vw", 
-        height: "80vh", 
+        width: "0vw", 
+        height: "50vh", 
         borderRadius: "20px",
         ease: "expo.out", // High initial movement rate
         immediateRender: false,
@@ -86,10 +86,10 @@ useEffect(() => {
         
 
 
-        <div className="grid-item item-1"><img src="/AmiriSnap1.webp" alt="" /></div>
-        <div className="grid-item item-2"><img src="/AmiriSnap2.webp" alt="" /></div>
-        <div className="grid-item item-3"><img src="/AmiriSnap3.webp" alt="" /></div>
-        <div className="grid-item item-4"><img src="/AmiriSnap4.webp" alt="" /></div>
+        <div className="grid-item item-1" style={{backgroundImage:'url(/AmiriSnap1.webp)'}}><img src="/AmiriSnap1.webp" alt="" /></div>
+        <div className="grid-item item-2" style={{backgroundImage:'url(/AmiriSnap4.webp)'}}><img src="/AmiriSnap3.webp" alt="" /></div>
+       {/*  <div className="grid-item item-3" style={{backgroundImage:'url(/AmiriSnap4.webp)'}}><img src="/AmiriSnap4.webp" alt="" /></div>
+        <div className="grid-item item-4" style={{backgroundImage:'url(/AmiriSnap3.webp)'}}><img src="/AmiriSnap3.webp" alt="" /></div> */}
 
         
         <div className="main-image-wrapper" ref={mainImgRef}>
