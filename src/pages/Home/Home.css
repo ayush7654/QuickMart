@@ -37,6 +37,16 @@
 
   }
 
+.scrolling-animation-wrapper{
+  width: 100%;
+  height: 420vh;
+  position: relative;
+
+  
+ 
+}
+
+
 
 
   .Home-scroll-content{

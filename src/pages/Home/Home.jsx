@@ -35,8 +35,9 @@ const {isAtTop} = useStoreData();
 
       {/* <HomeIntro/>     */}
       <div className="scrolling-animation-wrapper">
+         
  <ScrollingAnimation isAtTop={isAtTop}/> 
-  <h1 className="hero-title2">Refine Living</h1>
+ 
 </div>
       <div className="Home-scroll-content">
       
