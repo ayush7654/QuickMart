@@ -32,7 +32,7 @@
 
 
   
- .header-home{
+ .site-header{
     position: relative;
     border:0px solid white;
     height:6rem;
@@ -54,9 +54,11 @@ color:rgb(235, 235, 235);
 
 
 
+
+
   }
 
-    .headerAtTop{
+    .headerTransparent{
    
 
 /* background-color: transparent;
@@ -66,7 +68,14 @@ color:rgb(235, 235, 235);
   -webkit-backdrop-filter: blur(00px);  */
   background-color: transparent;
   color:white;
+
+backdrop-filter: blur(0px);
    
+  }
+
+  .headerTranslucent{
+     background-color: rgba(245, 245, 245, 0.5);
+backdrop-filter: blur(10px);
   }
 
 
@@ -179,9 +188,6 @@ font-family: "Prosto One", sans-serif;
 
    }
 
-    .headerAtTop  .page-nav-wrapper-left{
-     
-    }
 
  
 
@@ -213,7 +219,7 @@ border: 0px solid blue;
   
 
 
-   .page-nav-left-selected{
+/*    .page-nav-left-selected{
   text-decoration: underline;
 text-decoration-thickness: 1.5px;
 text-decoration-color:rgb(0, 0, 0) ;
@@ -224,7 +230,7 @@ pointer-events: none;
 
     .headerAtTop   .page-nav-left-selected{
       text-decoration-color:rgb(255, 255, 255) ;
-    }
+    } */
 
  
 
@@ -306,11 +312,11 @@ pointer-events: none;
     color:black;
   }
 
-  .headerAtTop #header-icon{
+  .headerTransparent #header-icon{
     color:rgb(255, 255, 255);
     
   }
- .headerAtTop #header-icon:hover{
+ .headerTransparent #header-icon:hover{
     color:rgb(255, 255, 255);
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
   }

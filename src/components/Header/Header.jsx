@@ -96,6 +96,13 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
 
    const extraHeaderVisible =['/','/store'].includes(location.pathname);
 
+   const headerTransparent = isAtTop && headertp;
+   
+   const headerTranslucent = !isAtTop && location.pathname==='/';
+
+   console.log( 'transparent', headerTransparent)
+   console.log( 'Translucent', headerTranslucent)
+
  
 
    
@@ -205,7 +212,7 @@ useEffect(() => {
 
 
 
-        <div  className={`header-home ${isAtTop /* && cursorOff */ && headertp ?'headerAtTop':''}`}  /* REMOVE '!' */
+        <div  className={`site-header ${headerTransparent ?'headerTransparent':''} ${headerTranslucent?'headerTranslucent':''}`}  /* REMOVE '!' */
             onMouseEnter={() => setCursorOff(false)}
   onMouseLeave={() => setCursorOff(true)}
         style={{
@@ -213,8 +220,7 @@ useEffect(() => {
         ? 'transform 0.4s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
         : 'transform 0.5s ease-out,  background-color 0.4s ease, box-shadow 1s ease',
         // When showing (moving down/active)
-
-       transform:isAtTop && extraHeaderVisible  ? 'translateY(0)':'translateY(-2rem)' 
+       transform:isAtTop && extraHeaderVisible  ? 'translateY(0)':'translateY(-2rem)'
         }}>
           {/* <div className="header-home-upper">
             <div className="site-logo-div" style={{scale:isAtTop?'1':'.5' , opacity:isAtTop?'1':'.4'}}> 

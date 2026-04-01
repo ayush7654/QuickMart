@@ -216,11 +216,7 @@ console.log('store scrollY is ',scrollY)
   return (
     <div className="Store-Page">
 
-       <div className={`store-header-wrapper ${isAtTop?'':'store-header-visible'}`}>
- 
-
-<ExpandingStoreHeader />
-      </div> 
+     
 
 
      <div className={`storePage-overlay ${storeOverlayActive ? 'is-visible' : ''}`} 
@@ -242,7 +238,11 @@ console.log('store scrollY is ',scrollY)
 
  
 
+  <div className={`store-header-wrapper ${isAtTop?'':'store-header-visible'}`}>
+ 
 
+<ExpandingStoreHeader />
+      </div> 
 
 <div className="store-content-wrapper">
 

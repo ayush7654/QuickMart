@@ -1,19 +1,24 @@
 
 .floating-pill {
   /* 1. Fixed Position */
+ 
   position: fixed;
-  top: 0px; /* Your exact distance from top */
+  top: 10px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); 
   font-family: 'Figtree';
   /* 2. Initial State */
+  
   width: 70%;
-  height: 3.5rem;
-  background: rgba(255, 255, 255, 0.2);
+  height: 4rem;
+/*   background: rgba(219, 219, 219, 0.2);
+ background-color: rgb(255, 255, 255,.8); */
+background-color: white;
+ 
   backdrop-filter: blur(20px);
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  z-index: 99;
+  z-index: 999;
   
   cursor: pointer;
 
@@ -27,17 +32,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
+/* background: rgba(255, 255, 255, 0);
 
-    box-shadow: 0 10px 20px -10px rgba(110, 80, 255, 0.3);
+    box-shadow: inset 0 0 10px 5px rgba(255, 255, 255);
+
+    border: 1px solid rgba(255, 255, 255); */
+ border: 1px solid white;
+    background-color: rgb(20, 20, 60,.4);
+    box-shadow: 0px 3px 10px rgb(20, 20, 60,.5);
+
+
+
+
 }
 
 /* 4. Expanded State */
 .pill-expanded {
+
+
   width: calc(100% - 15px) ;
   height: calc(99vh - 15px) ;
   border-radius: 12px;
   cursor: default;
   background-color: rgb(255, 255, 255);
+      background-color: rgb(30, 30, 50,.3);
+    /*   background-color: rgb(40, 40, 60); */
 
 }
 
@@ -92,13 +111,13 @@
   font-size: 1.8rem;
   padding: 1rem 0;
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.5);
   transition: all 0.3s ease;
   font-weight: 500;
 }
 
 .subgroup-item.active {
-  color: #000;
+  color: #ffffff;
   transform: translateX(15px);
 }
 

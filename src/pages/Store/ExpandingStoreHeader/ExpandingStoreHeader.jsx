@@ -62,7 +62,7 @@ const currentItems = categorizedData && activeGroup ? categorizedData[activeGrou
         immediateRender: false,
       },
       // When not open, it follows the scroll to this width
-      width: '60%', 
+      width: '50%', 
       ease: "power2.out",
     });
   });
@@ -104,9 +104,9 @@ useEffect(() => {
         >
           <div className="pill-content">
     
-    <StoreSorting 
+   <StoreSorting 
     partialPill={partialPill}
-    setPartialPill={setPartialPill}/> 
+    setPartialPill={setPartialPill}/>  
 
 <div className="category-layout">
   {loading ? (

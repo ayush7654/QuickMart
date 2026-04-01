@@ -23,7 +23,7 @@ const TextAnimation = ({ text,staggerDelay, delay = 0 }) => {
     visible: { 
       y: "0%", opacity:1 ,
       transition: { 
-        duration: 0.8, 
+        duration: 0.5, 
         ease: [.5, 1, 0.68, 1] // High-end "Expo" easing
       }
     },

@@ -85,7 +85,7 @@ export default function HomeIntro() {
                     className='homeIntro-head' 
                     style={{ 
                         transform: `translateY(-${activeIndex * 600}px)`,
-                        transition: 'transform 0.8s cubic-bezier(0.2, 1, 0.3, 1)' 
+                        transition: 'transform 0.6s cubic-bezier(0.2, 1, 0.3, 1)' 
                     }}
                   >
                     {item.content}

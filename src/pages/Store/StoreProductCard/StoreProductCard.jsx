@@ -36,6 +36,20 @@ function StoreProductCard({ product, path }) {
   const [cursorOnHover , setCursorOnHover] =useState(false)
 const isItemInCart = cartList.some(cartItem => cartItem.id === id);
   
+const getStatusStyles = (status) => {
+  switch (status) {
+    case 'In Stock':
+      return { opacity:0 }; // Soft Sage
+    case 'Low Stock':
+      return { backgroundColor: '#fff9e6', color: '#856404' }; // Soft Gold
+    case 'Out of Stock':
+      return { backgroundColor: '#ffe2e2', color: '#8f0b02' }; // Neutral Grey
+    default:
+      return { backgroundColor: 'transparent', color: 'inherit' };
+  }
+};
+
+const statusStyle = getStatusStyles(product.availabilityStatus);
 
 useEffect(() => {
   let interval;
@@ -85,12 +99,27 @@ useEffect(() => {
     onMouseEnter={()=>setCursorOnHover(true)}
     onMouseLeave={()=>setCursorOnHover(false)}>
      
- <div className='sp-brand-tag'>{product.brand?product.brand:product.category}</div>
+
 
         <div className='sp-img-wrapper'>
-            <img src={images[SPImgId]}/>
+        
 
-              <div className='sp-imgBar-wrapper'>
+       
+  <img
+    src={images[0]}
+    className={`sp-img base ${cursorOnHover && images.length > 1 ? "fade-out" : ""}`}
+  />
+
+
+  {images.length > 1 && (
+    <img
+      src={images[1]}
+      className={`sp-img top ${cursorOnHover ? "fade-in" : ""}`}
+    />
+  )}
+
+
+         {/*      <div className='sp-imgBar-wrapper'>
   {images.map((_, index) => (
     <div key={index} className='sp-imgBar'>
       <div 
@@ -102,12 +131,18 @@ useEffect(() => {
       />
     </div>
   ))}
-</div>
-<div className={`sp-addToCart ${isItemInCart ? 'sp-added-btn' : ''}`}>
+</div> */}
+{/* <div className={`sp-addToCart ${isItemInCart ? 'sp-added-btn' : ''}`}>
  <AddProductButton isItemInCart={isItemInCart }/>
  
      
-      </div>
+      </div> */}
+
+ <div className='sp-brand-tag'>{product.brand?product.brand:product.category}</div>
+<div className='sp-status-tag' style={statusStyle}>
+  {product.availabilityStatus}
+</div>
+
         </div>
         <div className='sp-info-wrapper'>
             <div className='sp-info-line1'>
@@ -116,7 +151,7 @@ useEffect(() => {
             </div>
 
             <div className='sp-info-line2'>
-              <span className='sp-price'>From ${price}</span>
+              <span className='sp-price'>${price}</span>
                 <div className='sp-rating-div'>
                     <span>{rating.toFixed(1)}</span>
                        <MdStar  color='rgba(235, 235, 0, 1)'  />

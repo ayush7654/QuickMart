@@ -14,6 +14,7 @@
   
   width: 100%;
   background-color: rgb(255, 255, 255);
+
   user-select: none;
   min-height: 100vh;
   border: 0px solid blue;
@@ -24,18 +25,30 @@
 
 
 .store-header-wrapper{
-  position: fixed;
-  width: 95%;
-  top:1rem;
-z-index: 999;
+  position: sticky;
+  width: 100%;
+  top:0rem;
+z-index:100;
 transform: translateY(0%);
 opacity: 0;
 transition: all .8s ease;
+border: 0px solid red;
+display: grid;
+place-items: center;
+height: 6rem;
+/* background-color: rgba(30, 30, 50, 0.15); */
+/* backdrop-filter: blur(10px); */
+/* backdrop-filter: blur(6px); */
+/* background-color: rgba(26, 84, 210, 0.4); */
+/* background-color: rgba(194, 194, 194, 0.51); */
+
+/* background:linear-gradient(to bottom ,rgba(220, 220, 220, 0.4) ,rgba(235, 235, 235, 0.4) ) ; */
 }
 
 .store-header-visible{
   transform: translateY(0%);
   opacity: 1;
+
 
 }
 
@@ -93,6 +106,7 @@ transition: all .8s ease;
  position: relative;
   gap: 0rem;
   
+  
  
 }
 
@@ -106,6 +120,7 @@ margin: 4rem 0rem;
   align-items: center;
 
   background-color: white;
+
    z-index: 1;
     font-size: 2.5rem;
      font-family: sans-serif;
@@ -305,6 +320,7 @@ box-shadow: 0 10px 20px rgba(50,50,50, 0.2);
    width: 90%;
    min-height: 100vh;
    background-color: rgb(255, 255, 255);
+   
    display: flex;
    justify-content: space-between;
    border: 0px solid yellow;

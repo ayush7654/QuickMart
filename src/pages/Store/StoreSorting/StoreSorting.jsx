@@ -105,7 +105,7 @@ const handlePartialToggle = () => {
             className="sticky-sort-container">
              <div className="current-sort-container-div">
 
-            <div className={`current-sort-container ${scrollY===0?'':'current-sort-blurred'}`}>
+            <div className={`current-sort-container `}>  {/* ${scrollY===0?'':'current-sort-blurred'} */}
 
       <div /* onClick={() => setSideBarToggled(false)}  */
 
@@ -139,7 +139,7 @@ const handlePartialToggle = () => {
 
 {/* <div className='sort-head-title'>{typeFilter?currentCategory.replaceAll('-', ' '):'Porduct Categlog'}</div> */}
 
-<Link to='/store'>
+<Link to='/store' className='catgegory-icon-wrapper'>
 <LayoutPanelLeft 
   className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
   size={25} 
