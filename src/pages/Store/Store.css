@@ -153,9 +153,7 @@ margin: 4rem 0rem;
     display: grid;
     place-items: center;
   }
-.all-product-title{
 
-}
 
 .store-page-title{
   
@@ -270,9 +268,7 @@ margin-top: 1rem;
     white-space: nowrap;
   
 }
-.applied-filter:hover{
 
-}
 .cancel-filter{
   width: 13px;
   cursor: pointer;

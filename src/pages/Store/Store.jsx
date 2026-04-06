@@ -234,7 +234,7 @@ console.log('store scrollY is ',scrollY)
   <h1 className="hero-title2">Refine Living</h1>
 </div> */}
 
-<HomeIntro/>
+{/* <HomeIntro/> */}   {/* UNcomment this */}
 
  
 

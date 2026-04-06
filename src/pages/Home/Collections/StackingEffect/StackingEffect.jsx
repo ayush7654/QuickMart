@@ -36,11 +36,11 @@ useEffect(() => {
   gsap.fromTo(card, 
     { 
       y: i === 0 ? "100vh" : "100vh", 
-      width: "20%", 
+      width: "30%", 
     }, 
     { 
       y: i * 40,
-      width: "65%", 
+      width: "30%", 
       ease: "power1.out", // Adding an ease makes the start of the growth feel smoother
       scrollTrigger: {
         trigger: i === 0 ? container : card,

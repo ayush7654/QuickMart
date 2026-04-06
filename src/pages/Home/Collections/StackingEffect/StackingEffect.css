@@ -19,7 +19,9 @@
   
   /* Initial width for the first card */
   width: 75%; 
-  height: 75vh;
+  height: 30vh;
+
+
 
   border-radius: 15px;
   background-size: cover;

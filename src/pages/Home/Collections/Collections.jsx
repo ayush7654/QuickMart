@@ -1,6 +1,7 @@
 import React from 'react'
 import './Collections.css'
 import StackingEffect from './StackingEffect/StackingEffect';
+import FitnessCollection from './FitnessCollection/FitnessCollection';
 export default function Collections() {
 
 
@@ -11,9 +12,9 @@ export default function Collections() {
 
            <div className='collection-head'>The 2026 Lifestyle Trilogy</div> 
 
-         
+      <FitnessCollection/>
 
-                <StackingEffect/>
+               {/*  <StackingEffect/> */}
              </div>
   )
 }
