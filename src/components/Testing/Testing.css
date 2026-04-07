@@ -28,52 +28,10 @@
 color:black;
 display: flex;
 justify-content: center;
-align-items: center;
+align-items: start;
 
   
     
 
 }
 
-.stack-container {
-  width: 100%;
-  position: relative;
-  padding: 5vh 0 0 0;
-  
-}
-
-.stack-item {
-  position: sticky;
-
-  height: 200px; 
-  width:400px ;
-  max-width: 600px;
-  margin: 0 auto 40vh auto; /* Spacing between triggers */
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  border-radius: 24px;
-  background-color: #1a1a1a;
-  border: 1px solid #333;
-  box-shadow: 0 -20px 40px rgba(0,0,0,0.5);
-  
-  transform-origin: top center;
-}
-
-/* This spacer is key: it provides the "scroll room" 
-   required for the last card to actually trigger its scaling */
-.scroll-spacer {
-  height: 70vh; 
-}
-
-.empty-box {
-  /* width: 500px;
-  height: 300px; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 2rem;
-}

@@ -24,10 +24,13 @@ export default function Testing() {
  const containerRef = useRef(null);
 
  const [items, setItems] = useState([
-    { id: 1, title: '01', stacked: false },
-    { id: 2, title: '02', stacked: false },
-    { id: 3, title: '03', stacked: false },
-    { id: 4, title: '04', stacked: false },
+    { id: 1, title: 'Sun Protection', icon:'HomeCollections/solarIcon1.png', para:'Built-in UPF 50+ protection blocks up to 98% of UV rays, so you can enjoy the outdoors with confidence — even in full sun.', img:'HomeCollections/solar-card1.webp', stacked: false },
+    { id: 2, title: 'Water-Repellent' , icon:'HomeCollections/solarIcon2.png' ,para:'A durable water-repellent finish that sheds light rain and protects you from light showers.', img:'HomeCollections/solar-card2.webp', stacked: false },
+    { id: 3, title: 'Breathable' , icon:'HomeCollections/solarIcon3.png' ,para:'Engineered for airflow and temperature regulation, ensuring lasting comfort on the move.', img:'HomeCollections/solar-card3.webp', stacked: false },
+    { id: 4, title: 'Packable' , icon:'HomeCollections/solarIcon4.png' ,para:'Packs down into its own hood in seconds.',  img:'HomeCollections/solar-card4.webp', stacked: false },
+    { id: 5, title: 'Cool touch' , icon:'HomeCollections/solarIcon5.png' ,para:'Instant cooling sensation against the skin — ideal for hot weather.', img:'HomeCollections/solar-card5.webp', stacked: false },
+    { id: 6, title: 'Dry-Fast™' , icon:'HomeCollections/solarIcon6.png' ,para:'Quick-dry fabric keeps you comfortable and dry in all conditions.',  img:'HomeCollections/solar-card6.webp',stacked: false },
+  
   ]);
 
   const setStackedState = (index, isStacked) => {
@@ -38,7 +41,7 @@ export default function Testing() {
 
   useEffect(() => {
     ScrollTrigger.refresh();
-    const sections = gsap.utils.toArray('.stack-item');
+    const sections = gsap.utils.toArray('.solar-stack-item');
     
   sections.forEach((section, i) => {
   // Calculate the same offset you used in your CSS/Style
@@ -77,20 +80,34 @@ onLeaveBack: () => {
 
   return (
     <div className="testing-div">
-<div className="stack-container" ref={containerRef}>
+
+{/* <div className='solar-jacket-Img'></div> */}
+
+
+<div className="solar-stack" ref={containerRef}>
       {items.map((item, index) => (
         <div 
-          className="stack-item" 
+          className={`solar-stack-item ${item.stacked?'solar-stacked':''} `  }
           key={item.id} 
           style={{ 
             top: `${10 + (index * 10)}vh`,
             // Adding a z-index ensures newer cards stay on top
             zIndex: index,
-            backgroundColor: item.stacked ? '#a41515' : '#1a1a1a'
+           /*  backgroundColor: item.stacked ? '#a41515' : '#1a1a1a' */
           }}
         >
-          <div className="empty-box">
-             <h2>0{item.id}</h2>
+          <div className="solar-content" style={{backgroundImage:`url(${item.img})`}}>
+            <div className='solar-card-overlay'></div>
+            <div className="solar-head">
+              <span>{item.title}</span>
+              <span className='solar-icon-wrapper'  style={{backgroundImage:`url(${item.icon})`}} >
+              
+              </span>
+
+           
+            </div>
+             <div className="solar-para">{item.para}</div>
+            
           </div>
         </div>
       ))}
