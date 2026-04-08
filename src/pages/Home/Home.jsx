@@ -45,6 +45,7 @@ const {isAtTop} = useStoreData();
       
        <NewArrivals/>
         <Collections/> 
+        
        <TrendingComponent />
                    <AppleProducts/>
       

@@ -1,13 +1,39 @@
 import React from 'react'
 import { useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import './SolarCollection.css'
+import SolarImgMain from './SolarImgMain/SolarImgMain';
 
 export default function SolarCollection() {
 
      const containerRef = useRef(null);
+
+    const targetRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  // Map each color stop from Gradient A to Gradient B
+  const stop1 = useTransform(scrollYProgress, [0, 1], ["#D5CEC6", "#729CB1"]);
+  const stop2 = useTransform(scrollYProgress, [0, 1], ["#DAAB84", "#8FADBF"]);
+  const stop3 = useTransform(scrollYProgress, [0, 1], ["#D4784C", "#C0CAD1"]);
+  const stop4 = useTransform(scrollYProgress, [0, 1], ["#CE6443", "#D8D8D8"]);
+
+  // We assemble the string dynamically
+  const background = useMotionTemplate`linear-gradient(to bottom, ${stop1}, ${stop2}, ${stop3}, ${stop4})`;
+
+  const opacityDesc = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const opacityIncr = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  console.log('opaInc',opacityIncr)
+  console.log('opaDec',opacityDesc)
+
+ 
 
  const [items, setItems] = useState([
     { id: 1, title: 'Sun Protection', icon:'solarIcon1.png', para:'Built-in UPF 50+ protection blocks up to 98% of UV rays, so you can enjoy the outdoors with confidence — even in full sun.', img:'solar-card1.webp', stacked: false },
@@ -73,12 +99,45 @@ onLeaveBack: () => {
     return () => ScrollTrigger.getAll().forEach(t => t.kill());
   }, []);
 
-
+/*   ref={ backgroundRef}
+      style={{ backgroundColor }} */ 
   return (
     <div className="solar-collection-section">
+   
+        <div className='solar-collection-wrapper' ref={targetRef}
+     >
+
+  <div className='gradient-bg-wrapper'>
+     <motion.div  style={{ background}}    className='gradient-UV-bg'>
+          
+     </motion.div>
+ 
+  </div>
     <div className='solar-collection'>
-   <div className='solar-mainImage-wrapper'>
-   <img src='HomeCollections/SolarJacket3.png'/>
+   <div className='solar-mainImage-wrapper'  >
+
+   {/*  <div className='solar-img-wrapper'>
+
+ <motion.img src='HomeCollections/solarMainImg1.webp' style={{opacity:opacityIncr.current}} width={600}/> 
+<motion.img className='solarImgOverlay' src='HomeCollections/sampleSolarImg.webp' style={{opacity:opacityDesc.current}}  width={600}/> 
+ <motion.img className='blurredImgLeft' src='HomeCollections/blurImgSample.webp'  style={{opacity:opacityDesc.current}} width={600}/>
+ <motion.img className='blurredImgRight' src='HomeCollections/blurImgSample.webp'  style={{opacity:opacityDesc.current}}  width={600}/> 
+
+ </div> */}
+ <SolarImgMain 
+ opacityDesc={opacityDesc}
+ opacityIncr={opacityIncr}/>
+ <div className='solar-collection-head-wrapper'>
+    <div className="solar-head-icon-wrapper">
+        <div> <img src='HomeCollections/solarIcon1.png'/>  </div>
+        <div> <img src='HomeCollections/solarIcon2.png'/>  </div>
+        <div> <img src='HomeCollections/solarIcon3.png'/>  </div>
+      
+     
+    </div>
+    <div className="solar-main-head">SolarPack</div>
+    <div className="solar-sub-head">The UV-Control Collection</div>
+ </div>
    </div>
    <div className="solar-stack" ref={containerRef}>
       {items.map((item, index) => (
@@ -110,6 +169,7 @@ onLeaveBack: () => {
       
       {/* Spacer to allow the last card to finish its "stacking" animation */}
       <div className="scroll-spacer"></div>
+    </div>
     </div>
     </div>
     <div className='solar-product-wrapper'>   

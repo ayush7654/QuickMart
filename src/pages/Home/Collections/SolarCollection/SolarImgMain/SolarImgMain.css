@@ -1,0 +1,39 @@
+.solar-Img-main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+
+.solar-Img-wrapper-left{
+    
+    
+    position: relative;
+ 
+}
+
+.solar-Img-wrapper-left img{
+    position: absolute;
+    width: 600px;
+  
+    /* left: -5rem; */
+
+}
+
+.solar-blur-Img{
+    z-index: -1;
+   
+}
+
+
+.solar-Img-wrapper-right{
+   
+
+}
+
+.solar-Img-wrapper-right img{
+    position: absolute;
+    width: 950px;
+    /* right: -20rem; */
+
+}

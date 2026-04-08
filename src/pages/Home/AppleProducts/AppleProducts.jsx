@@ -50,9 +50,7 @@ className='ap-head-wrapper'>
     </motion.div> 
 
 
-<h1>create a comman animation component for slide up animation , use that in every component for uniformity
-  --- staggered slide up where each word/line/card/element slides up after a delay
-</h1>
+
 
 
 

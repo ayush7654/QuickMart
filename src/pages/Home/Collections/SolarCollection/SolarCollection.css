@@ -3,12 +3,83 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+     
 }
+
+
+
+
+
+.solar-collection-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: background-color 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: background-color, backdrop-filter;
+/* position: relative; */
+/*   background:linear-gradient(to bottom,#739CB1,#AABDCA,#D8D8D8,#D88B5C,#CE6443); */
+    
+    
+}
+
+.solar-collection-head-wrapper{
+    position: absolute;
+    width: 100%;
+   font-family: 'Figtree';
+
+   color: white;
+    top: 50vh;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+.solar-head-icon-wrapper{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    
+}
+.solar-head-icon-wrapper div{
+    width: 4rem;
+    height: 4rem;
+  
+}
+
+.solar-main-head{ font-size: 7rem;font-weight: 600;}
+
+.solar-sub-head{font-size: 2rem;font-weight: 600;}
+
+.gradient-bg-wrapper{
+width: 100%;
+height: 100%;
+position: absolute;
+
+}
+
+.gradient-UV-bg{
+    width: 100%;
+    height: 100vh;
+  position: sticky;
+top:0rem;
+/*   background:linear-gradient(to bottom,#D5CEC6,#DAAB84,#D4784C,#CE6443); 
+  background:linear-gradient(to bottom,#729CB1,#8FADBF,#C0CAD1,#D8D8D8);  */
+    z-index: 0;
+    will-change: background;
+    display: flex;
+    justify-content: center;
+}
+
+
+
 
 .solar-collection{
     width: 80%;
     display: flex;
-  
+
 
     
 }
@@ -20,6 +91,8 @@
  position: sticky;
  top:3rem;
  margin-top: 10rem;
+ overflow: hidden;
+
 }
 
 .solar-mainImage-wrapper img{
