@@ -3,6 +3,7 @@ import './Collections.css'
 import StackingEffect from './StackingEffect/StackingEffect';
 import FitnessCollection from './FitnessCollection/FitnessCollection';
 import SolarCollection from './SolarCollection/SolarCollection';
+import PetShopCollection from './PetShopCollection/PetShopCollection';
 export default function Collections() {
 
 
@@ -16,6 +17,10 @@ export default function Collections() {
       <FitnessCollection/>
 
       <SolarCollection/>
+
+      <PetShopCollection/>
+
+      
 
                {/*  <StackingEffect/> */}
              </div>

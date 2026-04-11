@@ -19,45 +19,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 
 .testing-div{
-  height: 100vh;
- margin-top: 20rem;
-  
+
+ margin-top: 10rem;
+  width: 100%;
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    height: 250vh;
 
 }
 
-/* .solar-img-wrapper-left{
-  position: relative;
-  border: 1px solid red;
-}
-
-.solarImgOverlay{
-  position: absolute;
-  left: 0;
-}
-
-.blurredImgLeft{
-  position: absolute;
-  left: -10px;
-
-  z-index: -1;
- 
-
-}
-
-.blurredImgCenter{
-  position: absolute;
-  left: 0;
-  opacity: .7;
-}
-
-.blurredImgRight{
-   position: absolute;
-  left: 10px;
-
-   z-index: -1;
-}
-
- */
