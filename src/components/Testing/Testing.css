@@ -20,13 +20,139 @@
 
 .testing-div{
 
- margin-top: 10rem;
+
   width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 250vh;
+    margin-top: 10rem;
+
 
 }
 
+.test-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #1a1a1a;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.banners-viewport {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.banners-wrapper{
+  display: flex;
+  flex-direction: row;
+/*   overflow-x: auto; */
+  width: max-content; /* important */
+  animation: slideLeft 14s linear infinite;
+   will-change: transform;
+  transform: translateZ(0); 
+
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.test-banner-wrapper {
+  position: relative;
+  width: 1600px;
+  height: 100vh;
+  overflow: visible;
+    flex-shrink: 0; 
+      will-change: transform;
+  backface-visibility: hidden;
+  border: 1px solid green;
+
+
+}
+
+.banner-inner {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 300px; /* original banner height */
+}
+
+.test-banner-part {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  width: 100%;
+  height:100%;
+  background-color: #ce6443;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+   will-change: transform;
+}
+
+.test-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test-content h1 {
+  font-size: 12rem;
+  margin: 0;
+  color: white;
+  letter-spacing: 10px;
+  font-family:'Roboto Condensed';
+  font-weight: 900;
+}
+
+/* Masking Logic */
+.test-top {
+  clip-path: inset(0 0 50% 0);
+  z-index: 2;
+}
+
+.test-bottom {
+  clip-path: inset(50% 0 0 0);
+  z-index: 1;
+}
+
+.test-banner-wrapper.test-active .test-top {
+  transform: translateY(calc(-50vh + 150px));
+}
+
+.test-banner-wrapper.test-active .test-bottom {
+  transform: translateY(calc(50vh - 150px));
+}
+
+/* Button Styling */
+.test-split-btn {
+  position: absolute;
+  bottom: 4rem;
+  margin-top: 40px;
+  padding: 15px 30px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.test-split-btn:hover {
+  background: white;
+  color: black;
+}
