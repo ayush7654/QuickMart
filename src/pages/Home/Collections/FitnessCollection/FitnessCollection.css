@@ -1,269 +1,224 @@
-.Fitness-Collection-wrapper{
+
+
+
+ .Fitness-Collection-wrapper{
     width: 100%;
-}
-.collections-section-wrapper{
-    width: 100%;
-   
-    display: grid;
-    place-items: center;
-
-  border: 0px solid red;
-  position: relative;
-/* background-image: url('/HomeCollections/Fitness-bgImg2.jpg');
-background-position: center;
-background-size: cover; */
-
-/* background-color: rgb(216, 132, 231); */
-
-}
-
-.collection-content{
-
-width: 100%;
-height: 100%;
-
- padding: 2rem;
-  display: flex;
-     justify-content: space-between;
-     backdrop-filter: blur(10px);
-     background-color: rgb(30,30,30,0);
- 
-
-}
-
-.explore-products-wrapper{
- 
- border: 0px solid rgb(13, 255, 0);
- width: 47%;
- height: 140vh;
-  /* 1. Turn on Grid */
-  display: grid;
-  
-  /* 2. Create 2 equal columns */
-  grid-template-columns: repeat(2, 1fr);
-  
-  /* 3. Create 2 equal rows */
-  /* Using 1fr makes them split the 150vh 50/50 */
-  grid-template-rows: repeat(2, 1fr);
-  
-  /* 4. Add spacing between the products */
-  gap: 1rem 2rem ;
-  
-
-}
-
-.explore-banner-wrapper{
-width:48%;
-  display: flex;
-  flex-direction: column;
-  
-
- border: 0px solid blue;
- 
-   
-}
-
-.banner-content{
- 
-
-width: 100%;
-/* aspect-ratio: 1/1; */
-
-      position: sticky;
-  top:5rem;
-  display: flex;
-  flex-direction: column;
- 
-
-}
-
-.bannerImg{
-height: 75vh;
-background-image: url('/ExploreImgs/Browse-Fitness.jpg');
-background-position: center;
-background-size: cover;
- border-radius: 15px;
-
- padding: 2rem;
-}
-
-.bannerInfo{
-
-  width: 100%;
-
-}
-
-.fitness-content{
-  width: 100%;
-  height: 100%;
-
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10rem;
 
 
-
-.collection-product-wrapper{
-   
-    width: 100%;
-  height: 100%;
-
- 
-  /* border-radius: 15px;
-  background-position: center;
-  background-size: cover; */
-  transition: all .1s ease;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-
-}
-
-.collection-product{
-  border: 1px solid #ffffff;
-  width: 100%;
-  height: 85%;
-   border-radius: 15px;
-  background-position: center;
-  background-size: cover;
-  transition: all .15s ease;
-  box-shadow: 0px 0px 0px rgb(175, 175, 175);
-
-}
-
-.collection-product:hover{
-  box-shadow: none;
-  border: 1px solid #ddd;
-
-}
-
-.collection-product-info{
- 
- display: flex;
-flex-direction: column;
-justify-content: center;
-gap:8px;
-  padding: 16px 0rem;
-  font-family: 'Figtree';
-  text-transform: uppercase;
-  color:white;
-  
-}
-
-.collection-line1{
-  display:flex;
-  justify-content: space-between;
-  font-weight: 600;
-
-}
-
-.collection-brandname{
-  font-size: .9rem;
-}
+ }
 
 
-.fitness-banner-stat{
-  width: 7rem;
-  height: 7rem;
- 
-
+ .fitness-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.2rem;
-  font-family: 'Figtree';
-     font-family: "Questrial", sans-serif;
-justify-content: center;
-gap: 5px;
-  padding: 10px;
-  border-radius: 20px;
-  background-color: rgb(50,50,50,.4);
-  backdrop-filter: blur(8px);
-  color:rgba(255, 255, 255);
-box-shadow: 0px 0px 10px rgb(195, 195, 195,.5);
-border: 1px solid rgba(255, 255, 255, 0.4);
+  justify-content: center;
+ height: 100vh; 
+
+  font-family: 'Arial Black', sans-serif;
+   /*  background-image: url('/MachineImg1.jpg'); */
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  transition: background-image 0s linear 1s;
+}
+
+.fitness-video-wrapper{
+  width: 100%;
+  height:  240px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+
+  transition: height 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+/*      background-image: url('/ImageCrousel/IC-Shoes.webp');
+  background-position: center;
+  background-size: cover;  */
   
 }
 
-.banner-stat1{
-  font-size: 2rem;
-  font-weight: 400;
-  margin-bottom: -2px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-
+.fitness-video-expanded{
+  height: calc(100vh - 250px);
 }
 
-
-
-.banner-stat2{
-  font-size: .7rem;
-  font-weight: 400;
-  font-family: 'Inter';
-  text-transform: uppercase;
-
-}
-
-.banner-stat3{
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-}
-
-.banner-line-wrapper{
+.fitness-video-content {
   width: 100%;
+  height: 100%;
+  /* This ensures the video covers the area without stretching */
+  object-fit: cover; 
+}
+
+.banners-viewport {
+  width: 100%;
+
+  overflow: hidden;
+
+/*     background-image: url('/ImageCrousel/IC-Shoes.webp');
+  background-position: center;
+  background-size: cover; */
+
+
+}
+
+
+
+.test-inner-video{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.banners-wrapper{
+  display: flex;
+  flex-direction: row;
+/*   overflow-x: auto; */
+  width: max-content; /* important */
+  animation: slideLeft 14s linear infinite;
+   will-change: transform;
+  transform: translateZ(0); 
+
+
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.fitness-banner-wrapper {
+  position: relative;
+  width: 1600px;
+ height: 100vh; 
+  overflow: visible;
+    flex-shrink: 0; 
+      will-change: transform;
+  backface-visibility: hidden;
+  border: 0px solid green;
+    transition: height 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    
+
+
+}
+
+.fitness-active{
+ height: 100vh; 
+}
+
+.banner-inner {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 250px; /* original banner height */
+}
+
+.fitness-banner-part {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  width: 100%;
+  height:100%;
+ /*    background: #a881f1;
+    background: rgb(255, 224, 0); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), background .8s ease;
+   will-change: transform;
+}
+
+.fitness-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fitness-content h1 {
+  font-size: 12rem;
+  margin: 0;
+  color: white;
+  letter-spacing: 10px;
+  font-family:'Roboto Condensed';
+  font-weight: 900;
+}
+
+/* Masking Logic */
+.fitness-top {
+  clip-path: inset(0 0 50% 0);
+  z-index: 2;
+}
+
+.fitness-bottom {
+  clip-path: inset(50% 0 0 0);
+  z-index: 1;
+}
+
+.fitness-banner-wrapper.fitness-active .fitness-top {
+  transform: translateY(calc(-50vh + 125px));
+}
+
+.fitness-banner-wrapper.fitness-active .fitness-bottom {
+  transform: translateY(calc(50vh - 125px));
+}
+
+
+
+/*  .test-wave-section {
+
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px 0px;
-}
+} */
 
-.banner-line{
-  width: 70%;
-  height: 5px;
-  background:linear-gradient(to right , black,purple);
-  position: relative;
-  
-}
 
-.banner-circle{
-  width: 12px;
-  height: 7px;
-  border: 1px solid white;
-  background-color: rgba(255, 255, 255, 0.625);
+ .video-text-wrapper{
   position: absolute;
-  top:50%;
-  left: 50%;
+  top: 50%;
+  left:50%;
   transform: translate(-50%,-50%);
-  border-radius:100px;
-  
-}
-
-.fitness-bottom-wrapper{
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.fitness-head{
-
-  font-family: 'Figtree';
-  font-size: 4rem;
-  font-weight: 900;
   color:white;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+ }
 
-.fitness-button{
+ .fitness-head-1{
+  font-weight: 400;
+ font-family: 'Bebas Neue';
+text-transform: uppercase;
+  font-size: 4rem;
 
- width: 8rem;
- padding: 1rem;
- border-radius: 100px;
- text-align: center;
+ }
+
+ .fitness-head-2{
+  font-weight: 400;
+  font-family: 'Figtree';
+  font-size: 1.2rem;
+  text-transform: uppercase;
+
+ }
+
+ .fitness-btn{
  font-family: 'Figtree';
- font-weight: 500;
- background-color: white;
-}
+ padding: 10px 14px;
+ border: 1px solid white;
 
+ }
+
+ 

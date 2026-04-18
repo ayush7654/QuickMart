@@ -16,7 +16,7 @@ import { motion, useScroll, useTransform ,useSpring} from 'framer-motion';
 ]
 
 
-const PetProducts =[
+const DogFood =[
   {id:0,title:'Wet Dog Food Pack',img1:'PetFood1Img1.webp',img2:'PetFood2Img2.webp',price:'£36.65',brand:'Superfoods'},
   {id:1,title:'Salmon And Chicken ',img1:'PetFood5Img1.webp',img2:'PetFood5Img2.jpg',price:'£19.07',brand:'Harringtons'},
   {id:2,title:'Baked Salmon Fish Bites',img1:'PetFood3Img1.webp',img2:'PetFood1Img2.webp',price:'£14.32',brand:'FreshBakes'},
@@ -57,11 +57,11 @@ useEffect(() => {
   });
 }, []);
 
-  const SolarProducts=[
-    {title:' Yellow Knitted Sweater',img1:'PetImg62.jpg',img2:'PetImg64.jpg',price:'10',brand:'CHBORCHICEN'},
-    {title:'Blue Leather Jacket',img1:'PetImg56.jpg',img2:'PetImg57.webp',price:'70',brand:'Lulala'},
-    {title:'Dog Harness',img1:'PetImg59.webp',img2:'PetImg58.webp',price:'200',brand:'Ruffwear'},
-    {title:'Red Rolling Toy',img1:'PetImg65.webp',img2:'PetImg66.jpg',price:'100',brand:'Dogtown'},
+  const PetProducts=[
+    {title:' Yellow Knitted Sweater',img1:'PetImg62.jpg',img2:'PetImg64.jpg',price:'20',brand:'CHBORCHICEN'},
+    {title:'Feline Cane Bed',img1:'PetImg68.webp',img2:'PetImg67.jpg',price:'200',brand:'Huft'},
+    {title:'Dog Harness',img1:'PetImg59.webp',img2:'PetImg58.webp',price:'70',brand:'Ruffwear'},
+    {title:'Red Rolling Toy',img1:'PetImg71.webp',img2:'PetImg72.jpg',price:'8',brand:'Dogtown'},
 ]
 
 const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -95,7 +95,7 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
     </div>
 </div>
 <div className="pet-preview-wrapper">
-  {PetProducts.map((item,index)=>
+  {DogFood.map((item,index)=>
   <div className='pet-product' 
    onMouseEnter={() => setHoveredIndex(index)}
   onMouseLeave={() => setHoveredIndex(null)}>
@@ -118,27 +118,28 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
 
 
     </div>
-      <div className='solar-product-wrapper'>   
-   <div className='solarpack-products-head' id='home-product-head'>PetShop Collection</div>
-   <div className='home-Products-container'>
-     {SolarProducts.map((product,index)=>
-     <div className='solar-ProductCard'
+     <div className='collection-product-wrapper'>   
+   <div  id='home-product-head'>Pet Shop Collection</div>
+ 
+         <div className='home-Products-container'>
+     {PetProducts.map((product,index)=>
+     <div className='collection-ProductCard'
       onMouseEnter={() => setHoveredIndex(index)}
         onMouseLeave={() => setHoveredIndex(null)}
      >
-        <div className="solarProductImg-wrapper pet-product-img"
+        <div className="collection-ProductImg-wrapper"
         
         style={{ 
           backgroundImage: `url(HomeCollections/${hoveredIndex === index ? product.img1 : product.img2})` 
         }}>
 
         </div>
-        <div className="solarProductInfo-wrapper">
-            <div className="solarInfo-line1">
+        <div className="collection-ProductInfo-wrapper">
+            <div className="collection-Info-line1">
                 <span >{product.title}</span>
                 <span >${product.price}</span>
             </div>
-            <div className='solarProduct-brandname'>{product.brand}</div>
+            <div className='collection-brandname'>{product.brand}</div>
         </div>
 
      </div>)}

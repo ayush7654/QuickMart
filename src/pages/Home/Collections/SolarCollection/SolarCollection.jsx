@@ -172,28 +172,28 @@ onLeaveBack: () => {
     </div>
     </div>
     </div>
-    <div className='solar-product-wrapper'>   
-   <div className='solarpack-products-head' id='home-product-head'>SolarPack Collection</div>
+    <div className='collection-product-wrapper'>   
+   <div  id='home-product-head'>SolarPack Collection</div>
 
          <div className='home-Products-container'>
      {SolarProducts.map((product,index)=>
-     <div className='solar-ProductCard'
+     <div className='collection-ProductCard'
       onMouseEnter={() => setHoveredIndex(index)}
         onMouseLeave={() => setHoveredIndex(null)}
      >
-        <div className="solarProductImg-wrapper"
+        <div className="collection-ProductImg-wrapper"
         
         style={{ 
           backgroundImage: `url(HomeCollections/${hoveredIndex === index ? product.img2 : product.img1})` 
         }}>
 
         </div>
-        <div className="solarProductInfo-wrapper">
-            <div className="solarInfo-line1">
+        <div className="collection-ProductInfo-wrapper">
+            <div className="collection-Info-line1">
                 <span >{product.title}</span>
                 <span >${product.price}</span>
             </div>
-            <div className='solarProduct-brandname'>{product.brand}</div>
+            <div className='collection-brandname'>{product.brand}</div>
         </div>
 
      </div>)}

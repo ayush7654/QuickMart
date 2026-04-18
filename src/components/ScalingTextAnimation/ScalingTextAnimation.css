@@ -1,0 +1,37 @@
+
+.test-wave-container {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.test-word-row {
+  display: flex;
+}
+
+/* Stacks the second word directly on top of the first */
+.test-word-row.test-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.test-letter {
+  display: inline-block;
+  font-size: 15rem;
+  white-space: pre;
+  font-family:'Roboto Condensed';
+  font-family: 'Bebas Neue';
+  color: #000;
+  line-height: 1;
+  text-transform: uppercase;
+  /* CRITICAL: The scaling happens from the top/bottom 
+     to make it feel like it's unfolding/folding */
+  transform-origin: center bottom;
+}
+
+/* Adjust the second row to fold from the top instead */
+.test-absolute .test-letter {
+  transform-origin: center top;
+}
