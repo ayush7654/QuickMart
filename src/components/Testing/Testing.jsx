@@ -105,9 +105,7 @@ const loopBanners = [...banners, ...banners];
   </div>
   
 
-      {/* <button className="test-split-btn" onClick={toggleSplit}>
-        {isOpen ? 'CLOSE BANNER' : 'SPLIT BANNER'}
-      </button> */}
+      
                
     </div> 
 

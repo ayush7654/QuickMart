@@ -1,23 +1,49 @@
 import React from 'react'
 import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline'
 import { motion } from 'framer-motion';
+import { slideUpVariants } from '../../../components/AnimationVariants';
 import './TrendingComponent.css'
 export default function TrendingComponent() {
+
+const wrapperVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2, // 0.2s delay between each child
+    }
+  }
+};
+
+const variants = {
+  hidden: { y: 70, opacity: 0 },
+  visible: { 
+    y: 0, 
+    opacity: 1, 
+
+    // You can put the transition here if you want it tied to this specific state
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+  }
+};
+
   return (
       <div className="trending-products-div">
              <div className='home-heading'>The Wardrobe Overhaul Series</div>
 
-<div className="trend-container">
-  {/* MEN SECTION: Comes from the LEFT */}
+<motion.div className="trend-container"
+variants={wrapperVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}>
+
   <motion.div
     id="trend-div"
     className="trend-div1"
-   initial={{ x: -70, opacity: 0 ,rotate: -5}}
-    whileInView={{ x: 0, opacity: 1,rotate: 0 }}
-    viewport={{ once: true, amount: 0.6 }}
-    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+   variants={variants}
+ 
+
   >
-    <div className="trend-img1-div"></div>
+
     <div id="trend-name-div">
       <AnimatedUnderline color="white" from="center" offset={5} thickness={2}>
         <div id="trend-name">MEN</div>
@@ -25,23 +51,51 @@ export default function TrendingComponent() {
     </div>
   </motion.div>
 
-  {/* WOMEN SECTION: Comes from the RIGHT */}
+
   <motion.div
     id="trend-div"
     className="trend-div2"
-    initial={{ x: 100, opacity: 0 ,rotate: 5 }}
-    whileInView={{ x: 0, opacity: 1 ,rotate: 0 }}
-    viewport={{ once: true, amount: 0.6 }}
-    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] ,delay: 0.2}}
+    variants={variants}
+
   >
-    <div className="trend-img2-div"></div>
+
     <div id="trend-name-div">
       <AnimatedUnderline color="white" from="center" offset={5} thickness={2}>
         <div id="trend-name">WOMEN</div>
       </AnimatedUnderline>
     </div>
   </motion.div>
-</div>
+
+    <motion.div
+    id="trend-div"
+    className="trend-div3"
+   
+
+ 
+
+  >
+
+    <div id="trend-name-div">
+      <AnimatedUnderline color="white" from="center" offset={5} thickness={2}>
+        <div id="trend-name">HOT TRENDS</div>
+      </AnimatedUnderline>
+    </div>
+  </motion.div>
+
+     <motion.div
+    id="trend-div"
+    className="trend-div4"
+  
+
+  >
+
+    <div id="trend-name-div">
+      <AnimatedUnderline color="white" from="center" offset={5} thickness={2}>
+        <div id="trend-name">ACTIVE GEARS</div>
+      </AnimatedUnderline>
+    </div>
+  </motion.div>
+</motion.div>
         </div>
   )
 }

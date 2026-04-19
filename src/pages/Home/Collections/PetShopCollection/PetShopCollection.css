@@ -24,6 +24,8 @@ align-items: center;
   top:0rem;
   background-color: rgb(255, 255, 190);
   background-color: rgb(255, 211, 211,.9);
+  background-color: rgb(213, 255, 206);
+
   overflow: hidden; 
 }
 
@@ -146,19 +148,6 @@ border: 1px solid rgba(0,0,0,0.1);
  text-transform: uppercase;
 }
 
-.arc-container {
-/* gives scroll space */
-height: 100vh;
-width: 100%;
-  display: flex;
-  justify-content:center  ;
-align-items: center;
-
- transform: translate(-50%,50%); 
- 
-
-}
-
 .dog-main{
   position: absolute;
   width: 35%;
@@ -169,6 +158,21 @@ align-items: center;
 }
 
 
+.arc-container {
+/* gives scroll space */
+height: 100vh;
+width: 100%;
+  display: flex;
+  justify-content:center  ;
+align-items: center;
+
+  transform: translate(-50%,50%);  
+ 
+
+}
+
+
+
 
 .arc {
   position: relative;
@@ -176,8 +180,9 @@ align-items: center;
   height: 1500px;
   border-radius: 50%;
    background-color: rgba(255, 128, 128, 0.3);
+  background-color: rgba(24, 150, 2, 0.5);
+  border: 0px dashed rgba(0,0,0,0.2);
 
-  border: 0px solid rgba(0,0,0,0.2);
     will-change: transform;
   transform: translateZ(0); /* GPU acceleration */
 }
@@ -190,12 +195,15 @@ align-items: center;
   top: 50%;
   left: 50%;
   --total: 4;
-  --spread: 60deg; /* 🔥 control spacing */
+  --spread: 70deg;
+  top: 50%;
+  left: 50%;
 
   transform:
-    rotate(calc(-165deg + (var(--i) * (var(--spread) / (var(--total) - 1)))))
-    translate(850px)
-    rotate(calc(180deg - (var(--i) * (var(--spread) / (var(--total) - 1)))));
+    translate(-50%, -50%) 
+    rotate(calc(-60deg + (var(--i) * (var(--spread) / (var(--total) - 1)))))
+    translate(750px)
+  
 }
 
 .arc-item img{

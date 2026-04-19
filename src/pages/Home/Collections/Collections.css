@@ -14,9 +14,13 @@
   }
 
  .collection-head{
- font-size: 3rem;
+ font-size: 4rem;
  font-family: sans-serif;
-margin-bottom: 3rem;
+
+   font-family: "Questrial", sans-serif; 
+font-weight: 700;
+
+
  }
 
  

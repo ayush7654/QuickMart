@@ -44,23 +44,24 @@ background-color: white;
 .trend-container{
     border: 0px solid red ;
     width: 90%;
-        height: 80vh;
- display: flex;
- flex-direction: row;
- align-items: center;
-/*     background-color: #eee; */
-    justify-content: space-evenly;
+        height: 160vh;
+     display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+
 
 }
 
 #trend-div{
-    width: 45%;
+    width: 100%;
  height: 100%;
 overflow: hidden;
      position: relative;
      cursor: pointer;
       border-radius: 15px;
  overflow: hidden;
+ border: 0px solid red;
 }
 
 
@@ -98,6 +99,34 @@ overflow: hidden;
   transition: transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
  
 }
+
+.trend-div3::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Fills the container */
+  background-image: url('/FashionTrend/Hot-Trend.avif');
+  background-position: top;
+  background-size: cover;
+  
+  /* The Transition */
+  transition: transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
+ 
+}
+
+.trend-div4::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Fills the container */
+  background-image: url('/FashionTrend/Gear.webp');
+  background-position: top;
+  background-size: cover;
+  
+  /* The Transition */
+  transition: transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
+ 
+}
+
+
 
 #trend-div:hover::before {
   transform: scale(1.05); /* Adjust 1.15 for more/less zoom */

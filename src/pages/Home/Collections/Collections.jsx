@@ -12,7 +12,7 @@ export default function Collections() {
   return (
      <div className="collections-wrapper">
 
-           <div className='collection-head'>The 2026 Lifestyle Trilogy</div> 
+           <div className='collection-head'>Collections Curated For You. </div> 
 
       <FitnessCollection/>
 

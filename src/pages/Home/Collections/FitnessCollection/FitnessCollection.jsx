@@ -25,8 +25,8 @@ const FitnessProducts = [
   {id:0,title:'Dumbell',brand:'Gornation',price:45, img1:'/Fitness-Dumbell2.jpg',img2:'/Fitness-Dumbell3.jpg'},
   
       {id:1,title:'Yoga Pants',brand:'Cambivo',price:20, img1:'/Fitness-Yogamat2.jpg',img2:'/Fitness-Yogamat1.jpg'},
-        {id:2,title:'Running Shoe',brand:'Nike',price:130, img1:'/Fitness-Shoes1.jpg',img2:'/Fitness-Shoes4.jpg'},
-  {id:3,title:'Tredmill',brand:'Tychnogym',price:1200, img1:'/Fitness-WalkingPad2.webp',img2:'/Fitness-WalkingPad1.webp'},
+        {id:2,title:'Running Shoe',brand:'Nike',price:130, img1:'/Fitness-Shoes5.jpg',img2:'/Fitness-Shoes4.jpg'},
+  {id:3,title:'Tredmill',brand:'Tychnogym',price:1200, img1:'/Fitness-WalkingPad3.jpg',img2:'/Fitness-WalkingPad1.webp'},
   
 ]
 

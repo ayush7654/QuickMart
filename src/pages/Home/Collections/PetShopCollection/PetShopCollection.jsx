@@ -9,9 +9,9 @@ import { motion, useScroll, useTransform ,useSpring} from 'framer-motion';
 
  const arcItems = 
   [
-  {id:0,img:'DogFood2.png',scale:.7},
-  {id:1,img:'DogFood5.png',scale:.8},
-  {id:2,img:'DogFood6.png',scale:.9},
+ /*  {id:0,img:'DogFood2.png',scale:.7}, */
+  {id:1,img:'DogFood5.png',scale:.7},
+  {id:2,img:'DogFood6.png',scale:.85},
   {id:3,img:'DogFood4.png',scale:1},
 ]
 
@@ -30,7 +30,7 @@ export default function PetShopCollection() {
 
 
 
- const arcRef = useRef(null);
+ const arcItemRef = useRef(null);
 
  const sectionRef = useRef(null);
 
@@ -44,24 +44,36 @@ const { scrollYProgress } = useScroll({
 const translateYUp = useTransform(scrollYProgress,[0,1],["100%", "0%"]);
 
 useEffect(() => {
-  gsap.to(arcRef.current, {
-    rotate: 90,
-    ease: "none",
-    scrollTrigger: {
-      trigger: sectionRef.current, // ✅ bigger area
-      start: "top center",
-      end: "bottom center", // smoother range
-      scrub: 1, // 🔥 smoothing (not true)
-      invalidateOnRefresh: true,
+  gsap.fromTo(
+    ".arc-item",
+    {
+      scale: .4,
+      opacity:.8,
+      rotate: 0,
+      transformOrigin: "center center",
+      
     },
-  });
+    {
+      scale: 1,
+      opacity:1,
+      rotate: 40,
+      ease: "none",
+      stagger: 0.15, // nice cascading effect
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 80%",
+        end: "top 20%",
+        scrub: 1,
+      },
+    }
+  );
 }, []);
 
   const PetProducts=[
-    {title:' Yellow Knitted Sweater',img1:'PetImg62.jpg',img2:'PetImg64.jpg',price:'20',brand:'CHBORCHICEN'},
-    {title:'Feline Cane Bed',img1:'PetImg68.webp',img2:'PetImg67.jpg',price:'200',brand:'Huft'},
-    {title:'Dog Harness',img1:'PetImg59.webp',img2:'PetImg58.webp',price:'70',brand:'Ruffwear'},
-    {title:'Red Rolling Toy',img1:'PetImg71.webp',img2:'PetImg72.jpg',price:'8',brand:'Dogtown'},
+    {title:' Yellow Knitted Sweater',img1:'Pet1Img2.jpg',img2:'Pet1Img1.jpg',price:'20',brand:'CHBORCHICEN'},
+    {title:'Feline Cane Bed',img1:'Pet2Img2.webp',img2:'Pet2Img1.jpg',price:'200',brand:'Huft'},
+    {title:'Dog Harness',img1:'Pet3Img2.webp',img2:'Pet3Img1.jpg',price:'70',brand:'Ruffwear'},
+    {title:'Red Rolling Toy',img1:'Pet4Img2.jpg',img2:'Pet4Img1.jpg',price:'8',brand:'Dogtown'},
 ]
 
 const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -74,7 +86,7 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
  
    
 <div className='pet-section' ref={sectionRef}>
-        <motion.img /* style={{y:translateYUp}} */ className='dog-main' src='HomeCollections/PetMainImg2.png'/>
+        <motion.img  style={{y:translateYUp}}  className='dog-main' src='HomeCollections/PetMainImg2.png'/>
 <div className="pet-products-wrapper">
     
   <div className='pet-png-wrapper'>
@@ -83,14 +95,13 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
 
   <div className='petShop-head'>Pet Shop</div>
 <div className="arc-container">
-      <div className="arc" ref={arcRef}>
-        {arcItems.map((item, i) => (
-          <div className="arc-item" key={i} style={{ "--i": i}} >
+      <div className="arc" >
+         {arcItems.map((item, i) => (
+          <div className="arc-item" key={i} style={{ "--i": i}} ref={arcItemRef} >
            <img src={`HomeCollections/${item.img}`} style={{transform:`scale(${item.scale})`}}/>
           </div>
-        ))}
+        ))} 
       </div>
-
 
     </div>
 </div>
