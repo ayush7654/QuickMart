@@ -1,13 +1,9 @@
 
-
-import { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { motion } from 'framer-motion';
-gsap.registerPlugin(ScrollTrigger);
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
  import "./Testing.css";
-import ScalingTextAnimation from '../ScalingTextAnimation/ScalingTextAnimation';
+
 
  
 
@@ -17,104 +13,92 @@ import ScalingTextAnimation from '../ScalingTextAnimation/ScalingTextAnimation';
 export default function Testing() {
 
 
-const [isOpen, setIsOpen] = useState(false);
+ const sectionRef = useRef(null);
 
-// 1. Store your videos in an array
-const videoFiles = [
- {id:0,videoSrc:'/Fitness-Video3.mp4', color:'rgb(255, 224, 0)',img:'/WeightImg4.jpg'},
- {id:1,videoSrc:'/Fitness-Video4.mp4', color:'rgb(183, 110, 255)',img:'/YogaMatImg2.jpg'},
- {id:2,videoSrc:'/Fitness-Video5.mp4', color:'rgb( 247, 187, 206 )',img:'/MachineImg1.jpg'}
- 
-];
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
 
-// 2. Track the index instead of the string
-const [videoIndex, setVideoIndex] = useState(0);
+  // 1️⃣ Move wrapper up until center aligns
+const y = useTransform(
+  scrollYProgress,
+  [0, 0.04, 0.1, 0.24, 0.33],
+  [0, -1, -50, -180, -270]
+);
 
-useEffect(() => {
-  const delay = isOpen ? 8000 : 4000;
-  
-  const timeoutId = setTimeout(() => {
-    setIsOpen((prev) => {
-      const nextState = !prev;
-      
-      // 3. Increment index only when expanding (false -> true)
-      if (nextState === true) {
-        setVideoIndex((prevIndex) => (prevIndex + 1) % videoFiles.length);
-      }
-      
-      return nextState;
-    });
-  }, delay);
+  // 2️⃣ Then scale whole wrapper
+const scale = useTransform(
+  scrollYProgress,
+  [0, 0.32, 0.52, 0.8],
+  [1, 1.1, 1.9, 2]
+);
 
-  return () => clearTimeout(timeoutId);
-}, [isOpen]);
- 
-
-const banners = new Array(1).fill(null);
-const loopBanners = [...banners, ...banners];
-
+  const radius = useTransform(scrollYProgress, [0.4, 1], ["20px", "0px"]);
 
 
 
   return (
-    <div className="testing-div">
-      <h1>reference website https://phive.pt/en</h1>
-<div className="test-container" style={{backgroundImage:`url(${videoFiles[videoIndex].img})`}}>
-<div className={`test-video-wrapper ${isOpen ? 'test-video-expanded' : ''}`}>
- <video 
-  key={videoFiles[videoIndex].id} // Forces re-render to start the new video immediately
-  className="test-video-content"
-  src={videoFiles[videoIndex].videoSrc} 
-  autoPlay 
-  loop 
-  muted 
-  playsInline
-/>
-</div>
- <div className="banners-viewport">  
-    <div className="banners-wrapper">
-      {loopBanners.map((_, index) => (
-        <div
-          key={index}
-          className={`test-banner-wrapper ${isOpen ? 'test-active' : ''}`}
-          
+<div className="testing-div">
+  <section className="window-section-wrapper"> 
+   <section ref={sectionRef} className="window-section">
+      <div className="sticky-window-wrapper">
+
+        <motion.div
+          className="window-wrapper"
+          style={{
+            y,
+             scale, 
+            borderRadius: radius,
+          }}
         >
-     <div className="banner-inner">
-
-          <div className="test-banner-part test-top"
-          style={{background:videoFiles[videoIndex].color}} >
-            <div className="test-content">
-              
-                    <ScalingTextAnimation word='Equip Your Grind'/>   
-                     
-
-            </div>
-          </div>
-
-          <div className="test-banner-part test-bottom"
-           style={{background:videoFiles[videoIndex].color}} > {/* 247, 187, 206 */} {/* 183, 110, 255 */}
-            <div className="test-content">
-                    <ScalingTextAnimation word='Equip Your Grind'/>  
-                   
-            </div>
-          </div>
-</div>
-        </div>
-      ))}
+        <div className="window-content">
+  {/* ROW 1 */}
+  <div className="window-row">
+    <div className="img-wrapper">
+      <img src="https://picsum.photos/400/500?1" alt="gallery" />
+    </div>
+    <div className="img-wrapper">
+      <img src="https://picsum.photos/400/500?2" alt="gallery" />
     </div>
   </div>
-  
 
-      
-               
-    </div> 
-
-
-
-
-
-
+  {/* ROW 2 (CENTER ROW) */}
+  <div className="window-row middle">
+    <div className="img-wrapper">
+      <img src="https://picsum.photos/400/500?3" alt="gallery" />
     </div>
+    <div className="img-wrapper center-img-wrapper">
+      <img src="https://picsum.photos/600/700?4" alt="gallery" />
+    </div>
+    <div className="img-wrapper">
+      <img src="https://picsum.photos/400/500?5" alt="gallery" />
+    </div>
+  </div>
+
+  {/* ROW 3 */}
+  <div className="window-row">
+    <div className="img-wrapper">
+      <img src="https://picsum.photos/400/500?6" alt="gallery" />
+    </div>
+    <div className="img-wrapper">
+      <img src="https://picsum.photos/400/500?7" alt="gallery" />
+    </div>
+  </div>
+</div>
+        </motion.div>
+
+
+      </div>
+
+    </section>
+    </section>
+    </div>
+
+
+
+
+
   );
 };
 
