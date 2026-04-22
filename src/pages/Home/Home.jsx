@@ -20,6 +20,7 @@ import './Home.css';
 
 
 
+
 export default function Home(){
 
 const location = useLocation()
@@ -36,7 +37,7 @@ const {isAtTop} = useStoreData();
       {/* <HomeIntro/>     */}
 
 
-     {/*  <div className="scrolling-animation-wrapper">
+    {/*  <div className="scrolling-animation-wrapper">
          
  <ScrollingAnimation isAtTop={isAtTop}/> 
  
@@ -47,7 +48,8 @@ const {isAtTop} = useStoreData();
         <Collections/> 
         
        <TrendingComponent />
-                   <AppleProducts/>
+                {/*    <AppleProducts/> */}
+        
       
         
             <DiscountProducts/>

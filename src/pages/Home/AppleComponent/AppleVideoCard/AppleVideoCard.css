@@ -110,11 +110,11 @@ video {
 
 /* The Animation Trigger */
 /* When you hover over the whole card wrapper, the sheen in the info div moves */
-.applePro-wrapper:hover .AppleProInfo::after {
+/* .applePro-wrapper:hover .AppleProInfo::after {
   left: 150%;
   transition: left 1s ease-in-out;
 }
-
+ */
 .AppleProInfo:hover{
  backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
