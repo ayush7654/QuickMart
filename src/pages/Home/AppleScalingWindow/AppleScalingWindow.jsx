@@ -1,11 +1,9 @@
 
 import React, { useState ,useRef , useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import ScrollButton from "../ScrollingButton/ScrollingButton";
- import "./Testing.css";
-
-
- 
+import ScrollButton from "../../../components/ScrollingButton/ScrollingButton";
+import TextAnimation from "../../../components/TextAnimation";
+import './AppleScalingWindow.css'
 
 const AppleWindowInfo = [
   { 
@@ -32,90 +30,115 @@ const AppleWindowInfo = [
 ]
 
 
-export default function Testing() {
+export default function AppleScalingWindow() {
 
-const [currentWindow, setCurrentWindow] = useState(1)
-
-/* const handleNext = () => {
-  setCurrentWindow(prev => Math.min(prev + 1, AppleWindowInfo.length - 1));
-};
-
-const handlePrev = () => {
-  setCurrentWindow(prev => Math.max(prev - 1, 0));
-}; */
-
-
-
-
- const sectionRef = useRef(null);
-
- const videoRefs = useRef([]);
-
- const [windowScaled, setIsWindowScaled] = useState(false);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
-
-  // 1️⃣ Move wrapper up until center aligns
-const y = useTransform(
-  scrollYProgress,
-  [0, 0.04, 0.1, 0.24, 0.33],
-  [0, -1, -50, -180, -270]
-);
-
-  // 2️⃣ Then scale whole wrapper
-const scale = useTransform(
-  scrollYProgress,
-  [0, 0.32, 0.52, 0.8],
-  [1, 1.1, 1.9, 2]
-);
-
-const gap = useTransform(
-  scrollYProgress,
-  [0, 0.8],
-  [8, 0]
-);
-const halfGap = useTransform(gap, (v) => v / 2);
-
-  const radius = useTransform(scrollYProgress, [0.4, 1], ["20px", "0px"]);
-
-  const padding = useTransform(
-  scrollYProgress,
-  [0, 0.3, 0.6, 0.8],
-  [8, 6, 2, 0]
-);
-
-useEffect(() => {
-  const unsubscribe = scale.on("change", (latest) => {
-    if (latest >= 1.7) { // small tolerance
-      setIsWindowScaled(true);
-    } else {
-      setIsWindowScaled(false);
-    }
-  });
-
-  return () => unsubscribe();
-}, [scale]);
-
-  // This effect runs whenever currentWindow changes
-  useEffect(() => {
-    videoRefs.current.forEach((video, index) => {
-      if (video) {
-        if (index === currentWindow) {
-          video.play().catch((err) => console.log("Playback error:", err));
+    
+    const [currentWindow, setCurrentWindow] = useState(1)
+    
+     const sectionRef = useRef(null);
+    
+     const videoRefs = useRef([]);
+    
+     const [windowScaled, setIsWindowScaled] = useState(false);
+    
+      const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start start", "end end"],
+      });
+    
+      // 1️⃣ Move wrapper up until center aligns
+    const y = useTransform(
+      scrollYProgress,
+      [0, 0.04, 0.1, 0.24, 0.33],
+      [0, -1, -50, -180, -270]
+    );
+    
+      // 2️⃣ Then scale whole wrapper
+    const scale = useTransform(
+      scrollYProgress,
+      [0, 0.32, 0.52, 0.8],
+      [1, 1.1, 1.9, 2]
+    );
+    
+    const gap = useTransform(
+      scrollYProgress,
+      [0, 0.8],
+      [8, 0]
+    );
+    const halfGap = useTransform(gap, (v) => v / 2);
+    
+      const radius = useTransform(scrollYProgress, [0.4, 1], ["20px", "0px"]);
+    
+      const padding = useTransform(
+      scrollYProgress,
+      [0, 0.3, 0.6, 0.8],
+      [8, 6, 2, 0]
+    );
+    
+    useEffect(() => {
+      const unsubscribe = scale.on("change", (latest) => {
+        if (latest >= 1.7) { // small tolerance
+          setIsWindowScaled(true);
         } else {
-          video.pause();
-          video.currentTime = 0; // Reset video to start when inactive
+          setIsWindowScaled(false);
         }
-      }
-    });
-  }, [currentWindow]);
+      });
+    
+      return () => unsubscribe();
+    }, [scale]);
+    
+      
+      useEffect(() => {
+        videoRefs.current.forEach((video, index) => {
+          if (video) {
+            if (index === currentWindow) {
+              video.play().catch((err) => console.log("Playback error:", err));
+            } else {
+              video.pause();
+              video.currentTime = 0; // Reset video to start when inactive
+            }
+          }
+        });
+      }, [currentWindow]);
+
 
   return (
-<div className="testing-div">
-  <section className="window-section-wrapper"> 
+    <motion.div className="Apple-scaling-window"
+    style={{ padding }}>
+
+          <motion.div 
+initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 'some' }}
+className='ap-head-wrapper'>
+         <motion.div className='ap-head-img'
+ variants={{
+        hidden: { scale:.5 }, 
+        visible: { 
+       scale:1 ,opacity:1,
+          transition: { duration: .8, ease: [1, 1, 0.5, 1] }
+        }
+      }}  
+  >
+    <img src='AppleProductsMedia/AppleLogo.png'/>
+
+    </motion.div> 
+    <div className="ap-head-content">
+     
+     <div className="ap-head-upper">
+
+    <div className="ap-head-main">The Apple Store</div>
+     </div>
+     <div className="ap-head-lower">
+         <TextAnimation text={'Experiences only Apple can deliver.'} delay={0.1} staggerDelay={.08} />
+     </div>
+
+ 
+    </div>
+
+
+    </motion.div> 
+         <section className="window-section-wrapper"> 
     <section ref={sectionRef} className="window-section">
       {/* Video screen content */}
 
@@ -148,19 +171,19 @@ useEffect(() => {
       <div className="sticky-window-wrapper"
      >
 
-        {/* style removed safely */}
+       
         <motion.div className="window-wrapper"
          style={{ y, scale, borderRadius: radius, }}>
           
           <motion.div className="window-content"
-           style={{ padding }}
+           /* style={{ padding }} */
           >
             
             {/* ROW 1 */}
-            {/* style={{ gap }} */}
+           
             <div className="window-row"
             >
-              <motion.div className="img-wrapper"
+              <motion.div className="window-wrapper"
            style={{
        
         marginRight: gap
@@ -168,7 +191,7 @@ useEffect(() => {
        >
                 <img src="AppleProductsMedia/Iphone-img5.png" alt="gallery" />
               </motion.div>
-              <div className="img-wrapper">
+              <div className="window-wrapper">
                 <img src="AppleProductsMedia/Iphone-img7.png" alt="gallery" />
               </div>
             </div>
@@ -185,7 +208,7 @@ useEffect(() => {
               }}
             >
               {AppleWindowInfo.map((item, index) => (
-                <motion.div key={index} className="img-wrapper middle-row-window"
+                <motion.div key={index} className="window-wrapper middle-row-window"
           style={{
         marginLeft: halfGap,
         marginRight: halfGap
@@ -196,6 +219,7 @@ useEffect(() => {
                     src={item.video}
                     poster={item.poster}
                     loop
+                    preload="metadata"
                     muted
                     playsInline
                     className="window-video"
@@ -205,16 +229,16 @@ useEffect(() => {
             </div>
 
             {/* ROW 3 */}
-            {/* style={{ gap }} */}
+          
             <div className="window-row">
-              <motion.div className="img-wrapper"
+              <motion.div className="window-wrapper"
                 style={{
        
         marginRight: gap
       }}>
                 <img src="AppleProductsMedia/Iphone-img6.png" alt="gallery" />
               </motion.div>
-              <div className="img-wrapper">
+              <div className="window-wrapper">
                 <img src="AppleProductsMedia/Iphone-img3.png" alt="gallery" />
               </div>
             </div>
@@ -225,31 +249,6 @@ useEffect(() => {
 
     </section>
   </section>
-</div>
-
-
-
-
-
-  );
-};
-
-
-/* const expandVariants = {
-  hidden: { 
-    opacity: 0,
-    clipPath: 'inset(0% 50% 0% 50%)',
-    transition: { duration: 0.5 } 
-  },
-  visible: { 
-    opacity: 1,
-    clipPath: 'inset(0% 0% 0% 0%)',
-    transition: { 
-      duration: 1.2, 
-      ease: [0.25, 1, 0.5, 1],
- 
-      opacity: { duration: 0.8, ease: "linear" } 
-    } 
-  }
-}; */
- 
+    </motion.div>
+  )
+}

@@ -17,6 +17,7 @@ import StackingEffect from "./Collections/StackingEffect/StackingEffect";
 import ScrollingAnimation from "../../components/ScrollingAnimation/ScrollingAnimation";
 import { useStoreData } from "../../components/StoreDataContext";
 import './Home.css';
+import AppleScalingWindow from "./AppleScalingWindow/AppleScalingWindow";
 
 
 
@@ -50,7 +51,7 @@ const {isAtTop} = useStoreData();
        <TrendingComponent />
                 {/*    <AppleProducts/> */}
         
-      
+      <AppleScalingWindow/>
         
             <DiscountProducts/>
             <ExploreCategory/>
