@@ -1,9 +1,0 @@
-.apple-Products{
- width: 100%;
- display: flex;
- flex-direction: column;
- align-items: center;
- border: 0px solid blue;
- gap: 2rem;
- margin-top: 5rem;
-}

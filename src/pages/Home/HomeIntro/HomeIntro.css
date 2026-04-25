@@ -78,12 +78,14 @@ overflow: hidden;/* This hides the other 3 elements */
 }
 
 .carousel-item p{
-    font-size: 1.3rem;
+
    transition: transform 0.8s ease-in-out, opacity 1s ease;
-      font-weight: 300;
-   font-family: 'Inter';
-   font-family: 'Figtree';
-   font-family: 'Jost';
+  
+
+     font-size: 1.2rem;
+
+ font-family: 'Raleway';
+ line-height: 2rem;
 
 }
 

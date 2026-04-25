@@ -129,9 +129,9 @@ onLeaveBack: () => {
  opacityIncr={opacityIncr}/>
  <div className='solar-collection-head-wrapper'>
     <div className="solar-head-icon-wrapper">
-        <div> <img src='HomeCollections/solarIcon1.png'/>  </div>
-        <div> <img src='HomeCollections/solarIcon2.png'/>  </div>
-        <div> <img src='HomeCollections/solarIcon3.png'/>  </div>
+        <div> <img src='HomeCollections/SolarPackImages/solarIcon1.png'/>  </div>
+        <div> <img src='HomeCollections/SolarPackImages/solarIcon2.png'/>  </div>
+        <div> <img src='HomeCollections/SolarPackImages/solarIcon3.png'/>  </div>
       
      
     </div>
@@ -151,11 +151,11 @@ onLeaveBack: () => {
            /*  backgroundColor: item.stacked ? '#a41515' : '#1a1a1a' */
           }}
         >
-          <div className="solar-content" style={{backgroundImage:`url(HomeCollections/${item.img})`}}>
+          <div className="solar-content" style={{backgroundImage:`url(HomeCollections/SolarPackImages/${item.img})`}}>
             <div className='solar-card-overlay'></div>
             <div className="solar-head">
               <span>{item.title}</span>
-              <span className='solar-icon-wrapper'  style={{backgroundImage:`url(HomeCollections/${item.icon})`}} >
+              <span className='solar-icon-wrapper'  style={{backgroundImage:`url(HomeCollections/SolarPackImages/${item.icon})`}} >
               
               </span>
 
@@ -184,7 +184,7 @@ onLeaveBack: () => {
         <div className="collection-ProductImg-wrapper"
         
         style={{ 
-          backgroundImage: `url(HomeCollections/${hoveredIndex === index ? product.img2 : product.img1})` 
+          backgroundImage: `url(HomeCollections/SolarPackImages/${hoveredIndex === index ? product.img2 : product.img1})` 
         }}>
 
         </div>

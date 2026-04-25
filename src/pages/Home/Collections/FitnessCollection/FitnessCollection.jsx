@@ -137,7 +137,7 @@ const loopBanners = [...banners, ...banners];
         <div className="collection-ProductImg-wrapper"
         
         style={{ 
-          backgroundImage: `url(HomeCollections/${hoveredIndex === index ? product.img2 : product.img1})` 
+          backgroundImage: `url(HomeCollections/FitnessImages/${hoveredIndex === index ? product.img2 : product.img1})` 
         }}>
 
         </div>

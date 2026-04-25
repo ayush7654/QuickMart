@@ -55,11 +55,12 @@
   color: white;
  background-color: rgba(0, 0, 0, 0);
 
-  transition: background-color .3s ease;
+  transition: all .3s ease ;
 }
 
 .home-ProductCard:hover .card-glass-content{
  background-color: rgba(0, 0, 0, .3);
+ backdrop-filter: blur(5px);
 }
 
 .home-ProductCard .card-content{

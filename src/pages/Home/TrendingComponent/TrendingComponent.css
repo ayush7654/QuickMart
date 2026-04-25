@@ -48,7 +48,7 @@ background-color: white;
      display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 1rem;
+  gap:8px;
 
 
 }
@@ -104,7 +104,7 @@ overflow: hidden;
   content: "";
   position: absolute;
   inset: 0; /* Fills the container */
-  background-image: url('/FashionTrend/Hot-Trend.avif');
+  background-image: url('/FashionTrend/HotTrends.webp');
   background-position: top;
   background-size: cover;
   
@@ -117,7 +117,7 @@ overflow: hidden;
   content: "";
   position: absolute;
   inset: 0; /* Fills the container */
-  background-image: url('/FashionTrend/Gear.webp');
+  background-image: url('/FashionTrend/ActiveGear2.jpg');
   background-position: top;
   background-size: cover;
   

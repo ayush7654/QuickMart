@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Observer } from 'gsap/all'; // Try importing from 'gsap/all'
 import gsap from 'gsap';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { motion, AnimatePresence } from "framer-motion";
 import './ExploreCategory.css';
 
 // Register the plugin
@@ -9,7 +10,7 @@ gsap.registerPlugin(Observer);
 
 const cardsList = [
   { id: 0, img: 'CategoriesImg/FC-Clothing7Rec.jpg', name: 'Clothing', heading: { l1: 'Signature styles', l2: ' for every personal', l3: 'journey.' } },
-  { id: 1, img: 'CategoriesImg/FC-Tech2Rec.jpg', name: 'Tech', heading: { l1: 'Next generation', l2: 'innovation in your', l3: 'hands.' }},
+  { id: 1, img: 'CategoriesImg/FC-Tech2Rec.jpg', name: 'Techology', heading: { l1: 'Next generation', l2: 'innovation in your', l3: 'hands.' }},
   { id: 2, img: 'CategoriesImg/FC-Sports8.jpg', name: 'Sports', heading: { l1: 'Fueling your', l2: 'pursuit of peak', l3: ' performance.' }},
   { id: 3, img: 'CategoriesImg/FC-Decor2Rec.png', name: 'Decor', heading: { l1: 'Refining the art of', l2: 'living well.', l3: '' }},
     { id: 4, img: 'CategoriesImg/FC-Skincare5Rec.jpg', name: 'Skincare', heading: { l1: 'The ultimate ritual', l2: 'for healthy skin.', l3: '' } },
@@ -115,20 +116,35 @@ useEffect(() => {
     
 
       <div className="test-carousel-viewport">
-        <div className="exploreCategory-head-wrapper">
-             <div className='exploreCategory-head'>
-            <div>Explore Our Range</div>
-               <div className="pagination-container">
-  {cardsList.map((_, index) => (
-    <div
-      key={index}
-      className={`pagination-dot ${activeIndex === index ? 'active' : ''}`}
-      onClick={() => setActiveIndex(index)} // Allows clicking dots to jump
-    />
-  ))}
+      <div className="exploreCategory-head-wrapper">
+  <div className='exploreCategory-head'>
+    
+    {/* Animated Name Container */}
+    <div className="category-name-viewport">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeIndex}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -20, opacity: 0 }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {cardsList[activeIndex].name}
+        </motion.div>
+      </AnimatePresence>
+    </div>
+
+    <div className="pagination-container">
+      {cardsList.map((_, index) => (
+        <div
+          key={index}
+          className={`pagination-dot ${activeIndex === index ? 'active' : ''}`}
+          onClick={() => setActiveIndex(index)} 
+        />
+      ))}
+    </div>
+  </div>
 </div>
-         </div>
-        </div>
         
         <div className="test-carousel-window" ref={containerRef} data-lenis-prevent>
           <div

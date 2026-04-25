@@ -10,27 +10,22 @@ export default function NewArrivals() {
 
   // 1. Define your overrides for these specific IDs
   const arrivalOverrides = {
-    7: { 
-      brand: 'Chanel', 
-      name: "Coco Noir Eau De", 
-      thumbnail: 'Home-products-img/hp-chanel.jpg' 
-    },
+     174: {  brand: 'Prada',  name: "Prada Women Bag",  thumbnail: 'Home-products-img/BluePrada.jpg' },
+
    
    
      87: { brand: 'Urban Chic', name: 'Urban Chic Check Shirt', thumbnail: 'Home-products-img/Green-shirt.jpg' },
-     100: { 
-      brand: 'Apple', 
-      name: "Apple Airpods", 
-      thumbnail: 'hp-airpod.jpg' 
-    },
-      88: { brand: 'Nike', name: 'Nike Air Jordan 1', thumbnail: 'Home-products-img/hp-AJ1.jpg' }
+      
+     88: { brand: 'Nike', name: 'Nike Air Jordan 1', thumbnail: 'Home-products-img/AirJordanImg.jpg' },
+     101: { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'Home-products-img/hp-airmax.jpg' }
+     
    
   };
 
   useEffect(() => {
     async function fetchAllProducts() {
       try {
-        const idsToFetch = [7, 87, 100, 88];
+        const idsToFetch = [174, 87, 88, 101];
         const loadedProducts = [];
 
         for (const id of idsToFetch) {

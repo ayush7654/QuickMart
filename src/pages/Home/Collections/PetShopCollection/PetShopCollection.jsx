@@ -17,9 +17,9 @@ import { motion, useScroll, useTransform ,useSpring} from 'framer-motion';
 
 
 const DogFood =[
-  {id:0,title:'Wet Dog Food Pack',img1:'PetFood1Img1.webp',img2:'PetFood2Img2.webp',price:'£36.65',brand:'Superfoods'},
+  {id:0,title:'Wet Dog Food Pack',img1:'PetFood1Img1.webp',img2:'PetFood1Img2.webp',price:'£36.65',brand:'Superfoods'},
   {id:1,title:'Salmon And Chicken ',img1:'PetFood5Img1.webp',img2:'PetFood5Img2.jpg',price:'£19.07',brand:'Harringtons'},
-  {id:2,title:'Baked Salmon Fish Bites',img1:'PetFood3Img1.webp',img2:'PetFood1Img2.webp',price:'£14.32',brand:'FreshBakes'},
+  {id:2,title:'Baked Salmon Fish Bites',img1:'PetFood3Img1.webp',img2:'PetFood2Img2.webp',price:'£14.32',brand:'FreshBakes'},
   {id:3,title:'Lamb And Chicken',img1:'PetFood4Img1.webp',img2:'PetFood4Img2.webp',price:'£14.00',brand:'Harringtons'},
 ]
 
@@ -30,19 +30,21 @@ export default function PetShopCollection() {
 
 
 
- const arcItemRef = useRef(null);
+/*  const arcItemRef = useRef(null);
 
  const sectionRef = useRef(null);
 
 const { scrollYProgress } = useScroll({
   target: sectionRef,
-  // "start end" = top of div enters bottom of viewport
-  // "start start" = top of div reaches top of viewport
+
   offset: ["start end", "start start"] 
 });
 
 const translateYUp = useTransform(scrollYProgress,[0,1],["100%", "0%"]);
+ */
 
+
+/* 
 useEffect(() => {
   gsap.fromTo(
     ".arc-item",
@@ -58,7 +60,7 @@ useEffect(() => {
       opacity:1,
       rotate: 40,
       ease: "none",
-      stagger: 0.15, // nice cascading effect
+      stagger: 0.15, 
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 80%",
@@ -67,53 +69,91 @@ useEffect(() => {
       },
     }
   );
-}, []);
+}, []); */
 
   const PetProducts=[
-    {title:' Yellow Knitted Sweater',img1:'Pet1Img2.jpg',img2:'Pet1Img1.jpg',price:'20',brand:'CHBORCHICEN'},
-    {title:'Feline Cane Bed',img1:'Pet2Img2.webp',img2:'Pet2Img1.jpg',price:'200',brand:'Huft'},
-    {title:'Dog Harness',img1:'Pet3Img2.webp',img2:'Pet3Img1.jpg',price:'70',brand:'Ruffwear'},
-    {title:'Red Rolling Toy',img1:'Pet4Img2.jpg',img2:'Pet4Img1.jpg',price:'8',brand:'Dogtown'},
+    {title:'Cyclone Dog Jacket',img1:'SamplePetImg5.jpg',img2:'SamplePetImg2.jpg',price:'95',brand:'Cyclone'},
+
+    {title:'Bigfoot Dog Jacket',img1:'SamplePetImg12.jpg',img2:'SamplePetImg13.jpg',price:'75',brand:'Bigfoot'},
+    {title:'Cyclone Dog Jacket',img1:'SamplePetImg6.jpg',img2:'SamplePetImg7.jpg',price:'95',brand:'Cyclone'},
+        {title:'Proshell Dog Jacket',img1:'SamplePetImg8.jpg',img2:'SamplePetImg9.jpg',price:'89',brand:'Proshell'},
 ]
 
 const [hoveredIndex, setHoveredIndex] = useState(null);
 
+const parentVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15, // Creates the slight delay between lines
+    },
+  },
+};
 
+const childVariants = {
+  hidden: { y: "100%" }, // Start hidden below the mask
+  visible: {
+    y: 0, // Slide into view
+    transition: {
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1], // Your smooth Apple-style curve
+    },
+  },
+};
 
   return (
     <div className="PetShop-collection-wapper">
     <div className="PetShop-collection"  >
  
    
-<div className='pet-section' ref={sectionRef}>
-        <motion.img  style={{y:translateYUp}}  className='dog-main' src='HomeCollections/PetMainImg2.png'/>
-<div className="pet-products-wrapper">
-    
-  <div className='pet-png-wrapper'>
-    <img src='HomeCollections/Dog-paws-Img.png'/>
+<div className='pet-section'>
+   
+<div className="pet-left-wrapper">
+
+ <motion.div 
+  className="pet-store-head"
+  variants={parentVariants}
+  initial="hidden"
+  whileInView="visible"
+ viewport={{ once: true, amount: 0.8 }}
+>
+  <div className="clip-mask">
+    <motion.div variants={childVariants}>Everything Your Pet</motion.div>
   </div>
+  
+  <div className="clip-mask">
+    <motion.div variants={childVariants}>Needs Care , Play & Love</motion.div>
+  </div>
+  
+  <div className="clip-mask">
+    <motion.div variants={childVariants}>in One Place</motion.div>
+  </div>
+</motion.div>
+  <div className="pet-store-subhead">
+   <div>Premium pet care products , fun exercise essentials, and </div>
+   <div>healthy lifestyle solutions designed for happy pets</div>
+   <div>and stress-free pet parents.</div>
+  </div>
+  <div className='pet-store-btn-wrapper'>
+    <div className='pet-store-btn pet-shop-btn'>Shop Now</div>
+    <div className='pet-store-btn'>Explore Pet Care</div>
+  </div>
+  
 
-  <div className='petShop-head'>Pet Shop</div>
-<div className="arc-container">
-      <div className="arc" >
-         {arcItems.map((item, i) => (
-          <div className="arc-item" key={i} style={{ "--i": i}} ref={arcItemRef} >
-           <img src={`HomeCollections/${item.img}`} style={{transform:`scale(${item.scale})`}}/>
-          </div>
-        ))} 
-      </div>
 
-    </div>
+
+
 </div>
-<div className="pet-preview-wrapper">
+<div className="pet-Food-wrapper">
   {DogFood.map((item,index)=>
   <div className='pet-product' 
    onMouseEnter={() => setHoveredIndex(index)}
   onMouseLeave={() => setHoveredIndex(null)}>
   <div className='pet-food-img-wrapper' >
-   <img src={`HomeCollections/${item.img1}`}/>
+   <img src={`HomeCollections/PetCareImages/${item.img1}`}/>
    <div className='pet-product-bg-wrapper'
-   style={{backgroundImage:`url(HomeCollections/${item.img2})`}}
+   style={{backgroundImage:`url(HomeCollections/PetCareImages/${item.img2})`}}
    ></div>
   </div>
   <div className='pet-food-Info-wrapper'>
@@ -141,7 +181,7 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
         <div className="collection-ProductImg-wrapper"
         
         style={{ 
-          backgroundImage: `url(HomeCollections/${hoveredIndex === index ? product.img1 : product.img2})` 
+          backgroundImage: `url(HomeCollections/PetCareImages/${hoveredIndex === index ? product.img2 : product.img1})` 
         }}>
 
         </div>

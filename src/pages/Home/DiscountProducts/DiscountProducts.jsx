@@ -16,16 +16,25 @@ export default function DiscountProducts() {
     13: { 
       brand: 'Annibale', 
       name: "African Cherry Table", 
-      thumbnail: "Home-products-img/hp-table.jpg" 
+      thumbnail: "Home-products-img/SideTable.jpg" 
     },
-   174: {  brand: 'Prada',  name: "Prada Women Bag",  thumbnail: 'Home-products-img/blue-prada.jpg' },
-    101: { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'Home-products-img/hp-airmax.jpg' }
+     100: { 
+      brand: 'Apple', 
+      name: "Apple Airpods", 
+      thumbnail: 'hp-airpod.jpg' 
+    }
+  ,
+      7: { 
+      brand: 'Chanel', 
+      name: "Coco Noir Eau De", 
+      thumbnail: 'Home-products-img/hp-chanel.jpg' 
+    },
   };
 
   useEffect(() => {
     async function fetchAllProducts() {
       try {
-        const idsToFetch = [94, 13, 174, 101];
+        const idsToFetch = [94, 13, 100, 7];
         const loadedProducts = [];
         
         for (const id of idsToFetch) {

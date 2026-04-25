@@ -5,12 +5,12 @@ import BrandCarousel from "./BrandComponent/BrandComponent";
 import Collections from "./Collections/Collections";
 import DiscountProducts from "./DiscountProducts/DiscountProducts";
 import ExploreCategory from "./ExploreCategory/ExploreCategory";
-import AppleComponent from "./AppleComponent/AppleComponent";
+
 import NewArrivals from "./NewArrivals/NewArrivals";
 import TrendingComponent from "./TrendingComponent/TrendingComponent";
 import FeaturedCategories from "./FeaturedCategories/FeaturedCategories";
 import Categories from "./Categories/Categories";
-import AppleProducts from "./AppleProducts/AppleProducts";
+
 import HomeFooter from "./HomeFooter/HomeFooter";
 import HomeIntro from "./HomeIntro/HomeIntro";
 import StackingEffect from "./Collections/StackingEffect/StackingEffect";
@@ -18,6 +18,7 @@ import ScrollingAnimation from "../../components/ScrollingAnimation/ScrollingAni
 import { useStoreData } from "../../components/StoreDataContext";
 import './Home.css';
 import AppleScalingWindow from "./AppleScalingWindow/AppleScalingWindow";
+import { Check } from 'lucide-react';
 
 
 
@@ -38,14 +39,15 @@ const {isAtTop} = useStoreData();
       {/* <HomeIntro/>     */}
 
 
-    {/*  <div className="scrolling-animation-wrapper">
+  <div className="scrolling-animation-wrapper">
          
  <ScrollingAnimation isAtTop={isAtTop}/> 
  
-</div> */} {/* UNcomment this */}
+</div>  {/* UNcomment this */}
       <div className="Home-scroll-content">
       
        <NewArrivals/>
+        <DiscountProducts/>
         <Collections/> 
         
        <TrendingComponent />
@@ -53,8 +55,11 @@ const {isAtTop} = useStoreData();
         
       <AppleScalingWindow/>
         
-            <DiscountProducts/>
-            <ExploreCategory/>
+           <div className="explore-range-section">
+            <div className="explore-range-header">Explore Our Range</div>
+   <ExploreCategory/>
+           </div>
+         
               {/*  <Categories/> */}
                 
                 
