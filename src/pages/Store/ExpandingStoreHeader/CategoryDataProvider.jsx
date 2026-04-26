@@ -7,7 +7,7 @@ const SUBGROUP_MAPPING = {
     { slug: "mens-shirts", img: "mens-shirt.jpg" },
 
     { slug: "tops", img: "women-top.jpg" },
-    { slug: "mens-shoes", img: "men-shoes2.jpg" },
+    { slug: "mens-shoes", img: "Men-Shoes1.jpg" },
     { slug: "womens-shoes", img: "women-shoes.jpg" }
   ],
   "Accessories & Jewelry": [
@@ -15,15 +15,15 @@ const SUBGROUP_MAPPING = {
      { slug: "sunglasses", img: "sunglasses2.jpg" },
     { slug: "womens-watches", img: "women-watch4.jpg" },
     { slug: "womens-jewellery", img: "women-jewellery3.jpg" },
-    { slug: "womens-bags", img: "women-bags2.jpg" },
+    { slug: "womens-bags", img: "WomenBag2.jpg" },
    
     
   ],
   "Electronics & Tech": [
-    { slug: "laptops", img: "laptops3.jpg" },
-    { slug: "mobile-accessories", img: "moblie-accessories5.jpg" },
+    { slug: "laptops", img: "LaptopImage.jpg" },
+    { slug: "mobile-accessories", img: "MobileAccessary.jpg" },
     { slug: "smartphones", img: "smartphones3.jpg" },
-    { slug: "tablets", img: "tablets3.avif" }
+    { slug: "tablets", img: "Tablet.jpg" }
   ],
   "Beauty & Wellness": [
      { slug: "fragrances", img: "fragrance.jpg" },

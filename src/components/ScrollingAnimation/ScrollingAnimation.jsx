@@ -103,12 +103,12 @@ tl.to(".title-tag", {
     <div className="scroll-section" ref={sectionRef}>
 
 
-<div className="grid-item item-1" style={{backgroundImage:'url(/AmiriSnap1.webp)'}}>
+<div className="grid-item item-1" style={{backgroundImage:'url(/HomeMedia/AmiriSnap1.webp)'}}>
         
       
 
         </div>
-        <div className="grid-item item-2" style={{backgroundImage:'url(/AmiriSnap4.webp)'}}>
+        <div className="grid-item item-2" style={{backgroundImage:'url(/HomeMedia/AmiriSnap4.webp)'}}>
       
      
         </div>
@@ -124,7 +124,7 @@ tl.to(".title-tag", {
 
         <div className="main-image-wrapper" ref={mainImgRef}>
   <video 
-    src="/AmiriVidFinalCut.mp4"    /* change thios back to AmiriVidFinalCut  */
+    src="/HomeMedia/AmiriVidFinalCut.mp4"    /* change thios back to AmiriVidFinalCut  */
     muted 
     autoPlay 
     loop 

@@ -26,7 +26,7 @@ align-items: center;
   background-color: rgb(255, 211, 211,.9);
   background-color: rgb(213, 255, 206);
  */
-background-image: url('PetBg9.jpg');  
+background-image: url('HomeCollections/PetCareImages/PetBg9.jpg');  
  background-position: center;
  background-size: cover;
   overflow: hidden; 
@@ -69,7 +69,7 @@ background-image: url('PetBg9.jpg');
 
 .pet-store-subhead{
   font-size: 1.2rem;
- font-family: Inter;
+
  font-family: 'Raleway';
  line-height: 2rem;
 }

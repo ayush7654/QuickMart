@@ -170,7 +170,7 @@ useEffect(() => {
             <div 
               key={item.slug} 
               className={`category-card card-${index} ${item.name===currentCategory?'card-selected':''}`}
-              style={{ backgroundImage: `url(${item.backgroundImage})` }}
+              style={{ backgroundImage: `url(StoreMedia/${item.backgroundImage})` }}
               onClick={()=>{handleTypeFilter(item),setIsOpen(false)}}
             >
               <div className="card-overlay">
@@ -189,7 +189,7 @@ useEffect(() => {
             <div 
               key={index} 
               className={`category-card card-${index}`}
-              style={{ backgroundImage: `url(${item.backgroundImage})` }}
+              style={{ backgroundImage: `url(StoreMedia/${item.backgroundImage})` }}
               
             >
               <div className="card-overlay">

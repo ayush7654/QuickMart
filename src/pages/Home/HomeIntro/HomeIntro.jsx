@@ -73,7 +73,7 @@ export default function HomeIntro() {
           preload="metadata"
           poster="/poster.jpg"
         >
-          <source src="/HomeIntroAppleVid.mp4" type="video/mp4" />
+          <source src="/StoreMedia/HomeIntroAppleVid.mp4" type="video/mp4" />
         </video>
 
         <div className="home-intro-content">

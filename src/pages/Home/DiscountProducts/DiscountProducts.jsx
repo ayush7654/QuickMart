@@ -12,7 +12,7 @@ export default function DiscountProducts() {
 
   // 1. Define your hardcoded overrides
   const productOverrides = {
-    94: { brand: 'Longines', name: 'Longines Master Collection', thumbnail: 'hp-watch.jpg' },
+    94: { brand: 'Longines', name: 'Longines Master Collection', thumbnail: 'Home-products-img/hp-watch.jpg' },
     13: { 
       brand: 'Annibale', 
       name: "African Cherry Table", 
@@ -21,7 +21,7 @@ export default function DiscountProducts() {
      100: { 
       brand: 'Apple', 
       name: "Apple Airpods", 
-      thumbnail: 'hp-airpod.jpg' 
+      thumbnail: 'Home-products-img/hp-airpod.jpg' 
     }
   ,
       7: { 

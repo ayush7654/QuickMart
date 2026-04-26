@@ -59,9 +59,9 @@ export default function Store() {
    const [activeLayout, setActiveLayout] = useState(3);
     
       const gridOptions = [
-        { id: 2, label: '2x2', icon: '/grid2x2.png' },
-        { id: 3, label: '3x3', icon: '/grid3x3.png' },
-        { id: 4, label: '4x4', icon: '/grid4x4.png' },
+        { id: 2, label: '2x2', icon: 'StoreMedia/grid2x2.png' },
+        { id: 3, label: '3x3', icon: 'StoreMedia/grid3x3.png' },
+        { id: 4, label: '4x4', icon: 'StoreMedia/grid4x4.png' },
       ];
 
 

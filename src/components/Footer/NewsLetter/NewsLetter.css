@@ -85,12 +85,12 @@ border: 0px solid white;
     cursor: pointer;
 }
 .google-app{
-    background-image: url('/GetOnGoogle3.png');
+    background-image: url('WebsiteMedia/GoogleApp.png');
 
 }
 
 .apple-app{
-    background-image: url('/app-store-white.png');
+    background-image: url('WebsiteMedia/AppleStore.png');
  
 }
 

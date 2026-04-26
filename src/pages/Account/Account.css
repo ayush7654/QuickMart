@@ -21,7 +21,7 @@
    width: 60%;
 
    overflow: hidden;
-   background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)), url('account-stock5.jpg');  /* LoginImg/Login-Img.jpg */
+   background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)), url('WebsiteMedia/account-stock5.jpg');  /* LoginImg/Login-Img.jpg */
    background-position: top;
    background-repeat:no-repeat;
    background-size: cover;

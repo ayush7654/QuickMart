@@ -12,12 +12,12 @@ export default function Logged_In({firebase, signOut}) {
 
   console.log(firebase)
 
-  const logButtons = [
+/*   const logButtons = [
     {name:'Track Order',img:'./delivery2.png'},
     {name:'Visit Profile',img:'./contact-info.png'},
     {name:'Find Store',img:'./locations.png'},
 
-  ]
+  ] */
 
   const {cartList} = useCartList()
 
@@ -28,7 +28,7 @@ export default function Logged_In({firebase, signOut}) {
                 
       <div className='account-user-info-wrapper'>
         <div className='account-user-info'>
-                 <div className='user-img-container'><img src='/MockDP6.jpg'/></div>
+                 <div className='user-img-container'><img src='WebsiteMedia/MockDP6.jpg'/></div>
         <span  className='user-name'>Phillips Seifert</span>
         </div>
  

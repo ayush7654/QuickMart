@@ -15,9 +15,9 @@ const [isOpen, setIsOpen] = useState(false);
 
 // 1. Store your videos in an array
 const videoFiles = [
- {id:0,videoSrc:'/Fitness-Video3.mp4', color:'rgb(255, 224, 0)',img:'/WeightImg4.jpg'},
- {id:1,videoSrc:'/Fitness-Video4.mp4', color:'rgb(183, 110, 255)',img:'/YogaMatImg2.jpg'},
- {id:2,videoSrc:'/Fitness-Video5.mp4', color:'rgb( 247, 187, 206 )',img:'/MachineImg1.jpg'}
+ {id:0,videoSrc:'/HomeCollections/Fitness-Video3.mp4', color:'rgb(255, 224, 0)',img:'/WeightImg4.jpg'},
+ {id:1,videoSrc:'/HomeCollections/Fitness-Video4.mp4', color:'rgb(183, 110, 255)',img:'/YogaMatImg2.jpg'},
+ {id:2,videoSrc:'/HomeCollections/Fitness-Video5.mp4', color:'rgb( 247, 187, 206 )',img:'/MachineImg1.jpg'}
  
 ];
 
@@ -70,7 +70,7 @@ const loopBanners = [...banners, ...banners];
 
   return (
     <div className='Fitness-Collection-wrapper'>
-     <div className="fitness-container" style={{backgroundImage:`url(${videoFiles[videoIndex].img})`}}>
+     <div className="fitness-container" style={{backgroundImage:`url(HomeCollections/${videoFiles[videoIndex].img})`}}>
      <div className={`fitness-video-wrapper ${isOpen ? 'fitness-video-expanded' : ''}`}>
       <video 
        key={videoFiles[videoIndex].id} // Forces re-render to start the new video immediately
