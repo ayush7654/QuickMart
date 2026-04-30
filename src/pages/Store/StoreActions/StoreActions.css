@@ -1,0 +1,154 @@
+.store-button-wrapper{
+width: 100%;
+height: 100%;
+  display: flex;
+  align-items: center;
+  
+
+    gap:10px;
+    border: 0px solid red;
+    
+}
+.sort-dropDown-div{
+
+    display:flex;
+  width: 100%;
+  height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0px solid rgb(213, 51, 78);
+
+    
+   
+    
+}
+
+.product-sort-wrapper{
+  display: flex;
+  align-items: center;
+  gap:1rem
+  
+}
+
+.sort-toggle{
+position: relative;
+  
+ 
+/*   background-color: #ffffff82; */
+  border: 0px solid #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+ justify-content: space-between;
+ align-items: center;
+  gap:10px;
+  cursor: pointer;
+
+
+  color: #000000;
+  transition: all 0.2s ease;
+  font-family: 'Figtree';
+
+ 
+
+
+}
+
+.sort-toggle-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+}
+
+.dropdownIcon{
+  transition: transform 0.3s ease;
+  border: 0px solid red;
+  display: grid;
+  place-items: center;
+}
+
+.down { transform: rotate(0deg); }
+.up { transform: rotate(180deg); }
+
+
+.sorting-panel{
+
+width: 11.5rem;
+position: absolute;
+  top: calc(100% + 10px);
+left: 0px;
+  padding: 6px;
+border-radius: 10px;
+  border: 1px solid #eee;
+  border-top: 0px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  
+    opacity: 0;
+  visibility: hidden;
+
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  /* background: rgba(255, 255, 255, 0.5); */ 
+  background-color: white;
+  overflow: hidden;
+  
+/*   backdrop-filter: blur(10px) ;
+  -webkit-backdrop-filter: blur(10px); */
+
+
+
+
+  
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px -10px rgba(110, 80, 255, 0.3);
+  list-style: none;
+
+  margin: 0;
+
+}
+
+.sort-panel-visible{
+  
+opacity: 1; visibility: visible; transform: translateY(0);
+z-index: 999;
+
+}
+
+.store-sort-div{
+ padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #444;
+  transition: background 0.2s ease;
+  margin-bottom: 2px;
+}
+
+.store-sort-div:hover{
+
+    background-color: #f5f5f7;
+    background-color: #eef6ff;
+  color: #007aff;
+
+}
+
+
+ .store-sort-selected{
+
+    background-color: #eef6ff;
+  color: #007aff;
+  font-weight: 500;
+
+}
+
+ .store-sort-selected:hover{
+
+
+
+}
+
+
+ 
+   

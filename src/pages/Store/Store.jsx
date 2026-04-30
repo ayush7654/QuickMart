@@ -23,6 +23,8 @@ import CategoryDataProvider from "./ExpandingStoreHeader/CategoryDataProvider";
 import "./Store.css";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
 import HomeIntro from "../Home/HomeIntro/HomeIntro";
+import StoreActions from "./StoreActions/StoreActions";
+import OrderToggle from "./OrderToggle/OrderToggle";
 
 
 export default function Store() {
@@ -111,7 +113,7 @@ export default function Store() {
 const handleRemoveColor = (colorName) => {
   setStoreFilterColors(prev =>
     prev.map(c => 
-      c.name === colorName ? { ...c, active: false } : c
+      c.name === colorName.name ? { ...c, active: false } : c
     )
   );
 };
@@ -210,7 +212,7 @@ const productElements = useMemo(() => {
 
 
 
-console.log('store scrollY is ',scrollY)
+console.log('filters ',appliedFilters)
 
   
   return (
@@ -266,6 +268,13 @@ console.log('store scrollY is ',scrollY)
     <span className="selected-category">
      {currentCategory?currentCategory.replace(/-/g, ' '):'Browse All '} 
     </span>
+     
+   </div>
+   <div className="store-grid-toggle">
+   <GridToggle
+   activeLayout={activeLayout}
+   setActiveLayout={setActiveLayout}
+   gridOptions={gridOptions}/>
    </div>
   
 </div>
@@ -274,14 +283,101 @@ console.log('store scrollY is ',scrollY)
             </div>
 
   
- 
-
-
-       <div className="filter-Btn-Ph">
+      {/*  <div className="filter-Btn-Ph">
           <SlidersHorizontal className="" strokeWidth={1.5} />
-       </div>
+       </div> */}
 
    
+          <div className="Active-Filters-wrapper">
+     <div className="applied-filter-section">
+            {/* <div className="applied-filters-head">Applied Filters :</div> */}
+           <div className="applied-filter-wrapper">
+           {/*  {appliedFilters?appliedFilters.filters.map((filter,index)=>
+             <div key={index} className="applied-filter">
+              <span>{filter}</span>
+              <X className="cancel-filter"
+              onClick={() => removeFilter(filter)}/>
+             </div>):
+             <div className="applied-filter">None</div>} 
+
+            
+          <div className="applied-filter">
+          <span>${appliedFilters.price.lowRange} - ${appliedFilters.price.highRange}</span>
+          <X className="cancel-filter"/>
+          </div>  
+
+  
+            
+             {appliedFilters?appliedFilters.colors.map((color,index)=>
+             <div key={index} className="applied-filter">
+              <span>{color}</span>           
+              <X className="cancel-filter"
+              onClick={() => handleRemoveColor(color)}/>
+             </div>):
+             <div className="applied-filter">None</div>} */}
+
+
+             {/* 1. Check if any filters actually exist to show the container */}
+{appliedFilters.filters.length > 0 || appliedFilters.colors.length > 0 || appliedFilters.price.lowRange > 0 ? (
+  <>
+    {/* Render Categories */}
+    {appliedFilters.filters.map((filter, index) => (
+      <div key={`filter-${index}`} className="applied-filter">
+        <span>{filter}</span>
+        <X className="cancel-filter" onClick={() => removeFilter(filter)} />
+      </div>
+    ))}
+
+    {/* Render Price Range */}
+    {(appliedFilters.price.lowRange > 0 || appliedFilters.price.highRange < 1000) && (
+      <div className="applied-filter">
+        <span>${appliedFilters.price.lowRange} - ${appliedFilters.price.highRange}</span>
+        <X className="cancel-filter"  />
+      </div>
+    )}
+
+    {/* Render Colors */}
+    {appliedFilters.colors.map((color, index) => (
+      <div key={`color-${index}`} className="applied-filter">
+        <span>{color.name}</span>
+        <X className="cancel-filter" onClick={() => handleRemoveColor(color)} />
+      </div>
+    ))}
+  </>
+) : (
+  /* 2. The Placeholder Text */
+  <div className="no-filters-placeholder">
+    Apply filters for a better experience
+  </div>
+)}
+
+    {/*          <div className="applied-filter filter-placeholder">
+              Fash Shipping
+              <span>?</span>
+             </div>
+
+              <div className="applied-filter filter-placeholder">
+              Best Sellers
+              <span>?</span>
+             </div> */}
+             
+           </div>
+          </div> 
+          <div className="store-filter-btn-wrapper">
+          
+           <div className="store-filter-btn ">
+             <StoreActions/>
+           </div>
+           <div className={`sort-order-btn ${currentSort?'sort-order-active':''}`} onClick={toggleSortOrder}>
+             <OrderToggle/>
+           </div>
+            <div className="store-filter-btn clear-filter-btn">Clear All</div>
+
+          </div>
+   </div>
+     
+
+ 
 
         <main className="store-content">
        
@@ -309,43 +405,16 @@ console.log('store scrollY is ',scrollY)
   
     </div>
 
-   <div className="store-grid-toggle">
+ {/*   <div className="store-grid-toggle">
    <GridToggle
    activeLayout={activeLayout}
    setActiveLayout={setActiveLayout}
    gridOptions={gridOptions}/>
-   </div>
+   </div> */}
+  
               </div>
 
-               <div className="applied-filter-section">
-            <div className="applied-filters-head">Applied Filters :</div>
-           <div className="applied-filter-wrapper">
-            {appliedFilters?appliedFilters.filters.map((filter,index)=>
-             <div key={index} className="applied-filter">
-              <span>{filter}</span>
-              <X className="cancel-filter"
-              onClick={() => removeFilter(filter)}/>
-             </div>):
-             <div className="applied-filter">None</div>} 
-
-            
-         <div className="applied-filter">
-          <span>${appliedFilters.price.lowRange} - ${appliedFilters.price.highRange}</span>
-          <X className="cancel-filter"/>
-          </div> 
-
-  
-            
-             {appliedFilters?appliedFilters.colors.map((color,index)=>
-             <div key={index} className="applied-filter">
-              <span>{color}</span>           
-              <X className="cancel-filter"
-              onClick={() => handleRemoveColor(color)}/>
-             </div>):
-             <div className="applied-filter">None</div>}
              
-           </div>
-          </div> 
 
           
             </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronUp, ChevronDown } from 'lucide-react';
+import { SortAsc,SortDesc} from 'lucide-react';
 import './OrderToggle.css';
 
 const OrderToggle = () => {
@@ -11,13 +12,12 @@ const OrderToggle = () => {
       onClick={() => setIsHigh(!isHigh)}
     >
       <div className="btn-inner-content">
-        {/* Label anchored to top left */}
-{/*         <span className="btn-label-top">ORDER</span> */}
+  
         
         <div className="value-window">
           <div className={`value-stack ${isHigh ? 'slide-up' : 'slide-down'}`}>
-            <span className="value-text">A → Z</span>
-            <span className="value-text">Z → A</span>
+            <span className="value-text"><SortDesc strokeWidth={1.2}/></span>
+            <span className="value-text"><SortAsc strokeWidth={1.2}/></span>
           </div>
         </div>
       </div>

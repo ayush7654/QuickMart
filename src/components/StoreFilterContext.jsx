@@ -14,8 +14,8 @@ export const StoreFilterProvider = ({ children }) => {
 
 
   // --- Price Logic ---
-  const [minPrice, setMinPrice] = useState(1);
-  const [maxPrice, setMaxPrice] = useState(25000);
+  const [minPrice, setMinPrice] = useState(null);
+  const [maxPrice, setMaxPrice] = useState(null);
 
   // --- Your Existing Filter Logic ---
   const [storeFilters, setStoreFilters] = useState([
@@ -60,15 +60,18 @@ export const StoreFilterProvider = ({ children }) => {
    
 
   
- useEffect(() => {
-  // 1. Instantly update filters and colors (snappy checkboxes/circles)
-  const activeFilterNames = storeFilters.filter(f => f.state).map(f => f.name);
-  const activeColorNames = storeFilterColors.filter(c => c.active).map(c => c.name);
+useEffect(() => {
+  const activeFilterNames = storeFilters
+    .filter(f => f.state)
+    .map(f => f.name);
+
+  const activeColors = storeFilterColors
+    .filter(c => c.active); 
 
   setAppliedFilters(prev => ({
     ...prev,
     filters: activeFilterNames,
-    colors: activeColorNames
+    colors: activeColors
   }));
 }, [storeFilters, storeFilterColors]);
 

@@ -1,8 +1,8 @@
 .switcher-container {
   display: inline-flex;
   padding: 5px;
-  background: rgba(255, 255, 255, 0.6);
-  background: rgb(245, 245, 245);
+/*   background: rgba(255, 255, 255, 0.6);
+  background: rgb(245, 245, 245); */
   border-radius: 12px;
   backdrop-filter: blur(8px);
    /* box-shadow: 0px 0px 20px -0px rgba(12, 19, 232, 0.2); */

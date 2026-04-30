@@ -1,6 +1,6 @@
 .store-side-filter{
 
-  max-height: calc(80vh);
+  height: 80vh; /* instead of max-height */
   padding:2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -12,8 +12,12 @@
       border: 1px solid rgb(230,230,230);
    border-radius: 10px;
    overflow-y: auto; /* Adds a scrollbar ONLY if content is too tall */
-  scrollbar-width: none;
+ scrollbar-width: thin;
    
+}
+
+.store-side-filter > * {
+  flex-shrink: 0; 
 }
 
 
@@ -57,6 +61,8 @@
   gap:0rem;
 
   padding: 0px 10px;
+
+  
 }
 
 
@@ -117,6 +123,7 @@ cursor: pointer;
   display: flex;
   gap: 10px;
   padding: 0rem 1rem;
+    padding-bottom: 10rem;
 }
 
 .store-color{

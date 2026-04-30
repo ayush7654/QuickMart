@@ -23,7 +23,7 @@ export default function FilterSection() {
 
   return (
     
-<div className="store-side-filter">
+<div className="store-side-filter" data-lenis-prevent>
  <h2>Filter Products</h2>
 
  <div className="filter-section">
