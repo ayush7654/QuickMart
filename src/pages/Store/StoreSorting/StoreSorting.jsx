@@ -13,6 +13,8 @@ import MenuCancel from './../../../components/MenuCancel/MenuCancel';
 import { useStoreData } from '../../../components/StoreDataContext';
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
+import AppliedFilters from '../AppliedFilters/AppliedFilters';
+import { useStoreFilter } from '../../../components/StoreFilterContext';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -25,7 +27,24 @@ export default function StoreSorting({setPartialPill,partialPill}) {
    const{ scrollY} = useScroll();
 
   const {currentSort,toggleSortOrder,typeFilter,handleSort,currentCategory,handleTypeFilter,isOpen, setIsOpen} = useStoreData()
+  
+  const { minPrice, setMinPrice, maxPrice, setMaxPrice,storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount,appliedFilters,setAppliedFilters,setStoreFilterColors} = useStoreFilter();
 
+  const removeFilter = (filterName) => {
+  setStoreFilters(prev => 
+    prev.map(item => 
+      item.name === filterName ? { ...item, state: false } : item
+    )
+  );
+};
+
+const handleRemoveColor = (colorName) => {
+  setStoreFilterColors(prev =>
+    prev.map(c => 
+      c.name === colorName.name ? { ...c, active: false } : c
+    )
+  );
+};
 
 
 
@@ -105,32 +124,38 @@ const handlePartialToggle = () => {
             className="sticky-sort-container">
              <div className="current-sort-container-div">
 
-            <div className={`current-sort-container `}>  {/* ${scrollY===0?'':'current-sort-blurred'} */}
+            <div className='current-sort-container'>  {/* ${scrollY===0?'':'current-sort-blurred'} */}
 
-      <div /* onClick={() => setSideBarToggled(false)}  */
-
- 
-  className='store-toggle-wrapper'
      
-       >
  
-<div className='partialToggle-wrapper' onClick={handlePartialToggle}>
+<div className='applied-filter' onClick={handlePartialToggle}>
   <MenuCancel state={partialPill}  /*   *//>
 </div>
 
-<div className='product-catelog-btn'  onClick={handleExpandedToggle}>
-  <AnimatedUnderline
-  offset={3}
-  color='rgb(0,100,255)'
-  > Catalog</AnimatedUnderline>
+<div className='applied-filter' onClick={handleExpandedToggle}>
+<LayoutPanelLeft 
+  className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
+  size={30} 
+  strokeWidth={1} 
+
+
+    
+/>
   </div>
 
+  <AppliedFilters
+   appliedFilters = {appliedFilters}
+          removeFilter = {removeFilter}
+          handleRemoveColor ={handleRemoveColor}
+          currentSort ={currentSort}
+          toggleSortOrder ={toggleSortOrder}/>
 
 
 
 
 
-    </div>
+
+
 
       
  
@@ -139,7 +164,7 @@ const handlePartialToggle = () => {
 
 {/* <div className='sort-head-title'>{typeFilter?currentCategory.replaceAll('-', ' '):'Porduct Categlog'}</div> */}
 
-<Link to='/store' className='catgegory-icon-wrapper'>
+{/* <Link to='/store' className='catgegory-icon-wrapper'>
 <LayoutPanelLeft 
   className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
   size={25} 
@@ -147,7 +172,7 @@ const handlePartialToggle = () => {
 
 
     
-/></Link>
+/></Link> */}
 
 
 

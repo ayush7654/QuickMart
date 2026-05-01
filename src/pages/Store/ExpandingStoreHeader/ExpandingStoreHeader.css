@@ -9,14 +9,14 @@
   font-family: 'Figtree';
   /* 2. Initial State */
   
-  width: 70%;
-  height: 4rem;
+ 
+  height: 3.5rem;
 /*   background: rgba(219, 219, 219, 0.2);
  background-color: rgb(255, 255, 255,.8); */
-background-color: white;
+
  
-  backdrop-filter: blur(20px);
-  border-radius: 12px;
+
+  border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   z-index: 999;
   
@@ -38,9 +38,12 @@ background-color: white;
 
     border: 1px solid rgba(255, 255, 255); */
  border: 1px solid rgba(255, 255, 255, 0.5);
-    background-color: rgb(20, 20, 60,.4);
+/*     background-color: rgb(20, 20, 60,.4);
     background-color: rgba(171, 171, 171, 0.5);
       background-color: rgb(20, 20, 40,.4);
+        background-color: rgba(210, 210, 210, 0.5);
+         background-color: rgb(40, 40, 40,.4);
+         background-color: rgb(220,220,220,.5); */
   /*   box-shadow: 0px 3px 10px rgb(20, 20, 60,.5); */
 
 
@@ -52,19 +55,20 @@ background-color: white;
 .pill-expanded {
 
 
-  width: calc(100% - 15px) ;
+  width: calc(90% - 15px) ;
   height: calc(99vh - 15px) ;
   border-radius: 12px;
   cursor: default;
   background-color: rgb(255, 255, 255);
-      background-color: rgb(30, 30, 50,.3);
+      background-color: rgba(225, 225, 225, 0.2);
+      
     /*   background-color: rgb(40, 40, 60); */
 
 }
 
  .partial {
-  width: calc(100% - 15px) ;
-  height: calc(69vh - 15px);
+  width: calc(90% - 15px) ;
+  height: calc(75vh - 15px);
 
 
 } 

@@ -8,24 +8,28 @@ const PriceFilter = () => {
   const maxLimit = 50000;
   const minGap = 1000;
 
-  const handleMinChange = (e) => {
-    const value = Number(e.target.value);
-    // Ensure we don't cross the max handle minus the gap
-    const newValue = Math.min(value, maxPrice - minGap);
-    setMinPrice(newValue);
-  };
+const handleMinChange = (e) => {
+  const value = Number(e.target.value);
 
-  const handleMaxChange = (e) => {
-    const value = Number(e.target.value);
-    
-    // Snap to absolute end if close, otherwise maintain gap
-    if (value > maxLimit - 500) {
-      setMaxPrice(maxLimit);
-    } else {
-      const newValue = Math.max(value, minPrice + minGap);
-      setMaxPrice(newValue);
-    }
-  };
+  const effectiveMax = maxPrice ?? maxLimit; // ✅ fallback
+
+  const newValue = Math.min(value, effectiveMax - minGap);
+
+  setMinPrice(newValue);
+};
+
+const handleMaxChange = (e) => {
+  const value = Number(e.target.value);
+
+  const effectiveMin = minPrice ?? minLimit; // ✅ fallback
+
+  if (value > maxLimit - 500) {
+    setMaxPrice(maxLimit);
+  } else {
+    const newValue = Math.max(value, effectiveMin + minGap);
+    setMaxPrice(newValue);
+  }
+};
 
   return (
     <div className="price-filter-container">
@@ -49,7 +53,7 @@ const PriceFilter = () => {
           min={minLimit}
           max={maxLimit}
           step={500} // Logical increment for 50k scale
-          value={minPrice || minLimit}
+         value={minPrice ?? minLimit}
           onChange={handleMinChange}
           className="thumb thumb-left"
         />
@@ -58,7 +62,7 @@ const PriceFilter = () => {
           min={minLimit}
           max={maxLimit}
           step={500}
-          value={maxPrice || maxLimit}
+          value={maxPrice ?? maxLimit}
           onChange={handleMaxChange}
           className="thumb thumb-right"
         />

@@ -62,7 +62,7 @@ const currentItems = categorizedData && activeGroup ? categorizedData[activeGrou
         immediateRender: false,
       },
       // When not open, it follows the scroll to this width
-      width: '50%', 
+      width: '90%', 
       ease: "power2.out",
     });
   });

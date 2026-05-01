@@ -4,7 +4,7 @@
  
  border: 0px solid blue;
 width: 100%;
-height: 4rem;
+height: 3.5rem;
   z-index: 9;
 
   /* height: 6rem; */
@@ -37,7 +37,7 @@ color:white;
 .current-sort-container {
   position: relative;
   width: 100%;
-  padding: 1rem 1.5rem;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,6 +47,8 @@ color:white;
    color: white;
   background: transparent;
   border-radius: 10px;
+   background-color: rgb(220,220,220,.5);
+ backdrop-filter: blur(10px);
 
   /* This makes the transition feel slow and premium */
   transition: 
@@ -124,8 +126,8 @@ gap:3rem;
 }
 
 .category-icon {
-   color: rgb(255, 255, 255);            /* This controls the 'color' prop / stroke */
-  fill: rgb(255, 255, 255);       /* This controls the 'fill' prop */
+   color: rgb(0, 0, 0);            /* This controls the 'color' prop / stroke */
+  fill: rgb(0, 0, 0);       /* This controls the 'fill' prop */
   transition: all 0.2s ease; /* Makes the change smooth */
   cursor: pointer;
 

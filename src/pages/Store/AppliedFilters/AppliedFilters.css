@@ -1,0 +1,156 @@
+
+.Active-Filters-wrapper{
+  width: 90%;
+ display: flex;
+   align-items: center;
+   justify-content: space-between;
+ gap: 1rem;
+ font-family: 'Figtree';
+border:0px solid red;
+  margin: 2rem 0rem;
+
+ /* background-color: rgb(241, 241, 241); */
+height: 3.25rem;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  
+}
+
+.store-filter-btn-wrapper{
+  border:0px solid blue;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  gap:8px;
+  height: 100%;
+  border-radius: 8px;
+
+  
+
+
+
+}
+
+.store-filter-btn{
+
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  place-items: center;
+    border-radius: 8px;
+width:8rem;
+}
+
+.clear-filter-wrapper{
+height: 100%;
+padding: 5px;
+}
+
+.clear-filter-btn{
+/* background-color: rgb(0,100,255);
+color:white; */
+background-color: black;
+color:white;
+
+}
+
+.applied-filter-section{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+height: 100%;
+ gap:1rem;
+flex: 1;
+ border: 0px solid red;
+overflow: hidden;
+
+   border-radius: 6px;
+     padding: 5px; 
+
+}
+
+.applied-filters-head{
+  height: 100%;
+  white-space: nowrap;
+ display: grid;
+ place-items: center;
+ background-color: white;
+
+
+  
+}
+
+.applied-filter-wrapper{
+ display: flex;
+  flex-wrap: nowrap;
+   gap:6px;
+   overflow-x: scroll;
+   scrollbar-width:none;
+  
+   
+}
+
+.applied-filter{
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding:2px 14px;
+  border-radius: 6px;
+   font-size: 14px;
+
+  text-transform: uppercase;
+    color:black;
+    white-space: nowrap;
+    background-color: white;
+  
+}
+
+.cancel-filter{
+  width: 13px;
+  cursor: pointer;
+}
+
+.filter-placeholder{
+
+color:rgb(161, 161, 161);
+
+}
+
+.sort-order-btn{
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: white;
+  border-radius: 6px;
+
+  transition: all.3s ease;
+  color:rgb(180,180,180);
+  pointer-events: none;
+}
+
+.sort-order-active{
+
+    color:rgb(0, 0, 0);
+      pointer-events:all;
+}
+
+.color-filter-content{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap:8px;
+}
+
+.colorBox{
+  height:50%;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+  
+}
+
+.panel-sample{
+    color: rgb(0, 0, 0);            /* This controls the 'color' prop / stroke */
+  fill: rgb(0, 0, 0);
+}
