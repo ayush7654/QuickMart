@@ -47,28 +47,7 @@ const currentItems = categorizedData && activeGroup ? categorizedData[activeGrou
 
  console.log('curret categary info ' , currentItems)
 
-   useEffect(() => {
-  // If the store is open, we DON'T want the scroll to fight the expansion.
-  // We return early so the ScrollTrigger isn't even created.
-  if (isOpen) return;
 
-  const ctx = gsap.context(() => {
-    gsap.to(".floating-pill", {
-      scrollTrigger: {
-        trigger: ".scroll-section",
-        start: "top top",
-        end: "+=700",
-        scrub: 0.8,
-        immediateRender: false,
-      },
-      // When not open, it follows the scroll to this width
-      width: '90%', 
-      ease: "power2.out",
-    });
-  });
-
-  return () => ctx.revert();
-}, [isOpen]); // Re-run when the store opens/closes
 
 
 const [visitedGroups, setVisitedGroups] = useState([]);

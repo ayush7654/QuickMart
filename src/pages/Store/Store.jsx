@@ -28,6 +28,7 @@ import OrderToggle from "./OrderToggle/OrderToggle";
 import MenuCancel from "../../components/MenuCancel/MenuCancel";
 import { LayoutPanelLeft } from "lucide-react";
 import AppliedFilters from "./AppliedFilters/AppliedFilters";
+import StoreSorting from "./StoreSorting/StoreSorting";
 
 
 export default function Store() {
@@ -240,9 +241,13 @@ console.log('filters ',appliedFilters)
  
 
   <div className={`store-header-wrapper ${isAtTop?'':'store-header-visible'}`}>
+{/*  
+<div className="expanding-store-head-wrapper">
  
 
-<ExpandingStoreHeader />
+</div> */}
+ <ExpandingStoreHeader /> 
+
       </div> 
 
 <div className="store-content-wrapper">
@@ -286,15 +291,7 @@ console.log('filters ',appliedFilters)
           <SlidersHorizontal className="" strokeWidth={1.5} />
        </div> */}
 
-   {/* 
-          <AppliedFilters
-          appliedFilters = {appliedFilters}
-          removeFilter = {removeFilter}
-          handleRemoveColor ={handleRemoveColor}
-          currentSort ={currentSort}
-          toggleSortOrder ={toggleSortOrder}
-          />
-      */}
+
 
  
 
@@ -324,12 +321,7 @@ console.log('filters ',appliedFilters)
   
     </div>
 
- {/*   <div className="store-grid-toggle">
-   <GridToggle
-   activeLayout={activeLayout}
-   setActiveLayout={setActiveLayout}
-   gridOptions={gridOptions}/>
-   </div> */}
+
   
               </div>
 

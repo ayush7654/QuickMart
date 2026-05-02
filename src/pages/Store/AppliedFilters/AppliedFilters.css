@@ -1,110 +1,75 @@
 
 .Active-Filters-wrapper{
-  width: 90%;
+  flex: 1;
  display: flex;
    align-items: center;
    justify-content: space-between;
- gap: 1rem;
+ gap: 8px;
  font-family: 'Figtree';
-border:0px solid red;
-  margin: 2rem 0rem;
-
- /* background-color: rgb(241, 241, 241); */
-height: 3.25rem;
+border:0px solid rgb(13, 255, 0);
+height: 4rem;
+padding: 0px 8px; /* remove */
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
+    min-width: 0;          /* 🔥 critical: allows shrinking */
+  overflow: hidden;      /* prevents pushing siblings */
+    /*   border: 1px solid rgb(225, 225, 225,.5);
+     background-color: rgb(220,220,220,.5);
+ background-color: rgba(210, 210, 210, 0.5); */
+/*  background-color: rgba(255, 255, 255, 0.414); */
   
 }
 
-.store-filter-btn-wrapper{
-  border:0px solid blue;
+
+.applied-filter-section {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content:center;
-  gap:8px;
   height: 100%;
-  border-radius: 8px;
+  width: 100%;
+  border: 0px solid red;
+  border-radius: 6px;
+  padding: 8px 0px;
+   overflow-x: auto;   /* ✅ scroll instead of expand */
+  overflow-y: hidden;
 
-  
-
+  scrollbar-width: none; /* optional */
 
 
 }
 
-.store-filter-btn{
-
-  height: 100%;
-  background-color: rgb(255, 255, 255);
-  display: grid;
-  place-items: center;
-    border-radius: 8px;
-width:8rem;
-}
-
-.clear-filter-wrapper{
-height: 100%;
-padding: 5px;
-}
-
-.clear-filter-btn{
-/* background-color: rgb(0,100,255);
-color:white; */
-background-color: black;
-color:white;
-
-}
-
-.applied-filter-section{
- display: flex;
- justify-content: space-between;
- align-items: center;
-height: 100%;
- gap:1rem;
-flex: 1;
- border: 0px solid red;
-overflow: hidden;
-
-   border-radius: 6px;
-     padding: 5px; 
-
-}
-
-.applied-filters-head{
-  height: 100%;
-  white-space: nowrap;
- display: grid;
- place-items: center;
- background-color: white;
-
-
-  
-}
 
 .applied-filter-wrapper{
  display: flex;
   flex-wrap: nowrap;
-   gap:6px;
-   overflow-x: scroll;
+   gap:8px;
    scrollbar-width:none;
-  
+   height: 100%;
+   border:0px solid blue;
+ 
+   overflow: scroll;
+
    
 }
 
 .applied-filter{
- 
+ height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding:2px 14px;
+  padding:2px 10px;
   border-radius: 6px;
-   font-size: 14px;
+   font-size: 12px;
 
   text-transform: uppercase;
     color:black;
     white-space: nowrap;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(185, 185, 185,.5);
+   /*  background-color: rgba(242, 242, 242); */
+   
   
 }
 
@@ -115,7 +80,11 @@ overflow: hidden;
 
 .filter-placeholder{
 
-color:rgb(161, 161, 161);
+color:rgba(255, 255, 255, 0.8);
+width: 100%;
+font-size: 16px;
+font-family:'Inter';
+margin-left: 1rem;
 
 }
 

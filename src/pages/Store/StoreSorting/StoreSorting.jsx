@@ -15,6 +15,8 @@ import { ChevronUp, ChevronDown } from 'lucide-react';
 import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline';
 import AppliedFilters from '../AppliedFilters/AppliedFilters';
 import { useStoreFilter } from '../../../components/StoreFilterContext';
+import StoreActions from '../StoreActions/StoreActions';
+
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -117,31 +119,30 @@ const handlePartialToggle = () => {
 
 
   return (
-         <div style={{
-              transform: window.innerWidth>500 && isIdle? 'translateY(-0%)':'translateY(0%)' /* -15% */
-            
-            }} 
+         <div 
             className="sticky-sort-container">
              <div className="current-sort-container-div">
 
-            <div className='current-sort-container'>  {/* ${scrollY===0?'':'current-sort-blurred'} */}
+            <div className='current-sort-container'>  
 
      
- 
-<div className='applied-filter' onClick={handlePartialToggle}>
-  <MenuCancel state={partialPill}  /*   *//>
+ <div className='store-head-btn-wrapper'>
+  <div className='applied-filter store-head-btn' onClick={handlePartialToggle}>
+  <MenuCancel state={partialPill}  />
 </div>
 
-<div className='applied-filter' onClick={handleExpandedToggle}>
+<div className='applied-filter store-head-btn' onClick={handleExpandedToggle}>
 <LayoutPanelLeft 
   className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
-  size={30} 
+  size={25} 
   strokeWidth={1} 
 
 
     
 />
   </div>
+ </div>
+
 
   <AppliedFilters
    appliedFilters = {appliedFilters}
@@ -149,6 +150,18 @@ const handlePartialToggle = () => {
           handleRemoveColor ={handleRemoveColor}
           currentSort ={currentSort}
           toggleSortOrder ={toggleSortOrder}/>
+    
+   <div className="store-filter-btn-wrapper">
+          <div className="store-filter-btn clear-filter-btn">Clear All</div>
+           <div className="store-filter-btn">
+             <StoreActions/>
+           </div>
+           <div className={`sort-order-btn ${currentSort?'sort-order-active':''}`} onClick={toggleSortOrder}>
+             <OrderToggle/>
+           </div>
+          
+
+   </div> 
 
 
 

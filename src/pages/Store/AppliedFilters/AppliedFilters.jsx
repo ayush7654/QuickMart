@@ -12,29 +12,16 @@ export default function AppliedFilters({appliedFilters,removeFilter,handleRemove
           
      <div className="applied-filter-section">
         
-           <div className="applied-filter-wrapper">
+  
      
 
-             {/*   <div className="applied-filter">
-                <MenuCancel />
-               </div>
-
-                <div className="applied-filter">
-                <LayoutPanelLeft className="panel-sample"
- 
-  size={25} 
-  strokeWidth={1} 
-
-
-    
-/>
-               </div> */}
+      
                {/* try moving floating bar here */}
 
 
              {/* 1. Check if any filters actually exist to show the container */}
 {appliedFilters.filters.length > 0 || appliedFilters.colors.length > 0 || appliedFilters.price.lowRange !== null||0 ? (
-  <>
+  <div className="applied-filter-wrapper">
     {/* Render Categories */}
     {appliedFilters.filters.length > 0 && appliedFilters.filters.map((filter, index) => (
       <div key={`filter-${index}`} className="applied-filter">
@@ -62,10 +49,10 @@ export default function AppliedFilters({appliedFilters,removeFilter,handleRemove
         <X className="cancel-filter" onClick={() => handleRemoveColor(color)} />
       </div>
     ))}
-  </>
+  </div>
 ) : (
   /* 2. The Placeholder Text */
-  <div className="no-filters-placeholder">
+  <div className="filter-placeholder">
     Apply filters for a better experience
   </div>
 )}
@@ -80,22 +67,13 @@ export default function AppliedFilters({appliedFilters,removeFilter,handleRemove
               <span>?</span>
              </div> */}
              
-           </div>
-              <div className="store-filter-btn-wrapper">
+         
           
-           <div className="store-filter-btn ">
-             <StoreActions/>
-           </div>
-           <div className={`sort-order-btn ${currentSort?'sort-order-active':''}`} onClick={toggleSortOrder}>
-             <OrderToggle/>
-           </div>
+        
+             
           
-
-          </div>
           </div> 
-          <div className="clear-filter-wrapper">
-             <div className="store-filter-btn clear-filter-btn">Clear All</div>
-          </div>
+        
            
    </div>
   )

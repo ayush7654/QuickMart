@@ -1,17 +1,14 @@
 .sticky-sort-container{
-/*   position: sticky;
-     top:1rem;  */
- 
  border: 0px solid blue;
 width: 100%;
-height: 3.5rem;
+height: 4rem;
   z-index: 9;
-
-  /* height: 6rem; */
+display: flex;
+align-items: center;
+justify-content: center;
+ 
   transition: all .3s ease;
   border-bottom: 0px solid rgb(220,220,220);
-/*   box-shadow: 0 2px 10px rgba(142, 142, 142, 0.2); */
-
 color:white;
 
 }
@@ -21,34 +18,30 @@ color:white;
 
 .current-sort-container-div{
        
-  width: 100%;
+  width: 95%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-top: 0px solid rgb(0, 0, 0);
 
-  
-  
-
-
 }
 
 .current-sort-container {
   position: relative;
   width: 100%;
+ height: 100%;
 
   display: flex;
-  justify-content: space-between;
+  gap:8px;
   align-items: center;
-  border-radius: 12px;
+ 
   font-family: 'Figtree';
 
    color: white;
   background: transparent;
   border-radius: 10px;
-   background-color: rgb(220,220,220,.5);
- backdrop-filter: blur(10px);
+
 
   /* This makes the transition feel slow and premium */
   transition: 
@@ -68,13 +61,104 @@ color:white;
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 0px solid rgba(0, 0, 0, 0.05);
 
-height: 3.5rem;
+height: 35.rem;
   /* CHANGE THIS: List only the slow properties. DO NOT use 'all' */
   transition: 
     color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
     background 0.8s cubic-bezier(0.4, 0, 0.2, 1),
     backdrop-filter 0.8s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.store-head-btn-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  padding: 8px;
+
+
+
+ 
+}
+
+.store-filter-btn-wrapper{
+  border:0px solid blue;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  gap:8px;
+  height: 100%;
+   padding: 8px ;
+   border-radius: 6px;
+   /* background-color: rgb(225, 225, 225); */
+
+
+
+
+  
+
+
+
+}
+
+.store-filter-btn{
+
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  place-items: center;
+  
+  padding:2px 12px;
+  border-radius: 6px;
+   font-size: 14px;
+     border: 1px solid rgb(185, 185, 185,.5);
+
+}
+
+.clear-filter-wrapper{
+height: 100%;
+padding: 8px 0px;
+}
+
+.clear-filter-btn{
+/* background-color: rgb(0,100,255);
+color:white; */
+background-color: rgb(255, 255, 255);
+color:rgb(0, 0, 0);
+
+}
+
+.sort-order-btn{
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: white;
+  border-radius: 6px;
+
+  transition: all.3s ease;
+  color:rgb(180,180,180);
+  pointer-events: none;
+    border: 1px solid rgb(185, 185, 185,.5);
+}
+
+.sort-order-active{
+
+    color:rgb(0, 0, 0);
+      pointer-events:all;
+}
+
+
+.store-head-btn{
+  
+  color:white;
+  height: 100%;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+
+ 
 }
 
 .product-catelog-btn{
