@@ -29,6 +29,7 @@ import MenuCancel from "../../components/MenuCancel/MenuCancel";
 import { LayoutPanelLeft } from "lucide-react";
 import AppliedFilters from "./AppliedFilters/AppliedFilters";
 import StoreSorting from "./StoreSorting/StoreSorting";
+import StoreHeader from "./StoreHeader/StoreHeader";
 
 
 export default function Store() {
@@ -241,12 +242,9 @@ console.log('filters ',appliedFilters)
  
 
   <div className={`store-header-wrapper ${isAtTop?'':'store-header-visible'}`}>
-{/*  
-<div className="expanding-store-head-wrapper">
- 
 
-</div> */}
- <ExpandingStoreHeader /> 
+<StoreHeader/>
+
 
       </div> 
 
@@ -296,6 +294,7 @@ console.log('filters ',appliedFilters)
  
 
         <main className="store-content">
+         
        
          <div className="side-filter">
               <FilterSection
@@ -305,6 +304,13 @@ console.log('filters ',appliedFilters)
             </div>
 
           <div className="productList-wrapper" style={{ position: "relative" }}>
+
+             <AppliedFilters
+             appliedFilters = {appliedFilters}
+                    removeFilter = {removeFilter}
+                    handleRemoveColor ={handleRemoveColor}
+                    currentSort ={currentSort}
+                    toggleSortOrder ={toggleSortOrder}/>
 
             <div className="productList-head-wrapper">
                  <div className="store-page-heading">
@@ -321,11 +327,13 @@ console.log('filters ',appliedFilters)
   
     </div>
 
+    
+
 
   
               </div>
 
-             
+            
 
           
             </div>

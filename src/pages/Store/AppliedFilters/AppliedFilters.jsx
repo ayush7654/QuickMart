@@ -51,21 +51,19 @@ export default function AppliedFilters({appliedFilters,removeFilter,handleRemove
     ))}
   </div>
 ) : (
-  /* 2. The Placeholder Text */
+
   <div className="filter-placeholder">
     Apply filters for a better experience
   </div>
 )}
 
-    {/*          <div className="applied-filter filter-placeholder">
-              Fash Shipping
-              <span>?</span>
-             </div>
+{/* <div className="applied-filter">About</div>
+<div className="applied-filter">Sale</div>
+<div className="applied-filter">Memberships</div>
 
-              <div className="applied-filter filter-placeholder">
-              Best Sellers
-              <span>?</span>
-             </div> */}
+<div className="applied-filter">Wishlist</div> */}
+
+
              
          
           

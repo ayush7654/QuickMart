@@ -9,7 +9,7 @@ import { useStoreData } from "../../../components/StoreDataContext";
 gsap.registerPlugin(ScrollTrigger);
 
 
-export default function ExpandingStoreHeader() {
+export default function ExpandingStoreHeader({partialPill}) {
 
 const {handleTypeFilter,isOpen, setIsOpen,currentCategory} = useStoreData()
 
@@ -17,7 +17,7 @@ const {handleTypeFilter,isOpen, setIsOpen,currentCategory} = useStoreData()
 const { categorizedData, loading} = CategoryDataProvider();
 const [activeGroup, setActiveGroup] = useState(null);
 
-const [partialPill,setPartialPill] = useState(false)
+/* const [partialPill,setPartialPill] = useState(false) */
 const [hoveredIndex, setHoveredIndex] = useState(null);
 
 
@@ -75,7 +75,7 @@ useEffect(() => {
   }
 }, [activeGroup, isOpen, visitedGroups]);
 
-
+console.log('partial pill' , partialPill)
   return (
      <div 
           className={`floating-pill ${isOpen ? "pill-expanded" : ""} ${partialPill?'partial':''}`}
@@ -84,10 +84,10 @@ useEffect(() => {
           <div className="pill-content">
     
    <StoreSorting 
-    partialPill={partialPill}
-    setPartialPill={setPartialPill}/>  
+    /* partialPill={partialPill}
+    setPartialPill={setPartialPill} *//>  
 
-<div className="category-layout">
+<div className={`category-layout ${isOpen || partialPill?'':'category-layout-hidden'}`}>
   {loading ? (
     /* Loading View: Prevents errors and keeps the pill from looking empty */
     <div className="layout-loader">

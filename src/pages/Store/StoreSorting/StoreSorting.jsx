@@ -23,7 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-export default function StoreSorting({setPartialPill,partialPill}) {
+export default function StoreSorting() {
   
 
    const{ scrollY} = useScroll();
@@ -85,73 +85,27 @@ useEffect(() => {
   };
 }, [isSortOpen]);
 
-const handleExpandedToggle = () => {
-  if (!isOpen) {
-    // Stage 1: If it's closed, open it.
-    setIsOpen(true);
-  } else {
-    // Stage 2: It's already open, check the partial state.
-    if (partialPill) {
-      // If it's in the shorter 'partial' state, expand it fully.
-      setPartialPill(false);
-    } else {
-      // If it's already full height, close the whole thing.
-      setIsOpen(false);
-    }
-  }
-};
 
-
-const handlePartialToggle = () => {
-  if (!isOpen) {
-    // Stage 1: If closed, open directly into partial mode
-    setIsOpen(true);
-    setPartialPill(true);
-  } else if (isOpen && !partialPill) {
-    // Stage 2: If fully open, shrink it down to partial
-    setPartialPill(true);
-  } else {
-    // Stage 3: If already in partial, close the whole pill
-    setIsOpen(false);
-    setPartialPill(false);
-  }
-};
 
 
   return (
          <div 
-            className="sticky-sort-container">
-             <div className="current-sort-container-div">
+            className="store-middle-header">
+             
 
-            <div className='current-sort-container'>  
+            <div className='store-head-wrapper'>  
 
-     
- <div className='store-head-btn-wrapper'>
-  <div className='applied-filter store-head-btn' onClick={handlePartialToggle}>
-  <MenuCancel state={partialPill}  />
-</div>
+     {/* <div className="store-middle-head">Sale</div>
+     <div className="store-middle-head">Memberships</div>
+     <div className="store-middle-head">Wishlist</div>
+     <div className="store-middle-head">About</div> */}
 
-<div className='applied-filter store-head-btn' onClick={handleExpandedToggle}>
-<LayoutPanelLeft 
-  className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
-  size={25} 
-  strokeWidth={1} 
+
+
 
 
     
-/>
-  </div>
- </div>
-
-
-  <AppliedFilters
-   appliedFilters = {appliedFilters}
-          removeFilter = {removeFilter}
-          handleRemoveColor ={handleRemoveColor}
-          currentSort ={currentSort}
-          toggleSortOrder ={toggleSortOrder}/>
-    
-   <div className="store-filter-btn-wrapper">
+{/*    <div className="store-filter-btn-wrapper">
           <div className="store-filter-btn clear-filter-btn">Clear All</div>
            <div className="store-filter-btn">
              <StoreActions/>
@@ -161,8 +115,7 @@ const handlePartialToggle = () => {
            </div>
           
 
-   </div> 
-
+   </div>  */}
 
 
 
@@ -190,8 +143,7 @@ const handlePartialToggle = () => {
 
 
       </div>
-      </div>
-
+  
 
             </div>
   )
