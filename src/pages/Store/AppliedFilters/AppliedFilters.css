@@ -15,7 +15,7 @@ padding: 0px 8px; /* remove */
   font-weight: 500;
     min-width: 0;          /* 🔥 critical: allows shrinking */
   overflow: hidden;      /* prevents pushing siblings */
-  margin: 1rem 0rem;
+
   
 
 
@@ -31,7 +31,7 @@ padding: 0px 8px; /* remove */
   width: 100%;
   border-radius: 6px;
   padding: 8px 0px;
-
+  margin: 1rem 0rem;
   overflow: visible;         /* 🔥 remove horizontal scroll */
 }
 
@@ -74,7 +74,7 @@ padding: 0px 8px; /* remove */
 
 .filter-placeholder{
 
-color:rgba(255, 255, 255, 0.8);
+color:rgba(0, 0, 0, 0.8);
 width: 100%;
 font-size: 16px;
 font-family:'Inter';

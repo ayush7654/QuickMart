@@ -83,9 +83,7 @@ console.log('partial pill' , partialPill)
         >
           <div className="pill-content">
     
-   <StoreSorting 
-    /* partialPill={partialPill}
-    setPartialPill={setPartialPill} *//>  
+<div className="pill-space"></div>
 
 <div className={`category-layout ${isOpen || partialPill?'':'category-layout-hidden'}`}>
   {loading ? (

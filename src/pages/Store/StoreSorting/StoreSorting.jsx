@@ -90,32 +90,23 @@ useEffect(() => {
 
   return (
          <div 
-            className="store-middle-header">
+            className="store-sorting-wrapper">
              
-
-            <div className='store-head-wrapper'>  
-
-     {/* <div className="store-middle-head">Sale</div>
-     <div className="store-middle-head">Memberships</div>
-     <div className="store-middle-head">Wishlist</div>
-     <div className="store-middle-head">About</div> */}
-
-
-
 
 
     
-{/*    <div className="store-filter-btn-wrapper">
-          <div className="store-filter-btn clear-filter-btn">Clear All</div>
+   <div className="store-filter-btn-wrapper">
+        {/*   <div className="store-filter-btn clear-filter-btn">Clear All</div> */}
+            <div className={`sort-order-btn ${currentSort?'sort-order-active':''}`} onClick={toggleSortOrder}>
+             <OrderToggle/>
+           </div>
            <div className="store-filter-btn">
              <StoreActions/>
            </div>
-           <div className={`sort-order-btn ${currentSort?'sort-order-active':''}`} onClick={toggleSortOrder}>
-             <OrderToggle/>
-           </div>
+       
           
 
-   </div>  */}
+   </div>  
 
 
 
@@ -128,21 +119,11 @@ useEffect(() => {
 
 
 
-{/* <div className='sort-head-title'>{typeFilter?currentCategory.replaceAll('-', ' '):'Porduct Categlog'}</div> */}
-
-{/* <Link to='/store' className='catgegory-icon-wrapper'>
-<LayoutPanelLeft 
-  className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
-  size={25} 
-  strokeWidth={1} 
-
-
-    
-/></Link> */}
 
 
 
-      </div>
+
+ 
   
 
             </div>

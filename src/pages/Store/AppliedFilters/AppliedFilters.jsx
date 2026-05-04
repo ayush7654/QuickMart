@@ -16,7 +16,7 @@ export default function AppliedFilters({appliedFilters,removeFilter,handleRemove
      
 
       
-               {/* try moving floating bar here */}
+    
 
 
              {/* 1. Check if any filters actually exist to show the container */}
@@ -52,16 +52,23 @@ export default function AppliedFilters({appliedFilters,removeFilter,handleRemove
   </div>
 ) : (
 
-  <div className="filter-placeholder">
+
+  <div className="placeholder-filter-section">
+
+<div className="placeholder-filter-wrapper">
+  <div></div>
+  <div></div>
+</div>
+
+      <div className="filter-placeholder">
     Apply filters for a better experience
   </div>
+  </div>
+
+
 )}
 
-{/* <div className="applied-filter">About</div>
-<div className="applied-filter">Sale</div>
-<div className="applied-filter">Memberships</div>
 
-<div className="applied-filter">Wishlist</div> */}
 
 
              

@@ -57,7 +57,7 @@ export default function Store() {
 
   const {selectedGroup} = CategoryDataProvider();
 
-
+const [partialPill,setPartialPill] = useState(false);
 
 
   const { minPrice, setMinPrice, maxPrice, setMaxPrice,storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount,appliedFilters,setAppliedFilters,setStoreFilterColors} = useStoreFilter();
@@ -227,7 +227,7 @@ console.log('filters ',appliedFilters)
 
 
      <div className={`storePage-overlay ${storeOverlayActive ? 'is-visible' : ''}`} 
-     onClick={() => setIsOpen(false)}>
+     onClick={() => {setIsOpen(false),setPartialPill(false)}}>
       
       </div> 
 
@@ -243,7 +243,9 @@ console.log('filters ',appliedFilters)
 
   <div className={`store-header-wrapper ${isAtTop?'':'store-header-visible'}`}>
 
-<StoreHeader/>
+<StoreHeader 
+partialPill={partialPill}
+setPartialPill={setPartialPill}/>
 
 
       </div> 
@@ -272,12 +274,11 @@ console.log('filters ',appliedFilters)
     </span>
      
    </div>
-   <div className="store-grid-toggle">
-   <GridToggle
-   activeLayout={activeLayout}
-   setActiveLayout={setActiveLayout}
-   gridOptions={gridOptions}/>
-   </div>
+
+<div className="dropdown-sort-wrapper">
+     <StoreSorting />  
+</div>
+
   
 </div>
   
@@ -328,7 +329,12 @@ console.log('filters ',appliedFilters)
     </div>
 
     
-
+   <div className="store-grid-toggle">
+   <GridToggle
+   activeLayout={activeLayout}
+   setActiveLayout={setActiveLayout}
+   gridOptions={gridOptions}/>
+   </div>
 
   
               </div>

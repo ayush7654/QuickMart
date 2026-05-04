@@ -4,10 +4,10 @@ import ExpandingStoreHeader from '../ExpandingStoreHeader/ExpandingStoreHeader'
 import { LayoutPanelLeft } from 'lucide-react'
 import { useStoreData } from '../../../components/StoreDataContext'
 import './StoreHeader.css'
-export default function StoreHeader() {
+export default function StoreHeader({partialPill,setPartialPill}) {
 
 
-const [partialPill,setPartialPill] = useState(false);
+
     const {isOpen, setIsOpen,typeFilter} = useStoreData()
 
 const handleExpandedToggle = () => {
@@ -46,8 +46,8 @@ const handlePartialToggle = () => {
 
   return (
     <div className='store-Header'>
-         <div className='store-head-btn-wrapper'>
-          <div className={`store-head-btn`} onClick={handlePartialToggle} >
+         <div className='store-head-menu-wrapper'>
+          <div className={`store-head-menu ${isOpen || partialPill?'store-menu-open':''}`} onClick={handlePartialToggle} >
           <MenuCancel  state={partialPill}  />
         </div>
         
@@ -63,7 +63,8 @@ const handlePartialToggle = () => {
   />  
          <div className="store-head-btn-wrapper">
 
-  <div className='store-head-btn' onClick={handleExpandedToggle}>
+  <div className={`store-head-btn ${isOpen || partialPill?'store-head-active':''}`} onClick={handleExpandedToggle}>
+
 <LayoutPanelLeft 
   className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
   size={20} 
@@ -72,6 +73,7 @@ const handlePartialToggle = () => {
 
     
 />
+  Product Catelog
   </div>
 
 </div>

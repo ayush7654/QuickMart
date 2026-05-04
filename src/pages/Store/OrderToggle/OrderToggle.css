@@ -36,7 +36,7 @@ height: 100%;
 
 /* The "Window" that clips the sliding text */
 .value-window {
-  height: 25px;
+  height: 30px;
   overflow: hidden;
   pointer-events: none;
 }
@@ -49,8 +49,14 @@ height: 100%;
 
 .value-text {
   height: 25px;
-  line-height: 20px;
-  font-size: 13px;
+  line-height: 25px;
+  display: grid;
+  place-items: center;
+ 
+
+}
+.value-text img{
+  width: 90%;
 }
 
 .order-morph-btn:hover .value-text  {
