@@ -61,9 +61,9 @@ const handlePartialToggle = () => {
   <ExpandingStoreHeader 
   partialPill={partialPill}
   />  
-         <div className="store-head-btn-wrapper">
+         <div className="store-catelog-btn-wrapper">
 
-  <div className={`store-head-btn ${isOpen || partialPill?'store-head-active':''}`} onClick={handleExpandedToggle}>
+  <div className={`store-catelog-btn ${isOpen || partialPill?'store-catelog-active':''}`} onClick={handleExpandedToggle}>
 
 <LayoutPanelLeft 
   className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}

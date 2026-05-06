@@ -12,10 +12,10 @@ export default function GridToggle({onChange,activeLayout,setActiveLayout,gridOp
     <div className="switcher-container">
       <div className="switcher-rail">
         {/* Sliding background for the "active" state */}
-        <div 
+      {/*   <div 
           className="switcher-slider" 
           style={{ transform: `translateX(${(activeLayout - 2) * 100}%)` }}
-        />
+        /> */}
         
         {gridOptions.map((option) => (
           <button

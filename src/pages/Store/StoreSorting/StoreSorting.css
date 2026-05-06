@@ -63,7 +63,7 @@ color:white;
   justify-content:center;
   gap:10px;
   height: 100%;
-   padding: 8px ;
+
    border-radius: 6px;
    /* background-color: rgb(225, 225, 225); */
 
@@ -80,10 +80,13 @@ color:white;
 
   height: 100%;
   background-color: rgb(255, 255, 255);
-  display: grid;
-  place-items: center;
-  
-  padding:2px 12px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap:5px;
+white-space: nowrap;
+  color:black;
+ /*  padding:2px 12px; */
   border-radius: 6px;
    font-size: 14px;
      border: 0px solid rgb(185, 185, 185,.5);
@@ -163,24 +166,7 @@ gap:3rem;
   place-items: center;
 }
 
-.catgegory-icon-wrapper{
-  border: 0px solid red;
-  display: grid;
-  place-items: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
-.category-icon {
-   color: rgb(255, 255, 255);            /* This controls the 'color' prop / stroke */
-  fill: rgb(255, 255, 255);       /* This controls the 'fill' prop */
-  transition: all 0.2s ease; /* Makes the change smooth */
-  cursor: pointer;
-
-
-  
-}
 
 
 /* .category-active{

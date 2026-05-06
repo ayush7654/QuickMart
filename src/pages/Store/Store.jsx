@@ -237,7 +237,7 @@ console.log('filters ',appliedFilters)
 
 
 
-  <HomeIntro/>  {/* UNcomment this */}
+  <HomeIntro/>  
 
  
 
@@ -275,9 +275,14 @@ setPartialPill={setPartialPill}/>
      
    </div>
 
-<div className="dropdown-sort-wrapper">
-     <StoreSorting />  
-</div>
+
+
+ <div className="store-grid-toggle">
+   <GridToggle
+   activeLayout={activeLayout}
+   setActiveLayout={setActiveLayout}
+   gridOptions={gridOptions}/>
+   </div>
 
   
 </div>
@@ -306,12 +311,7 @@ setPartialPill={setPartialPill}/>
 
           <div className="productList-wrapper" style={{ position: "relative" }}>
 
-             <AppliedFilters
-             appliedFilters = {appliedFilters}
-                    removeFilter = {removeFilter}
-                    handleRemoveColor ={handleRemoveColor}
-                    currentSort ={currentSort}
-                    toggleSortOrder ={toggleSortOrder}/>
+            
 
             <div className="productList-head-wrapper">
                  <div className="store-page-heading">
@@ -329,12 +329,11 @@ setPartialPill={setPartialPill}/>
     </div>
 
     
-   <div className="store-grid-toggle">
-   <GridToggle
-   activeLayout={activeLayout}
-   setActiveLayout={setActiveLayout}
-   gridOptions={gridOptions}/>
-   </div>
+  
+
+<div className="dropdown-sort-wrapper">
+     <StoreSorting />  
+</div>
 
   
               </div>
@@ -344,7 +343,12 @@ setPartialPill={setPartialPill}/>
           
             </div>
 
-    
+     <AppliedFilters
+             appliedFilters = {appliedFilters}
+                    removeFilter = {removeFilter}
+                    handleRemoveColor ={handleRemoveColor}
+                    currentSort ={currentSort}
+                    toggleSortOrder ={toggleSortOrder}/>
 
          
             

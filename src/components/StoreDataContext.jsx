@@ -29,8 +29,9 @@ export const StoreDataProvider = ({ children }) => {
     setCurrentSort(prev => prev?.name === e.name ? null : e);
   };
 
-  const toggleSortOrder = () => {
-    setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
+  const toggleSortOrder = (order) => {
+    /* setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc')); */
+    setSortOrder(order)
   };
 
   const handleTypeFilter = (category) => {

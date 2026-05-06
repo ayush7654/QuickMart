@@ -6,11 +6,14 @@ import './StoreActions.css'
 export default function StoreActions() {
 
      const SortArray = [
-        { name: 'Price', sort: 'price'  },
+        { name: 'Price , High to Low', sort: 'price' , order:'desc'  },
+        { name: 'Price , Low to High', sort: 'price' , order:'asc' },
       
-        { name: 'Rating', sort: 'rating'  },
+        { name: 'Highest Rated', sort: 'rating' , order:'desc' },
+     
        
-        { name: 'Discount', sort: 'discountPercentage' }
+        { name: 'Biggest Savings', sort: 'discountPercentage' , order:'desc'},
+        
     
       ];
 
@@ -61,7 +64,7 @@ useEffect(() => {
       
       <div className='sort-toggle-content'>
         
-            <span>{currentSort?currentSort.name:'Sort By '}</span>
+            <span>{currentSort && currentSort.name}</span>
       
       </div>
 
@@ -88,6 +91,7 @@ useEffect(() => {
  onClick={()=>
   {handleSort(item);
    setIsSortOpen(false); 
+   toggleSortOrder(item.order)
              
  }
  
@@ -95,7 +99,8 @@ useEffect(() => {
  >
 
 
- {item.name}
+<span className='sort-selector'><span className="sort-filler"></span></span> 
+<span>{item.name}</span> 
 
 
   </div>)}

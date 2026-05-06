@@ -53,14 +53,6 @@ const handleRemoveColor = (colorName) => {
 
   const { isIdle } = useContext(WinScrollContext);
 
-  const SortArray = [
-    { name: 'Price', sort: 'price' ,Icon: MdAttachMoney },
-  
-    { name: 'Rating', sort: 'rating' , Icon: MdStarBorder },
-   
-    { name: 'Discount', sort: 'discountPercentage', Icon: MdPercent }
-
-  ];
 
 
     const [isSortOpen, setIsSortOpen] = useState(false);
@@ -97,10 +89,11 @@ useEffect(() => {
     
    <div className="store-filter-btn-wrapper">
         {/*   <div className="store-filter-btn clear-filter-btn">Clear All</div> */}
-            <div className={`sort-order-btn ${currentSort?'sort-order-active':''}`} onClick={toggleSortOrder}>
+           {/*  <div className={`sort-order-btn ${currentSort?'sort-order-active':''}`} onClick={toggleSortOrder}>
              <OrderToggle/>
-           </div>
+           </div> */}
            <div className="store-filter-btn">
+            <span>Sort By :</span>
              <StoreActions/>
            </div>
        

@@ -25,7 +25,7 @@
 
  background-color: rgba(215, 215, 215, 0.5);
  color:rgb(0, 0, 0);
-box-shadow: inset 0px 0px 10px rgba(180, 180, 180, 0.5);
+box-shadow: inset 0px 0px 10px rgba(200,200,200, 0.5);
   transition: 
     width 0.8s cubic-bezier(0.5, 1, 0.36, 1),
     height 0.8s cubic-bezier(0.5, 1, 0.36, 1),
@@ -41,8 +41,6 @@ box-shadow: inset 0px 0px 10px rgba(180, 180, 180, 0.5);
   height: calc(95vh - 15px);
   border-radius: 12px;
   cursor: default;
-  background-color: rgba(88, 88, 88, 0.5);
-  background-color: transparent;
   background-color: rgba(255, 255, 255, 0.65);
   
   /* Horizontal offset, Vertical offset, Blur radius, Spread, Color */
@@ -51,10 +49,8 @@ box-shadow: inset 0px 0px 10px rgba(115, 115, 115, 0.5);
   /* 3. The "Frosted" Effect (Crucial for the premium look) */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(3px);
-  
   /* 4. Optional: A subtle outer border to define the shape */
   border: 1px solid rgba(255, 255, 255, 0.5);
-
  --y-offset: -2vh; 
 }
 
@@ -68,15 +64,11 @@ box-shadow: inset 0px 0px 10px rgba(115, 115, 115, 0.5);
 }
 
 
-
 .pill-content {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-
- 
-
 
 }
 
@@ -97,22 +89,20 @@ box-shadow: inset 0px 0px 10px rgba(115, 115, 115, 0.5);
 .category-layout {
   display: flex;
   width: 100%;
-  height: 80%; /* Adjusted to leave room for StoreSorting header if needed */
+  height: 80%;
   margin-top: 2rem;
-/*      border: 1px solid rgb(225, 225, 225,.5);
-  background-color: rgba(121, 121, 121, 0.5);
-   background-color: rgba(255, 255, 255, 0.8);  */
+
   border-radius: 8px;
   padding: 8px;
 }
 
 /* 40% Sidebar */
 .subgroup-sidebar {
-  flex: 0 0 35%;
+  flex: 0 0 32%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-right: 1px solid rgba(0, 0, 0, 0.05);
+
   padding-left: 5%;
   
  
@@ -132,19 +122,16 @@ box-shadow: inset 0px 0px 10px rgba(115, 115, 115, 0.5);
 
 .subgroup-item.active {
   color: rgb(0,100,255);
-/*   color: rgb(0, 0, 0); */
+
   transform: translateX(15px);
 }
 
-/* .subgroup-item.selected{
-  color:blue !important;
-} */
 
 /* The Main 60% Container */
 .category-grid-container {
-  flex: 0 0 60%;
+  flex: 0 0 65%;
   height: 100%;
- background-color: rgba(0, 0, 0, 0.05);
+ background-color: rgba(0, 0, 0, 0);
   box-sizing: border-box;
   position: relative; /* Keep this */
   overflow: hidden; /* Prevent scaling cards from creating scrollbars */
@@ -157,7 +144,7 @@ box-shadow: inset 0px 0px 10px rgba(115, 115, 115, 0.5);
   /* Use inset to ensure it pins to all four corners of the container */
   inset: 5px; 
   display: grid;
-  gap: 5px;
+  gap: 8px;
   transition: opacity 0.3s ease;
   opacity: 0;
   pointer-events: none;
@@ -204,7 +191,7 @@ box-shadow: inset 0px 0px 10px rgba(115, 115, 115, 0.5);
 .layout-mosaic {
   display: grid;
 
-  gap: 5px;
+  gap: 8px;
   /* 3 columns: 1st is the large pillar, next 2 are for the 2x2 grid */
   grid-template-columns: 1.2fr 1fr 1fr; 
   grid-template-rows: 1fr 1fr;
@@ -223,7 +210,7 @@ box-shadow: inset 0px 0px 10px rgba(115, 115, 115, 0.5);
 .category-card {
   width: 100%;
   height: 100%;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   position: relative;
   opacity: 0;

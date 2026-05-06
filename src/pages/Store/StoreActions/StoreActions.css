@@ -76,10 +76,11 @@ position: relative;
 
 .sorting-panel{
 
-width: 11.5rem;
+width: 18rem;
+height: 10.5rem;
 position: absolute;
-  top: calc(100% + 30px);
-left: -100%;
+  top: calc(100% + 10px);
+  right: 0;
 
   padding: 6px;
 border-radius: 10px;
@@ -108,6 +109,7 @@ border-radius: 10px;
 
   margin: 0;
 
+
 }
 
 .sort-panel-visible{
@@ -118,6 +120,9 @@ z-index: 999;
 }
 
 .store-sort-div{
+  display: flex;
+  align-items: center;
+  gap:10px;
  padding: 10px 12px;
   font-size: 14px;
   border-radius: 6px;
@@ -125,6 +130,7 @@ z-index: 999;
   color: #444;
   transition: background 0.2s ease;
   margin-bottom: 2px;
+
 }
 
 .store-sort-div:hover{
@@ -150,6 +156,27 @@ z-index: 999;
 
 }
 
+.sort-selector{
+  width: 13px;
+  height: 13px;
+  border: 1px solid rgba(0,0,0,0.5);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+
+ 
+}
+
+.sort-filler{
+width: 9px;
+height: 9px;
+  border-radius: 50%;
+}
+
+ .store-sort-selected .sort-filler{
+  background-color: rgb(0,100,255);
+
+ }
 
  
    

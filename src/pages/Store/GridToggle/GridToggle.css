@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
+ 
   border: none;
   background: transparent;
   cursor: pointer;
@@ -46,15 +46,15 @@ opacity: .2;
   opacity: 1;
 }
 
-.switcher-slider {
+/* .switcher-slider {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  width: calc(33.33% - 0px); /* Based on 3 options */
+  width: calc(33.33% - 0px); 
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(35, 35, 35, 0.2);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
-}
+} */
