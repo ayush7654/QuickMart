@@ -4,6 +4,7 @@ import { useStoreFilter } from '../../../../components/StoreFilterContext';
 const PriceFilter = () => {
   const { minPrice, setMinPrice, maxPrice, setMaxPrice } = useStoreFilter();
   
+  
   const minLimit = 0; // Better for math/steps
   const maxLimit = 50000;
   const minGap = 1000;
@@ -35,9 +36,9 @@ const handleMaxChange = (e) => {
     <div className="price-filter-container">
       <div className="filter-header">
         <span>Price</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-      </div>
 
+      </div>
+     <div className='price-filter-section'>
       <div className="slider-wrapper">
         <div className="slider-track" />
   <div 
@@ -82,6 +83,7 @@ const handleMaxChange = (e) => {
             {maxPrice === null ? '--' : `$${maxPrice.toLocaleString()}`}
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -1,20 +1,54 @@
-.store-side-filter{
 
-  height: 80vh; /* instead of max-height */
+.store-side-filter-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+ width: 100%;
+ height: 100%;
+
+}
+
+.side-filter-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  border: 0px solid green;
+  padding: 0rem 2rem;
+  border-bottom:1px solid rgb(230,230,230) ;
+
+
+  
+}
+
+.side-filter-header h2{
+   font-family: "Questrial", sans-serif; 
+   font-weight: 800;
+   letter-spacing: 1px;
+}
+
+.store-side-filter{
+ width: 100%;
+  height: 85vh; /* instead of max-height */
   padding:2rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   font-family: 'Figtree';
     font-family: 'Inter', sans-serif;
-    position: sticky;
-    top:8rem;
-      border: 1px solid rgb(230,230,230);
+
+ 
+      border: 1px solid rgb(200, 200, 200);
    border-radius: 10px;
-   overflow-y: auto; /* Adds a scrollbar ONLY if content is too tall */
+        overflow-y: auto; /* Adds a scrollbar ONLY if content is too tall */
  scrollbar-width: thin;
-   
+ border: 0px solid blue;
+
 }
+
+
 
 .store-side-filter > * {
   flex-shrink: 0; 
@@ -32,6 +66,8 @@
   border: 0px solid red;
   padding: 20px;
 
+   
+
 }
 
 .filter-section 
@@ -48,20 +84,22 @@
   margin-bottom: 35px;
   background: rgba(240, 240, 240, 0.6);
   background-color: white;
-  padding: 10px 15px;
-  border-radius: 10px;
+    padding: 0 1.5rem;
+       font-family: "Questrial", sans-serif; 
+
+/*   border-radius: 10px;
    border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0px 0px 10px -0px rgba(12, 19, 232, 0.2);
-    box-shadow: 0px 10px 10px -10px rgba(110, 80, 255, 0.3);
+    box-shadow: 0px 10px 10px -10px rgba(110, 80, 255, 0.3); */
 }
 
-.filter-wrapper{
+.filter-options-wrapper{
   display: flex;
   flex-direction: column;
   gap:0rem;
 
   padding: 0px 10px;
-
+  
   
 }
 
@@ -71,7 +109,8 @@
   align-items: center;
   gap:10px;
   padding: 12px 10px;
-  border-radius: 10px;
+
+
 }
 
 .filter-check:hover{
@@ -122,7 +161,7 @@ cursor: pointer;
 .store-color-wrapper{
   display: flex;
   gap: 10px;
-  padding: 0rem 1rem;
+  padding: 0rem 2rem;
     padding-bottom: 10rem;
 }
 

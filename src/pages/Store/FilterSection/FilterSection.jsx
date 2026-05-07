@@ -2,12 +2,14 @@ import React from 'react'
 import { Check, CheckSquare } from 'lucide-react';
 import { useStoreFilter } from '../../../components/StoreFilterContext';
 import PriceFilter from './PriceFilter/PriceFilter';
+import { X } from 'lucide-react';
 import './FilterSection.css'
+import StoreAccordion from '../StoreAccordion/StoreAccordion';
 
 
 
 
-export default function FilterSection() {
+export default function FilterSection({setSideFilterOn}) {
     
     
     const {storeFilters,setStoreFilters,setAppliedFilters,storeFilterColors,setStoreFilterColors} = useStoreFilter();
@@ -21,17 +23,24 @@ export default function FilterSection() {
   );
 };
 
-  return (
-    
-<div className="store-side-filter" data-lenis-prevent>
- <h2>Filter Products</h2>
+  return (<div className='store-side-filter-wrapper'>
+    <div className="side-filter-header">
+     <h2>FILTERS</h2>
+     <span onClick={()=>setSideFilterOn(false)}><X /></span>
 
- <div className="filter-section">
+  </div>
+
+  <div className="store-side-filter" data-lenis-prevent>
+<StoreAccordion storeFilters={storeFilters}
+setStoreFilters={setStoreFilters}/>
+
+<div className='filter-section-wrapper'>
+{/*    <div className="filter-section">
 <div className="filter-header">
         <span>Select Filters</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
       </div>
- <div className="filter-wrapper">
+ <div className="filter-options-wrapper">
   {storeFilters.map((item,index)=>
   <div key={index} className="filter-check"
        onClick={() =>
@@ -50,7 +59,7 @@ export default function FilterSection() {
     <span>{item.name}</span>
   </div>)}
  </div>
- </div>
+ </div> */}
 
 <PriceFilter/>
 
@@ -75,6 +84,13 @@ export default function FilterSection() {
   </div>
 </div>
 </div>
+
+</div>
+
+
+  </div>
+    
+
     
   )
 }

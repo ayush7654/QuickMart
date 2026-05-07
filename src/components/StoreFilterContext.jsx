@@ -20,13 +20,14 @@ export const StoreFilterProvider = ({ children }) => {
   // --- Your Existing Filter Logic ---
   const [storeFilters, setStoreFilters] = useState([
     { name: "In Stock", filter: "availabilityStatus", state: false },
+     { name: "Limited Stock", filter: "stock", state: false },
     { name: "Warranty", filter: "warrantyInformation", state: false },
     { name: "Return Policy", filter: "returnPolicy", state: false },
     { name: "Fast Shipping", filter: "shippingInformation", state: false },
-    { name: "Limited Stock", filter: "stock", state: false },
+    { name: "COD Available", filter: "minimumOrderQuantity", state: false },
     { name: "Latest Offers", filter: "discountPercentage", state: false },
     { name: "Best Sellers", filter: "rating", state: false },
-    { name: "COD Available", filter: "minimumOrderQuantity", state: false },
+
   ]);
 
   const activeFiltersCount = useMemo(() => {

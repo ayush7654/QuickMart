@@ -1,7 +1,14 @@
 .price-filter-container {
   width: 100%;
-  padding: 20px;
+
   font-family: 'Inter', sans-serif;
+}
+
+.price-filter-section{
+  width: 100%;
+  padding: 0 2rem;
+
+  
 }
 
 .slider-wrapper {
@@ -9,6 +16,7 @@
   height: 5px;
   /* Keep your original margin, but ensure the track width is correct */
   margin: 0 10px 40px 10px; 
+  
 }
 
 .slider-track {
@@ -22,7 +30,7 @@
 
 .slider-range {
   position: absolute;
-  height: 4px;
+  height: 3px;
   background: #000;
   border-radius: 2px;
   z-index: 2;
@@ -48,11 +56,11 @@
 
 .thumb::-webkit-slider-thumb {
   appearance: none;
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: #fff;
-  border: 3px solid #000;
+  border: 2px solid #000;
   cursor: pointer;
   pointer-events: auto;
 }

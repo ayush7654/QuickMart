@@ -30,6 +30,7 @@ import { LayoutPanelLeft } from "lucide-react";
 import AppliedFilters from "./AppliedFilters/AppliedFilters";
 import StoreSorting from "./StoreSorting/StoreSorting";
 import StoreHeader from "./StoreHeader/StoreHeader";
+import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 
 
 export default function Store() {
@@ -53,6 +54,8 @@ export default function Store() {
     toggleSortOrder,
     handleTypeFilter,
     handleCancelTypeFilter,
+    sideFilterOn,
+    setSideFilterOn,
   setIsOpen} = useStoreData()
 
   const {selectedGroup} = CategoryDataProvider();
@@ -224,12 +227,22 @@ console.log('filters ',appliedFilters)
     <div className="Store-Page">
 
      
+    <div className="store-sideFilter-wrapper" 
+    style={{width:sideFilterOn?'30%':'0%'}}>
+      
+          <div className="store-sideFilter" style={{opacity:sideFilterOn?1:0}}>
+                 <FilterSection
+              storeFilters={storeFilters}
+              setStoreFilters={setStoreFilters}
+              setAppliedFilters={setAppliedFilters}
+              setSideFilterOn={setSideFilterOn} />
+          </div>
+         </div>
 
-
-     <div className={`storePage-overlay ${storeOverlayActive ? 'is-visible' : ''}`} 
+    <div className={`storePage-overlay ${storeOverlayActive ? 'is-visible' : ''}`} 
      onClick={() => {setIsOpen(false),setPartialPill(false)}}>
       
-      </div> 
+      </div>  
 
     
 {/*  <StoreBanner/>   */}
@@ -241,7 +254,7 @@ console.log('filters ',appliedFilters)
 
  
 
-  <div className={`store-header-wrapper ${isAtTop?'':'store-header-visible'}`}>
+  <div className='store-header-wrapper'>
 
 <StoreHeader 
 partialPill={partialPill}
@@ -258,19 +271,23 @@ setPartialPill={setPartialPill}/>
         
 
       
-       <div className="store-page-heading-wrapper">
+       <div className="store-page-title-wrapper">
 
        
 
       
  
-<div className="store-page-title-wrapper">
+<div className="store-page-title-content">
   
    <div className="store-page-title">
+
+    <div className="side-filter-btn-wrapper" onClick={()=>setSideFilterOn(true)}>
+      < HiOutlineAdjustmentsHorizontal size={20}  />
+      Filters</div>
     
-    <span className="selected-group"> {currentCategory?selectedGroup: 'THE STORE'}</span>
+    <span className="selected-group"> {currentCategory?selectedGroup: 'STORE'}</span>
     <span className="selected-category">
-     {currentCategory?currentCategory.replace(/-/g, ' '):'Browse All '} 
+     {currentCategory?currentCategory.replace(/-/g, ' '):'Explore All '} 
     </span>
      
    </div>
@@ -301,6 +318,15 @@ setPartialPill={setPartialPill}/>
 
         <main className="store-content">
          
+     {/*     <div className="store-sideFilter-wrapper" style={{transform:sideFilterOn?'translateX(0%)':'translateX(-100%)'}}>
+          <div className="store-sideFilter">
+                 <FilterSection
+              storeFilters={storeFilters}
+              setStoreFilters={setStoreFilters}
+              setAppliedFilters={setAppliedFilters}
+              setSideFilterOn={setSideFilterOn} />
+          </div>
+         </div> */}
        
          <div className="side-filter">
               <FilterSection
@@ -314,7 +340,7 @@ setPartialPill={setPartialPill}/>
             
 
             <div className="productList-head-wrapper">
-                 <div className="store-page-heading">
+
             
                  
                     <div className='product-count-div'>
@@ -336,7 +362,7 @@ setPartialPill={setPartialPill}/>
 </div>
 
   
-              </div>
+          
 
             
 

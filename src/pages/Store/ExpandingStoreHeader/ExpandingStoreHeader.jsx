@@ -45,7 +45,7 @@ const getLayoutClass = (count) => {
 // Guard: Current items based on activeGroup
 const currentItems = categorizedData && activeGroup ? categorizedData[activeGroup] : [];
 
- console.log('curret categary info ' , currentItems)
+
 
 
 

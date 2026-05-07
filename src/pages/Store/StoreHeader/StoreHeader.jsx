@@ -47,9 +47,9 @@ const handlePartialToggle = () => {
   return (
     <div className='store-Header'>
          <div className='store-head-menu-wrapper'>
-          <div className={`store-head-menu ${isOpen || partialPill?'store-menu-open':''}`} onClick={handlePartialToggle} >
+         {/*  <div className={`store-head-menu ${isOpen || partialPill?'store-menu-open':''}`} onClick={handlePartialToggle} >
           <MenuCancel  state={partialPill}  />
-        </div>
+        </div> */}
         
          </div>
          <div className={`store-middle-head-wrapper ${isOpen || partialPill?'middle-head-active':''}`}>
