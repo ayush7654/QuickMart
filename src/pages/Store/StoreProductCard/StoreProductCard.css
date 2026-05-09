@@ -360,7 +360,10 @@ color:white;
   width: 100%;
   aspect-ratio: 1/1;
   border: 1px solid transparent;
+  border: 1px solid rgb(230, 230, 230,.85);
   background-color: rgb(242, 242, 242);
+ background-color: rgb(245, 245, 245,.8);
+ background-color: white;
   position: relative;
   display: grid;
   place-items: center;
@@ -370,15 +373,15 @@ color:white;
 }
 
 .store-ProductCard:hover .sp-img-wrapper {
-  border: 1px solid rgb(0,50,255);
+/*   border: 1px solid rgb(0,50,255); */
 
 }
 
 .sp-img {
-  width: 100%;
+  width: 80%;
   position: absolute;
-  top: 0;
-  left: 0;
+/*   top: 0;
+  left: 0; */
   transition: opacity 0.3s ease;
 }
 

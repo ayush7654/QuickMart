@@ -1,8 +1,13 @@
 import React ,{useState} from 'react'
 import './GridToggle.css'
-export default function GridToggle({onChange,activeLayout,setActiveLayout,gridOptions}) {
+export default function GridToggle({onChange,activeLayout,setActiveLayout}) {
 
-   
+       const gridOptions = [
+      /*   { id: 2, label: '2x2', icon: 'StoreMedia/grid2x2.png' }, */
+        { id: 3, label: '3x3', icon: 'StoreMedia/grid3x3.png' },
+        { id: 4, label: '4x4', icon: 'StoreMedia/grid4x4.png' },
+      ];
+
     
       const handleSelect = (id) => {
         setActiveLayout(id);

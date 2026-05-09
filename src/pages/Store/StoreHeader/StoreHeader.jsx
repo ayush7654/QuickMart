@@ -3,8 +3,10 @@ import MenuCancel from '../../../components/MenuCancel/MenuCancel'
 import ExpandingStoreHeader from '../ExpandingStoreHeader/ExpandingStoreHeader'
 import { LayoutPanelLeft } from 'lucide-react'
 import { useStoreData } from '../../../components/StoreDataContext'
+import { HiOutlineAdjustmentsHorizontal } from 'react-icons/hi2'
+import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
 import './StoreHeader.css'
-export default function StoreHeader({partialPill,setPartialPill}) {
+export default function StoreHeader({partialPill,setPartialPill,setSideFilterOn}) {
 
 
 
@@ -47,9 +49,12 @@ const handlePartialToggle = () => {
   return (
     <div className='store-Header'>
          <div className='store-head-menu-wrapper'>
-         {/*  <div className={`store-head-menu ${isOpen || partialPill?'store-menu-open':''}`} onClick={handlePartialToggle} >
+          <div className={`store-head-menu ${isOpen || partialPill?'store-menu-open':''}`} onClick={handlePartialToggle} >
           <MenuCancel  state={partialPill}  />
-        </div> */}
+        </div> 
+            <div className="side-filter-btn-wrapper" onClick={()=>setSideFilterOn(true)}>
+      <  HiOutlineAdjustmentsVertical size={20}/>
+      Filters</div>
         
          </div>
          <div className={`store-middle-head-wrapper ${isOpen || partialPill?'middle-head-active':''}`}>

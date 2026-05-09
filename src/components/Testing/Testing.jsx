@@ -13,6 +13,8 @@ const TopBrands= [
   'BrandLogo5.webp',
   'BrandLogo6.webp',
   'BrandLogo7.webp',
+  'BrandLogo8.webp',
+  'BrandLogo9.webp',
 ]
 
 
@@ -22,12 +24,7 @@ export default function Testing() {
 
   return (
 <div className="testing-div">
- <div className="brands-section">
-{TopBrands.map((brand,index)=>
-<div key={index} className="brand-wrapper" style={{backgroundImage:`url(${brand})`}}>
 
-</div>)}
- </div>
 
 </div>
 

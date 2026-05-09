@@ -33,17 +33,3 @@
 
 }
 
-.brands-section{
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.brand-wrapper{
-  width: 10rem;
-  height: 10rem;
-  background-position: center;
-  background-size: cover;
-  opacity: .5;
-}

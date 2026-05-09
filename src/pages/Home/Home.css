@@ -136,7 +136,7 @@ padding-bottom: 2rem;
     border: 0px solid red;
     width: 85%;
     display: grid;
-
+ min-height: 50vh;
   
   /* Default: 4 equal columns covering the full width */
   grid-template-columns: repeat(4, 1fr); 

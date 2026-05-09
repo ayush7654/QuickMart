@@ -20,12 +20,12 @@
   justify-content: center;
   align-items: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.5);
+
   backdrop-filter: blur(10px);
 
  background-color: rgba(215, 215, 215, 0.5);
  color:rgb(0, 0, 0);
-box-shadow: inset 0px 0px 10px rgba(200,200,200, 0.5);
+/* box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.5); */
   transition: 
     width 0.8s cubic-bezier(0.5, 1, 0.36, 1),
     height 0.8s cubic-bezier(0.5, 1, 0.36, 1),
@@ -41,7 +41,7 @@ box-shadow: inset 0px 0px 10px rgba(200,200,200, 0.5);
   height: calc(95vh - 15px);
   border-radius: 12px;
   cursor: default;
-  background-color: rgba(255, 255, 255, 0.65);
+  background-color: rgba(255, 255, 255);
   
   /* Horizontal offset, Vertical offset, Blur radius, Spread, Color */
 box-shadow: inset 0px 0px 10px rgba(115, 115, 115, 0.5);

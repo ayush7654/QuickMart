@@ -19,6 +19,7 @@ import { useStoreData } from "../../components/StoreDataContext";
 import './Home.css';
 import AppleScalingWindow from "./AppleScalingWindow/AppleScalingWindow";
 import { Check } from 'lucide-react';
+import BrandsSection from "../../components/BrandsSection/BrandsSection";
 
 
 
@@ -43,48 +44,26 @@ const {isAtTop} = useStoreData();
          
  <ScrollingAnimation isAtTop={isAtTop}/> 
  
-</div>  {/* UNcomment this */}
+</div>  
       <div className="Home-scroll-content">
-      
+        
        <NewArrivals/>
-        <DiscountProducts/>
+       
+     
         <Collections/> 
-        
+         <AppleScalingWindow/>
        <TrendingComponent />
-                {/*    <AppleProducts/> */}
+      
         
-      <AppleScalingWindow/>
+      <DiscountProducts/>
         
            <div className="explore-range-section">
             <div className="explore-range-header">Explore Our Range</div>
    <ExploreCategory/>
            </div>
-         
-              {/*  <Categories/> */}
-                
-                
-                
-
-                
- 
-
-                          
-           
-         
- 
+  
    
-    
-     
-    
-    
-  {/*    <FeaturedCategories/>  */}
-
-
-
-   
-     
-    <BrandCarousel/>
-        
+          <BrandsSection/>
       <HomeFooter/>
             </div>
    

@@ -31,6 +31,7 @@ import AppliedFilters from "./AppliedFilters/AppliedFilters";
 import StoreSorting from "./StoreSorting/StoreSorting";
 import StoreHeader from "./StoreHeader/StoreHeader";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
+import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
 
 
 export default function Store() {
@@ -66,14 +67,9 @@ const [partialPill,setPartialPill] = useState(false);
   const { minPrice, setMinPrice, maxPrice, setMaxPrice,storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount,appliedFilters,setAppliedFilters,setStoreFilterColors} = useStoreFilter();
 
 
-   const [activeLayout, setActiveLayout] = useState(3);
+   const [activeLayout, setActiveLayout] = useState(4);
     
-      const gridOptions = [
-        { id: 2, label: '2x2', icon: 'StoreMedia/grid2x2.png' },
-        { id: 3, label: '3x3', icon: 'StoreMedia/grid3x3.png' },
-        { id: 4, label: '4x4', icon: 'StoreMedia/grid4x4.png' },
-      ];
-
+  
 
 
    const [hide, setHide] = useState(false);
@@ -258,7 +254,8 @@ console.log('filters ',appliedFilters)
 
 <StoreHeader 
 partialPill={partialPill}
-setPartialPill={setPartialPill}/>
+setPartialPill={setPartialPill}
+setSideFilterOn={setSideFilterOn}/>
 
 
       </div> 
@@ -281,9 +278,9 @@ setPartialPill={setPartialPill}/>
   
    <div className="store-page-title">
 
-    <div className="side-filter-btn-wrapper" onClick={()=>setSideFilterOn(true)}>
+{/*     <div className="side-filter-btn-wrapper" onClick={()=>setSideFilterOn(true)}>
       < HiOutlineAdjustmentsHorizontal size={20}  />
-      Filters</div>
+      Filters</div> */}
     
     <span className="selected-group"> {currentCategory?selectedGroup: 'STORE'}</span>
     <span className="selected-category">
@@ -298,7 +295,7 @@ setPartialPill={setPartialPill}/>
    <GridToggle
    activeLayout={activeLayout}
    setActiveLayout={setActiveLayout}
-   gridOptions={gridOptions}/>
+   />
    </div>
 
   
@@ -317,16 +314,6 @@ setPartialPill={setPartialPill}/>
  
 
         <main className="store-content">
-         
-     {/*     <div className="store-sideFilter-wrapper" style={{transform:sideFilterOn?'translateX(0%)':'translateX(-100%)'}}>
-          <div className="store-sideFilter">
-                 <FilterSection
-              storeFilters={storeFilters}
-              setStoreFilters={setStoreFilters}
-              setAppliedFilters={setAppliedFilters}
-              setSideFilterOn={setSideFilterOn} />
-          </div>
-         </div> */}
        
          <div className="side-filter">
               <FilterSection

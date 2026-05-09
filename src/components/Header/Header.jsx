@@ -100,8 +100,7 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
    
    const headerTranslucent = !isAtTop && location.pathname==='/';
 
-   console.log( 'transparent', headerTransparent)
-   console.log( 'Translucent', headerTranslucent)
+
 
  
 

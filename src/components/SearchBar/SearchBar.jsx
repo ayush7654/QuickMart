@@ -88,34 +88,33 @@ function getHighlightedText(text, highlight) {
 
 
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://dummyjson.com/products/categories');
-        const result = await response.json();
-        setSuggestions(result);
-      } catch (er) {
-        console.error(er);
-      }
-    };
+ // Fetch categories ONCE on mount
+useEffect(() => {
+  const fetchCategories = async () => {
+    try {
+      const response = await fetch('https://dummyjson.com/products/categories');
+      const result = await response.json();
+      setSuggestions(result);
+    } catch (er) {
+      console.error(er);
+    }
+  };
+  fetchCategories();
+}, []); // Empty array = run only once
 
-    fetchData();
-  }, [searchTerm, suggestionBox]);
-
-
-    useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://dummyjson.com/products?limit=0');
-        const result = await response.json();
-        setProducts(result.products);
-      } catch (er) {
-        console.error(er);
-      }
-    };
-
-    fetchData();
-  }, [searchTerm, suggestionBox]);
+// Fetch products ONCE on mount
+useEffect(() => {
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch('https://dummyjson.com/products?limit=0');
+      const result = await response.json();
+      setProducts(result.products);
+    } catch (er) {
+      console.error(er);
+    }
+  };
+  fetchProducts();
+}, []); // Empty array = run only once
 
   const suggestionComp = suggestions
     ? suggestions.filter((item) =>
@@ -123,7 +122,7 @@ function getHighlightedText(text, highlight) {
       )
     : null;
 
-const productsComp = filterAndRankByTitle(products,searchTerm)
+const productsComp = products ? filterAndRankByTitle(products, searchTerm) : [];
 
 
 

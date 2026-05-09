@@ -61,7 +61,7 @@ export default function DiscountProducts() {
         <span className='view-collection-btn'>View Collection →</span>
       </div>
       
-      <div className="home-Products-container">
+      <div key={homeProducts.length} className="home-Products-container">
         {/* 3. Map directly over the merged array */}
         {homeProducts.map((product,index) => (
            <motion.div

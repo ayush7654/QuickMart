@@ -35,13 +35,17 @@ transition: color .3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 2rem;
   height: 100%;
   padding: 10px 0px;
   z-index: 999;
+       font-family: 'Inter';
+     font-family: sans-serif;
+     font-size: 14px;
 
 
 }
+
 
 .store-catelog-btn{
   
@@ -59,22 +63,24 @@ transition: color .3s ease;
  color:rgb(255, 255, 255);
  font-family: 'Inter';
  font-size: 14px;
- font-weight: 400;
-
+ font-weight: 600;
+   font-family: "Questrial", sans-serif; 
+letter-spacing: .5px;
    cursor: pointer;
     transition: all .3s ease;
 
     background-color: rgb(0,100,255);
-    box-shadow: inset 0px 0px 10px rgba(255, 255, 255);
+   box-shadow: inset 0px 0px 10px rgba(255, 255, 255); 
    
 }
 
 .store-catelog-btn:hover{
   background-color: rgb(0,100,255,.7);
   background-color: transparent;
-
-    box-shadow: inset 0px 0px 10px rgba(0, 80, 255, 0.5);
+  
+    box-shadow: inset 0px 0px 10px rgba(0, 80, 255, 0.5); 
   color:rgb(0,100,255);
+
 
    
 }
@@ -106,8 +112,9 @@ transition: color .3s ease;
   backdrop-filter: blur(10px);
 
  background-color: rgba(215, 215, 215, 0.5);
+ 
  color:rgb(0, 0, 0);
-box-shadow: inset 0px 0px 10px rgba(180, 180, 180, 0.5);
+/* box-shadow: inset 0px 0px 10px rgba(180, 180, 180, 0.5); */
  transition: all .3s ease;
  cursor: pointer;
 }
