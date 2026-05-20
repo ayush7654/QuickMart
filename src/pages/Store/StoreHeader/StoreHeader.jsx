@@ -63,9 +63,9 @@ const handlePartialToggle = () => {
      <div className="store-middle-head">Wishlist</div>
      <div className="store-middle-head">About</div>
          </div>
-  <ExpandingStoreHeader 
+ <ExpandingStoreHeader 
   partialPill={partialPill}
-  />  
+  />   
          <div className="store-catelog-btn-wrapper">
 
   <div className={`store-catelog-btn ${isOpen || partialPill?'store-catelog-active':''}`} onClick={handleExpandedToggle}>
@@ -78,7 +78,7 @@ const handlePartialToggle = () => {
 
     
 />
-  Product Catelog
+   Product Catelog 
   </div>
 
 </div>

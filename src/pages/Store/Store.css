@@ -153,31 +153,6 @@ letter-spacing: 1px;
 }
 
 
-.side-filter-btn-wrapper{
-/*   position: absolute;
-  left: 0rem;
-  bottom: 1rem;  */
-  display: flex;
-  align-items: center;
-  gap: 5px;
-letter-spacing: 1px;
-  height: 2.5rem;
- padding: 6px 16px; 
-  border-radius: 100px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color:white;
-  box-shadow: inset 0px 0px 10px white;
-  transition: all .3s ease;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.side-filter-btn-wrapper:hover{
-  background-color: transparent;
-  box-shadow: inset 0px 0px 10px rgba(75, 75, 75, 0.5);
-  color:black;
-  backdrop-filter: blur(10px);
-}
 
 .store-grid-toggle{
   position: absolute;

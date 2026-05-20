@@ -246,7 +246,7 @@ console.log('filters ',appliedFilters)
 
 
 
-  <HomeIntro/>  
+{/*   <HomeIntro/>   */}
 
  
 

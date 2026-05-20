@@ -2,7 +2,7 @@ import { useEffect, useRef, useState ,useLayoutEffect} from "react";
 import './ExpandingStoreHeader.css'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import { motion } from "framer-motion";
 import StoreSorting from "../StoreSorting/StoreSorting";
 import CategoryDataProvider from "./CategoryDataProvider";
 import { useStoreData } from "../../../components/StoreDataContext";
@@ -29,6 +29,37 @@ const storeMenuGrids= [
   {name:'Connect with us', backgroundImage:'connectImg.jpg'},
 ]
 
+
+
+const listContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      // Delay before the *first* child text animation begins
+      delayChildren: 0.1, 
+      // Delay between each child's text animation starting (the stagger effect)
+      staggerChildren: 0.08, 
+    },
+  },
+};
+
+// 2. The Text Animation Variants (This is what you requested)
+const textRevealVariants = {
+  hidden: { 
+    y: "100%", // Starts completely below the visible area
+  },
+  visible: { 
+    y: "0%", // Rises into position
+    transition: { 
+      // A spring transition feels very natural for UI movement
+      type: "spring", 
+      stiffness: 180, 
+      damping: 24,
+    },
+  },
+};
+
 // Automatically set the first group as active once data arrives
 useEffect(() => {
   if (!loading && categorizedData && !activeGroup) {
@@ -37,8 +68,13 @@ useEffect(() => {
 }, [loading, categorizedData, activeGroup]);
 
 // Helper to determine grid class
-const getLayoutClass = (count) => {
+/* const getLayoutClass = (count) => {
   const layouts = { 1: "layout-hero", 3: "layout-triad", 4: "layout-quad", 5: "layout-mosaic" };
+  return layouts[count] || "layout-standard";
+}; */
+
+const getLayoutClass = (count) => {
+  const layouts = { 0: "layout-1", 1: "layout-2", 2: "layout-3", 3: "layout-4",4: "layout-5" ,5: "layout-6" ,6: "layout-7" };
   return layouts[count] || "layout-standard";
 };
 
@@ -75,7 +111,7 @@ useEffect(() => {
   }
 }, [activeGroup, isOpen, visitedGroups]);
 
-console.log('partial pill' , partialPill)
+
   return (
      <div 
           className={`floating-pill ${isOpen ? "pill-expanded" : ""} ${partialPill?'partial':''}`}
@@ -93,16 +129,41 @@ console.log('partial pill' , partialPill)
       <p>Arranging Categories...</p>
     </div>
   ) : (
-    <>
+    <div className="category-layout-content">
       {/* Left Section: 30% Sidebar */}
-      <div className="subgroup-sidebar">
-      { !partialPill?  Object.keys(categorizedData).map((groupName) => (
+      <div className="subgroup-sidebar-wrapper">
+       {(isOpen || partialPill) && 
+       <motion.div 
+          variants={listContainerVariants}
+            initial="hidden"
+            animate="visible"
+       className="subgroup-sidebar">
+            { !partialPill?  Object.keys(categorizedData).map((groupName) => (
           <div
             key={groupName}
             className={`subgroup-item ${activeGroup === groupName ? "active" : ""} `}
             onMouseEnter={() => setActiveGroup(groupName)}
+            
           >
-            <span className="subgroup-text">{groupName}</span>
+               {/* THE MASK (Essential for "reveal" animations)
+                                This div masks the text when it's below y:100% */}
+                            <div style={{ overflow: "hidden", display: "inline-block", verticalAlign: "bottom" }}>
+                              
+                              {/* THE ANIMATING TEXT (The child that reacts to the orchestrator) */}
+                              <motion.span 
+                                className="subgroup-text" 
+                                // This tells the child: 'look at my parent for hidden/visible signals'
+                                variants={textRevealVariants}
+                                style={{ 
+                                  
+                                  display: "block", // Required for transform: translateY to work correctly
+                                }}
+                              >
+                                {groupName}
+                              </motion.span>
+            
+                            </div>
+          
           </div>
         ))
 :
@@ -119,6 +180,8 @@ console.log('partial pill' , partialPill)
 ))
         
         }
+        </motion.div>}
+    
 
 
 
@@ -131,7 +194,7 @@ console.log('partial pill' , partialPill)
     */}
 
    
-     {!partialPill? Object.entries(categorizedData).map(([groupName, items]) => {
+     {!partialPill? Object.entries(categorizedData).map(([groupName, items],id) => {
       const isVisited = visitedGroups.includes(groupName);
       const isActive = activeGroup === groupName;
 
@@ -140,8 +203,8 @@ console.log('partial pill' , partialPill)
 
       return (
         <div 
-          key={groupName} 
-          className={`grid-wrapper ${getLayoutClass(items.length)} ${isActive ? 'visible' : 'hidden'}`}
+          key={groupName}    /* CREATE 8 NEW LAYOUTS ,ADD ID TO THE CATEGORY LIST IN ITS COMPONENT, CHNAGE COUNT TO ID ,  */
+          className={`grid-wrapper ${getLayoutClass(id)} ${isActive ? 'visible' : 'hidden'}`}
         >
           {items.map((item, index) => (
             <div 
@@ -151,7 +214,8 @@ console.log('partial pill' , partialPill)
               onClick={()=>{handleTypeFilter(item),setIsOpen(false)}}
             >
               <div className="card-overlay">
-                <span className='category-name'>{item.name}</span>
+                <span className='category-name'>{item.name}{/* {id} */}</span>
+                {/* <span className='category-name'> card no: {index} </span> */}
               </div>
             </div>
           ))}
@@ -177,7 +241,7 @@ console.log('partial pill' , partialPill)
   </div>}
 
   </div>
-    </>
+    </div>
   )}
 </div>
   

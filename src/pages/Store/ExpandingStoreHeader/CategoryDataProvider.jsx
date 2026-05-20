@@ -3,43 +3,55 @@ import { useStoreData } from '../../../components/StoreDataContext';
 
 const SUBGROUP_MAPPING = {
   "Clothing & Apparel": [
-      { slug: "womens-dresses", img: "women-dresses2.jpg" },
-    { slug: "mens-shirts", img: "mens-shirt.jpg" },
-
-    { slug: "tops", img: "women-top.jpg" },
-    { slug: "mens-shoes", img: "Men-Shoes1.jpg" },
-    { slug: "womens-shoes", img: "women-shoes.jpg" }
+      
+    { slug: "tops", img: "Women-Tops.webp" },
+ { slug: "womens-shoes", img: "Women-Shoes2.jpg" },
+ { slug: "mens-shoes", img: "Men-Shoes6.jpg" },
+    { slug: "7", img: "NewCollection1.jpg" },
+     
+    
+   
+       { slug: "womens-dresses", img: "Women-Dress.jpg" },
+ { slug: "6", img: "SalePercent.jpg" },
+   
+     { slug: "mens-shirts", img: "Men-Shirts2.jpg" },
+    
+   
+  
+   
   ],
   "Accessories & Jewelry": [
-    { slug: "mens-watches", img: "men-watch3.jpg" },
-     { slug: "sunglasses", img: "sunglasses2.jpg" },
-    { slug: "womens-watches", img: "women-watch4.jpg" },
-    { slug: "womens-jewellery", img: "women-jewellery3.jpg" },
-    { slug: "womens-bags", img: "WomenBag2.jpg" },
+    { slug: "mens-watches", img: "Mens-Watch2.webp" },
+     { slug: "womens-watches", img: "Womens-watch.jpeg" },
+    { slug: "sunglasses", img: "sunglasses4.webp" },
+    { slug: "womens-jewellery", img: "Jewellery.webp" },
+    { slug: "womens-bags", img: "Women-Bag.webp" },
    
     
   ],
   "Electronics & Tech": [
-    { slug: "laptops", img: "LaptopImage.jpg" },
-    { slug: "mobile-accessories", img: "MobileAccessary.jpg" },
-    { slug: "smartphones", img: "smartphones3.jpg" },
-    { slug: "tablets", img: "Tablet.jpg" }
+    { slug: "laptops", img: "laptops2.jpg" },
+    { slug: "mobile-accessories", img: "MobileAccessary3.jpg" },
+    { slug: "smartphones", img: "smartphones.jpg" },
+    { slug: "tablets", img: "Tablet3.jpg" }
   ],
   "Beauty & Wellness": [
-     { slug: "fragrances", img: "fragrance.jpg" },
+    
     { slug: "beauty", img: "beauty.jpg" },
+     { slug: "fragrances", img: "fragrance.jpg" },
     { slug: "skin-care", img: "skincare.jpg" }
   ],
   "Home & Living": [
       { slug: "home-decoration", img: "home-decoration.jpg" },
     { slug: "furniture", img: "furniture.jpg" },
   
-    { slug: "kitchen-accessories", img: "kitchen-accessories2.jpg" }
+    { slug: "kitchen-accessories", img: "Kitchen.jpg" }
   ],
   "Automotive & Outdoors": [
        { slug: "sports-accessories", img: "sports.jpg" },
-    { slug: "motorcycle", img: "motocycle3.jpg" },
-    { slug: "vehicle", img: "car.jpg" }
+    { slug: "vehicle", img: "Car2.avif" },
+    { slug: "motorcycle", img: "Motorbike.jpg" },
+    { slug: "fitness", img: "Fitness2.webp" }
  
   ],
   "Daily Essentials": [

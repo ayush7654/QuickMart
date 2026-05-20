@@ -1,0 +1,34 @@
+.bento-image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 200px;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bento-image-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #1a1a1a; /* Prevents harsh flash before image decodes */
+}
+
+.bento-pure-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Smooth scale-back when hover ends */
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+/* Interaction Link: Hovering the masked tile scales the inner image */
+.bento-image-tile:hover .bento-pure-img {
+  transform: scale(1.05);
+}
+
+/* Grid Spans */
+.tile-medium { grid-column: span 2; grid-row: span 1; }
+.tile-wide   { grid-column: span 2; grid-row: span 1; }
+.tile-tall   { grid-column: span 1; grid-row: span 2; }
+.tile-large  { grid-column: span 2; grid-row: span 2; }

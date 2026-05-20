@@ -98,7 +98,8 @@ overflow: hidden;/* This hides the other 3 elements */
 .carousel-item span {
  
 
-  color: rgb(0,50,255);
+  color: rgb(0,100,255);
+
   font-weight: 600;
 }
 
