@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useStoreData } from '../../../components/StoreDataContext';
 
+
 const SUBGROUP_MAPPING = {
   "Clothing & Apparel": [
       
@@ -74,17 +75,7 @@ const CategoryDataProvider = () => {
       ) 
     : null;
 
- /*  const [selectedSlug, setSelectedSlug] = useState(null);
 
-  const selectCategory = (slug) => {
-    setSelectedSlug(slug);
-    console.log('slug selected')
-   
-  };
-
-  const selectedGroup = Object.keys(categorizedData || {}).find(group => 
-  categorizedData[group].some(item => item.slug === selectedSlug)
-); */
 
   useEffect(() => {
     const getOrganizedCategories = async () => {

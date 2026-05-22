@@ -78,7 +78,7 @@ const handlePartialToggle = () => {
 
     
 />
-   Product Catelog 
+ {/*   Product Catelog  */}
   </div>
 
 </div>

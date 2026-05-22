@@ -2,23 +2,21 @@ import { useEffect, useRef, useState ,useLayoutEffect} from "react";
 import './ExpandingStoreHeader.css'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { motion } from "framer-motion";
+import { motion, AnimatePresence  } from "framer-motion";
 import StoreSorting from "../StoreSorting/StoreSorting";
 import CategoryDataProvider from "./CategoryDataProvider";
 import { useStoreData } from "../../../components/StoreDataContext";
+import { FaGem } from "react-icons/fa";
+import { PiTShirtFill } from "react-icons/pi";
+import { MdLaptopMac } from "react-icons/md";
+import { GiLipstick } from "react-icons/gi";
+import { PiDeskFill } from "react-icons/pi";
+import { FaRunning } from "react-icons/fa";
+import { GiGrapes } from "react-icons/gi";
+
 gsap.registerPlugin(ScrollTrigger);
 
 
-export default function ExpandingStoreHeader({partialPill}) {
-
-const {handleTypeFilter,isOpen, setIsOpen,currentCategory} = useStoreData()
-
- 
-const { categorizedData, loading} = CategoryDataProvider();
-const [activeGroup, setActiveGroup] = useState(null);
-
-/* const [partialPill,setPartialPill] = useState(false) */
-const [hoveredIndex, setHoveredIndex] = useState(null);
 
 
 const storeMenuOptions=['Payment Methods','Cancel Order' ,'Become a Seller' ,'FAQ']
@@ -29,6 +27,124 @@ const storeMenuGrids= [
   {name:'Connect with us', backgroundImage:'connectImg.jpg'},
 ]
 
+const CATEGORY_ICONS = [
+  {
+    subgroup: ["Clothing" , "Apparel"],
+    description:
+      "Explore premium fashion collections featuring trendy outfits, stylish footwear, seasonal essentials, and modern apparel designed for every lifestyle and occasion.",
+    Icon: PiTShirtFill
+  },
+
+  {
+    subgroup:[ "Accessories" , "Jewelry"],
+    description:
+      "Discover luxury watches, elegant jewelry, fashionable handbags, sunglasses, and statement accessories crafted to enhance your personal style effortlessly.",
+    Icon: FaGem
+  },
+
+  {
+    subgroup: ["Electronics" , "Tech"],
+    description:
+      "Browse advanced laptops, smartphones, tablets, accessories, and innovative technology products built to improve productivity, entertainment, and everyday convenience.",
+    Icon: MdLaptopMac
+  },
+
+  {
+    subgroup: ["Beauty","Wellness"],
+    description:
+      "Find skincare products, premium fragrances, wellness essentials, and beauty collections carefully selected to support confidence, self-care, and healthy routines.",
+    Icon: GiLipstick
+  },
+
+  {
+    subgroup:[ "Home" , "Living"],
+    description:
+      "Upgrade your interiors with stylish furniture, home décor, kitchen accessories, and modern lifestyle essentials created for comfortable everyday living.",
+    Icon: PiDeskFill
+  },
+
+  {
+    subgroup:[ "Automotive" , "Outdoors"],
+    description:
+      "Shop vehicles, motorcycles, outdoor gear, fitness equipment, and performance accessories designed for adventure, active lifestyles, and everyday mobility needs.",
+    Icon: FaRunning
+  },
+
+  {
+    subgroup: ["Daily Essentials"],
+    description:
+      "Get groceries, household products, and everyday necessities conveniently organized to simplify routines and support a more comfortable daily lifestyle experience.",
+    Icon: GiGrapes
+  }
+];
+
+
+const gridContainerVariants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.98,
+    filter: "blur(10px)",
+  },
+
+  visible: {
+    opacity: 1,
+    scale: 1,
+    filter: "blur(0px)",
+
+    transition: {
+      duration: 0.45,
+
+      staggerChildren: 0.08,
+      delayChildren: 0.08,
+    },
+  },
+
+  exit: {
+    opacity: 0,
+    scale: 0.96,
+    filter: "blur(8px)",
+
+    transition: {
+      duration: 0.55,
+
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+
+      when: "afterChildren",
+    },
+  },
+};
+
+const tileVariants = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+    scale: 0.92,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+
+    transition: {
+      type: "spring",
+      stiffness: 120,
+      damping: 18,
+    },
+  },
+
+  exit: {
+    opacity: 0,
+    y: -30,
+    scale: 0.9,
+
+    transition: {
+      duration: 0.35,
+      ease: "easeInOut",
+    },
+  },
+};
 
 
 const listContainerVariants = {
@@ -60,26 +176,61 @@ const textRevealVariants = {
   },
 };
 
-// Automatically set the first group as active once data arrives
-useEffect(() => {
-  if (!loading && categorizedData && !activeGroup) {
-    setActiveGroup(Object.keys(categorizedData)[0]);
-  }
-}, [loading, categorizedData, activeGroup]);
 
-// Helper to determine grid class
-/* const getLayoutClass = (count) => {
-  const layouts = { 1: "layout-hero", 3: "layout-triad", 4: "layout-quad", 5: "layout-mosaic" };
-  return layouts[count] || "layout-standard";
-}; */
+export default function ExpandingStoreHeader({partialPill}) {
+
+const {handleTypeFilter,isOpen, setIsOpen,currentCategory} = useStoreData()
+
+ 
+const { categorizedData, loading} = CategoryDataProvider();
+const [activeGroup, setActiveGroup] = useState(null);
+
+const [selectedSubGroupId,setSelectedSubGroupId] =useState(0)
+const [selectedCategoryId,setSelectedCategoryId] = useState(0)
+/* const [partialPill,setPartialPill] = useState(false) */
+const [hoveredIndex, setHoveredIndex] = useState(0);
+
+const [refreshKey, setRefreshKey] = useState(0);
+
+
+useEffect(() => {
+
+  if (!loading && categorizedData) {
+
+    /* CLOSED */
+    if (!isOpen) {
+      setActiveGroup(null);
+      
+      return;
+    }
+
+    const groups = Object.keys(categorizedData);
+
+    /* NO SELECTED CATEGORY */
+    if (selectedCategoryId === null) {
+      setActiveGroup(groups[0]);
+      
+    }
+
+    /* RESTORE SELECTED CATEGORY */
+    else {
+      setActiveGroup(groups[selectedCategoryId]);
+      setSelectedSubGroupId(selectedCategoryId)
+      
+    }
+
+  }
+
+}, [loading, categorizedData, isOpen, selectedCategoryId]);
+
 
 const getLayoutClass = (count) => {
   const layouts = { 0: "layout-1", 1: "layout-2", 2: "layout-3", 3: "layout-4",4: "layout-5" ,5: "layout-6" ,6: "layout-7" };
   return layouts[count] || "layout-standard";
 };
 
-// Guard: Current items based on activeGroup
-const currentItems = categorizedData && activeGroup ? categorizedData[activeGroup] : [];
+
+
 
 
 
@@ -109,9 +260,12 @@ useEffect(() => {
   if (isOpen && activeGroup && !visitedGroups.includes(activeGroup)) {
     setVisitedGroups((prev) => [...prev, activeGroup]);
   }
+
+  
 }, [activeGroup, isOpen, visitedGroups]);
 
 
+console.log('categorized data is ', categorizedData)
   return (
      <div 
           className={`floating-pill ${isOpen ? "pill-expanded" : ""} ${partialPill?'partial':''}`}
@@ -119,9 +273,12 @@ useEffect(() => {
         >
           <div className="pill-content">
     
-<div className="pill-space"></div>
+<div className="pill-space">
+
+</div>
 
 <div className={`category-layout ${isOpen || partialPill?'':'category-layout-hidden'}`}>
+
   {loading ? (
     /* Loading View: Prevents errors and keeps the pill from looking empty */
     <div className="layout-loader">
@@ -132,40 +289,33 @@ useEffect(() => {
     <div className="category-layout-content">
       {/* Left Section: 30% Sidebar */}
       <div className="subgroup-sidebar-wrapper">
+
+
+
+
        {(isOpen || partialPill) && 
-       <motion.div 
-          variants={listContainerVariants}
+       <div 
+          /* variants={listContainerVariants}
             initial="hidden"
-            animate="visible"
-       className="subgroup-sidebar">
-            { !partialPill?  Object.keys(categorizedData).map((groupName) => (
+            animate="visible" */
+       className="sub-group-icon-wrapper">
+            { !partialPill?  Object.keys(categorizedData).map((groupName,index) => {
+
+               /*  const Icon = SUBGROUP_MAPPING[groupName].Icon; */
+               const Icon = CATEGORY_ICONS[index].Icon;
+              return (
           <div
             key={groupName}
-            className={`subgroup-item ${activeGroup === groupName ? "active" : ""} `}
-            onMouseEnter={() => setActiveGroup(groupName)}
+            className={`sub-group-icon ${activeGroup === groupName ? "subgroup-active" : ""} `}
+            onClick={() => {setActiveGroup(groupName),setSelectedSubGroupId(index)}}
+          
+            
             
           >
-               {/* THE MASK (Essential for "reveal" animations)
-                                This div masks the text when it's below y:100% */}
-                            <div style={{ overflow: "hidden", display: "inline-block", verticalAlign: "bottom" }}>
-                              
-                              {/* THE ANIMATING TEXT (The child that reacts to the orchestrator) */}
-                              <motion.span 
-                                className="subgroup-text" 
-                                // This tells the child: 'look at my parent for hidden/visible signals'
-                                variants={textRevealVariants}
-                                style={{ 
-                                  
-                                  display: "block", // Required for transform: translateY to work correctly
-                                }}
-                              >
-                                {groupName}
-                              </motion.span>
-            
-                            </div>
+             <Icon size={20} />  
           
           </div>
-        ))
+        )})
 :
 
        storeMenuOptions.map((item, index) => (
@@ -173,17 +323,31 @@ useEffect(() => {
     key={index}
     className={`subgroup-item ${hoveredIndex === index ? 'active' : ''}`}
     onMouseEnter={() => setHoveredIndex(index)}
-    onMouseLeave={() => setHoveredIndex(null)}
+   /*  onMouseLeave={() => setHoveredIndex(null)} */
   >
     {item}
   </div>
 ))
         
         }
-        </motion.div>}
+        </div>}
     
 
-
+     { selectedSubGroupId !==null &&
+     <>
+      <div className="main-subgroup-head">
+       <span> {CATEGORY_ICONS[selectedSubGroupId].subgroup[0]}</span>
+    { CATEGORY_ICONS[selectedSubGroupId].subgroup.length>1 &&  <div>
+           <span className="gradient-text">&</span>
+        <span> {CATEGORY_ICONS[selectedSubGroupId].subgroup[1]}</span>
+       </div>}
+  
+   
+         </div>
+       <div className="para-subgroup-head">
+        {CATEGORY_ICONS[selectedSubGroupId].description}
+        </div></>
+     }
 
       </div>
 
@@ -192,34 +356,39 @@ useEffect(() => {
     {/* We map through ALL data, but we only physically render the HTML 
       if the group has been visited. This is the "Lazy Cache".
     */}
-
+   <AnimatePresence mode="wait">
    
      {!partialPill? Object.entries(categorizedData).map(([groupName, items],id) => {
       const isVisited = visitedGroups.includes(groupName);
       const isActive = activeGroup === groupName;
 
    
-      if (!isVisited) return null;
+        if (!isVisited || !isActive) return null;
 
       return (
-        <div 
+        <motion.div 
+           key={refreshKey}
+        variants={gridContainerVariants}
+        initial="hidden"
+        animate="visible"
           key={groupName}    /* CREATE 8 NEW LAYOUTS ,ADD ID TO THE CATEGORY LIST IN ITS COMPONENT, CHNAGE COUNT TO ID ,  */
           className={`grid-wrapper ${getLayoutClass(id)} ${isActive ? 'visible' : 'hidden'}`}
         >
           {items.map((item, index) => (
-            <div 
+            <motion.div 
+             variants={tileVariants}
               key={item.slug} 
               className={`category-card card-${index} ${item.name===currentCategory?'card-selected':''}`}
               style={{ backgroundImage: `url(StoreMedia/${item.backgroundImage})` }}
-              onClick={()=>{handleTypeFilter(item),setIsOpen(false)}}
+              onClick={()=>{handleTypeFilter(item),setIsOpen(false),setSelectedCategoryId(id),setSelectedSubGroupId(id)}}
             >
               <div className="card-overlay">
                 <span className='category-name'>{item.name}{/* {id} */}</span>
                 {/* <span className='category-name'> card no: {index} </span> */}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       );
     }) 
     
@@ -239,6 +408,7 @@ useEffect(() => {
             </div>
           ))}
   </div>}
+  </AnimatePresence>
 
   </div>
     </div>

@@ -115,27 +115,131 @@
 /* display: none;
  */
 padding: 8px;
- 
+border: 0px solid blue;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap:1rem;
+position: relative;
+}
 
+.sub-group-icon-wrapper{
+  width: 100%;
+ display: flex;
+ justify-content: space-between;
+ position: absolute;
+ top:1rem
+}
+.sub-group-icon {
+  width: 2.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
 
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+
+  border: 1px solid rgb(100, 100, 100);
+
+  color: rgb(100, 100, 100);
+  background: transparent;
+
+  transition:
   
- 
+   
+    background 0.15s ease,
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+/* SVG */
+.sub-group-icon svg {
+  transform: scale(1);
+
+  transition: transform 0.15s ease;
+}
+
+
+/* DEFAULT HOVER */
+.sub-group-icon:hover {
+  color: black;
+  border-color: black;
+}
+
+.sub-group-icon:hover svg {
+  transform: scale(1.2);
+}
+
+
+/* ACTIVE STATE */
+.sub-group-icon.subgroup-active {
+  border-color: transparent;
+
+  color: white;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 255, 0.7),
+    rgba(128, 0, 128, 0.7)
+  );
+}
+
+
+/* ACTIVE HOVER OVERRIDES */
+.sub-group-icon.subgroup-active:hover {
+  color: white;
+  border-color: transparent;
+}
+
+.sub-group-icon.subgroup-active:hover svg {
+  transform: scale(1);
+}
+.main-subgroup-head{
+  font-size: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    to right,
+    rgba(0, 100, 255, 0.9),
+    rgba(255, 100, 0, 0.9)
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+  color: transparent;
+
+  width: fit-content;
+}
+
+.para-subgroup-head{
+  font-family: 'Inter';
+  font-family: 'Raleway';
+  margin-bottom: 2rem;
+  line-height: 1.8rem;
+  
 }
 
 .subgroup-sidebar{
 
- height: 100%;
- width: 100%;
+width: 100%;
    border-radius: 12px;
    padding-left: 2rem;
      display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  
+  
 }
 
 .subgroup-item {
-  font-size: 1.5rem;
-  padding: 16px 0;
+  font-size: 1rem;
+  padding: 16px ;
   cursor: pointer;
   color: rgb(81, 81, 81);
   transition: all 0.3s ease;
@@ -145,6 +249,8 @@ border: 0px solid blue;
   text-transform: uppercase;
      transition: all .3s ease;
  font-family: 'Outfit';
+ border: 1px solid black;
+ border-radius: 10px;
 
    
 
@@ -156,7 +262,7 @@ border: 0px solid blue;
   
 /*   color:#fa5c40; */
 
-  transform: translateX(15px);
+ /*  transform: translateX(15px); */
 }
 
 
@@ -168,7 +274,7 @@ border: 0px solid blue;
   box-sizing: border-box;
   position: relative; /* Keep this */
   overflow: hidden; /* Prevent scaling cards from creating scrollbars */
-
+border: 0px solid red;
   border-radius: 12px;
 }
 
@@ -179,19 +285,19 @@ border: 0px solid blue;
   display: grid;
   gap: 8px;
   transition: opacity 0.3s ease;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
-  
+
   /* ADD THIS: Ensure the grid itself doesn't shift when cards scale */
   transform-origin: center center;
 }
-.grid-wrapper.visible {
+/* .grid-wrapper.visible {
   opacity: 1;
   pointer-events: auto;
   z-index: 10;
     inset: 5px; 
-}
-
+} */
+ 
 /* 1. HERO LAYOUT (1 Item) */
 /* Fills the entire 60% space */
 .layout-hero {
@@ -480,8 +586,8 @@ display: grid;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  opacity: 0;
-  clip-path: inset(var(--from-top, 100%) var(--from-right, 0%) var(--from-bottom, 0%) var(--from-left, 100%));
+/*   opacity: 0;
+  clip-path: inset(var(--from-top, 100%) var(--from-right, 0%) var(--from-bottom, 0%) var(--from-left, 100%)); */
   cursor: pointer;
   /* Optimization: Prevents the "jump" by pre-calculating the layer */
   will-change: transform, opacity, clip-path;
@@ -503,44 +609,6 @@ display: grid;
  border: 3px solid rgb(0,100,255);
 } 
 
-@keyframes dynamicBloom {
-  0% {
-    opacity: 0;
-    /* Starting from the corner variables you defined */
-    clip-path: inset(var(--from-top, 100%) var(--from-right, 0%) var(--from-bottom, 0%) var(--from-left, 100%));
-    transform: scale(0.92); /* Slightly deeper scale-down makes the growth feel longer */
-  }
-  100% {
-    opacity: 1;
-    clip-path: inset(0% 0% 0% 0%);
-    transform: scale(1);
-  }
-}
-/* 2. Assign Corners to specific cards */
-
-/* Card 0: Top-Left Bloom */
-.card-0 {
-  --from-top: 0%;
-  --from-right: 100%;
-  --from-bottom: 100%;
-  --from-left: 0%;
-  animation-delay: 0.05s;
-}
-
-/* Card 0 (The big Pillar on the left): Blooms from Top-Left */
-.is-active .card-0 { --from-top: 0%; --from-right: 100%; --from-bottom: 100%; --from-left: 0%; animation-delay: 0.3s; }
-
-/* Card 1 (Top Square): Blooms from Top-Right */
-.is-active .card-1 { --from-top: 0%; --from-right: 0%; --from-bottom: 100%; --from-left: 100%; animation-delay: 0.15s; }
-
-/* Card 2 (Bottom Square): Blooms from Bottom-Right */
-.is-active .card-2 { --from-top: 100%; --from-right: 0%; --from-bottom: 0%; --from-left: 100%; animation-delay: 0.2s; }
-
-/* Card 3 & 4 (Remaining): Bloom from Center for variety */
-.is-active .card-3, .is-active .card-4 { 
-  --from-top: 50%; --from-right: 50%; --from-bottom: 50%; --from-left: 50%; 
-  animation-delay: 0.25s; 
-}
 
 /* Move the background logic here */
 .category-card::before {
