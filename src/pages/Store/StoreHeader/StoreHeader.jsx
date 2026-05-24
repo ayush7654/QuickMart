@@ -5,7 +5,10 @@ import { LayoutPanelLeft } from 'lucide-react'
 import { useStoreData } from '../../../components/StoreDataContext'
 import { HiOutlineAdjustmentsHorizontal } from 'react-icons/hi2'
 import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
+import IconButton from '../../../components/IconButton/IconButton'
+import ScrollButton from '../../../components/ScrollingButton/ScrollingButton'
 import './StoreHeader.css'
+import { useSpring } from 'framer-motion';
 export default function StoreHeader({partialPill,setPartialPill,setSideFilterOn}) {
 
 
@@ -70,16 +73,21 @@ const handlePartialToggle = () => {
 
   <div className={`store-catelog-btn ${isOpen || partialPill?'store-catelog-active':''}`} onClick={handleExpandedToggle}>
 
-<LayoutPanelLeft 
+{/*  <LayoutPanelLeft 
   className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
   size={20} 
   strokeWidth={1} 
 
 
     
-/>
- {/*   Product Catelog  */}
-  </div>
+/>  */}
+
+<ScrollButton text='Catelog'/>
+  </div> 
+
+{/*   <div className="catelog-button">
+   <span>.</span>
+  </div> */}
 
 </div>
     </div>
