@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import ScrollButton from "../ScrollingButton/ScrollingButton";
 import BentoImageGrid from "./BentoImages";
 import IconButton from "../IconButton/IconButton";
+import { FaArrowRight } from "react-icons/fa";
  import "./Testing.css";
 
 
@@ -14,8 +15,16 @@ export default function Testing() {
 
   return (
 <div className="testing-div">
+<button className="modern-btn">
+  <span className="btn-icon">
+    <FaArrowRight />
+  </span>
 
-<IconButton/>
+  <span className="btn-text">
+  <ScrollButton text='Catelog'/>
+  </span>
+</button>
+
 
 </div>
 

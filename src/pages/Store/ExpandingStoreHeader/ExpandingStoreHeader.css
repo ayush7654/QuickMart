@@ -2,27 +2,27 @@
   font-family: 'Figtree';
 
   /* 1. Base Dimensions */
-  width: 30%;
-  height: 3rem;
+  width: 90%;
+  height: 5rem;
 
   /* 2. Positioning & Center Alignment */
-  position: absolute;
-  top: 24px;
+  position: fixed;
+  top: 16px;
   left: 50%;
   /* Merged translate directly without depending on a separate CSS variable for smoother rendering */
   transform: translate(-50%, 0);
 
   /* 3. Aesthetics & Styling */
   border-radius: 100px;
+   border-radius: 12px;
   z-index: 99;
   cursor: pointer;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
+background-color: rgba(206, 212, 220, 0.5);
   backdrop-filter: blur(10px);
-  background-color: rgba(215, 215, 215, 0.5);
   color: rgb(0, 0, 0);
 
   /* 4. Fine-Tuned Modern Transitions */
@@ -40,9 +40,9 @@
 }
 
 .pill-expanded {
-  width: 100%;
+  width: 90%;
   /* Flattened height expression to keep the rendering engine from staggering */
-  height: 93vh; 
+  height: 95vh; 
   border-radius: 12px;
   cursor: default;
   
@@ -51,14 +51,14 @@
   box-shadow: inset 0px 0px 10px rgba(115, 115, 115, 0.5);
 
   /* Handled the offset shift directly inside the transform rule */
-  transform: translate(-50%, -2vh); 
+  transform: translate(-50%, 0vh); 
   
   /* background: linear-gradient(to right, rgb(0,100,255,.6), rgb(255, 100, 0,.6)); */
 }
 
 
 .partial {
-  width: 100%;
+  width: 90%;
   height: calc(75vh - 15px);
 
 
@@ -70,6 +70,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
  /*  display: none; */
  
 
@@ -94,9 +96,8 @@
   display: flex;
 
   width: 100%;
-  height: 80%;
-  margin-top: 4rem;
- /* background-color: rgba(255, 255, 255,.7); */
+  height: 95%;
+ margin-top: 4rem;
   border-radius: 8px;
   padding: 8px;
  
@@ -113,8 +114,7 @@
 .subgroup-sidebar-wrapper {
   flex: 0 0 30%;
 
-/* display: none;
- */
+
 padding: 8px;
 border: 0px solid blue;
 display: flex;
@@ -194,11 +194,12 @@ gap:1rem;
 
   color: white;
 
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 255, 0.7),
-    rgba(128, 0, 128, 0.7)
-  );
+    background:
+    linear-gradient(
+      90deg,
+      rgba(0,100,255),
+      rgba(180,0,255)
+    );
 }
 
 
@@ -246,7 +247,7 @@ gap:1rem;
 
 
 .subgroup-item {
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding: 16px ;
   cursor: pointer;
   color: rgb(81, 81, 81);
@@ -266,13 +267,10 @@ border: 0px solid blue;
 
 }
 
-.subgroup-item.active {
+.subgroup-item:hover {
   color: rgb(0,100,255);
-/*   color:black; */
-  
-/*   color:#fa5c40; */
+  transform: translateX(15px);
 
- /*  transform: translateX(15px); */
 }
 
 
@@ -301,60 +299,7 @@ border: 0px solid red;
   /* ADD THIS: Ensure the grid itself doesn't shift when cards scale */
   transform-origin: center center;
 }
-/* .grid-wrapper.visible {
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 10;
-    inset: 5px; 
-} */
- 
-/* 1. HERO LAYOUT (1 Item) */
-/* Fills the entire 60% space */
-.layout-hero {
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-}
 
-/* 2. TRIAD LAYOUT (3 Items) */
-/* 1 large vertical card on left, 2 stacked on right */
-.layout-triad {
-  grid-template-columns: 1.2fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: 
-    "big small-1"
-    "big small-2";
-}
-.layout-triad .card-0 { grid-area: big; }
-.layout-triad .card-1 { grid-area: small-1; }
-.layout-triad .card-2 { grid-area: small-2; }
-
-/* 3. QUAD LAYOUT (4 Items) */
-/* 2x2 symmetrical grid, but we'll make it slightly editorial */
-.layout-quad {
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
-
-/* 4. MOSAIC LAYOUT (5 Items) */
-/* A complex 'bento' style layout */
-.layout-mosaic {
-  display: grid;
-
-  gap: 8px;
-  /* 3 columns: 1st is the large pillar, next 2 are for the 2x2 grid */
-  grid-template-columns: 1.2fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: 
-    "pillar item-1 item-2"
-    "pillar item-3 item-4";
-}
-
-/* Assigning the Areas */
-.layout-mosaic .card-0 { grid-area: pillar; }
-.layout-mosaic .card-1 { grid-area: item-1; }
-.layout-mosaic .card-2 { grid-area: item-2; }
-.layout-mosaic .card-3 { grid-area: item-3; }
-.layout-mosaic .card-4 { grid-area: item-4; }
 
 
 
@@ -596,10 +541,7 @@ display: grid;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-/*   opacity: 0;
-  clip-path: inset(var(--from-top, 100%) var(--from-right, 0%) var(--from-bottom, 0%) var(--from-left, 100%)); */
   cursor: pointer;
-  /* Optimization: Prevents the "jump" by pre-calculating the layer */
   will-change: transform, opacity, clip-path;
   background-color: white;
   padding: 12px;
@@ -611,11 +553,8 @@ display: grid;
 .category-img-wrapper{
 width: 100%;
 height: 100%;
-/*    position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);  */
-  background-color: red;
+
+
   background-position: center;
   background-size: cover;
   transition: transform .2s ease;
@@ -629,7 +568,7 @@ height: 100%;
 
 
 .card-selected{
-/*  transform: scale(.95) !important; */
+
  border: 2px solid rgb(0,100,255);
   padding: 0px;
  

@@ -259,6 +259,9 @@ setSideFilterOn={setSideFilterOn}/>
 
 
       </div> 
+       <ExpandingStoreHeader 
+  partialPill={partialPill}
+  />   
 
 <div className="store-content-wrapper">
 

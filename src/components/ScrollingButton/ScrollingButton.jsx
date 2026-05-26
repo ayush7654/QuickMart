@@ -1,5 +1,6 @@
 import './ScrollingButton.css';
 import { LayoutPanelLeft } from 'lucide-react'
+import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
 function ScrollButton({ 
   text, 
   textColor='white',
@@ -7,18 +8,18 @@ function ScrollButton({
   theme = "buttonFilled",      // Default: Filled
   themeOnHover = "buttonOutline", // Default Hover: Outline
   className = "", 
-  Icon= LayoutPanelLeft,
+  Icon= HiOutlineAdjustmentsVertical ,
   style = {} 
 
 }) {
   return (
     <div
       className= 'scroll-btn'  >
-      <div className='scroll-btn-Icon-wrapper'>
+     {/*  <div className='scroll-btn-Icon-wrapper'>
        <span className="scroll-btn-Icon-content">
-        <Icon className='scroll-btn-Icon' size={18}/>
+        <Icon className='scroll-btn-Icon' size={20}/>
        </span>
-      </div>
+      </div> */}
       <div className="scroll-btn__viewport">
         <div className="scroll-btn__inner">
           <div className="scroll-btn__text">{text}</div>

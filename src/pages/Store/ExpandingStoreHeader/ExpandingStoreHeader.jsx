@@ -289,12 +289,7 @@ useEffect(() => {
 }, [selectedGroup, categorizedData, setSelectedCategoryId]); 
 // Dependency array includes these variables so the effect re-runs whenever they change
 
-console.log('active group is ',activeGroup)   
-console.log('selected group id is ',selectedSubGroupId)   
-console.log('selected category id  is ',selectedCategoryId)   
-console.log('header state ',isOpen) ;
-console.log('partial pill is ', partialPill)
-console.log('current category', currentCategory)
+
   return (
      <div 
           className={`floating-pill ${isOpen ? "pill-expanded" : ""} ${partialPill?'partial':''}`}
@@ -305,7 +300,7 @@ console.log('current category', currentCategory)
 <div className="pill-space">
 
 </div>
-
+ 
 <div className={`category-layout ${isOpen || partialPill?'':'category-layout-hidden'}`}>
 
   {loading ? (
@@ -431,10 +426,10 @@ console.log('current category', currentCategory)
       key={index}
       variants={tileVariants}
       className={`category-card card-${index}`}
-      style={{
-        backgroundImage: `url(StoreMedia/${item.backgroundImage})`
-      }}
+
     >
+    <div className="category-img-wrapper" style={{ backgroundImage: `url(StoreMedia/${item.backgroundImage})` }}></div>
+
 
       <div className="card-overlay">
         <span className="category-name">
@@ -460,7 +455,7 @@ console.log('current category', currentCategory)
         variants={gridContainerVariants}
         initial="hidden"
         animate="visible"
-          key={groupName}    /* CREATE 8 NEW LAYOUTS ,ADD ID TO THE CATEGORY LIST IN ITS COMPONENT, CHNAGE COUNT TO ID ,  */
+          key={groupName}   
           className={`grid-wrapper ${getLayoutClass(id)} ${isActive ? 'visible' : 'hidden'}`}
         >
          {groupData.items.map((item, index) => (
