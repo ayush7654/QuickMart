@@ -51,7 +51,8 @@ const handlePartialToggle = () => {
 
 
   return (
-    <div className='store-Header'>
+    <div className={`store-Header ${isOpen || partialPill?'store-header-open':''}`}>
+
 
   <div className="store-catelog-btn-wrapper">
           <div className='store-head-menu-wrapper'>
@@ -59,7 +60,7 @@ const handlePartialToggle = () => {
           <MenuCancel  state={partialPill}  />
         </div> 
       
-   
+  
         
          </div>
        <div className="side-filter-btn-wrapper" onClick={()=>setSideFilterOn(true)}>
@@ -91,14 +92,10 @@ const handlePartialToggle = () => {
 
 
 
-{/*  <ExpandingStoreHeader 
-  partialPill={partialPill}
-  />    */}
+
          <div className="store-catelog-btn-wrapper">
 
-   {/*  <div className="store-head-search-wrapper">
-        <input className='store-head-search'/>
-       </div> */}
+
 
           <div className="store-head-search-wrapper">
         <input className='store-head-search'
@@ -108,14 +105,7 @@ const handlePartialToggle = () => {
 
   <div className={`store-catelog-btn ${isOpen || partialPill?'store-catelog-active':''}`} onClick={handleExpandedToggle}>
 
- {/* <LayoutPanelLeft 
-  className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
-  size={20} 
-  strokeWidth={1} 
 
-
-    
-/>  */} 
  <div className='scroll-btn-Icon-wrapper'>
        <span className="scroll-btn-Icon-content">
         <LayoutPanelLeft 
@@ -141,6 +131,7 @@ const handlePartialToggle = () => {
   </div> */}
 
 </div>
+
     </div>
   )
 }

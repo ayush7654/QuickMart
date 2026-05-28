@@ -13,6 +13,8 @@ import { GiLipstick } from "react-icons/gi";
 import { PiDeskFill } from "react-icons/pi";
 import { FaRunning } from "react-icons/fa";
 import { GiGrapes } from "react-icons/gi";
+import { useScroll } from "../../../components/ScrollData/ScrollData";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -204,6 +206,11 @@ const [hoveredIndex, setHoveredIndex] = useState(0);
 const [refreshKey, setRefreshKey] = useState(0);
 
 
+
+
+
+
+
 useEffect(() => {
 
   if (!loading && categorizedData) {
@@ -293,7 +300,7 @@ useEffect(() => {
   return (
      <div 
           className={`floating-pill ${isOpen ? "pill-expanded" : ""} ${partialPill?'partial':''}`}
-     
+      style={{}}
         >
           <div className="pill-content">
     

@@ -27,6 +27,7 @@ import StoreActions from "./StoreActions/StoreActions";
 import OrderToggle from "./OrderToggle/OrderToggle";
 import MenuCancel from "../../components/MenuCancel/MenuCancel";
 import { LayoutPanelLeft } from "lucide-react";
+import { useScroll } from "../../components/ScrollData/ScrollData";
 import AppliedFilters from "./AppliedFilters/AppliedFilters";
 import StoreSorting from "./StoreSorting/StoreSorting";
 import StoreHeader from "./StoreHeader/StoreHeader";
@@ -42,6 +43,8 @@ export default function Store() {
   const [batchCount, setBatchCount] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const [renderTrigger, setRenderTrigger] = useState(0);
+
+  const { scrollY} = useScroll();
 
   const location = useLocation();
 
@@ -69,18 +72,23 @@ const [partialPill,setPartialPill] = useState(false);
 
    const [activeLayout, setActiveLayout] = useState(4);
     
-  
+/*   const [showStoreHeader,setShowStoreHeader] = useState(false)
 
 
-   const [hide, setHide] = useState(false);
+  useEffect(()=>{
+
+  })
+ */
+
+/*    const [hide, setHide] = useState(false);
   let lastY = 0;
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
 
-      if (y > lastY) setHide(true);      // scrolling down → move up
-      else setHide(false);              // scrolling up → move back
+      if (y > lastY) setHide(true);      
+      else setHide(false);              
 
       lastY = y;
     };
@@ -88,7 +96,7 @@ const [partialPill,setPartialPill] = useState(false);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
+ */
 
 
   const loadBatch = async (batchNumber) => {
@@ -215,8 +223,30 @@ const productElements = useMemo(() => {
   }, [batchCount]);
 
 
+const [isScrolledPastLimit, setIsScrolledPastLimit] = useState(false);
 
-console.log('filters ',appliedFilters)
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if we have crossed the 700px mark
+      const passed = window.scrollY > 700;
+      
+      // Critical optimization: Only update state if the value actually changes
+      setIsScrolledPastLimit((prev) => {
+        if (prev !== passed) {
+          return passed;
+        }
+        return prev;
+      });
+    };
+
+    // Add the listener on mount
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Clean up the listener on unmount to prevent memory leaks
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
 
   
   return (
@@ -246,11 +276,12 @@ console.log('filters ',appliedFilters)
 
 
 
-{/*   <HomeIntro/>   */}
+ <HomeIntro/> 
 
  
 
-  <div className='store-header-wrapper'>
+  <div className='store-header-wrapper' 
+  style={{ top: isScrolledPastLimit ? '1rem' : '-5rem' }}>
 
 <StoreHeader 
 partialPill={partialPill}
@@ -258,10 +289,12 @@ setPartialPill={setPartialPill}
 setSideFilterOn={setSideFilterOn}/>
 
 
+
       </div> 
-       <ExpandingStoreHeader 
+        <ExpandingStoreHeader 
   partialPill={partialPill}
-  />   
+  />    
+  
 
 <div className="store-content-wrapper">
 

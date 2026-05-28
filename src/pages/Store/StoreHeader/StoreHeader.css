@@ -4,11 +4,28 @@ display: flex;
 justify-content: space-between;
 height: 5rem;
 padding: 0px 16px;
-border: 0px solid red;
-border: 1px solid rgba(220, 220, 220, 0.5);
+
+border: 1px solid rgba(255, 255, 255, 0.5);
 border-radius: 15px;
 backdrop-filter: blur(10px);
+  background-color: rgba(206, 212, 220, 0.5);
+
+
+
+
 }
+
+.store-header-open{
+ background-color: transparent;
+  background-color: rgb(239, 239, 239);
+ border-bottom-left-radius:0px ;
+ border-bottom-right-radius:0px ;
+ border: 0px solid transparent;
+border-bottom: 1px solid rgba(255, 255, 255, 0.5); 
+
+}
+
+
 
 .store-middle-head-wrapper{
   position: absolute;
