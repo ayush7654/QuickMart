@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './HomeIntro.css';
 import IconButton from '../../../components/IconButton/IconButton';
+import ScrambleTextSwitcher from '../../../components/Testing/ScrambleTextSwitcher';
 import { useScroll } from '../../../components/ScrollData/ScrollData';
 import { gsap } from 'gsap';
 import { Observer } from 'gsap/all'; // Try importing from 'gsap/all'
-
+import { AnimatePresence , motion } from 'framer-motion';
+import BlurTransition from '../../../components/Testing/BlurTransition';
 gsap.registerPlugin(Observer);
 
 export default function HomeIntro() {
@@ -21,6 +23,8 @@ export default function HomeIntro() {
     { id: 2, content: <>Find the <span>best</span> prices. </>, info: 'Compare products easily and discover competitive pricing across our entire collection. ' },
     { id: 3, content: <>Stay ahead with <span>latest</span> trends. </>, info: 'Discover the latest trends as they emerge, with new products and styles added regularly.' }
   ];
+
+  const storeImages=['StoreImg5.webp','StoreImg7.jpg','StoreImg10.jpg','StoreImg9.jpg']
 
   useEffect(() => {
     // 1. Access the Lenis instance from the window (standard for Lenis setups)
@@ -62,10 +66,65 @@ export default function HomeIntro() {
     };
   }, [activeIndex, atTop]);
 
+console.log(activeIndex)
+
   return (
-    <div className='homeIntro'>
+    <div className='homeIntro'/*  style={{backgroundImage:`url(StoreMedia/${storeImages[activeIndex]})`}} */>
+
+{/*   <AnimatePresence mode="wait">
+        <motion.img
+          key={activeIndex}
+          src={`StoreMedia/${storeImages[activeIndex]}`}
+          className="hero-image"
+          initial={{
+            opacity: 0,
+            filter: "blur(20px)",
+            scale: 1.08
+          }}
+          animate={{
+            opacity: 1,
+            filter: "blur(0px)",
+            scale: 1
+          }}
+          exit={{
+            opacity: 0,
+            filter: "blur(20px)",
+            scale: 1.08
+          }}
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1]
+          }}
+        />
+      </AnimatePresence> */}
+
+{/* <div className="sampleStoreContent">
+  <div className="store-row"><span>Elegance</span></div>
+  <div className="store-row"><span>Authenticity</span></div>
+  <div className="store-row"><span>Functionality</span></div>
+
+
+
+
+</div> */}
+
+
+<div className='store-Bg-wrapper'>
+<BlurTransition activeIndex={activeIndex}/>
+
+</div>
+
+<div className='store-text-content'>
+<ScrambleTextSwitcher
+words={["Buy from the hottest brands.", "Browse millions of products.", "Find the best prices.", "Stay ahead with latest trends."]}
+  activeIndex={activeIndex}
+/>
+
+<span>jfj</span>
+</div>
+      <div className="homeIntroBg-wrapper"></div>
       <div className="video-hero">
-        <video
+  {/*    <video
           autoPlay
           muted
           loop
@@ -73,10 +132,11 @@ export default function HomeIntro() {
           preload="metadata"
           poster="/poster.jpg"
         >
-          <source src="/StoreMedia/HomeIntroAppleVid.mp4" type="video/mp4" />
-        </video>
+          <source src="/StoreMedia/StoreSampleVideo.mov" type="video/mp4" />
+        </video>  */}  {/* This video can be used when store page mounts for first time  */}
 
-        <div className="home-intro-content">
+
+       {/*  <div className="home-intro-content">
           <div className="carousel-container">
             <div className="carousel-track">
               {homeContent.map((item) => (
@@ -117,7 +177,7 @@ export default function HomeIntro() {
               hoverText='white'
             />
           </div>
-        </div>
+        </div> */}
 
         <div className="CrousalNav-div">
           {/* <div className="CrousalNav-content">

@@ -1,29 +1,28 @@
 
 import React, { useState ,useRef , useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import ScrollButton from "../ScrollingButton/ScrollingButton";
-import BentoImageGrid from "./BentoImages";
-import IconButton from "../IconButton/IconButton";
-import { FaArrowRight } from "react-icons/fa";
+import ScrambleTextSwitcher from "./ScrambleTextSwitcher";
+import StoreBanner from "./../../pages/Store/StoreBanner/StoreBanner";
  import "./Testing.css";
 
 
+const COLS = 12; // Matches the video's dense vertical grid look
+const ROWS = 6;
 
-export default function Testing() {
+export default function Testing({  
+  rows = 1,
+  cols = 5,
+  interval = 4000,
+  duration = 1
+}) {
+ 
+  const images =['StoreMedia/StoreImg7.jpg','StoreMedia/StoreImg9.jpg']
 
 
 
   return (
 <div className="testing-div">
-<button className="modern-btn">
-  <span className="btn-icon">
-    <FaArrowRight />
-  </span>
 
-  <span className="btn-text">
-  <ScrollButton text='Catelog'/>
-  </span>
-</button>
 
 
 </div>

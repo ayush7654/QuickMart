@@ -29,13 +29,13 @@ const [index, setIndex] = useState(0);
       */}
       <div className={`banner-product-stage set-${index + 1}`} key={index}>
         <div className="banner-img-wrapper item-left">
-          <img src={currentSet.left} alt="product-left" />
+          <img src={`WaterfallUI/${currentSet.left}`} alt="product-left" />
         </div>
         <div className="banner-img-wrapper item-center">
-          <img src={currentSet.center} alt="product-center" />
+          <img src={`WaterfallUI/${currentSet.center}`} alt="product-center" />
         </div>
         <div className="banner-img-wrapper item-right">
-          <img src={currentSet.right} alt="product-right" />
+          <img src={`WaterfallUI/${currentSet.right}`} alt="product-right" />
         </div>
       </div>
     </div>

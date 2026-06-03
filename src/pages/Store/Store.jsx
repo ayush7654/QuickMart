@@ -308,7 +308,10 @@ setSideFilterOn={setSideFilterOn}/>
 
        
 
-      
+        <div className="store-nav-wrapper">
+<div className="store-navigation">Home &gt; Store</div>
+<div className="product-count-wrapper">Showing {productElements.length} Products</div>
+  </div>
  
 <div className="store-page-title-content">
   
@@ -327,16 +330,10 @@ setSideFilterOn={setSideFilterOn}/>
 
 
 
- <div className="store-grid-toggle">
-   <GridToggle
-   activeLayout={activeLayout}
-   setActiveLayout={setActiveLayout}
-   />
-   </div>
 
   
 </div>
-  
+
           
             </div>
 
@@ -344,13 +341,90 @@ setSideFilterOn={setSideFilterOn}/>
       {/*  <div className="filter-Btn-Ph">
           <SlidersHorizontal className="" strokeWidth={1.5} />
        </div> */}
+{/* 
+       <div className="store-Info-Bar"></div> */}
 
 
 
  
 
         <main className="store-content">
+
+           <div className="store-info-bar">
+             <div className="store-info-section store-bar-left"></div>
+             <div className="store-info-section  store-bar-right"></div>
+          <div className="store-info-wrapper">
+
+           
+          <div className="store-grid-toggle">
+   <GridToggle
+   activeLayout={activeLayout}
+   setActiveLayout={setActiveLayout}
+   />
+   </div> 
+   
+            
+
+           {/*            <div className='product-count-div'>
+                      <div className="product-count-content">  Showing <span>{productElements.length} </span>results for '<span>{typeFilter?currentCategory:'All Products'}</span>' . </div>
+ {typeFilter && <AnimatedUnderline
+  thickness={1}
+  offset={1}
+  color='rgb(0,100,255)'>
+      <span onClick={handleCancelTypeFilter} className="clear-category-btn">Clear Category</span>
+  </AnimatedUnderline>}
+  
+    </div>
+ */}
+
+ <div className="store-bar-center">
+{/* 
+  <AppliedFilters
+             appliedFilters = {appliedFilters}
+                    removeFilter = {removeFilter}
+                    handleRemoveColor ={handleRemoveColor}
+                    currentSort ={currentSort}
+                    toggleSortOrder ={toggleSortOrder}
+                    currentCategory={currentCategory}
+                    />    */}
+
+                 <span> {productElements.length} PRODUCTS </span>  
+                    
+ </div>
+
+  
+    <div className="dropdown-sort-wrapper">
+     <StoreSorting />  
+</div> 
+
+  
+
+
+
+          </div>
+            
+                 
+          
+  
+          
+
+            
+
+          
+            </div>
        
+<div className="applied-filters-wrapper">
+    <AppliedFilters
+             appliedFilters = {appliedFilters}
+                    removeFilter = {removeFilter}
+                    handleRemoveColor ={handleRemoveColor}
+                    currentSort ={currentSort}
+                    toggleSortOrder ={toggleSortOrder}
+                    currentCategory={currentCategory}
+                    />   
+</div>
+
+
          <div className="side-filter">
               <FilterSection
               storeFilters={storeFilters}
@@ -362,42 +436,14 @@ setSideFilterOn={setSideFilterOn}/>
 
             
 
-            <div className="productList-head-wrapper">
+           
 
-            
-                 
-                    <div className='product-count-div'>
-                      <div className="product-count-content">  Showing <span>{productElements.length} </span>results for '<span>{typeFilter?currentCategory:'All Products'}</span>' . </div>
- {typeFilter && <AnimatedUnderline
-  thickness={1}
-  offset={1}
-  color='rgb(0,100,255)'>
-      <span onClick={handleCancelTypeFilter} className="clear-category-btn">Clear Category</span>
-  </AnimatedUnderline>}
-  
-    </div>
-
-    
-  
-
-<div className="dropdown-sort-wrapper">
-     <StoreSorting />  
-</div>
-
-  
-          
-
-            
-
-          
-            </div>
-
-     <AppliedFilters
+   {/*   <AppliedFilters
              appliedFilters = {appliedFilters}
                     removeFilter = {removeFilter}
                     handleRemoveColor ={handleRemoveColor}
                     currentSort ={currentSort}
-                    toggleSortOrder ={toggleSortOrder}/>
+                    toggleSortOrder ={toggleSortOrder}/> */}
 
          
             

@@ -1,21 +1,27 @@
 import React from 'react'
 import MenuCancel from '../../../components/MenuCancel/MenuCancel'
+import { useNavigate } from 'react-router-dom'
 import { LayoutPanelLeft } from 'lucide-react'
 import { X } from 'lucide-react'
 import StoreActions from '../StoreActions/StoreActions'
 import OrderToggle from '../OrderToggle/OrderToggle'
 import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline'
 import './AppliedFilters.css'
+import { div } from 'framer-motion/client'
 
-export default function AppliedFilters({appliedFilters,removeFilter,handleRemoveColor,currentSort,toggleSortOrder}) {
+export default function AppliedFilters({appliedFilters,removeFilter,handleRemoveColor,currentSort,toggleSortOrder,currentCategory}) {
 
 const hasActiveFilters = Boolean(
   appliedFilters.filters.length ||
   appliedFilters.colors.length ||
+  currentCategory ||
   appliedFilters.price.lowRange !== null ||
   appliedFilters.price.highRange !== null
 );
 
+const navigate = useNavigate();
+
+const categoryFilter =currentCategory?currentCategory.replaceAll('-', ' '):null;
 
   return (
        <div className="Active-Filters-wrapper">
@@ -32,7 +38,15 @@ const hasActiveFilters = Boolean(
              {/* 1. Check if any filters actually exist to show the container */}
 {hasActiveFilters? (
   <div className="applied-filter-wrapper">
-    {/* Render Categories */}
+ 
+ 
+    {/* Render category*/}
+{currentCategory &&   <div className="applied-filter">
+        <span>{categoryFilter}</span>
+        <X className="cancel-filter" onClick={() => navigate('/store')} />
+      </div> }
+
+    {/* Render features*/}
     {appliedFilters.filters.length > 0 && appliedFilters.filters.map((filter, index) => (
       <div key={`filter-${index}`} className="applied-filter">
         <span>{filter}</span>
@@ -59,14 +73,16 @@ const hasActiveFilters = Boolean(
         <X className="cancel-filter" onClick={() => handleRemoveColor(color)} />
       </div>
     ))}
+     
   </div>
 ) : (
 
-
-  <div className="placeholder-filter-section">
+<div></div>
+ /*  <div className="placeholder-filter-section">
 
 
 <div className="placeholder-filter-wrapper">
+  
  <div className='applied-filter placeholder-filter'>
    <span>Best Sellers</span>
     <span>?</span>
@@ -85,23 +101,17 @@ const hasActiveFilters = Boolean(
         <span>?</span>
   </div> 
 </div>
-{/*    <div className="filter-placeholder-text">
-   Apply Filters for find what you are looking for 
-  </div>  */}
-
-  </div>
+    <div className="filter-placeholder-text">
+Refine your search with filters 
+  </div>  
+ 
+  </div> */
 
 
 )}
 
 
 
-
-             
-         
-   
-             
-          
           </div> 
         
                   

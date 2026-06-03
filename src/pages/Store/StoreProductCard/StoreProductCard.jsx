@@ -11,8 +11,11 @@ import {  MdShoppingCartCheckout } from "react-icons/md";
 import { IoCheckmarkDone } from "react-icons/io5";
 import { useCartList } from '../../../components/CartListProvider';
 import { FaCartPlus } from "react-icons/fa";
+
 import './StoreProductCard.css'
 import AddProductButton from './AddProductButton/AddProductButton';
+import StarRating from './../../../components/StarRating';
+
 
 
 
@@ -21,7 +24,7 @@ import AddProductButton from './AddProductButton/AddProductButton';
 
 function StoreProductCard({ product, path }) {
 
-    const { id, images,thumbnail, title, price, rating = 0, discount } = product;
+    const { id, images,thumbnail, title, price, rating = 0, discountPercentage } = product;
 
 
     const {cartList , updateDataBase } = useCartList()
@@ -41,11 +44,11 @@ const getStatusStyles = (status) => {
     case 'In Stock':
       return { opacity:0 }; // Soft Sage
     case 'Low Stock':
-      return { backgroundColor: '#fff9e6', color: '#856404' }; // Soft Gold
+      return { backgroundColor: '#fff9e6', color: '#856404',borderColor:'#856404' }; // Soft Gold
     case 'Out of Stock':
-      return { backgroundColor: '#ffe2e2', color: '#8f0b02' }; // Neutral Grey
+      return { backgroundColor: '#ffe2e2', color: '#8f0b02' ,borderColor:'#8f0b02'}; // Neutral Grey
     default:
-      return { backgroundColor: 'transparent', color: 'inherit' };
+      return { backgroundColor: 'transparent', color: 'inherit',borderColor:'inherit' };
   }
 };
 
@@ -119,47 +122,62 @@ useEffect(() => {
   )}
 
 
-         {/*      <div className='sp-imgBar-wrapper'>
-  {images.map((_, index) => (
-    <div key={index} className='sp-imgBar'>
-      <div 
-        className={`sp-imgBar-progress ${
-          cursorOnHover && index === SPImgId ? 'active' : ''
-        } ${
-          cursorOnHover && index < SPImgId ? 'filled' : ''
-        }`}
-      />
-    </div>
-  ))}
-</div> */}
-{/* <div className={`sp-addToCart ${isItemInCart ? 'sp-added-btn' : ''}`}>
+     
+{/*   <div className={`sp-addToCart ${isItemInCart ? 'sp-added-btn' : ''}`}>
  <AddProductButton isItemInCart={isItemInCart }/>
  
      
-      </div> */}
+      </div>  */}
 
- <div className='sp-brand-tag'>{product.brand?product.brand:product.category}</div>
-<div className='sp-status-tag' style={statusStyle}>
+ <div className='productCard-tag sp-brand-tag'> {product.brand?product.brand:product.category} </div>
+{discountPercentage>15 && <div className='productCard-tag sp-discount-tag'>save {discountPercentage}%</div>}
+<div className='productCard-tag sp-status-tag' style={statusStyle}>
   {product.availabilityStatus}
 </div>
-
+ {/* <div className='product-color-wrapper'>
+              <span className='productCard-color color-1'></span>
+              <span className='productCard-color color-2'></span>
+              <span className='productCard-color color-3'></span>
+              </div>   */}
         </div>
         <div className='sp-info-wrapper'>
+
+          
             <div className='sp-info-line1'>
                  <span>{title}</span> 
           
             </div>
 
             <div className='sp-info-line2'>
-              <span className='sp-price'>${price}</span>
-                <div className='sp-rating-div'>
-                    <span>{rating.toFixed(1)}</span>
-                       <MdStar  color='rgba(235, 235, 0, 1)'  />
-               </div> 
+              
+               <span className='sp-price'>${price}</span>
+               
+               
                
             </div>
+
+                 <div className="sp-info-line3">
+
+                  
+            
+
+             <div className='sp-rating-div'>
+          
+                    
+                       <StarRating rating={Math.round(rating)}/>
+                        <span className='rating-num'>({rating.toFixed(1)})</span>
+               </div>   
+
+               
+
+
+              
+            </div>
+
+       
            
         </div>
+ 
     </Link>
   
   );

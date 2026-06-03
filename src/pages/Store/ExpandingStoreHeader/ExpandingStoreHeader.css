@@ -203,9 +203,9 @@ gap:1rem;
 
     background:
     linear-gradient(
-      90deg,
+      0deg,
       rgba(0,100,255),
-      rgba(180,0,255)
+      rgb(255, 62, 96)
     );
 }
 

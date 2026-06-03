@@ -5,14 +5,14 @@ const StarRating = ({ rating, starSize }) => {
   const stars = Array.from({ length: 5 });
 
   return (
-    <div style={{ display: 'flex', gap: '4px' }}>
+    <div style={{ display: 'flex', gap: '4px',alignItems:'center'}}>
       {stars.map((_, index) => {
         return (
-          <span key={index}>
+          <span key={index} style={{aspectRatio:'1/1'}} >
             {rating > index ? (
-              <MdStar color="rgba(237, 189, 18, 1)" size={starSize} />
+              <MdStar color="rgb(255, 62, 96)" size={starSize} />
             ) : (
-              < MdStarBorder color="rgba(237, 189, 18, 1)" size={starSize} /> 
+              < MdStar color="rgb(185, 185, 185)" size={starSize} /> 
             )}
           </span>
         );

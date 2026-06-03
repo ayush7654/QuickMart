@@ -308,51 +308,62 @@ height: 1.4rem;
     width: 100%;
     border: 0px solid red;
     position: relative;
-   
+     background-color: white;
+   overflow: hidden;
     
    
+
+}
+
+.productCard-tag{
+  position: absolute;
+  z-index: 2;
+font-size: .7rem;
+font-family: 'Figtree';
+ border: 1px solid black;
+ color:rgb(0, 0, 0);
+ background-color: rgba(255, 255, 255);
+font-weight: 400;
+padding: 4px 10px;
+border-radius: 3px;
+opacity: 1;
+transition: opacity .4s ease;
+text-transform: uppercase;
 
 }
 
 
 
 .sp-brand-tag{
-position: absolute;
-top:10px;
-left:10px;
-z-index: 2;
-font-size: .7rem;
-font-family: 'Figtree';
- border: 0px solid black;
- color:rgb(0, 0, 0);
- background-color: rgba(255, 255, 255);
-font-weight: 400;
-padding: 4px 10px;
-border-radius:5px;
-opacity: 1;
-transition: opacity .4s ease;
-text-transform: capitalize;
+
+bottom:0px;
+left:50%;
+transform: translateX(-50%);
+ text-transform: uppercase;
+font-family: 'Courier New', Courier, monospace;
+background-color: rgb(30, 30, 30);
+
+border: none;
+color:white;
+font-weight: 500;
+
 }
 
-/* .store-ProductCard:hover .sp-brand-tag{
-  opacity: 0;
-} */
+.sp-discount-tag{
+top:10px;
+left:10px;
+
+font-size: 10px;
+
+}
 
 .sp-status-tag{
-  position: absolute;
-  bottom:10px;
+ 
+ top:10px;
    right:10px;
-   font-weight: 400;
-padding: 4px 10px;
-border-radius: 5px;
-opacity: 1;
-transition: opacity .4s ease;
-text-transform: capitalize;
-z-index: 1;
-font-size: .8rem;
-font-family: 'Figtree';
+   text-transform: capitalize;
+   font-family: Inter;
 
-color:white;
 
 }
 
@@ -360,10 +371,9 @@ color:white;
   width: 100%;
   aspect-ratio: 1/1;
   border: 1px solid transparent;
-  border: 1px solid rgb(230, 230, 230,.85);
-  background-color: rgb(242, 242, 242);
- background-color: rgb(245, 245, 245,.8);
- background-color: white;
+  /* border: 1px solid rgb(230, 230, 230,.85); */
+/*  background-color: rgb(246, 246, 246);  */
+  border: 0px solid red;
   position: relative;
   display: grid;
   place-items: center;
@@ -378,7 +388,7 @@ color:white;
 }
 
 .sp-img {
-  width: 80%;
+  width: 85%;
   position: absolute;
 /*   top: 0;
   left: 0; */
@@ -409,84 +419,13 @@ color:white;
 display: flex;
 flex-direction: column;
 
-padding:1rem 0rem;
-gap:10px;
+padding:1rem;
+gap:16px;
 font-family:'Figtree';
 }
 
 
 
-
-.sp-imgBar-wrapper {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  /* Start slightly higher (-10px) and invisible */
-  transform: translate(-50%, 5px); 
-  opacity: 0;
-  
-  width: 90%;
-/*   height: 1.5rem; */
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  z-index: 10;
-  pointer-events: none; /* Prevents the bars from blocking clicks to the product */
-  
-  /* Smooth transition for both properties */
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.store-ProductCard:hover .sp-imgBar-wrapper {
-  opacity: 1;
-  /* Maintain the -50% horizontal center, but move to 0 vertical position */
-  transform: translate(-50%, 0);
-}
-
-.sp-imgBar {
-  height: 2px;
-  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent gray */
-  flex: 1;
-  overflow: hidden; /* Clips the inner moving bar */
-  position: relative;
-}
-
-.sp-imgBar-progress {
-  height: 100%;
-  width: 0%;
-  background-color: black;
-  /* Remove the general transition from here */
-  transition: none; 
- 
-}
-
-/* While active, the animation handles the movement */
-.sp-imgBar-progress.active {
-  animation: fillProgress 1.5s linear forwards;
-}
-
-/* While filled, it stays at 100% with no transition */
-.sp-imgBar-progress.filled {
-  width: 100%;
-  transition: none;
-}
-
-/* ONLY use transition when we are clearing the bars on Mouse Leave */
-/* This prevents the 'snap' when you stop hovering, but won't interfere with the loop */
-.store-ProductCard:not(:hover) .sp-imgBar-progress {
-  width: 0%;
-  transition: width 0s; /* Setting this to 0s kills the 'right-to-left' slide entirely */
-}
-
-@keyframes fillProgress {
-  from { width: 0%; }
-  to { width: 100%; }
-}
-
-@keyframes fillProgress {
-  from { width: 0%; }
-  to { width: 100%; }
-}
 
 
 
@@ -498,11 +437,12 @@ font-family:'Figtree';
     bottom: 1rem;
     right: 0%;
     transform: translate(-50%, 5px); 
-   
+   z-index: 9;
 
    
     text-align: center;
     font-family: 'Figtree';
+     font-family: 'Inter';
     font-weight: 500;
     font-size: 1rem;
     opacity: 0;
@@ -530,24 +470,82 @@ font-family:'Figtree';
 
 .sp-info-line1{
  display: flex;
- justify-content: start;
- font-weight: 400;
- font-size: 1rem;
+ justify-content: center;
+ font-weight: 300;
+ font-size: 14px;
+ font-family: 'Inter';
+ text-align: center;
+
+
 }
 
 .sp-info-line2{
  display: flex;
- justify-content: space-between;
+ flex-direction: row;
+ justify-content: center;
 }
 
 .sp-rating-div{
     display: flex;
+
     align-items: center;
-    gap:5px;
+
+    gap:8px;
+}
+
+.rating-num{
+  font-size: 14px;
 }
 
 .sp-price{
-    font-size:1rem;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 300;
+
 }
+
+
+.sp-info-line3{
+  display: flex;
+  
+  width: 100%;
+  justify-content: center;
+
+  
+
+}
+
+.product-color-wrapper{
+ position: absolute;
+ right: 10px;
+top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  gap:5px;
+ 
+  flex: 1;
+}
+
+.productCard-color{
+  width: 13px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+
+ 
+}
+
+
+.color-1{
+ background-color: rgb(114, 180, 181);
+}
+
+.color-2{
+ background-color: rgb(33, 92, 53);
+}
+
+.color-3{
+ background-color: rgb(196, 135, 198);
+}
+
 
