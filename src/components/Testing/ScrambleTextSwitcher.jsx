@@ -38,31 +38,24 @@ export default function ScrambleTextSwitcher({words, activeIndex,
         clearInterval(intervalRef.current);
         setDisplayText(targetText);
       }
-    }, 60);
+    }, 80);
 
     return () => clearInterval(intervalRef.current);
   }, [activeIndex, words, duration]);
 
-/*   const handleClick = () => {
-    const nextIndex = (index + 1) % words.length;
 
-    setIndex(nextIndex);
-    scrambleTo(words[nextIndex]);
-  }; */
-
-/*   useEffect(() => {
-    return () => clearInterval(intervalRef.current);
-  }, []); */
 
   return (
-    <div
-      /* onClick={handleClick} */
+    <div className="scrambleText"
+    
       style={{
         cursor: "pointer",
         fontSize: "5rem",
         fontWeight: "700",
         userSelect: "none",
-        fontFamily: "monospace"
+        fontFamily:'system-ui'
+       
+     
       }}
     >
       {displayText}
