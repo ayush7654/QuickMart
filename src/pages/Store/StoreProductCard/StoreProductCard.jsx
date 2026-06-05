@@ -44,9 +44,9 @@ const getStatusStyles = (status) => {
     case 'In Stock':
       return { opacity:0 }; // Soft Sage
     case 'Low Stock':
-      return { backgroundColor: '#fff9e6', color: '#856404',borderColor:'#856404' }; // Soft Gold
+     return { opacity:0 };
     case 'Out of Stock':
-      return { backgroundColor: '#ffe2e2', color: '#8f0b02' ,borderColor:'#8f0b02'}; // Neutral Grey
+      return { backgroundColor: 'rgb(255, 62, 96)', color: '#ffffff' }; // Neutral Grey
     default:
       return { backgroundColor: 'transparent', color: 'inherit',borderColor:'inherit' };
   }
@@ -140,7 +140,7 @@ useEffect(() => {
               <span className='productCard-color color-3'></span>
               </div>   */}
         </div>
-        <div className='sp-info-wrapper'>
+      {/*   <div className='sp-info-wrapper'>
 
           
             <div className='sp-info-line1'>
@@ -176,6 +176,23 @@ useEffect(() => {
 
        
            
+        </div> */}
+
+              <div className="store-ProductInfo-wrapper">
+                      <div className='sp-rating-div'>
+          
+                    
+                       <StarRating rating={Math.round(rating)}/>
+                        <span className='rating-num'>({rating.toFixed(1)})</span>
+
+                       
+               </div>   
+            <div className="store-Info-line1">
+                <span >{title}</span>
+            
+            </div>
+            <div>${price}</div>
+          {/*   <div className='store-brandname'>{product.brand?product.brand:product.category} </div> */}
         </div>
  
     </Link>

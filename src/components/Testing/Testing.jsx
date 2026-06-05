@@ -6,17 +6,11 @@ import StoreBanner from "./../../pages/Store/StoreBanner/StoreBanner";
  import "./Testing.css";
 
 
-const COLS = 12; // Matches the video's dense vertical grid look
-const ROWS = 6;
 
-export default function Testing({  
-  rows = 1,
-  cols = 5,
-  interval = 4000,
-  duration = 1
-}) {
+
+export default function Testing() {
  
-  const images =['StoreMedia/StoreImg7.jpg','StoreMedia/StoreImg9.jpg']
+
 
 
 

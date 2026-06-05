@@ -100,10 +100,11 @@ transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   justify-content: center;
 border: 0px solid red;
   background-color: white;
-/*  background-color: rgb(245,245,245); */
+  /* background-color: rgb(245,245,245);   */
    z-index: 1;
     font-size: 2.5rem;
      font-family: sans-serif;
+     
 
 
 }
@@ -192,8 +193,8 @@ letter-spacing: 1px;
    flex-direction: column;
   align-items:center;
    border: 0px solid yellow;
-   background-color: blue;
-    background-color: rgb(246, 246, 246);
+/*     background-color: blue;
+    background-color: rgb(246, 246, 246); */ 
 
 
   
@@ -215,12 +216,30 @@ letter-spacing: 1px;
 .productList-wrapper {
   position: relative;
   border: 0px solid red;
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  background-color:rgb(255, 255, 255)
+     /*  background-color: rgb(170, 170, 170,.3); */
+/*   border-top:1px solid  rgb(170, 170, 170,.5);
+  border-bottom:1px solid  rgb(170, 170, 170,.5);
+    border: 1px solid rgb(170, 170, 170,.5); */
+;
   
  
   
+}
+   .productList {
+  display: grid;
+  gap: 1px 1px; 
+  gap: 2rem 2rem; 
+  width: 90%;
+  margin: 0 auto;
+    justify-items: center;
+  
+
+  /*   background-color: rgb(170, 170, 170,.5); */
+ 
 }
 
 
@@ -306,25 +325,17 @@ justify-content: center;
    }
 
    .applied-filters-wrapper{
-    height: 3rem;
+    min-height: 2rem;
     border: 0px solid red;
-    width: 90%;
-    margin-top: 2rem;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+   
    }
 
-   .productList {
-  display: grid;
 
-  gap: 4rem 2rem; 
-  width: 100%;
-  margin: 0 auto;
-    justify-items: center;
-    margin-top: 2rem;
-    border: 0px solid green;
-    
-    
-     
-}
+
   
 
 

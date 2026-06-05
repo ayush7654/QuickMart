@@ -4,13 +4,13 @@
  display: flex;
    align-items: center;
    justify-content: space-between;
-
+width: 90%;
 /*    width: 100%; */
 
 
 border:0px solid rgb(13, 255, 0);
 
-
+height: 5rem;
 
   border-radius: 8px;
 
@@ -66,7 +66,10 @@ border:0px solid rgb(13, 255, 0);
      font-family:'Inter';
      font-weight: 400;
      font-family: 'Figtree';
-     background-color: white;
+  /*    background-color: rgb(213, 230, 254); */
+   
+    
+    
 
      color:rgb(0, 0, 0);
   
@@ -100,15 +103,16 @@ gap:1rem
 }
 
 .placeholder-filter{
-  background-color: rgb(233, 233, 233); 
+/*   background-color: rgb(233, 233, 233);  */
  border-color: transparent;
  color:rgb(0, 0, 0);
- opacity: .8;
+ opacity: 1;
+/*  background-color: rgb(240,240,240); */
 }
 
 .filter-placeholder-text{
 
-color:rgba(142, 142, 142, 0.8);
+color:rgba(30,30,30);
 width: 100%;
 font-size: 14px;
 font-family:'Inter';

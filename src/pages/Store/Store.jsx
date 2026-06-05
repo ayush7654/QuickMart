@@ -72,31 +72,7 @@ const [partialPill,setPartialPill] = useState(false);
 
    const [activeLayout, setActiveLayout] = useState(4);
     
-/*   const [showStoreHeader,setShowStoreHeader] = useState(false)
 
-
-  useEffect(()=>{
-
-  })
- */
-
-/*    const [hide, setHide] = useState(false);
-  let lastY = 0;
-
-  useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY;
-
-      if (y > lastY) setHide(true);      
-      else setHide(false);              
-
-      lastY = y;
-    };
-
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
- */
 
 
   const loadBatch = async (batchNumber) => {
@@ -246,7 +222,13 @@ const [isScrolledPastLimit, setIsScrolledPastLimit] = useState(false);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
+const hasActiveFilters = Boolean(
+  appliedFilters.filters.length ||
+  appliedFilters.colors.length ||
+  currentCategory ||
+  appliedFilters.price.lowRange !== null ||
+  appliedFilters.price.highRange !== null
+);
 
   
   return (
@@ -317,9 +299,7 @@ setSideFilterOn={setSideFilterOn}/>
   
    <div className="store-page-title">
 
-{/*     <div className="side-filter-btn-wrapper" onClick={()=>setSideFilterOn(true)}>
-      < HiOutlineAdjustmentsHorizontal size={20}  />
-      Filters</div> */}
+
     
     <span className="selected-group"> {currentCategory?selectedGroup: 'STORE'}</span>
     <span className="selected-category">
@@ -365,28 +345,10 @@ setSideFilterOn={setSideFilterOn}/>
    
             
 
-           {/*            <div className='product-count-div'>
-                      <div className="product-count-content">  Showing <span>{productElements.length} </span>results for '<span>{typeFilter?currentCategory:'All Products'}</span>' . </div>
- {typeFilter && <AnimatedUnderline
-  thickness={1}
-  offset={1}
-  color='rgb(0,100,255)'>
-      <span onClick={handleCancelTypeFilter} className="clear-category-btn">Clear Category</span>
-  </AnimatedUnderline>}
-  
-    </div>
- */}
+    
 
  <div className="store-bar-center">
-{/* 
-  <AppliedFilters
-             appliedFilters = {appliedFilters}
-                    removeFilter = {removeFilter}
-                    handleRemoveColor ={handleRemoveColor}
-                    currentSort ={currentSort}
-                    toggleSortOrder ={toggleSortOrder}
-                    currentCategory={currentCategory}
-                    />    */}
+
 
                  <span> {productElements.length} PRODUCTS </span>  
                     
@@ -414,14 +376,14 @@ setSideFilterOn={setSideFilterOn}/>
             </div>
        
 <div className="applied-filters-wrapper">
-    <AppliedFilters
+  {hasActiveFilters &&  <AppliedFilters
              appliedFilters = {appliedFilters}
                     removeFilter = {removeFilter}
                     handleRemoveColor ={handleRemoveColor}
                     currentSort ={currentSort}
                     toggleSortOrder ={toggleSortOrder}
                     currentCategory={currentCategory}
-                    />   
+                    />   }
 </div>
 
 
@@ -438,12 +400,7 @@ setSideFilterOn={setSideFilterOn}/>
 
            
 
-   {/*   <AppliedFilters
-             appliedFilters = {appliedFilters}
-                    removeFilter = {removeFilter}
-                    handleRemoveColor ={handleRemoveColor}
-                    currentSort ={currentSort}
-                    toggleSortOrder ={toggleSortOrder}/> */}
+
 
          
             

@@ -11,13 +11,7 @@ import { div } from 'framer-motion/client'
 
 export default function AppliedFilters({appliedFilters,removeFilter,handleRemoveColor,currentSort,toggleSortOrder,currentCategory}) {
 
-const hasActiveFilters = Boolean(
-  appliedFilters.filters.length ||
-  appliedFilters.colors.length ||
-  currentCategory ||
-  appliedFilters.price.lowRange !== null ||
-  appliedFilters.price.highRange !== null
-);
+
 
 const navigate = useNavigate();
 
@@ -36,7 +30,7 @@ const categoryFilter =currentCategory?currentCategory.replaceAll('-', ' '):null;
 
 
              {/* 1. Check if any filters actually exist to show the container */}
-{hasActiveFilters? (
+ 
   <div className="applied-filter-wrapper">
  
  
@@ -75,40 +69,7 @@ const categoryFilter =currentCategory?currentCategory.replaceAll('-', ' '):null;
     ))}
      
   </div>
-) : (
 
-<div></div>
- /*  <div className="placeholder-filter-section">
-
-
-<div className="placeholder-filter-wrapper">
-  
- <div className='applied-filter placeholder-filter'>
-   <span>Best Sellers</span>
-    <span>?</span>
- </div>
-
-  <div className='applied-filter placeholder-filter'>
-   <span>Warranty</span>
-    <span>?</span>
- </div>
-  <div className='applied-filter placeholder-filter'>
-     <div className="color-filter-content">
-           <span className="colorBox" style={{backgroundColor:'red'}}></span>
-        <span>Red</span>
-        </div>
-       
-        <span>?</span>
-  </div> 
-</div>
-    <div className="filter-placeholder-text">
-Refine your search with filters 
-  </div>  
- 
-  </div> */
-
-
-)}
 
 
 
