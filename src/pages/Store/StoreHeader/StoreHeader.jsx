@@ -63,17 +63,13 @@ const handlePartialToggle = () => {
   
         
          </div>
-       <div className="side-filter-btn-wrapper" onClick={()=>setSideFilterOn(true)}>
-      
-       <div className='scroll-btn-Icon-wrapper'>
-       <span className="scroll-btn-Icon-content">
- <  HiOutlineAdjustmentsVertical size={20}/>
 
-       </span>
-      </div>
-    <ScrollButton text='Filter'/>  
-      
-      </div>
+             <div className="store-head-search-wrapper">
+        <input className='store-head-search'
+       placeholder='Search'/>
+         <Search strokeWidth={1} size={20} className='store-search-icon'/>
+       </div>
+    
       
   </div>
    
@@ -96,12 +92,18 @@ const handlePartialToggle = () => {
          <div className="store-catelog-btn-wrapper">
 
 
+   <div className="side-filter-btn-wrapper" onClick={()=>setSideFilterOn(true)}>
+      
+       <div className='scroll-btn-Icon-wrapper'>
+       <span className="scroll-btn-Icon-content">
+ <  HiOutlineAdjustmentsVertical size={20}/>
 
-          <div className="store-head-search-wrapper">
-        <input className='store-head-search'
-       placeholder='Search'/>
-         <Search strokeWidth={1} size={20} className='store-search-icon'/>
-       </div>
+       </span>
+      </div>
+    {/* <ScrollButton text=''/>   */}
+      
+      </div>
+      
 
   <div className={`store-catelog-btn ${isOpen || partialPill?'store-catelog-active':''}`} onClick={handleExpandedToggle}>
 

@@ -23,11 +23,11 @@ export default function ProductReview() {
 
 
       const MockUsers = [
-        {id:1, img:'/MockDP1.jpg'},
-        {id:2, img:'/MockDP4.avif'},
-        {id:3, img:'/MockDP5.jpg'},
-        {id:4, img:'/MockDP6.jpg'},
-        {id:5, img:'/MockDP3.jpg'},
+        {id:1, img:'/DetailsMedia//MockDP1.jpg'},
+        {id:2, img:'/DetailsMedia//MockDP4.avif'},
+        {id:3, img:'/DetailsMedia//MockDP5.jpg'},
+        {id:4, img:'/DetailsMedia//MockDP6.jpg'},
+        {id:5, img:'/DetailsMedia//MockDP3.jpg'},
 
       ]
 

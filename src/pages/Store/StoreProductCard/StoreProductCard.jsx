@@ -11,6 +11,7 @@ import {  MdShoppingCartCheckout } from "react-icons/md";
 import { IoCheckmarkDone } from "react-icons/io5";
 import { useCartList } from '../../../components/CartListProvider';
 import { FaCartPlus } from "react-icons/fa";
+import { Plus,Check } from 'lucide-react';
 
 import './StoreProductCard.css'
 import AddProductButton from './AddProductButton/AddProductButton';
@@ -24,7 +25,7 @@ import StarRating from './../../../components/StarRating';
 
 function StoreProductCard({ product, path }) {
 
-    const { id, images,thumbnail, title, price, rating = 0, discountPercentage } = product;
+    const { id, images,thumbnail, title,brand , category,  price, rating = 0, discountPercentage } = product;
 
 
     const {cartList , updateDataBase } = useCartList()
@@ -42,7 +43,7 @@ const isItemInCart = cartList.some(cartItem => cartItem.id === id);
 const getStatusStyles = (status) => {
   switch (status) {
     case 'In Stock':
-      return { opacity:0 }; // Soft Sage
+      return { opacity:0 };
     case 'Low Stock':
      return { opacity:0 };
     case 'Out of Stock':
@@ -60,7 +61,7 @@ useEffect(() => {
   if (cursorOnHover && images.length > 0) {
     interval = setInterval(() => {
       setspImgId((prevId) => {
-        // If we reach the end of the array, go back to 0
+     
         if (prevId >= images.length - 1) {
           return 0;
         }
@@ -123,76 +124,47 @@ useEffect(() => {
 
 
      
-{/*   <div className={`sp-addToCart ${isItemInCart ? 'sp-added-btn' : ''}`}>
- <AddProductButton isItemInCart={isItemInCart }/>
- 
+ <div className={`sp-addToCart ${isItemInCart ? 'sp-added-btn' : ''}`}>
+{/*  <AddProductButton isItemInCart={isItemInCart }/> */}
+ <Plus className='sp-plus-icon'/>
      
-      </div>  */}
+      </div> 
 
- <div className='productCard-tag sp-brand-tag'> {product.brand?product.brand:product.category} </div>
+ <div className='productCard-tag sp-brand-tag'> {brand?brand:category} </div>
 {discountPercentage>15 && <div className='productCard-tag sp-discount-tag'>save {discountPercentage}%</div>}
 <div className='productCard-tag sp-status-tag' style={statusStyle}>
   {product.availabilityStatus}
 </div>
- {/* <div className='product-color-wrapper'>
+{/*  <div className='product-color-wrapper'>
               <span className='productCard-color color-1'></span>
               <span className='productCard-color color-2'></span>
               <span className='productCard-color color-3'></span>
-              </div>   */}
+              </div>   */} 
         </div>
-      {/*   <div className='sp-info-wrapper'>
-
-          
-            <div className='sp-info-line1'>
-                 <span>{title}</span> 
-          
-            </div>
-
-            <div className='sp-info-line2'>
-              
-               <span className='sp-price'>${price}</span>
-               
-               
-               
-            </div>
-
-                 <div className="sp-info-line3">
-
-                  
-            
-
-             <div className='sp-rating-div'>
-          
-                    
-                       <StarRating rating={Math.round(rating)}/>
-                        <span className='rating-num'>({rating.toFixed(1)})</span>
-               </div>   
-
-               
-
-
-              
-            </div>
-
-       
-           
-        </div> */}
+      
 
               <div className="store-ProductInfo-wrapper">
-                      <div className='sp-rating-div'>
-          
-                    
-                       <StarRating rating={Math.round(rating)}/>
-                        <span className='rating-num'>({rating.toFixed(1)})</span>
-
-                       
-               </div>   
-            <div className="store-Info-line1">
-                <span >{title}</span>
+                  <div className="store-Info-title">
+               {title}
             
             </div>
-            <div>${price}</div>
-          {/*   <div className='store-brandname'>{product.brand?product.brand:product.category} </div> */}
+
+            <div className="productInfo-line2">
+                         <div className='sp-rating-div'>
+          
+                     <MdStar color="rgb(255, 62, 96)" size={16}/> 
+                        <span className='rating-num'>{rating.toFixed(1)}</span>
+                        <span>(1.2k Reviews)</span>
+
+                       
+               </div>  
+
+                 <div className='sp-price'>${price}</div>
+            </div>
+            
+          
+          
+
         </div>
  
     </Link>
@@ -204,42 +176,3 @@ export default React.memo(StoreProductCard);
 
 
 
- {/* <div  classname="store-product" key={id}>
-    {!imageLoaded && <div  className="image-placeholder" ></div>}
-
-
-
-      <Link to={`/store/${id}`} state={path}>
-
-        <div className="productImg-wrapper">
-
-  <div className='productImg-container'>
-    <img
-    src={images[0]}
-    className="productImg"
-    alt={title}
-    style={{ display: imageLoaded ? 'block' : 'none' }}
-    onLoad={() => setImageLoaded(true)}
-  /> 
-  </div>
-
-   
-</div>
-        <div className='productCard-detail' >
-         <div className="Store-Product-title-div"> <div className="Store-Product-title">{title}</div></div>
-          <div className="price-div"> 
-              <div className="product-price">${price}</div>
-                     
-               <div className='productCard-rating-div'>
-                 <span>{rating.toFixed(1)}</span>
-                     <div className="productCard-star-wrapper">
-                      <MdStarBorder className="productCard-star empty" />
-                      <MdStar className="productCard-star filled" />
-                      </div>
-                </div>
-
-          </div>
-        </div>
-      </Link>
-
-    </div>  */}

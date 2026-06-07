@@ -14,6 +14,26 @@
  
   }
 
+  .pd-navBar{
+  color:rgb(120, 120, 120);
+
+
+  display: flex;
+  justify-content: start;
+  align-items: end;
+
+  font-family: 'Figtree';
+  font-size: .9rem;
+    font-weight: 500;
+    border: 0px solid red;
+    text-transform: capitalize;
+}
+
+.pd-navBar span{
+  color:black;
+
+}
+
   .pd-brand-wrapper{
     background-color: #eee;
     width: fit-content;
@@ -87,11 +107,7 @@
 
 }
 
-.pd-description-head{
-  font-size: 1.2rem;
-  font-weight: 500;
 
-}
 
 .pd-description-wrapper p{
   color:rgb(49, 49, 49);
@@ -138,6 +154,7 @@
 .pd-size:hover{
     border: 1px solid blue;
   cursor: pointer;
+  color:blue;
 }
 
 .selected-size{
@@ -219,7 +236,7 @@ font-weight: 500;}
   flex:1;
   height: 2.8rem;
   margin-left: 1rem;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   display: grid;
   place-items: center;
   background-color: black;
@@ -230,7 +247,7 @@ font-weight: 500;}
   font-weight: 400;
   border-radius: 100px;
   font-weight: 500;
-  transition: all .3s ease;
+  transition: all .5s ease;
 
 }
 

@@ -77,12 +77,12 @@ const categoryFilter =currentCategory?currentCategory.replaceAll('-', ' '):null;
         
                   
         
-          {hasActiveFilters && <AnimatedUnderline
+      <AnimatedUnderline
             thickness={1}
             offset={1}
             color='rgb(0,100,255)'>
               <span className='clear-filter-btn'>Clear All</span>
-            </AnimatedUnderline>}
+            </AnimatedUnderline>
 
    </div>
   )

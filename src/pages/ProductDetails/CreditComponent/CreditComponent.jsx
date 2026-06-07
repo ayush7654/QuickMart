@@ -7,10 +7,10 @@ import { FiCheck, FiShield, FiDollarSign } from "react-icons/fi";
 import './CreditComponent.css'
 export default function CreditComponent() {
 
-const CreditArray =[{name:'Fully Authentic',img:'/PD-Img.png'},
-  {name:'New & Unused',img:'/PD-Img2.png'},
-  {name:' No Hidden Fees',img:'/PD-Img3.png'},
-  {name:'Easy Returns',img:'/PD-Img4.png'},
+const CreditArray =[{name:'Fully Authentic',img:'/DetailsMedia/PD-Img.png'},
+  {name:'New & Unused',img:'/DetailsMedia/PD-Img2.png'},
+  {name:' No Hidden Fees',img:'/DetailsMedia/PD-Img3.png'},
+  {name:'Easy Returns',img:'/DetailsMedia/PD-Img4.png'},
 ]
 
   return (

@@ -23,10 +23,11 @@ export default function SimilarProducts({currentCategory,product}) {
         <img src={item.images[0]} className='similar-productImg'/>
       </div>
       <div className='similar-productDetails-div'>
+        <div><StarRating rating={item.rating} starCount={1}/></div>
         <div className='similar-productDetails-title'>{item.title}</div>
         <div className='similar-productDetails-price-div'>
           <span>${item.price}</span>
-          <span className='similar-productDetails-rating'><StarRating rating={item.rating}/></span>
+         
 
         </div>
         <div className='similar-productDetails-details'>{item.description}</div>

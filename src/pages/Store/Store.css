@@ -176,11 +176,6 @@ letter-spacing: 1px;
 
 
 
-.store-grid-toggle{
-
-
-}
-
 
 .store-content {
   flex: 1;
@@ -193,12 +188,7 @@ letter-spacing: 1px;
    flex-direction: column;
   align-items:center;
    border: 0px solid yellow;
-/*     background-color: blue;
-    background-color: rgb(246, 246, 246); */ 
 
-
-  
-   
 
 }
 
@@ -219,14 +209,8 @@ letter-spacing: 1px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color:rgb(255, 255, 255)
-     /*  background-color: rgb(170, 170, 170,.3); */
-/*   border-top:1px solid  rgb(170, 170, 170,.5);
-  border-bottom:1px solid  rgb(170, 170, 170,.5);
-    border: 1px solid rgb(170, 170, 170,.5); */
-;
+  background-color:rgb(255, 255, 255);
   
- 
   
 }
    .productList {
@@ -237,8 +221,6 @@ letter-spacing: 1px;
   margin: 0 auto;
     justify-items: center;
   
-
-  /*   background-color: rgb(170, 170, 170,.5); */
  
 }
 
@@ -437,6 +419,7 @@ overflow: hidden;
     transition: all .3s ease;
         border-radius: 100px;
   overflow: hidden;
+  border: 1px solid black;
     
   }
 

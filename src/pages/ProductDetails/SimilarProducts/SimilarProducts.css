@@ -46,6 +46,7 @@
   border: 1px solid transparent;
   background-color: #eee;
   transition: all .2s ease;
+  cursor: pointer;
 
 }
 
@@ -55,11 +56,11 @@ width: 100%;
 
 }
 
-.similar-productImg-div:hover{
+/* .similar-productImg-div:hover{
  background-color: white;
  border: 1px solid blue;
  cursor: pointer;
-}
+} */
 
 .similar-productDetails-div{
   display: flex;
@@ -80,6 +81,7 @@ width: 100%;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: 600;
 }
 
 .similar-productDetails-details{

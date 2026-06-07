@@ -9,34 +9,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 7rem;
 
 }
 
-.pd-navBar{
-  color:rgb(120, 120, 120);
-  height: 12rem;
-  width: 85%;
-  display: flex;
-  justify-content: start;
-  align-items: end;
-  padding-bottom: 1rem;
-  font-family: 'Figtree';
-  font-size: .9rem;
-    font-weight: 500;
-    border: 0px solid red;
-}
 
-.pd-navBar span{
-  color:black;
-
-}
 
 .product-page-inner {
   display: flex;
    /* enough height for scrolling effect */
   position: relative;
 /*   margin-top: 6rem; */
-  border: 1px solid red;
+  border: 0px solid red;
   width: 85%;
 
 }

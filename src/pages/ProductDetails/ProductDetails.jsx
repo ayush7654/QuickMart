@@ -14,7 +14,7 @@ export default function ProductDetails(){
     const{id} = useParams()
 
 
-    const {product,currentCategory} = useProductDetailsData(id)
+    const {product,currentCategory} = useProductDetailsData(id);
  
 
 
@@ -26,7 +26,6 @@ export default function ProductDetails(){
      <div className="product-page-container">
      <div  className="pd-backButton"><ChevronLeft absoluteStrokeWidth={1.5}/></div> 
 
-     <div className="pd-navBar"> <Link to='/store'>Store&nbsp;</Link>/<span>&nbsp;{product?.title}</span></div>
 { product? <div className="product-page-inner">
     <div className="product-left">
      <CarouselComponent Imagelist={product.images} product={product}/>  

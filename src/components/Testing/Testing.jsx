@@ -1,8 +1,8 @@
 
 import React, { useState ,useRef , useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import ScrambleTextSwitcher from "./ScrambleTextSwitcher";
-import StoreBanner from "./../../pages/Store/StoreBanner/StoreBanner";
+import { IoChevronDownOutline } from "react-icons/io5";
+import useProductDetailsData from "../../pages/ProductDetails/useProductDetailsData";
  import "./Testing.css";
 
 
@@ -10,14 +10,11 @@ import StoreBanner from "./../../pages/Store/StoreBanner/StoreBanner";
 
 export default function Testing() {
  
-
-
+     const {product,currentCategory} = useProductDetailsData(165);
 
 
   return (
 <div className="testing-div">
-
-
 
 </div>
 
