@@ -258,7 +258,7 @@ const hasActiveFilters = Boolean(
 
 
 
-{/*  <HomeIntro/>  */}
+  <HomeIntro/>  
 
  
 

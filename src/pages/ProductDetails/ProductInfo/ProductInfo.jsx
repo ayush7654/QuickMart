@@ -22,7 +22,8 @@ const {
     rating ,
     brand,
     discountPercentage,
-    category
+    category,
+    stock
   } = product;
 
 
@@ -103,18 +104,32 @@ useEffect(() => {
 
     return (
         <div className="product-info-pd">
-           
-                 <div className="pd-navBar"> <Link to='/store'>Store&nbsp;</Link>/<span>&nbsp; {brand?brand:category} </span></div>
-            <h2 className='pd-title-wrapper'>{title}</h2>
+            <div className="pd-pill-wrapper">
+                <span className="pd-pill pd-brand-wrapper">{product.brand?product.brand:product.category}</span>
+                <span className="pd-pill pd-stock-status">{product.availabilityStatus}</span>
+                
+                </div>
+               
+        <div className="pd-title-wrapper">
+            <h2 className='pd-title'>{title}</h2>
+        
+        </div>
+            
 
             <div id='pd-line-wrapper' className='pd-price-rating-wrapper'>
                 <div className='pd-price-wrapper'>
+                   {discountPercentage>5? <div className="discounted-price">
+                         <span className='pd-old-price'>${price}</span>
                     <span className='pd-price'>${(((100 - discountPercentage) * price) / 100).toFixed(2)}</span>
-                    <span className='pd-old-price'>${price}</span>
+                  {/*   <span className='pd-discount-percent'>(-{discountPercentage}%)</span> */}
+                    </div>:
+                    <div className='pd-original-price'>${price}</div>
+                    }
+                    
                 </div>
                 <div className='pd-rating-wrapper'>
                     <StarRating rating={Math.round(rating)} className='pd-star' /> 
-                    <span>{rating.toFixed(1)}</span>
+                    <span>({rating.toFixed(1)})</span>
                 </div>
             </div>
 
@@ -122,6 +137,8 @@ useEffect(() => {
               
                 <p> {description} </p>
             </div>
+
+
 
             <div className='pd-color-wrapper'>
                 <div>

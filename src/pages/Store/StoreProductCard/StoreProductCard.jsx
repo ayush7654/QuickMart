@@ -37,7 +37,7 @@ function StoreProductCard({ product, path }) {
 
   const [SPImgId,setspImgId] = useState(0)
 
-  const [cursorOnHover , setCursorOnHover] =useState(false)
+  const [cursorOnHover , setCursorOnHover] =useState(false);
 const isItemInCart = cartList.some(cartItem => cartItem.id === id);
   
 const getStatusStyles = (status) => {
@@ -143,28 +143,18 @@ useEffect(() => {
         </div>
       
 
-              <div className="store-ProductInfo-wrapper">
-                  <div className="store-Info-title">
-               {title}
-            
-            </div>
+   <div className="store-ProductInfo-wrapper">
+        <div className="store-Info-title">{title} </div>
 
-            <div className="productInfo-line2">
-                         <div className='sp-rating-div'>
-          
-                     <MdStar color="rgb(255, 62, 96)" size={16}/> 
+        <div className="productInfo-line2">
+          <div className='sp-rating-div'>         
+            <MdStar color="rgb(255, 164, 57)" size={16}/> 
                         <span className='rating-num'>{rating.toFixed(1)}</span>
-                        <span>(1.2k Reviews)</span>
+                        <span>(1.2k Reviews)</span>                      
+           </div>  
 
-                       
-               </div>  
-
-                 <div className='sp-price'>${price}</div>
-            </div>
-            
-          
-          
-
+             <div className='sp-price'>${price}</div>
+        </div>
         </div>
  
     </Link>

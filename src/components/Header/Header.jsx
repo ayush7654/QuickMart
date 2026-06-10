@@ -113,7 +113,7 @@ useEffect(() => {
   let ticking = false;
   // Define the distance from the top in pixels after which the header
   // changes its base class (e.g., from transparent to solid background)
-  const headerClassChangeThreshold = 400; // You can adjust this value as needed
+  const headerClassChangeThreshold = 10; // You can adjust this value as needed
 
   // NEW: Define the scroll distance from the top *before* the header
   // starts to consider hiding (becoming idle).
@@ -187,26 +187,42 @@ useEffect(() => {
  const suggestionComp= suggestions?suggestions.filter(item=>item.name.toLowerCase().includes(searchTerm.toLowerCase())):null;
 
    
-    return(<div      
-      className='site-header-div' 
-     
+    return(
+    <div className='site-header-div' 
 
+       style={{
 
-     style={{
       display:location.pathname=='/Login'?'none':'flex',
-      // Dynamic transition based on 'isIdle' state
-      transition: isIdle
-        ? 'transform 0.2s ease, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
-        : 'transform 0.2s ease,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
-      transform:isIdle 
- ? `translate(-50%, ${location.pathname=='/store' || '/'? '-100%':'0%'}`   
-    : 'translate(-50%, 0%)'
-  
-     
-     
-    }}>
 
-   <ExtraHeader extraHeaderVisible={extraHeaderVisible} isAtTop={isAtTop} />  
+      // Dynamic transition based on 'isIdle' state
+
+      transition: isIdle
+
+        ? 'transform 0.2s ease, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
+
+        : 'transform 0.2s ease,  background-color 0.4s ease, box-shadow 1s ease', // When showing (moving down/active)
+
+      transform:isAtTop?
+      (   extraHeaderVisible  ? 'translateY(0)':'translateY(-0rem)' )
+      :
+      (isIdle
+
+ ? `translateY(${location.pathname=='/store' || '/'? '-100%':'0%'}`  
+
+    : 'translateY(0%)')
+
+   
+
+  /*  transform:isAtTop && extraHeaderVisible  ? 'translateY(0)':'translateY(-2rem)' */
+
+     
+
+     
+
+    }}
+ >
+
+  <ExtraHeader extraHeaderVisible={extraHeaderVisible} isAtTop={isAtTop} />   
 
 
 
@@ -219,7 +235,11 @@ useEffect(() => {
         ? 'transform 0.4s ease-in, background-color 0.4s ease, box-shadow 1s ease' // When hiding (moving up/idle)
         : 'transform 0.5s ease-out,  background-color 0.4s ease, box-shadow 1s ease',
         // When showing (moving down/active)
-       transform:isAtTop && extraHeaderVisible  ? 'translateY(0)':'translateY(-2rem)'
+
+        
+     
+
+
         }}>
           {/* <div className="header-home-upper">
             <div className="site-logo-div" style={{scale:isAtTop?'1':'.5' , opacity:isAtTop?'1':'.4'}}> 

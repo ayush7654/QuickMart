@@ -24,9 +24,10 @@ export default function ProductDetails(){
       
   
      <div className="product-page-container">
+      
      <div  className="pd-backButton"><ChevronLeft absoluteStrokeWidth={1.5}/></div> 
 
-{ product? <div className="product-page-inner">
+{ product && <div className="product-page-inner">
     <div className="product-left">
      <CarouselComponent Imagelist={product.images} product={product}/>  
     </div>
@@ -55,7 +56,7 @@ export default function ProductDetails(){
       </div>
    </div>
     </div>
-  </div>:<div>loading</div>}
+  </div>}
 
   <div className="next-section">
 <SimilarProducts currentCategory={currentCategory} product={product}/>
