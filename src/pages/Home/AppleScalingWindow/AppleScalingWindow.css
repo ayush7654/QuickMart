@@ -154,6 +154,34 @@ will-change: transform;
   display: block; /* Removes bottom whitespace gap */
 }
 
+
+.middle-row-grid{
+ height: 70%;
+ width: 15rem;
+ display: grid;
+ place-items: center;
+ position: absolute;
+
+ top:50%;
+ transform: translateY(-50%);
+  background-color: white;
+ color:black;
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ font-weight: 600;
+ text-align: left;
+ padding: 1rem;
+ font-size: 2rem;
+}
+
+.apple-left-grid{
+ left:5%;
+}
+
+.apple-right-grid{
+ right:5%;
+}
+
+
 .middle-row-window video{
   width: 100%;
   height: 100%;
@@ -166,9 +194,20 @@ will-change: transform;
   object-position: top;
 }
 
+.mid-row-wrapper{
+
+  position: relative;
+
+}
+
 .middle-row {
 transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
+
+
+
+
+  
 }
 
 .window-video-content-wrapper {
@@ -212,7 +251,7 @@ transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
   gap: 10px;
   position: absolute;
   right: 2rem;
-  bottom: 2.5rem;
+  top: 4rem;
  
 }
 
@@ -293,14 +332,26 @@ transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
     font-weight: 500;
 }
 
-.ApplePro-buy{
+.ApplePro-btn-wrapper{
     width: 100%;
     display: grid;
     place-items: center;
+    
 }
 
-.ApplePro-buy .apple-buy-btn{
-  width: fit-content;
+ .ApplePro-btn{
+  width:8rem;
+  border-radius: 100px;
+  background-color: rgb(0,100,255);
+ transition: all .3s ease;
+ border: 2px solid transparent;
+ font-weight: 500;
   
 }
+
+ .ApplePro-btn:hover{
+  border: 2px solid rgb(0,100,255);
+  background-color: transparent;
+  color:rgb(0,100,255);
+ }
 

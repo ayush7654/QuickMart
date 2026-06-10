@@ -73,18 +73,7 @@ const handleNav = (direction) => {
     </div>
             </div>
 
-{/* <div className="pd-stock-state-wrapper">
-  <div className={`pd-stock-state ${
-  product?.availabilityStatus?.toLowerCase() === 'out of stock' 
-    ? 'stock-out' 
-    : product?.availabilityStatus?.toLowerCase() === 'low stock' 
-    ? 'stock-low' 
-    : ''
-}`}>
-  {product?.availabilityStatus}
-</div> 
-</div>
- */}
+
 
             <div className="main-nav-wrapper">
   <div className="pd-floating-btn img-nav-left"

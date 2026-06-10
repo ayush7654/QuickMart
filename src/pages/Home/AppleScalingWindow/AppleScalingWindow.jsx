@@ -33,7 +33,7 @@ const AppleWindowInfo = [
 export default function AppleScalingWindow() {
 
     
-    const [currentWindow, setCurrentWindow] = useState(1)
+    const [currentWindow, setCurrentWindow] = useState(0)
     
      const sectionRef = useRef(null);
     
@@ -150,8 +150,11 @@ className='ap-head-wrapper'>
             <span className="applePro-para">{AppleWindowInfo[currentWindow].description}</span>
             <span className="applePro-price">{AppleWindowInfo[currentWindow].price}</span>
 
-            <div className="ApplePro-buy">
-              <ScrollButton className="apple-buy-btn" text="Buy Now" /> 
+            <div className="ApplePro-btn-wrapper">
+              <span className="ApplePro-btn">
+                <ScrollButton  text="Buy Now" /> 
+                </span>
+              
             </div>
 
             <div className="window-nav-wrapper">
@@ -176,7 +179,7 @@ className='ap-head-wrapper'>
          style={{ y, scale, borderRadius: radius, }}>
           
           <motion.div className="window-content"
-           /* style={{ padding }} */
+
           >
             
             {/* ROW 1 */}
@@ -197,6 +200,13 @@ className='ap-head-wrapper'>
             </div>
 
             {/* ROW 2 (CENTER ROW) */}
+            <div className="mid-row-wrapper">
+              <div className="middle-row-grid apple-left-grid">
+                The Absolute Best of Apple. All in One Place.
+              </div>
+                  <div className="middle-row-grid apple-right-grid">
+                The Absolute Best of Apple. All in One Place.
+              </div>
             <div
               className="window-row middle-row"
               style={{
@@ -207,6 +217,8 @@ className='ap-head-wrapper'>
                 })`
               }}
             >
+           
+
               {AppleWindowInfo.map((item, index) => (
                 <motion.div key={index} className="window-wrapper middle-row-window"
           style={{
@@ -226,6 +238,7 @@ className='ap-head-wrapper'>
                   />
                 </motion.div>
               ))}
+            </div>
             </div>
 
             {/* ROW 3 */}

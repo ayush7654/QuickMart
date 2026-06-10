@@ -15,8 +15,7 @@ const [showFirst, setShowFirst] = useState(true);
   }, []);
 
   return (
-      <div className={`extra-header-wrapper ${extraHeaderVisible && isAtTop ?'extra-header-white':''}`}
-     /*   style={{opacity:extraHeaderVisible && isAtTop ?1:0  }} */>
+      <div className={`extra-header-wrapper ${extraHeaderVisible && isAtTop ?'extra-header-white':''}`}>
 
     <div className={`extra-link-wrapper ${showFirst ? 'visible' : 'hidden'}`}>
         <span id="extra-link" className="underline">Coming Soon : The Summer Collection 26.</span>
