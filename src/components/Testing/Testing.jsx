@@ -7,16 +7,12 @@ import useProductDetailsData from "../../pages/ProductDetails/useProductDetailsD
 
 
 
-
 export default function Testing() {
  
-     const {product,currentCategory} = useProductDetailsData(165);
-
 
   return (
 <div className="testing-div">
   
-
 </div>
 
 

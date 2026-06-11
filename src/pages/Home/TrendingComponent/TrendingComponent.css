@@ -39,202 +39,110 @@ background-color: white;
 
 
 
-
-  
-.trend-container{
-    border: 0px solid red ;
-    width: 90%;
-        height: 160vh;
-     display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap:8px;
-
-
-}
-
-#trend-div{
-    width: 100%;
- height: 100%;
-overflow: hidden;
-     position: relative;
-     cursor: pointer;
-      border-radius: 15px;
- overflow: hidden;
- border: 0px solid red;
-}
-
-
-
-#trend-div:hover .animated-underline::after {
-  transform: scaleX(1);
-}
-
-.trend-div1::before {
-  content: "";
-  position: absolute;
-  inset: 0; /* Fills the container */
-  background-image: url('/FashionTrend/Men-clothing2.jpg');
-  background-position: top;
-  background-size: cover;
-  
-  /* The Transition */
-  transition: transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
- 
-}
-
-
-
-
-
-.trend-div2::before {
-  content: "";
-  position: absolute;
-  inset: 0; /* Fills the container */
-  background-image: url('/FashionTrend/Women-clothing.jpg');
-  background-position: top;
-  background-size: cover;
-  
-  /* The Transition */
-  transition: transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
- 
-}
-
-.trend-div3::before {
-  content: "";
-  position: absolute;
-  inset: 0; /* Fills the container */
-  background-image: url('/FashionTrend/HotTrends.webp');
-  background-position: top;
-  background-size: cover;
-  
-  /* The Transition */
-  transition: transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
- 
-}
-
-.trend-div4::before {
-  content: "";
-  position: absolute;
-  inset: 0; /* Fills the container */
-  background-image: url('/FashionTrend/ActiveGear2.jpg');
-  background-position: top;
-  background-size: cover;
-  
-  /* The Transition */
-  transition: transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
- 
-}
-
-
-
-#trend-div:hover::before {
-  transform: scale(1.05); /* Adjust 1.15 for more/less zoom */
-}
-
-#trend-name-div{
-    position: absolute;
- 
-    border: 0px solid red;
-    width: 95%;
- 
-
+.clothingTrendsWrapper{
+  width: 90%;
+margin-top: 2rem;
   display: flex;
-  justify-content:center;
+  flex-direction: column;
   align-items: center;
-    top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
+
+  gap:6rem;
 }
 
-#trend-name{
-    font-size: 2.5rem;
-       font-family: 'Montserrat';
-    color:white;
-    font-weight: 600;
-    letter-spacing: .05rem;
-    transition: all .3s ease;
-  
-}
-#trend-div:hover #trend-name{
-  font-size: 2rem;
-}
+/* .clothing-trend-head{
+  font-size: 3rem;
+} */
+
+.clothing-trend{
+ width: 100%;
+   height: 80vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 2rem;
 
 
-#trend-button{
+}
+
+.trend-img-wrapper{
+ width: 45%;
+ height: 100%;
+
+ border-radius: 50px;
+ overflow: hidden;
+}
+
+.trend-img-wrapper img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+
+}
+
+.trend-info{
+width: 50%;
+ height: 100%;
+ border: 0px solid rgb(178, 209, 21);
+ color:black;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ padding: 5rem;
+ gap: 1rem;
  
-   background-color: transparent;
-   border: 1px solid white;
-   height: 2.5rem;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: 1rem;  
-   color:white;
-   font-family: 'Poppins';
-   font-weight: 400;
-   transition: all .3s ease;
+
 }
 
-#trend-div:hover #trend-button:hover{
-    cursor: pointer;
-    background-color: rgb(240,240,240);
+.trend-tag{
+  padding: 5px 15px;
+  border-radius: 100px;
+  border: 0px solid black;
+  width: fit-content;
+  margin-bottom: 1rem;
+  font-size: 16px;
+  background-color: rgba(217, 221, 251, 0.659);
+  border: 1px solid rgb(196, 203, 255);
+  color:rgb(0, 0, 0);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family:'Roboto';
 }
 
-#trend-div:hover #trend-button{
-    background-color: rgb(255, 255, 255);
-    color:rgb(10,10,10);
+.trend-info h2{
+  font-size: 3.5rem;
+  font-family: 'Raleway';
+}
+.trend-info p{
+  font-size: 1rem;
+  font-family: 'Inter';
+  line-height: 2rem;
+}
+
+.fashion-trend-btn{
+
+ width: 8rem;
+ padding: 2px 0rem;
+ background-color: rgb(0,100,255);
+ 
+ border: 2px solid transparent;
+
+ font-size: 1rem;
+ border-radius: 100px;
+ color:rgb(255, 255, 255);
+ font-family:sans-serif;
+ font-weight: 600;
+ display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.fashion-trend-btn:hover{
+  background-color: transparent;
+   border: 2px solid rgb(0,100,255);
+    color:rgb(0,100,255);
 }
 
 
-
-
-
-
-  @media(max-width:1000px){
-    .trend-container{
-              height: 70vh;
-    }
-        #trend-button{
-     font-size: .8rem;
-     padding: .5rem;
-    }
-  }
-
-    @media(max-width:550px){
-    .trend-container{
-              height: 70vh;
-    }
-        #trend-name-div{
-          flex-direction: column;
-      justify-content: space-between;
-      height: 50%;
-    }
- #trend-name{
-    font-size: 2rem;
-    font-family: 'Montserrat';
-    color:white;
-    font-weight: 600;
-}
-    #trend-button{
-    width: 50%;
-    
-    }
-  }
-
-      @media(max-width:400px){
-    .trend-container{
-              height: 80vh;
-                  width: 95%;
-    }
-
-       #trend-button{
-    width: 70%;
-    height: 2rem;
-    
-    }
-
-
-  }
 
