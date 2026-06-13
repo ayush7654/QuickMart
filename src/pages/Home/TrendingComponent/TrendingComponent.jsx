@@ -75,7 +75,7 @@ const itemVariants = {
     >
      
       <ScrollButton text={' Shop Now '}/>
-        {/* <span className="arrow" >→</span> */}
+         
     </motion.div>
   </motion.div>
 

@@ -192,10 +192,10 @@ className='ap-head-wrapper'>
         marginRight: gap
       }}
        >
-                <img src="AppleProductsMedia/Iphone-img5.png" alt="gallery" />
+                <img src="AppleProductsMedia/AppleImg7.jpg" alt="gallery" />
               </motion.div>
               <div className="window-wrapper">
-                <img src="AppleProductsMedia/Iphone-img7.png" alt="gallery" />
+                <img src="AppleProductsMedia/AppleImg9.jpg" alt="gallery" />
               </div>
             </div>
 
