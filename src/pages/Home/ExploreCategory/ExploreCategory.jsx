@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Observer } from 'gsap/all'; // Try importing from 'gsap/all'
 import gsap from 'gsap';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import './ExploreCategory.css';
 
@@ -129,12 +130,14 @@ useEffect(() => {
           exit={{ y: -20, opacity: 0 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
+         <div className='fading-text-gradient'>
           {cardsList[activeIndex].name}
+          </div> 
         </motion.div>
       </AnimatePresence>
     </div>
 
-    <div className="pagination-container">
+   {/*  <div className="pagination-container">
       {cardsList.map((_, index) => (
         <div
           key={index}
@@ -142,9 +145,11 @@ useEffect(() => {
           onClick={() => setActiveIndex(index)} 
         />
       ))}
-    </div>
+    </div> */}
   </div>
 </div>
+  
+
         
         <div className="test-carousel-window" ref={containerRef} data-lenis-prevent>
           <div
@@ -161,12 +166,21 @@ useEffect(() => {
                 onClick={() => setActiveIndex(index)}
                 style={{ backgroundImage: `url(${card.img})` }}
               >
-               
-                <div className="test-card-content">
-                  <div id='category-head-line'>{card.heading.l1}</div>
+             
+                <div className="test-card-content-wrapper">
+                    <div className="test-card-title"> {card.name} </div>
+                  <div className="test-card-content">
+                       <div id='category-head-line'>{card.heading.l1}</div>
                   <div id='category-head-line'>{card.heading.l2}</div>
                   <div id='category-head-line'>{card.heading.l3}</div>
+                  </div>
+                  <div className="category-btn">
+                    <span>Shop Now</span>
+                    <ArrowUpRight className='category-btn-icon' size={25}/>
+                  </div>
+                
                 </div>
+               
               </div>
             ))}
           </div>

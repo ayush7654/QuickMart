@@ -33,7 +33,7 @@ const AppleWindowInfo = [
 export default function AppleScalingWindow() {
 
     
-    const [currentWindow, setCurrentWindow] = useState(0)
+    const [currentWindow, setCurrentWindow] = useState(0);
     
      const sectionRef = useRef(null);
     
@@ -102,6 +102,7 @@ export default function AppleScalingWindow() {
       }, [currentWindow]);
 
 
+
   return (
     <motion.div className="Apple-scaling-window"
     style={{ padding }}>
@@ -120,17 +121,19 @@ className='ap-head-wrapper'>
         }
       }}  
   >
-    <img src='AppleProductsMedia/AppleLogo.png'/>
+    <img src='AppleProductsMedia/AppleWhite.png'/>
 
     </motion.div> 
     <div className="ap-head-content">
      
      <div className="ap-head-upper">
 
-    <div className="ap-head-main">The Apple Store</div>
+    <div className="ap-head-main">
+       <TextAnimation text={'The Apple Store'} delay={0.15} staggerDelay={.1} />
+    </div>
      </div>
      <div className="ap-head-lower">
-         <TextAnimation text={'Experiences only Apple can deliver.'} delay={0.1} staggerDelay={.08} />
+         <TextAnimation text={'Experiences only Apple can deliver.'} delay={0.5} staggerDelay={.1} />
      </div>
 
  
@@ -195,7 +198,7 @@ className='ap-head-wrapper'>
                 <img src="AppleProductsMedia/AppleImg7.jpg" alt="gallery" />
               </motion.div>
               <div className="window-wrapper">
-                <img src="AppleProductsMedia/AppleImg9.jpg" alt="gallery" />
+                <img src="AppleProductsMedia/MacBookImg7.webp" alt="gallery" />
               </div>
             </div>
 

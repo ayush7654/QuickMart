@@ -59,14 +59,10 @@ export default function Logged_Out({email,password,setEmail,setPassword,signIn})
 
         <div  
      id='account-button' style={{pointerEvents:email || password?'auto':'none'}}
-    /*  className={email || password ?'account-button-active':'account-button-inactive'} */
+     className={email || password ?'account-button-active':'account-button-inactive'} 
       onClick={signIn} >
           <ScrollButton
   text='Log In'
-  color={email || password?'rgb(0,150,255)':'rgba(0, 150, 255, 0.6)'}
-  theme='buttonFilled'
-  themeOnHover='buttonOutline'
-  
 
 />
       </div> 

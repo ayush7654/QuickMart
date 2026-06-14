@@ -23,53 +23,37 @@ const DogFood =[
   {id:3,title:'Lamb And Chicken',img1:'PetFood4Img1.webp',img2:'PetFood4Img2.webp',price:'£14.00',brand:'Harringtons'},
 ]
 
- 
+ // 1. Controls the staggered entry timing for all children inside
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12, // Delay between each element's animation
+        delayChildren: 0.1,    // Initial delay before the sequence starts
+      },
+    },
+  };
+
+  // 2. The motion properties for each line of text and group
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 40 
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { 
+        type: 'spring', 
+        stiffness: 65, 
+        damping: 14 
+      },
+    },
+  };
 
 export default function PetShopCollection() {
 
-
-
-
-/*  const arcItemRef = useRef(null);
-
- const sectionRef = useRef(null);
-
-const { scrollYProgress } = useScroll({
-  target: sectionRef,
-
-  offset: ["start end", "start start"] 
-});
-
-const translateYUp = useTransform(scrollYProgress,[0,1],["100%", "0%"]);
- */
-
-
-/* 
-useEffect(() => {
-  gsap.fromTo(
-    ".arc-item",
-    {
-      scale: .4,
-      opacity:.8,
-      rotate: 0,
-      transformOrigin: "center center",
-      
-    },
-    {
-      scale: 1,
-      opacity:1,
-      rotate: 40,
-      ease: "none",
-      stagger: 0.15, 
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-        end: "top 20%",
-        scrub: 1,
-      },
-    }
-  );
-}, []); */
 
   const PetProducts=[
     {title:'Cyclone Dog Jacket',img1:'SamplePetImg5.jpg',img2:'SamplePetImg2.jpg',price:'95',brand:'Cyclone'},
@@ -81,70 +65,73 @@ useEffect(() => {
 
 const [hoveredIndex, setHoveredIndex] = useState(null);
 
-const parentVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15, // Creates the slight delay between lines
-    },
-  },
-};
 
-const childVariants = {
-  hidden: { y: "100%" }, // Start hidden below the mask
-  visible: {
-    y: 0, // Slide into view
-    transition: {
-      duration: 0.8,
-      ease: [0.16, 1, 0.3, 1], // Your smooth Apple-style curve
-    },
-  },
-};
 
   return (
     <div className="PetShop-collection-wapper">
     <div className="PetShop-collection"  >
  
    
-<div className='pet-section'>
-   
-<div className="pet-left-wrapper">
-
- <motion.div 
-  className="pet-store-head"
-  variants={parentVariants}
-  initial="hidden"
-  whileInView="visible"
- viewport={{ once: true, amount: 0.8 }}
+<div className='pet-section'
 >
-  <div className="clip-mask">
-    <motion.div variants={childVariants}>Everything Your Pet</motion.div>
-  </div>
-  
-  <div className="clip-mask">
-    <motion.div variants={childVariants}>Needs Care , Play & Love</motion.div>
-  </div>
-  
-  <div className="clip-mask">
-    <motion.div variants={childVariants}>in One Place</motion.div>
-  </div>
-</motion.div>
-  <div className="pet-store-subhead">
-   <div>Premium pet care products , fun exercise essentials, and </div>
-   <div>healthy lifestyle solutions designed for happy pets</div>
-   <div>and stress-free pet parents.</div>
-  </div>
-  <div className='pet-store-btn-wrapper'>
-    <div className='pet-store-btn pet-shop-btn'>Shop Now</div>
-    <div className='pet-store-btn'>Explore Pet Care</div>
-  </div>
-  
+   
+<motion.div 
+      className="pet-left-wrapper"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible" // Animates automatically when scrolled into view
+      viewport={{ once: true, amount: 0.2 }} // Triggers when 20% of the section is visible
+    >
+      {/* --- Heading Lines --- */}
+      <div className="pet-store-head">
+        <div className="clip-mask">
+          <motion.div variants={itemVariants}>Everything Your Pet</motion.div>
+        </div>
+        
+        <div className="clip-mask">
+          <motion.div variants={itemVariants}>Needs Care , Play & Love</motion.div>
+        </div>
+        
+        <div className="clip-mask">
+          <motion.div variants={itemVariants}>in One Place</motion.div>
+        </div>
+      </div>
+
+      {/* --- Subheading Lines --- */}
+      <div className="pet-store-subhead">
+        <div className="clip-mask-sub">
+          <motion.div variants={itemVariants}>Premium pet care products , fun exercise essentials, and</motion.div>
+        </div>
+        <div className="clip-mask-sub">
+          <motion.div variants={itemVariants}>healthy lifestyle solutions designed for happy pets</motion.div>
+        </div>
+        <div className="clip-mask-sub">
+          <motion.div variants={itemVariants}>and stress-free pet parents.</motion.div>
+        </div>
+      </div>
+
+      {/* --- Buttons --- */}
+      <motion.div className='pet-store-btn-wrapper' variants={itemVariants}>
+        <motion.div 
+          className='pet-store-btn pet-shop-btn'
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.97 }}
+        >
+          Shop Now
+        </motion.div>
+        <motion.div 
+          className='pet-store-btn'
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.97 }}
+        >
+          Explore Pet Care
+        </motion.div>
+      </motion.div>
+
+    </motion.div>
 
 
 
-
-</div>
 <div className="pet-Food-wrapper">
   {DogFood.map((item,index)=>
   <div className='pet-product' 

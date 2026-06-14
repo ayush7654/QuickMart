@@ -5,7 +5,7 @@ width: 100%;
 display: flex;
 padding-top: 2rem;
 padding-bottom: 2rem;
-font-family: 'Figtree';
+font-family: 'Inter';
 
     }
 
@@ -40,20 +40,7 @@ font-family: 'Figtree';
  flex-direction: column;
  justify-content: center;
  gap: .5rem;
- 
-   
-    
-     color:rgb(110, 110, 110);
-
-     /* font-family: "Figtree", sans-serif;  */
-                  
-                  
-                  
-    
-
-
- 
- 
+  color:rgb(110, 110, 110);
 
     }
 
@@ -67,9 +54,9 @@ font-family: 'Figtree';
         color:rgb(0, 0, 0);
         font-size: 1rem;
        
-        font-weight: 400;
+        font-weight: 600;
    
-         margin-bottom: .5rem;
+     
     }
 
     .cart-product-price-div{
@@ -94,14 +81,7 @@ justify-content: space-between;
 
  
 
-    .cart-product-img-div{
-       border: 0px solid #eee;
-       background-color: #eee;
-      background-color: rgb(245,245,245);
-       
-       
-      
-    }
+   
 
     .cart-product-img,.cart-img-placeholder{
 width: 180px;
@@ -162,76 +142,8 @@ height: 180px;
     
   
 
-    /* .cart-btn{
-        position: absolute;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        border: 0px solid red;
-       gap: 2rem;
-        bottom:0em;
-        right: 0rem;
-       
-      
-         } */
-
-         .cart-btn-ph{
-display: none;
-         }
-
- /*         #cartButton{
-               width: 45%;
-height: 2.1rem;
-    font-size: .9rem;
    
-    font-weight: 400;
-   font-family: 'Jost';
-   transition: all .25s ease;
- 
-         }
- */
-/* #cartButton:hover{
 
-    background-color: #ffffff;
-  border: 1px solid rgb(30,30,30);
-    color:rgb(0, 0, 0);
-    cursor: pointer;
-         } */
-
-  /*    .cart-buy-btn , .cart-remove-btn {
-     
-    background-color: rgb(240,240,240);
-    border: 1px solid transparent;
-    color:rgb(70, 70, 70);
-    
-
-    } */
-
-     
-
-/* 
-    .cart-remove-btn:hover{
-
-        background-color: rgb(50, 50, 50);
-  border: 1px solid rgb(30,30,30);
-    color:rgb(255, 255, 255);
-    cursor: pointer;
-        
-    }
-
-
-
- 
-
-     .cart-buy-btn:hover{
-     
-        background-color: rgb(90, 220, 220);
-      color: white;
-    cursor: pointer;
-    border: 1px solid transparent;
-
-    } */
 
 
 

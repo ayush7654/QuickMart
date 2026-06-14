@@ -18,7 +18,7 @@ export default function CartItem({product,handleRemove,updateDataBase}) {
   } = product;
       const [imgLoaded, setImgLoaded] = useState(false);
 
-     /* const[itemQuantity,setItemQuantity]= useState(quantity)  */
+
 
     const quantityIncrease = () => {
     updateDataBase(product, product.quantity + 1);
@@ -32,11 +32,7 @@ export default function CartItem({product,handleRemove,updateDataBase}) {
 
 
 
-/* useEffect(() => {
-  if (itemQuantity !== quantity) {
-    updateDataBase(product, itemQuantity);
-  }
-}, [itemQuantity, updateDataBase,product]); */
+
 
   return (
     <div key={id} className="Cart-item">
@@ -78,10 +74,7 @@ export default function CartItem({product,handleRemove,updateDataBase}) {
         
           </div>
           </div>
-      <div className="cart-btn-ph">
-         {/*  <button  id='cartButton' className="cart-remove-btn" onClick={()=>handleRemove(title)}>Remove</button>
-                 <button id='cartButton' className="cart-buy-btn">View Details</button> */}
-          </div>
+
            
         </div>
   )

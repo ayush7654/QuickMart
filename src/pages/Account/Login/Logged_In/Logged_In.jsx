@@ -72,9 +72,7 @@ export default function Logged_In({firebase, signOut}) {
       onClick={signOut} >
           <ScrollButton
   text='Log Out'
-  color="rgba(0, 0, 0)"
-  theme='buttonFilled'
-  themeOnHover='buttonOutline'
+  
 
 />
 

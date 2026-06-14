@@ -31,20 +31,21 @@ font-weight: 700;
     justify-content: center;
     align-items: center;
      margin: 5rem 0rem;
+     border: 0px solid black;
    
     
 }
 
+
 .collection-ProductCard{
-     width: 320px;
-  height: 400px;
-  border: 0px solid red;
+
+  border: 0px solid rgb(78, 205, 50);
   cursor: pointer;
  
 }
 
 .collection-ProductImg-wrapper{
-width: 100%;
+     width: 100%;
 aspect-ratio: 1/1;
 
 background-position: center;

@@ -43,7 +43,7 @@ export default function SideBarCart({cartToggled,setCartToggled,toggleOverlay}) 
         </div>
 
         
-        <div className='side-cart-list-wrapper'>
+        <div className='side-cart-list-wrapper' data-lenis-prevent>
              <div className='side-cart-list'>
            {cartElements.length>0 && cartElements }
          </div>
@@ -63,9 +63,7 @@ export default function SideBarCart({cartToggled,setCartToggled,toggleOverlay}) 
            
            <ScrollButton
            text='Checkout'
-           theme='buttonFilled'
-           themeOnHover='buttonOutline'
-           color='rgb(0,125,255)'
+   
 
            />
             </Link>

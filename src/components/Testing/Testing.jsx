@@ -9,10 +9,31 @@ import useProductDetailsData from "../../pages/ProductDetails/useProductDetailsD
 
 export default function Testing() {
  
+const fadingTextStyle = {
+    fontSize: '3rem',
+    fontWeight: 'bold',
+    
+    /* 1. Create a linear gradient running from top (solid black) to bottom (transparent) */
+    backgroundImage: 'linear-gradient(to bottom, #ffffff 30%, transparent 100%)',
+    
+    /* 2. Clip the background gradient so it only renders inside the shape of the letters */
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',
+    
+    /* 3. Make the actual text color transparent so the gradient shines through */
+    WebkitTextFillColor: 'transparent',
+    color: 'transparent',
+  };
 
   return (
 <div className="testing-div">
   
+  <div style={{ padding: '2rem'}}>
+      <h1 style={fadingTextStyle}>
+        Everything Your Pet Needs <br />
+       
+      </h1>
+    </div>
 </div>
 
 
@@ -23,21 +44,3 @@ export default function Testing() {
 };
 
 
-/* const expandVariants = {
-  hidden: { 
-    opacity: 0,
-    clipPath: 'inset(0% 50% 0% 50%)',
-    transition: { duration: 0.5 } 
-  },
-  visible: { 
-    opacity: 1,
-    clipPath: 'inset(0% 0% 0% 0%)',
-    transition: { 
-      duration: 1.2, 
-      ease: [0.25, 1, 0.5, 1],
- 
-      opacity: { duration: 0.8, ease: "linear" } 
-    } 
-  }
-}; */
- 

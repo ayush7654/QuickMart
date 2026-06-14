@@ -85,12 +85,12 @@ export default function Reg_Out({firebase}) {
 
     <div  
      id='account-button' style={{pointerEvents:username||email || password?'auto':'none',padding:'0rem 1rem'}}
+     className={username || email || password || confirmPassword?'account-button-active':'account-button-inactive'}
        onClick={SignUp}>
           <ScrollButton
   text='Sign Up'
-   color={username || email || password || confirmPassword?'rgb(0,150,255)':'rgba(0, 150, 255, 0.6)'}
-  theme='buttonFilled'
-  themeOnHover='buttonOutline'
+  
+
 />
       </div> 
 
@@ -99,5 +99,3 @@ export default function Reg_Out({firebase}) {
 }
 
 
-/* 
-   */

@@ -38,7 +38,7 @@ const itemVariants = {
 
   return (
       <div className="trending-products-div">
-             <div className='home-heading clothing-trend-head'>The Wardrobe Overhaul Series</div>
+             <div className='clothing-trend-head'>The Wardrobe Overhaul Series</div>
 <div className="clothingTrendsWrapper">
 
     {clothingTrends.map((trend,index)=>

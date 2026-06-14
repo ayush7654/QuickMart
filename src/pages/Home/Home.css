@@ -99,7 +99,7 @@ padding-bottom: 2rem;
   }
 
     #home-product-head{
-      width: 85%;
+      width: 90%;
       display: flex;
       align-items: center;
        justify-content: space-between;
@@ -134,18 +134,12 @@ padding-bottom: 2rem;
 
   .home-Products-container{
     border: 0px solid red;
-    width: 85%;
+    width: 90%;
     display: grid;
  min-height: 50vh;
-  
-  /* Default: 4 equal columns covering the full width */
   grid-template-columns: repeat(4, 1fr); 
-  
-  /* Gap between the divs (optional) */
   gap: 25px;
- 
 
-    margin-top: 0rem;
 
 
   }
@@ -158,8 +152,10 @@ padding-bottom: 2rem;
     width: 100%;
     padding: 2rem;
     text-align: center;
-    font-size: 2.5rem;
-    font-family: sans-serif;
+    font-size: 4rem;
+    font-family: "Questrial", sans-serif; 
+    font-weight: 700;
+    margin-bottom: 2rem;
 
   }
 

@@ -68,7 +68,7 @@ backdrop-filter: blur(0px);
   }
 
   .headerTranslucent{
-     background-color: rgba(245, 245, 245, 0.5);
+     background-color: rgba(255, 255, 255, 0.7);
 backdrop-filter: blur(25px);
   }
 
