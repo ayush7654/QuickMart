@@ -98,13 +98,11 @@ border-radius:100px;
 .store-catelog-btn{
   
   height: 2.5rem;
-  
-/*   padding: 16px; */
 
  display: flex;
  justify-content: center;
  align-items: center;
-
+width: 7rem;
  font-size: 14px;
  font-weight: 400;
    border-radius: 100px;
@@ -121,32 +119,12 @@ font-family: 'Figtree';
 font-family: sans-serif;
  font-weight: 500;
   color: #ffffff;
-/*   box-shadow: inset 0px 0px 2px rgb(255, 255, 255);
-    
-    box-shadow: inset 0px 0px 10px rgb(255, 255, 255);  */
-    background-color: rgb(35,35,35);
-   background:
-    linear-gradient(
-      180deg,
-      /* rgb(255, 62, 96) */
-      rgb(43, 113, 222)
-      
-      
-    );
+    background-color: rgb(0,100,255);
 
-/* background-color: rgb(255, 62, 96);
-background-color: #2e4cbc;
- */
 
- /*  background-color: rgb(255, 62, 96); */
-box-shadow: inset 0px 0px 10px rgb(255, 255, 255);
+
+box-shadow: inset 0px 0px 15px rgb(255, 255, 255);
    
-
-
-
-/*    background:
-    linear-gradient(to right, rgba(0, 0, 255, 0.667), rgba(255, 166, 0, 0.644));
- */
 
 }
 

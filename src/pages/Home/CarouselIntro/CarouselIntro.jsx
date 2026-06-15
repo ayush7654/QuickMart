@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './HomeIntro.css';
+import './CarouselIntro.css';
 import IconButton from '../../../components/IconButton/IconButton';
 import ScrambleTextSwitcher from '../../../components/Testing/ScrambleTextSwitcher';
 import { useScroll } from '../../../components/ScrollData/ScrollData';
@@ -9,7 +9,7 @@ import { AnimatePresence , motion } from 'framer-motion';
 import BlurTransition from '../../../components/Testing/BlurTransition';
 gsap.registerPlugin(Observer);
 
-export default function HomeIntro() {
+export default function CarouselIntro() {
   const [activeIndex, setActiveIndex] = useState(0);
   const isAnimating = useRef(false);
   const { scrollY } = useScroll();
@@ -52,13 +52,13 @@ export default function HomeIntro() {
           setTimeout(() => { isAnimating.current = false }, 800);
         }
       },
-      onUp: () => {
+    /*   onUp: () => {
         if (!isAnimating.current && atTop && activeIndex > 0) {
           isAnimating.current = true;
           setActiveIndex(prev => prev - 1);
           setTimeout(() => { isAnimating.current = false }, 800);
         }
-      },
+      }, */
       // This is key: it stops the 'wheel' event from reaching Lenis
       preventDefault: (atTop && activeIndex < 3) 
     });
@@ -69,10 +69,10 @@ export default function HomeIntro() {
     };
   }, [activeIndex, atTop]);
 
-console.log(activeIndex)
+
 
   return (
-    <div className='homeIntro'>
+    <div className='CarouselIntro'>
 
 
 
@@ -93,7 +93,7 @@ words={["Stay ahead with latest trends.", "Browse millions of products.", "Find 
   {homeContent[activeIndex].info}
 </div>
 </div>
-      <div className="homeIntroBg-wrapper"></div>
+      
      
 
         <div className="CrousalNav-div">
@@ -103,7 +103,7 @@ words={["Stay ahead with latest trends.", "Browse millions of products.", "Find 
     <div 
       key={nav.id}
       // Use index if your activeIndex is 0-based, or nav.id if it matches exactly
-      onClick={() => setActiveIndex(index)} 
+      onClick={() => {setActiveIndex(index), console.log('nav clicked')}} 
       className={`CrousalNav ${index === activeIndex ? "CrousalNav-selected" : ''}`}
     />
   ))}

@@ -43,7 +43,9 @@ const handleNav = (direction) => {
     <div className="pd-main-Img-wrapper">
  
   
-   <div className="pd-navBar"> <Link to='/store' className='pd-nav-link'>Store&nbsp;</Link>/<Link className='pd-nav-link'>&nbsp;{product.category}&nbsp;</Link>/<span>&nbsp;{product.title}</span></div>  {/*  {product.brand?product.brand:product.category} */}
+   <div className="pd-navBar"> 
+    <Link to='/store' className='pd-nav-link'>Store&nbsp;</Link>/<Link className='pd-nav-link'>&nbsp;{product.category}&nbsp;</Link>/<span>&nbsp;{product.title}</span>
+    </div>  {/*  {product.brand?product.brand:product.category} */}
 
 
       

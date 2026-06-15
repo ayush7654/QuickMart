@@ -1,4 +1,4 @@
-.homeIntro{
+.CarouselIntro{
 /*   margin-top: 6rem; */
  height: 100vh;
  width: 100%;
@@ -220,6 +220,7 @@ bottom:6rem;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 20px; /* High radius keeps it circular/pill-shaped */
   cursor: pointer;
+z-index: 999;
   
   /* The "Secret Sauce" for the smooth stretch */
   transition: 

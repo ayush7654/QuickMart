@@ -20,8 +20,8 @@ position: relative;
   justify-content: start;
   align-items: end;
 z-index: 999;
-  font-family: 'Figtree';
-  font-size:14px;
+     font-family: 'Inter';
+  font-size:12px;
 
     font-weight: 500;
     border: 0px solid red;

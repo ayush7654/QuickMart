@@ -18,11 +18,12 @@
 
 .product-page-inner {
   display: flex;
-   /* enough height for scrolling effect */
+
   position: relative;
 /*   margin-top: 6rem; */
   border: 0px solid red;
   width:90%;
+  margin-top: 3rem;
 
 }
 
@@ -36,6 +37,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
 
    
 }

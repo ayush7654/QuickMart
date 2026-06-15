@@ -297,7 +297,7 @@ border: 0px solid black;
   }
 
 .account-button-inactive{
- background-color: rgb(0,100,255,.65);
+ background-color: rgba(0, 102, 255, 0.4);
 }
 
 .account-button-active{

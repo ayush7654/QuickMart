@@ -22,7 +22,7 @@ import { useStoreData } from "../../components/StoreDataContext";
 import CategoryDataProvider from "./ExpandingStoreHeader/CategoryDataProvider";
 import "./Store.css";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
-import HomeIntro from "../Home/HomeIntro/HomeIntro";
+import CarouselIntro from "../Home/CarouselIntro/CarouselIntro";
 import StoreActions from "./StoreActions/StoreActions";
 import OrderToggle from "./OrderToggle/OrderToggle";
 import MenuCancel from "../../components/MenuCancel/MenuCancel";
@@ -33,6 +33,7 @@ import StoreSorting from "./StoreSorting/StoreSorting";
 import StoreHeader from "./StoreHeader/StoreHeader";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 
 export default function Store() {
@@ -253,12 +254,12 @@ const hasActiveFilters = Boolean(
       </div>  
 
     
-{/*  <StoreBanner/>   */}
 
 
 
 
-  <HomeIntro/>  
+
+   <CarouselIntro/>   
 
  
 
@@ -290,10 +291,13 @@ setSideFilterOn={setSideFilterOn}/>
 
        
 
-        <div className="store-nav-wrapper">
-<div className="store-navigation">Home &gt; Store</div>
+{/*         <div className="store-nav-wrapper">
+<div className="store-navigation">
+  <Link to='/'>Home&nbsp;</Link> /  &nbsp;
+    <span>Store</span>
+    </div>
 <div className="product-count-wrapper">Showing {productElements.length} Products</div>
-  </div>
+  </div> */}
  
 <div className="store-page-title-content">
   

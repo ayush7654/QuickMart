@@ -12,7 +12,7 @@ import FeaturedCategories from "./FeaturedCategories/FeaturedCategories";
 import Categories from "./Categories/Categories";
 
 import HomeFooter from "./HomeFooter/HomeFooter";
-import HomeIntro from "./HomeIntro/HomeIntro";
+
 import StackingEffect from "./Collections/StackingEffect/StackingEffect";
 import ScrollingAnimation from "../../components/ScrollingAnimation/ScrollingAnimation";
 import { useStoreData } from "../../components/StoreDataContext";
@@ -36,9 +36,6 @@ const {isAtTop} = useStoreData();
     
   <div className="Home">
  
-
-      {/* <HomeIntro/>     */}
-
 
   <div className="scrolling-animation-wrapper">
          

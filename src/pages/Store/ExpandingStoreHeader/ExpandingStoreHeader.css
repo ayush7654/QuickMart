@@ -551,7 +551,7 @@ display: grid;
   cursor: pointer;
   will-change: transform, opacity, clip-path;
   background-color: white;
-  padding: 12px;
+  padding: 8px;
   transition: padding .2s ease;
   
 }
@@ -565,6 +565,7 @@ height: 100%;
   background-position: center;
   background-size: cover;
   transition: transform .2s ease;
+  will-change: transform;
 }
 .category-card:hover{
     padding: 0px;
@@ -578,6 +579,8 @@ height: 100%;
 
  border: 2px solid rgb(0,100,255);
   padding: 0px;
+  user-select: none;
+  pointer-events: none;
  
 } 
 

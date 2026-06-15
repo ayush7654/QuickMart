@@ -130,7 +130,7 @@ useEffect(() => {
      
       </div> 
 
- <div className='productCard-tag sp-brand-tag'> {brand?brand:category} </div>
+{/*  <div className='productCard-tag sp-brand-tag'> {brand?brand:category} </div> */}
 {discountPercentage>15 && <div className='productCard-tag sp-discount-tag'>save {discountPercentage}%</div>}
 <div className='productCard-tag sp-status-tag' style={statusStyle}>
   {product.availabilityStatus}
