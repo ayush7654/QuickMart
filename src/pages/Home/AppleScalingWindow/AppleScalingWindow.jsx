@@ -40,6 +40,8 @@ export default function AppleScalingWindow() {
      const videoRefs = useRef([]);
     
      const [windowScaled, setIsWindowScaled] = useState(false);
+
+     const [windowInfoActive,setWindowInfoActive] = useState(false)
     
       const { scrollYProgress } = useScroll({
         target: sectionRef,
@@ -75,17 +77,14 @@ export default function AppleScalingWindow() {
       [8, 6, 2, 0]
     );
     
-    useEffect(() => {
-      const unsubscribe = scale.on("change", (latest) => {
-        if (latest >= 1.7) { // small tolerance
-          setIsWindowScaled(true);
-        } else {
-          setIsWindowScaled(false);
-        }
-      });
-    
-      return () => unsubscribe();
-    }, [scale]);
+ useEffect(() => {
+  const unsubscribe = scale.on("change", (latest) => {
+    setWindowInfoActive(latest >= 1.7);
+    setIsWindowScaled(latest >= 2);
+  });
+
+  return () => unsubscribe();
+}, [scale]);
     
       
       useEffect(() => {
@@ -145,7 +144,7 @@ className='ap-head-wrapper'>
     <section ref={sectionRef} className="window-section">
       {/* Video screen content */}
 
-      <div className={`window-video-content-wrapper ${windowScaled ? 'window-video-scaled' : ''}`}>
+      <div className={`window-video-content-wrapper ${windowInfoActive ? 'window-video-scaled' : ''}`}>
         <div className="window-video-content">
           
           <div className="window-info">

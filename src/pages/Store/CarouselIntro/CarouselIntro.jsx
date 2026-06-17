@@ -9,13 +9,19 @@ import { AnimatePresence , motion } from 'framer-motion';
 import BlurTransition from '../../../components/Testing/BlurTransition';
 gsap.registerPlugin(Observer);
 
+
+  // We consider it "Top" if scroll is near zero
+  const atTop = scrollY < 50;
+
 export default function CarouselIntro() {
-  const [activeIndex, setActiveIndex] = useState(0);
+const [activeIndex, setActiveIndex] = useState(() => {
+  const saved = localStorage.getItem("activeIndex");
+  return saved !== null ? Number(saved) : 0;
+});
   const isAnimating = useRef(false);
   const { scrollY } = useScroll();
   
-  // We consider it "Top" if scroll is near zero
-  const atTop = scrollY < 50;
+
 
   const homeContent = [
      { id: 0, info: 'Discover the latest trends as they emerge, with new products and styles added regularly.' },
@@ -52,13 +58,7 @@ export default function CarouselIntro() {
           setTimeout(() => { isAnimating.current = false }, 800);
         }
       },
-    /*   onUp: () => {
-        if (!isAnimating.current && atTop && activeIndex > 0) {
-          isAnimating.current = true;
-          setActiveIndex(prev => prev - 1);
-          setTimeout(() => { isAnimating.current = false }, 800);
-        }
-      }, */
+   
       // This is key: it stops the 'wheel' event from reaching Lenis
       preventDefault: (atTop && activeIndex < 3) 
     });
@@ -69,7 +69,9 @@ export default function CarouselIntro() {
     };
   }, [activeIndex, atTop]);
 
-
+useEffect(() => {
+  localStorage.setItem("activeIndex", activeIndex);
+}, [activeIndex]);
 
   return (
     <div className='CarouselIntro'>
@@ -103,7 +105,7 @@ words={["Stay ahead with latest trends.", "Browse millions of products.", "Find 
     <div 
       key={nav.id}
       // Use index if your activeIndex is 0-based, or nav.id if it matches exactly
-      onClick={() => {setActiveIndex(index), console.log('nav clicked')}} 
+      onClick={() => setActiveIndex(index)} 
       className={`CrousalNav ${index === activeIndex ? "CrousalNav-selected" : ''}`}
     />
   ))}

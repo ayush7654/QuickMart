@@ -19,7 +19,7 @@ position: relative;
 .scroll-animation-text-wrapper {
  
 position: absolute;
- bottom: 25%;
+ bottom: 20%;
 
   width: 100%;
   height: auto; /* IMPORTANT */
@@ -40,45 +40,10 @@ position: absolute;
     display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-font-size: 12rem;
+font-size: 16rem;
 
 } 
 
-.animation-text{
-  width: 50%;
-  display: grid;
-  place-items: center;
-  
-}
-
-.text-wrapper{
-  display: flex; 
-align-items: center;
-  flex-direction: row;
-  gap:10px;
-  color:white;
- font-family: "Questrial", sans-serif;
- color:#ffffff;
- mix-blend-mode: exclusion;
-
-
-
-
-  
-
-}
-
-.text-wrapper #subText{
-font-size: 3rem;
-   font-family: "Questrial", sans-serif; 
-   font-family: 'Figtree';
-   text-transform: uppercase;
-writing-mode: vertical-lr;
-/* This flips the direction so it reads bottom-to-top */
-  transform: rotate(180deg); 
-  
-
-}
 
 
 

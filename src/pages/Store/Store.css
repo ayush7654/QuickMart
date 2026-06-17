@@ -414,29 +414,15 @@ overflow: hidden;
     width: 100%;
         margin-top: 5rem;
         height: 3rem;
-        
+        border: 0px solid red;
   }
 
 
-  .LoadMore-button{
-
-    width: 15rem;
-    height: 3rem;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 400;
-    font-size: 1rem;
-   
-    font-family: 'Figtree';
-
-    transition: all .3s ease;
-        border-radius: 100px;
-  overflow: hidden;
-  border: 1px solid black;
-    
-  }
+.lottie-animation-wrapper {
+  width: 100px;  
+  height: 100px;
+  margin: 0 auto; 
+}
 
 
   .Store-Page .Loading-Product-div{

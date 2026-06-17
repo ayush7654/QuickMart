@@ -65,7 +65,7 @@ tl.to(".title-tag", {
       0 
     );
 
-    // 3. GRID ITEMS - YOUR ORIGINAL ANIMATION
+
     tl.from(".grid-item", {
       scale: 1.5,
       opacity: 0,
@@ -145,19 +145,7 @@ tl.to(".title-tag", {
       </div>
 <div className="scroll-animation-text-wrapper">
  <div className="scrolling-animation-text">
-  <div className="animation-text">
-    <div className="text-wrapper">
-  <span id='subText'>Your</span>
-  <span id='mainText'>Vision</span>
-</div>
-  </div>
-<div className="animation-text">
-  <div className="text-wrapper">
-  <span id='subText'>Our</span>
-  <span id='mainText'>Canvas</span>
-</div>
-</div>
-
+ORIGINALS
 </div>
 </div>
     </div>

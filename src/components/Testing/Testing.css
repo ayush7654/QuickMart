@@ -25,12 +25,16 @@
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
 
    min-height: 100vh;
- background-color: rgb(17, 17, 75);
+
 margin-top: 10rem;
 
     
 
 
 }
+
+/* In your CSS file */
+

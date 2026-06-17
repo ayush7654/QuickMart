@@ -10,7 +10,7 @@ import { MdCheck, MdAddShoppingCart } from "react-icons/md";
 import {  MdShoppingCartCheckout } from "react-icons/md";
 import { IoCheckmarkDone } from "react-icons/io5";
 import { useCartList } from '../../../components/CartListProvider';
-import { FaCartPlus } from "react-icons/fa";
+import { FaCartPlus , FaMinus} from "react-icons/fa";
 import { Plus,Check } from 'lucide-react';
 
 import './StoreProductCard.css'
@@ -125,8 +125,8 @@ useEffect(() => {
 
      
  <div className={`sp-addToCart ${isItemInCart ? 'sp-added-btn' : ''}`}>
-{/*  <AddProductButton isItemInCart={isItemInCart }/> */}
- <Plus className='sp-plus-icon'/>
+
+ {isItemInCart?<FaCartPlus  className='sp-minus-icon' />:<Plus className='sp-plus-icon'/>}
      
       </div> 
 

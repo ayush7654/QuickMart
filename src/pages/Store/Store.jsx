@@ -16,13 +16,12 @@ import FilterSection from "./FilterSection/FilterSection";
 import GridToggle from "./GridToggle/GridToggle";
 import { useStoreFilter } from "../../components/StoreFilterContext";
 import { X } from "lucide-react";
-import ScrollingAnimation from "../../components/ScrollingAnimation/ScrollingAnimation";
 import ExpandingStoreHeader from "./ExpandingStoreHeader/ExpandingStoreHeader";
 import { useStoreData } from "../../components/StoreDataContext";
 import CategoryDataProvider from "./ExpandingStoreHeader/CategoryDataProvider";
 import "./Store.css";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
-import CarouselIntro from "../Home/CarouselIntro/CarouselIntro";
+import CarouselIntro from "./CarouselIntro/CarouselIntro";
 import StoreActions from "./StoreActions/StoreActions";
 import OrderToggle from "./OrderToggle/OrderToggle";
 import MenuCancel from "../../components/MenuCancel/MenuCancel";
@@ -34,6 +33,7 @@ import StoreHeader from "./StoreHeader/StoreHeader";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
 import { Link } from "react-router-dom";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 
 export default function Store() {
@@ -73,6 +73,8 @@ const [partialPill,setPartialPill] = useState(false);
 
    const [activeLayout, setActiveLayout] = useState(4);
     
+const loadingRef = useRef(null);
+
 
 
 
@@ -185,13 +187,19 @@ const productElements = useMemo(() => {
 
 
 
-  const handleLoadMore = async (e) => {
-    e.target.blur();
-    scrollPositionRef.current = window.scrollY;
-    const nextBatch = batchCount + 1;
-    await loadBatch(nextBatch);
-    setBatchCount(nextBatch);
-  };
+const handleLoadMore = async () => {
+  console.log("batchCount:", batchCount);
+
+  scrollPositionRef.current = window.scrollY;
+
+  const nextBatch = batchCount + 1;
+
+  console.log("nextBatch:", nextBatch);
+
+  await loadBatch(nextBatch);
+
+  setBatchCount(nextBatch);
+};
 
   useLayoutEffect(() => {
     if (scrollPositionRef.current) {
@@ -231,6 +239,32 @@ const hasActiveFilters = Boolean(
   appliedFilters.price.highRange !== null
 );
 
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      console.log(
+        "isIntersecting:",
+        entry.isIntersecting,
+        "ratio:",
+        entry.intersectionRatio
+      );
+
+      if (entry.isIntersecting) {
+         console.log("calling handleLoadMore");
+        handleLoadMore();
+      }
+    },
+    {
+      threshold: 0,
+    }
+  );
+
+  if (loadingRef.current) {
+    observer.observe(loadingRef.current);
+  }
+
+  return () => observer.disconnect();
+}, [handleLoadMore]);
   
   return (
     <div className="Store-Page">
@@ -420,16 +454,11 @@ setSideFilterOn={setSideFilterOn}/>
         </main>
       </div>
  {!typeFilter && (
-            <div className="LoadMore-button-div" >
+            <div className="LoadMore-button-div"  ref={loadingRef} >
               
-                  <div className="LoadMore-button" onClick={handleLoadMore}>
-                    <ScrollButton
-                    text='Load More'
-                    theme="buttonOutline"
-                    themeOnHover="buttonFilled"
-                    color='black'
-                    />
-                     </div> 
+<div className="lottie-animation-wrapper">
+  <DotLottieReact src="bar-animation.lottie" loop autoplay />
+</div>
 
             
             </div>

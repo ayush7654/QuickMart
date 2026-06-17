@@ -8,13 +8,13 @@ import ExploreCategory from "./ExploreCategory/ExploreCategory";
 
 import NewArrivals from "./NewArrivals/NewArrivals";
 import TrendingComponent from "./TrendingComponent/TrendingComponent";
-import FeaturedCategories from "./FeaturedCategories/FeaturedCategories";
+
 import Categories from "./Categories/Categories";
 
 import HomeFooter from "./HomeFooter/HomeFooter";
 
 import StackingEffect from "./Collections/StackingEffect/StackingEffect";
-import ScrollingAnimation from "../../components/ScrollingAnimation/ScrollingAnimation";
+import ScrollingAnimation from "./ScrollingAnimation/ScrollingAnimation";
 import { useStoreData } from "../../components/StoreDataContext";
 import './Home.css';
 import AppleScalingWindow from "./AppleScalingWindow/AppleScalingWindow";
