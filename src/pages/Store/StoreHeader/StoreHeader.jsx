@@ -10,7 +10,10 @@ import ScrollButton from '../../../components/ScrollingButton/ScrollingButton'
 import { Search } from 'lucide-react'
 import './StoreHeader.css'
 import { useSpring } from 'framer-motion';
-export default function StoreHeader({partialPill,setPartialPill,setSideFilterOn}) {
+
+
+
+export default function StoreHeader({partialPill,setPartialPill,setSideFilterOn,storeSearch, setStoreSearch}) {
 
 
 
@@ -65,9 +68,19 @@ const handlePartialToggle = () => {
          </div>
 
              <div className="store-head-search-wrapper">
-        <input className='store-head-search'
-       placeholder='Search'/>
-         <Search strokeWidth={1} size={20} className='store-search-icon'/>
+       <input
+  className="store-head-search"
+  type="text"
+  placeholder="Search"
+  value={storeSearch}
+  onChange={(e) => setStoreSearch(e.target.value)}
+/>
+
+<Search
+  strokeWidth={1}
+  size={20}
+  className="store-search-icon"
+/>
        </div>
     
       

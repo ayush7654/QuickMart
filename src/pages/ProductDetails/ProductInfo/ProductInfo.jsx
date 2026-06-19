@@ -9,6 +9,65 @@ import StarRating from '../../../components/StarRating'
 
 import { FiPlus, FiMinus } from "react-icons/fi";
 
+
+
+const colorSizeVariant = {
+  Color: [
+    
+    "home-decoration",
+    "kitchen-accessories",
+    
+    "mens-watches",
+    "mobile-accessories",
+    "motorcycle",
+    "smartphones",
+    "sports-accessories",
+    "sunglasses",
+    "tablets",
+    "vehicle",
+    "womens-bags",
+    "womens-jewellery",
+    "womens-watches"
+  ],
+
+  Size: [],
+
+  ColorSize: [
+    "furniture",
+    "laptops",
+    "mens-shirts",
+    "mens-shoes",
+    "tops",
+    "womens-dresses",
+    "womens-shoes"
+  ],
+
+  NoColorSize: [
+    "beauty",
+    "fragrances",
+    "groceries",
+    "skin-care"
+  ]
+};
+
+
+  // --- Static Arrays ---
+    const pdColorArr = [
+        { id: 0, colorName: 'Brown', color: 'rgba(110, 86, 86, 1)' },
+        { id: 1, colorName: 'Grey', color: 'rgba(143, 143, 143, 1)' },
+        { id: 2, colorName: 'Blue', color: 'rgba(0, 77, 165, 1)' },
+        { id: 3, colorName: 'Red', color: 'rgb(135, 0, 0)' }
+    ]
+
+    const pdSizeArr = [
+        { id: 0, sizeLetter: 'S' },
+        { id: 1, sizeLetter: 'M' },
+        { id: 2, sizeLetter: 'L' },
+        { id: 3, sizeLetter: 'XL' },
+        { id: 4, sizeLetter: 'XXL' },
+    ]
+
+
 export default function ProductInfo({ product }) {
 
     if (!product) return <div>Loading...</div>;
@@ -39,6 +98,19 @@ const {
 
   
     const itemInCart = cartList.find(item => item.id === product.id);
+
+
+    const getVariant = (category) => ({
+  hasColor:
+    colorSizeVariant.Color.includes(category) ||
+    colorSizeVariant.ColorSize.includes(category),
+
+  hasSize:
+    colorSizeVariant.Size.includes(category) ||
+    colorSizeVariant.ColorSize.includes(category),
+});
+
+const { hasColor, hasSize } = getVariant(product.category);
 
  
 useEffect(() => {
@@ -84,21 +156,7 @@ useEffect(() => {
     }
 }
 
-    // --- Static Arrays ---
-    const pdColorArr = [
-        { id: 0, colorName: 'Brown', color: 'rgba(110, 86, 86, 1)' },
-        { id: 1, colorName: 'Grey', color: 'rgba(143, 143, 143, 1)' },
-        { id: 2, colorName: 'Blue', color: 'rgba(0, 77, 165, 1)' },
-        { id: 3, colorName: 'Red', color: 'rgb(135, 0, 0)' }
-    ]
-
-    const pdSizeArr = [
-        { id: 0, sizeLetter: 'S' },
-        { id: 1, sizeLetter: 'M' },
-        { id: 2, sizeLetter: 'L' },
-        { id: 3, sizeLetter: 'XL' },
-        { id: 4, sizeLetter: 'XXL' },
-    ]
+  
 
  console.log('product info' , product)
 
@@ -106,7 +164,13 @@ useEffect(() => {
         <div className="product-info-pd">
             <div className="pd-pill-wrapper">
                 <span className="pd-pill pd-brand-wrapper">{product.brand?product.brand:product.category}</span>
-                <span className="pd-pill pd-stock-status">{product.availabilityStatus}</span>
+                {["low stock", "out of stock"].includes(
+  product.availabilityStatus?.toLowerCase()
+) && (
+  <span className="pd-pill pd-stock-status">
+    {product.availabilityStatus}
+  </span>
+)}
                 
                 </div>
                
@@ -140,7 +204,7 @@ useEffect(() => {
 
 
 
-            <div className='pd-color-wrapper'>
+           {hasColor &&  <div className='pd-color-wrapper'>
                 <div>
                     <span id='pd-head'>Color :</span>
                     <span id='pd-head-info'> {pdColor}</span>
@@ -153,9 +217,9 @@ useEffect(() => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div>}
 
-            <div className='pd-size-wrapper'>
+          {hasSize &&  <div className='pd-size-wrapper'>
                 <div id='pd-line-wrapper' className='size-head'>
                     <div>
                         <span id='pd-head'>Size :</span>
@@ -171,7 +235,7 @@ useEffect(() => {
                         </span>
                     ))}
                 </div>
-            </div>
+            </div>}
 
             <div id='pd-line-wrapper' className='pd-button-wrapper'>
                 <div className='pd-quantity-wrapper'>

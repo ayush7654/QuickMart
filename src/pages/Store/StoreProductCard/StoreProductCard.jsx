@@ -22,7 +22,6 @@ import StarRating from './../../../components/StarRating';
 
 
 
-
 function StoreProductCard({ product, path }) {
 
     const { id, images,thumbnail, title,brand , category,  price, rating = 0, discountPercentage } = product;

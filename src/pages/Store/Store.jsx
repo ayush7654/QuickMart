@@ -72,6 +72,8 @@ const [partialPill,setPartialPill] = useState(false);
 
 
    const [activeLayout, setActiveLayout] = useState(4);
+
+   const [storeSearch,setStoreSearch] = useState('')
     
 const loadingRef = useRef(null);
 
@@ -173,7 +175,12 @@ const productElements = useMemo(() => {
     });
   }
 
-  // 4. Return the mapped components
+  // Store Search Logic
+  items = items.filter((item) =>
+  item.title.toLowerCase().startsWith(storeSearch.toLowerCase())
+); 
+
+  // 5. Return the mapped components
   return items.map((product) => (
     <StoreProductCard
       key={product.id}
@@ -183,7 +190,7 @@ const productElements = useMemo(() => {
   ));
   
   // Added minPrice and maxPrice to the dependency array
-}, [FinalItems, currentSort, typeFilter, location.search, sortOrder, storeFilters, minPrice, maxPrice]);
+}, [FinalItems, currentSort, typeFilter, location.search, sortOrder, storeFilters, minPrice, maxPrice , storeSearch]);
 
 
 
@@ -265,13 +272,17 @@ useEffect(() => {
 
   return () => observer.disconnect();
 }, [handleLoadMore]);
+
+
+
+console.log(productElements && productElements)
   
   return (
     <div className="Store-Page">
 
      
-    <div className="store-sideFilter-wrapper" 
-    style={{width:sideFilterOn?'30%':'0%'}}>
+    <div className={`store-sideFilter-wrapper ${sideFilterOn?'open':''}`}
+   /*  style={{width:sideFilterOn?'30%':'0%'}} */>
       
           <div className="store-sideFilter" style={{opacity:sideFilterOn?1:0}}>
                  <FilterSection
@@ -303,7 +314,9 @@ useEffect(() => {
 <StoreHeader 
 partialPill={partialPill}
 setPartialPill={setPartialPill}
-setSideFilterOn={setSideFilterOn}/>
+setSideFilterOn={setSideFilterOn}
+storeSearch = {storeSearch}
+setStoreSearch = {setStoreSearch}/>
 
 
 

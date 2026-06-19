@@ -1,10 +1,12 @@
 import React,{useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
+import { useFirebase } from '../FirebaseContext/Firebase';
 import './SideBarCart.css'
 import { X } from 'lucide-react';
 import { useCartList } from '../CartListProvider';
 import CartItem from './CartItem/CartItem';
 import ScrollButton from '../ScrollingButton/ScrollingButton';
+import { div } from 'framer-motion/client';
 
 
 export default function SideBarCart({cartToggled,setCartToggled,toggleOverlay}) {
@@ -12,6 +14,8 @@ export default function SideBarCart({cartToggled,setCartToggled,toggleOverlay}) 
 
 
   const { cartList, cartLoading ,totalCost,handleRemove,updateDataBase} = useCartList();
+
+  const firebase = useFirebase();
 
 
       const cartElements=cartList? (cartList.map((product,index)=>(
@@ -26,21 +30,22 @@ export default function SideBarCart({cartToggled,setCartToggled,toggleOverlay}) 
 
 
   return (
-    <div className='cart-sidebar' 
-    style={{
-          transform: !cartToggled? 'translateX(0%)' : 'translateX(-100%)',
-          transition: 'transform 0.5s ease-in-out',}}
+    <div className={`cart-sidebar ${cartToggled?'open':''}`} 
+
+
     >
 
-      <div className='cart-sidebar-content'>
-        <div className='side-cart-head-div'>
-            <div className='side-cart-head-content'>
-                 <span className='side-cart-head'>YOUR CART</span>  
+           <div className='side-cart-header'>
+          
+                 <h2>YOUR CART ({cartElements.length} Items)</h2>  
                  <span className='side-cart-cancel' onClick={()=>{setCartToggled(false),toggleOverlay(false)}}>
-                 <X size={24} strokeWidth={1.5} />
+                 <X />
                  </span>
-            </div>  
+          
         </div>
+{ firebase.isLoggedIn ?
+      <div className='cart-sidebar-content' style={{opacity:cartToggled?1:0}}>
+   
 
         
         <div className='side-cart-list-wrapper' data-lenis-prevent>
@@ -68,7 +73,15 @@ export default function SideBarCart({cartToggled,setCartToggled,toggleOverlay}) 
            />
             </Link>
         </div>
+      </div>:
+
+      <div className='loggedOut-sideCart'>
+       <img src='/EmptyCartImg.avif' size={20}/>
+        <h2>Your cart is empty.</h2>
+        <span>Add products to your cart to start shopping.</span>
+        <button >Continue Shopping</button>
       </div>
+      }
         
 
     </div>

@@ -31,7 +31,8 @@ export default function FilterSection({setSideFilterOn}) {
   </div>
 
   <div className="store-side-filter" data-lenis-prevent>
-<StoreAccordion storeFilters={storeFilters}
+<StoreAccordion 
+storeFilters={storeFilters}
 setStoreFilters={setStoreFilters}/>
 
 <div className='filter-section-wrapper'>

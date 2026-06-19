@@ -354,16 +354,24 @@ justify-content: center;
   z-index:999;
 box-shadow: 0 10px 20px rgba(50,50,50, 0.2);
 
-display: grid;
-place-items: center;
+
 z-index: 999;
 
  transition: width 0.5s cubic-bezier(0.2, 0.9, 0.1, 1);
   border-radius: 10px;
 background-color: white;
 overflow: hidden;
+width: 30vw;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path  0.5s cubic-bezier(0.2, 0.9, 0.1, 1);
 
 
+
+
+}
+
+.store-sideFilter-wrapper.open {
+  clip-path: inset(0 0 0 0);
 }
 
 .store-sideFilter{

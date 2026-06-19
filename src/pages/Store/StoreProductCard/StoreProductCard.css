@@ -116,10 +116,10 @@ background-color: white;
 .sp-discount-tag{
 top:16px;
 left:16px;
-background-color: rgb(254, 229, 229);
+background-color: rgb(255, 255, 255);
 /* background-color: rgb(255, 62, 96);  */
-color:rgb(255, 62, 96);
-border: 1px solid  rgb(255, 62, 96);
+color:rgb(0, 0, 0);
+border: 1px solid  rgb(0, 0, 0);
 font-size: 10px;
 
 
