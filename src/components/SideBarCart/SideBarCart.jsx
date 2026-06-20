@@ -43,7 +43,7 @@ export default function SideBarCart({cartToggled,setCartToggled,toggleOverlay}) 
                  </span>
           
         </div>
-{ firebase.isLoggedIn ?
+{cartElements.length ?
       <div className='cart-sidebar-content' style={{opacity:cartToggled?1:0}}>
    
 
@@ -79,7 +79,7 @@ export default function SideBarCart({cartToggled,setCartToggled,toggleOverlay}) 
        <img src='/EmptyCartImg.avif' size={20}/>
         <h2>Your cart is empty.</h2>
         <span>Add products to your cart to start shopping.</span>
-        <button >Continue Shopping</button>
+        <button  onClick={()=>{setCartToggled(false),toggleOverlay(false)}}>Continue Shopping</button>
       </div>
       }
         

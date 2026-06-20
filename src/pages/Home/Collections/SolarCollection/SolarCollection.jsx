@@ -6,8 +6,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import './SolarCollection.css'
 import SolarImgMain from './SolarImgMain/SolarImgMain';
+import CollectionProduct from '../CollectionProduct/CollectionProduct';
 
-export default function SolarCollection() {
+
+
+
+export default function SolarCollection({productAnimation}) {
+
+
 
      const containerRef = useRef(null);
 
@@ -30,8 +36,8 @@ export default function SolarCollection() {
   const opacityDesc = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const opacityIncr = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
-  console.log('opaInc',opacityIncr)
-  console.log('opaDec',opacityDesc)
+/*   console.log('opaInc',opacityIncr)
+  console.log('opaDec',opacityDesc) */
 
  
 
@@ -46,10 +52,10 @@ export default function SolarCollection() {
   ]);
 
   const SolarProducts=[
-    {title:'SolarPack Jacket',img1:'solar1Img1.webp',img2:'solar1Img2.webp',price:'370',brand:'Raw Sienna PR'},
-    {title:'SolarPack Sweatshirt',img1:'solar2Img1.webp',img2:'solar2Img2.webp',price:'170',brand:'Raw Sienna'},
-    {title:'SolarPack Trousers',img1:'solar3Img1.webp',img2:'solar3Img2.webp',price:'200',brand:'Shadow'},
-    {title:'SOlarPack Hat',img1:'solar4Img1.webp',img2:'solar4Img2.webp',price:'100',brand:'Raw Sienna'},
+    {title:'SolarPack Jacket',img1:'solar1Img1Sq.jpg',img2:'solar1Img2Sq.jpg',price:'370',brand:'Raw Sienna PR'},
+    {title:'SolarPack Sweatshirt',img1:'solar2Img1Sq.jpg',img2:'solar2Img2Sq.jpg',price:'170',brand:'Raw Sienna'},
+    {title:'SolarPack Trousers',img1:'solar3Img1Sq.jpg',img2:'solar3Img2Sq.jpg',price:'200',brand:'Shadow'},
+    {title:'SOlarPack Hat',img1:'solar4Img1Sq.jpg',img2:'solar4Img2Sq.jpg',price:'100',brand:'Raw Sienna'},
 ]
 
 const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -175,29 +181,20 @@ onLeaveBack: () => {
     <div className='collection-product-wrapper'>   
    <div  id='home-product-head'>SolarPack Collection</div>
 
-         <div className='home-Products-container'>
+         <motion.div className='home-Products-container'
+           variants={productAnimation}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}>
      {SolarProducts.map((product,index)=>
-     <div className='collection-ProductCard'
-      onMouseEnter={() => setHoveredIndex(index)}
-        onMouseLeave={() => setHoveredIndex(null)}
-     >
-        <div className="collection-ProductImg-wrapper"
-        
-        style={{ 
-          backgroundImage: `url(HomeCollections/SolarPackImages/${hoveredIndex === index ? product.img2 : product.img1})` 
-        }}>
-
-        </div>
-        <div className="collection-ProductInfo-wrapper">
-            <div className="collection-Info-line1">
-                <span >{product.title}</span>
-                <span >${product.price}</span>
-            </div>
-            <div className='collection-brandname'>{product.brand}</div>
-        </div>
-
-     </div>)}
-    </div>
+      <CollectionProduct 
+      key={index}
+      setHoveredIndex={setHoveredIndex}
+      hoveredIndex={hoveredIndex}
+      product={product}
+      index={index}
+      imgPath='SolarPackImages'/>)}
+    </motion.div>
     </div>
    
     </div>

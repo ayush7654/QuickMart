@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import CollectionProduct from '../CollectionProduct/CollectionProduct';
+import { motion } from 'framer-motion';
 gsap.registerPlugin(ScrollTrigger);
 import './FitnessCollection.css'
 import ScalingTextAnimation from '../../../../components/ScalingTextAnimation/ScalingTextAnimation';
 
 
-export default function FitnessCollection() {
+export default function FitnessCollection({productAnimation}) {
 
 
 
@@ -128,29 +130,23 @@ const loopBanners = [...banners, ...banners];
          <div className='collection-product-wrapper'>   
    <div  id='home-product-head'>Fitness Hub Collection</div>
 
-         <div className='home-Products-container'>
+         <motion.div className='home-Products-container'
+                 variants={productAnimation}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}>
      {FitnessProducts.map((product,index)=>
-     <div className='collection-ProductCard'
-      onMouseEnter={() => setHoveredIndex(index)}
-        onMouseLeave={() => setHoveredIndex(null)}
-     >
-        <div className="collection-ProductImg-wrapper"
-        
-        style={{ 
-          backgroundImage: `url(HomeCollections/FitnessImages/${hoveredIndex === index ? product.img2 : product.img1})` 
-        }}>
-
-        </div>
-        <div className="collection-ProductInfo-wrapper">
-            <div className="collection-Info-line1">
-                <span >{product.title}</span>
-                <span >${product.price}</span>
-            </div>
-            <div className='collection-brandname'>{product.brand}</div>
-        </div>
-
-     </div>)}
-    </div>
+   <CollectionProduct 
+   key={index}
+   setHoveredIndex={setHoveredIndex}
+   hoveredIndex={hoveredIndex}
+   product={product}
+   index={index}
+   imgPath='FitnessImages'/>
+    
+    
+    )}
+    </motion.div>
     </div>
     </div>
   )

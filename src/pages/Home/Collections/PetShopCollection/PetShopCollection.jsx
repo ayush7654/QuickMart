@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import './PetShopCollection.css'
 import { motion, useScroll, useTransform ,useSpring} from 'framer-motion';
-
+import CollectionProduct from '../CollectionProduct/CollectionProduct';
 
 
  const arcItems = 
@@ -52,7 +52,7 @@ const DogFood =[
     },
   };
 
-export default function PetShopCollection() {
+export default function PetShopCollection({productAnimation}) {
 
 
   const PetProducts=[
@@ -159,29 +159,19 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
      <div className='collection-product-wrapper'>   
    <div  id='home-product-head'>Pet Shop Collection</div>
  
-         <div className='home-Products-container'>
+         <motion.div className='home-Products-container'
+          variants={productAnimation}
+  initial="hidden"
+  whileInView="visible">
      {PetProducts.map((product,index)=>
-     <div className='collection-ProductCard'
-      onMouseEnter={() => setHoveredIndex(index)}
-        onMouseLeave={() => setHoveredIndex(null)}
-     >
-        <div className="collection-ProductImg-wrapper"
-        
-        style={{ 
-          backgroundImage: `url(HomeCollections/PetCareImages/${hoveredIndex === index ? product.img2 : product.img1})` 
-        }}>
-
-        </div>
-        <div className="collection-ProductInfo-wrapper">
-            <div className="collection-Info-line1">
-                <span >{product.title}</span>
-                <span >${product.price}</span>
-            </div>
-            <div className='collection-brandname'>{product.brand}</div>
-        </div>
-
-     </div>)}
-    </div>
+      <CollectionProduct 
+          key={index}
+          setHoveredIndex={setHoveredIndex}
+          hoveredIndex={hoveredIndex}
+          product={product}
+          index={index}
+          imgPath='PetCareImages'/>)}
+    </motion.div>
     </div>
     </div>
       

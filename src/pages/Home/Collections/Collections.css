@@ -23,59 +23,18 @@ font-weight: 700;
 
  }
 
- 
-.collection-product-wrapper{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-     margin: 5rem 0rem;
-     border: 0px solid black;
-   
-    
-}
 
+/*  .collection-Products-wrapper{
+  width: 90%;
 
-.collection-ProductCard{
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  place-items: center;
 
-  border: 0px solid rgb(78, 205, 50);
-  cursor: pointer;
- 
-}
-
-.collection-ProductImg-wrapper{
-     width: 100%;
-aspect-ratio: 1/1;
-
-background-position: center;
-background-size: cover;
-transition: all .2s ease;
-
-}
-
-.collection-ProductInfo-wrapper{
-  display: flex;
-flex-direction: column;
-justify-content: center;
-gap:8px;
-  padding: 16px 0rem;
-  font-family: 'Figtree';
-  text-transform: uppercase;
-  color:rgb(0, 0, 0);
-}
-
-
-.collection-Info-line1{
-  display:flex;
-  justify-content: space-between;
-  font-weight: 600;
-
-}
-
-.collection-brandname{
-  font-size: .9rem;
-}
+  gap: 0rem;
+ }
+ */
  
 
 /* 
