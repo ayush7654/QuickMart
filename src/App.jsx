@@ -2,6 +2,7 @@ import './App.css'
 import React ,{useState,createContext} from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ScrollToTop from "./components/ScrollToTop";
+
 import Home from './pages/Home/Home'
 
 import Store from './pages/Store/Store'
@@ -19,6 +20,7 @@ import  {ScrollData}  from './components/ScrollData/ScrollData';
 import LoadingBird from './pages/LoadingPage';
 import Testing from './components/Testing/Testing';
 import SmoothScroll from './components/SmoothScrolling';
+import { PageTransitionProvider } from './components/PageTransitionContext';
 
 
 export const BreadCrumbContext = createContext()
@@ -29,6 +31,7 @@ function App() {
 
   return (
     <SmoothScroll>
+      <PageTransitionProvider>
     <BrowserRouter>
      <ScrollData>
     <WinScrollProvider>
@@ -56,6 +59,7 @@ function App() {
     </WinScrollProvider>
     </ScrollData>
     </BrowserRouter>
+    </PageTransitionProvider>
     </SmoothScroll>
   )
 }

@@ -13,10 +13,12 @@ import AnimatedUnderline from "../AnimatedUnderline/AnimatedUnderline";
 import { useScroll } from "../ScrollData/ScrollData";
 import ExtraHeader from "./ExtraHeader/ExtraHeader";
 import SiteLogo from "./SiteLogo/SiteLogo";
-
+import { usePageTransition } from "../PageTransitionContext";
 import './Header.css'
 import { head } from "lodash";
 import DotNav from "../DotNav/DotNav";
+import TransitionLink from "../TransitionLink";
+import { useDelayedNavigate } from "../useDelayedNavigate";
 export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBarToggle,setCartToggled}){
 
   
@@ -27,11 +29,14 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
     
      const [cursorOff, setCursorOff] = useState(true);
 
+      const { phase, isAnimating, triggerTransition, handleAnimationComplete } = usePageTransition();
+
     const firebase= useFirebase()
 
     
     const pagelocation= useLocation();
     const navigate = useNavigate();
+    const delayedNavigate = useDelayedNavigate();
 
  
 
@@ -45,10 +50,10 @@ export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBa
 
 
 
-   const handlePageNav=(func)=>{
-   
-    navigate(func);
-   }
+const handlePageNav = (func) => {
+
+  delayedNavigate(func);
+};
 
     
 
@@ -268,7 +273,7 @@ useEffect(() => {
    textColor={isAtTop && headertp /* && cursorOff && headertp */?"white":"rgb(80,80,80)"}
    textColorHover={isAtTop && headertp?'white':"black"}
    dotColor={isAtTop && headertp/* && cursorOff && headertp */?"white":"rgb(0, 100, 255)"}
-   handleClick={(func)=>handlePageNav(func)}
+handleClick={(func) => handlePageNav(func)}
    syncWithUrl={true}/>
 
                 </div> 
@@ -290,7 +295,7 @@ useEffect(() => {
                  </div> 
                  </div>
 
-                 <NavLink to='/Login'
+                 <TransitionLink to='/Login'
                    className={({ isActive }) =>`page-nav-right ${isActive?'page-nav-right-selected':''} desktop-only`}>
                       <div id="header-icon">
                         { pagelocation.pathname == "/Login" ? 
@@ -298,7 +303,7 @@ useEffect(() => {
                            <HiOutlineUser  style={{ strokeWidth: "1.5" }} />
                           }                       
                         </div>  
-                 </NavLink>
+                 </TransitionLink>
 
                  <div  className={`page-nav-right ${location.pathname==='/cart'?'page-nav-right-selected':''}`}
                   onClick={()=>{setCartToggled(true),toggleOverlay(true)}}>
@@ -315,7 +320,7 @@ useEffect(() => {
                 
                  </div>
 
-               
+               <TransitionLink to='/'>Home</TransitionLink>
  
                </div>
 

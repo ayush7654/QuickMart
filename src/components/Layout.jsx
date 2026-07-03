@@ -9,6 +9,7 @@ import SideBarCart from './SideBarCart/SideBarCart';
 import { CartListProvider } from './CartListProvider';
 import { StoreFilterProvider } from './StoreFilterContext';
 import { StoreDataProvider } from './StoreDataContext';
+import TransitionSlider from './TransitionSlider/TransitionSlider';
 
 export default function Home(){
     const location = useLocation();
@@ -82,6 +83,7 @@ setSearchBarToggle(i)
 
 
          <Footer /> 
+         <TransitionSlider/>
     </div>
     </StoreDataProvider>
         

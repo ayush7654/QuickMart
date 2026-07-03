@@ -197,7 +197,7 @@ className='ap-head-wrapper'>
                 <img src="AppleProductsMedia/AppleImg7.jpg" alt="gallery" />
               </motion.div>
               <div className="window-wrapper">
-                <img src="AppleProductsMedia/MacBookImg7.webp" alt="gallery" />
+                <img src="AppleProductsMedia/Iphone-img5.png" alt="gallery" />
               </div>
             </div>
 

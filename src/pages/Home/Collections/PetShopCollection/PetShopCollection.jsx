@@ -162,7 +162,8 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
          <motion.div className='home-Products-container'
           variants={productAnimation}
   initial="hidden"
-  whileInView="visible">
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}>
      {PetProducts.map((product,index)=>
       <CollectionProduct 
           key={index}
