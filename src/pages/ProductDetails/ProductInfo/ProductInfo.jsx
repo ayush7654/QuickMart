@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import ScrollButton from '../../../components/ScrollingButton/ScrollingButton';
 import './ProductInfo.css'
 import StarRating from '../../../components/StarRating'
+import { useDelayedNavigate } from '../../../components/useDelayedNavigate';
 
 import { FiPlus, FiMinus } from "react-icons/fi";
 
@@ -90,7 +91,7 @@ const {
     const navigate = useNavigate();
     const firebase = useFirebase();
     const userInfo = firebase.isLoggedIn ? firebase.currentUser.email : null
-
+ const delayedNavigate = useDelayedNavigate();
     const [quantity, setQuantity] = useState(1);
     const [AddedtoCart, setAddedtoCart] = useState(false)
     const [pdColor, setpdColor] = useState('Brown')
@@ -152,7 +153,7 @@ useEffect(() => {
             updateDataBase(product, quantity);
         }
     } else {
-        navigate("/login");
+       delayedNavigate("/Login");
     }
 }
 

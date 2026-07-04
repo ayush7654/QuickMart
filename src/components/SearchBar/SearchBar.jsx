@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+
+import TransitionLink from '../TransitionLink';
+import { useDelayedNavigate } from '../useDelayedNavigate';
 import { Search } from 'react-feather';
 import { X } from 'lucide-react';
 import { ArrowUpRight } from "lucide-react";
@@ -13,7 +15,8 @@ export default function SearchBar({ currentToggle, toggleSwitch, toggleOverlay }
   const[products,setProducts] = useState()
   const [suggestionBox, setSuggestionBox] = useState(false);
 
-  const navigate = useNavigate();
+
+    const delayedNavigate = useDelayedNavigate();
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
@@ -23,13 +26,13 @@ export default function SearchBar({ currentToggle, toggleSwitch, toggleOverlay }
   const handleCategoryClick = (name, slug) => {
     setSearchTerm(name);
     setSuggestionBox(false);
-    navigate(`store?type=${slug}`);
+  delayedNavigate (`store?type=${slug}`);
     handleCloseSearchBar();
   };
 
   const handleProductClick = (id) =>{
        setSuggestionBox(false);
-    navigate(`store/${id}`);
+  delayedNavigate (`store/${id}`);
     handleCloseSearchBar();
   }
 
@@ -169,9 +172,9 @@ const productsComp = products ? filterAndRankByTitle(products, searchTerm) : [];
         
             onClick={handleCloseSearchBar}
           >
-            <Link  to={`/search/${searchTerm}`}>
+            <TransitionLink to={`/search/${searchTerm}`}>
               <Search className='searchIcon' style={{strokeWidth: '1.5' }} />
-            </Link>
+            </TransitionLink>
           </div>
 
             </div>

@@ -8,6 +8,8 @@ import { useCartList } from '../../../components/CartListProvider';
 import { Link } from 'react-router-dom';
 import TextAnimation from '../../../components/TextAnimation';
 import { motion } from 'framer-motion';
+import TransitionLink from '../../../components/TransitionLink';
+import { useDelayedNavigate } from '../../../components/useDelayedNavigate';
 export default function HomeProduct({ product, path }) {
 
   const { 
@@ -21,17 +23,27 @@ export default function HomeProduct({ product, path }) {
     discount 
   } = product;
 
-  const MotionLink = motion(Link); 
-  
+  const MotionLink =motion.div;
 
+  const delayedNavigate = useDelayedNavigate();
+  
+const handleTransitionNavigation = (id) => {
+
+    
+    // Check if your triggerTransition accepts a callback or target path
+    // This starts the slider animation, swaps the page mid-way, and slides out
+  
+     delayedNavigate(`/store/${id}`);
+
+  };
 
 
 
   return (
-    <MotionLink  to={`/store/${product.id}`} 
+    <MotionLink 
      initial="hidden" 
     whileHover="visible"
-   
+   onClick={()=>handleTransitionNavigation(product.id)}
     className='home-ProductCard'>
        <div className="test-card"
         style={{backgroundImage:`url(${thumbnail})`}}>

@@ -12,7 +12,7 @@ import { IoCheckmarkDone } from "react-icons/io5";
 import { useCartList } from '../../../components/CartListProvider';
 import { FaCartPlus , FaMinus} from "react-icons/fa";
 import { Plus,Check } from 'lucide-react';
-
+import TransitionLink from '../../../components/TransitionLink';
 import './StoreProductCard.css'
 import AddProductButton from './AddProductButton/AddProductButton';
 import StarRating from './../../../components/StarRating';
@@ -98,7 +98,7 @@ useEffect(() => {
   return (
    
 
-    <Link to={`/store/${id}`} className='store-ProductCard'
+    <TransitionLink to={`/store/${id}`} className='store-ProductCard'
     onMouseEnter={()=>setCursorOnHover(true)}
     onMouseLeave={()=>setCursorOnHover(false)}>
      
@@ -156,7 +156,7 @@ useEffect(() => {
         </div>
         </div>
  
-    </Link>
+    </TransitionLink>
   
   );
 }

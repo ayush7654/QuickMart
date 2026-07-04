@@ -42,7 +42,7 @@
 .transition-text{
     position:absolute;
     inset:0;
-
+   font-family: "Questrial", sans-serif; 
     display:flex;
     justify-content:center;
     align-items:center;
