@@ -5,6 +5,7 @@ import Registration from "./Registration/Registration";
 import Login from "./Login/Login";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
 import DotNav from "../../components/DotNav/DotNav";
+import TransitionLink from "../../components/TransitionLink";
 
 import './Account.css'
 
@@ -51,10 +52,10 @@ export default function Account(){
         </div>
        </div>
          <div className="account-container">
-          <Link to='/' className="account-page-title-div">
+          <TransitionLink to='/' className="account-page-title-div">
             <div className="account-page-title-tagline">Elevate your world with</div>
             <div className="account-page-title">SARAS</div>
-          </Link>
+          </TransitionLink>
           
 
           <div className="account-page-switch">

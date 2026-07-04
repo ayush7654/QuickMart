@@ -8,9 +8,10 @@
   color: white;
   display: grid;
   place-items: center;
-  z-index: 9999;
+  z-index: 99999;
   font-size: 3rem;
   font-weight: bold;
+  will-change: transform;
 }
 
 /* Position the test trigger button nicely on screen */
@@ -31,4 +32,29 @@
 .test-trigger-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.transition-slider-text{
+   font-family: "Questrial", sans-serif; 
+   font-size: 5rem;
+}
+
+.transition-text{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.letter-wrapper{
+    overflow:hidden;
+}
+
+.letter{
+    display:inline-block;
+    font-size:clamp(3rem,8vw,7rem);
+    font-weight:700;
+    color:white;
 }

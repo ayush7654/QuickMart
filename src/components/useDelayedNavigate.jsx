@@ -20,7 +20,7 @@ export function useDelayedNavigate() {
     // 2. Delay navigation until the screen is fully covered
     setTimeout(() => {
       navigate(to);
-    }, 600);
+    }, 1200);
   };
 
   return delayedNavigate;

@@ -320,7 +320,7 @@ handleClick={(func) => handlePageNav(func)}
                 
                  </div>
 
-               <TransitionLink to='/'>Home</TransitionLink>
+           
  
                </div>
 

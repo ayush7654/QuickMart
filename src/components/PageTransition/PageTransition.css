@@ -1,0 +1,10 @@
+.transition-shutter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ff0000; /* Match your exact UI red hue here */
+  z-index: 9999;
+  pointer-events: none; /* Keeps page unclickable while transitioning */
+}

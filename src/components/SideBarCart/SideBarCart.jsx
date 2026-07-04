@@ -7,6 +7,7 @@ import { useCartList } from '../CartListProvider';
 import CartItem from './CartItem/CartItem';
 import ScrollButton from '../ScrollingButton/ScrollingButton';
 import { div } from 'framer-motion/client';
+import TransitionLink from '../TransitionLink';
 
 
 export default function SideBarCart({cartToggled,setCartToggled,toggleOverlay}) {
@@ -62,7 +63,7 @@ export default function SideBarCart({cartToggled,setCartToggled,toggleOverlay}) 
               <span className='subtotal-text'>Shipping & taxes calculated at checkout</span>
             </div>
           </div>
-          <Link to='/cart' 
+          <TransitionLink to='/cart' 
           onClick={()=>{setCartToggled(false),toggleOverlay(false)}} 
           className='side-cart-checkout-btn'>
            
@@ -71,7 +72,7 @@ export default function SideBarCart({cartToggled,setCartToggled,toggleOverlay}) 
    
 
            />
-            </Link>
+            </TransitionLink>
         </div>
       </div>:
 

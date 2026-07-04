@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 
 import Header from './Header/Header'
@@ -10,6 +10,7 @@ import { CartListProvider } from './CartListProvider';
 import { StoreFilterProvider } from './StoreFilterContext';
 import { StoreDataProvider } from './StoreDataContext';
 import TransitionSlider from './TransitionSlider/TransitionSlider';
+import { usePageTransition } from './PageTransitionContext';
 
 export default function Home(){
     const location = useLocation();
@@ -18,9 +19,13 @@ export default function Home(){
    const [searchBarToggle,setSearchBarToggle]= useState(false)
    const [showOverlay, setShowOverlay] = useState(false);
 
+   const [animationStatus, setAnimationStatus] = useState('idle');
+
    const [sideBarOn,setSideBarOn] = useState(false)
 
        const [cartToggled,setCartToggled]= useState(false)
+const { isAnimating } = usePageTransition();
+
 
  const SearchToggle=(i)=>{
 setSearchBarToggle(i)
@@ -38,6 +43,18 @@ setSearchBarToggle(i)
   const toggleSideCart=(i)=>{
     setCartToggled(i)
   }
+
+  useEffect(() => {
+    if (isAnimating) {
+      setAnimationStatus('leaving');
+    }
+  }, [isAnimating]);
+
+  // 2. The magic trick: As soon as the URL changes, INSTANTLY reset the layout
+  // This ensures the new page loads completely fresh with no scale/translate
+  useEffect(() => {
+    setAnimationStatus('idle');
+  }, [location.pathname]);
    
     return(
 
@@ -66,7 +83,7 @@ setSearchBarToggle(i)
   <CartListProvider>
 
   
-    <div className='outlet-container' style={{paddingTop:isHomePage?'0rem':'0rem'}}>
+    <div className='outlet-container' data-animation={animationStatus}>
     <Outlet screenOverlay={showOverlay}
       toggleOverlay={setShowOverlay}/>
     </div>

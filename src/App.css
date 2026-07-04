@@ -22,8 +22,23 @@ a {
   text-decoration:none;
 }
 
-.outlet-container{
-/* overflow: hidden; */
+
+
+/* 1. Ensure the outer container doesn't collapse or clip weirdly */
+.outlet-container {
+  width: 100%;
+
+}
+
+/* 2. Target the direct child of the outlet container ONLY when leaving */
+.outlet-container[data-animation="leaving"] > * {
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), 
+              opacity 0.5s ease;
+  transform-origin: top center;
+  
+  /* The effect happens to the page content, not the layout container */
+  transform: translateY(-100px) scale(0.95); 
+
 }
 
 .screen-overlay {

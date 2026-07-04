@@ -16,7 +16,7 @@ export function PageTransitionProvider({ children }) {
     // 2. Pause in the middle, then slide out past the top edge
     setTimeout(() => {
       setPhase("top");
-    }, 1200);
+    }, 1500);
   };
 
   const handleAnimationComplete = () => {

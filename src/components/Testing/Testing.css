@@ -35,5 +35,48 @@ margin-top: 10rem;
 
 
 }
+*{
+    box-sizing:border-box;
+}
 
-/* In your CSS file */
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+.slide-text-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+     font-family: "Questrial", sans-serif; 
+}
+
+.slide-text-viewport {
+  display: flex;
+  overflow: hidden;
+  height: 90px;
+}
+
+.slide-text-letterWrapper {
+  height: 90px;
+  overflow: hidden;
+}
+
+.slide-text-letter {
+  display: inline-block;
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 90px;
+}
+
+button {
+  padding: 14px 24px;
+  font-size: 16px;
+  cursor: pointer;
+}
