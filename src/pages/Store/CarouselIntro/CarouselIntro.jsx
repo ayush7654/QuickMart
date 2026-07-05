@@ -26,14 +26,15 @@ const [activeIndex, setActiveIndex] = useState(() => {
   const homeContent = [
      { id: 0, info: 'Discover the latest trends as they emerge, with new products and styles added regularly.' },
          { id: 1, info: 'Browse millions of products organized to help you find exactly what you’re looking for.' },
-             { id: 2, info: 'Compare products easily and discover competitive pricing across our entire collection. ' },
-    { id: 3,  info: "From independent labels to established favorites, shop today's hottest global designers." },
+             { id: 2,  info: "From independent labels to established favorites, shop today's hottest global designers." },
+             { id: 3, info: 'Compare products easily and discover competitive pricing across our entire collection. ' },
+
 
 
    
   ];
 
-  const storeImages=['StoreImg5.webp','StoreImg7.jpg','StoreImg10.jpg','StoreImg9.jpg']
+/*   const storeImages=['StoreImg5.webp','StoreImg7.jpg','StoreImg9.jpg','StoreImg10.jpg',] */
 
   useEffect(() => {
     // 1. Access the Lenis instance from the window (standard for Lenis setups)
@@ -87,7 +88,7 @@ useEffect(() => {
 
 <div className='store-text-content'>
 <ScrambleTextSwitcher
-words={["Stay ahead with latest trends.", "Browse millions of products.", "Find the best prices.", "Buy from the hottest brands."]}
+words={["Stay ahead with latest trends.", "Browse millions of products.", "Buy from the hottest brands.", "Find the best prices."]}
   activeIndex={activeIndex}
 />
 

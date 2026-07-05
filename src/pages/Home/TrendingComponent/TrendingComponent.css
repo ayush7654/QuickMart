@@ -37,18 +37,18 @@ background-color: white;
    
   }
 
-.clothing-trend-head{
+/* .clothing-trend-head{
   font-size: 4rem;
   font-weight: 700;
    font-family: "Questrial", sans-serif; 
    margin-bottom: 8rem;
 
-} 
+}  */
 
 
 .clothingTrendsWrapper{
   width: 90%;
-
+ margin-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;

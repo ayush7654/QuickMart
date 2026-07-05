@@ -143,10 +143,6 @@ font-weight: 600;
 
 font-family: "Prosto One", sans-serif;
    font-family: "Questrial", sans-serif; 
-
-
-
-
   will-change: transform;
     transform-origin: center center;
 
@@ -167,11 +163,7 @@ font-family: "Prosto One", sans-serif;
      justify-content:center;
   align-items: end;
    gap: 1rem;
-      font-family: 'Raleway'; 
-      font-family: 'Roboto';
-    
- font-family: 'Outfit';
-  font-family: "Figtree", sans-serif; 
+
   height: 100%;
      border: 0px solid rgb(145, 52, 52);
   font-size: .95rem;

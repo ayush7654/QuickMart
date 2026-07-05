@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    font-family: 'Figtree';
+
      color: rgb(0, 0, 0);
 }
 
@@ -34,26 +34,11 @@
 
 } 
 .regIn-Para{
-color:rgb(125, 125, 125);
-
+color:rgb(100, 100, 100);
  font-size: 1rem;
-
- font-weight: 400;
-  font-family: 'Inter';
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- font-family:'Jost';
-font-family: 'Inter';
-font-family: sans-serif;
-
-
-
-
+ font-weight: 300;
  line-height: 1.6rem;
  letter-spacing: .02rem;
-
-
-
-
 
 }
 

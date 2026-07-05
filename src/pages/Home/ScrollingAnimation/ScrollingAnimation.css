@@ -19,7 +19,7 @@ position: relative;
 .scroll-animation-text-wrapper {
  
 position: absolute;
- bottom: 20%;
+ bottom: 10%;
 
   width: 100%;
   height: auto; /* IMPORTANT */
@@ -31,7 +31,7 @@ position: absolute;
   font-size: 20rem;
   mix-blend-mode: difference;
   color: rgb(255, 255, 255);
-
+ 
   z-index: 9;
 }
 
@@ -40,7 +40,10 @@ position: absolute;
     display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-font-size: 16rem;
+font-size: 25rem;
+font-family: 'Bebas Neue';
+
+
 
 } 
 

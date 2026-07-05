@@ -7,7 +7,7 @@
   border: 0px solid rgb(216, 216, 216);
   width: 90%;
  padding: 1rem;
-  font-family: sans-serif;
+ 
 gap:10px;
 
 
@@ -52,7 +52,7 @@ text-align: center;
  font-size: .9rem;
  color:rgb(0, 0, 0);
 font-weight: 500;
-  font-family: 'Figtree';
+
 
 
 }
@@ -61,7 +61,7 @@ font-weight: 500;
  font-size: 1rem;
   font-weight: 400;
   color:rgb(85, 85, 85);
-  font-family:sans-serif;
+
 }
 
 .user-activity-wrapper{

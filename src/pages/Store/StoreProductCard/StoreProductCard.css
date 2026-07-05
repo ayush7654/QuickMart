@@ -11,6 +11,7 @@
    display: flex;
    flex-direction: column;
    align-items: center;
+   font-family: var(--font-primary);
   
 }
 
@@ -70,7 +71,7 @@ border-radius: 8px;
   position: absolute;
   z-index: 2;
 font-size: .7rem;
-font-family: 'Figtree';
+
 
  color:rgb(0, 0, 0);
  background-color: rgba(255, 255, 255);
@@ -132,7 +133,7 @@ font-size: 10px;
  top:16px;
    right:16px;
    text-transform: capitalize;
-   font-family: Inter;
+
    border: none;
 
 
@@ -157,8 +158,7 @@ font-size: 10px;
     transform: translate(-50%, 5px); 
    z-index: 9;
     text-align: center;
-    font-family: 'Figtree';
-     font-family: 'Inter';
+
     font-weight: 500;
     font-size: 1rem;
     opacity: 0;
@@ -206,26 +206,27 @@ color:red
     display: flex;
 flex-direction: column;
 justify-content: center;
-gap:8px;
+gap:14px;
   padding: 16px 0rem;
-  font-family: 'Figtree';
+
   text-transform: uppercase;
   color:rgb(0, 0, 0);
   background-color: white;
 }
 
-.store-Info-title{
-  display:flex;
- font-family: 'Inter';
-  font-weight: 600;
+.store-Info-title {
+  display: -webkit-box;       /* Required for webkit-line-clamp to function */
+  -webkit-box-orient: vertical; /* Sets the layout axis direction */
+  -webkit-line-clamp: 1;       /* Restricts the text to exactly 1 line */
+  overflow: hidden;            /* Conceals any characters that push past the line limit */
+  
+  font-weight: 500;
   text-transform: capitalize;
-
-
 }
-
 
 .productInfo-line2{
   display: flex;
+
   justify-content: space-between;
 }
 
@@ -245,9 +246,8 @@ gap:8px;
 
 .sp-price{
   font-size: 16px;
-  font-weight: 600;
-    font-family: 'Inter';
-  font-weight: 600;
+  font-weight: 500;
+
 }
 
 

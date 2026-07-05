@@ -36,7 +36,7 @@ export default function SimilarProducts({currentCategory,product}) {
 
        <Link to={`/store/${item.id}`} className='similar-shop-btn-wrapper'>
        <div className="similar-shop-btn">
-        <ScrollButton text='Shop Now'/>
+        <ScrollButton text='Buy Now'/>
        </div>
 
 </Link> 

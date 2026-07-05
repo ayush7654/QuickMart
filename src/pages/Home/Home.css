@@ -71,7 +71,7 @@ padding-bottom: 2rem;
   }
 
 
-
+/* 
   .home-heading{
   
     display: flex;
@@ -97,16 +97,14 @@ padding-bottom: 2rem;
    
 
   }
-
+ */
     #home-product-head{
       width: 90%;
       display: flex;
       align-items: center;
        justify-content: space-between;
    padding: 3rem 0rem;
-         font-family: "Questrial", sans-serif; 
-         font-family: sans-serif;
-/*             font-family: "Questrial", sans-serif;  */
+  font-family: var(--font-subheading);
          text-transform: capitalize;
            
              font-size: 2.5rem;
@@ -122,7 +120,8 @@ padding-bottom: 2rem;
     font-weight: 400;
     text-decoration: underline;
     text-underline-offset: 5px;
-    font-family: 'Inter';
+  
+   
     color:black;
     transition: all .2s ease;
   }
@@ -146,6 +145,15 @@ padding-bottom: 2rem;
 
   }
 
+#home-section-head{
+    font-size: 4rem;
+  font-weight: 700;
+  font-family: var(--font-heading); 
+
+
+}
+
+
   .explore-range-section{
    margin-top: 10rem;
   }
@@ -154,9 +162,7 @@ padding-bottom: 2rem;
     width: 100%;
     padding: 2rem;
     text-align: center;
-    font-size: 4rem;
-    font-family: "Questrial", sans-serif; 
-    font-weight: 700;
+
     margin-bottom: 2rem;
 
   }

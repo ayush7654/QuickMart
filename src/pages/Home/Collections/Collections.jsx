@@ -22,7 +22,7 @@ const containerVariants = {
   return (
      <div className="collections-wrapper">
 
-           <div className='collection-head'>Collections Curated For You. </div> 
+           <div id='home-section-head'>Collections Curated For You. </div> 
 
       <FitnessCollection productAnimation={containerVariants}/>
 

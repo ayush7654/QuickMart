@@ -95,7 +95,7 @@ transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 .store-page-title-wrapper{
 
   width: 100%;
- padding: 1rem;
+ padding: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,7 +105,8 @@ border: 0px solid red;
   /* background-color: rgb(245,245,245);   */
    z-index: 1;
     font-size: 2.5rem;
-     font-family: sans-serif;
+
+
      
 
 
@@ -118,10 +119,14 @@ border: 0px solid red;
 .store-page-title-content{
     width: 90%;
     border-bottom: 0px solid #e7e7e7;
-    padding: 1rem 0rem;
+
     display: flex;
     position: relative;
     justify-content: center;
+       font-family: var(--font-heading);
+   
+   
+  
    
   }
 
@@ -143,22 +148,21 @@ border: 0px solid red;
 text-transform: uppercase;
 color:rgb(85, 85, 85);
 letter-spacing: 1px;
-  font-family: "Questrial", sans-serif;
+
   
   
 }
 
 .selected-category{
     font-size: 2.5rem;
-     font-family: sans-serif;
      text-transform: capitalize;
-     font-family: 'Inter';
-        font-family: "Questrial", sans-serif; 
+    
+   
         
 }
 
 
-.store-nav-wrapper{
+/* .store-nav-wrapper{
   width:98%;
   display: flex;
   justify-content: space-between;
@@ -167,6 +171,7 @@ letter-spacing: 1px;
       font-family: "Questrial", sans-serif; 
     
       font-family: 'Figtree';
+      border: 1px solid red;
 }
 
 .store-navigation{
@@ -183,7 +188,7 @@ letter-spacing: 1px;
 }
 
 
-
+ */
 
 .store-content {
   flex: 1;
@@ -226,7 +231,7 @@ background-color:rgb(255, 255, 255);
    .productList {
   display: grid;
   gap: 1px 1px; 
-  gap: 2rem 2rem; 
+  gap: 4rem 2rem; 
   width: 90%;
   margin: 0 auto;
     justify-items: center;
@@ -257,11 +262,10 @@ background-color:rgb(255, 255, 255);
   flex-direction: row;
   align-items:center;
   justify-content:space-between;
-      font-family: 'Figtree';
     font-size: .9rem;
     font-weight: 400;
     color:rgb(80,80,80);
-    font-family: 'Inter';
+  
  
 }
 
@@ -313,7 +317,7 @@ justify-content: center;
 .product-count-content span{
   font-weight: 600;
   color:black;
-    font-family: 'Inter';
+
 }
 
 .clear-category-btn{

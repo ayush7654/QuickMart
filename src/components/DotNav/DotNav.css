@@ -23,13 +23,13 @@
   border: none;
   padding: 10px 5px;
   cursor: pointer;
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size:14px;
+  font-weight: 400;
   color: var(--text-color);
   transition: color 0.2s ease;
   outline: none;
   white-space: nowrap;
-  font-family:sans-serif;
+ font-family: var(--font-primary);
   border-radius: 100px;
  /*  font-family: 'Figtree'; */
 }

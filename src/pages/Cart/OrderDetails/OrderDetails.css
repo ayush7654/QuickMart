@@ -79,6 +79,7 @@ width: 90px;
   height: 90px;
 border: 3px solid rgb(255, 255, 255);
 box-shadow: 1px 1px 5px rgb(210, 210, 210);
+background-color: white;
 border-radius: 5px;
 display: flex;
 justify-content: center;
@@ -105,8 +106,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 color:white;
-font-size: .7rem;
-font-family: 'Outfit';
+font-size: 10px;
+
 font-weight: 500;
 border-radius: 2px;
 }
@@ -119,7 +120,7 @@ border-radius: 2px;
   flex-direction: column;
   justify-content: center;
   border: 0px solid green;
-  font-family: 'Outfit';
+
   gap: 10px;
   width: 80%;
  
@@ -133,8 +134,8 @@ border-radius: 2px;
 
 
 .order-item-details{
-  font-size: .85rem;
-  color:rgb(120,120,120);
+  font-size:13px;
+  color:rgb(105, 105, 105);
   font-weight: 300;
   display: flex;
   align-items: center;
@@ -149,7 +150,7 @@ padding: 1rem;
 
 .checkout-box{
   width: 85%;
-  font-family: 'Outfit';
+
  
 
 }

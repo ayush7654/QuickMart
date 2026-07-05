@@ -55,7 +55,7 @@ const {isAtTop} = useStoreData();
       <DiscountProducts/>
         
            <div className="explore-range-section">
-            <div className="explore-range-header">Explore Our Range</div>
+            <div id='home-section-head' className="explore-range-header">Explore Our Range</div>
    <ExploreCategory/>
            </div>
   
