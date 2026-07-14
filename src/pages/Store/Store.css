@@ -124,6 +124,8 @@ border: 0px solid red;
     position: relative;
     justify-content: center;
        font-family: var(--font-heading);
+          font-family: "Questrial", sans-serif; 
+         
    
    
   
@@ -136,30 +138,40 @@ border: 0px solid red;
   display: flex;
   flex-direction: column; 
   align-items: center;
-  font-weight: 600;
-  letter-spacing: 2px;
   gap:1rem;
   text-align: center;
-  font-size: 1rem;
+    border: 0px solid red;
+
   
 }
 
 .selected-group{
-text-transform: uppercase;
+
+text-transform: capitalize;
 color:rgb(85, 85, 85);
-letter-spacing: 1px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 1rem;
+
+
 
   
   
 }
 
 .selected-category{
-    font-size: 2.5rem;
-     text-transform: capitalize;
+    font-size: 4rem;
+     text-transform: uppercase;
+     font-weight: 400;
+      font-family: 'Jost';
+      letter-spacing: 1px;
+     
     
    
         
 }
+
 
 
 /* .store-nav-wrapper{

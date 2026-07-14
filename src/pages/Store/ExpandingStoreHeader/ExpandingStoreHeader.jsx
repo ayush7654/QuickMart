@@ -364,10 +364,11 @@ useEffect(() => {
        </div>
       }
     
-
+ 
 {(selectedSubGroupId != null && !partialPill) && (
   <>
     <div className="subgroup-animation-mask">
+      
       <motion.div 
         className="main-subgroup-head"
         // 1. Remounts when group changes OR when the parent menu slides open
@@ -380,6 +381,7 @@ useEffect(() => {
         initial="hidden"
         animate="visible"
       >
+      
         <span>{CATEGORY_ICONS[selectedSubGroupId].subgroup[0]}</span>
         {CATEGORY_ICONS[selectedSubGroupId].subgroup.length > 1 && (
           <div>
@@ -406,10 +408,16 @@ useEffect(() => {
         {CATEGORY_ICONS[selectedSubGroupId].description}
       </motion.div>
     </div>
+  
   </>
 )}
 
-
+      <div className="head-dot-wrapper">
+      <span className="head-dot red"></span>
+      <span className="head-dot blue" ></span>
+      <span className="head-dot green"></span>
+    
+    </div>
       </div>
 
      

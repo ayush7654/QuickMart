@@ -352,7 +352,13 @@ setStoreSearch = {setStoreSearch}/>
 
 
     
-    <span className="selected-group"> {currentCategory?selectedGroup: 'STORE'}</span>
+    <span className="selected-group"> {currentCategory?selectedGroup: 'Store'}</span>
+    <div className="head-dot-wrapper">
+      <span className="head-dot red"></span>
+      <span className="head-dot blue" ></span>
+      <span className="head-dot green"></span>
+    
+    </div>
     <span className="selected-category">
      {currentCategory?currentCategory.replace(/-/g, ' '):'Explore All '} 
     </span>

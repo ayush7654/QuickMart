@@ -1,98 +1,92 @@
 .footer-lower{
-    border-top:1px solid rgb(70, 70, 70);  
+    border-top:0px solid rgb(70, 70, 70);  
     display: flex;
-    padding:2rem;
-    justify-content: space-around;
+flex-direction: column;
+   align-items: center;
     flex-wrap: wrap;
     background-color: rgb(20,20,20);
-    height: 20vh;
+        background-color: rgb(0, 0, 0);
+/*     height: 25vh; */
    
     
 }
 
-#footerIcon-div{
+.lower-footer-top{
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    font-size: 1rem;
-    cursor: pointer;
+    justify-content: space-between;
+    width: 90%;
 }
-#footerIcon-wrapper{
-      display: flex;
+
+.lower-footer-bottom{
+        display: flex;
     align-items: center;
-    justify-content: center;
-    gap:.5rem;
-    width: 100%;
-
-}
-#footerIcon{
-    font-size: 25px;
+    justify-content: space-between;
+    width: 90%;
+    padding: 2rem 0rem;
 }
 
 
+.footer-head-wrapper{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+            padding: 1rem 0rem;
+}
 
-@media(max-width:600px){
+.footer-head{
+    font-family: 'Jost';
+    font-size: 10rem;
+    color:white;
+    letter-spacing: 10px;
+       font-weight: 400;
+       width: fit-content;
+
+      
+}
+
+.footer-tagline{
+       font-family: "Questrial", sans-serif; 
+       letter-spacing: 10px;
+       font-size: 18px;
+}
+
+.app-store-link-wrapper{
+
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    align-items: center;
+         width: 40%;
+  margin-bottom: 2rem;
+
   
-   .footer-lower{
+
+
+}
+
+
+.app-store-head{
+    white-space: nowrap;
     display: grid;
-   grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-template-rows: repeat(2, auto);   /* 2 rows */
+    place-items: center;
+        color:rgb(125,125,125);
 
-  gap: 1rem;
-  padding: 1.5rem;
-   
-}
-
-#footerIcon-div{
-    width: 100%;
-    
-
-
-}
-
-#footerIcon-wrapper{
-    width: 100%;
-    justify-content: flex-start;
-        margin-left:25% ;
-   
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: 'Figtree';
+    letter-spacing: 1px;
 }
 
 
-    
+
+
+
+.app-container img{
+ width: 10rem;
 }
 
-@media(max-width:450px){
-    .footer-lower{
-        padding: 1rem;
-    }
-    #footerIcon-div{
-        font-size: .75rem;
-    }
-
-#footerIcon{
-    font-size: 20px;
-}
-
-}
-
-@media(max-width:400px){
-
-    .footer-lower{
-        height: 15vh;
-    }
-
-#footerIcon-wrapper{
-
-        margin-left:15% ;
-   
-}
-
-  #footerIcon-div{
-        font-size: .7rem;
-    }
-
-#footerIcon{
-    font-size: 18px;
-}
+.footer-sm-text{
+    font-size: 12px;
 }

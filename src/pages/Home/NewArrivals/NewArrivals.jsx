@@ -53,7 +53,16 @@ export default function NewArrivals() {
     <div id='home-product-div' className="newArrivals-home-Products-div">
       <div id='home-product-head'>
         New Arrivals
-        <span className='view-collection-btn'>View Collection →</span>
+     {/*    <span className='view-collection-btn'>View Collection →</span> */}
+
+     <div>
+                <div className="head-dot-wrapper">
+      <span className="head-dot red"></span>
+      <span className="head-dot blue" ></span>
+      <span className="head-dot green"></span>
+    
+    </div>
+     </div>
       </div>
 
     <div key={homeProducts.length}  className="home-Products-container">

@@ -51,9 +51,11 @@ export default function ScrambleTextSwitcher({words, activeIndex,
       style={{
         cursor: "pointer",
         fontSize: "5rem",
-        fontWeight: "700",
+        fontWeight: "400",
         userSelect: "none",
-        fontFamily:'system-ui'
+        fontFamily:'Roboto'
+
+      
        
      
       }}

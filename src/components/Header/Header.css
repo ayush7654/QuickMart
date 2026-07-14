@@ -139,10 +139,12 @@ backdrop-filter: blur(25px);
   font-size: 2.5rem;
     letter-spacing: .2rem;
     z-index: 999;
-font-weight: 600;
+font-weight: 400;
 
 font-family: "Prosto One", sans-serif;
-   font-family: "Questrial", sans-serif; 
+   font-family: "Questrial", sans-serif;
+    font-family: 'Jost';
+    text-transform: uppercase;
   will-change: transform;
     transform-origin: center center;
 

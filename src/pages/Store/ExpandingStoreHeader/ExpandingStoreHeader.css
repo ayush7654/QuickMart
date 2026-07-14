@@ -123,7 +123,7 @@
 
 
 padding: 8px;
-border: 0px solid blue;
+
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -163,16 +163,17 @@ gap:1rem;
 
   cursor: pointer;
 
-  border: 1px solid rgb(100, 100, 100);
+  border: 0px solid rgb(100, 100, 100);
 
   color: rgb(100, 100, 100);
   background: transparent;
-
+  background-color: white;
   transition:
   
    
     background 0.15s ease,
     transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    
 }
 
 
@@ -198,21 +199,23 @@ gap:1rem;
 /* ACTIVE STATE */
 .sub-group-icon.subgroup-active {
   border-color: transparent;
+background-color: rgb(50,50,50);
+  color: rgb(255, 255, 255);
 
-  color: white;
 
-    background:
+  /*   background:
     linear-gradient(
       0deg,
       rgba(0,100,255),
       rgb(255, 62, 96)
-    );
+    ); */
+  
 }
 
 
 /* ACTIVE HOVER OVERRIDES */
 .sub-group-icon.subgroup-active:hover {
-  color: white;
+
   border-color: transparent;
 }
 
@@ -233,6 +236,15 @@ gap:1rem;
     
   );
 
+  /*   background: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0.6),
+    rgba(0, 0, 255, 0.5),
+    rgba(0, 128, 0, 0.7)
+    
+  ); */
+
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -251,22 +263,27 @@ gap:1rem;
   
 }
 
+.subgroup-sidebar-wrapper .head-dot-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
 
 
 .subgroup-item {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 16px ;
   cursor: pointer;
   color: rgb(81, 81, 81);
   transition: all 0.3s ease;
   font-weight: 400;
-  font-family: 'Inter';
+
 border: 0px solid blue;
   text-transform:capitalize;
      transition: all .3s ease;
- font-family: 'Outfit';
-    font-family: "Questrial", sans-serif; 
-
+font-family: 'Inter';
  border-bottom: 1px solid rgb(220,220,220);
 
 

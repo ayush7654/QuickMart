@@ -4,9 +4,9 @@ import './BlurTransition.css';
 
 const IMAGES = [
     'StoreMedia/storeImg4.jpg',
+    'StoreMedia/storeImg3.jpg',
+    'StoreMedia/storeImg1.jpg',
   'StoreMedia/storeImg2.jpg',
-    'StoreMedia/storeImg23.jpg',
-  'StoreMedia/storeImg3.jpg',
 
 
 ];

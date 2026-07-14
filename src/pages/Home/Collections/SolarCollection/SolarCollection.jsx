@@ -179,7 +179,15 @@ onLeaveBack: () => {
     </div>
     </div>
     <div className='collection-product-wrapper'>   
-   <div  id='home-product-head'>SolarPack Collection</div>
+   <div  id='home-product-head'>SolarPack Collection
+
+         <div className="head-dot-wrapper">
+      <span className="head-dot red"></span>
+      <span className="head-dot blue" ></span>
+      <span className="head-dot green"></span>
+    
+    </div>
+   </div>
 
          <motion.div className='home-Products-container'
            variants={productAnimation}

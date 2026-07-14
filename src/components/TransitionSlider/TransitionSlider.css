@@ -35,17 +35,21 @@
 }
 
 .transition-slider-text{
-   font-family: "Questrial", sans-serif; 
+
    font-size: 5rem;
+   
 }
 
 .transition-text{
     position:absolute;
     inset:0;
-   font-family: "Questrial", sans-serif; 
+
+   font-family: 'Jost';
     display:flex;
     justify-content:center;
     align-items:center;
+
+ 
 }
 
 .letter-wrapper{
@@ -55,6 +59,6 @@
 .letter{
     display:inline-block;
     font-size:clamp(3rem,8vw,7rem);
-    font-weight:700;
+    font-weight:300;
     color:white;
 }

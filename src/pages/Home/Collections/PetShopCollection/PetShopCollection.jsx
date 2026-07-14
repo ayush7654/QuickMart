@@ -157,7 +157,15 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
 
     </div>
      <div className='collection-product-wrapper'>   
-   <div  id='home-product-head'>Pet Shop Collection</div>
+   <div  id='home-product-head'>Pet Shop Collection
+
+         <div className="head-dot-wrapper">
+      <span className="head-dot red"></span>
+      <span className="head-dot blue" ></span>
+      <span className="head-dot green"></span>
+    
+    </div>
+   </div>
  
          <motion.div className='home-Products-container'
           variants={productAnimation}

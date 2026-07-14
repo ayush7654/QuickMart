@@ -2,6 +2,8 @@ import React from 'react'
 import { useLocation } from 'react-router-dom';
 import './FooterUpper.css'
 import { FaFacebook, FaXTwitter, FaYoutube, FaInstagram } from "react-icons/fa6";
+import { ChevronRight } from 'lucide-react';
+import { LuChevronRight } from "react-icons/lu";
 export default function FooterUpper() {
 
     const location = useLocation();
@@ -46,36 +48,37 @@ export default function FooterUpper() {
    
     </div>
 </div>
-<div style={{display:'flex',alignItems:'center'}}><div className='footer-midline'></div></div>
+{/* <div style={{display:'flex',alignItems:'center'}}><div className='footer-midline'></div></div> */}
 <div className='upper-right'>
-    <div className='right-a'>
-        <div id='footer-title'>Mail Us</div>
+    <div className='upper-right-top'>
+            <div className='right-a'>
+        <div id='footer-title'>REGION &nbsp;/&nbsp; LANGUAGE</div>
         <div id='footer-list'>
-        <div>QuickMart Internet Private Ltd, </div>
-        <div>Buildings Alyssa, Begonia &</div>
-        <div>Clove Embassy Tech Village,</div>
-  
+   India &nbsp;|&nbsp; English
         </div>
-      
-        <div>Social:</div>
-        <div className='social-icons-div' >
+
+    </div>
+    <div className='right-b'>
+        <div id='footer-title'> FOLLOW US ON</div>
+          <div className='social-icons-div' >
         <FaFacebook id='social-icon' /> 
         <FaXTwitter id='social-icon' /> 
         <FaYoutube id='social-icon'/>  
         <FaInstagram id='social-icon'/>
         </div>
-    </div>
-    <div className='right-b'>
-        <div id='footer-title'> Office Address</div>
-        <div id='footer-list' >
-        <div>QuickMart Internet Private Ltd,</div>
-        <div>Buildings Alyssa, Begonia &</div>
-        <div>Clove Embassy Tech Village,</div>
-        <div>CIN:U51109XYZXTC02245</div>
-        <div>Telephone: <span style={{color:'blue'}}>044-9999999</span></div>
-        </div>
      
     </div>
+    </div>
+
+    <div className="upper-right-bottom">
+        <div id='footer-title'> SUBSCRIBE</div>
+        <div className="newsletter-wrapper">
+            <input className='newsletter-input'
+            placeholder='Fill in your email address.'/>
+            <div className='newsletter-btn'>< LuChevronRight strokeWidth={1.5}/></div>
+        </div>
+    </div>
+
 </div>
         </div>
   )

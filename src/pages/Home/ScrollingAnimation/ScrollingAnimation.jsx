@@ -126,7 +126,14 @@ export default function ScrollingAnimation({ isAtTop }) {
       </div>
       
       <div className="scroll-animation-text-wrapper">
-        <div className="scrolling-animation-text">ORIGINALS</div>
+ <div className="scrolling-animation-text">
+  <span className="bold">PREMIUM</span> 
+  </div>
+{/* <span className="horizontal-line"></span> */}
+        <div className="scrolling-animation-text">
+            <span className="subbold"> Originals</span> 
+
+         </div>
       </div>
     </div>
   );

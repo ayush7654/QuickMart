@@ -106,7 +106,7 @@ const handlePartialToggle = () => {
 
 
    <div className="side-filter-btn-wrapper" onClick={()=>setSideFilterOn(true)}>
-      
+      <ScrollButton text='Filters'/>
        <div className='scroll-btn-Icon-wrapper'>
        <span className="scroll-btn-Icon-content">
  <  HiOutlineAdjustmentsVertical size={20}/>
@@ -120,7 +120,7 @@ const handlePartialToggle = () => {
 
   <div className={`store-catelog-btn ${isOpen || partialPill?'store-catelog-active':''}`} onClick={handleExpandedToggle}>
 
-
+<ScrollButton text='Catelog'/>
  <div className='scroll-btn-Icon-wrapper'>
        <span className="scroll-btn-Icon-content">
         <LayoutPanelLeft 
@@ -134,7 +134,7 @@ const handlePartialToggle = () => {
        </span>
       </div> 
 
-<ScrollButton text='Catelog'/>
+
   </div> 
 
   

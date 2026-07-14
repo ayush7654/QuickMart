@@ -57,8 +57,15 @@ export default function DiscountProducts() {
   return (
     <div  id='home-product-div' className="discount-home-Products-div">
       <div id='home-product-head'>
-        Absolute Steals
-        <span className='view-collection-btn'>View Collection →</span>
+            
+        <span>Absolute Steals</span>
+     {/*    <span className='view-collection-btn'>View Collection →</span> */}
+         <div className="head-dot-wrapper">
+      <span className="head-dot red"></span>
+      <span className="head-dot blue" ></span>
+      <span className="head-dot green"></span>
+    
+    </div>
       </div>
       
       <div key={homeProducts.length} className="home-Products-container">

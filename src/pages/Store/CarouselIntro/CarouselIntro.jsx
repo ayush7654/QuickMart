@@ -25,9 +25,9 @@ const [activeIndex, setActiveIndex] = useState(() => {
 
   const homeContent = [
      { id: 0, info: 'Discover the latest trends as they emerge, with new products and styles added regularly.' },
-         { id: 1, info: 'Browse millions of products organized to help you find exactly what you’re looking for.' },
+         { id: 1, info: 'Compare products easily and discover competitive pricing across our entire collection.' },
              { id: 2,  info: "From independent labels to established favorites, shop today's hottest global designers." },
-             { id: 3, info: 'Compare products easily and discover competitive pricing across our entire collection. ' },
+             { id: 3, info: 'Browse millions of products organized to help you find exactly what you’re looking for. ' },
 
 
 
@@ -88,7 +88,10 @@ useEffect(() => {
 
 <div className='store-text-content'>
 <ScrambleTextSwitcher
-words={["Stay ahead with latest trends.", "Browse millions of products.", "Buy from the hottest brands.", "Find the best prices."]}
+words={["Stay ahead with latest trends.",
+  "Find the best prices.",
+   "Buy from the hottest brands.", 
+   "Browse millions of products."]}
   activeIndex={activeIndex}
 />
 
