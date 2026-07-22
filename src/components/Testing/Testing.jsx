@@ -13,9 +13,7 @@ export default function Testing() {
 
   return (
 <div className="testing-div" >
-  <div className="rgb-pill-button">
-    Catelog
-  </div>
+
 </div>
 
 

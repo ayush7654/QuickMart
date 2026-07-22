@@ -48,7 +48,7 @@ export default function FooterUpper() {
    
     </div>
 </div>
-{/* <div style={{display:'flex',alignItems:'center'}}><div className='footer-midline'></div></div> */}
+
 <div className='upper-right'>
     <div className='upper-right-top'>
             <div className='right-a'>

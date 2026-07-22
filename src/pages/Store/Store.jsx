@@ -304,7 +304,8 @@ console.log(productElements && productElements)
 
 
 
-   <CarouselIntro/>   
+   <CarouselIntro 
+/>   
 
  
 

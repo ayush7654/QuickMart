@@ -7,6 +7,8 @@ import { gsap } from 'gsap';
 import { Observer } from 'gsap/all'; // Try importing from 'gsap/all'
 import { AnimatePresence , motion } from 'framer-motion';
 import BlurTransition from '../../../components/Testing/BlurTransition';
+import StoreScrollingText from './StoreScrollingText/StoreScrollingText';
+
 gsap.registerPlugin(Observer);
 
 
@@ -20,14 +22,17 @@ const [activeIndex, setActiveIndex] = useState(() => {
 });
   const isAnimating = useRef(false);
   const { scrollY } = useScroll();
+
+
+  
   
 
 
   const homeContent = [
-     { id: 0, info: 'Discover the latest trends as they emerge, with new products and styles added regularly.' },
+     { id: 0, info:'Browse millions of products organized to help you find exactly what you’re looking for. '  },
          { id: 1, info: 'Compare products easily and discover competitive pricing across our entire collection.' },
              { id: 2,  info: "From independent labels to established favorites, shop today's hottest global designers." },
-             { id: 3, info: 'Browse millions of products organized to help you find exactly what you’re looking for. ' },
+             { id: 3, info:'Discover the latest trends as they emerge, with new products and styles added regularly.'},
 
 
 
@@ -87,11 +92,25 @@ useEffect(() => {
 </div>
 
 <div className='store-text-content'>
-<ScrambleTextSwitcher
-words={["Stay ahead with latest trends.",
+{/* <ScrambleTextSwitcher
+words={[
+   "Browse millions of products.",
+
   "Find the best prices.",
    "Buy from the hottest brands.", 
-   "Browse millions of products."]}
+     "Stay ahead with latest trends.",
+  ]}
+  activeIndex={activeIndex}
+/> */}
+
+<StoreScrollingText
+items={[
+   "Browse millions of products.",
+
+  "Find the best prices.",
+   "Buy from the hottest brands.", 
+     "Stay ahead with latest trends.",
+  ]}
   activeIndex={activeIndex}
 />
 

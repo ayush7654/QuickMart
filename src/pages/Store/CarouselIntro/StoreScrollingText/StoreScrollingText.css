@@ -1,0 +1,41 @@
+/* Fullscreen Viewport Container */
+.staggerStore-viewport {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sentence Container */
+.stagger-sentence {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+/* Masking wrapper to clip words as they slide up */
+.word-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0.2rem 0; /* Prevents text descenders like 'g', 'p', 'y' from clipping */
+}
+
+/* Typography and Motion Targets */
+.stagger-word {
+  display: inline-block;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  will-change: transform, opacity, filter;
+}

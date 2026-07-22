@@ -1,47 +1,56 @@
 import React, { useState, useRef, useEffect } from "react";
-
+import { useStoreData } from "../StoreDataContext";
 const CHARS =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
 
 export default function ScrambleTextSwitcher({words, activeIndex,
   duration = 400}) {
-/*   const words = ["Apple", "Banana", "Cats"]; */
 
-/*   const [index, setIndex] = useState(0); */
   const [displayText, setDisplayText] = useState( words[activeIndex] || "");
+ const{isAtTop} = useStoreData();
+
+console.log( ' store page position' , isAtTop)
+
 
   const intervalRef = useRef(null);
   useEffect(() => {
-    const targetText = words[activeIndex] || "";
+  const targetText = words[activeIndex] || "";
 
-    let frame = 0;
-    const totalFrames = duration / 40;
-
+  // 1. If we aren't at the top, immediately reveal the final text and don't scramble
+  if (!isAtTop) {
     clearInterval(intervalRef.current);
+    setDisplayText(targetText);
+    return; 
+  }
 
-    intervalRef.current = setInterval(() => {
-      frame++;
+  let frame = 0;
+  const totalFrames = duration / 40;
 
-      const scrambled = Array(targetText.length)
-        .fill("")
-        .map(
-          () =>
-            CHARS[
-              Math.floor(Math.random() * CHARS.length)
-            ]
-        )
-        .join("");
+  clearInterval(intervalRef.current);
 
-      setDisplayText(scrambled);
+  intervalRef.current = setInterval(() => {
+    frame++;
 
-      if (frame >= totalFrames) {
-        clearInterval(intervalRef.current);
-        setDisplayText(targetText);
-      }
-    }, 80);
+    const scrambled = Array(targetText.length)
+      .fill("")
+      .map(
+        () =>
+          CHARS[
+            Math.floor(Math.random() * CHARS.length)
+          ]
+      )
+      .join("");
 
-    return () => clearInterval(intervalRef.current);
-  }, [activeIndex, words, duration]);
+    setDisplayText(scrambled);
+
+    if (frame >= totalFrames) {
+      clearInterval(intervalRef.current);
+      setDisplayText(targetText);
+    }
+  }, 100);
+
+  return () => clearInterval(intervalRef.current);
+}, [activeIndex, words, duration, isAtTop]); // 2. Added isAtTop to dependencies
 
 
 
