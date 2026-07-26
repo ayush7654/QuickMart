@@ -189,7 +189,7 @@ onLeaveBack: () => {
     </div>
    </div>
 
-         <motion.div className='home-Products-container'
+         <motion.div className='collection-Products-container'
            variants={productAnimation}
   initial="hidden"
   whileInView="visible"

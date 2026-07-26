@@ -35,12 +35,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-
-
   transition: height 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-/*      background-image: url('/ImageCrousel/IC-Shoes.webp');
-  background-position: center;
-  background-size: cover;  */
+
   
 }
 
@@ -60,9 +56,6 @@
 
   overflow: hidden;
 
-/*     background-image: url('/ImageCrousel/IC-Shoes.webp');
-  background-position: center;
-  background-size: cover; */
 
 
 }
@@ -130,8 +123,7 @@
   left: 0rem;
   width: 100%;
   height:100%;
- /*    background: #a881f1;
-    background: rgb(255, 224, 0); */
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,6 +188,8 @@
   flex-direction: column;
   align-items: center;
   z-index: 10;
+ gap: 10px;
+  width: 90%;
  }
 
  .fitness-head-1{
@@ -203,6 +197,7 @@
  font-family: 'Bebas Neue';
 text-transform: uppercase;
   font-size: 4rem;
+  text-align: center;
 
  }
 
@@ -211,6 +206,33 @@ text-transform: uppercase;
   font-family: 'Figtree';
   font-size: 1.2rem;
   text-transform: uppercase;
+    text-align: center;
+
+ }
+
+ .fitness-btn{
+ font-family: 'Figtree';
+ padding: 10px 14px;
+ border: 1px solid white;
+
+ }
+
+ @media(max-width:800px){
+  
+ .fitness-head-1{
+  font-weight: 400;
+
+  font-size: 3rem;
+
+
+ }
+
+ .fitness-head-2{
+  font-weight: 400;
+  font-family: 'Figtree';
+  font-size: 1rem;
+  text-transform: uppercase;
+
 
  }
 
@@ -222,3 +244,30 @@ text-transform: uppercase;
  }
 
  
+ }
+
+ @media(max-width:600px){
+.fitness-video-wrapper{
+   height:  190px;
+}
+
+.fitness-banner-wrapper{
+  width: 1350px;
+}
+
+.fitness-video-expanded{
+  height: calc(100vh - 200px);
+}
+
+.banner-inner {
+    height: 200px; 
+}
+
+.fitness-banner-wrapper.fitness-active .fitness-top {
+  transform: translateY(calc(-50vh + 100px));
+}
+
+.fitness-banner-wrapper.fitness-active .fitness-bottom {
+  transform: translateY(calc(50vh - 100px));
+}
+ }

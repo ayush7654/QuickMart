@@ -35,3 +35,9 @@
 .test-absolute .test-letter {
   transform-origin: center top;
 }
+
+@media (max-width:600px){
+  .test-letter{
+    font-size: 12rem;
+  }
+}
