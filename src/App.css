@@ -12,6 +12,7 @@ body{@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300
  width: 100%;
  font-family: 'Inter';
 
+
 }
 *, *::before, *::after {
   box-sizing: border-box;
@@ -37,6 +38,7 @@ a {
 /* 1. Ensure the outer container doesn't collapse or clip weirdly */
 .outlet-container {
   width: 100%;
+
 
 }
 

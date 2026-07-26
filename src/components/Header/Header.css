@@ -327,7 +327,7 @@ pointer-events: none;
  
 
 
- @media (max-width:1280px){
+/*  @media (max-width:1280px){
 
 .page-nav-wrapper-left{
   width: 12rem;
@@ -375,17 +375,6 @@ pointer-events: none;
 
   
 
- /*  #header-icon{
-  font-size: 1.2rem;
-  }
-
-  .searchIcon{
-  width: 1.2rem;
-  height: 1.2rem;
-}
-
- */
-
 
 
  }
@@ -409,21 +398,14 @@ letter-spacing: 0rem;
   }
   
 
-/*   #header-icon{
-  font-size: 1.2rem;
-  }
 
-  .searchIcon{
-  width: 1.2rem;
-  height: 1.2rem;
-} */
 }
 
-@media (max-width:700px){  /* Header layout changes */
+@media (max-width:700px){  
 
 
       .header-home{
-    /* height: 7rem; */
+   
     height: 8rem;
  width: 95%;
   color:white;
@@ -593,3 +575,4 @@ font-size: 1.5rem;
    }
 }
 
+ */

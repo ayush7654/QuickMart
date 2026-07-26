@@ -54,7 +54,7 @@ export default function NewArrivals() {
       <div id='home-product-head'>
         New Arrivals
      {/*    <span className='view-collection-btn'>View Collection →</span> */}
-
+   <span id='home-product-tagline'>Check out what's latest. </span>
      <div>
                 <div className="head-dot-wrapper">
       <span className="head-dot red"></span>

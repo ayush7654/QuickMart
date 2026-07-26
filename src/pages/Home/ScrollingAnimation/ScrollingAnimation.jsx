@@ -97,8 +97,8 @@ export default function ScrollingAnimation({ isAtTop }) {
 
   return (
     <div className="scroll-section" ref={sectionRef}>
-      <div className="grid-item item-1" style={{ backgroundImage: 'url(/HomeMedia/AmiriSnap1.webp)' }}></div>
-      <div className="grid-item item-2" style={{ backgroundImage: 'url(/HomeMedia/AmiriSnap4.webp)' }}></div>
+      <div className="grid-item item-1" ></div>
+      <div className="grid-item item-2" ></div>
 
       <div className="grid-container-wrapper">
         <div className="grid-content">
@@ -127,11 +127,13 @@ export default function ScrollingAnimation({ isAtTop }) {
       
       <div className="scroll-animation-text-wrapper">
  <div className="scrolling-animation-text">
-  <span className="bold">PREMIUM</span> 
+{/*   <span className="bold">PREMIUM</span>  */}
   </div>
 {/* <span className="horizontal-line"></span> */}
         <div className="scrolling-animation-text">
-            <span className="subbold"> Originals</span> 
+            <span className="subbold">Prestige </span> 
+            <span className="subbold">Premium</span> 
+            <span className="subbold"> Luxury</span> 
 
          </div>
       </div>

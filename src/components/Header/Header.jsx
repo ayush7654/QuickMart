@@ -260,7 +260,7 @@ useEffect(() => {
 
   <div className="site-name-div"   >
              
-                  <div className="site-name" style={{opacity:location.pathname==='/' && isAtTop?'0':'1', color:isAtTop && headertp?'white':'black'}}>SaraS</div>
+                  <div className="site-name" style={{opacity:location.pathname==='/' && isAtTop?'0':'1', color:isAtTop && headertp?'white':'black'}}>{window.innerWidth}</div>
                 </div>
                  <div className="page-nav-wrapper-left">
     

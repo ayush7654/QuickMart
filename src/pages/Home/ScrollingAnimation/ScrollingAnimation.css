@@ -19,7 +19,7 @@ position: relative;
 .scroll-animation-text-wrapper {
  
 position: absolute;
- bottom: 30%;
+ bottom: 35%;
 
   width: 100%;
   height: auto; /* IMPORTANT */
@@ -47,7 +47,7 @@ gap: 1rem;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-gap:1rem;
+gap:3rem;
 font-size: 15rem;
 font-family: var(--font-heading);
 font-family:'Jost';
@@ -72,11 +72,12 @@ display: block;
   margin: 1rem 0rem;
 }
 .subbold{
-  font-size: 3rem;
-  letter-spacing: 1rem;
-  font-weight: 300;
+  font-size: 5rem;
+  letter-spacing: 2rem;
+  font-weight: 100;
    font-family: "Questrial", sans-serif; 
   text-transform: uppercase;
+
 }
 
 
@@ -123,7 +124,7 @@ height: 100vh;
   text-align: center;
 font-family: var(--font-heading);
      text-transform: uppercase;
-  font-size: 18rem;
+  font-size: 16rem;
 
    font-weight: 200;
   
@@ -198,8 +199,8 @@ z-index: 10;
 
 
 
- .item-1 { top: 0%; left:0%; border-right: 2.5px solid white; }
-.item-2 { top: 0%; right: 0%;border-left: 2.5px solid white;    }
+ .item-1 { top: 0%; left:0%; border-right: 2.5px solid white; background-image:url('HomeMedia/AmiriSnap3.webp'); }
+.item-2 { top: 0%; right: 0%;border-left: 2.5px solid white;background-image:url('HomeMedia/AmiriSnap1.webp');    }
 
 
 
@@ -221,8 +222,57 @@ bottom: 0;
 
 
 
+@media (max-width:1000px){
+  .hero-title2{
+    font-size: 12rem;
+  }
+  .title-tag{
+    font-size: 1.5rem;
+  }
+
+  .subbold{
+  font-size: 4rem;
+  letter-spacing: 1.5rem;
 
 
+}
+}
+
+
+@media (max-width:600px){
+  .hero-title2{
+    font-size: 8rem;
+  }
+  .title-tag{
+    font-size: 1rem;
+  }
+    .subbold{
+  font-size: 3rem;
+  letter-spacing: 1rem;
+
+
+}
+}
+
+@media (max-width:400px){
+  .hero-title2{
+    font-size: 6rem;
+  }
+  .title-tag{
+    font-size: 1rem;
+     letter-spacing: 10px;
+  }
+      .subbold{
+  font-size: 2rem;
+  letter-spacing: 1rem;
+
+
+}
+
+  
+ .item-1 { top: 0%; left:0%; border-right: 2.5px solid white; background-image:url('HomeMedia/AmiriSnapSm1.jpg'); }
+.item-2 { top: 0%; right: 0%;border-left: 2.5px solid white;background-image:url('HomeMedia/AmiriSnapSm4.jpg');    }
+}
 
 
 

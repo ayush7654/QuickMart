@@ -59,6 +59,7 @@ setSearchBarToggle(i)
     return(
 
       <StoreDataProvider>
+
     <div  className={`root${isHomePage ? 'home' : 'nothome'}`} style={{position:"relative"}}>
 {showOverlay && (
   <div className="screen-overlay" onClick={() => setShowOverlay(false)} />
@@ -73,11 +74,11 @@ setSearchBarToggle(i)
 
 
 
-    <Header toggleSwitch={SearchToggle} 
+ <Header toggleSwitch={SearchToggle} 
     screenOverlay={showOverlay}
       toggleOverlay={setShowOverlay}
       sideBarToggle={toggleSideBar}
-      setCartToggled={setCartToggled}/> 
+      setCartToggled={setCartToggled}/>   
 
 <StoreFilterProvider>
   <CartListProvider>
@@ -88,10 +89,10 @@ setSearchBarToggle(i)
       toggleOverlay={setShowOverlay}/>
     </div>
 
-      <SideBarCart
+{/*       <SideBarCart
   cartToggled={cartToggled}
   setCartToggled={setCartToggled}
-  toggleOverlay={setShowOverlay}/>
+  toggleOverlay={setShowOverlay}/> */}
 
 
   </CartListProvider>
@@ -99,7 +100,7 @@ setSearchBarToggle(i)
 
 
 
-         <Footer /> 
+  {/*        <Footer />  */}  {/* fix layout for screen chnage */}
          <TransitionSlider/>
     </div>
     </StoreDataProvider>

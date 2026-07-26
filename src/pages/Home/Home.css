@@ -60,58 +60,35 @@
   }
 
   #home-product-div{
-/* background-color: rgb(62, 62, 62);
-background-color: rgb(0, 50, 125);
-background-color: rgb(0, 30, 75);
-background-color: rgb(10, 0, 60);
-background-color: rgb(0, 0, 70);
-background-color: rgb(45, 0, 0); */
- /* background-color: rgb(245,245,245); */
+
 padding-bottom: 2rem;
  
   }
 
 
-/* 
-  .home-heading{
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-      font-size: 2.5rem;
-   padding: 1rem 0rem;
-    
-    
-   position: relative;
-    width: 90%;
-    margin-bottom: 2rem;
-   text-align: center;
-   text-transform:capitalize;
-    border-top: 0px solid rgb(200, 200, 200);
- 
-    color:rgb(50,50,50);   
-  
-     font-family: 'Figtree';   
-    font-family: sans-serif;
-     font-weight: 400;
-     
-   
 
-  }
- */
     #home-product-head{
       width: 90%;
       display: flex;
+      flex-direction: column;
       align-items: center;
        justify-content: space-between;
    padding: 3rem 0rem;
   font-family: var(--font-subheading);
          text-transform: capitalize;
-           
+         text-transform: uppercase;
+
              font-size: 2.5rem;
                 font-weight: 400;
      
               
+    }
+
+    #home-product-tagline{
+  font-size:14px;
+  padding: 10px ;
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: capitalize;
     }
 
     .home-dot-head{
@@ -146,14 +123,12 @@ padding-bottom: 2rem;
 
 
   .home-Products-container{
-    border: 0px solid red;
+
     width: 90%;
     display: grid;
- min-height: 50vh;
+        place-items: center;
+/*  min-height: 50vh; */
   grid-template-columns: repeat(4, 1fr); 
-  gap: 25px;
-
-
 
 
   }
@@ -189,10 +164,45 @@ align-items: center;
 
   }
 
+  @media(max-width:1200px){
+      .home-Products-container{
+
+    width: 90%;
+    display: grid;
+
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, 1fr); 
+  gap: 50px 20px;
+
+  }
+  } 
 
 
+  @media(max-width:550px){
+      .home-Products-container{
 
+    width: 90%;
+    display: grid;
 
+  grid-template-columns: repeat(1, 1fr); 
+ 
+  gap: 50px 20px;
+
+  }
+  } 
+
+@media (max-width:400px){
+   #home-product-head{
+
+   padding: 3rem 0rem;         
+font-size: 2rem;
+font-weight: 400;
+     
+              
+    }
+
+     
+}
 
 
   

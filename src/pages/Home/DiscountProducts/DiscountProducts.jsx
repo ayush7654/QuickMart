@@ -59,6 +59,7 @@ export default function DiscountProducts() {
       <div id='home-product-head'>
             
         <span>Absolute Steals</span>
+         <span id='home-product-tagline'>Big savings. Unbelievable prices.</span>
      {/*    <span className='view-collection-btn'>View Collection →</span> */}
          <div className="head-dot-wrapper">
       <span className="head-dot red"></span>
