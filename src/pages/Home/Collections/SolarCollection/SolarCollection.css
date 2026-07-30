@@ -18,8 +18,7 @@
     justify-content: center;
     transition: background-color 1.2s cubic-bezier(0.19, 1, 0.22, 1);
   will-change: background-color, backdrop-filter;
-/* position: relative; */
-/*   background:linear-gradient(to bottom,#739CB1,#AABDCA,#D8D8D8,#D88B5C,#CE6443); */
+
     
     
 }
@@ -80,6 +79,9 @@ top:0rem;
 .solar-collection{
     width: 80%;
     display: flex;
+   
+
+ /*    flex-direction: column; */
 
 
     
@@ -88,7 +90,7 @@ top:0rem;
 .solar-mainImage-wrapper{
     width: 50%;
     height: 95vh;
-  
+
  position: sticky;
  top:3rem;
  margin-top: 10rem;
@@ -104,11 +106,16 @@ top:0rem;
 }
 
 
-.solar-stack {
+.solar-stack-wrapper {
   width: 50%;
   position: relative;
   padding: 5vh 0 0 0;
 
+  
+
+}
+
+.solar-stack{
   
 }
 

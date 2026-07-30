@@ -11,7 +11,7 @@ align-items: center;
 
 .PetShop-collection{
   width: 100%;
-    height: 100vh;
+   /*  height: 100vh; */
     position: relative;
 }
 
@@ -50,6 +50,7 @@ background-image: url('HomeCollections/PetCareImages/PetBg9.jpg');
 .pet-store-head {
   display: flex;
   flex-direction: column;
+ 
   gap: 0.5rem; 
 }
 
@@ -119,6 +120,7 @@ backdrop-filter: blur(5px);
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
+
 }
 
 .pet-product{
@@ -126,9 +128,10 @@ backdrop-filter: blur(5px);
 width: 100%;
 display: flex;
 flex-direction: column;
-justify-content: space-between;
+
 align-items: center;
 cursor: pointer;
+
 
 
 
@@ -139,7 +142,7 @@ cursor: pointer;
 .pet-food-img-wrapper{
   width: 90%;
   aspect-ratio: 1/1;
-background-color: rgba(255, 255, 255, 0.6);
+background-color: rgba(255, 255, 255, 0.4);
 backdrop-filter: blur(5px);
 border: 1px solid transparent;
   display: grid;
@@ -184,6 +187,7 @@ border: 1px solid transparent;
   flex-direction: column;
   gap: 10px;
  font-size: 1rem;
+
   font-family: 'Figtree';
   /*  background-color: rgb(255, 255, 190); */
   color:rgba(255, 255, 255, 1);
@@ -209,4 +213,99 @@ border: 1px solid transparent;
 
 .pet-product-img:hover{
     border-color: rgb(0, 0, 0,.1);
+}
+
+@media (max-width:1200px){
+  .pet-Food-wrapper{
+  padding: 1rem;
+  }
+  
+.pet-info-line1{
+  display: flex;
+ flex-direction: column;
+ gap:10px;
+  font-weight: 600;
+ 
+}
+.pet-food-brand{
+ display: none;
+}
+}
+
+@media (max-width:1000px){
+  .pet-Food-wrapper{
+  padding: 0rem;
+  margin-top: 2rem;
+  }
+
+  .pet-info-line1{
+
+  font-weight: 400;
+ 
+}
+}
+
+@media (max-width:800px){
+  .pet-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    .pet-Food-wrapper{
+ width: 90%;
+  }
+
+  .pet-left-wrapper{
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .pet-store-head{
+
+width: 100%;
+ align-items: center;
+  }
+
+  .pet-store-subhead{
+  display: none;
+  }
+
+  .pet-store-btn-wrapper{
+    display: none;
+  }
+}
+
+@media (max-width:600px){
+.pet-store-head {
+
+width: 100%;
+}
+
+.pet-store-head > .clip-mask > div {
+ font-size: 2.5rem;
+ font-weight: 500;
+}
+
+}
+
+
+@media (max-width:500px){
+.pet-store-head > .clip-mask > div {
+ font-size: 2rem;
+ font-weight: 500;
+}
+
+  .pet-left-wrapper{
+
+    padding: 1.5rem;
+  }
+
+  .pet-food-img-wrapper{
+     width: 100%;
+  }
+
+  .pet-food-Info-wrapper{
+    font-size: 14px;
+  }
+
 }

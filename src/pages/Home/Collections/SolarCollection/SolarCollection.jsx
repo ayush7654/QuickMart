@@ -122,14 +122,7 @@ onLeaveBack: () => {
     <div className='solar-collection'>
    <div className='solar-mainImage-wrapper'  >
 
-   {/*  <div className='solar-img-wrapper'>
 
- <motion.img src='HomeCollections/solarMainImg1.webp' style={{opacity:opacityIncr.current}} width={600}/> 
-<motion.img className='solarImgOverlay' src='HomeCollections/sampleSolarImg.webp' style={{opacity:opacityDesc.current}}  width={600}/> 
- <motion.img className='blurredImgLeft' src='HomeCollections/blurImgSample.webp'  style={{opacity:opacityDesc.current}} width={600}/>
- <motion.img className='blurredImgRight' src='HomeCollections/blurImgSample.webp'  style={{opacity:opacityDesc.current}}  width={600}/> 
-
- </div> */}
  <SolarImgMain 
  opacityDesc={opacityDesc}
  opacityIncr={opacityIncr}/>
@@ -145,7 +138,8 @@ onLeaveBack: () => {
     <div className="solar-sub-head">The UV-Control Collection</div>
  </div>
    </div>
-   <div className="solar-stack" ref={containerRef}>
+   <div className="solar-stack-wrapper">
+       <div className="solar-stack" ref={containerRef}>
       {items.map((item, index) => (
         <div 
           className={`solar-stack-item ${item.stacked?'solar-stacked':''} `  }
@@ -154,7 +148,7 @@ onLeaveBack: () => {
             top: `${15 + (index * 10)}vh`,
             // Adding a z-index ensures newer cards stay on top
             zIndex: index,
-           /*  backgroundColor: item.stacked ? '#a41515' : '#1a1a1a' */
+      
           }}
         >
           <div className="solar-content" style={{backgroundImage:`url(HomeCollections/SolarPackImages/${item.img})`}}>
@@ -176,6 +170,8 @@ onLeaveBack: () => {
       {/* Spacer to allow the last card to finish its "stacking" animation */}
       <div className="scroll-spacer"></div>
     </div>
+   </div>
+
     </div>
     </div>
     <div className='collection-product-wrapper'>   

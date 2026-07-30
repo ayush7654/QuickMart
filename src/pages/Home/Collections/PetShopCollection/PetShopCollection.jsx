@@ -85,15 +85,15 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
       {/* --- Heading Lines --- */}
       <div className="pet-store-head">
         <div className="clip-mask">
-          <motion.div variants={itemVariants}>Everything Your Pet</motion.div>
+          <motion.div variants={itemVariants}>Everything your pet</motion.div>
         </div>
         
-        <div className="clip-mask">
+   {/*      <div className="clip-mask">
           <motion.div variants={itemVariants}>Needs Care , Play & Love</motion.div>
-        </div>
+        </div> */}
         
         <div className="clip-mask">
-          <motion.div variants={itemVariants}>in One Place</motion.div>
+          <motion.div variants={itemVariants}>needs in one place.</motion.div>
         </div>
       </div>
 
