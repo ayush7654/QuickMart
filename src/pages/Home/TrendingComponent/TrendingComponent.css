@@ -62,9 +62,11 @@ background-color: white;
  width: 100%;
    height: 80vh;
  display: flex;
+flex-direction: var(--desktop-dir);
  justify-content: center;
  align-items: center;
  gap: 2rem;
+ border: 1px solid rgb(32, 44, 166);
 
 
 }
@@ -88,7 +90,7 @@ background-color: white;
 .trend-info{
 width: 50%;
  height: 100%;
- border: 0px solid rgb(178, 209, 21);
+ border: 1px solid rgb(178, 209, 21);
  color:black;
  display: flex;
  flex-direction: column;
@@ -102,7 +104,6 @@ width: 50%;
 .trend-tag{
   padding: 5px 15px;
   border-radius: 100px;
-  border: 0px solid black;
   width: fit-content;
   margin-bottom: 1rem;
   font-size: 16px;
@@ -123,6 +124,7 @@ width: 50%;
   font-size: 1rem;
   font-family: 'Inter';
   line-height: 2rem;
+
 }
 
 .fashion-trend-btn{
@@ -151,4 +153,101 @@ width: 50%;
 }
 
 
+@media (max-width:1200px){
+  .trend-info{
+    padding: 2rem;
+  }
+  .trend-info h2{
+  font-size: 2.5rem;
+ 
+}
+
+.trend-tag{
+    font-size: 14px;
+      margin-bottom: 10px;
+}
+.trend-info p{
+  font-size: 14px;
+  
+  line-height: 1.8rem;
+}
+
+.fashion-trend-btn{
+   padding: 0px 0rem;
+    font-weight: 500;
+}
+
+
+}
+
+@media (max-width:650px){
+.clothing-trend {
+    flex-direction: column;
+       height: 95vh;
+       gap: 1rem;
+  }
+
+  .trend-img-wrapper{
+     width: 100%;
+ height: 50%;
+  }
+
+  .trend-info{
+    width: 100%;
+ height: 50%;
+align-items: center;
+    gap:10px;
+    padding: 1rem;
+
+  }
+
+  .trend-info h2{
+  text-align: center;
+  font-size: 2rem;
+}
+.trend-info p{
+
+  line-height: 1.6rem;
+ text-align: center;
+}
+.trend-tag{
+    font-size: 12px;
+      margin-bottom: 0px;
+        padding: 4px 10px;
+}
+.fashion-trend-btn{
+  width: 7rem;
+  font-size: 14px;
+    font-weight: 400;
+}
+}
+
+@media (max-width:500px){
+
+  .clothing-trend {
+    flex-direction: column;
+       height: 95vh;
+  }
+
+
+
+.trend-info p{
+
+  line-height: 1.6rem;
+ text-align: center;
+}
+
+.fashion-trend-btn{
+
+}
+
+}
+
+@media (max-width:400px){
+.trend-info h2{
+  font-size: 1.8rem;
+
+}
+
+}
 

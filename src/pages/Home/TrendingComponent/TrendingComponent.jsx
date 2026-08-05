@@ -48,7 +48,8 @@ const itemVariants = {
 <div className="clothingTrendsWrapper">
 
     {clothingTrends.map((trend,index)=>
-     <div className="clothing-trend" style={{flexDirection:index%2===0?'row':'row-reverse'}}>
+     <div className="clothing-trend"
+     style={{ '--desktop-dir': index % 2 === 0 ? 'row' : 'row-reverse' }}>
       
       <div className="trend-img-wrapper">
         <img src={`/FashionTrend/${trend.img}`}/>
