@@ -66,7 +66,7 @@ flex-direction: var(--desktop-dir);
  justify-content: center;
  align-items: center;
  gap: 2rem;
- border: 1px solid rgb(32, 44, 166);
+
 
 
 }
@@ -90,7 +90,7 @@ flex-direction: var(--desktop-dir);
 .trend-info{
 width: 50%;
  height: 100%;
- border: 1px solid rgb(178, 209, 21);
+ border: 0px solid rgb(178, 209, 21);
  color:black;
  display: flex;
  flex-direction: column;
@@ -220,27 +220,6 @@ align-items: center;
   font-size: 14px;
     font-weight: 400;
 }
-}
-
-@media (max-width:500px){
-
-  .clothing-trend {
-    flex-direction: column;
-       height: 95vh;
-  }
-
-
-
-.trend-info p{
-
-  line-height: 1.6rem;
- text-align: center;
-}
-
-.fashion-trend-btn{
-
-}
-
 }
 
 @media (max-width:400px){

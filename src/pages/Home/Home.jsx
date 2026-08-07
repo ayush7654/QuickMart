@@ -54,8 +54,8 @@ const {isAtTop} = useStoreData();
         
 
         
-           <div className="explore-range-section">
-            <div id='home-section-head' className="explore-range-header">Explore Our Range
+            <div className="explore-range-section">
+            <div id='home-section-head' >Explore Our Range
                  <div className="head-dot-wrapper">
       <span className="head-dot red"></span>
       <span className="head-dot blue" ></span>
@@ -64,8 +64,9 @@ const {isAtTop} = useStoreData();
     </div>
             </div>
             
-   <ExploreCategory/>
-           </div>
+
+           </div> 
+              <ExploreCategory/>
   
    
           <BrandsSection/>
