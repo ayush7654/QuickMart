@@ -11,6 +11,14 @@ export default function BrandsSection() {
   'BrandLogo7.webp',
   'BrandLogo8.webp',
   'BrandLogo9.webp',
+    'BrandLogo10.webp',
+  'BrandLogo11.webp',
+  'BrandLogo12.webp',
+  'BrandLogo13.webp',
+  'BrandLogo14.webp',
+  'BrandLogo15.webp',
+  'BrandLogo16.png',
+  'BrandLogo20.png',
 
 ]
 
@@ -35,12 +43,12 @@ export default function BrandsSection() {
 
 </div>)}
         </div>
-           <div className="brand-list-wrapper">
+    {/*        <div className="brand-list-wrapper">
             {TopBrands2.map((brand,index)=>
 <div key={index} className="brand-wrapper" style={{backgroundImage:`url(/BrandComponentIcons/${brand})`}}>
 
 </div>)}
-        </div>
+        </div> */}
 
  </div>
   )

@@ -35,6 +35,12 @@ import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
+const getLayoutByWidth = () => {
+  if (typeof window === 'undefined') return 4; // Fallback for SSR (e.g., Next.js)
+  if (window.innerWidth < 700) return 2;
+  if (window.innerWidth < 1100) return 3;
+  return 4;
+};
 
 export default function Store() {
   const ProductCache = useRef({});
@@ -71,7 +77,7 @@ const [partialPill,setPartialPill] = useState(false);
   const { minPrice, setMinPrice, maxPrice, setMaxPrice,storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount,appliedFilters,setAppliedFilters,setStoreFilterColors} = useStoreFilter();
 
 
-   const [activeLayout, setActiveLayout] = useState(4);
+  const [activeLayout, setActiveLayout] = useState(getLayoutByWidth);
 
    const [storeSearch,setStoreSearch] = useState('')
     
@@ -110,6 +116,15 @@ const handleRemoveColor = (colorName) => {
     )
   );
 };
+
+useEffect(() => {
+    const handleResize = () => {
+      setActiveLayout(getLayoutByWidth());
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
 useEffect(() => {
   ProductCache.current = {};      // clear old pages
@@ -354,15 +369,16 @@ setStoreSearch = {setStoreSearch}/>
 
     
     <span className="selected-group"> {currentCategory?selectedGroup: 'Store'}</span>
-    <div className="head-dot-wrapper">
+
+    <span className="selected-category">
+     {currentCategory?currentCategory.replace(/-/g, ' '):'Explore All '} 
+    </span>
+        <div className="head-dot-wrapper">
       <span className="head-dot red"></span>
       <span className="head-dot blue" ></span>
       <span className="head-dot green"></span>
     
     </div>
-    <span className="selected-category">
-     {currentCategory?currentCategory.replace(/-/g, ' '):'Explore All '} 
-    </span>
      
    </div>
 

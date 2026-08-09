@@ -143,7 +143,7 @@ useEffect(() => {
       
 
    <div className="store-ProductInfo-wrapper">
-        <div className="store-Info-title">{title} </div>
+        <div className="store-Info-title">{title}</div>
 
         <div className="productInfo-line2">
           <div className='sp-rating-div'>         
@@ -155,6 +155,20 @@ useEffect(() => {
              <div className='sp-price'>${price}</div>
         </div>
         </div>
+    
+    <div className="store-ProductInfo-wrapper-ph">
+      
+         {/*  <div className='sp-rating-div'>         
+            <MdStar color="rgb(255, 164, 57)" size={16}/> 
+                        <span className='rating-num'>{rating.toFixed(1)}</span>
+                        <span>(1.2k Reviews)</span>                      
+           </div> */}
+ <div className="store-Info-line1-ph">
+  {title}
+   <div className='sp-price'>${price}</div>
+  </div>
+ 
+    </div>
  
     </TransitionLink>
   

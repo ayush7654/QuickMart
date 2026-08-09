@@ -76,7 +76,7 @@ font-size: .7rem;
  color:rgb(0, 0, 0);
  background-color: rgba(255, 255, 255);
 font-weight: 400;
-padding: 5px 10px;
+padding: 5px 8px;
 border-radius: 3px;
 opacity: 1;
 transition: opacity .4s ease;
@@ -120,8 +120,11 @@ left:16px;
 background-color: rgb(255, 255, 255);
 /* background-color: rgb(255, 62, 96);  */
 color:rgb(0, 0, 0);
-border: 1px solid  rgb(0, 0, 0);
+border: 0px solid  rgb(0, 0, 0);
 font-size: 10px;
+background-color: rgb(0,100,255);
+color:white;
+
 
 
 
@@ -208,10 +211,12 @@ flex-direction: column;
 justify-content: center;
 gap:14px;
   padding: 16px 0rem;
-
+  font-size: 16px;
   text-transform: uppercase;
   color:rgb(0, 0, 0);
   background-color: white;
+  
+  font-weight: 500;
 }
 
 .store-Info-title {
@@ -219,8 +224,7 @@ gap:14px;
   -webkit-box-orient: vertical; /* Sets the layout axis direction */
   -webkit-line-clamp: 1;       /* Restricts the text to exactly 1 line */
   overflow: hidden;            /* Conceals any characters that push past the line limit */
-  
-  font-weight: 500;
+
   text-transform: capitalize;
 }
 
@@ -245,8 +249,8 @@ gap:14px;
 
 
 .sp-price{
-  font-size: 16px;
-  font-weight: 500;
+
+
 
 }
 
@@ -285,6 +289,69 @@ bottom: 16px;
 
 .color-3{
  background-color: rgb(196, 135, 198);
+}
+
+.store-ProductInfo-wrapper-ph{
+ display: none;
+}
+
+
+@media(max-width:1230px){
+  .store-ProductInfo-wrapper{
+    font-size: 14px;
+  }
+}
+
+
+@media(max-width:800px){
+  .store-ProductInfo-wrapper{
+    font-size: 13px;
+    font-weight: 400;
+  }
+}
+
+@media(max-width:500px){
+  .store-ProductInfo-wrapper{
+  display: none;
+  }
+  
+  .store-ProductInfo-wrapper-ph{
+    width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  gap:5px;
+  font-size: 13px;
+  padding: 10px 0px;
+  border: 0px solid red;
+  }
+
+  .store-Info-line1-ph{
+  display: flex;
+  flex-direction: column;
+line-height: 18px;
+  gap:5px;
+  font-weight: 400;
+
+  }
+  .productCard-tag{
+    padding: 5px 5px;
+  }
+  
+.sp-discount-tag{
+top:10px;
+left:10px;
+font-size: 9px;
+
+
+
+
+
+}
+
+
+
+
 }
 
 

@@ -33,9 +33,16 @@
 .stagger-word {
   display: inline-block;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
-  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 600;
   letter-spacing: -0.03em;
   color: #ffffff;
   will-change: transform, opacity, filter;
+}
+
+
+@media (max-width:600px){
+  .stagger-sentence {
+    width: 85%;
+  }
 }

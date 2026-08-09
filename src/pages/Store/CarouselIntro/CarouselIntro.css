@@ -28,13 +28,14 @@ align-items: end;
 .store-text-content{
   position: absolute;
   width: 100%;
-  height: 80%;
+  height: 85%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color:white;
   z-index:9;
+ 
   
 
 }
@@ -48,27 +49,16 @@ align-items: end;
 
 .store-text-description{
   position: absolute;
-  bottom: 6rem;
+  bottom: 7rem;
   font-size: 1rem;
-  width: 60%;
+  width: 75%;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
 
 
 }
 
-.sampleStoreContent{
-  height: 80%;
-  width: 50%;
-  border: 1px solid blue;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
-
-
-}
 .store-row{
 
   width: 100%;
@@ -193,20 +183,20 @@ overflow: hidden;/* This hides the other 3 elements */
 
   .CrousalNav-div{
 position: absolute;
-bottom:6rem;
+bottom:4rem;
 
-    width: 90%;
+    width: 100%;
   
     border: 0px solid black;
     display: flex;
-    justify-content: end;
+    justify-content: center;
 
    
 
   }
 
 
- .CrousalNav-content {
+ .CrousalNav-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,4 +231,18 @@ z-index: 999;
 .CrousalNav:hover:not(.CrousalNav-selected) {
   background-color: rgba(255, 255, 255, 0.6);
   transform: scale(1.1); /* Subtle feedback */
+}
+
+
+@media(max-width:600px){
+  .store-text-description{
+  position: absolute;
+  bottom: 7rem;
+  font-size: 13px;
+  width: 75%;
+  
+
+
+
+}
 }

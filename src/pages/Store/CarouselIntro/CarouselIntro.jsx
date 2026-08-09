@@ -123,7 +123,7 @@ items={[
 
         <div className="CrousalNav-div">
        
-          <div className="CrousalNav-content">
+          <div className="CrousalNav-wrapper">
   {homeContent.map((nav, index) => (
     <div 
       key={nav.id}

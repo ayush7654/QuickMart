@@ -193,12 +193,8 @@ align-items: center;
   gap: 50px 20px;
 
   }
-  } 
 
-
-
-  @media(max-width:1200px){
-    #home-section-head{
+      #home-section-head{
     font-size: 4rem;
 }
 
@@ -210,7 +206,9 @@ align-items: center;
   grid-template-columns: repeat(2, 1fr); 
   gap: 1rem;
   }
-  }
+  } 
+
+
 
      @media(max-width:900px){
         #home-section-head{
