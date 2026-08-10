@@ -220,14 +220,19 @@ background-color:rgb(255, 255, 255);
  
 }
 
+.product-length{
+ font-weight: 300;
+ font-size: 12px;
+}
+
 
 
 .store-info-bar{
   width: 100%;
     display: grid;
     place-items: center;
-    border-top: 1px solid rgb(170, 170, 170,.5) ;
-    border-bottom: 1px solid  rgb(170, 170, 170,.5) ;
+    border-top: 0px solid rgb(200,200,200,.5) ;
+    border-bottom:0px solid  rgb(200,200,200,.5) ;
     height: 4rem;
     position: relative;
     background-color: white;
@@ -246,6 +251,7 @@ background-color:rgb(255, 255, 255);
     font-size: .9rem;
     font-weight: 400;
     color:rgb(80,80,80);
+    
   
  
 }
@@ -254,52 +260,37 @@ background-color:rgb(255, 255, 255);
   position: absolute;
   width: 15%;
   height: 100%;
+  display: grid;
+  place-items: center;
 
-  
   
 }
 
 .store-bar-left{
   left: 0;
-     border-right: 1px solid  rgb(170, 170, 170,.5) ;
+     border-right: 0px solid  rgb(200,200,200,.5) ;
 }
 
 .store-bar-right{
   right: 0;
-   border-left: 1px solid  rgb(170, 170, 170,.5) ;
+   border-left: 0px solid  rgb(200,200,200,.5)  ;
 }
 
-
-.store-bar-center{
+.store-bar-right-wrapper{
 display: flex;
+gap:10px;
 align-items: center;
-justify-content: center;
-  width: 75%;
  font-weight: 300;
-  gap: 1rem;
-
+ font-size: 12px;
+text-transform: uppercase;
 }
+
+
+
 
 
 
   
-.product-count-div{
-  display: flex;
-  align-items: center;
-  gap: 5px;
-
-
-
-}
-.product-count-wrapper{
-  color:red
-}
-
-.product-count-content span{
-  font-weight: 600;
-  color:black;
-
-}
 
 .clear-category-btn{
     color:rgb(0,100,255);
@@ -437,7 +428,11 @@ width: 30vw;
  background-color: #e0e0e0;
    }
 
-
+ @media(max-width:1200px){
+.store-sideFilter-wrapper{
+  width: 35vw;
+}
+ }
    @media(max-width:1000px){
  .store-page-title-wrapper{
   padding: 0rem;
@@ -447,6 +442,10 @@ width: 30vw;
  .store-page-title{
   gap:0rem;
  }
+ .store-sideFilter-wrapper{
+  width: 40vw;
+}
+ 
 
 .selected-category{font-size: 3rem;}
 
@@ -454,14 +453,38 @@ width: 30vw;
 
   @media(max-width:800px){
        .productList {  gap: 4rem 1rem; }
+        .store-sideFilter-wrapper{
+  width: 50vw;
+}
   }
 
 @media(max-width:700px){
   .selected-group{padding:10px; font-size:14px;}
   .selected-category{
     font-size: 2.5rem;}
+
+    .store-info-section{
+
+  width:20%;
+
 }
+        .store-sideFilter-wrapper{
+  width: 60vw;
+}
+}
+
+@media(max-width:500px){
+                .store-sideFilter-wrapper{
+width:90vw;
+left: 50%;
+transform: translateX(-50%);
+
+}
+}
+
 
   @media(max-width:400px){
        .productList {  gap: 2rem 10px; }
+      .store-info-section{width:25%;}
+
   }

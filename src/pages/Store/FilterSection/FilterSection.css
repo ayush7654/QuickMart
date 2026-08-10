@@ -23,10 +23,10 @@
   
 }
 
-.side-filter-header h2{
-  font-family: var(--font-heading);
-  
-   font-weight: 800;
+.side-filter-header{
+  font-family: 'Jost';
+font-size: 20px;
+   font-weight: 500;
    letter-spacing: 1px;
 }
 
@@ -55,12 +55,11 @@
 }
 
 
-.store-side-filter h2{
 
-  padding-left:20px ;
+
+.sort-selector-wrapper{
+padding: 0rem 1rem;
 }
-
-
 
 .filter-section{
   border: 0px solid red;
@@ -93,6 +92,7 @@
     box-shadow: 0px 10px 10px -10px rgba(110, 80, 255, 0.3); */
 }
 
+
 .filter-options-wrapper{
   display: flex;
   flex-direction: column;
@@ -109,6 +109,8 @@
   align-items: center;
   gap:10px;
   padding: 12px 10px;
+   font-size: 14px;
+
 
 
 }
@@ -151,7 +153,7 @@ cursor: pointer;
 
 
 .filter-check span{
-  font-size: .9rem;
+ 
 /*   font-family: 'Inter'; */
   font-weight: 300;
   color: rgb(90, 90, 90);

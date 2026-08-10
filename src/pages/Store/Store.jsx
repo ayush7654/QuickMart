@@ -22,18 +22,19 @@ import CategoryDataProvider from "./ExpandingStoreHeader/CategoryDataProvider";
 import "./Store.css";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
 import CarouselIntro from "./CarouselIntro/CarouselIntro";
-import StoreActions from "./StoreActions/StoreActions";
+
 import OrderToggle from "./OrderToggle/OrderToggle";
 import MenuCancel from "../../components/MenuCancel/MenuCancel";
 import { LayoutPanelLeft } from "lucide-react";
 import { useScroll } from "../../components/ScrollData/ScrollData";
 import AppliedFilters from "./AppliedFilters/AppliedFilters";
-import StoreSorting from "./StoreSorting/StoreSorting";
+
 import StoreHeader from "./StoreHeader/StoreHeader";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { ListFilter } from "lucide-react";
 
 const getLayoutByWidth = () => {
   if (typeof window === 'undefined') return 4; // Fallback for SSR (e.g., Next.js)
@@ -392,61 +393,36 @@ setStoreSearch = {setStoreSearch}/>
             </div>
 
   
-      {/*  <div className="filter-Btn-Ph">
-          <SlidersHorizontal className="" strokeWidth={1.5} />
-       </div> */}
-{/* 
-       <div className="store-Info-Bar"></div> */}
-
-
-
- 
 
         <main className="store-content">
 
            <div className="store-info-bar">
-             <div className="store-info-section store-bar-left"></div>
-             <div className="store-info-section  store-bar-right"></div>
-          <div className="store-info-wrapper">
+             <div className="store-info-section store-bar-left">
 
-           
-          <div className="store-grid-toggle">
+                              <div className="store-grid-toggle">
    <GridToggle
    activeLayout={activeLayout}
    setActiveLayout={setActiveLayout}
    />
    </div> 
-   
-            
 
-    
+             </div>
+             <div className="store-info-section  store-bar-right">
+              <div className="store-bar-right-wrapper"
+               onClick={()=>setSideFilterOn(true)}
+              >
+                     {currentSort ? currentSort.sort:'SORT BY'}
+              <ListFilter color='black' />
+              </div>
+         
 
- <div className="store-bar-center">
+       
+             </div>
 
+    <span className="product-length"> {productElements.length} PRODUCTS </span>  
 
-                 <span> {productElements.length} PRODUCTS </span>  
-                    
- </div>
-
+        
   
-    <div className="dropdown-sort-wrapper">
-     <StoreSorting />  
-</div> 
-
-  
-
-
-
-          </div>
-            
-                 
-          
-  
-          
-
-            
-
-          
             </div>
        
 <div className="applied-filters-wrapper">
@@ -461,12 +437,6 @@ setStoreSearch = {setStoreSearch}/>
 </div>
 
 
-         <div className="side-filter">
-              <FilterSection
-              storeFilters={storeFilters}
-              setStoreFilters={setStoreFilters}
-              setAppliedFilters={setAppliedFilters} />
-            </div>
 
           <div className="productList-wrapper" style={{ position: "relative" }}>
 
