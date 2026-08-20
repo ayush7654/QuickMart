@@ -3,7 +3,7 @@ import './ExpandingStoreHeader.css'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion, AnimatePresence  } from "framer-motion";
-import StoreSorting from "../StoreSorting/StoreSorting";
+
 import CategoryDataProvider from "./CategoryDataProvider";
 import { useStoreData } from "../../../components/StoreDataContext";
 import { FaGem } from "react-icons/fa";
@@ -14,14 +14,15 @@ import { PiDeskFill } from "react-icons/pi";
 import { FaRunning } from "react-icons/fa";
 import { GiGrapes } from "react-icons/gi";
 import { useScroll } from "../../../components/ScrollData/ScrollData";
-
+import MenuCancel from "../../../components/MenuCancel/MenuCancel";
+import StoreHeader from "../StoreHeader/StoreHeader";
 
 gsap.registerPlugin(ScrollTrigger);
 
 
 
 
-const storeMenuOptions=['Payment Methods','Cancel Order' ,'Become a Seller' ,'FAQ']
+const storeMenuOptions=['Payment Methods','Cancel Order' ,'Order History','Become a Seller' ,'FAQ']
 
 const storeMenuGrids= [
   
@@ -188,9 +189,9 @@ const tileVariants = {
 
 
 
-export default function ExpandingStoreHeader({partialPill}) {
+export default function ExpandingStoreHeader() {
 
-const {handleTypeFilter,isOpen, setIsOpen,currentCategory} = useStoreData()
+const {handleTypeFilter,isOpen, setIsOpen,currentCategory,partialPill} = useStoreData()
 
  
 const { categorizedData, loading , selectedGroup} = CategoryDataProvider();
@@ -206,7 +207,20 @@ const [hoveredIndex, setHoveredIndex] = useState(0);
 const [refreshKey, setRefreshKey] = useState(0);
 
 
-
+const handlePartialToggle = () => {
+  if (!isOpen) {
+    // Stage 1: If closed, open directly into partial mode
+    setIsOpen(true);
+    setPartialPill(true);
+  } else if (isOpen && !partialPill) {
+    // Stage 2: If fully open, shrink it down to partial
+    setPartialPill(true);
+  } else {
+    // Stage 3: If already in partial, close the whole pill
+    setIsOpen(false);
+    setPartialPill(false);
+  }
+};
 
 
 
@@ -299,9 +313,11 @@ useEffect(() => {
 
   return (
      <div 
-          className={`floating-pill ${isOpen ? "pill-expanded" : ""} ${partialPill?'partial':''}`}
-      style={{}}
-        >
+          className={`floating-pill ${isOpen ? "pill-expanded" : ""} ${partialPill?'partial':''}`} >
+            
+        
+         <StoreHeader />
+
           <div className="pill-content">
     
 <div className="pill-space">
@@ -412,7 +428,7 @@ useEffect(() => {
   </>
 )}
 
-      <div className="head-dot-wrapper">
+      <div className="head-dot-wrapper catelog-dot">
       <span className="head-dot red"></span>
       <span className="head-dot blue" ></span>
       <span className="head-dot green"></span>
@@ -443,8 +459,12 @@ useEffect(() => {
       className={`category-card card-${index}`}
 
     >
-    <div className="category-img-wrapper" style={{ backgroundImage: `url(StoreMedia/${item.backgroundImage})` }}></div>
+    <div className="category-img-wrapper" /* style={{ backgroundImage: `url(StoreMedia/${item.backgroundImage})` }} */>
+     <img src={`StoreMedia/${item.backgroundImage}`}/>
+               {/* USE IMG TAG INSTEAD OF BG IMG AND THEN USE SCALE TO SHOW OVER */}
+    </div>
 
+     
 
       <div className="card-overlay">
         <span className="category-name">
@@ -486,7 +506,9 @@ useEffect(() => {
                 
               }
             >
-              <div className="category-img-wrapper" style={{ backgroundImage: `url(StoreMedia/${item.backgroundImage})` }}></div>
+              <div className="category-img-wrapper" /* style={{ backgroundImage: `url(StoreMedia/${item.backgroundImage})` }} */>
+              <img src={`StoreMedia/${item.backgroundImage}`}/>
+              </div>
               <div className="card-overlay">
                 <span className='category-name'>{item.name}</span>
                

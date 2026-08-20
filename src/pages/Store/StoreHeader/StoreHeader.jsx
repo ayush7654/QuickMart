@@ -8,16 +8,17 @@ import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
 import IconButton from '../../../components/IconButton/IconButton'
 import ScrollButton from '../../../components/ScrollingButton/ScrollingButton'
 import { Search } from 'lucide-react'
+import { Filter } from 'lucide-react'
 import './StoreHeader.css'
 import { useSpring } from 'framer-motion';
 
 
 
-export default function StoreHeader({partialPill,setPartialPill,setSideFilterOn,storeSearch, setStoreSearch}) {
+export default function StoreHeader() {
 
 
 
-    const {isOpen, setIsOpen,typeFilter} = useStoreData()
+    const {isOpen, setIsOpen,typeFilter,partialPill,setPartialPill,setSideFilterOn,storeSearch,setStoreSearch} = useStoreData()
 
 const handleExpandedToggle = () => {
   if (!isOpen) {
@@ -56,8 +57,7 @@ const handlePartialToggle = () => {
   return (
     <div className={`store-Header ${isOpen || partialPill?'store-header-open':''}`}>
 
-
-  <div className="store-catelog-btn-wrapper">
+<div className="store-catelog-btn-wrapper">
           <div className='store-head-menu-wrapper'>
           <div className={`store-head-menu ${isOpen || partialPill?'store-menu-open':''}`} onClick={handlePartialToggle} >
           <MenuCancel  state={partialPill}  />
@@ -67,33 +67,19 @@ const handlePartialToggle = () => {
         
          </div>
 
-             <div className="store-head-search-wrapper">
-       <input
-  className="store-head-search"
-  type="text"
-  placeholder="Search"
-  value={storeSearch}
-  onChange={(e) => setStoreSearch(e.target.value)}
-/>
 
-<Search
-  strokeWidth={1}
-  size={20}
-  className="store-search-icon"
-/>
-       </div>
     
       
   </div>
-   
+    
 
 
 
-         <div className={`store-middle-head-wrapper ${isOpen || partialPill?'middle-head-active':''}`}>
+         <div className='store-middle-head-wrapper'>
            <div className="store-middle-head"> <span className="middle-dot"></span><ScrollButton text='Sale' /></div>
      <div className="store-middle-head"> <span className="middle-dot"></span><ScrollButton text='Memberships'/> </div>
      <div className="store-middle-head">  <span className="middle-dot"></span><ScrollButton text='Wishlist'/>  </div>
-     <div className="store-middle-head"> <span className="middle-dot"></span> <ScrollButton text='About'/>   </div>
+      <div className="store-middle-head"> <span className="middle-dot"></span> <ScrollButton text='About'/>   </div> 
 
 
          </div>
@@ -102,10 +88,10 @@ const handlePartialToggle = () => {
 
 
 
-         <div className="store-catelog-btn-wrapper">
+       <div className="store-catelog-btn-wrapper">
 
 
-   <div className="side-filter-btn-wrapper" onClick={()=>setSideFilterOn(true)}>
+ {/*   <div className="side-filter-btn-wrapper" onClick={()=>setSideFilterOn(true)}>
       <ScrollButton text='Filters'/>
        <div className='scroll-btn-Icon-wrapper'>
        <span className="scroll-btn-Icon-content">
@@ -115,10 +101,10 @@ const handlePartialToggle = () => {
       </div>
 
       
-      </div>
+      </div> */}
       
 
-  <div className={`store-catelog-btn ${isOpen || partialPill?'store-catelog-active':''}`} onClick={handleExpandedToggle}>
+{/*   <div className={`store-catelog-btn ${isOpen || partialPill?'store-catelog-active':''}`} onClick={handleExpandedToggle}>
 
 <ScrollButton text='Catelog'/>
  <div className='scroll-btn-Icon-wrapper'>
@@ -136,16 +122,21 @@ const handlePartialToggle = () => {
 
 
   </div> 
-
+ */}
   
-       
 
 
-{/*   <div className="catelog-button">
-   <span>.</span>
-  </div> */}
 
-</div>
+
+         <LayoutPanelLeft onClick={handleExpandedToggle}
+  className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
+  size={20} 
+  strokeWidth={1} 
+
+
+    
+/>
+</div> 
 
     </div>
   )

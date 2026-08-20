@@ -1,15 +1,9 @@
-
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from "framer-motion";
 import { Search, X } from 'lucide-react';
+import './StoreSearch.css';
 
- import "./Testing.css";
-
-
-
-
-export default function Testing() {
-const [isOpen, setIsOpen] = useState(false);
+export default function StoreSearch({storeSearch,setStoreSearch}) {
+  const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
   const containerRef = useRef(null);
   const inputRef = useRef(null);
@@ -20,14 +14,14 @@ const [isOpen, setIsOpen] = useState(false);
         containerRef.current &&
         !containerRef.current.contains(event.target)
       ) {
-        if (!query.trim()) {
+        if (!storeSearch.trim()) {
           setIsOpen(false);
         }
       }
     };
 
     const handleKeyDown = (event) => {
-      if (event.key === 'Escape' && !query.trim()) {
+      if (event.key === 'Escape' && !storeSearch.trim()) {
         setIsOpen(false);
       }
     };
@@ -38,7 +32,7 @@ const [isOpen, setIsOpen] = useState(false);
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [query]);
+  }, [storeSearch]);
 
   const handleIconClick = () => {
     if (!isOpen) {
@@ -49,34 +43,33 @@ const [isOpen, setIsOpen] = useState(false);
 
   const handleClear = (e) => {
     e.stopPropagation();
-    setQuery('');
+    setStoreSearch('');
     inputRef.current?.focus();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (query.trim()) {
-      console.log('Search submitted:', query);
+    if (storeSearch.trim()) {
+      console.log('Search submitted:', storeSearch);
     }
   };
 
   return (
-<div className="testing-div" >
-<div className="search-container" ref={containerRef}>
+    <div className="search-container" ref={containerRef}>
       <form onSubmit={handleSubmit} className="minimal-search">
         {/* Input Wrapper positioned absolutely to the LEFT of the icon */}
         <div className={`input-wrapper ${isOpen ? 'is-open' : ''}`}>
           <input
             ref={inputRef}
             type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
+             value={storeSearch}
+              onChange={(e) => setStoreSearch(e.target.value)}
             placeholder="Search..."
             tabIndex={isOpen ? 0 : -1}
             className="minimal-input"
           />
 
-          {isOpen && query && (
+          {isOpen && storeSearch && (
             <button
               type="button"
               onClick={handleClear}
@@ -99,16 +92,5 @@ const [isOpen, setIsOpen] = useState(false);
         </button>
       </form>
     </div>
-</div>
-
-
-
-
-
   );
-
-  
 }
-
-
-

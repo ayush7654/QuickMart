@@ -11,14 +11,17 @@ export const StoreDataProvider = ({ children }) => {
   // 1. UI & Scroll States
    const [isOpen, setIsOpen] = useState(false);
   const { isAtTop } = useContext(WinScrollContext);
+  const [partialPill,setPartialPill] = useState(false);
 
-  const [sideFilterOn,setSideFilterOn] = useState(false)
+  const [sideFilterOn,setSideFilterOn] = useState(false);
   const storeOverlayActive = isOpen || sideFilterOn; // BRING ISOPEN HERE , RENAME IT , MAKE THIS DEPENDENT ON IT
 
   // 2. Filter & Category States
   // Initialize from URL params so refresh doesn't lose data
   const [currentCategory, setcurrentCategory] = useState(searchParams.get("type") || '');
   const typeFilter = searchParams.get("type");
+  const [storeSearch,setStoreSearch] = useState('');
+  
 
   // 3. Sorting States
   const [currentSort, setCurrentSort] = useState(null);
@@ -69,7 +72,9 @@ export const StoreDataProvider = ({ children }) => {
     handleTypeFilter,
     handleCancelTypeFilter,
     isOpen, setIsOpen,
-    sideFilterOn,setSideFilterOn
+    sideFilterOn,setSideFilterOn,
+    partialPill,setPartialPill,
+    storeSearch,setStoreSearch
   };
 
   return (

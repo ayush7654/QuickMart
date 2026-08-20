@@ -1,21 +1,18 @@
 .floating-pill {
   font-family: 'Figtree';
 
+
   /* 1. Base Dimensions */
-  width: 90%;
-  height: 5rem;
+  width: 40%;
+  height: 3.5rem;
 
   /* 2. Positioning & Center Alignment */
-  position:fixed;
-  top: 25px;
-  left: 50%;
-  /* Merged translate directly without depending on a separate CSS variable for smoother rendering */
-  transform: translate(-50%, 0);
+
 
   /* 3. Aesthetics & Styling */
 
    border-radius: 12px;
-  z-index: 99;
+  z-index: 999;
   cursor: pointer;
 
   display: flex;
@@ -36,31 +33,34 @@
   
   /* Performance optimization: hints the browser to optimize rendering pathways */
   will-change: width, height, transform, border-radius;
+
+  border: 0px solid red;
+  background-color: rgb(50,50,50);
+  background-color: rgba(10, 10, 30, 0.6);
+  backdrop-filter: blur(10px);
 }
 
+
+
 .pill-expanded {
-  width: 90%;
+  width: 100%;
   /* Flattened height expression to keep the rendering engine from staggering */
   height: 95vh; 
   border-radius: 12px;
   cursor: default;
   
   /* Smooth shift into the background colors */
-  background-color: rgba(250, 250, 250, 0.7);
-
+ background-color: rgba(10, 10, 30, 0.5);
    backdrop-filter: blur(5px);
   
   /* Handled the offset shift directly inside the transform rule */
-  transform: translate(-50%, 0vh); 
-
-  
 
 }
 
 
 .partial {
-  width: 90%;
-  height: calc(75vh - 15px);
+  width: 100%;
+  height: calc(75vh);
 
 
 }
@@ -83,7 +83,7 @@
 }
 
 .pill-space{
-  height: 3rem;
+  height: 0rem;
   
 }
 
@@ -102,10 +102,10 @@
   display: flex;
 
   width: 100%;
-  height: 95%;
- margin-top: 3rem;
-  border-radius: 8px;
-  padding: 8px;
+  height: 90%;
+ margin-top: 4rem;
+
+  padding: 0px;
   
  
 
@@ -122,7 +122,7 @@
   flex: 0 0 30%;
 
 
-padding: 8px;
+padding: 0px;
 
 display: flex;
 flex-direction: column;
@@ -135,7 +135,7 @@ position: relative;
 
 width: 100%;
 
-   border-radius: 12px;
+
    padding-left: 2rem;
      display: flex;
   flex-direction: column;
@@ -156,18 +156,18 @@ gap:1rem;
 .sub-group-icon {
   width: 2.5rem;
   aspect-ratio: 1;
-  border-radius: 50%;
+  border-radius: 12px;
 
   display: grid;
   place-items: center;
 
   cursor: pointer;
 
-  border: 0px solid rgb(100, 100, 100);
+  border: 1px solid rgba(180, 180, 180, 0.5);
 
-  color: rgb(100, 100, 100);
+  color: rgb(180, 180, 180);
   background: transparent;
-  background-color: white;
+/*   background-color: rgba(215, 215, 215); */
   transition:
   
    
@@ -187,8 +187,8 @@ gap:1rem;
 
 /* DEFAULT HOVER */
 .sub-group-icon:hover {
-  color: black;
-  border-color: black;
+  color: white;
+  border-color: white;
 }
 
 .sub-group-icon:hover svg {
@@ -199,8 +199,8 @@ gap:1rem;
 /* ACTIVE STATE */
 .sub-group-icon.subgroup-active {
   border-color: transparent;
-background-color: rgb(50,50,50);
-  color: rgb(255, 255, 255);
+background-color: rgb(255, 255, 255);
+  color: black;
 
 
   /*   background:
@@ -226,15 +226,17 @@ background-color: rgb(50,50,50);
   font-size: 4rem;
   display: flex;
   flex-direction: column;
+  color:rgba(255,255,255);
 }
 
 .gradient-text {
   background: linear-gradient(
-    to right,
-    rgba(0, 100, 255, 0.9),
-    rgba(255, 100, 0, 0.9)
+    to bottom,
+white
     
   );
+  font-size: 3.5rem;
+  font-weight: 300;
 
   /*   background: linear-gradient(
     to right,
@@ -260,6 +262,7 @@ background-color: rgb(50,50,50);
   font-family: 'Raleway';
   margin-bottom: 2rem;
   line-height: 1.8rem;
+  color:rgb(230,230,230);
   
 }
 
@@ -276,7 +279,7 @@ background-color: rgb(50,50,50);
   font-size: 1.2rem;
   padding: 16px ;
   cursor: pointer;
-  color: rgb(81, 81, 81);
+  color: rgb(185,185,185);
   transition: all 0.3s ease;
   font-weight: 400;
 
@@ -284,7 +287,7 @@ border: 0px solid blue;
   text-transform:capitalize;
      transition: all .3s ease;
 font-family: 'Inter';
- border-bottom: 1px solid rgb(220,220,220);
+ border-bottom: 0px solid rgb(220,220,220);
 
 
    
@@ -292,7 +295,7 @@ font-family: 'Inter';
 }
 
 .subgroup-item:hover {
-  color: rgb(0,100,255);
+  color: rgb(255, 255, 255);
   transform: translateX(15px);
 
 }
@@ -306,8 +309,9 @@ font-family: 'Inter';
   box-sizing: border-box;
   position: relative; /* Keep this */
   overflow: hidden; /* Prevent scaling cards from creating scrollbars */
-border: 0px solid red;
+border: 0px solid rgb(214, 212, 212);
   border-radius: 12px;
+
 }
 
 .grid-wrapper {
@@ -322,6 +326,8 @@ border: 0px solid red;
 
   /* ADD THIS: Ensure the grid itself doesn't shift when cards scale */
   transform-origin: center center;
+  padding: 1rem;
+  padding-right: 0rem;
 }
 
 
@@ -335,8 +341,7 @@ border: 0px solid red;
   grid-template-rows: repeat(2, 1fr);
   gap: 12px; /* Adjust spacing to match your design */
 
- 
-  border-radius: 16px;
+
 }
 
 /* Card 1: Top Left (Wide) */
@@ -359,7 +364,7 @@ border: 0px solid red;
   gap: 12px; /* Adjust spacing to match your design */
 
  
-  border-radius: 16px;
+
 }
 
 /* Card 2: Right Side (Tall) */
@@ -421,7 +426,7 @@ border: 0px solid red;
   
 
  /*  background: #071414; */
-  border-radius: 20px;
+
 }
 
 
@@ -445,8 +450,10 @@ border: 0px solid red;
   min-width: 0;
   min-height: 0;
 
-  background: #ffffff;
+ 
 }
+
+
 
 
 /* =========================================
@@ -512,7 +519,7 @@ display: grid;
  
 
 
-  border-radius: 16px;
+
 }
 
 /* Top Row Cards (2 cards total) */
@@ -533,7 +540,7 @@ display: grid;
   gap: 12px; /* Adjust spacing to match your design */
 
  
-  border-radius: 16px;
+
 }
 
 .layout-5 .card-0{
@@ -548,7 +555,7 @@ display: grid;
   gap: 12px; /* Adjust spacing to match your design */
 
  
-  border-radius: 16px;
+ 
 }
 
 .layout-4 .card-1{
@@ -562,14 +569,14 @@ display: grid;
 .category-card {
   width: 100%;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 5px;
   overflow: hidden;
   position: relative;
   cursor: pointer;
   will-change: transform, opacity, clip-path;
-  background-color: white;
-  padding: 8px;
-  transition: padding .2s ease;
+
+  padding: 0px;
+  transition: padding .1s ease;
   
 }
 
@@ -577,6 +584,9 @@ display: grid;
 .category-img-wrapper{
 width: 100%;
 height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
 
 
   background-position: center;
@@ -584,17 +594,26 @@ height: 100%;
   transition: transform .2s ease;
   will-change: transform;
 }
-.category-card:hover{
-    padding: 0px;
+
+.category-card:hover .category-img-wrapper{
+  transform: scale(.96);
 }
 
+.category-img-wrapper img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0px solid white;
+  transition: all .1s ease;
+   border-radius: 5px;
+}
 
 
 
 
 .card-selected{
 
- border: 2px solid rgb(0,100,255);
+ border: 3px solid rgb(0,100,255);
   padding: 0px;
   user-select: none;
   pointer-events: none;
@@ -634,4 +653,9 @@ padding-bottom: 10px;
  font-weight: 600;
  text-transform: capitalize;
  
+}
+
+.catelog-dot{
+  position: absolute;
+  bottom:2rem;
 }

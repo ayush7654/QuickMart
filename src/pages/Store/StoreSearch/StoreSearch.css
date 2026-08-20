@@ -1,0 +1,90 @@
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0rem;
+  border: 0px solid yellow;
+  
+}
+
+/* Outer wrapper provides the anchor point */
+.minimal-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 2.25rem;
+}
+
+/* Search Icon is stationary */
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: transparent;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  z-index: 2; /* Keeps icon above the expanding input */
+  transition: opacity 0.2s ease;
+}
+
+.icon-btn:hover {
+  opacity: 0.7;
+}
+
+/* Input Wrapper positioned to the LEFT of the icon using right: 2.25rem */
+.input-wrapper {
+  position: absolute;
+  right: 2.25rem; /* Anchors right edge right next to search icon */
+  display: flex;
+  align-items: center;
+  width: 0;
+  opacity: 0;
+  height: 100%;
+  border-bottom: 1.5px solid transparent;
+  transition: width 0.35s cubic-bezier(0.25, 1, 0.2, 1),
+              opacity 0.2s ease,
+              border-color 0.35s ease;
+  overflow: hidden;
+}
+
+/* Expanded state shoots the line out to the left */
+.input-wrapper.is-open {
+  width: 10rem; /* Adjust total expansion distance */
+  opacity: 1;
+  border-bottom-color: #000000; /* Minimal bottom line */
+}
+
+.minimal-input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #000000;
+  padding: 0 0.5rem 0 0.25rem;
+}
+
+.minimal-input::placeholder {
+  color: #a1a1aa;
+  font-weight: 300;
+}
+
+.clear-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #71717a;
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: color 0.15s ease;
+}
+
+.clear-btn:hover {
+  color: #000000;
+}

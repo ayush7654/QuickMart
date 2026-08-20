@@ -35,6 +35,10 @@ import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { ListFilter } from "lucide-react";
+import { Search } from 'lucide-react'
+import { Funnel, Filter } from 'lucide-react';
+import { FaFilter } from 'react-icons/fa';
+import StoreSearch from "./StoreSearch/StoreSearch";
 
 const getLayoutByWidth = () => {
   if (typeof window === 'undefined') return 4; // Fallback for SSR (e.g., Next.js)
@@ -68,11 +72,13 @@ export default function Store() {
     handleCancelTypeFilter,
     sideFilterOn,
     setSideFilterOn,
+    partialPill,setPartialPill,
+    storeSearch,setStoreSearch,
   setIsOpen} = useStoreData()
 
   const {selectedGroup} = CategoryDataProvider();
 
-const [partialPill,setPartialPill] = useState(false);
+
 
 
   const { minPrice, setMinPrice, maxPrice, setMaxPrice,storeFilters,setStoreFilters,filterLogicMap,filterActive,activeFiltersCount,appliedFilters,setAppliedFilters,setStoreFilterColors} = useStoreFilter();
@@ -80,7 +86,7 @@ const [partialPill,setPartialPill] = useState(false);
 
   const [activeLayout, setActiveLayout] = useState(getLayoutByWidth);
 
-   const [storeSearch,setStoreSearch] = useState('')
+
     
 const loadingRef = useRef(null);
 
@@ -296,9 +302,13 @@ console.log(productElements && productElements)
   return (
     <div className="Store-Page">
 
-     
-    <div className={`store-sideFilter-wrapper ${sideFilterOn?'open':''}`}
-   /*  style={{width:sideFilterOn?'30%':'0%'}} */>
+  <div className="store-filter-button"
+   onClick={()=>setSideFilterOn(true)}
+  >
+    <FaFilter size={15} strokeWidth={1.5}/> 
+    </div> 
+
+    <div className={`store-sideFilter-wrapper ${sideFilterOn?'open':''}`}>
       
           <div className="store-sideFilter" style={{opacity:sideFilterOn?1:0}}>
                  <FilterSection
@@ -320,31 +330,19 @@ console.log(productElements && productElements)
 
 
 
-   <CarouselIntro 
-/>   
+   <CarouselIntro />   
 
  
 
   <div className='store-header-wrapper' 
-  style={{ top: isScrolledPastLimit ? '1rem' : '-5rem' }}>
-
-<StoreHeader 
-partialPill={partialPill}
-setPartialPill={setPartialPill}
-setSideFilterOn={setSideFilterOn}
-storeSearch = {storeSearch}
-setStoreSearch = {setStoreSearch}/>
-
-
-
-      </div> 
-        <ExpandingStoreHeader 
-  partialPill={partialPill}
-  />    
+  style={{ top: isScrolledPastLimit ? '1.5rem' : '-5rem' }}>
+       <ExpandingStoreHeader/>    
+      </div>  
+ 
   
 
 <div className="store-content-wrapper">
-
+   
       <div className="store-layout">
 
 
@@ -353,15 +351,7 @@ setStoreSearch = {setStoreSearch}/>
       
        <div className="store-page-title-wrapper">
 
-       
-
-{/*         <div className="store-nav-wrapper">
-<div className="store-navigation">
-  <Link to='/'>Home&nbsp;</Link> /  &nbsp;
-    <span>Store</span>
-    </div>
-<div className="product-count-wrapper">Showing {productElements.length} Products</div>
-  </div> */}
+    
  
 <div className="store-page-title-content">
   
@@ -370,16 +360,16 @@ setStoreSearch = {setStoreSearch}/>
 
     
     <span className="selected-group"> {currentCategory?selectedGroup: 'Store'}</span>
-
-    <span className="selected-category">
-     {currentCategory?currentCategory.replace(/-/g, ' '):'Explore All '} 
-    </span>
-        <div className="head-dot-wrapper">
+   <div className="head-dot-wrapper">
       <span className="head-dot red"></span>
       <span className="head-dot blue" ></span>
       <span className="head-dot green"></span>
     
     </div>
+    <span className="selected-category">
+     {currentCategory?currentCategory.replace(/-/g, ' '):'Explore All '} 
+    </span>
+     
      
    </div>
 
@@ -395,8 +385,9 @@ setStoreSearch = {setStoreSearch}/>
   
 
         <main className="store-content">
-
-           <div className="store-info-bar">
+<div className="store-info-wrapper">
+          
+            
              <div className="store-info-section store-bar-left">
 
                               <div className="store-grid-toggle">
@@ -408,21 +399,26 @@ setStoreSearch = {setStoreSearch}/>
 
              </div>
              <div className="store-info-section  store-bar-right">
+                 <StoreSearch
+                 storeSearch={storeSearch}
+                 setStoreSearch={setStoreSearch}
+                 /> 
               <div className="store-bar-right-wrapper"
                onClick={()=>setSideFilterOn(true)}
               >
                      {currentSort ? currentSort.sort:'SORT BY'}
-              <ListFilter color='black' />
+              <ListFilter color='black' size={20}/>
               </div>
          
 
        
              </div>
 
-    <span className="product-length"> {productElements.length} PRODUCTS </span>  
+    {/* <span className="product-length"> {productElements.length} PRODUCTS </span> */}  
 
-        
+    
   
+     
             </div>
        
 <div className="applied-filters-wrapper">

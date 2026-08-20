@@ -3,7 +3,7 @@ import MenuCancel from '../../../components/MenuCancel/MenuCancel'
 import { useNavigate } from 'react-router-dom'
 import { LayoutPanelLeft } from 'lucide-react'
 import { X } from 'lucide-react'
-import StoreActions from '../StoreActions/StoreActions'
+
 import OrderToggle from '../OrderToggle/OrderToggle'
 import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline'
 import './AppliedFilters.css'

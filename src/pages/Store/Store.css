@@ -23,6 +23,43 @@
 
 }
 
+.store-header-wrapper{
+  position:fixed;
+  width: 90%;
+
+z-index:100;
+border: 0px solid red;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 3rem;
+
+transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+}
+
+
+.store-filter-button{
+   position: fixed;
+  bottom: 5rem;
+  right:5rem;
+
+  color:rgb(230,230,230);
+  background-color: rgba(10, 10, 30, 0.6);
+  backdrop-filter: blur(10px);
+ 
+  z-index: 99;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+
+
+
 .storePage-overlay {
   position: fixed; /* Use fixed to cover the entire viewport regardless of scroll */
   top: 0;
@@ -47,21 +84,6 @@
   pointer-events: auto; /* Now it blocks clicks and becomes interactive */
 }
 
-
-.store-header-wrapper{
-  position:fixed;
-  width: 90%;
-
-z-index:100;
-border: 0px solid red;
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 5rem;
-top:1rem; 
-transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-
-}
 
 
 
@@ -227,19 +249,7 @@ background-color:rgb(255, 255, 255);
 
 
 
-.store-info-bar{
-  width: 100%;
-    display: grid;
-    place-items: center;
-    border-top: 0px solid rgb(200,200,200,.5) ;
-    border-bottom:0px solid  rgb(200,200,200,.5) ;
-    height: 4rem;
-    position: relative;
-    background-color: white;
-  /*   padding: 10px 0rem; */
 
-
-}
 
 .store-info-wrapper{
   width: 90%;
@@ -251,14 +261,16 @@ background-color:rgb(255, 255, 255);
     font-size: .9rem;
     font-weight: 400;
     color:rgb(80,80,80);
+    border: 0px solid green;
+  
     
   
  
 }
 
 .store-info-section{
-  position: absolute;
-  width: 15%;
+
+
   height: 100%;
   display: grid;
   place-items: center;
@@ -267,13 +279,16 @@ background-color:rgb(255, 255, 255);
 }
 
 .store-bar-left{
-  left: 0;
+
      border-right: 0px solid  rgb(200,200,200,.5) ;
 }
 
 .store-bar-right{
-  right: 0;
+
    border-left: 0px solid  rgb(200,200,200,.5)  ;
+   border: 0px solid red;
+   display: flex;
+   gap: 1rem;
 }
 
 .store-bar-right-wrapper{
@@ -283,6 +298,7 @@ align-items: center;
  font-weight: 300;
  font-size: 12px;
 text-transform: uppercase;
+
 }
 
 
