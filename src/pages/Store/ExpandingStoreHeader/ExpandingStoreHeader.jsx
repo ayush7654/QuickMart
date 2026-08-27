@@ -22,7 +22,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const storeMenuOptions=['Payment Methods','Cancel Order' ,'Order History','Become a Seller' ,'FAQ']
+const storeMenuOptions=['Payment Methods','Cancel Order' ,'Order History','Become a Seller']
 
 const storeMenuGrids= [
   
@@ -334,9 +334,50 @@ useEffect(() => {
     </div>
   ) : (
     <div className="category-layout-content">
-      {/* Left Section: 30% Sidebar */}
-      <div className="subgroup-sidebar-wrapper">
+   
+    <div className="subgroup-sidebar-sm">
+{ !partialPill? <div  className="sub-group-icon-wrapper">
+            { Object.keys(categorizedData).map((groupName,index) => {
 
+               /*  const Icon = SUBGROUP_MAPPING[groupName].Icon; */
+               const Icon = CATEGORY_ICONS[index].Icon;
+              return (
+          <div
+            key={groupName}
+            className={`sub-group-icon ${activeGroup === groupName ? "subgroup-active" : ""} `}
+            onClick={() => {setActiveGroup(groupName),setSelectedSubGroupId(index)}}
+          
+            
+            
+          >
+             <Icon size="var(--icon-size)" />
+          
+          </div>
+        )})
+
+
+      
+        
+        }
+        </div>:
+        <div className="subgroup-item-wrapper-sm">
+          {         storeMenuOptions.map((item, index) => (
+  <div
+    key={index}
+    className={`subgroup-item ${hoveredIndex === index ? 'active' : ''}`}
+    onMouseEnter={() => setHoveredIndex(index)}
+   
+  >
+    {item}
+  </div>
+)) }
+        </div>
+    }
+
+    </div>
+
+      <div className="subgroup-sidebar-wrapper">
+        
 
 
 
@@ -357,7 +398,7 @@ useEffect(() => {
             
             
           >
-             <Icon size={20} />  
+             <Icon size="var(--icon-size)" />
           
           </div>
         )})
@@ -468,7 +509,7 @@ useEffect(() => {
 
       <div className="card-overlay">
         <span className="category-name">
-          {item.name}
+          {item.name} 
         </span>
       </div>
 

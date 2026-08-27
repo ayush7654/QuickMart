@@ -79,7 +79,7 @@ const handlePartialToggle = () => {
            <div className="store-middle-head"> <span className="middle-dot"></span><ScrollButton text='Sale' /></div>
      <div className="store-middle-head"> <span className="middle-dot"></span><ScrollButton text='Memberships'/> </div>
      <div className="store-middle-head">  <span className="middle-dot"></span><ScrollButton text='Wishlist'/>  </div>
-      <div className="store-middle-head"> <span className="middle-dot"></span> <ScrollButton text='About'/>   </div> 
+     {window.innerWidth>700 && <div className="store-middle-head"> <span className="middle-dot"></span> <ScrollButton text='About'/>   </div>} 
 
 
          </div>
@@ -90,44 +90,7 @@ const handlePartialToggle = () => {
 
        <div className="store-catelog-btn-wrapper">
 
-
- {/*   <div className="side-filter-btn-wrapper" onClick={()=>setSideFilterOn(true)}>
-      <ScrollButton text='Filters'/>
-       <div className='scroll-btn-Icon-wrapper'>
-       <span className="scroll-btn-Icon-content">
- <  HiOutlineAdjustmentsVertical size={20}/>
-
-       </span>
-      </div>
-
-      
-      </div> */}
-      
-
-{/*   <div className={`store-catelog-btn ${isOpen || partialPill?'store-catelog-active':''}`} onClick={handleExpandedToggle}>
-
-<ScrollButton text='Catelog'/>
- <div className='scroll-btn-Icon-wrapper'>
-       <span className="scroll-btn-Icon-content">
-        <LayoutPanelLeft 
-  className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
-  size={18} 
-  strokeWidth={1} 
-
-
-    
-/>
-       </span>
-      </div> 
-
-
-  </div> 
- */}
   
-
-
-
-
          <LayoutPanelLeft onClick={handleExpandedToggle}
   className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
   size={20} 

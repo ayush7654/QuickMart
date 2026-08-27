@@ -302,11 +302,7 @@ console.log(productElements && productElements)
   return (
     <div className="Store-Page">
 
-  <div className="store-filter-button"
-   onClick={()=>setSideFilterOn(true)}
-  >
-    <FaFilter size={15} strokeWidth={1.5}/> 
-    </div> 
+
 
     <div className={`store-sideFilter-wrapper ${sideFilterOn?'open':''}`}>
       
@@ -390,12 +386,12 @@ console.log(productElements && productElements)
             
              <div className="store-info-section store-bar-left">
 
-                              <div className="store-grid-toggle">
+                             
    <GridToggle
    activeLayout={activeLayout}
    setActiveLayout={setActiveLayout}
    />
-   </div> 
+ 
 
              </div>
              <div className="store-info-section  store-bar-right">
@@ -403,12 +399,7 @@ console.log(productElements && productElements)
                  storeSearch={storeSearch}
                  setStoreSearch={setStoreSearch}
                  /> 
-              <div className="store-bar-right-wrapper"
-               onClick={()=>setSideFilterOn(true)}
-              >
-                     {currentSort ? currentSort.sort:'SORT BY'}
-              <ListFilter color='black' size={20}/>
-              </div>
+            
          
 
        
@@ -448,6 +439,13 @@ console.log(productElements && productElements)
             style={{
               gridTemplateColumns: `repeat(${activeLayout}, 1fr)`
             }}>
+
+                <div className="store-filter-button"
+                style={{opacity:isScrolledPastLimit?1:0}}
+   onClick={()=>setSideFilterOn(true)}
+  >
+    <FaFilter size={15} strokeWidth={1.5}/> 
+    </div> 
               
               {productElements}</div>
           </div>

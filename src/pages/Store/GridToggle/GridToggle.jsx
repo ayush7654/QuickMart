@@ -19,7 +19,7 @@ export default function GridToggle({onChange,activeLayout,setActiveLayout}) {
 
         
         {gridOptions.map((option) => (
-          <button
+          <div
             key={option.id}
             onClick={() => handleSelect(option.id)}
             className={`switcher-button ${activeLayout === option.id ? 'active' : '' } grid-${option.id}` }
@@ -28,7 +28,7 @@ export default function GridToggle({onChange,activeLayout,setActiveLayout}) {
             <img  src={option.icon} />
          
          
-          </button>
+          </div>
         ))}
       </div>
     </div>

@@ -1,9 +1,9 @@
 .switcher-container {
   display: inline-flex;
-  padding: 5px;
-/*   background: rgba(255, 255, 255, 0.6);
-  background: rgb(245, 245, 245); */
-  border-radius: 12px;
+  padding: 0px;
+border: 0px solid red;
+
+
   backdrop-filter: blur(8px);
    /* box-shadow: 0px 0px 20px -0px rgba(12, 19, 232, 0.2); */
 }
@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
 
-  gap: 4px;
+  gap: 12px;
 }
 
 .switcher-button {
@@ -21,8 +21,8 @@
   z-index: 2;
   display: flex;
   align-items: center;
-  gap: 8px;
- 
+
+   
   border: none;
   background: transparent;
   cursor: pointer;
@@ -30,11 +30,13 @@
   font-weight: 500;
   transition: color 0.3s ease , opacity .2s ease;
 opacity: .2;
+border: 0px solid black;
 
 }
 
 .switcher-button img{
     width: 18px;
+
 }
 
 .switcher-button:hover{

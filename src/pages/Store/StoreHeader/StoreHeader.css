@@ -268,18 +268,11 @@ background-color: rgb(0,100,255);
 
   
 }
-.store-catelog-btn:hover .category-icon ,.store-catelog-active .category-icon {
-  /*  color: rgb(0,100,255);            
-  fill: rgb(0,100,255);    */   
 
-
-
-  
-}
 
 .store-head-menu{
-   height: 3rem;
-    aspect-ratio: 1/1;
+
+ 
      display: flex;
  justify-content: center;
  align-items: center;
@@ -310,96 +303,27 @@ backdrop-filter: blur(0px);
 
 }
 
-/* .store-catelog-active{
-    background-color: transparent;
-    backdrop-filter: blur(0px);
-box-shadow: none;
-  color:rgb(0,100,255);
-
-   
-}
- */
 
  
-.side-filter-btn-wrapper{
 
-  height: 2.5rem;
-  width: 7rem;
-padding-left: 12px;
- display: flex;
- justify-content: center;
- align-items: center;
-   cursor: pointer;
-    transition: all .3s ease;
-  overflow: hidden;
-border-radius: 100px;
-  color: rgb(0, 0, 0);
- background-color: white;
 
-  
+
+
+@media (max-width:700px){
+  .store-Header{
+    height: 3rem;
+
+  }
+  .store-middle-head-wrapper{
+    font-size: 13px;
+  }
 }
 
-.side-filter-btn-wrapper:hover{
+@media (max-width:400px){
+
+  .store-middle-head-wrapper{
+    font-size: 12px;
+    gap: 1rem;
+  }
 
 }
-
-.side-filter-btn-wrapper:hover{
-
-  box-shadow: inset 0px 0px 10px rgba(255, 255, 255);
-
-
-}
-
-/* Gradient Layer */
-
-.side-filter-btn-wrapper.scroll-btn-Icon-content::before{
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  border-radius: inherit;
-
-/*   background:
-    linear-gradient(to right, rgba(0, 0, 255, 0.667), rgba(255, 166, 0, 0.644)); */
-
-  transition: opacity 1s ease;
-
-  z-index: 0;
-}
-
-
-
-/* White Layer */
-
-.side-filter-btn-wrapper .scroll-btn-Icon-content::after{
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  border-radius: inherit;
-
-  background: rgb(0, 0, 0);
-
-  opacity: 0;
-
-  transition: opacity .5s ease;
-
-  z-index: 0;
-}
-
-
-.side-filter-btn-wrapper:hover .scroll-btn-Icon-content{
-  transform: scale(.3);
-  
-}
-
-.side-filter-btn-wrapper:hover .scroll-btn-Icon-content::before{
-  opacity: 0;
-}
-
-.side-filter-btn-wrapper:hover .scroll-btn-Icon-content::after{
-  opacity: 1;
-}
-

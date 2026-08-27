@@ -14,12 +14,13 @@ const SUBGROUP_MAPPING = {
     groupId: 0,
 
     items: [
-      { slug: "tops", img: "women-tops4.jpg" },
-      { slug: "womens-shoes", img: "Women-Shoes2.jpg" },
-      { slug: "mens-shirts", img: "Mens-Shirts5.jpg" },
+     
+      { slug: "womens-shoes", img: "women-shoes4.jpg" },
+       { slug: "tops", img: "women-tops1.jpg" },
+      { slug: "mens-shirts", img: "Mens-Shirt.jpg" },
       
       { slug: '-', img: "NewCollection1.jpg" },
-      { slug: "womens-dresses", img: "Women-Dress.jpg" },
+      { slug: "womens-dresses", img: "women-dresses.jpg" },
       { slug: '-', img: "SalePercent.jpg" },
       { slug: "mens-shoes", img: "Men-Shoes8.webp" },
     ]
@@ -33,11 +34,11 @@ const SUBGROUP_MAPPING = {
     groupId: 1,
 
     items: [
-      { slug: "mens-watches", img: "Mens-Watch2.webp" },
-      { slug: "womens-watches", img: "Womens-watch.jpeg" },
-      { slug: "sunglasses", img: "sunglasses4.webp" },
+      { slug: "mens-watches", img: "Men-Watches.jpg" },
+      { slug: "womens-watches", img: "women-watch1.avif" },
+      { slug: "sunglasses", img: "sunglasses1.jpg" },
       { slug: "womens-jewellery", img: "Jewellery.webp" },
-      { slug: "womens-bags", img: "Women-Bag.webp" },
+      { slug: "womens-bags", img: "Women-Bag.jpg" },
     ]
 
   },
@@ -79,8 +80,8 @@ const SUBGROUP_MAPPING = {
 
     items: [
       { slug: "home-decoration", img: "home-decoration.jpg" },
-      { slug: "furniture", img: "Furniture2.jpg" },
-      { slug: "kitchen-accessories", img: "Kitchen.jpg" }
+      { slug: "furniture", img: "furniture4.jpg" },
+      { slug: "kitchen-accessories", img: "kitchen-accessories3.webp" }
     ]
 
   },
@@ -92,10 +93,10 @@ const SUBGROUP_MAPPING = {
     groupId: 5,
 
     items: [
-      { slug: "sports-accessories", img: "sports.jpg" },
-      { slug: "vehicle", img: "Car2.avif" },
-      { slug: "motorcycle", img: "Motorbike.jpg" },
-      { slug: "fitness", img: "Fitness2.webp" }
+      { slug: "sports-accessories", img: "sports1.jpg" },
+      { slug: "vehicle", img: "Car1.jpg" },
+      { slug: "motorcycle", img: "Motorbike1.jpg" },
+      { slug: "fitness", img: "fitness.jpg" }
     ]
 
   },
@@ -107,7 +108,8 @@ const SUBGROUP_MAPPING = {
     groupId: 6,
 
     items: [
-      { slug: "groceries", img: "essentials2.jpg" }
+       { slug: "groceries", img: "Grocery3.jpg" },
+      { slug: "groceries", img: "Grocery7.jpg" } 
     ]
 
   }
