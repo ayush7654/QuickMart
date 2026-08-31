@@ -331,7 +331,7 @@ console.log(productElements && productElements)
  
 
   <div className='store-header-wrapper' 
-  style={{ top: isScrolledPastLimit ? '1.5rem' : '-5rem' }}>
+  style={{ top: isScrolledPastLimit ? '1rem' : '-5rem' }}>
        <ExpandingStoreHeader/>    
       </div>  
  
@@ -354,17 +354,18 @@ console.log(productElements && productElements)
    <div className="store-page-title">
 
 
-    
+ 
+
     <span className="selected-group"> {currentCategory?selectedGroup: 'Store'}</span>
-   <div className="head-dot-wrapper">
+    <span className="selected-category">
+     {currentCategory?currentCategory.replace(/-/g, ' '):'Explore All '} 
+    </span>
+          <div className="head-dot-wrapper">
       <span className="head-dot red"></span>
       <span className="head-dot blue" ></span>
       <span className="head-dot green"></span>
     
     </div>
-    <span className="selected-category">
-     {currentCategory?currentCategory.replace(/-/g, ' '):'Explore All '} 
-    </span>
      
      
    </div>
@@ -440,12 +441,17 @@ console.log(productElements && productElements)
               gridTemplateColumns: `repeat(${activeLayout}, 1fr)`
             }}>
 
-                <div className="store-filter-button"
-                style={{opacity:isScrolledPastLimit?1:0}}
-   onClick={()=>setSideFilterOn(true)}
-  >
-    <FaFilter size={15} strokeWidth={1.5}/> 
-    </div> 
+     <div 
+  className="store-filter-button"
+  style={{
+    opacity: isScrolledPastLimit ? 1 : 0,
+    pointerEvents: isScrolledPastLimit ? 'auto' : 'none'
+  }}
+  onClick={() => setSideFilterOn(true)}
+  aria-label="Open filter menu"
+>
+  <Filter size={20} strokeWidth={2} className="filter-icon" /> 
+</div>
               
               {productElements}</div>
           </div>

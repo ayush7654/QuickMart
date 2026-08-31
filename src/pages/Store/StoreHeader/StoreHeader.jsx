@@ -57,20 +57,21 @@ const handlePartialToggle = () => {
   return (
     <div className={`store-Header ${isOpen || partialPill?'store-header-open':''}`}>
 
-<div className="store-catelog-btn-wrapper">
-          <div className='store-head-menu-wrapper'>
+
+          {/*  <div className='store-head-menu-wrapper'>
           <div className={`store-head-menu ${isOpen || partialPill?'store-menu-open':''}`} onClick={handlePartialToggle} >
-          <MenuCancel  state={partialPill}  />
+     
         </div> 
       
   
         
-         </div>
+         </div>  */}
 
-
-    
+<div className={`store-header-btn ${partialPill?'store-btn-active':''}`} onClick={handlePartialToggle}>
+     <MenuCancel  state={partialPill}  />
+</div>
       
-  </div>
+
     
 
 
@@ -88,18 +89,17 @@ const handlePartialToggle = () => {
 
 
 
-       <div className="store-catelog-btn-wrapper">
-
   
-         <LayoutPanelLeft onClick={handleExpandedToggle}
-  className={`category-icon  ${typeFilter || isOpen?'category-active':''}`}
+<div className={`store-header-btn ${isOpen && !partialPill?'store-btn-active':''}`}
+onClick={handleExpandedToggle}>
+         <LayoutPanelLeft 
+  className={`category-icon  ${isOpen && !partialPill?'category-active':''}`}
   size={20} 
-  strokeWidth={1} 
+  strokeWidth={1} /> 
+</div>
+  
+ 
 
-
-    
-/>
-</div> 
 
     </div>
   )

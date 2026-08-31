@@ -44,20 +44,25 @@ transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1);
    position: fixed;
   top: 85%;
   right:5%;
-
-  color:rgb(230,230,230);
-  background-color: rgba(10, 10, 30, 0.6);
+  color:rgb(221, 220, 220);
+   background-color: rgba(12, 20, 38, 0.8);
   backdrop-filter: blur(10px);
- 
   z-index: 99;
   width: 3rem;
-  height: 3rem;
-  border-radius: 16px;
+aspect-ratio: 1/1;
+  border-radius: 100px;
+
   display: grid;
   place-items: center;
   cursor: pointer;
-  transition: opacity .3s ease;
+  transition: all .3s ease;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   
+}
+
+.store-filter-button:hover .filter-icon{
+transform: scale(1.1);
+
 }
 
 
@@ -174,6 +179,7 @@ color:rgb(85, 85, 85);
   font-weight: 400;
   padding: 0px;
   text-transform: uppercase;
+  font-family: 'Courier New', Courier, monospace;
 
 
 
@@ -182,7 +188,7 @@ color:rgb(85, 85, 85);
 }
 
 .selected-category{
-    font-size: 4rem;
+    font-size: 3rem;
      text-transform: uppercase;
      font-weight: 400;
       font-family: 'Jost';

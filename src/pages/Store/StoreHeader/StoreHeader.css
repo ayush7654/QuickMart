@@ -2,22 +2,32 @@
 width: 100%;
 display: flex;
 justify-content: space-between;
+align-items: center;
 height: 3.5rem;
 padding: 0px 16px;
-
-border: 0px solid rgba(255, 255, 255, 0.5);
-
-
-/*  backdrop-filter: blur(10px);
-  background-color: rgba(206, 212, 220, 0.5); 
-  background-color: rgba(118, 118, 118, 0.185); */
-
 position: absolute;
 top: 0;
 z-index: 9999;
 border: 0px solid red;
 
 
+
+}
+
+.store-header-btn:hover{
+    border: 1px solid rgb(200, 200, 200,.8);
+}
+
+.store-header-btn{
+  border: 1px solid white;
+  height: 2rem;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+    border: 0px solid rgba(180, 180, 180, 0.3);
+      cursor: pointer;
+      transition: all .2s ease;
 
 }
 
@@ -80,155 +90,10 @@ aspect-ratio: 1/1;
 }
 
 
-.store-catelog-btn-wrapper,.store-head-menu-wrapper{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  height: 100%;
-  padding: 10px 0px;
-  z-index: 999;
-     font-size: 14px;
-     font-weight: 400;
-font-family: var(--font-primary);
-
-   
 
 
 
-}
 
-
-.store-catelog-btn{
-  
-  height: 2.5rem;
-
- display: flex;
- justify-content: center;
- align-items: center;
-padding-left: 12px;
-width: 7rem;
- font-size: 14px;
- font-weight: 400;
-   border-radius: 100px;
-  
-   backdrop-filter: blur(5px);
- color:rgb(255, 255, 255);
-
-
-   cursor: pointer;
-    transition: all .3s ease;
-  overflow: hidden;
-
-font-family: sans-serif;
- font-weight: 500;
-  color: #ffffff;
-box-shadow: inset 0px 0px 15px rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
-color:rgb(255, 255, 255);
-background-color: rgb(153, 177, 242);
-background-color: rgb(0,100,255);
-
-
-
-}
-
-.store-catelog-btn:hover{
-  box-shadow: inset 0px 0px 10px rgb(255, 255, 255);
-  /*  background-color: rgb(255, 62, 96); */
-}
-
-
-.store-filter{
-  background-color: white;
-}
-
-
-.scroll-btn-Icon-wrapper{
-  height:100%;
-  aspect-ratio: 1/1;
-
- padding: 8px;
-  display: grid;
-  place-items: center;
-
-
-}
-
-.scroll-btn-Icon-content{
-  position: relative;
-
-  height: 100%;
-  width: 100%;
-
-  border-radius: 50%;
-
-  display: grid;
-  place-items: center;
-
-  overflow: hidden;
-/*  background-color: rgb(249, 249, 249); */
-
-  transition: transform 0.5s ease;
-
-}
-
-
-
-/* Gradient Layer */
-
-.store-catelog-btn .scroll-btn-Icon-content::before{
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  border-radius: inherit;
-
-/*   background:
-    linear-gradient(to right, rgba(0, 0, 255, 0.667), rgba(255, 166, 0, 0.644)); */
-
-  transition: opacity 1s ease;
-
-  z-index: 0;
-}
-
-
-
-/* White Layer */
-
-.store-catelog-btn .scroll-btn-Icon-content::after{
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  border-radius: inherit;
-
-  background: white;
-
-  opacity: 0;
-
-  transition: opacity 1s ease;
-
-  z-index: 0;
-}
-
-
-
-/* Hover */
-
-.store-catelog-btn:hover .scroll-btn-Icon-content{
-  transform: scale(.3);
-}
-
-.store-catelog-btn:hover .scroll-btn-Icon-content::before{
-  opacity: 0;
-}
-
-.store-catelog-btn:hover .scroll-btn-Icon-content::after{
-  opacity: 1;
-}
 
 
 
@@ -239,7 +104,10 @@ background-color: rgb(0,100,255);
 
   z-index: 2;
 
-  color: white;
+   color: white;          
+  fill: white;          
+  transition: all 0.2s ease; 
+
 
   transition:
     color 0.5s ease,
@@ -248,59 +116,14 @@ background-color: rgb(0,100,255);
 
 
 
-
-.scroll-btn-Icon{
-  fill:rgb(255, 255, 255);
-  color:rgb(255, 255, 255);
-  
-}
-
-.catelog-button{
-
-  
-}
-
-.category-icon {
-   color: rgb(255, 255, 255);            /* This controls the 'color' prop / stroke */
-  fill: rgb(255, 255, 255);       /* This controls the 'fill' prop */
-  transition: all 0.2s ease; /* Makes the change smooth */
-  cursor: pointer;
-
-  
+.category-active{
+   color: rgb(7, 6, 6);            /* This controls the 'color' prop / stroke */
+  fill: rgb(6, 6, 6);  
 }
 
 
-.store-head-menu{
-
- 
-     display: flex;
- justify-content: center;
- align-items: center;
-  border-radius: 100px;
-   
-
-
- 
- color:rgb(0, 0, 0);
-/* box-shadow: inset 0px 0px 10px rgba(180, 180, 180, 0.5); */
- transition: all .3s ease;
- cursor: pointer;
- 
-}
-
-.store-menu-open{
-box-shadow: none;
-}
-
-
-
-
-
-.store-btn-open{
-background-color: transparent;
-backdrop-filter: blur(0px);
-
-
+.store-btn-active{
+background-color: white;
 }
 
 
