@@ -58,6 +58,8 @@ const handleNav = (direction) => {
         <div className="main-ImageBox">
            <ZoomImage src={`${Imagelist[ImgId]}`} isZoomEnabled={isZoomEnabled} /> 
            </div>
+
+           
            <div className="main-Img-btn-wrapper">
             <div className="main-action-wrapper">
                 <div className="pd-floating-btn zoom-btn-wrapper">

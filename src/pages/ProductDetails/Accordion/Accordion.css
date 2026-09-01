@@ -1,6 +1,6 @@
 .accordion-container {
   width: 100%;
-  margin-top: 1rem;
+
 }
 
 .accordion-item {
@@ -31,7 +31,7 @@
 
 .accordion-title {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.5px;
   color: #000;
   font-family: 'Figtree';
@@ -68,4 +68,9 @@
   font-size: 14px;
   line-height: 1.6;
   color: #555;
+}
+
+@media(max-width:900px){
+  .accordion-title {
+  font-size: 12px;}
 }

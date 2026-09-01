@@ -33,7 +33,7 @@ border: 0px solid red;
     align-items: center;
     justify-content: center;
     width: 3rem;
-    height: 3rem;
+aspect-ratio: 1/1;
     font-size: 1.8rem;
     color:rgb(0, 0, 0);
     border: 0px solid black;
@@ -48,50 +48,23 @@ border: 0px solid red;
 #credit-text{
     width: 100%;
     text-transform: uppercase;
-    font-weight: 600;
-    font-size: .7rem;
-    color:rgb(0, 0, 0);
+    font-weight: 500;
+    font-size: 11px;
+    color:rgb(30, 30, 30);
     line-height: 1.4rem;
     text-align: center;
     font-family: 'Roboto';
+
  
       
     
 }
-
-@media(max-width:1000px){
-
-    .credits-div{
-gap: .5rem;
-    }
-
+@media(max-width:1250px){
     #credit-logo{
- width: 3.5rem;
-    height: 3.5rem;
-        font-size: 2.2rem;
+          width: 2.5rem; 
     }
-
     #credit-text{
-            font-size: .9rem;
-            font-weight: 400;
+        width: 100%;
+         font-size: 9px;
     }
 }
-
-@media(max-width:450px){
-
-    .credits-div{
-        height: 80%;
-    }
-
-      #credit-logo{
- width: 2.8rem;
-    height: 2.8rem;
-        font-size: 2rem;
-    }
-
-    #credit-text{
-            font-size: .75rem;
-            
-    }
-}
-

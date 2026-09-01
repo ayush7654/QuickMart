@@ -1,11 +1,11 @@
 .switcher-container {
   display: inline-flex;
-  padding: 0px;
-border: 0px solid red;
+padding: 5px ;
+border: 0px solid rgb(186, 186, 186,.8);
 
 
-  backdrop-filter: blur(8px);
-   /* box-shadow: 0px 0px 20px -0px rgba(12, 19, 232, 0.2); */
+
+
 }
 
 .switcher-rail {
@@ -13,7 +13,7 @@ border: 0px solid red;
   display: flex;
   align-items: center;
 
-  gap: 12px;
+  gap:16px;
 }
 
 .switcher-button {

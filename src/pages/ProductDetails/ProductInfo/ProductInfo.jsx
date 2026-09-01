@@ -165,7 +165,7 @@ useEffect(() => {
         <div className="product-info-pd">
             <div className="pd-pill-wrapper">
                 <span className="pd-pill pd-brand-wrapper">{product.brand?product.brand:product.category}</span>
-                {["low stock", "out of stock"].includes(
+                {["low stock", "out of stock","in stock"].includes(
   product.availabilityStatus?.toLowerCase()
 ) && (
   <span className="pd-pill pd-stock-status">

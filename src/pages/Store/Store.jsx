@@ -316,15 +316,9 @@ console.log(productElements && productElements)
          </div>
 
     <div className={`storePage-overlay ${storeOverlayActive ? 'is-visible' : ''}`} 
-     onClick={() => {setIsOpen(false),setPartialPill(false)}}>
-      
-      </div>  
+     onClick={() => {setIsOpen(false),setPartialPill(false)}}> </div>  
 
     
-
-
-
-
 
    <CarouselIntro />   
 
@@ -382,6 +376,9 @@ console.log(productElements && productElements)
   
 
         <main className="store-content">
+
+
+
 <div className="store-info-wrapper">
           
             
@@ -413,6 +410,7 @@ console.log(productElements && productElements)
      
             </div>
        
+
 <div className="applied-filters-wrapper">
   {hasActiveFilters &&  <AppliedFilters
              appliedFilters = {appliedFilters}
@@ -426,16 +424,8 @@ console.log(productElements && productElements)
 
 
 
-          <div className="productList-wrapper" style={{ position: "relative" }}>
-
-            
-
-           
-
-
-
-         
-            
+ <div className="productList-wrapper" style={{ position: "relative" }}>
+  
             <div className="productList"
             style={{
               gridTemplateColumns: `repeat(${activeLayout}, 1fr)`
@@ -459,6 +449,8 @@ console.log(productElements && productElements)
          
         </main>
       </div>
+
+      
  {!typeFilter && (
             <div className="LoadMore-button-div"  ref={loadingRef} >
               
