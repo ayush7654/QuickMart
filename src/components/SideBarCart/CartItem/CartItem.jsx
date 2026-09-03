@@ -51,15 +51,15 @@ export default function CartItem({product,handleRemove,updateDataBase}) {
           <div className="cart-product-info-div">
                 <div  className="cart-product-info">
         
-            <div className="cart-product-title">
-              {title}
+            <div className="cart-product-title-wrapper">
+              <div className="cart-product-title">{title}</div>
                  <div onClick={()=>handleRemove(title)}><FiTrash2 className='remove-icon' strokeWidth={1.5}/></div>
               </div>
-              <div id='cart-info-item'>{shippingInformation}</div>
-        {/*    <div className="card-product-brand">{brand}</div>  */}
-          
-          {/*  <div id='cart-info-item'>Color :   </div> */}
-         <div id='cart-info-item'>{returnPolicy}.</div>
+
+
+              <div className='cart-item-shipment'>{shippingInformation}</div>
+        
+      
         
            <div className='cart-item-button-wrapper'>
               <div  className="cart-product-quantity">
