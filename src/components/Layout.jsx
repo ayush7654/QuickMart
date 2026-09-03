@@ -89,10 +89,10 @@ setSearchBarToggle(i)
       toggleOverlay={setShowOverlay}/>
     </div>
 
-{/*       <SideBarCart
+     <SideBarCart
   cartToggled={cartToggled}
   setCartToggled={setCartToggled}
-  toggleOverlay={setShowOverlay}/> */}
+  toggleOverlay={setShowOverlay}/> 
 
 
   </CartListProvider>

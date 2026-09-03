@@ -10,6 +10,7 @@ export default function CartItem({product,handleRemove,updateDataBase}) {
     id,
     title, 
     images, 
+    brand,
     price, 
     quantity, 
     shippingInformation, 
@@ -50,23 +51,28 @@ export default function CartItem({product,handleRemove,updateDataBase}) {
           <div className="cart-product-info-div">
                 <div  className="cart-product-info">
         
-            <div id='' className="cart-product-title">{title}</div>
-           
-          
-           <div id='cart-info-item'>Color :   </div>
-         <div id='cart-info-item'>{returnPolicy}.</div>
-            <div id='' className="cart-product-price-div">
-               <span className='cart-item-price'> ${price}</span>
-            <span className='discount-price'>${(price*((100-discount)/100)).toFixed(2)}</span> 
-           
+            <div className="cart-product-title">
+              {title}
+                 <div onClick={()=>handleRemove(title)}><FiTrash2 className='remove-icon' strokeWidth={1.5}/></div>
               </div>
+              <div id='cart-info-item'>{shippingInformation}</div>
+        {/*    <div className="card-product-brand">{brand}</div>  */}
+          
+          {/*  <div id='cart-info-item'>Color :   </div> */}
+         <div id='cart-info-item'>{returnPolicy}.</div>
+        
            <div className='cart-item-button-wrapper'>
               <div  className="cart-product-quantity">
                  <span className='cart-quantity-button' onClick={quantityDecrease}><FiMinus strokeWidth={1}/></span>
                  <span className='cart-item-quantity' >{product.quantity}</span> 
                   <span className='cart-quantity-button' onClick={quantityIncrease}><FiPlus strokeWidth={1}/></span>
                   </div>
-              <div onClick={()=>handleRemove(title)}><FiTrash2 className='remove-icon' strokeWidth={1.5}/></div>
+                      <div className="cart-product-price-div">
+            
+        ${(price*((100-discount)/100)).toFixed(2)}
+           
+              </div>
+           
            </div>
           
           

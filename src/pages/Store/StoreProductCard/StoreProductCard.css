@@ -306,7 +306,7 @@ bottom: 16px;
 @media(max-width:800px){
   .store-ProductInfo-wrapper{
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 400; 
   }
 }
 
@@ -331,10 +331,15 @@ bottom: 16px;
   flex-direction: column;
 line-height: 18px;
   gap:5px;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
 
   }
+
+  .sp-price{
+    font-weight: 300;
+  }
+
   .productCard-tag{
     padding: 5px 5px;
   }
