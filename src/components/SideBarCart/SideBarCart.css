@@ -42,8 +42,8 @@ overflow: hidden;
   width: 100%;
   flex: 1;
   border: 0px solid green;
-  padding: 20px 2rem;
-  border-bottom:1px solid rgb(230,230,230) ;
+padding: 20px;
+  border-bottom:0px solid rgb(230,230,230) ;
 z-index: 9999;
 font-size: 20px;
 font-weight: 500;
@@ -51,10 +51,11 @@ font-weight: 500;
 }
 
 .side-cart-header h2{
-   font-family: var( --font-heading);
+  
   font-size: 20px;
    font-weight: 500;
    letter-spacing: 1px;
+
 }
 
 
@@ -128,7 +129,7 @@ font-weight: 500;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+transform: translateY(-1rem);
 border: 0px solid blue;
 
 
@@ -260,5 +261,25 @@ border: 0px solid blue;
 
   .side-cart-header h2{font-size: 18px;}
 
+  
+}
+
+@media(max-width:400px){
+
+   .side-cart-checkout-wrapper{
+  height:9rem;
+   }
+    .side-cart-subtotal-wrapper{
+      font-size: .9rem;
+    }
+        .subtotal-cost{
+      font-size: 1rem;
+    }
+       .subtotal-text{
+      font-size: 11px;}
+    
+      .side-cart-checkout-btn{
+        height: 2.5rem;
+      }
   
 }

@@ -52,8 +52,8 @@ export default function CartItem({product,handleRemove,updateDataBase}) {
                 <div  className="cart-product-info">
         
             <div className="cart-product-title-wrapper">
-              <div className="cart-product-title">{title}</div>
-                 <div onClick={()=>handleRemove(title)}><FiTrash2 className='remove-icon' strokeWidth={1.5}/></div>
+              <div className="cart-product-title">  {title} {quantity > 1 ? `(${quantity})` : null}</div>
+                 <div onClick={()=>handleRemove(title)}><FiTrash2 className='remove-icon' strokeWidth={1}/></div>
               </div>
 
 
@@ -69,7 +69,7 @@ export default function CartItem({product,handleRemove,updateDataBase}) {
                   </div>
                       <div className="cart-product-price-div">
             
-        ${(price*((100-discount)/100)).toFixed(2)}
+        ${(price*((100-discount)/100)).toFixed(2)*quantity}
            
               </div>
            
