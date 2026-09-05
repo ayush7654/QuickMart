@@ -68,14 +68,6 @@ margin-top: 6rem;
     }
 
 
-
-   
-
-
-
- 
- 
-
 .order-details-wrapper{
   width: 45%;
   border: 0px solid blue;
@@ -99,6 +91,10 @@ margin-top: 6rem;
 .shipping-detials-wrapper,.order-details-wrapper{
   width: 100%;
             }
+              .cart-page-left-head{
+                position: relative;
+                font-size: 1rem;
+              }
 }
 
 

@@ -31,7 +31,7 @@ export default function PaymentSection() {
 
         <div className='payment-card-info'>
            <FloatingInput
-        label='Expiration date (MM/YY)'
+        label='Expiration date'
         name='ExpDate'
         
         />

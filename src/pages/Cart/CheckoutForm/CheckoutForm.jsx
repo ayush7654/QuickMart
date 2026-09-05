@@ -80,7 +80,7 @@ const CheckoutForm = () => {
          
 
              <FloatingInput
-        label='Last name (optional)'
+        label='Last name'
         name='lastName'
         onChange={handleChange}
         
