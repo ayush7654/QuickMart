@@ -20,7 +20,7 @@ margin-top: 6rem;
   width: 100%;
 
       display: flex;
-      border: 0px solid red;
+      flex-direction: row;
       justify-content: space-between;
       margin-top:0rem;
       min-height: 100vh;
@@ -32,7 +32,7 @@ margin-top: 6rem;
       
     }
 
-    .cart-page-left{
+    .shipping-detials-wrapper{
         width: 55%;
         position: relative;
         display: flex;
@@ -76,7 +76,7 @@ margin-top: 6rem;
  
  
 
-.cart-page-right{
+.order-details-wrapper{
   width: 45%;
   border: 0px solid blue;
   background-color: rgb(245,245,245);
@@ -91,6 +91,14 @@ margin-top: 6rem;
   
 }
 
+@media(max-width:900px){
 
+        .Cart-page-wrapper{
+            flex-direction: column;
+        }
+.shipping-detials-wrapper,.order-details-wrapper{
+  width: 100%;
+            }
+}
 
 

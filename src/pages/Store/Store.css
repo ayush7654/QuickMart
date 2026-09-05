@@ -346,9 +346,7 @@ align-items: center;
   height: 95vh;
   overflow-y: scroll;
   scrollbar-width: none;
-/*   width: 32%; */
     background-color: transparent;
-
   margin-top: 0rem;
   z-index:999;
 box-shadow: 0 10px 20px rgba(50,50,50, 0.2);

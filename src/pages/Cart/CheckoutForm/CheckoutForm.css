@@ -73,9 +73,7 @@ input:focus, select:focus {
 }
 
 /* Address search icon */
-.input-icon-div {
-  position: relative;
-}
+
 
 .form-icon {
   position: absolute;
@@ -84,49 +82,12 @@ input:focus, select:focus {
   color: rgb(120, 120, 120);
 }
 
-.floating-label-group {
-  position: relative;
-  margin-bottom: 12px;
-}
 
-.floating-input {
-  width: 100%;
-  padding: 20px 12px 6px 12px; /* Extra top padding for the label space */
-  border: 1px solid #d1d1d1;
-  border-radius: 8px;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.2s;
-  box-sizing: border-box;
-}
 
-/* The Blue Border on Focus */
-.floating-input:focus {
-  border: 2px solid #005bd3;
-  padding: 19px 11px 5px 11px; /* Adjust for the 2px border to prevent jumping */
-}
 
-/* The Label Styling */
-.floating-label {
-  position: absolute;
-  left: 12px;
-  top: 13px; /* Default position (mimicking placeholder) */
-  color: #707070;
-  pointer-events: none; /* Allows clicking "through" the label to the input */
-  transition: all 0.2s ease;
-  font-size: 1rem;
-}
 
-/* Move label up when:
-   1. The input is focused 
-   2. The input is NOT showing the placeholder (meaning it has text) 
-*/
-.floating-input:focus + .floating-label,
-.floating-input:not(:placeholder-shown) + .floating-label {
-  top: 6px;
-  font-size: 0.75rem;
-  color: #707070;
-}
+
+
 
 /* Checkbox styling */
 .checkbox-container {

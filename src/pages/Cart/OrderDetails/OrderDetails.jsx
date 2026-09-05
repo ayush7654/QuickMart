@@ -18,14 +18,14 @@ export default function OrderDetails({cartList,totalCost}) {
               <span className='item-quantity'>{item.quantity}</span>
             </div>
             <div className='order-item-info'>
-              <div className='order-item-title'>
-                <span>{item.title}</span>
+              <div className='order-item-title-wrapper'>
+                <span className='order-item-title'>{item.title}</span>
                 <span>${item.price *item.quantity}</span>
                 </div>
               <span className='order-item-details'>
                  {item.returnPolicy}
                 </span>
-              <span className='order-item-details'>{item.shippingInformation}</span>
+            {/*   <span className='order-item-details'>{item.shippingInformation}</span> */}
             </div>
             {/* <div className='order-item-price'></div> */}
             
