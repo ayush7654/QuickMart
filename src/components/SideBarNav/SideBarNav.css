@@ -3,10 +3,21 @@
     height: 100vh;
     width: 100%;
     position: fixed;
+    top:0rem;
     z-index: 9999;
-   
+      clip-path: inset(0 0 0 100%);
     border-right:1px solid rgb(200,200,200);
+ transition: width 0.5s cubic-bezier(0.2, 0.9, 0.1, 1);
+   transition: clip-path  0.5s cubic-bezier(0.2, 0.9, 0.1, 1);
+}
 
+
+.sideBarNav.open {
+  clip-path: inset(0 0 0 0%);
+}
+
+.sideBarNav-content{
+transition: opacity 0.15s ease .4s;
 }
 
 .sideBarNav-head-div{

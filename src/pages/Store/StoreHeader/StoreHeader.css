@@ -4,28 +4,28 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 height: 3.5rem;
-padding: 0px 16px;
+padding: 0px 10px;
 position: absolute;
 top: 0;
 z-index: 9999;
-border: 0px solid red;
+
 
 
 
 }
 
 .store-header-btn:hover{
-    border: 1px solid rgb(200, 200, 200,.8);
+    border: 0px solid rgb(200, 200, 200,.8);
 }
 
 .store-header-btn{
-  border: 1px solid white;
+  border: 0px solid white;
   height: 2rem;
   aspect-ratio: 1/1;
   display: grid;
   place-items: center;
   border-radius: 5px;
-    border: 0px solid rgba(180, 180, 180, 0.3);
+  
       cursor: pointer;
       transition: all .2s ease;
 

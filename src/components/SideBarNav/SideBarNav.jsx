@@ -18,7 +18,7 @@ import { MdPerson } from "react-icons/md";
 
 
 
-export default function SideBarNav({sideBarState, sideBarToggle}) {
+export default function SideBarNav({sideBarState=true, sideBarToggle}) {
 
     const elements= [
       {icon:< AiFillHome id='sideBar-icon' />,iconImg:'SBhome.png',iconName:'Home',path:'/'},
@@ -32,11 +32,13 @@ export default function SideBarNav({sideBarState, sideBarToggle}) {
 
   return (
     <div
-      style={{
+    /*   style={{
         transform: sideBarState ? 'translateX(0)' : 'translateX(-100%)',
         transition: 'transform 0.3s ease-in-out',
-      }}
-    className='sideBarNav'>
+      }} */
+    className={`sideBarNav ${sideBarState?'open':''}`}> 
+
+    <div className="sideBarNav-content" style={{opacity:sideBarState?1:0}}>
         <div className='sideBarNav-head-div'>
  
           <div className='sideBar-cancel-div'>
@@ -70,7 +72,7 @@ export default function SideBarNav({sideBarState, sideBarToggle}) {
       )}
         </div>
     
-        
+        </div>
         
     </div>
   )
