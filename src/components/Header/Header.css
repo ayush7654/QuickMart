@@ -75,30 +75,9 @@ backdrop-filter: blur(25px);
 
 
 
-  .header-home-upper{
-    border: 0px solid red;
-    height: 00%;
-    position: relative;
-    display: none;
-    justify-content: center;
-    align-items: center;
-  }
 
-  .site-logo-div{
-    border: 0px solid purple;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    transition: all .6s ease;
 
-  }
-
-  .site-logo{
-    width: 110px;
-    margin-bottom: -.6rem;
-  }
-
-  .header-home-lower{
+  .site-header-content{
     border: 0px solid green;
       height:100%;
       display: flex;
@@ -126,14 +105,7 @@ backdrop-filter: blur(25px);
     
   }
 
-  .site-logo-tagline{
-    display: none;
-   font-family: "Jost";
-   font-size: .9rem;
-   letter-spacing: .2rem;
-
-  }
-
+ 
   .site-name{
   
   font-size: 2.5rem;
@@ -154,10 +126,7 @@ font-family: "Prosto One", sans-serif;
 
 
 
-.home-menu-ph{
-  display: none;
-}
- 
+
    .page-nav-wrapper-left{
    
 
@@ -170,14 +139,10 @@ font-family: "Prosto One", sans-serif;
      border: 0px solid rgb(145, 52, 52);
   font-size: .95rem;
 
- width: 15rem;
 
 
 
    }
-
-
- 
 
 
 
@@ -185,36 +150,18 @@ font-family: "Prosto One", sans-serif;
     display:flex;  
    align-items: center;
    justify-content: flex-start;
-   border-bottom: 0px solid transparent;
-border: 0px solid blue;
- transition: all .3s ease;
    flex: 1;
    font-weight: 400;
-
+ width: 15rem;
 
    height:100%;
    
 
    }
 
-
- 
-
-  
-
-
-/*    .page-nav-left-selected{
-  text-decoration: underline;
-text-decoration-thickness: 1.5px;
-text-decoration-color:rgb(0, 0, 0) ;
-text-underline-offset: 3px;
-pointer-events: none;
-
+   .home-menu-ph{
+ display: none;
    }
-
-    .headerAtTop   .page-nav-left-selected{
-      text-decoration-color:rgb(255, 255, 255) ;
-    } */
 
  
 
@@ -233,7 +180,6 @@ pointer-events: none;
     font-size: 1rem;
     height: 100%;
    
-    /* width: 15%; */
    
 
   }
@@ -323,8 +269,49 @@ pointer-events: none;
 
 
 
+@media( max-width:700px){
+  .page-nav-wrapper-left{
 
+width: fit-content;
+align-items: center;
+  }
+
+  .page-nav-left{
+ display: none;
+  }
+
+
+  .home-menu-ph{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 2rem;
+  border: 0px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  z-index: 999;
+
+}
+
+ .menu-icon{
+font-size: 1.5rem;
+
+          }
+}
  
+
+@media( max-width:400px){
+
+    .page-nav-wrapper-right{
+      width: 8rem;
+    }
+    #header-icon{
+        font-size: 1.1rem;
+    }
+    .searchIcon{
+  width: 1.1rem;
+  height: 1.1rem;}
+}
 
 
 /*  @media (max-width:1280px){

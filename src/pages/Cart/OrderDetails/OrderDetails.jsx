@@ -25,9 +25,9 @@ export default function OrderDetails({cartList,totalCost}) {
               <span className='order-item-details'>
                  {item.returnPolicy}
                 </span>
-            {/*   <span className='order-item-details'>{item.shippingInformation}</span> */}
+         
             </div>
-            {/* <div className='order-item-price'></div> */}
+          
             
           </div>)
         }

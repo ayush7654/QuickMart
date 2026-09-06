@@ -19,6 +19,8 @@ import { head } from "lodash";
 import DotNav from "../DotNav/DotNav";
 import TransitionLink from "../TransitionLink";
 import { useDelayedNavigate } from "../useDelayedNavigate";
+import { Dot } from 'lucide-react';
+import { div } from "framer-motion/client";
 export default function Header({toggleSwitch,screenOverlay,toggleOverlay, sideBarToggle,setCartToggled}){
 
   
@@ -58,17 +60,9 @@ const handlePageNav = (func) => {
     
 
 
-    const[categories,setCategories]= useState(null)
+    const[categories,setCategories]= useState(null);
 
     
-
-    
-
-   
- 
-
-
-
 
    useEffect(()=>{
     const fetchCategory= async()=>{
@@ -218,7 +212,7 @@ useEffect(() => {
 
    
 
-  /*  transform:isAtTop && extraHeaderVisible  ? 'translateY(0)':'translateY(-2rem)' */
+
 
      
 
@@ -246,45 +240,47 @@ useEffect(() => {
 
 
         }}>
-          {/* <div className="header-home-upper">
-            <div className="site-logo-div" style={{scale:isAtTop?'1':'.5' , opacity:isAtTop?'1':'.4'}}> 
-              <img src='./whiteStork5.png'  className="site-logo"/>
-            </div>          
-          </div> */}
-          <div className="header-home-lower">
+      
+          <div className="site-header-content">
                
-                    <div className="home-menu-ph" onClick={()=>sideBarToggle(true)}>
+                 
+
+  <div className="site-name-div" >
+             
+       <div className="site-name" style={{opacity:location.pathname==='/' && isAtTop?'0':'1', 
+                    color:isAtTop && headertp?'white':'black'}}>
+                      {window.innerWidth}
+         </div>
+   </div>
+
+
+    <div className="page-nav-wrapper-left">               
+      <div className="page-nav-left">
+    <DotNav
+   sections={navElements}
+   textColor={isAtTop && headertp ?"white":"rgb(80,80,80)"}
+   textColorHover={isAtTop && headertp?'white':"black"}
+   dotColor={isAtTop && headertp?"white":"rgb(0, 100, 255)"}
+handleClick={(func) => handlePageNav(func)}
+   syncWithUrl={true}/>    
+</div> {   /* This UI is pointless with page transition to switching to normal */}
+
+
+
+
+  
+     <div className="home-menu-ph" onClick={()=>sideBarToggle(true)}>
                    {/*  <RxHamburgerMenu className="menu-icon" /> */}
                    <MenuCancel/>
                         </div>
-
-  <div className="site-name-div"   >
-             
-                  <div className="site-name" style={{opacity:location.pathname==='/' && isAtTop?'0':'1', color:isAtTop && headertp?'white':'black'}}>{window.innerWidth}</div>
-                </div>
-                 <div className="page-nav-wrapper-left">
-    
-                   
-  
-                  
-
-   <DotNav
-   sections={navElements}
-   textColor={isAtTop && headertp /* && cursorOff && headertp */?"white":"rgb(80,80,80)"}
-   textColorHover={isAtTop && headertp?'white':"black"}
-   dotColor={isAtTop && headertp/* && cursorOff && headertp */?"white":"rgb(0, 100, 255)"}
-handleClick={(func) => handlePageNav(func)}
-   syncWithUrl={true}/>
 
                 </div> 
 
               
 
-                  {/* <SiteLogo/> */}
-{/*  <span style={{color:'black'}}>replicate the shrinking header design</span> */}
 
      
-               <div className='page-nav-wrapper-right'>
+     <div className='page-nav-wrapper-right'>
 
                  <div
                  onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} 
@@ -322,7 +318,7 @@ handleClick={(func) => handlePageNav(func)}
 
            
  
-               </div>
+     </div>
 
               
 
