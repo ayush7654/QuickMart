@@ -271,8 +271,13 @@ handleClick={(func) => handlePageNav(func)}
   
      <div className="home-menu-ph" onClick={()=>sideBarToggle(true)}>
                    {/*  <RxHamburgerMenu className="menu-icon" /> */}
-                   <MenuCancel/>
+                   <MenuCancel colorSwitch={true}/>
+                 
                         </div>
+             <div className="header-icon" id='header-search-icon-ph'>
+                  <Search className="searchIcon"    
+                 style={{ strokeWidth: '1.5'}} />
+                 </div>
 
                 </div> 
 
@@ -285,7 +290,7 @@ handleClick={(func) => handlePageNav(func)}
                  <div
                  onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} 
                  className="page-nav-right">
-                 <div id="header-icon">
+                 <div className="header-icon" id='header-search-icon'>
                   <Search className="searchIcon"    
                  style={{ strokeWidth: '1.5'}} />
                  </div> 
@@ -293,7 +298,7 @@ handleClick={(func) => handlePageNav(func)}
 
                  <TransitionLink to='/Login'
                    className={({ isActive }) =>`page-nav-right ${isActive?'page-nav-right-selected':''} desktop-only`}>
-                      <div id="header-icon">
+                      <div className="header-icon">
                         { pagelocation.pathname == "/Login" ? 
                           <HiUser  /> :
                            <HiOutlineUser  style={{ strokeWidth: "1.5" }} />
@@ -303,7 +308,7 @@ handleClick={(func) => handlePageNav(func)}
 
                  <div  className={`page-nav-right ${location.pathname==='/cart'?'page-nav-right-selected':''}`}
                   onClick={()=>{setCartToggled(true),toggleOverlay(true)}}>
-                <div id="header-icon">
+                <div className="header-icon">
                     { pagelocation.pathname === "/cart" ? (
               <HiShoppingBag   />
             ) : (

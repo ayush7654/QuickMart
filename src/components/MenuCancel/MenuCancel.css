@@ -6,17 +6,22 @@
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  
 
 }
 
 .menu-btn span {
 
-  background: white;
+ background-color: white;
   transition: 0.35s ease;
   border-radius: 2px;
 }
 .menu-btn.open span{
-  background-color: black;
+  background: black;
+}
+
+.header-menu span{
+  background: black;
 }
 
 /* --- ANIMATION --- */
@@ -32,4 +37,8 @@
   .menu-btn {
   width: 20px;
 }
+
+ .headerTransparent .menu-btn span {
+
+  background: rgb(252, 252, 252);}
 }

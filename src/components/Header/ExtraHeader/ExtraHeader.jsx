@@ -19,7 +19,7 @@ const [showFirst, setShowFirst] = useState(true);
 
     <div className={`extra-link-wrapper ${showFirst ? 'visible' : 'hidden'}`}>
         <span id="extra-link" className="underline">Coming Soon : The Summer Collection 26.</span>
-        <span id="extra-text">Follow @sarasstore for more updates.</span>
+       {/*  <span id="extra-text">Follow @sarasstore for more updates.</span> */}
       </div>
 
       {/* Second Set */}

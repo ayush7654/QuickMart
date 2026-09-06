@@ -22,7 +22,7 @@
     align-items: center;
 
  
-  border: 0px solid red;
+  border: 0vb solid red;
 
  
 
@@ -49,6 +49,7 @@ color:rgb(235, 235, 235);
    background-color: white;
    color:black;
      border-bottom: 0px solid rgba(255, 255, 255);
+     border: 0px solid green;
 
 
 
@@ -80,11 +81,12 @@ backdrop-filter: blur(25px);
   .site-header-content{
     border: 0px solid green;
       height:100%;
+         width: 90%;
       display: flex;
       justify-content: space-between;
       align-items: center;
        position: relative;
-       width: 90%;
+    
        
        
   }
@@ -170,8 +172,7 @@ font-family: "Prosto One", sans-serif;
     border: 0px solid rgb(220, 33, 33);
     display: flex;
     flex-direction: row;  
-    justify-content: space-evenly;
-    
+    justify-content: end;
     align-items: end;
     font-weight:400;
     margin-right: 0rem;
@@ -217,7 +218,7 @@ font-family: "Prosto One", sans-serif;
 
 
 
-  #header-icon{
+  .header-icon{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -231,22 +232,22 @@ font-family: "Prosto One", sans-serif;
 
   }
 
-  #header-icon:hover{
+  .header-icon:hover{
 
       color:blue;
       
 
   }
 
-  .page-nav-right-selected   #header-icon{
+  .page-nav-right-selected   .header-icon{
     color:black;
   }
 
-  .headerTransparent #header-icon{
+  .headerTransparent .header-icon{
     color:rgb(255, 255, 255);
     
   }
- .headerTransparent #header-icon:hover{
+ .headerTransparent .header-icon:hover{
     color:rgb(255, 255, 255);
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
   }
@@ -266,6 +267,10 @@ font-family: "Prosto One", sans-serif;
  
   cursor: pointer;
 }
+
+   #header-search-icon-ph{
+    display: none;
+   }
 
 
 
@@ -290,6 +295,7 @@ align-items: center;
   border: 0px solid rgb(255, 255, 255);
   border-radius: 50%;
   z-index: 999;
+  border: 0px solid red;
 
 }
 
@@ -300,19 +306,49 @@ font-size: 1.5rem;
 }
  
 
-@media( max-width:400px){
+@media( max-width:600px){
 
     .page-nav-wrapper-right{
       width: 8rem;
     }
-    #header-icon{
+   
+    .header-icon{
         font-size: 1.1rem;
+        width: 2rem;
+        height: 2rem;
     }
     .searchIcon{
   width: 1.1rem;
   height: 1.1rem;}
 }
 
+@media( max-width:400px){
+ .site-header-content{
+  width: 100%;
+ }
+
+   .page-nav-wrapper-left{
+    width: 6rem;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+   }
+
+     .page-nav-wrapper-right{
+      width: 5rem;
+         padding-right: 10px;
+     }
+
+   #header-search-icon{
+    display: none;
+   }
+
+   
+   #header-search-icon-ph{
+    display: flex;
+   }
+}
 
 /*  @media (max-width:1280px){
 
