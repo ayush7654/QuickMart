@@ -1,33 +1,32 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import './SideBarNav.css'
+import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
-
-
-import { AiFillHome } from "react-icons/ai"; 
-
-import { FaRegQuestionCircle } from "react-icons/fa";
-
-import { RiCustomerService2Fill } from "react-icons/ri";
-
-import { RiShoppingBasketFill } from "react-icons/ri";
-
-import { MdPerson } from "react-icons/md";           
- 
-
-
-
+import { MdPerson } from 'react-icons/md';
+import { 
+  FiHome , 
+  FiShoppingBag , 
+  FiUser , 
+  FiHelpCircle, 
+  FiHeadphones 
+} from 'react-icons/fi';
+import { useFirebase } from '../FirebaseContext/Firebase';
 
 export default function SideBarNav({sideBarState=true, sideBarToggle}) {
 
     const elements= [
-      {icon:< AiFillHome id='sideBar-icon' />,iconImg:'SBhome.png',iconName:'Home',path:'/'},
-        {icon:< RiShoppingBasketFill id='sideBar-icon'/>,iconImg:'SBbasket.png',iconName:'Shop',path:'/store'},
-          {icon:< MdPerson id='sideBar-icon'/>,iconImg:'user.png',iconName:'Account',path:'/login'},
-        {icon:<FaRegQuestionCircle id='sideBar-icon'/>,iconImg:'SBfaq.png',iconName:'FAQ',path:''},
-        {icon:<RiCustomerService2Fill id='sideBar-icon' />,iconImg:'SBhelpdesk.png',iconName:'Customer Support',path:''}
+      {icon:<  FiHome strokeWidth='1.5'  id='sideBar-icon' />,iconImg:'SBhome.png',iconName:'Home',path:'/'},
+        {icon:<  FiShoppingBag strokeWidth='1.5'   id='sideBar-icon'/>,iconImg:'SBbasket.png',iconName:'Shop',path:'/store'},
+          {icon:<FiUser strokeWidth='1.5'  id='sideBar-icon'/>,iconImg:'user.png',iconName:'Account',path:'/login'},
+        {icon:< FiHelpCircle strokeWidth='1.5'  id='sideBar-icon'/>,iconImg:'SBfaq.png',iconName:'FAQ',path:''},
+        {icon:< FiHeadphones strokeWidth='1.5'   id='sideBar-icon' />,iconImg:'SBhelpdesk.png',iconName:'Customer Support',path:''}
     ]
 
+
+    const firebase = useFirebase()
+
+    console.log(firebase.currentUser)
     
 
   return (
@@ -47,17 +46,17 @@ export default function SideBarNav({sideBarState=true, sideBarToggle}) {
 
             <div className='sideBar-title-div'>
                 <div className='sideBarNav-head-tagline'>Elevate your World with</div>
-            <div className='sideBarNav-head'>SAARAS</div>
+            <div className='sideBarNav-head'>SARAS</div>
             </div>
             
             
           
 
             <div className='SB-head-line1'>
-                <div className='sideBar-userIcon-div'><MdPerson className='SB-userIcon'/></div>
+                <div className='sideBar-userIcon-div'>{firebase?.currentUser?<img src='MockDP4.avif'/>:<MdPerson className='SB-userIcon'/>}</div>
                 <div className='sideBar-userInfo'>
-                  <div className='sideBar-userName'>Guest</div>
-                <div className='sideBar-userId'>user123@gmail.com</div>
+                  <div className='sideBar-userName'>{firebase?.currentUser?.displayName ? firebase.currentUser.displayName : 'Guest'}</div>
+                <div className='sideBar-userId'>{firebase?.currentUser?.email ? firebase.currentUser.email :<Link to='/Login' className='side-nav-logIn'>Log in to shop</Link>}</div>
                 </div>
             
             </div>
@@ -66,7 +65,7 @@ export default function SideBarNav({sideBarState=true, sideBarToggle}) {
         <div className='sideBarNav-element-div'>
               {elements.map((item,index)=>
          <NavLink key={index} to={item.path} className='sideBarNav-element' onClick={()=>sideBarToggle(false)}>
-            <div className='sideBarNav-Icon-div'> <img src={item.iconImg} width={25}/> {/* {item.icon} */}</div>
+            <div className='sideBarNav-Icon-div'> {item.icon}</div>
             <div className='sideBarNav-name'>{item.iconName}</div>
          </NavLink>
       )}

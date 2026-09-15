@@ -22,13 +22,11 @@ import CategoryDataProvider from "./ExpandingStoreHeader/CategoryDataProvider";
 import "./Store.css";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
 import CarouselIntro from "./CarouselIntro/CarouselIntro";
-
 import OrderToggle from "./OrderToggle/OrderToggle";
 import MenuCancel from "../../components/MenuCancel/MenuCancel";
 import { LayoutPanelLeft } from "lucide-react";
 import { useScroll } from "../../components/ScrollData/ScrollData";
 import AppliedFilters from "./AppliedFilters/AppliedFilters";
-
 import StoreHeader from "./StoreHeader/StoreHeader";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
