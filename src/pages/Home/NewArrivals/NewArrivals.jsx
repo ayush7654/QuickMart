@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { slideUpVariants } from '../../../components/AnimationVariants';
 import './NewArrivals.css';
 import { getProductById } from '../../../api';
+import CoverflowCarousel from '../../../components/CoverflowCarousel/CoverflowCarousel';
 
 export default function NewArrivals() {
   const [homeProducts, setHomeProducts] = useState([]);
@@ -14,18 +15,19 @@ export default function NewArrivals() {
 
    
    
-     87: { brand: 'Urban Chic', name: 'Urban Chic Check Shirt', thumbnail: 'Home-products-img/Green-shirt.jpg' },
+     87: { brand: 'Urban Chic', name: 'Urban Chic Check Shirt', thumbnail: 'Home-products-img/checked-shirt.jpg' },
       
-     88: { brand: 'Nike', name: 'Nike Air Jordan 1', thumbnail: 'Home-products-img/AirJordanImg.jpg' },
-     101: { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'Home-products-img/hp-airmax.jpg' }
-     
+     88: { brand: 'Nike', name: 'Nike Air Jordan 1', thumbnail: 'Home-products-img/AirJordan1.jpg' },
+     101: { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'Home-products-img/AirPodMax.jpg' },
+     36:{ brand: 'Groceries', name: 'Protein Powder', thumbnail: 'Home-products-img/WheyPro.jpg' }
+     /* whey protien , id :36 */
    
   };
 
   useEffect(() => {
     async function fetchAllProducts() {
       try {
-        const idsToFetch = [174, 87, 88, 101];
+        const idsToFetch = [174, 87, 88, 101,36];
         const loadedProducts = [];
 
         for (const id of idsToFetch) {
@@ -67,12 +69,12 @@ export default function NewArrivals() {
 
     <div key={homeProducts.length}  className="home-Products-container">
       
-        {homeProducts && homeProducts.map((product,index) => (
+     {/*    {homeProducts && homeProducts.map((product,index) => (
 
        <motion.div
     key={product.id}
          variants={slideUpVariants}
-               custom={index * 0.1} // Car
+               custom={index * 0.1} 
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.5 }}
@@ -83,7 +85,11 @@ export default function NewArrivals() {
       path={window.location.search}
     />
   </motion.div>
-        ))}
+        ))} */}
+
+
+<CoverflowCarousel homeProducts={homeProducts && homeProducts}/>
+
       </div>
     </div>
   );

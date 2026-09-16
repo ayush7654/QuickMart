@@ -6,7 +6,7 @@ import { slideUpVariants } from '../../../components/AnimationVariants';
 import HomeProduct from '../HomeProduct/HomeProduct'
 import { getProductById } from '../../../api'
 import { motion } from 'framer-motion';
-
+import CoverflowCarousel from '../../../components/CoverflowCarousel/CoverflowCarousel';
 export default function DiscountProducts() {
   const [homeProducts, setHomeProducts] = useState([]);
 
@@ -28,13 +28,18 @@ export default function DiscountProducts() {
       brand: 'Chanel', 
       name: "Coco Noir Eau De", 
       thumbnail: 'Home-products-img/hp-chanel.jpg' 
+    }, 
+      152: { 
+      brand: 'Sports Accessory', 
+      name: "Tennis Racket", 
+      thumbnail: 'Home-products-img/TennisRacket.jpg' 
     },
   };
 
   useEffect(() => {
     async function fetchAllProducts() {
       try {
-        const idsToFetch = [94, 13, 100, 7];
+        const idsToFetch = [94, 13, 100, 7,152];
         const loadedProducts = [];
         
         for (const id of idsToFetch) {
@@ -70,12 +75,12 @@ export default function DiscountProducts() {
       </div>
       
       <div key={homeProducts.length} className="home-Products-container">
-        {/* 3. Map directly over the merged array */}
-        {homeProducts.map((product,index) => (
+        
+   {/*      {homeProducts.map((product,index) => (
            <motion.div
             key={product.id}
           variants={slideUpVariants}
-           custom={index * 0.1} // Car
+           custom={index * 0.1}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
@@ -85,7 +90,9 @@ export default function DiscountProducts() {
               path={window.location.search}
             />
           </motion.div>
-        ))}
+        ))} */}
+
+        <CoverflowCarousel homeProducts={homeProducts && homeProducts}/>
       </div>
     </div>
   );

@@ -2,14 +2,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation, EffectCoverflow, Resize, Observer } from 'swiper/modules';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css/effect-coverflow';
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
 
 
 
@@ -21,45 +21,66 @@ import 'swiper/css/effect-coverflow';
 export default function Testing() {
 
 
-const CircularCarousel = () => {
-  const cards = [
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
+
+
+  const cardsInfo = [
+     {  brand: 'Prada',  name: "Prada Women Bag",  thumbnail: 'Home-products-img/BluePrada.jpg' },
+
+   
+   
+     { brand: 'Urban Chic', name: 'Urban Chic Check Shirt', thumbnail: 'Home-products-img/Green-shirt.jpg' },
+      
+    { brand: 'Nike', name: 'Nike Air Jordan 1', thumbnail: 'Home-products-img/AirJordanImg.jpg' },
+    { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'Home-products-img/hp-airmax.jpg' },
+    { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'Home-products-img/hp-airmax.jpg' }
+     
+   
   ];
+
+  const [currentCard, setCurrentCard] = useState(3);
   
   return (
 <div className="testing-div" >
-<div className="carousel-container">
+<div className="coverflow-carousel">
+
       <Swiper
-        modules={[Pagination, Navigation, EffectCoverflow, Resize, Observer]}
-        effect={'coverflow'}
-        grabCursor={true}
+        effect="coverflow"
+
         centeredSlides={true}
-        slidesPerView={'auto'}
-        loop={true}
-        observer={true}
-        observeParents={true}
+        slidesPerView="auto"
+
+        spaceBetween={15}
+
+        grabCursor={true}
+
+        onSlideChange={(swiper) => {
+          setCurrentCard(swiper.realIndex);
+        }}
+
         coverflowEffect={{
-          rotate: 0,
-          stretch: 15,     // Space cards slightly so side cards peek out
-          depth: 120,      // Push background cards back
-          modifier: 2,     // Scale difference intensity
+          rotate: 35,
+          stretch: 0,
+          depth: 150,
+          modifier: 1,
           slideShadows: false,
         }}
-        pagination={{ clickable: true }}
-        navigation={true}
-        className="mySwiper"
+
+        modules={[EffectCoverflow]}
       >
-        {cards.map((card) => (
-          <SwiperSlide key={card.id} className="carousel-slide-item">
-            <div className="carousel-card">
-              <span className="card-number">{card.id}</span>
-            </div>
-          </SwiperSlide>
-        ))}
+    {cardsInfo.map((card, index) => (
+  <SwiperSlide key={index}>
+    <div
+      className={`coverflow-card ${
+        currentCard === index ? "active-card" : ""
+      }`}
+      style={{ backgroundImage: `url(${card.thumbnail})` }}
+    >
+      {card.name}
+    </div>
+  </SwiperSlide>
+))}
       </Swiper>
+
     </div>
 
 </div>
@@ -71,7 +92,7 @@ const CircularCarousel = () => {
   );
 
   
-}
+
 
 
 }
