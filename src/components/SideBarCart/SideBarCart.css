@@ -1,19 +1,19 @@
 
 .cart-sidebar{
  position: fixed;
-  top: 1rem; 
+  top: 2rem; 
   right: 1rem;
   align-self: flex-start;
-  height: 95vh;
+  height: calc(95vh - 1rem);
   overflow-y: scroll;
   scrollbar-width: none;
     background-color: transparent;
   margin-top: 0rem;
-  z-index:999;
+  z-index:9999;
 box-shadow: 0 10px 20px rgba(50,50,50, 0.2);
 
 
-z-index: 999;
+
 
  transition: width 0.5s cubic-bezier(0.2, 0.9, 0.1, 1);
   border-radius: 10px;

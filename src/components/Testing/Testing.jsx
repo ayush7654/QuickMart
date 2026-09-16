@@ -1,43 +1,17 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, X } from 'lucide-react';
-import { Filter } from 'lucide-react';
-// 1. Feather Icons (fi)
-import { 
-  FiHome as FiHomeIcon, 
-  FiShoppingBag as FiShoppingBagIcon, 
-  FiUser as FiUserIcon, 
-  FiHelpCircle as FiHelpCircleIcon, 
-  FiHeadphones as FiHeadphonesIcon 
-} from 'react-icons/fi';
 
-// 2. Material Design (md)
-import { 
-  MdHome as MdHomeIcon, 
-  MdStore as MdStoreIcon, 
-  MdAccountCircle as MdAccountCircleIcon, 
-  MdHelp as MdHelpIcon, 
-  MdHeadset as MdHeadsetIcon 
-} from 'react-icons/md';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation, EffectCoverflow, Resize, Observer } from 'swiper/modules';
 
-// 3. FontAwesome (fa)
-import { 
-  FaHome as FaHomeIcon, 
-  FaStore as FaStoreIcon, 
-  FaUser as FaUserIcon, 
-  FaQuestion as FaQuestionIcon, 
-  FaHeadphones as FaHeadphonesIcon 
-} from 'react-icons/fa';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-coverflow';
 
-// 4. Heroicons (hi)
-import { 
-  HiHome as HiHomeIcon, 
-  HiShoppingBag as HiShoppingBagIcon, 
-  HiUser as HiUserIcon, 
-  HiQuestionMarkCircle as HiQuestionMarkCircleIcon, 
-  HiSupport as HiSupportIcon 
-} from 'react-icons/hi';
+
 
  import "./Testing.css";
 
@@ -47,70 +21,47 @@ import {
 export default function Testing() {
 
 
-  const iconGroups = [
-    {
-      name: "Feather Icons (react-icons/fi)",
-      icons: [
-        { label: "Home", component: <FiHomeIcon /> },
-        { label: "Shop", component: <FiShoppingBagIcon /> },
-        { label: "Account", component: <FiUserIcon /> },
-        { label: "Question Mark", component: <FiHelpCircleIcon /> },
-        { label: "Headphone", component: <FiHeadphonesIcon /> },
-      ]
-    },
-    {
-      name: "Material Design (react-icons/md)",
-      icons: [
-        { label: "Home", component: <MdHomeIcon /> },
-        { label: "Shop", component: <MdStoreIcon /> },
-        { label: "Account", component: <MdAccountCircleIcon /> },
-        { label: "Question Mark", component: <MdHelpIcon /> },
-        { label: "Headphone", component: <MdHeadsetIcon /> },
-      ]
-    },
-    {
-      name: "FontAwesome (react-icons/fa)",
-      icons: [
-        { label: "Home", component: <FaHomeIcon /> },
-        { label: "Shop", component: <FaStoreIcon /> },
-        { label: "Account", component: <FaUserIcon /> },
-        { label: "Question Mark", component: <FaQuestionIcon /> },
-        { label: "Headphone", component: <FaHeadphonesIcon /> },
-      ]
-    },
-    {
-      name: "Heroicons (react-icons/hi)",
-      icons: [
-        { label: "Home", component: <HiHomeIcon /> },
-        { label: "Shop", component: <HiShoppingBagIcon /> },
-        { label: "Account", component: <HiUserIcon /> },
-        { label: "Question Mark", component: <HiQuestionMarkCircleIcon /> },
-        { label: "Headphone", component: <HiSupportIcon /> },
-      ]
-    }
+const CircularCarousel = () => {
+  const cards = [
+    { id: 1 },
+    { id: 2 },
+    { id: 3 },
+    { id: 4 },
   ];
-
   
   return (
 <div className="testing-div" >
-<div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
-      <h2>React Icons Comparison</h2>
-      {iconGroups.map((group, index) => (
-        <div key={index} style={{ marginBottom: '24px' }}>
-          <h3 style={{ fontSize: '16px', color: '#555', marginBottom: '8px' }}>
-            {group.name}
-          </h3>
-          <div style={{ display: 'flex', gap: '24px', alignItems: 'center', background: '#f9f9f9', padding: '15px', borderRadius: '8px' }}>
-            {group.icons.map((item, idx) => (
-              <div key={idx} title={item.label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', fontSize: '24px' }}>
-                {item.component}
-                <span style={{ fontSize: '11px', color: '#777' }}>{item.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
+<div className="carousel-container">
+      <Swiper
+        modules={[Pagination, Navigation, EffectCoverflow, Resize, Observer]}
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        loop={true}
+        observer={true}
+        observeParents={true}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 15,     // Space cards slightly so side cards peek out
+          depth: 120,      // Push background cards back
+          modifier: 2,     // Scale difference intensity
+          slideShadows: false,
+        }}
+        pagination={{ clickable: true }}
+        navigation={true}
+        className="mySwiper"
+      >
+        {cards.map((card) => (
+          <SwiperSlide key={card.id} className="carousel-slide-item">
+            <div className="carousel-card">
+              <span className="card-number">{card.id}</span>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
+
 </div>
 
 
@@ -123,4 +74,4 @@ export default function Testing() {
 }
 
 
-
+}

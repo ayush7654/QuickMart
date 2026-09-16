@@ -1,11 +1,16 @@
 .sideBarNav{
     background-color: rgb(255, 255, 255);
     height: 100vh;
-    width: 100%;
+    width: calc(100vw - 2rem);
+    
     position: fixed;
-    top:0rem;
+  top: 2rem; 
+  right: 1rem;
+  align-self: flex-start;
+  height: calc(95vh - 1rem);
     z-index: 9999;
-      clip-path: inset(0 0 0 100%);
+      border-radius: 10px;
+      clip-path: inset(0 100% 0 0);
     border-right:1px solid rgb(200,200,200);
  transition: width 0.5s cubic-bezier(0.2, 0.9, 0.1, 1);
    transition: clip-path  0.5s cubic-bezier(0.2, 0.9, 0.1, 1);
@@ -13,7 +18,7 @@
 
 
 .sideBarNav.open {
-  clip-path: inset(0 0 0 0%);
+  clip-path: inset(0 0 0 0);
 }
 
 .sideBarNav-content{
