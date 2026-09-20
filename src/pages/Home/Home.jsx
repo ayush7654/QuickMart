@@ -9,7 +9,7 @@ import ExploreCategory from "./ExploreCategory/ExploreCategory";
 import NewArrivals from "./NewArrivals/NewArrivals";
 import TrendingComponent from "./TrendingComponent/TrendingComponent";
 
-import Categories from "./Categories/Categories";
+
 
 import HomeFooter from "./HomeFooter/HomeFooter";
 
@@ -70,6 +70,7 @@ const {isAtTop} = useStoreData();
   
    
           <BrandsSection/>
+    
       <HomeFooter/>
             </div>
    

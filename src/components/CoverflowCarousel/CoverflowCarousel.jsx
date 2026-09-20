@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper/modules";
 import HomeProduct from "../../pages/Home/HomeProduct/HomeProduct";
+import CarouselNav from "../CarouselNav/CarouselNav";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
@@ -81,6 +82,16 @@ export default function CoverflowCarousel({ homeProducts }) {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="home-products-nav">
+         
+            <CarouselNav 
+            list={homeProducts}
+            activeIndex={currentCard}
+            setActiveIndex={setCurrentCard}
+            color={'0,100,255'}
+            />
+        
+      </div>
     </motion.div>
   );
 }

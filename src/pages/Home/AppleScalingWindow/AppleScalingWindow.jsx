@@ -3,6 +3,7 @@ import React, { useState ,useRef , useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollButton from "../../../components/ScrollingButton/ScrollingButton";
 import TextAnimation from "../../../components/TextAnimation";
+import CarouselNav from "../../../components/CarouselNav/CarouselNav";
 import './AppleScalingWindow.css'
 
 const AppleWindowInfo = [
@@ -160,13 +161,15 @@ className='ap-head-wrapper'>
             </div>
 
             <div className="window-nav-wrapper">
-              {AppleWindowInfo.map((_, index) => (
-                <div
-                  key={index}
-                  className={`pagination-dot ${currentWindow === index ? 'active' : ''}`}
-                  onClick={() => setCurrentWindow(index)} // Allows clicking dots to jump
-                />
-              ))}
+           
+                   <CarouselNav 
+                          list={AppleWindowInfo}
+                          activeIndex={currentWindow}
+                          setActiveIndex={setCurrentWindow}
+                        
+                          
+                          />
+                      
             </div>
           </div>
 

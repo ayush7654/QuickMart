@@ -60,12 +60,11 @@ export default function DiscountProducts() {
   }, []);
 
   return (
-    <div  id='home-product-div' className="discount-home-Products-div">
+    <div  className='home-product-div'>
       <div id='home-product-head'>
             
         <span>Absolute Steals</span>
          <span id='home-product-tagline'>Big savings. Unbelievable prices.</span>
-     {/*    <span className='view-collection-btn'>View Collection →</span> */}
          <div className="head-dot-wrapper">
       <span className="head-dot red"></span>
       <span className="head-dot blue" ></span>
@@ -75,23 +74,6 @@ export default function DiscountProducts() {
       </div>
       
       <div key={homeProducts.length} className="home-Products-container">
-        
-   {/*      {homeProducts.map((product,index) => (
-           <motion.div
-            key={product.id}
-          variants={slideUpVariants}
-           custom={index * 0.1}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-          >
-            <HomeProduct
-              product={product}
-              path={window.location.search}
-            />
-          </motion.div>
-        ))} */}
-
         <CoverflowCarousel homeProducts={homeProducts && homeProducts}/>
       </div>
     </div>

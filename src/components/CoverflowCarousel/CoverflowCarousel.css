@@ -3,7 +3,7 @@
   width: 100%;
   overflow: hidden;
   border: 0px solid red;
-  width: 100%;  /* 90vw */
+  width: 100%;  
 }
 
 .coverflow-carousel .swiper {
@@ -60,6 +60,13 @@
 .coverflow-carousel .swiper-slide-active .coverflow-card {
 
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.home-products-nav{
+
+    display: flex;
+    align-items: center;
+    
 }
 
 

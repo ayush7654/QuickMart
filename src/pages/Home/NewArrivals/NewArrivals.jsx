@@ -52,10 +52,9 @@ export default function NewArrivals() {
   console.log('product is',homeProducts)
 
   return (
-    <div id='home-product-div' className="newArrivals-home-Products-div">
+    <div className='home-product-div' id="newArrivals-home-Products-div">
       <div id='home-product-head'>
         New Arrivals
-     {/*    <span className='view-collection-btn'>View Collection →</span> */}
    <span id='home-product-tagline'>Check out what's latest. </span>
      <div>
                 <div className="head-dot-wrapper">
@@ -69,25 +68,6 @@ export default function NewArrivals() {
 
     <div key={homeProducts.length}  className="home-Products-container">
       
-     {/*    {homeProducts && homeProducts.map((product,index) => (
-
-       <motion.div
-    key={product.id}
-         variants={slideUpVariants}
-               custom={index * 0.1} 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
-
-  >
-    <HomeProduct
-      product={product}
-      path={window.location.search}
-    />
-  </motion.div>
-        ))} */}
-
-
 <CoverflowCarousel homeProducts={homeProducts && homeProducts}/>
 
       </div>

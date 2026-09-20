@@ -72,9 +72,21 @@
 
 }
 
-  #home-product-div{
+  .home-product-div{
 
-padding-bottom: 2rem;
+ width: 100%;
+    min-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+
+margin-bottom: 4rem;
+    border: 1px solid blue;
  
   }
 
@@ -87,14 +99,15 @@ padding-bottom: 2rem;
       align-items: center;
        justify-content: center;
        text-align: center;
-   padding: 3rem 0rem;
+   padding: 0rem 0rem;
   font-family: var(--font-subheading);
   font-family: 'Jost';
          text-transform: capitalize;
-    /*      text-transform: uppercase; */
 
-             font-size: 3.5rem;
+
+             font-size: 4rem;
                 font-weight: 400;
+                border: 0px solid green;
              
      
               
@@ -142,7 +155,8 @@ padding-bottom: 2rem;
 
     width: 90%;
   display: flex; 
- border: 0px solid rgb(25, 91, 191);
+  
+ border: px solid rgb(25, 91, 191);
 
   }
 

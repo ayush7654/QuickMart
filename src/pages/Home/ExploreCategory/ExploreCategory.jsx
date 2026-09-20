@@ -4,20 +4,23 @@ import gsap from 'gsap';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import CarouselNav from '../../../components/CarouselNav/CarouselNav';
+import { ActiveVideoPlayer } from './ActiveVideoPlayer';
 import './ExploreCategory.css';
 
 // Register the plugin
 gsap.registerPlugin(Observer);
 
 const cardsList = [
-  { id: 0, img: 'CategoriesImg/FC-Clothing7Rec.jpg', name: 'Clothing', heading: { l1: 'Signature styles', l2: ' for every personal', l3: 'journey.' } },
-  { id: 1, img: 'CategoriesImg/FC-Tech2Rec.jpg', name: 'Techology', heading: { l1: 'Next generation', l2: 'innovation in your', l3: 'hands.' }},
-  { id: 2, img: 'CategoriesImg/FC-Sports8.jpg', name: 'Sports', heading: { l1: 'Fueling your', l2: 'pursuit of peak', l3: ' performance.' }},
-  { id: 3, img: 'CategoriesImg/FC-Decor2Rec.png', name: 'Decor', heading: { l1: 'Refining the art of', l2: 'living well.', l3: '' }},
-    { id: 4, img: 'CategoriesImg/FC-Skincare5Rec.jpg', name: 'Skincare', heading: { l1: 'The ultimate ritual', l2: 'for healthy skin.', l3: '' } },
-      { id: 5, img: 'CategoriesImg/FC-Adventure4.jpg', name: 'Adventure', heading: { l1: 'Every journey', l2: 'begins with better', l3: ' gear.' } },
-  { id: 6, img: 'CategoriesImg/FC-Shoes4.jpg', name: 'Footwear', heading: { l1: 'Exceptional', l2: 'craftsmanship in', l3: 'every single step.' } },
-  { id: 7, img: 'CategoriesImg/FC-Essentials8.jpg', name: 'Essentials', heading: { l1: 'Essentials for', l2: 'daily use.', l3: '' }},
+
+    { id: 0,  name: 'Clothing', video:'clothing-vid.mp4', snap:'clothing-snap.jpg', thumbnail:'clothing-tn.jpg',  path:'', heading: { l1: 'Signature styles', l2: ' for every personal', l3: 'journey.' } },
+  { id: 1, name: 'Technology',video:'technology-vid.mp4',snap:'technology-snap.jpg', thumbnail:'technology-tn.jpg', path:'',  heading: { l1: 'Next generation', l2: 'innovation in your', l3: 'hands.' }},
+      { id:2,  name: 'Decor',video:'decor-vid.mp4',snap:'decor-snap.jpg', thumbnail:'decor-tn.jpg',  path:'',  heading: { l1: 'Refining the art of', l2: 'living well.', l3: '' }},
+        { id: 3,  name: 'Adventure',video:'adventure-vid.mp4',snap:'adventure-snap.jpg', thumbnail:'adventure-tn.jpg',  path:'',  heading: { l1: 'Every journey', l2: 'begins with better', l3: ' gear.' } },
+            { id:4,  name: 'Sports',video:'sports-vid.mp4',snap:'sports-snap.jpg', thumbnail:'sports-tn.jpg',  path:'',  heading: { l1: 'Fueling your', l2: 'pursuit of peak', l3: ' performance.' }},
+          { id: 5,name: 'Essentials',video:'grocery-vid.mp4',snap:'grocery-snap.jpg', thumbnail:'grocery-tn.jpg', path:'',  heading: { l1: 'Essentials for', l2: 'daily use.', l3: '' }},
+  { id: 6, name: 'Skincare',video:'Skincare-vid.mp4',snap:'skincare-snap.jpg', thumbnail:'skincare-tn.jpg',  path:'', heading: { l1: 'The ultimate ritual', l2: 'for healthy skin.', l3: '' } },
+    { id: 7, name: 'Footwear',video:'footwear-vid.mp4', snap:'footwear-snap.jpg', thumbnail:'footwear-tn.jpg', path:'',  heading: { l1: 'Exceptional', l2: 'craftsmanship in', l3: 'every single step.' } },
 ];
 
 export default function ExploreCategory() {
@@ -99,7 +102,7 @@ useEffect(() => {
   }, []);
 
   return (
-    <div className='ExploreCategory-wrapper' style={{ backgroundImage: `url(${cardsList[activeIndex].img})` }}>
+    <div className='ExploreCategory-wrapper' style={{ backgroundImage: `url(ExploreCategory/${cardsList[activeIndex].snap})` }}>
 
        
       <div className='image-blur'></div>
@@ -117,40 +120,7 @@ useEffect(() => {
     
 
       <div className="test-carousel-viewport">
-      <div className="exploreCategory-head-wrapper">
-  <div className='exploreCategory-head'>
     
-    {/* Animated Name Container */}
-    <div className="category-name-viewport">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeIndex}
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -20, opacity: 0 }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        >
-         <div className='fading-text-gradient'>
-          {cardsList[activeIndex].name}
-          </div> 
-        </motion.div>
-      </AnimatePresence>
-    </div>
-
-   {/*  <div className="pagination-container">
-      {cardsList.map((_, index) => (
-        <div
-          key={index}
-          className={`pagination-dot ${activeIndex === index ? 'active' : ''}`}
-          onClick={() => setActiveIndex(index)} 
-        />
-      ))}
-    </div> */}
-  </div>
-</div>
-  
-
-        
         <div className="test-carousel-window" ref={containerRef} data-lenis-prevent>
           <div
             className="test-carousel-track"
@@ -158,16 +128,32 @@ useEffect(() => {
               transform: `translateX(calc(-${activeIndex} * (var(--test-collapsed-width) + var(--test-gap))))`,
             }}
           >
-          
-            {cardsList.map((card, index) => (
-              <div
-                key={card.id}
-                className={`test-category-card ${activeIndex === index ? 'test-active' : ''}`}
-                onClick={() => setActiveIndex(index)}
-                style={{ backgroundImage: `url(${card.img})` }}
-              >
-             
-                <div className="test-card-content-wrapper">
+   
+
+
+
+          {cardsList.map((card, index) => {
+        const isActive = index === activeIndex;
+
+        return (
+          <div key={card.id} 
+           className={`test-category-card ${activeIndex === index ? 'test-active' : ''}`}
+           onClick={() => setActiveIndex(index)}
+          >
+            {isActive ? (
+              // 🎥 Render the heavy video ONLY when it is active
+              <ActiveVideoPlayer 
+                src={`ExploreCategory/${card.video}`} 
+                poster={`ExploreCategory/${card.thumbnail}`}
+              />
+            ) : (
+              // 🖼️ Render a lightweight preview/thumbnail for inactive items
+              <div className="video-placeholder" onClick={() => setActiveIndex(index)}>
+                <img src={`ExploreCategory/${card.thumbnail}`} alt={card.name} />
+               {/*  <button className="play-trigger-btn">▶</button> */}
+              </div>
+            )}
+            <div className="test-card-content-wrapper">
                     <div className="test-card-title"> {card.name} </div>
                   <div className="test-card-content">
                        <div id='category-head-line'>{card.heading.l1}</div>
@@ -180,13 +166,26 @@ useEffect(() => {
                   </div>
                 
                 </div>
-               
-              </div>
-            ))}
+          </div>
+        );
+      })}
+
           </div>
         </div>
+          <div id='explore-category-nav' className="pagination-container">
+          <CarouselNav
+    list={cardsList}
+    activeIndex={activeIndex}
+    setActiveIndex={setActiveIndex}/>
+    </div>  
       </div>
     
     </div>
   );
 }
+
+
+
+ {/*  
+  add this right after <video/>
+    */}
