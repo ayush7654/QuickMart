@@ -61,6 +61,9 @@ setSearchBarToggle(i)
       <StoreDataProvider>
 
     <div  className={`root${isHomePage ? 'home' : 'nothome'}`} style={{position:"relative"}}>
+
+  <div className="middleLine"></div>
+
 {showOverlay && (
   <div className="screen-overlay" onClick={() => setShowOverlay(false)} />
 )}

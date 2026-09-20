@@ -44,7 +44,7 @@ background-repeat: no-repeat;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items:start;
+  align-items:center;
   justify-content: start;
   padding: 40px 0;
 
@@ -87,7 +87,7 @@ background-image:
   /* The track movement now uses the same variable as the cards */
   transition: var(--test-main-transition);
   will-change: transform;
-  margin-left: 100%;
+/*   margin-left: 100%; */
     margin-top: 5rem;
     border: 0px solid red;
 
@@ -108,13 +108,15 @@ background-image:
   filter: brightness(.85);
   border: 1px solid rgb(200,200,200);
   overflow: hidden;
+
 }
 
 .test-category-card.test-active {
   width: var(--test-expanded-width);
   min-width: var(--test-expanded-width);
   filter: brightness(1);
-  border-color:rgba(255, 255, 255, 0.600) ;
+  border-color:rgba(255, 255, 255, 0.600);
+
    
 }
 

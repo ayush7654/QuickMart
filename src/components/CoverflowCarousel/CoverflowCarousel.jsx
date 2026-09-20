@@ -69,14 +69,7 @@ export default function CoverflowCarousel({ homeProducts }) {
               }`}
              
             >
-           {/*    <img
-                src={product.thumbnail}
-                alt={product.title}
-              />
-
-              <div className="coverflow-card-info">
-                <h3>{product.title}</h3>
-              </div> */}
+        
               <HomeProduct product={product}/>
             </div>
           </SwiperSlide>

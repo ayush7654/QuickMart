@@ -97,7 +97,17 @@ background-color: red;
   background-color: green;
 }
 
-
+.middleLine {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px; /* Adjust thickness (e.g., 1px or 2px) */
+  height: 100vh;
+  background-color: #e0e0e0; /* Change to your preferred line color */
+  pointer-events: none; /* Keeps it from blocking mouse clicks */
+  z-index: 10; /* Adjust if it needs to sit above or below other elements */
+}
 
 
 
