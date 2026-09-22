@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import HomeProduct from '../HomeProduct/HomeProduct';
 import { motion } from 'framer-motion';
 import { slideUpVariants } from '../../../components/AnimationVariants';
+
 import './NewArrivals.css';
 import { getProductById } from '../../../api';
 import CoverflowCarousel from '../../../components/CoverflowCarousel/CoverflowCarousel';
@@ -11,14 +12,15 @@ export default function NewArrivals() {
 
   // 1. Define your overrides for these specific IDs
   const arrivalOverrides = {
-     174: {  brand: 'Prada',  name: "Prada Women Bag",  thumbnail: 'Home-products-img/BluePrada.jpg' },
-
-   
-   
-     87: { brand: 'Urban Chic', name: 'Urban Chic Check Shirt', thumbnail: 'Home-products-img/checked-shirt.jpg' },
-      
+        13: { 
+      brand: 'Annibale', 
+      name: "African Cherry Table", 
+      thumbnail: "Home-products-img/SideTable.jpg" 
+    },
+     87: { brand: 'Urban Chic', name: 'Urban Chic Check Shirt', thumbnail: 'Home-products-img/Green-shirt.jpg' },
+           101: { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'Home-products-img/AirPodMax.jpg' },
      88: { brand: 'Nike', name: 'Nike Air Jordan 1', thumbnail: 'Home-products-img/AirJordan1.jpg' },
-     101: { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'Home-products-img/AirPodMax.jpg' },
+
      36:{ brand: 'Groceries', name: 'Protein Powder', thumbnail: 'Home-products-img/WheyPro.jpg' }
      /* whey protien , id :36 */
    
@@ -27,7 +29,7 @@ export default function NewArrivals() {
   useEffect(() => {
     async function fetchAllProducts() {
       try {
-        const idsToFetch = [174, 87, 88, 101,36];
+        const idsToFetch = [13, 87, 101,88,36];
         const loadedProducts = [];
 
         for (const id of idsToFetch) {
@@ -53,6 +55,7 @@ export default function NewArrivals() {
 
   return (
     <div className='home-product-div' id="newArrivals-home-Products-div">
+  
       <div id='home-product-head'>
         New Arrivals
    <span id='home-product-tagline'>Check out what's latest. </span>

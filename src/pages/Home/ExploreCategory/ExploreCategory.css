@@ -18,7 +18,7 @@ background-repeat: no-repeat;
   --test-expanded-width: 550px;
   --test-gap: 40px;
   /* Both transitions MUST be identical to stay in sync */
-  --test-main-transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  --test-main-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .explore-checked-wall{
@@ -34,9 +34,9 @@ background-repeat: no-repeat;
   left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(25px);
     opacity: 1;
-    background-color: rgba(0, 0, 0, .25); /* Adjust 0.6 for darkness */
+    background-color: rgba(0, 0, 0, .3);
 }
 
 .test-carousel-viewport {
@@ -53,15 +53,15 @@ background-repeat: no-repeat;
   border: 0px solid red;
 z-index: 10;
 background-image: 
-    linear-gradient(rgb(255, 255, 255,.2) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(255, 255, 255,.2) 1px, transparent 1px);
+    linear-gradient(rgba(200,200,200, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(175, 175, 175,.2) 1px, transparent 1px);
 
 
   /* Control the grid size */
   background-size: 100px 100px, 100px 100px, 100% 100%;
   
   /* Align the grid and ensure the gradient covers the whole area */
-  background-position: 0 40px, 0 0, center;
+  background-position: 0 100px, 0 0, center;
   
   /* Prevent the gradient from repeating if the div is large */
   background-repeat: repeat, repeat, no-repeat;
@@ -105,7 +105,7 @@ background-image:
   position: relative;
 
   transition: var(--test-main-transition);
-  filter: brightness(.85);
+  filter: brightness(.75);
   border: 1px solid rgb(200,200,200);
   overflow: hidden;
 
@@ -170,57 +170,7 @@ white-space: nowrap;
 .test-active .test-card-content-wrapper { opacity: 1; transition-delay: 0.3s; }
 
 
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translate(-50%, -50%);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-}
 
-/* The Arrows inside the cursor */
-.cursor-arrows {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  opacity: 0; /* Hidden by default */
-  transition: opacity 0.3s ease;
-}
-
-.cursor-circle{
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-}
-
-/* 3. The Hover Trigger for the Capsule Shape */
-.test-category-card:hover ~ .custom-cursor,
-.ExploreCategory-wrapper:has(.test-category-card:hover) .custom-cursor {
-  width: 80px;         /* Becomes wider */
-  height: 50px;         /* Shorter than width for pill shape */
-  border-radius: 30px;  /* Capsule look */
-  background-color: rgba(0, 0, 0, 0.6); 
-  backdrop-filter: blur(4px); /* Adds that premium glass effect */
-}
-
-/* Show arrows on hover */
-.test-category-card:hover ~ .custom-cursor .cursor-arrows,
-.ExploreCategory-wrapper:has(.test-category-card:hover) .custom-cursor .cursor-arrows {
-  opacity: 1;
-}
 
 .test-card-title{
   color: rgb(0, 0, 0);
@@ -263,8 +213,43 @@ border: 1px solid rgb(254, 250, 250);
 
 
 
-#explore-category-nav{
-  margin-top: 9rem;
+.category-nav-wrapper{
+ position: absolute;
+ bottom:50%;
+ transform: translateY(50%);
+ border: 0px solid blue;
+ width: 90%;
+ display: flex;
+ justify-content: center;
+ z-index: 9;
+
+}
+
+.category-dot-nav{
+  position: absolute;
+  bottom: 3rem;
+}
+
+.category-nav{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+
+}
+
+.category-nav-btn{
+  width: 3rem;
+  aspect-ratio: 1/1;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: grid;
+  place-items: center;
+  border-radius:50% ;
+  color:rgb(50,50,50);
+  cursor: pointer;
+}
+.category-nav-btn:hover{
+  background-color: white;
 }
 
 .video-placeholder{

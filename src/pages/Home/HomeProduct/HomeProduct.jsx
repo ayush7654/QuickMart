@@ -60,8 +60,9 @@ const handleTransitionNavigation = (id) => {
 
       <div className="card-content">
  <div className="card-header">
+   <span className="price-tag">${price}</span>
           <h2 className="product-title">{name}</h2>
-           <span className="price-tag">${price}</span>
+          
         </div>
 
        

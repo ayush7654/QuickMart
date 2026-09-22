@@ -38,7 +38,7 @@ const itemVariants = {
 
   return (
       <div className="trending-products-div">
-             <div id='home-section-head'>The Wardrobe Overhaul Series</div>
+             <div id='home-section-head'>Wardrobe Overhaul Series</div>
                 <div className="head-dot-wrapper">
       <span className="head-dot red"></span>
       <span className="head-dot blue" ></span>
