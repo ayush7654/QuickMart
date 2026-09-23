@@ -2,12 +2,34 @@ import { useEffect, useRef } from "react";
 import "./ScrollingAnimation.css";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const containerVariants = {
+
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15, // Delay between text 1 and text 2
+    },
+  },
+};
+
+// Individual child variants for opacity and movement
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.8, ease: "easeOut" } 
+  },
+};
 
 export default function ScrollingAnimation({ isAtTop }) {
   const sectionRef = useRef(null);
   const mainImgRef = useRef(null);
+
 
   useEffect(() => {
     // Force ScrollTrigger to update perfectly in sync with Lenis's layout engine
@@ -26,6 +48,7 @@ export default function ScrollingAnimation({ isAtTop }) {
           // FIX: Prevents layout breaking from 3D body transitions 
           // and stops Lenis scrolling conflict jitters dead in their tracks.
           pinType: "transform", 
+ 
         }
       });
 
@@ -66,26 +89,16 @@ export default function ScrollingAnimation({ isAtTop }) {
 
       tl.from(".grid-item", {
         scale: 1.5,
-        opacity: 0,
+        opacity: .5,
         x: (i) => (i % 2 === 0 ? -1200 : 1200),
-        y: (i) => (i < 2 ? -800 : 800),
+        y: (i) => (i < 2 ? -100 : 100),
         ease: "expo.out",
         duration: 1,
       }, 0); 
 
-      gsap.fromTo(".scroll-animation-text-wrapper",
-        { y: "-20vh" },
-        {
-          y: "100vh",
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "+=2000",
-            scrub: true,
-          }
-        }
-      );
+
+
+      
 
     }, sectionRef);
 
@@ -97,8 +110,35 @@ export default function ScrollingAnimation({ isAtTop }) {
 
   return (
     <div className="scroll-section" ref={sectionRef}>
-      <div className="grid-item item-1" ></div>
-      <div className="grid-item item-2" ></div>
+      <motion.div 
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.8 }} // Triggers when 40% in view, runs only once
+      className="grid-item item-1" >
+        <motion.div  
+        variants={itemVariants}
+        className="grid-item-text-wrapper grid-text1">
+        <span className="grid-item-text">Elegance</span>
+            <span className="grid-item-subtext grid-item-line2">in every quiet detail.</span>
+          </motion.div>
+        
+
+      </motion.div>
+      <motion.div 
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.8 }}
+      className="grid-item item-2" >
+           <motion.div 
+            variants={itemVariants}
+           className="grid-item-text-wrapper grid-text2">
+        <span className="grid-item-subtext">Tailored to absolute</span>
+            <span className="grid-item-text grid-item-line2">perfection.</span>
+          </motion.div>
+      </motion.div>
+
 
       <div className="grid-container-wrapper">
         <div className="grid-content">
@@ -125,18 +165,6 @@ export default function ScrollingAnimation({ isAtTop }) {
         </div>
       </div>
       
-      <div className="scroll-animation-text-wrapper">
- <div className="scrolling-animation-text">
-{/*   <span className="bold">PREMIUM</span>  */}
-  </div>
-{/* <span className="horizontal-line"></span> */}
-        <div className="scrolling-animation-text">
-            <span className="subbold">Prestige </span> 
-            <span className="subbold">Premium</span> 
-            <span className="subbold"> Luxury</span> 
-
-         </div>
-      </div>
     </div>
   );
 }
