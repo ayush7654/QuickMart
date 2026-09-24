@@ -126,6 +126,8 @@ onLeaveBack: () => {
  <SolarImgMain 
  opacityDesc={opacityDesc}
  opacityIncr={opacityIncr}/>
+
+ 
  <div className='solar-collection-head-wrapper'>
     <div className="solar-head-icon-wrapper">
         <div> <img src='HomeCollections/SolarPackImages/solarIcon1.png'/>  </div>
@@ -138,6 +140,9 @@ onLeaveBack: () => {
     <div className="solar-sub-head">The UV-Control Collection</div>
  </div>
    </div>
+
+
+
    <div className="solar-stack-wrapper">
        <div className="solar-stack" ref={containerRef}>
       {items.map((item, index) => (
@@ -145,7 +150,10 @@ onLeaveBack: () => {
           className={`solar-stack-item ${item.stacked?'solar-stacked':''} `  }
           key={item.id} 
           style={{ 
-            top: `${15 + (index * 10)}vh`,
+            top: `${
+    (window.innerWidth < 800 ? 60 : 15) +
+    index * (window.innerWidth < 800 ? 0 : 10)
+  }vh`,  
             // Adding a z-index ensures newer cards stay on top
             zIndex: index,
       
@@ -174,7 +182,7 @@ onLeaveBack: () => {
 
     </div>
     </div>
-    <div className='collection-product-wrapper'>   
+    <div id='solar-products-wrapper' className='collection-product-wrapper'>   
    <div  id='home-product-head'>SolarPack Collection
 
          <div className="head-dot-wrapper">

@@ -3,6 +3,9 @@
     height: 100%;
     display: flex;
     justify-content: start;
+    align-items: end;
+    position: relative;
+
  
 
 }
@@ -10,15 +13,37 @@
 .solar-Img-wrapper-left{
     
     
-    position: relative;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0px solid red;
+    display:flex;
+    justify-content: left;
+   /*   left: -5rem; */
  
 }
 
-.solar-Img-wrapper-left img{
-    position: absolute;
-    width: 600px;
- 
+.solar-Img-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+}
 
+.solar-Img-container img{
+  
+    width: 600px;
+    position: absolute;
+    
+
+}
+
+#solar-img-left{
+    left: 0rem;
+}
+
+#solar-img-right{
+    left: 15rem;
 }
 
 .solar-blur-Img{
@@ -26,12 +51,51 @@
    
 }
 
-
+.solar-Img-wrapper-right{
+ border: 0px solid yellow;
+ width: 100%;
+ height: 100%;
+   position: absolute;
+     display:flex;
+    justify-content: right;
+   /* right: -10rem; */
+  
+}
 
 
 .solar-Img-wrapper-right img{
-    position: absolute;
-    width: 950px;
-    /* right: -20rem; */
+  
+
+  /*    right: -10rem;  */
 
 }
+
+ @media(max-width:1200px){
+    .solar-Img-container img{
+  
+    width: 500px; 
+    position: absolute;
+
+}
+
+
+
+ }
+
+  @media(max-width:1000px){
+    .solar-Img-container img{
+  
+   /*  width: 400px; */
+    position: absolute;
+
+}
+
+#solar-img-right{
+    /* display: none;  */
+}
+
+ }
+
+   @media(max-width:800px){
+   
+   }
