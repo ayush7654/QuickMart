@@ -23,7 +23,7 @@ const containerVariants = {
      <div className="collections-wrapper">
 
            <div id='home-section-head'>
-            Collections Curated For You.
+            Exclusive Picks
            
             
              </div> 
