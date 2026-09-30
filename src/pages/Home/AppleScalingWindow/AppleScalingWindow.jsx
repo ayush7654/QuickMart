@@ -109,6 +109,8 @@ export default function AppleScalingWindow() {
 
   return (
     <motion.div className="Apple-scaling-window"
+    data-header-theme="white"
+   
     style={{ padding }}>
 
           <motion.div 

@@ -6,6 +6,7 @@ import Footer from './Footer/Footer'
 import SearchBar from './SearchBar/SearchBar';
 import SideBarNav from './SideBarNav/SideBarNav';
 import SideBarCart from './SideBarCart/SideBarCart';
+import StaticHeader from './StaticHeader/StaticHeader';
 import { CartListProvider } from './CartListProvider';
 import { StoreFilterProvider } from './StoreFilterContext';
 import { StoreDataProvider } from './StoreDataContext';
@@ -59,8 +60,11 @@ setSearchBarToggle(i)
     return(
 
       <StoreDataProvider>
+     
 
     <div  className={`root${isHomePage ? 'home' : 'nothome'}`} style={{position:"relative"}}>
+
+ 
 
   {/* <div className="middleLine"></div> */}
 
@@ -72,16 +76,28 @@ setSearchBarToggle(i)
       screenOverlay={showOverlay}
       toggleOverlay={setShowOverlay} />
 
-  <SideBarNav sideBarState={sideBarOn} sideBarToggle={toggleSideBar} />
+  <SideBarNav
+   sideBarState={sideBarOn} 
+  sideBarToggle={toggleSideBar}
+  toggleOverlay={setShowOverlay} />
 
 
+{/*     <div className="mix-blend-test">
+           <div className="site-logo">
+          <img src='whiteStork5.png'/>
+         </div>
+          MIX BLEND TEST</div> */}
 
+      
 
- <Header toggleSwitch={SearchToggle} 
+{/*  <Header toggleSwitch={SearchToggle} 
     screenOverlay={showOverlay}
       toggleOverlay={setShowOverlay}
       sideBarToggle={toggleSideBar}
-      setCartToggled={setCartToggled}/>   
+      setCartToggled={setCartToggled}/>   */} 
+
+
+      <StaticHeader/>
 
 <StoreFilterProvider>
   <CartListProvider>

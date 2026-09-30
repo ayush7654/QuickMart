@@ -206,7 +206,7 @@ useEffect(() => {
       :
       (isIdle
 
- ? `translateY(${location.pathname=='/store' || '/'? '-100%':'0%'}`  
+ ? `translateY(${location.pathname=='/store' || '/'? '-00%':'0%'}`  /* make the 00 -100% here to reverse header movement */
 
     : 'translateY(0%)')
 
@@ -221,7 +221,7 @@ useEffect(() => {
     }}
  >
 
-  <ExtraHeader extraHeaderVisible={extraHeaderVisible} isAtTop={isAtTop} />   
+{/*   <ExtraHeader extraHeaderVisible={extraHeaderVisible} isAtTop={isAtTop} />    */}
 
 
 
@@ -249,8 +249,13 @@ useEffect(() => {
              
        <div className="site-name" style={{opacity:location.pathname==='/' && isAtTop?'0':'1', 
                     color:isAtTop && headertp?'white':'black'}}>
-                      {window.innerWidth}
+                      {/* {window.innerWidth} */} Saras
          </div>
+
+         <div className="site-logo">
+          <img src='whiteStork5.png'/>
+         </div>
+         <div className="site-logo-name">Saras Go</div>
    </div>
 
 
@@ -269,9 +274,9 @@ handleClick={(func) => handlePageNav(func)}
 
 
   
-     <div className="home-menu-ph" onClick={()=>sideBarToggle(true)}>
+     <div className="home-menu-ph" onClick={()=>{sideBarToggle(true),toggleOverlay(true)}}>
                    {/*  <RxHamburgerMenu className="menu-icon" /> */}
-                   <MenuCancel colorSwitch={true}/>
+                   <MenuCancel colorSwitch={true} />
                  
                         </div>
              <div className="header-icon" id='header-search-icon-ph'>
@@ -307,8 +312,10 @@ handleClick={(func) => handlePageNav(func)}
                  </TransitionLink>
 
                  <div  className={`page-nav-right ${location.pathname==='/cart'?'page-nav-right-selected':''}`}
-                  onClick={()=>{setCartToggled(true),toggleOverlay(true)}}>
-                <div className="header-icon">
+                 >
+                <div className="header-icon"
+                
+                 onClick={()=>{setCartToggled(true),toggleOverlay(true)}}>
                     { pagelocation.pathname === "/cart" ? (
               <HiShoppingBag   />
             ) : (

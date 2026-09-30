@@ -4,6 +4,7 @@ import './SideBarNav.css'
 import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
 import { MdPerson } from 'react-icons/md';
+import TransitionLink from '../TransitionLink';
 import { 
   FiHome , 
   FiShoppingBag , 
@@ -13,7 +14,7 @@ import {
 } from 'react-icons/fi';
 import { useFirebase } from '../FirebaseContext/Firebase';
 
-export default function SideBarNav({sideBarState=true, sideBarToggle}) {
+export default function SideBarNav({sideBarState=true, sideBarToggle, toggleOverlay}) {
 
     const elements= [
       {icon:<  FiHome strokeWidth='1.5'  id='sideBar-icon' />,iconImg:'SBhome.png',iconName:'Home',path:'/'},
@@ -40,8 +41,8 @@ export default function SideBarNav({sideBarState=true, sideBarToggle}) {
     <div className="sideBarNav-content" style={{opacity:sideBarState?1:0}}>
         <div className='sideBarNav-head-div'>
  
-          <div className='sideBar-cancel-div'>
-                <X strokeWidth={1.5} className='sideBar-cancel' onClick={()=>sideBarToggle(false)} />
+          <div className='sideBar-cancel-div' onClick={()=>{sideBarToggle(false),toggleOverlay(false)}}>
+                <X strokeWidth={1.5} className='sideBar-cancel'  />
             </div> 
 
             <div className='sideBar-title-div'>
@@ -64,10 +65,14 @@ export default function SideBarNav({sideBarState=true, sideBarToggle}) {
         </div>
         <div className='sideBarNav-element-div'>
               {elements.map((item,index)=>
-         <NavLink key={index} to={item.path} className='sideBarNav-element' onClick={()=>sideBarToggle(false)}>
+         <TransitionLink 
+         key={index} 
+         to={item.path} 
+         className='sideBarNav-element' 
+         onClick={()=>{sideBarToggle(false),toggleOverlay(false)}}>
             <div className='sideBarNav-Icon-div'> {item.icon}</div>
             <div className='sideBarNav-name'>{item.iconName}</div>
-         </NavLink>
+         </TransitionLink>
       )}
         </div>
     

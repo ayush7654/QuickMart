@@ -109,7 +109,7 @@ export default function ScrollingAnimation({ isAtTop }) {
   }, []);
 
   return (
-    <div className="scroll-section" ref={sectionRef}>
+    <div className="scroll-section" ref={sectionRef}  >
       <motion.div 
       variants={containerVariants}
       initial="hidden"
@@ -149,7 +149,7 @@ export default function ScrollingAnimation({ isAtTop }) {
 
           <div className="main-image-wrapper" ref={mainImgRef}>
             <video 
-              src="/HomeMedia/AmiriVidFinalCut.mp4" 
+              src="HomeMedia/AmiriVidFinalCut.mp4" 
               muted 
               autoPlay 
               loop 

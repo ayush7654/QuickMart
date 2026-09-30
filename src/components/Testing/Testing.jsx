@@ -1,15 +1,8 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
-
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 
 
 
@@ -26,8 +19,9 @@ export default function Testing() {
   
   
   return (
-<div className="testing-div" >
-
+<div className="testing-div" data-header-theme="blend"  >
+ jfjfj
+ 
 
 </div>
 

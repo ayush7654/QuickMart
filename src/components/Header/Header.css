@@ -47,6 +47,7 @@ color:rgb(235, 235, 235);
      z-index: 999;
 
    background-color: white;
+   background-color: transparent;
    color:black;
      border-bottom: 0px solid rgba(255, 255, 255);
      border: 0px solid green;
@@ -69,8 +70,9 @@ backdrop-filter: blur(0px);
   }
 
   .headerTranslucent{
-     background-color: rgba(255, 255, 255, 0.7);
-backdrop-filter: blur(25px);
+     background-color: rgba(255, 255, 255, 0.0); /* .7 */
+backdrop-filter: blur(0px);/* 25px */
+  background-color: transparent;
   }
 
 
@@ -117,12 +119,38 @@ font-weight: 400;
 
 font-family: "Prosto One", sans-serif;
    font-family: "Questrial", sans-serif;
-    font-family: 'Jost';
+ font-family: 'Jost';
+    
     text-transform: uppercase;
   will-change: transform;
     transform-origin: center center;
+    display: none;
 
   }
+
+  .site-logo{
+    width: 5rem;
+    display: grid;
+    place-items: center;
+    border: 0px solid red;
+    margin-top: 2rem;
+   
+
+  }
+
+    .site-logo img{
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .site-logo-name{
+      text-transform: uppercase;
+      font-family: 'Jost';
+      letter-spacing: 4px;
+      font-size: 1.2rem;
+      
+
+    }
 
 
 

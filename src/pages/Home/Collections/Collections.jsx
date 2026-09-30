@@ -20,7 +20,7 @@ const containerVariants = {
 
 
   return (
-     <div className="collections-wrapper">
+     <div className="collections-wrapper"  data-header-theme="white" >
 
            <div id='home-section-head'>
             Exclusive Picks

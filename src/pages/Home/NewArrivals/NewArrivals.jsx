@@ -54,7 +54,9 @@ export default function NewArrivals() {
   console.log('product is',homeProducts)
 
   return (
-    <div className='home-product-div' id="newArrivals-home-Products-div">
+    <div className='home-product-div'
+     id="newArrivals-home-Products-div"
+    >
   
       <div id='home-product-head'>
         New Arrivals

@@ -1,0 +1,42 @@
+.static-header-wrapper {
+    position: fixed;
+    top: 1rem;
+    width: 100%;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    height: 6rem;
+
+    background-color: transparent;
+
+    color: white;
+    mix-blend-mode: difference;
+}
+
+.static-header-content {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.static-header-wrapper.header-force-white {
+    color: white;
+    mix-blend-mode: normal;
+}
+
+.static-header-wrapper.header-force-black {
+    color: black;
+    mix-blend-mode: normal;
+}
+
+.static-header-wrapper.header-force-blend {
+    color: white;
+    mix-blend-mode: difference;
+}

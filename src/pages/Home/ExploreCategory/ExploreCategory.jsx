@@ -35,6 +35,7 @@ export default function ExploreCategory() {
 
   return (
     <div className='ExploreCategory-wrapper'
+    data-header-theme="white"
      style={{ backgroundImage: `url(ExploreCategory/${cardsList[activeIndex].snap})` }}>
 
        

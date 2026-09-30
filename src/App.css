@@ -110,6 +110,15 @@ background-color: red;
 }
 
 
+.mix-blend-test{
+  position: fixed;
+  top: 10rem;
+  left: 20rem;
+  color:rgb(249, 249, 249);
+  z-index:999;
+  mix-blend-mode: difference;
+  
+}
 
                        
 
