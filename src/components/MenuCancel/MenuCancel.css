@@ -12,16 +12,16 @@
 
 .menu-btn span {
 
- background-color: white;
+
   transition: 0.35s ease;
   border-radius: 2px;
 }
 .menu-btn.open span{
-  background: black;
+/*   background: black; */
 }
 
 .header-menu span{
-  background: black;
+/*   background: black; */
 }
 
 /* --- ANIMATION --- */

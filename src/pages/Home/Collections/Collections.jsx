@@ -20,7 +20,7 @@ const containerVariants = {
 
 
   return (
-     <div className="collections-wrapper"  data-header-theme="white" >
+     <div className="collections-wrapper" >
 
            <div id='home-section-head'>
             Exclusive Picks
@@ -35,7 +35,7 @@ const containerVariants = {
     </div>
      
 
-      <FitnessCollection productAnimation={containerVariants}/>
+      <FitnessCollection productAnimation={containerVariants} />
 
        <SolarCollection productAnimation={containerVariants}/> 
 

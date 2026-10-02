@@ -69,7 +69,7 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
     <div className="PetShop-collection-wapper">
-    <div className="PetShop-collection"  >
+    <div className="PetShop-collection" data-header-theme="white" >
  
    
 <div className='pet-section'

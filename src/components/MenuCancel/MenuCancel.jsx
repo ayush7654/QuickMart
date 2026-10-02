@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './MenuCancel.css'
 
-export default function MenuCancel({state,colorSwitch}) {
+export default function MenuCancel({color,state,colorSwitch}) {
 
     const [open, setOpen] = useState(false);
 
@@ -11,8 +11,8 @@ export default function MenuCancel({state,colorSwitch}) {
   /*   onMouseEnter={() => setOpen(true)}
   onMouseLeave={() => setOpen(false)} */
 >
-  <span  style={{height:state?'1.5px':'2px'}}></span>
-  <span style={{height:state?'1.5px':'3px'}}></span>
+  <span  style={{height:state?'1.5px':'2px',background:color}}></span>
+  <span style={{height:state?'1.5px':'3px',background:color}}></span>
 </div>
 
   )

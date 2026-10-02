@@ -56,6 +56,7 @@ export default function NewArrivals() {
   return (
     <div className='home-product-div'
      id="newArrivals-home-Products-div"
+     
     >
   
       <div id='home-product-head'>

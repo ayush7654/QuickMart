@@ -120,5 +120,14 @@ background-color: red;
   
 }
 
+.offer-bar-wrapper{
+  position: fixed;
+  top: 0rem;
+width: 100%;
+z-index: 1000;
+border: 0px solid red;
+display: none;
+}
+
                        
 

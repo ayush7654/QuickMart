@@ -71,8 +71,10 @@ const loopBanners = [...banners, ...banners];
 
 
   return (
-    <div className='Fitness-Collection-wrapper'>
-     <div className="fitness-container" style={{backgroundImage:`url(HomeCollections/${videoFiles[videoIndex].img})`}}>
+    <div className='Fitness-Collection-wrapper'  >
+     <div className="fitness-container"
+     data-header-theme="white"
+      style={{backgroundImage:`url(HomeCollections/${videoFiles[videoIndex].img})`}}>
      <div className={`fitness-video-wrapper ${isOpen ? 'fitness-video-expanded' : ''}`}>
       <video 
        key={videoFiles[videoIndex].id} // Forces re-render to start the new video immediately

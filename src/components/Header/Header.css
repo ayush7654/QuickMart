@@ -128,29 +128,7 @@ font-family: "Prosto One", sans-serif;
 
   }
 
-  .site-logo{
-    width: 5rem;
-    display: grid;
-    place-items: center;
-    border: 0px solid red;
-    margin-top: 2rem;
-   
 
-  }
-
-    .site-logo img{
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .site-logo-name{
-      text-transform: uppercase;
-      font-family: 'Jost';
-      letter-spacing: 4px;
-      font-size: 1.2rem;
-      
-
-    }
 
 
 

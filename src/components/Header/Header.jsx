@@ -221,7 +221,7 @@ useEffect(() => {
     }}
  >
 
-{/*   <ExtraHeader extraHeaderVisible={extraHeaderVisible} isAtTop={isAtTop} />    */}
+   <ExtraHeader extraHeaderVisible={extraHeaderVisible} isAtTop={isAtTop} />   
 
 
 
@@ -259,7 +259,9 @@ useEffect(() => {
    </div>
 
 
-    <div className="page-nav-wrapper-left">               
+    <div className="page-nav-wrapper-left">       
+
+
       <div className="page-nav-left">
     <DotNav
    sections={navElements}
@@ -274,15 +276,16 @@ handleClick={(func) => handlePageNav(func)}
 
 
   
-     <div className="home-menu-ph" onClick={()=>{sideBarToggle(true),toggleOverlay(true)}}>
-                   {/*  <RxHamburgerMenu className="menu-icon" /> */}
-                   <MenuCancel colorSwitch={true} />
-                 
-                        </div>
-             <div className="header-icon" id='header-search-icon-ph'>
-                  <Search className="searchIcon"    
+     <div className="home-menu-ph"
+      onClick={()=>{sideBarToggle(true),toggleOverlay(true)}}>
+      <MenuCancel colorSwitch={true} />                
+      </div>
+
+      <div className="header-icon" 
+      id='header-search-icon-ph'>
+        <Search className="searchIcon"    
                  style={{ strokeWidth: '1.5'}} />
-                 </div>
+       </div>
 
                 </div> 
 

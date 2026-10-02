@@ -111,6 +111,7 @@ onLeaveBack: () => {
     <div className="solar-collection-section">
    
         <div className='solar-collection-wrapper' ref={targetRef}
+        data-header-theme="white"
      >
 
   <div className='gradient-bg-wrapper'>

@@ -12,6 +12,7 @@ import { StoreFilterProvider } from './StoreFilterContext';
 import { StoreDataProvider } from './StoreDataContext';
 import TransitionSlider from './TransitionSlider/TransitionSlider';
 import { usePageTransition } from './PageTransitionContext';
+import ExtraHeader from './Header/ExtraHeader/ExtraHeader';
 
 export default function Home(){
     const location = useLocation();
@@ -90,14 +91,22 @@ setSearchBarToggle(i)
 
       
 
-{/*  <Header toggleSwitch={SearchToggle} 
+{/*   <Header toggleSwitch={SearchToggle} 
     screenOverlay={showOverlay}
       toggleOverlay={setShowOverlay}
       sideBarToggle={toggleSideBar}
-      setCartToggled={setCartToggled}/>   */} 
+      setCartToggled={setCartToggled}/>  */}  
 
 
-      <StaticHeader/>
+        
+
+
+       <StaticHeader
+      toggleSwitch={SearchToggle} 
+    screenOverlay={showOverlay}
+      toggleOverlay={setShowOverlay}
+      sideBarToggle={toggleSideBar}
+      setCartToggled={setCartToggled}/>
 
 <StoreFilterProvider>
   <CartListProvider>
