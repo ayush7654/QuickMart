@@ -341,25 +341,21 @@ align-items: center;
 .store-sideFilter-wrapper {  /* Make this slideable */
  
     position: fixed;
-  top: 1rem; 
-  left: 1rem;
+  top: 0rem; 
+  left: 0rem;
   align-self: flex-start;
-  height: 95vh;
+  height: 100vh;
   overflow-y: scroll;
   scrollbar-width: none;
     background-color: transparent;
   margin-top: 0rem;
-  z-index:999;
+  z-index:10000;
 box-shadow: 0 10px 20px rgba(50,50,50, 0.2);
-
-
-z-index: 999;
-
  transition: width 0.5s cubic-bezier(0.2, 0.9, 0.1, 1);
-  border-radius: 10px;
+
 background-color: white;
 overflow: hidden;
-width: 30vw;
+width: 35vw;
   clip-path: inset(0 100% 0 0);
   transition: clip-path  0.5s cubic-bezier(0.2, 0.9, 0.1, 1);
 

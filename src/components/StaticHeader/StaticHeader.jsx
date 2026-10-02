@@ -8,19 +8,26 @@ import { useLocation } from 'react-router-dom';
 import {  HiShoppingBag,HiOutlineShoppingBag } from "react-icons/hi2";
 import MenuCancel from '../MenuCancel/MenuCancel';
 import { Link } from 'react-router-dom';
-import ExtraHeader from '../Header/ExtraHeader/ExtraHeader';
+
 import HeaderBar from './HeaderBar/HeaderBar';
 import { WinScrollContext } from '../WinScrollProvider/WinScrollProvider';
 
 
-export default function StaticHeader({toggleSwitch,screenOverlay,toggleOverlay, sideBarToggle,setCartToggled}) {
 
-const [headerTheme, setHeaderTheme] = useState("white");
+export default function StaticHeader({toggleSwitch,toggleOverlay, sideBarToggle,setCartToggled}) {
+
+
+
+
+
+
+
+const [headerTheme, setHeaderTheme] = useState('black');
 
  const { isAtTop ,  isIdle } = useContext(WinScrollContext);
 
 const headerNavLeft = 
-[/* {name:'Home',path:'/',}, */
+[
  {name:'Store',path:'/store',},
  {name:'About',path:'/testing',}
 ]
@@ -29,45 +36,43 @@ const location = useLocation();
 
 
 /* directly paste the original page nav right from the previous one */
-
 useEffect(() => {
     const sections = document.querySelectorAll("[data-header-theme]");
 
-    console.log("THEMED SECTIONS:", sections);
-    
-const observer = new IntersectionObserver(
-  (entries) => {
-    const activeEntry = entries.find(
-      (entry) => entry.isIntersecting
-    );
+    const observer = new IntersectionObserver(
+        (entries) => {
+            const activeEntry = entries.find(
+                (entry) => entry.isIntersecting
+            );
 
-    if (activeEntry) {
-      setHeaderTheme(activeEntry.target.dataset.headerTheme);
-    } else {
-      setHeaderTheme("blend");
-    }
-  },
-  {
-    rootMargin: "-16px 0px -90% 0px",
-    threshold: 0,
-  }
-);
+            if (activeEntry) {
+                setHeaderTheme(
+                    activeEntry.target.dataset.headerTheme
+                );
+            } else {
+                setHeaderTheme("black");
+            }
+        },
+        {
+            rootMargin: "-16px 0px -90% 0px",
+            threshold: 0,
+        }
+    );
 
     sections.forEach((section) => observer.observe(section));
 
+    // Initial check for the newly rendered page
+    sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
 
-sections.forEach((section) => {
-  const rect = section.getBoundingClientRect();
-
-  if (rect.top <= 16 && rect.bottom > 16) {
-    setHeaderTheme(section.dataset.headerTheme);
-  }
-});
-
-console.log('is at top', isAtTop)
+        if (rect.top <= 16 && rect.bottom > 16) {
+            setHeaderTheme(section.dataset.headerTheme);
+        }
+    });
 
     return () => observer.disconnect();
-}, []);
+
+}, [location.pathname]);
 
   return (
 
@@ -75,9 +80,7 @@ console.log('is at top', isAtTop)
     
     <div 
 className={`static-header-wrapper ${
-  headerTheme === "white" ? "header-force-white" : "header-force-blend"
-} ${
-  headerTheme === "black" ? "header-force-black" : ""
+  headerTheme === "white" ? "header-force-white" : "header-force-black"
 } ${isIdle?'static-header-hidden':''} `}
 
 

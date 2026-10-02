@@ -44,7 +44,7 @@ export default function Account(){
 
     
     return(
-    <div className="account-Page">
+    <div className="account-Page" data-header-theme='black'>
        <div className="accountPageImg">
         <div className='account-head-div'>
           <h2 className="account-head">ACCOUNT</h2>

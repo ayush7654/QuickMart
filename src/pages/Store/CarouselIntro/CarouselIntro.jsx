@@ -80,7 +80,8 @@ useEffect(() => {
 }, [activeIndex]);
 
   return (
-    <div className='CarouselIntro'>
+    <div className='CarouselIntro'
+    data-header-theme='white'>
 
 
 

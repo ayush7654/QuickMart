@@ -19,6 +19,7 @@
     font-weight: 400;
     transform: translateY(0);
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  
 
     
 }
@@ -47,20 +48,15 @@
 
 .static-header-wrapper.header-force-white {
     color: white;
-    /* mix-blend-mode: normal; */
+  
 }
 
 .static-header-wrapper.header-force-black {
-    color: black;
-   /*  mix-blend-mode: normal; */
-}
-
-.static-header-wrapper.header-force-blend {
-    color: black;
+ color: black;
     background-color: white;
-   /*  mix-blend-mode:difference; */
-
 }
+
+
 
 
 
@@ -79,7 +75,7 @@
     gap:5px;
     margin-top: 0rem;
   
-    /* display: none; */
+
 }
 
   .site-logo{

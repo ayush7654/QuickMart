@@ -66,7 +66,7 @@ export default function Cart(){
   return <CartLoading />; // your silhouette page
 }
    
-    return(<div className="cart-page">
+    return(<div className="cart-page" data-header-theme='black'>
 
     
 

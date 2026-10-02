@@ -8,11 +8,12 @@ import SideBarNav from './SideBarNav/SideBarNav';
 import SideBarCart from './SideBarCart/SideBarCart';
 import StaticHeader from './StaticHeader/StaticHeader';
 import { CartListProvider } from './CartListProvider';
-import { StoreFilterProvider } from './StoreFilterContext';
-import { StoreDataProvider } from './StoreDataContext';
 import TransitionSlider from './TransitionSlider/TransitionSlider';
 import { usePageTransition } from './PageTransitionContext';
-import ExtraHeader from './Header/ExtraHeader/ExtraHeader';
+
+
+
+ 
 
 export default function Home(){
     const location = useLocation();
@@ -24,6 +25,8 @@ export default function Home(){
    const [animationStatus, setAnimationStatus] = useState('idle');
 
    const [sideBarOn,setSideBarOn] = useState(false)
+
+   
 
        const [cartToggled,setCartToggled]= useState(false)
 const { isAnimating } = usePageTransition();
@@ -60,7 +63,7 @@ setSearchBarToggle(i)
    
     return(
 
-      <StoreDataProvider>
+ 
      
 
     <div  className={`root${isHomePage ? 'home' : 'nothome'}`} style={{position:"relative"}}>
@@ -108,7 +111,13 @@ setSearchBarToggle(i)
       sideBarToggle={toggleSideBar}
       setCartToggled={setCartToggled}/>
 
-<StoreFilterProvider>
+
+
+
+  
+
+
+
   <CartListProvider>
 
   
@@ -124,14 +133,14 @@ setSearchBarToggle(i)
 
 
   </CartListProvider>
-</StoreFilterProvider>
+
 
 
 
   {/*        <Footer />  */}  {/* fix layout for screen chnage */}
          <TransitionSlider/>
     </div>
-    </StoreDataProvider>
+
         
     )
 }

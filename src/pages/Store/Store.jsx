@@ -302,7 +302,7 @@ console.log(productElements && productElements)
 
 
 
-    <div className={`store-sideFilter-wrapper ${sideFilterOn?'open':''}`}>
+   <div className={`store-sideFilter-wrapper ${sideFilterOn?'open':''}`}>
       
           <div className="store-sideFilter" style={{opacity:sideFilterOn?1:0}}>
                  <FilterSection
@@ -311,7 +311,7 @@ console.log(productElements && productElements)
               setAppliedFilters={setAppliedFilters}
               setSideFilterOn={setSideFilterOn} />
           </div>
-         </div>
+         </div> 
 
     <div className={`storePage-overlay ${storeOverlayActive ? 'is-visible' : ''}`} 
      onClick={() => {setIsOpen(false),setPartialPill(false)}}> </div>  

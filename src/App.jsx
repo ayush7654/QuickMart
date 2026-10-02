@@ -21,6 +21,8 @@ import LoadingBird from './pages/LoadingPage';
 import Testing from './components/Testing/Testing';
 import SmoothScroll from './components/SmoothScrolling';
 import { PageTransitionProvider } from './components/PageTransitionContext';
+import { StoreDataProvider } from './components/StoreDataContext';
+import { StoreFilterProvider } from './components/StoreFilterContext';
 
 
 export const BreadCrumbContext = createContext()
@@ -35,6 +37,8 @@ function App() {
     <BrowserRouter>
      <ScrollData>
     <WinScrollProvider>
+           <StoreDataProvider>
+        <StoreFilterProvider>
     <FirebaseProvider >
     <ScrollToTop />
     <Routes>
@@ -54,8 +58,10 @@ function App() {
       <Route path="*" element={<ErrorPage/>}/>
       
     </Routes>
-  
+    
     </FirebaseProvider>
+    </StoreFilterProvider>
+     </StoreDataProvider>
     </WinScrollProvider>
     </ScrollData>
     </BrowserRouter>
