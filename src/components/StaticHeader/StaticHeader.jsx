@@ -97,10 +97,10 @@ className={`static-header-wrapper ${
 
      
      <Link to ='/' className="static-header-middle"> {/* Make this transational */}
-                 <div className="site-logo">
-          <img src='whiteStork5.png'/>
-         </div>
-         <div className="site-logo-name">Saras & Suburbs</div>
+                
+                 <span className="site-logo"> <img src='SarasBlueLogo.png'/></span>
+               
+          <div className="site-logo-name">Saras Drops</div> 
      </Link>
 
    

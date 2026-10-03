@@ -33,5 +33,28 @@
 }
 
 
+.test-header{
+  display: flex;
+  align-items: center;
+  font-family: 'Jost';
+  font-size: 1.2rem;
+  color:black;
+  position: absolute;
+  top:0rem;
+
+}
+
+.test-head-img{
+  width: 4rem;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+}
+
+.test-head-img img{
+width: 100%;
+object-fit: cover;
+filter: brightness(0);
+}
 
 
