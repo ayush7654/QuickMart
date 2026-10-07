@@ -9,46 +9,29 @@ import { useStoreData } from '../../../components/StoreDataContext';
 
 const SUBGROUP_MAPPING = {
 
-  "Clothing & Apparel": {
+ "Clothing & Apparel": {
 
     groupId: 0,
-
+     
     items: [
      
       { slug: "womens-shoes", img: "women-shoes4.jpg" },
        { slug: "tops", img: "women-tops1.jpg" },
       { slug: "mens-shirts", img: "Mens-Shirt.jpg" },
       
-      { slug: '-', img: "NewCollection1.jpg" },
+     /*  { slug: '-', img: "NewCollection1.jpg" }, */
       { slug: "womens-dresses", img: "women-dresses.jpg" },
-      { slug: '-', img: "SalePercent.jpg" },
+     /*  { slug: '-', img: "SalePercent.jpg" }, */
       { slug: "mens-shoes", img: "Men-Shoes8.webp" },
     ]
 
   },
-
-
-
-  "Accessories & Jewelry": {
-
-    groupId: 1,
-
-    items: [
-      { slug: "mens-watches", img: "Men-Watches.jpg" },
-      { slug: "womens-watches", img: "women-watch1.avif" },
-      { slug: "sunglasses", img: "sunglasses1.jpg" },
-      { slug: "womens-jewellery", img: "Jewellery.webp" },
-      { slug: "womens-bags", img: "Women-Bag.jpg" },
-    ]
-
-  },
-
-
+ 
 
   "Electronics & Tech": {
 
-    groupId: 2,
-
+    groupId: 1,
+   
     items: [
       { slug: "laptops", img: "laptops2.jpg" },
       { slug: "mobile-accessories", img: "MobileAccessary3.jpg" },
@@ -63,7 +46,7 @@ const SUBGROUP_MAPPING = {
   "Beauty & Wellness": {
 
     groupId: 3,
-
+   
     items: [
       { slug: "beauty", img: "beauty.jpg" },
       { slug: "fragrances", img: "fragrance.jpg" },
@@ -73,25 +56,24 @@ const SUBGROUP_MAPPING = {
   },
 
 
+  "Accessories & Jewellery": {
 
-  "Home & Living": {
-
-    groupId: 4,
+    groupId: 1,
 
     items: [
-      { slug: "home-decoration", img: "home-decoration.jpg" },
-      { slug: "furniture", img: "furniture4.jpg" },
-      { slug: "kitchen-accessories", img: "kitchen-accessories3.webp" }
+      { slug: "mens-watches", img: "Men-Watches.jpg" },
+      { slug: "womens-watches", img: "women-watch1.avif" },
+      { slug: "sunglasses", img: "sunglasses1.jpg" },
+      { slug: "womens-jewellery", img: "Jewellery.webp" },
+      { slug: "womens-bags", img: "Women-Bag.jpg" },
     ]
 
   },
 
-
-
-  "Automotive & Outdoors": {
+   "Automotive & Outdoors": {
 
     groupId: 5,
-
+    
     items: [
       { slug: "sports-accessories", img: "sports1.jpg" },
       { slug: "vehicle", img: "Car1.jpg" },
@@ -102,7 +84,25 @@ const SUBGROUP_MAPPING = {
   },
 
 
+  "Home & Living": {
 
+    groupId: 4,
+   
+    items: [
+      { slug: "home-decoration", img: "home-decoration.jpg" },
+      { slug: "furniture", img: "furniture4.jpg" },
+      { slug: "kitchen-accessories", img: "kitchen-accessories3.webp" }
+    ]
+
+  },
+
+ 
+
+
+ 
+
+
+/* 
   "Daily Essentials": {
 
     groupId: 6,
@@ -113,7 +113,7 @@ const SUBGROUP_MAPPING = {
     ]
 
   }
-
+ */
 };
 
 

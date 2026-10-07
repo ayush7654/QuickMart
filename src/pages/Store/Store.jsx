@@ -323,7 +323,7 @@ console.log(productElements && productElements)
  
 
   <div className='store-header-wrapper' 
-  style={{ top: isScrolledPastLimit ? '1rem' : '-5rem' }}>
+  style={{ top: isScrolledPastLimit ? '0rem' : '-5rem' }}>
        <ExpandingStoreHeader/>    
       </div>  
  

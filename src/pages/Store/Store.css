@@ -25,7 +25,7 @@
 
 .store-header-wrapper{
   position:fixed;
-  width: 90%;
+  width: 100%;
 
 z-index:100;
 border: 0px solid red;
@@ -394,16 +394,6 @@ width: 35vw;
 
   pointer-events: none;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

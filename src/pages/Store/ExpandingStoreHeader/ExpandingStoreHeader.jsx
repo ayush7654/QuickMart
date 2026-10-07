@@ -16,13 +16,16 @@ import { GiGrapes } from "react-icons/gi";
 import { useScroll } from "../../../components/ScrollData/ScrollData";
 import MenuCancel from "../../../components/MenuCancel/MenuCancel";
 import StoreHeader from "../StoreHeader/StoreHeader";
-
+import { FaCircle } from "react-icons/fa";
+import { div, link, span } from "framer-motion/client";
+import { FaFacebook, FaXTwitter, FaYoutube, FaInstagram ,FaTiktok, FaLinkedin, FaLinkedinIn} from "react-icons/fa6";
+import AnimatedUnderline from "../../../components/AnimatedUnderline/AnimatedUnderline";
 gsap.registerPlugin(ScrollTrigger);
 
 
 
 
-const storeMenuOptions=['Payment Methods','Cancel Order' ,'Order History','Become a Seller']
+const storeMenuOptions=['Cancel order' ,'Order history','']
 
 const storeMenuGrids= [
   
@@ -31,6 +34,17 @@ const storeMenuGrids= [
   {name:'Connect with us', backgroundImage:'connectImg.jpg'},
  
 ]
+
+ const categoryImgs = [
+    {id:0, img: ['Clothing1.jpg','Clothing2.jpg'],},
+    {id:1,img :['IphoneDuo3.jpg','IphoneDuo.jpg']},
+    {id:2, img:['SkincareLeft.jpg','skincareRight.jpg']},
+    {id:3, img:['Jewellery1.jpg','Sunglasses2.jpg']},
+    {id:4, img:['Motorbike1.jpg','fitness7.jpg']},
+    {id:5, img: ['DailyItem2.jpg','DailyItem3.jpg']}
+
+  ]
+
 
 const CATEGORY_ICONS = [
   {
@@ -266,12 +280,6 @@ const getLayoutClass = (count) => {
 
 
 
-
-
-
-
-
-
 const [visitedGroups, setVisitedGroups] = useState([]);
 
 // 1. Logic to add the active group to the cache
@@ -311,18 +319,22 @@ useEffect(() => {
 // Dependency array includes these variables so the effect re-runs whenever they change
 
 
+const CurrentIcon = CATEGORY_ICONS[selectedSubGroupId?selectedSubGroupId:0].Icon;
+console.log('categories', categorizedData)
+
   return (
      <div 
           className={`floating-pill ${isOpen ? "pill-expanded" : ""} ${partialPill?'partial':''}`} >
             
         
-         <StoreHeader />
-
+       {/*   <StoreHeader /> */}
+  
           <div className="pill-content">
-    
-<div className="pill-space">
+            <div className="pill-space">
 
 </div>
+
+
  
 <div className={`category-layout ${isOpen || partialPill?'':'category-layout-hidden'}`}>
 
@@ -384,7 +396,8 @@ useEffect(() => {
        {(isOpen || partialPill) && 
 
        <div className="subgroup-sidebar">
-         { !partialPill ? <div  className="sub-group-icon-wrapper">
+         { !partialPill ? 
+         <div  className="sub-group-icon-wrapper">
             { Object.keys(categorizedData).map((groupName,index) => {
 
                /*  const Icon = SUBGROUP_MAPPING[groupName].Icon; */
@@ -421,9 +434,64 @@ useEffect(() => {
        </div>
       }
     
- 
+ <div className="subgroup-content-wrapper">
 {(selectedSubGroupId != null && !partialPill) && (
-  <>
+  <div className="subgroup-content">
+
+ <div className="subgroup-new">
+   {Object.keys(categorizedData).map((group,index)=>
+  <div className="subgroup-list-wrapper" >
+  <div className="subgroup-list-head">{group}</div>
+ 
+    <div className="sub-group-list">
+     {categorizedData[group].items.map((item, itemIdx) => (
+        <div key={itemIdx}  
+        onMouseEnter={() => {
+    setActiveGroup(group);
+    setSelectedSubGroupId(index);
+  }}
+  
+     onClick={()=>{handleTypeFilter(item),
+                setIsOpen(false),
+                setSelectedCategoryId(itemIdx),
+                setSelectedSubGroupId(itemIdx)}
+                
+              }>
+         <AnimatedUnderline>{item.slug.replaceAll('-', ' ')}</AnimatedUnderline> 
+          </div>
+      ))}
+    </div> 
+  </div>)}
+ </div>
+
+   
+
+  
+   <div className="subgroup-selector-wrapper">
+    Collections
+{Object.keys(categorizedData).map((group,index) => (
+  <div key={group} className={`subgroup-selector ${activeGroup===group?'active-subgroup':''}`}
+  onClick={() => {setActiveGroup(group),setSelectedSubGroupId(index)}}
+  
+  >
+{/*    <span className="active-group-dot"><FaCircle size={6} className="group-dot"/></span> */}
+   <span> {group}</span>
+   
+  </div>
+))}
+
+  
+   </div>
+
+
+  <div className="subgroup-info-wrapper">
+
+   <div className="subgroup-watermark">
+
+  <CurrentIcon/> 
+
+   </div>
+
     <div className="subgroup-animation-mask">
       
       <motion.div 
@@ -466,20 +534,47 @@ useEffect(() => {
       </motion.div>
     </div>
   
-  </>
-)}
+  </div>
+  </div>
 
-      <div className="head-dot-wrapper catelog-dot">
+)}
+<div className="social-icons-wrapper">
+  <FaFacebook/> 
+    <FaInstagram />
+  < FaYoutube/> 
+  <  FaTiktok /> 
+  <FaLinkedinIn/> 
+
+
+</div>
+ </div>
+
+    {/*   <div className="head-dot-wrapper catelog-dot">
       <span className="head-dot red"></span>
       <span className="head-dot blue" ></span>
       <span className="head-dot green"></span>
     
-    </div>
+    </div> */}
       </div>
 
      
-      <div className={`category-grid-container ${isOpen ? 'is-active' : ''}`}>
-   
+      <div className={`category-grid-wrapper ${isOpen ? 'is-active' : ''}`}>
+
+
+   <div className="category-grid">
+
+{categoryImgs[selectedSubGroupId]?.img.map((imgPath, index) => (
+  <div className="catgeory-img-wrapper">
+    <img src={`StoreMedia/${imgPath}`}/>
+
+  </div>
+))}
+  
+   </div>
+
+
+
+   <div  style={{display:'none'}} >
    <AnimatePresence mode="wait">
    
      {partialPill?
@@ -527,11 +622,11 @@ useEffect(() => {
 
       return (
         <motion.div 
-           key={refreshKey}
+         key={refreshKey}
         variants={gridContainerVariants}
         initial="hidden"
         animate="visible"
-          key={groupName}   
+           /*  key={groupName} */     /* MIGHT BE A PROBLEM  */
           className={`grid-wrapper ${getLayoutClass(id)} ${isActive ? 'visible' : 'hidden'}`}
         >
          {groupData.items.map((item, index) => (
@@ -563,6 +658,7 @@ useEffect(() => {
 
   }
   </AnimatePresence>
+  </div>
 
   </div>
     </div>
@@ -570,9 +666,61 @@ useEffect(() => {
   
 </div>
   
- 
+            <div className="pill-footer-wrapper">
+                   <div className="pill-footer">
+                   {/*  {storeMenuOptions.map((item,index)=>
+                    <div className="pill-footer-link">
+                      {item}
+                    </div> )} */}
+                     <div className="pill-footer-info">
+                      <span> Get in touch</span>
+                      <span> Become a seller</span>
+                      <span> .</span>
+                    </div>
+
+                    <div className="pill-footer-info">
+                     {storeMenuOptions.map((item,index)=><span>{item}</span>)}
+                     </div>
+                     
+                    
+                   
+                    <div className="pill-footer-info">
+                      <div className="pill-footer-contact-wrapper">
+                        <div className="pill-footer-contact">
+                          <span>For press contacts:</span>
+                          <span>press@saras.com</span>
+                        </div>
+                       {/*  <div> <span>info@saras.com</span></div> */}
+                      </div>
+                     
+                      <span></span>
+                    </div>
+                    <div className="pill-footer-info">
+                      <div className="pill-footer-link-wrapper">
+                        <span>Saras HQ</span>
+                        <span>42, Harbour View Road , Lower Parel</span>
+                       {/*  <span>Mumbai  400013, India</span> */}
+                      </div>
+                      <div className="pill-footer-telephone">
+                        <span>Tel:</span>
+                        <span>+91 22 4567 8900</span>
+                      </div>
+                    </div>
+                    <div className="pill-footer-info">
+                      <div className="pill-footer-link-wrapper pill-footer-copyright">
+                         <span>© 2026 Saras India Pvt. Ltd.</span>
+                  
+                      <span>  Studio North.</span>
+                          <span> All Rights Reserved</span>
+                      </div>
+                     
+                    
+                    </div>
+                   </div>
+                   </div>
            
           </div>
+       
         </div>
   )
 }

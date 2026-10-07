@@ -40,11 +40,12 @@
 
   /* Subtle blue-tinted border line */
   border: 1px solid rgba(100, 150, 255, 0.2);
-   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
+
 
   color: #ffffff;
 
    background-color: rgb(10,20, 30,.7); 
+   background-color: white;
   
  
 
@@ -58,15 +59,17 @@
 .pill-expanded {
   width: 100%;
   /* Flattened height expression to keep the rendering engine from staggering */
-  height: 95vh; 
+  height: 98vh; 
   border-radius: 12px;
   cursor: default;
-  
-  /* Smooth shift into the background colors */
+  display: flex;
+  flex-direction: column;
+    /* Smooth shift into the background colors */
 
       background-color: rgb(30,40, 60,.5); 
    backdrop-filter: blur(5px);
-  
+  background-color: white;
+  color:'black';
   /* Handled the offset shift directly inside the transform rule */
 
 }
@@ -79,13 +82,97 @@
 
 }
 
+.pill-space{
+  height: 9rem;
+  width: 100%;
+  border-bottom: px solid red;
+
+  
+}
+
+.pill-footer-wrapper{
+  width: 100%;
+  color:black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .825rem;
+  height: 8rem;
+  font-family: 'Inter';
+ font-family:sans-serif;
+
+}
+.pill-footer-wrapper span{ 
+  padding-top:0px ;
+}
+
+.pill-footer{
+ width: 95%;
+ height: 100%;
+
+ display: flex;
+ padding:1.2rem ;
+ border-top:1px solid rgb(200,200,200,.5)
+  
+}
+.pill-footer-info{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+    height: 100%;
+}
+
+.pill-footer-link-wrapper{
+
+    display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+}
+
+.pill-footer-contact-wrapper{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+.pill-footer-contact span{
+  display: block;
+}
+
+.pill-footer-address ,.pill-footer-copyright,.pill-footer-contact{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pill-footer-address span{
+    display: block;
+}
+
+.pill-footer-telephone span{
+  display: inline;
+}
+
+.pill-footer-copyright{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+
+
 
 .pill-content {
-  width: 100%;
+  width: 95%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
 
 
 
@@ -96,15 +183,12 @@
 
 }
 
-.pill-space{
-  height: 0rem;
-  
-}
 
 
 .floating-pill .category-layout{
  opacity: 0;
      overflow: hidden;
+      border: 0px solid blue;
 }
 
 .pill-expanded .category-layout{
@@ -115,11 +199,14 @@
 .category-layout {
   display: flex;
  justify-content: center;
+
   width: 100%;
-  height: 90%;
- margin-top: 4rem;
+flex:1;
+ margin-top: 0rem;
 
   padding: 0px;
+
+  border: 0px solid red;
   
  
 
@@ -129,8 +216,10 @@
  width: 95%;
  display: flex;
  justify-content:center;
+align-items: center;
+
  gap: 1rem;
- border: 0px solid black;
+ border: 1px solid black;
 }
 
 .subgroup-sidebar-sm{
@@ -139,14 +228,14 @@
 
 /* 40% Sidebar */
 .subgroup-sidebar-wrapper {
-  flex: 0 0 30%;
+  flex: 0 0 50%;
+ height: 100%;
 
 
-padding: 0rem;
 
 display: flex;
 flex-direction: column;
-justify-content: center;
+
 gap:1rem;
 position: relative;
 border: 0px solid red;
@@ -157,6 +246,7 @@ border: 0px solid red;
 width: 100%;
 
 border: 0px solid blue;
+display: none;
 
 
  
@@ -172,7 +262,11 @@ border: 0px solid blue;
 padding: 0px 10px;
  position: absolute;
  left: 0rem;
- top:0rem;
+ top:1rem;
+ display: none;
+
+ 
+ 
 
 }
 .sub-group-icon {
@@ -185,11 +279,12 @@ padding: 0px 10px;
 
   cursor: pointer;
 
-  border: 1px solid rgba(180, 180, 180, 0.3);
+  border: 0px solid rgba(200, 200, 200,1);
 
-  color: rgb(180, 180, 180);
+  color: rgb(0,0,0);
+  color:rgb(120,120,120);
   background: transparent;
-/*   background-color: rgba(215, 215, 215); */
+  
   transition:
   
    
@@ -209,13 +304,9 @@ padding: 0px 10px;
 
 /* DEFAULT HOVER */
 .sub-group-icon:hover {
-  color: white;
-  border-color: white;
+
 }
 
-.sub-group-icon:hover svg {
-  transform: scale(1.1);
-}
 
 
 /* ACTIVE STATE */
@@ -244,21 +335,192 @@ background-color: rgb(255, 255, 255);
 .sub-group-icon.subgroup-active:hover svg {
   transform: scale(1);
 }
+
+.subgroup-content-wrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0px solid red;
+
+}
+
+.social-icons-wrapper{
+  font-size: 1.3rem;
+  color:black;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0px 0px 1.5rem 0px;
+  display: none;
+}
+
+.subgroup-content{
+  width: 100%;
+  border: 0px solid yellow;
+  height: 100%;
+  display: flex;
+  
+
+   position: relative;
+  
+
+
+  
+}
+
+.subgroup-new {
+  width: 100%;
+  height: 90%;
+
+color: black;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(3, auto);   /* 3 rows */
+  grid-auto-flow: column;                 /* Fills column 1 first, then column 2 */
+  gap: 16px;   
+  font-family: 'Roboto';         
+         
+}
+
+.subgroup-list-wrapper{
+border: 0px solid red;
+}
+.subgroup-list-head{
+  font-weight: 400;
+  font-size: .85rem;
+  color:rgb(125, 125, 125);
+  padding-bottom:16px ;
+
+}
+
+.sub-group-list{
+ width: fit-content;
+  text-transform: uppercase;
+  font-size: .8rem;
+  display: flex;
+  flex-direction: column;
+  gap:8px;
+  cursor: pointer;
+
+}
+
+.subgroup-selector-wrapper{
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+color:black;
+  gap: 1.5rem;
+   font-family: 'Inter';
+     text-transform: uppercase;
+     display: none;
+
+}
+
+.subgroup-selector{
+border: 0px solid red;
+z-index: 1;
+display: flex;
+align-items: center;
+gap:0px;
+cursor: pointer;
+ font-family:'Figtree';
+ font-family: 'Inter';
+
+  color:black;
+
+  font-size: 1rem;
+  text-transform: capitalize;
+  
+
+ 
+}
+
+
+
+.active-subgroup{
+  color:rgb(0,100,255);
+}
+
+
+.active-group-dot{
+  display: grid;
+place-items: center;
+transition: .3s all ease;
+padding: 10px;
+opacity: 0;
+
+}
+.subgroup-selector:hover .active-group-dot , .active-subgroup .active-group-dot{
+  opacity: 1;
+}
+
+.group-dot{
+  overflow: visible;
+}
+
+
+.subgroup-info-wrapper{
+  width: 60%;
+  height: 100%;
+  border: 0px solid blue;
+  padding: 2rem;
+  padding-top: 0rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+   display: none;
+
+
+ 
+}
+
+.subgroup-watermark{
+  color:rgba(75, 75, 75, 0.1);
+  border: 0px solid red;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  font-size: 15rem;
+left: 0;
+display: none;
+  
+}
+
+.subgroup-animation-mask{
+border: 0px solid red;
+}
+
+
 .main-subgroup-head{
-  font-size: 4rem;
+  font-size: 2rem;
   display: flex;
   flex-direction: column;
   color:rgba(255,255,255);
+  color:black;
+  font-family: 'Figtree';
+  font-weight: 400;
+
+   text-transform: uppercase;
+  
+  
+
+
 }
 
 .gradient-text {
   background: linear-gradient(
     to bottom,
-white
+black
     
   );
-  font-size: 3rem;
-  font-weight: 300;
+
+  font-weight: 400;
 
 
 
@@ -274,13 +536,18 @@ white
 
 .para-subgroup-head{
   font-family: 'Inter';
+  width: 80%;
 font-weight: 300;
-  font-size: 16px;
+  font-size: .9rem;
   margin-bottom: 2rem;
   line-height: 1.8rem;
   color:rgb(230,230,230);
+  color:rgb(20,20,20);
+
   
 }
+
+
 
 .subgroup-sidebar-wrapper .head-dot-wrapper{
   width: 100%;
@@ -318,7 +585,7 @@ font-family: 'Inter';
 
 
 /* The Main 60% Container */
-.category-grid-container {
+.category-grid-wrapper {
 
 /*   flex: 0 0 60%; */
   flex:1;
@@ -328,9 +595,34 @@ font-family: 'Inter';
   position: relative; /* Keep this */
   overflow: hidden; /* Prevent scaling cards from creating scrollbars */
 border: 0px solid rgb(214, 212, 212);
+border: 0px solid red;
+padding: 1.5rem;
 
-  border: 0px solid red;
 
+
+
+}
+.category-grid{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap:0rem;
+  color:black;
+  
+
+  
+
+}
+
+.catgeory-img-wrapper{
+flex: 1;
+border: 0px solid red;
+}
+
+.catgeory-img-wrapper img{
+width: 100%;
+height: 100%;
+object-fit: cover;
 }
 
 .grid-wrapper {
@@ -342,10 +634,11 @@ border: 0px solid rgb(214, 212, 212);
   transition: opacity 0.3s ease;
   opacity: 1;
   pointer-events: none;
-
+padding-bottom: 1rem;
   /* ADD THIS: Ensure the grid itself doesn't shift when cards scale */
   transform-origin: center center;
-  padding: 10px;
+  display:none;
+
 
 }
 

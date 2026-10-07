@@ -10,6 +10,7 @@ import StaticHeader from './StaticHeader/StaticHeader';
 import { CartListProvider } from './CartListProvider';
 import TransitionSlider from './TransitionSlider/TransitionSlider';
 import { usePageTransition } from './PageTransitionContext';
+import SiteMenu from './SiteMenu/SiteMenu';
 
 
 
@@ -112,6 +113,8 @@ setSearchBarToggle(i)
       setCartToggled={setCartToggled}/>
 
 
+   <SiteMenu/>
+
 
 
   
@@ -137,7 +140,7 @@ setSearchBarToggle(i)
 
 
 
-  {/*        <Footer />  */}  {/* fix layout for screen chnage */}
+         <Footer />    {/* fix layout for screen chnage */}
          <TransitionSlider/>
     </div>
 

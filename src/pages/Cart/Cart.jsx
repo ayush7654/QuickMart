@@ -74,14 +74,6 @@ export default function Cart(){
 
         <div className="Cart-page-wrapper">
 
-<div className="order-details-wrapper">
-  
-    <OrderDetails
-   cartElements={cartElements}
-   cartList={cartList}
-   totalCost={totalCost}
-   />
-</div>
 
        <div className="shipping-detials-wrapper">
        
@@ -93,6 +85,16 @@ export default function Cart(){
 
 
        </div>
+
+       
+<div className="order-details-wrapper">
+  
+    <OrderDetails
+   cartElements={cartElements}
+   cartList={cartList}
+   totalCost={totalCost}
+   />
+</div>
    
 
 

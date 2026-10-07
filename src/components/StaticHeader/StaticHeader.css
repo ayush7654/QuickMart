@@ -20,6 +20,9 @@
     transform: translateY(0);
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 
+    
+
+
 
     
 }
@@ -148,15 +151,16 @@
 
  .active-page-dot{
     
-
 display: grid;
 place-items: center;
 transition: .3s all ease;
    
-    
-    
-    
+
 } 
+
+.header-page-dot{
+      overflow: visible;
+}
 
 .header-nav .active-page-dot{
     opacity: 0;

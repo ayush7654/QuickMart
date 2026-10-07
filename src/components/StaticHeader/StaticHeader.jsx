@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 import {  HiShoppingBag,HiOutlineShoppingBag } from "react-icons/hi2";
 import MenuCancel from '../MenuCancel/MenuCancel';
 import { Link } from 'react-router-dom';
-
+import { useStoreData } from '../StoreDataContext';
 import HeaderBar from './HeaderBar/HeaderBar';
 import { WinScrollContext } from '../WinScrollProvider/WinScrollProvider';
 
@@ -17,6 +17,8 @@ import { WinScrollContext } from '../WinScrollProvider/WinScrollProvider';
 export default function StaticHeader({toggleSwitch,toggleOverlay, sideBarToggle,setCartToggled}) {
 
 
+
+          const {isOpen, setIsOpen,typeFilter,partialPill,setPartialPill,setSideFilterOn,storeSearch,setStoreSearch} = useStoreData();
 
 
 
@@ -33,6 +35,18 @@ const headerNavLeft =
 ]
 
 const location = useLocation();
+
+const handleExpandedToggle = () => {
+  if (!isOpen) {
+    // Stage 1: If it's closed, open it.
+    setIsOpen(true);
+  } 
+    else {
+      // If it's already full height, close the whole thing.
+      setIsOpen(false);
+    }
+  
+};
 
 
 /* directly paste the original page nav right from the previous one */
@@ -107,8 +121,9 @@ className={`static-header-wrapper ${
 
   <div className="header-left-section">
 
-    <div className='header-menu-wrapper'>
-        <MenuCancel color='white'/>
+    <div className='header-menu-wrapper'
+    onClick={handleExpandedToggle}>
+        <MenuCancel color='white'  />
   
     </div>
 
@@ -117,7 +132,7 @@ className={`static-header-wrapper ${
      className={({ isActive }) =>`header-nav ${isActive?'active-header-nav':''}`}
     >
           <span className='active-page-dot'>
-            <FaCircle size={6} />
+            <FaCircle size={6} className='header-page-dot' />
         </span>
         <span>{item.name}</span>
       
