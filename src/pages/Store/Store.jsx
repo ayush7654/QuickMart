@@ -322,10 +322,10 @@ console.log(productElements && productElements)
 
  
 
-  <div className='store-header-wrapper' 
+{/*   <div className='store-header-wrapper' 
   style={{ top: isScrolledPastLimit ? '0rem' : '-5rem' }}>
        <ExpandingStoreHeader/>    
-      </div>  
+      </div>   */}
  
   
 

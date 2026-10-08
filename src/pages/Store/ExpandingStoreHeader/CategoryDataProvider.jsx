@@ -15,14 +15,11 @@ const SUBGROUP_MAPPING = {
      
     items: [
      
-      { slug: "womens-shoes", img: "women-shoes4.jpg" },
-       { slug: "tops", img: "women-tops1.jpg" },
-      { slug: "mens-shirts", img: "Mens-Shirt.jpg" },
-      
-     /*  { slug: '-', img: "NewCollection1.jpg" }, */
-      { slug: "womens-dresses", img: "women-dresses.jpg" },
-     /*  { slug: '-', img: "SalePercent.jpg" }, */
-      { slug: "mens-shoes", img: "Men-Shoes8.webp" },
+      { slug: "womens-shoes" },
+       { slug: "tops"},
+      { slug: "mens-shirts" },    
+      { slug: "womens-dresses" },
+      { slug: "mens-shoes" },
     ]
 
   },
@@ -33,10 +30,10 @@ const SUBGROUP_MAPPING = {
     groupId: 1,
    
     items: [
-      { slug: "laptops", img: "laptops2.jpg" },
-      { slug: "mobile-accessories", img: "MobileAccessary3.jpg" },
-      { slug: "smartphones", img: "smartphones.jpg" },
-      { slug: "tablets", img: "Tablet3.jpg" }
+      { slug: "laptops"},
+      { slug: "mobile-accessories" },
+      { slug: "smartphones"},
+      { slug: "tablets" }
     ]
 
   },
@@ -45,12 +42,12 @@ const SUBGROUP_MAPPING = {
 
   "Beauty & Wellness": {
 
-    groupId: 3,
+    groupId: 2,
    
     items: [
-      { slug: "beauty", img: "beauty.jpg" },
-      { slug: "fragrances", img: "fragrance.jpg" },
-      { slug: "skin-care", img: "skincare.jpg" }
+      { slug: "beauty" },
+      { slug: "fragrances"},
+      { slug: "skin-care" }
     ]
 
   },
@@ -58,27 +55,27 @@ const SUBGROUP_MAPPING = {
 
   "Accessories & Jewellery": {
 
-    groupId: 1,
+    groupId: 3,
 
     items: [
-      { slug: "mens-watches", img: "Men-Watches.jpg" },
-      { slug: "womens-watches", img: "women-watch1.avif" },
-      { slug: "sunglasses", img: "sunglasses1.jpg" },
-      { slug: "womens-jewellery", img: "Jewellery.webp" },
-      { slug: "womens-bags", img: "Women-Bag.jpg" },
+      { slug: "mens-watches"},
+      { slug: "womens-watches" },
+      { slug: "sunglasses"},
+      { slug: "womens-jewellery"},
+      { slug: "womens-bags" },
     ]
 
   },
 
    "Automotive & Outdoors": {
 
-    groupId: 5,
+    groupId: 4,
     
     items: [
-      { slug: "sports-accessories", img: "sports1.jpg" },
-      { slug: "vehicle", img: "Car1.jpg" },
-      { slug: "motorcycle", img: "Motorbike1.jpg" },
-      { slug: "fitness", img: "fitness.jpg" }
+      { slug: "sports-accessories" },
+      { slug: "vehicle" },
+      { slug: "motorcycle" },
+      { slug: "fitness" }
     ]
 
   },
@@ -86,12 +83,12 @@ const SUBGROUP_MAPPING = {
 
   "Home & Living": {
 
-    groupId: 4,
+    groupId: 5,
    
     items: [
-      { slug: "home-decoration", img: "home-decoration.jpg" },
-      { slug: "furniture", img: "furniture4.jpg" },
-      { slug: "kitchen-accessories", img: "kitchen-accessories3.webp" }
+      {slug:'kitchen-accessories'},
+      { slug: "groceries" },
+
     ]
 
   },

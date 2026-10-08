@@ -1,7 +1,7 @@
 
 .site-menu {
   width: 100%;
-  height: 95vh; 
+  height: 97vh; 
   cursor: default;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,9 @@
   color:black;
   transform: translateY(-100%);
 transition: transform 0.25s cubic-bezier(0.4, 0, 1, 1);
+z-index: 1;
+position: fixed;
+top: 0rem;
   
 
 
@@ -19,6 +22,7 @@ transition: transform 0.25s cubic-bezier(0.4, 0, 1, 1);
 .site-menu-open{
 transform: translateY(0%);
 transition: transform 0.5s cubic-bezier(0.05, 0.7, 0.1, 1);
+z-index: 1000;
 }
 
 .site-menu-content {
@@ -35,7 +39,6 @@ transition: transform 0.5s cubic-bezier(0.05, 0.7, 0.1, 1);
 .site-menu-space{
   height: 8rem;
   width: 100%;
-  border-bottom: 0px solid red;
 
   flex-shrink: 0;
 

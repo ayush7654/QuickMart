@@ -40,10 +40,13 @@ const handleExpandedToggle = () => {
   if (!isOpen) {
     // Stage 1: If it's closed, open it.
     setIsOpen(true);
+    toggleOverlay(true);
+    
   } 
     else {
       // If it's already full height, close the whole thing.
       setIsOpen(false);
+      toggleOverlay(false)
     }
   
 };
@@ -93,9 +96,9 @@ useEffect(() => {
        
     
     <div 
-className={`static-header-wrapper ${
-  headerTheme === "white" ? "header-force-white" : "header-force-black"
-} ${isIdle?'static-header-hidden':''} `}
+className={`static-header-wrapper 
+    ${headerTheme === "white" ?"header-force-white" : "header-force-black"}
+     ${isIdle && !isOpen?'static-header-hidden':''} `}
 
 
     
@@ -123,7 +126,7 @@ className={`static-header-wrapper ${
 
     <div className='header-menu-wrapper'
     onClick={handleExpandedToggle}>
-        <MenuCancel color='white'  />
+        <MenuCancel color='white' state={isOpen} />
   
     </div>
 

@@ -103,7 +103,7 @@ setSearchBarToggle(i)
 
 
         
-
+   <SiteMenu/>
 
        <StaticHeader
       toggleSwitch={SearchToggle} 
@@ -113,7 +113,7 @@ setSearchBarToggle(i)
       setCartToggled={setCartToggled}/>
 
 
-   <SiteMenu/>
+
 
 
 

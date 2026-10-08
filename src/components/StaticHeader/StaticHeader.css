@@ -131,6 +131,7 @@
 
 .header-menu-wrapper{
     filter: brightness(0);
+    user-select: none;
 }
 
 .header-force-white .header-menu-wrapper{

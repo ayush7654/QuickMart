@@ -10,6 +10,7 @@ export default function HeaderBar() {
             <span>NEW ARRIVALS EVERY WEEK</span>
             <span>✦</span>
             <span>SHOP THE LATEST COLLECTION</span>
+            <span>Color this  background-color: rgb(245, 173, 147);</span>
             <span>✦</span>
         </div>
 
