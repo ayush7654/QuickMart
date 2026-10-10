@@ -129,5 +129,10 @@ border: 0px solid red;
 display: none;
 }
 
+.animated-underline {
+  cursor: pointer;
+   filter: brightness(0);
+}
+
                        
 

@@ -68,25 +68,28 @@
 
 .static-header-middle{
     
-  position: absolute;
+/*   position: absolute;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%); */
     border: 0px solid blue;
-    display: flex;
+   /*  display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
     font-size: 1.25rem;
     font-family: 'Jost';
     font-family: 'Roboto';
+  display: flex;
 
-    gap:0px;
+  align-items: center;
+
+    gap:5px;
     margin-top: 0rem;
   
 
 }
 
   .site-logo{
-    width: 3.5rem;
+    width: 3rem;
     display: grid;
     place-items: center;
    
@@ -100,6 +103,14 @@
       object-fit: cover;
       filter: brightness(0);
      
+    }
+
+    .header-site-name{
+        font-size: 2rem;
+        font-family: 'Inter';
+        font-weight: 500;
+       /*  text-transform: uppercase; */
+        
     }
 
     .static-header-wrapper.header-force-white .site-logo img{
@@ -123,8 +134,19 @@
 .header-left-section {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 3rem;
     border: 0px solid red;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: 'Inter';
+    font-weight: 500;
+text-transform: uppercase;
+font-size: .9rem;
+
+  
+  
+  
    
      
 }
@@ -132,6 +154,10 @@
 .header-menu-wrapper{
     filter: brightness(0);
     user-select: none;
+
+    padding: 12px 5px;
+    cursor: pointer;
+ 
 }
 
 .header-force-white .header-menu-wrapper{
@@ -146,7 +172,26 @@
     gap:8px;
     flex-shrink: 0;
    
+    
+   
 }
+
+.header-nav-icon{
+ font-size: 1.3rem;
+}
+
+.header-nav-icon img{
+width: 1.25rem;
+ filter: brightness(0);
+ user-select: none;
+}
+
+.header-force-white .header-nav-icon img{
+ filter: brightness(1);
+}
+
+
+
 
 
 

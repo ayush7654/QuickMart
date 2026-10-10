@@ -55,3 +55,7 @@
 .exit-opposite.from-center:not(:hover)::after {
   transform-origin: center;
 }
+
+.header-force-white .animated-underline{
+ filter: brightness(1);
+ }

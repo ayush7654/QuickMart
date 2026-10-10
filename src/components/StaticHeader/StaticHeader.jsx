@@ -4,6 +4,13 @@ import TransitionLink from '../TransitionLink';
 import { FaCircle } from "react-icons/fa";
 import { Search } from 'lucide-react';
 import { HiUser , HiOutlineUser } from 'react-icons/hi';
+import { FaRegUser, FaUser } from 'react-icons/fa6';
+import { User } from 'lucide-react';
+import { UserCircle } from 'lucide-react';
+import { MdOutlineAccountCircle, MdAccountCircle } from 'react-icons/md';
+// Change 'fa6' to 'fa'
+import { FaRegUserCircle, FaUserCircle } from 'react-icons/fa';
+
 import { useLocation } from 'react-router-dom';
 import {  HiShoppingBag,HiOutlineShoppingBag } from "react-icons/hi2";
 import MenuCancel from '../MenuCancel/MenuCancel';
@@ -11,6 +18,7 @@ import { Link } from 'react-router-dom';
 import { useStoreData } from '../StoreDataContext';
 import HeaderBar from './HeaderBar/HeaderBar';
 import { WinScrollContext } from '../WinScrollProvider/WinScrollProvider';
+import AnimatedUnderline from '../AnimatedUnderline/AnimatedUnderline';
 
 
 
@@ -18,7 +26,7 @@ export default function StaticHeader({toggleSwitch,toggleOverlay, sideBarToggle,
 
 
 
-          const {isOpen, setIsOpen,typeFilter,partialPill,setPartialPill,setSideFilterOn,storeSearch,setStoreSearch} = useStoreData();
+          const {isOpen, setIsOpen} = useStoreData();
 
 
 
@@ -31,7 +39,9 @@ const [headerTheme, setHeaderTheme] = useState('black');
 const headerNavLeft = 
 [
  {name:'Store',path:'/store',},
- {name:'About',path:'/testing',}
+ {name:'Journal',path:'/',},
+ {name:'About',path:'/testing',},
+ {name:'Contact',path:'/',}
 ]
 
 const location = useLocation();
@@ -95,14 +105,18 @@ useEffect(() => {
 
        
     
-    <div 
-className={`static-header-wrapper 
-    ${headerTheme === "white" ?"header-force-white" : "header-force-black"}
-     ${isIdle && !isOpen?'static-header-hidden':''} `}
-
-
-    
-    >
+<div
+  className={`
+    static-header-wrapper
+    ${isOpen
+      ? "header-force-black"
+      : headerTheme === "white"
+        ? "header-force-white"
+        : "header-force-black"
+    }
+    ${isIdle && !isOpen ? "static-header-hidden" : ""}
+  `}
+>
 
         <HeaderBar/>
 
@@ -115,29 +129,31 @@ className={`static-header-wrapper
      
      <Link to ='/' className="static-header-middle"> {/* Make this transational */}
                 
-                 <span className="site-logo"> <img src='SarasBlueLogo.png'/></span>
+                 <span className="site-logo"> <img src='NewSiteLogo1.png'/></span>
+                 <span className='header-site-name'>Shihō</span>
                
-          <div className="site-logo-name">Saras Drops</div> 
+    {/*       <div className="site-logo-name">Saras Drops</div>  */}
      </Link>
 
    
 
   <div className="header-left-section">
 
-    <div className='header-menu-wrapper'
+ {/*    <div className='header-menu-wrapper'
     onClick={handleExpandedToggle}>
         <MenuCancel color='white' state={isOpen} />
   
-    </div>
+    </div> */}
+
 
       {headerNavLeft.map((item,index)=>
     <TransitionLink to={item.path} key={index}
      className={({ isActive }) =>`header-nav ${isActive?'active-header-nav':''}`}
     >
-          <span className='active-page-dot'>
+         {/*   <span className='active-page-dot'>
             <FaCircle size={6} className='header-page-dot' />
-        </span>
-        <span>{item.name}</span>
+        </span> */} 
+        <AnimatedUnderline >{item.name}</AnimatedUnderline>
       
     </TransitionLink>)}
 
@@ -160,9 +176,14 @@ className={`static-header-wrapper
 
       <div className="header-search-wrapper"
       onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} >
-          <Search className="header-search-icon"    
-          style={{ strokeWidth: '2'}} size={15} />
-          <span>Search</span>
+
+
+        <span className='header-nav-icon'>
+               <Search className="header-search-icon"    
+          style={{ strokeWidth: '1.5'}} size={22} />
+        </span>
+       
+          {/* <span>Search</span> */}
         
       </div>
 
@@ -170,10 +191,18 @@ className={`static-header-wrapper
         to='/Login'
         className={({ isActive }) =>`header-nav ${isActive?'active-header-nav':''}`}>
          <div className="header-nav">
-          <span className='active-page-dot'>
+          {/* <span className='active-page-dot'>
             <FaCircle size={6} />
         </span>
-             <span>Account</span>                       
+            <span>Account</span>   */}    
+
+ <span className='header-nav-icon'>
+       { location.pathname == "/Login" ? 
+        <img src='userIcon-fill.png'/>:<img src='userIcon-outline.png'/>} 
+                          
+                          
+ </span>
+                       
             </div>  
            </TransitionLink>
 
@@ -181,12 +210,31 @@ className={`static-header-wrapper
               <div  className={`header-nav ${location.pathname==='/cart'?'active-header-nav':''}`}
               onClick={()=>{setCartToggled(true),toggleOverlay(true)}}>
                       
-                            <span className='active-page-dot'>
+                           {/*  <span className='active-page-dot'>
                             <FaCircle size={6} />
                              </span>
-                          <span>Cart</span> 
+                          <span>Cart</span>  */}
+                           <span className='header-nav-icon'>
+                                            {location.pathname === "/cart" ? (
+              <HiShoppingBag   />
+            ) : (
+              <HiOutlineShoppingBag
+                
+                style={{ strokeWidth: "1.5" }}
+              />
+            )}
+                           </span>
+                
                         
                            
+                 </div>
+
+                 <div>
+                     <div className='header-menu-wrapper'
+    onClick={handleExpandedToggle}>
+        <MenuCancel color='white' state={isOpen} />
+  
+    </div> 
                  </div>
 
 

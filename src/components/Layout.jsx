@@ -103,7 +103,7 @@ setSearchBarToggle(i)
 
 
         
-   <SiteMenu/>
+   <SiteMenu   toggleOverlay={setShowOverlay}/>
 
        <StaticHeader
       toggleSwitch={SearchToggle} 

@@ -81,7 +81,7 @@ align-items: center;
 
 }
 .subgroup-content-head{
-
+font-size: 1.8rem;
 }
 
 
@@ -121,21 +121,40 @@ border: 0px solid red;
 .subgroup-list-head{
   font-weight: 400;
   font-size: .85rem;
-  color:rgb(125, 125, 125);
+ 
+  color:black;
   padding-bottom:16px ;
   font-family: 'Inter';
-
+  text-transform: uppercase;
 }
 
 .sub-group-list{
  width: fit-content;
-  text-transform: uppercase;
+
   font-size: .8rem;
   display: flex;
   flex-direction: column;
   gap:8px;
   cursor: pointer;
+  text-transform: capitalize;
+  font-family: 'Inter';
 
+
+}
+.subgroup-name{
+   color:rgb(125, 125, 125);
+   transition: color .2s ease;
+}
+
+.subgroup-name:hover{
+  color:black;
+}
+
+.active-subgroup{
+  color:black;
+}
+.subgroup-name.active-subgroup .animated-underline::after {
+  transform: scaleX(1);
 }
 
 .category-grid-wrapper {
@@ -210,7 +229,7 @@ object-fit: cover;
   flex:1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 8px;
     height: 100%;
 }
 
@@ -218,7 +237,7 @@ object-fit: cover;
 
     display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 
 }
 
@@ -252,5 +271,19 @@ object-fit: cover;
   display: flex;
   flex-direction: column;
   align-items: end;
+}
+
+.menu-footer-icon-wrapper{
+  font-size: 1.4rem;
+  color:black;
+  display: flex;
+  gap: 1.5rem;
+
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0rem; 
+  
+
 }
 

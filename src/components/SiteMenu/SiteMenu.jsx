@@ -3,6 +3,7 @@ import './SiteMenu.css'
 import CategoryDataProvider from '../../pages/Store/ExpandingStoreHeader/CategoryDataProvider';
 import AnimatedUnderline from '../AnimatedUnderline/AnimatedUnderline';
 import { useStoreData } from '../StoreDataContext';
+import { FaFacebook, FaXTwitter, FaYoutube, FaInstagram ,FaTiktok, FaLinkedin, FaLinkedinIn} from "react-icons/fa6";
 
 
 
@@ -11,12 +12,12 @@ import { useStoreData } from '../StoreDataContext';
     {id:1,img :['IphoneDuo3.jpg','IphoneDuo.jpg']},
     {id:2, img:['SkincareLeft.jpg','skincareRight.jpg']},
     {id:3, img:['Jewellery1.jpg','Sunglasses2.jpg']},
-    {id:4, img:['Motorbike1.jpg','fitness7.jpg']},
+    {id:4, img:['Cycling2.avif','fitness6.jpg']},
     {id:5, img: ['DailyItem2.jpg','DailyItem3.jpg']}
 
   ]
 
-export default function SiteMenu() {
+export default function SiteMenu({toggleOverlay}) {
 
     const {handleTypeFilter,isOpen, setIsOpen,currentCategory} = useStoreData();
     const { categorizedData, loading , selectedGroup} = CategoryDataProvider();
@@ -32,6 +33,7 @@ export default function SiteMenu() {
         /* CLOSED */
         if (!isOpen) {
           setActiveGroup(null);
+          toggleOverlay(false);
            /* setSelectedSubGroupId(null) */
           
           return;
@@ -58,6 +60,10 @@ export default function SiteMenu() {
     
     }, [loading, categorizedData, isOpen, selectedCategoryId]);
 
+    
+
+    console.log('active group', currentCategory)
+
   return (
     <div className={`site-menu ${isOpen ? "site-menu-open" : ""}`}>
       <div className="site-menu-content">
@@ -76,7 +82,9 @@ export default function SiteMenu() {
                  
                     <div className="sub-group-list">
                      {categorizedData[group].items.map((item, itemIdx) => (
-                        <div key={itemIdx}  
+                        <div 
+                        className={`subgroup-name ${currentCategory===item.slug?'active-subgroup':''}`}
+                        key={itemIdx}  
                         onMouseEnter={() => {
                     setActiveGroup(group);
                     setSelectedSubGroupId(index);
@@ -123,13 +131,24 @@ export default function SiteMenu() {
             
                                  <div className="menu-footer-info">
                                   <span> Get in touch</span>
-                                  <span> Become a seller</span>
-                                  <span> .</span>
+                                  <div className="menu-footer-icon-wrapper">
+                                    
+                                    <FaFacebook/> 
+                                      <FaInstagram />
+                                    < FaYoutube/> 
+                                    <  FaTiktok /> 
+                                    <FaLinkedinIn/> 
+                                  
+                                  
+                                  </div>
                                 </div>
             
                                 <div className="menu-footer-info">
-                                 <span>Cancel Order</span>
-                                 <span>Order History</span>
+                                <span> <AnimatedUnderline>Cancel Order</AnimatedUnderline></span>
+                                <span> <AnimatedUnderline>Order History</AnimatedUnderline></span>
+                                <span> <AnimatedUnderline>Payment Methods</AnimatedUnderline></span>
+                             
+                             
                                  </div>
                                  
                                 
