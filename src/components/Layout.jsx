@@ -11,6 +11,7 @@ import { CartListProvider } from './CartListProvider';
 import TransitionSlider from './TransitionSlider/TransitionSlider';
 import { usePageTransition } from './PageTransitionContext';
 import SiteMenu from './SiteMenu/SiteMenu';
+import { useStoreData } from './StoreDataContext';
 
 
 
@@ -21,15 +22,21 @@ export default function Home(){
     const isHomePage = location.pathname === '/';
    
    const [searchBarToggle,setSearchBarToggle]= useState(false)
+   
    const [showOverlay, setShowOverlay] = useState(false);
 
    const [animationStatus, setAnimationStatus] = useState('idle');
 
    const [sideBarOn,setSideBarOn] = useState(false)
 
+   const {isOpen} = useStoreData();
+
+   const overlayVisible = isOpen || showOverlay;
+
    
 
        const [cartToggled,setCartToggled]= useState(false)
+
 const { isAnimating } = usePageTransition();
 
 
@@ -73,12 +80,12 @@ setSearchBarToggle(i)
 
   {/* <div className="middleLine"></div> */}
 
-{showOverlay && (
+{overlayVisible  && (
   <div className="screen-overlay" onClick={() => setShowOverlay(false)} />
 )}
       <SearchBar currentToggle={searchBarToggle} 
       toggleSwitch={SearchToggle} 
-      screenOverlay={showOverlay}
+     
       toggleOverlay={setShowOverlay} />
 
   <SideBarNav
@@ -103,11 +110,11 @@ setSearchBarToggle(i)
 
 
         
-   <SiteMenu   toggleOverlay={setShowOverlay}/>
+{/*  <SiteMenu   toggleOverlay={setShowOverlay}/> */}
 
        <StaticHeader
       toggleSwitch={SearchToggle} 
-    screenOverlay={showOverlay}
+    
       toggleOverlay={setShowOverlay}
       sideBarToggle={toggleSideBar}
       setCartToggled={setCartToggled}/>
@@ -125,7 +132,7 @@ setSearchBarToggle(i)
 
   
     <div className='outlet-container' data-animation={animationStatus}>
-    <Outlet screenOverlay={showOverlay}
+    <Outlet 
       toggleOverlay={setShowOverlay}/>
     </div>
 

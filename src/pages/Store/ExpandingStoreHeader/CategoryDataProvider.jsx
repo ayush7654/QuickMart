@@ -87,7 +87,7 @@ const SUBGROUP_MAPPING = {
    
     items: [
       {slug:'kitchen-accessories'},
-      { slug: "groceries" },
+      { slug: "groceries" }
 
     ]
 

@@ -5,7 +5,29 @@ import AnimatedUnderline from '../AnimatedUnderline/AnimatedUnderline';
 import { useStoreData } from '../StoreDataContext';
 import { FaFacebook, FaXTwitter, FaYoutube, FaInstagram ,FaTiktok, FaLinkedin, FaLinkedinIn} from "react-icons/fa6";
 
+const footerContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
 
+const footerItemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
  const categoryImgs = [
     {id:0, img: ['Clothing1.jpg','Clothing2.jpg'],},
@@ -17,7 +39,7 @@ import { FaFacebook, FaXTwitter, FaYoutube, FaInstagram ,FaTiktok, FaLinkedin, F
 
   ]
 
-export default function SiteMenu({toggleOverlay}) {
+export default function SiteMenu() {
 
     const {handleTypeFilter,isOpen, setIsOpen,currentCategory} = useStoreData();
     const { categorizedData, loading , selectedGroup} = CategoryDataProvider();
@@ -33,8 +55,8 @@ export default function SiteMenu({toggleOverlay}) {
         /* CLOSED */
         if (!isOpen) {
           setActiveGroup(null);
-          toggleOverlay(false);
-           /* setSelectedSubGroupId(null) */
+        
+        
           
           return;
         }
@@ -67,7 +89,9 @@ export default function SiteMenu({toggleOverlay}) {
   return (
     <div className={`site-menu ${isOpen ? "site-menu-open" : ""}`}>
       <div className="site-menu-content">
-           <div className="site-menu-space"></div>
+
+        {/*    <div className="site-menu-space"></div> */}
+
             <div className="site-menu-layout">
                 <div className="menu-layout-content">
                  <div className="subgroup-content-wrapper">
@@ -127,9 +151,11 @@ export default function SiteMenu({toggleOverlay}) {
             </div>
 
              <div className="menu-footer-wrapper">
-                               <div className="site-menu-footer">
+                               <div className="site-menu-footer"
+                               >
             
-                                 <div className="menu-footer-info">
+                                 <div className="menu-footer-info"
+                               >
                                   <span> Get in touch</span>
                                   <div className="menu-footer-icon-wrapper">
                                     
@@ -143,7 +169,8 @@ export default function SiteMenu({toggleOverlay}) {
                                   </div>
                                 </div>
             
-                                <div className="menu-footer-info">
+                                <div className="menu-footer-info"
+                                 >
                                 <span> <AnimatedUnderline>Cancel Order</AnimatedUnderline></span>
                                 <span> <AnimatedUnderline>Order History</AnimatedUnderline></span>
                                 <span> <AnimatedUnderline>Payment Methods</AnimatedUnderline></span>
@@ -153,31 +180,37 @@ export default function SiteMenu({toggleOverlay}) {
                                  
                                 
                                
-                                <div className="menu-footer-info">
+                                <div className="menu-footer-info"
+                                 >
                                   <div className="menu-footer-contact-wrapper">
                                     <div className="menu-footer-contact">
                                       <span>For press contacts:</span>
                                       <span>press@saras.com</span>
                                     </div>
-                                   {/*  <div> <span>info@saras.com</span></div> */}
+                                
                                   </div>
                                  
                                   <span></span>
                                 </div>
-                                <div className="menu-footer-info">
+
+                                <div className="menu-footer-info"
+                                >
                                   <div className="menu-footer-link-wrapper">
-                                    <span>Saras HQ</span>
+                                    <span>Shiho HQ</span>
                                     <span>42, Harbour View Road , Lower Parel</span>
-                                   {/*  <span>Mumbai  400013, India</span> */}
+                                   
                                   </div>
                                   <div className="menu-footer-telephone">
                                     <span>Tel:</span>
                                     <span>+91 22 4567 8900</span>
                                   </div>
                                 </div>
-                                <div className="menu-footer-info">
+
+
+                                <div className="menu-footer-info"
+                                  >
                                   <div className="menu-footer-link-wrapper pill-footer-copyright">
-                                     <span>© 2026 Saras India Pvt. Ltd.</span>
+                                     <span>© 2026 Shiho India Pvt. Ltd.</span>
                               
                                   <span>  Studio North.</span>
                                       <span> All Rights Reserved</span>

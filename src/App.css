@@ -131,7 +131,7 @@ display: none;
 
 .animated-underline {
   cursor: pointer;
-   filter: brightness(0);
+   filter: brightness(1);
 }
 
                        
