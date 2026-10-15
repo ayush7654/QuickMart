@@ -4,7 +4,7 @@ import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
 function ScrollButton({ 
   text, 
   textColor='white',
-  color = "rgb(0,100,255)", 
+  color = "rgb(200,255,0)", 
   theme = "buttonFilled",      // Default: Filled
   themeOnHover = "buttonOutline", // Default Hover: Outline
   className = "", 

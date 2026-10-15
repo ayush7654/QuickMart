@@ -35,8 +35,11 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { ListFilter } from "lucide-react";
 import { Search } from 'lucide-react'
 import { Funnel, Filter } from 'lucide-react';
-import { FaFilter } from 'react-icons/fa';
+
 import StoreSearch from "./StoreSearch/StoreSearch";
+import { FaSlidersH, FaFilter } from 'react-icons/fa'; // Font Awesome horizontal sliders
+import { MdOutlineTune, MdFilterList } from 'react-icons/md';
+
 
 const getLayoutByWidth = () => {
   if (typeof window === 'undefined') return 4; // Fallback for SSR (e.g., Next.js)
@@ -382,21 +385,32 @@ console.log(productElements && productElements)
             
              <div className="store-info-section store-bar-left">
 
-                             
-   <GridToggle
-   activeLayout={activeLayout}
-   setActiveLayout={setActiveLayout}
-   />
+            <div className="filter-btn-wrapper"
+              onClick={() => setSideFilterOn(true)}>
+               <MdOutlineTune size={24}  />
+            <span>Sort & Filter</span>
+           
+
+
+            </div> 
+
+
+
+            
  
 
              </div>
              <div className="store-info-section  store-bar-right">
-                 <StoreSearch
+                
+
+       <StoreSearch
                  storeSearch={storeSearch}
                  setStoreSearch={setStoreSearch}
                  /> 
-            
-         
+                             <GridToggle
+   activeLayout={activeLayout}
+   setActiveLayout={setActiveLayout}
+   />
 
        
              </div>
@@ -429,7 +443,7 @@ console.log(productElements && productElements)
               gridTemplateColumns: `repeat(${activeLayout}, 1fr)`
             }}>
 
-     <div 
+{/*      <div 
   className="store-filter-button"
   style={{
     opacity: isScrolledPastLimit ? 1 : 0,
@@ -439,7 +453,7 @@ console.log(productElements && productElements)
   aria-label="Open filter menu"
 >
   <Filter size={20} strokeWidth={2} className="filter-icon" /> 
-</div>
+</div> */}
               
               {productElements}</div>
           </div>

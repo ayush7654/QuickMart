@@ -40,8 +40,9 @@ export const StoreDataProvider = ({ children }) => {
   };
 
   const handleTypeFilter = (category) => {
+
     setcurrentCategory(category.name);
-    setSearchParams({ type: category.slug });
+    navigate(`/store?type=${category.slug}`);
   };
 
   const handleCancelTypeFilter = () => {

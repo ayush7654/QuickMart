@@ -13,6 +13,7 @@ body{@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300
  font-family: 'Inter';
 
 
+
 }
 *, *::before, *::after {
   box-sizing: border-box;
@@ -30,7 +31,8 @@ a {
   --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: "Jost", sans-serif;
   --font-subheading: sans-serif;
-  --font-button: 'Outfit'
+  --font-button: 'Outfit';
+  --primary-color: rgb(0,100,255);
 }
 
 

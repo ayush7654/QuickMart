@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './BlurTransition.css';
 
 const IMAGES = [
-  'StoreMedia/storeImg2.jpg',
+  'StoreMedia/storeImg9.webp',
   
     'StoreMedia/storeImg3.jpg',
-    'StoreMedia/storeImg1.jpg',
+    'StoreMedia/storeImg12.jpg',
     'StoreMedia/storeImg4.jpg',
 
 

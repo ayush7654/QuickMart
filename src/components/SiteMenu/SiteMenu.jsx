@@ -31,11 +31,11 @@ const footerItemVariants = {
 
  const categoryImgs = [
     {id:0, img: ['Clothing1.jpg','Clothing2.jpg'],},
-    {id:1,img :['IphoneDuo3.jpg','IphoneDuo.jpg']},
-    {id:2, img:['SkincareLeft.jpg','skincareRight.jpg']},
-    {id:3, img:['Jewellery1.jpg','Sunglasses2.jpg']},
-    {id:4, img:['Cycling2.avif','fitness6.jpg']},
-    {id:5, img: ['DailyItem2.jpg','DailyItem3.jpg']}
+    {id:1,img :['IphoneDuo4.jpg','IphoneDuo.jpg']},
+    {id:2, img:['skincare1.jpg','skincare2.jpg']},
+    {id:3, img:['GreenGems.jpg','Green-Gems.jpg']},
+    {id:4, img:['Football5.jpg','Football6.jpg']},
+    {id:5, img: ['DailyItem2.jpg','Grocery.jpg']}
 
   ]
 
@@ -90,7 +90,7 @@ export default function SiteMenu() {
     <div className={`site-menu ${isOpen ? "site-menu-open" : ""}`}>
       <div className="site-menu-content">
 
-        {/*    <div className="site-menu-space"></div> */}
+       
 
             <div className="site-menu-layout">
                 <div className="menu-layout-content">
@@ -115,9 +115,9 @@ export default function SiteMenu() {
                   }}
                   
                      onClick={()=>{handleTypeFilter(item),
-                                setIsOpen(false),
-                                
+                                setIsOpen(false),                     
                                 setSelectedSubGroupId(itemIdx)} }>
+
                          <AnimatedUnderline>{item.slug.replaceAll('-', ' ')}</AnimatedUnderline> 
                           </div>
                       ))}
@@ -156,7 +156,7 @@ export default function SiteMenu() {
             
                                  <div className="menu-footer-info"
                                >
-                                  <span> Get in touch</span>
+                                 <span>Get in touch </span>
                                   <div className="menu-footer-icon-wrapper">
                                     
                                     <FaFacebook/> 
@@ -169,11 +169,10 @@ export default function SiteMenu() {
                                   </div>
                                 </div>
             
-                                <div className="menu-footer-info"
-                                 >
-                                <span> <AnimatedUnderline>Cancel Order</AnimatedUnderline></span>
-                                <span> <AnimatedUnderline>Order History</AnimatedUnderline></span>
-                                <span> <AnimatedUnderline>Payment Methods</AnimatedUnderline></span>
+                                <div className="menu-footer-info">
+                                <span><AnimatedUnderline>Cancel Order</AnimatedUnderline></span>
+                                <span><AnimatedUnderline>Order History</AnimatedUnderline></span>
+                                <span><AnimatedUnderline>Payment Methods</AnimatedUnderline></span>
                              
                              
                                  </div>
@@ -185,7 +184,7 @@ export default function SiteMenu() {
                                   <div className="menu-footer-contact-wrapper">
                                     <div className="menu-footer-contact">
                                       <span>For press contacts:</span>
-                                      <span>press@saras.com</span>
+                                      <span><AnimatedUnderline>press@saras.com</AnimatedUnderline> </span>
                                     </div>
                                 
                                   </div>
@@ -209,7 +208,7 @@ export default function SiteMenu() {
 
                                 <div className="menu-footer-info"
                                   >
-                                  <div className="menu-footer-link-wrapper pill-footer-copyright">
+                                  <div className="menu-footer-link-wrapper menu-footer-copyright">
                                      <span>© 2026 Shiho India Pvt. Ltd.</span>
                               
                                   <span>  Studio North.</span>

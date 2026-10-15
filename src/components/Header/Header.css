@@ -224,59 +224,13 @@ font-family: "Prosto One", sans-serif;
 
 
 
-  .header-icon{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.3rem;
 
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  transition: all .3s ease;
-  color: rgb(75, 75, 75);
-
-  }
-
-  .header-icon:hover{
-
-      color:blue;
-      
-
-  }
-
-  .page-nav-right-selected   .header-icon{
-    color:black;
-  }
-
-  .headerTransparent .header-icon{
-    color:rgb(255, 255, 255);
-    
-  }
- .headerTransparent .header-icon:hover{
-    color:rgb(255, 255, 255);
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-  }
+  
+  
 
 
 
 
-
-.searchIcon{
-  width: 1.3rem;
-  height: 1.3rem;
-  margin-top: 0.2rem;
-    transition: all .3s ease;
-}
-
-.searchIcon:hover{
- 
-  cursor: pointer;
-}
-
-   #header-search-icon-ph{
-    display: none;
-   }
 
 
 

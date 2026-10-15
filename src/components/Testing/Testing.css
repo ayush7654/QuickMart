@@ -23,99 +23,24 @@
 
   width: 100%;
     position: relative;
-margin-top: 10rem;
+margin-top: 0rem;
 
    min-height: 100vh;
+   display: grid;
+   place-items: center;
 
 
 }
 
-
-.mega-menu-container {
-  position: relative;
-  width: 100%;
-  z-index: 1000;
-  background-color: red;
-  border: 1px solid red;
-}
-
-.mega-header {
-  position: relative;
-  z-index: 2;
-  height: 80px;
-  padding: 0 5%;
+.color-bar-wrapper{
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #fff;
-  color: #111;
+  flex-direction: row;
 }
 
-.mega-logo {
-  font-size: 20px;
-  font-weight: 700;
+.color-bar{
+  width: 8rem;
+  height: 20rem;
+  border: 0px solid red;
 }
 
-.mega-nav {
-  display: flex;
-  align-items: center;
-  gap: 35px;
-  font-size: 14px;
-}
 
-.mega-nav span {
-  cursor: pointer;
-}
-
-.mega-trigger {
-  position: relative;
-}
-
-/* Mega menu panel */
-
-.mega-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-/*   padding: 30px 0% 0px;  */
-/*   background: #fff;
-  color: #111; */
-
-  box-shadow: 0 15px 25px rgb(0 0 0 / 8%);
-  z-index: 1;
-  
-
-}
-
-.mega-menu-content {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-  width: 100%;
-}
-
-.mega-menu-box {
-  min-height: 240px;
-  background: #42a66c;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-@media (max-width: 700px) {
-  .mega-menu-content {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .mega-menu-box {
-    min-height: 160px;
-  }
-
-  .mega-nav {
-    gap: 15px;
-  }
-}

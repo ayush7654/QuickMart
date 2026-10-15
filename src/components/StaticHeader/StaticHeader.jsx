@@ -13,6 +13,8 @@ import { FaRegUserCircle, FaUserCircle } from 'react-icons/fa';
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from 'react-router-dom';
 import {  HiShoppingBag,HiOutlineShoppingBag } from "react-icons/hi2";
+import { RiShoppingBag3Line, RiShoppingBag3Fill } from 'react-icons/ri';
+import { RiAccountPinCircleLine,  RiAccountPinCircleFill } from 'react-icons/ri';
 import MenuCancel from '../MenuCancel/MenuCancel';
 import { Link } from 'react-router-dom';
 import { useStoreData } from '../StoreDataContext';
@@ -59,17 +61,13 @@ const boxVariants = {
   },
 };
 
-const menuItems = [
-  "Box One",
-  "Box Two",
-  "Box Three",
-  "Box Four",
-];
+
 
 
 export default function StaticHeader({toggleSwitch,toggleOverlay, sideBarToggle,setCartToggled}) {
 
 
+const location = useLocation();
 
 const {isOpen, setIsOpen} = useStoreData();
 
@@ -81,6 +79,8 @@ const [headerTheme, setHeaderTheme] = useState('black');
 
  const { isAtTop ,  isIdle } = useContext(WinScrollContext);
 
+  const storeHeader = ['/store'].includes(location.pathname);
+
 const headerNavLeft = 
 [
  {name:'Store',path:'/store',},
@@ -91,7 +91,7 @@ const headerNavLeft =
 
 ]
 
-const location = useLocation();
+
 
 const timeoutRef = useRef(null);
 
@@ -181,6 +181,8 @@ useEffect(() => {
     ${isIdle && !isOpen ? "static-header-hidden" : ""}
     ${isOpen?'open-menu-header':''}
   `}
+
+  style={{ '--header-translate': storeHeader ? '-100%' : '-1.5rem' }}
 >
 
         <HeaderBar/>
@@ -197,7 +199,7 @@ useEffect(() => {
      
      <Link to ='/' className="static-header-middle"> {/* Make this transational */}
                 
-                 <span className="site-logo"> <img src='NewSiteLogo1.png'/></span>
+                 <span className="site-logo"> <img src='siteLogo5.png'/></span>
                  <span className='header-site-name'>Shihō</span>
                
     {/*       <div className="site-logo-name">Saras Drops</div>  */}
@@ -244,53 +246,47 @@ useEffect(() => {
 
       <div className="header-right-section">
 
-      <div className="header-search-wrapper"
+      <div className="header-icon-wrapper"
       onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} >
 
 
-        <span className='header-nav-icon'>
+        <div className='header-icon'>
                <Search className="header-search-icon"    
-          style={{ strokeWidth: '1.5'}} size={22} />
-        </span>
+          style={{ strokeWidth: '2'}} size={20} />
+        </div>
        
-          {/* <span>Search</span> */}
+    
         
       </div>
 
         <TransitionLink 
         to='/Login'
-        className={({ isActive }) =>`header-nav ${isActive?'active-header-nav':''}`}>
-         <div className="header-nav">
-          {/* <span className='active-page-dot'>
-            <FaCircle size={6} />
-        </span>
-            <span>Account</span>   */}    
+        className={({ isActive }) =>`header-icon-wrapper ${isActive?'active-header-nav':''}`}>
+         
+             
 
- <span className='header-nav-icon'>
+ <span className='header-icon'>
        { location.pathname == "/Login" ? 
-        <img src='userIcon-fill.png'/>:<img src='userIcon-outline.png'/>} 
+        <RiAccountPinCircleFill  />:<RiAccountPinCircleLine />} 
                           
                           
  </span>
                        
-            </div>  
+       
            </TransitionLink>
 
 
-              <div  className={`header-nav ${location.pathname==='/cart'?'active-header-nav':''}`}
+              <div  className={`header-icon-wrapper ${location.pathname==='/cart'?'active-header-nav':''}`}
               onClick={()=>{setCartToggled(true) ,toggleOverlay(true)} }>
                       
-                           {/*  <span className='active-page-dot'>
-                            <FaCircle size={6} />
-                             </span>
-                          <span>Cart</span>  */}
-                           <span className='header-nav-icon'>
+                           
+                           <span className='header-icon'>
                                             {location.pathname === "/cart" ? (
-              <HiShoppingBag   />
+              < RiShoppingBag3Fill  />  
             ) : (
-              <HiOutlineShoppingBag
+              < RiShoppingBag3Line
                 
-                style={{ strokeWidth: "1.5" }}
+                style={{ strokeWidth: "" }}
               />
             )}
                            </span>
@@ -299,14 +295,7 @@ useEffect(() => {
                            
                  </div>
 
-                 <div>
-     {/*                 <div className='header-menu-wrapper'
-    onClick={handleExpandedToggle}>
-        <MenuCancel color='white' state={isOpen} />
-  
-    </div>  */}
-                 </div>
-
+        
 
     </div> 
 
@@ -347,14 +336,4 @@ useEffect(() => {
   )
 }
 
-   {/*  <div className="mega-menu-content">
-              {menuItems.map((item) => (
-                <motion.div
-                  className="mega-menu-box"
-                  key={item}
-                  variants={boxVariants}
-                >
-                  {item}
-                </motion.div>
-              ))}
-            </div> */}
+  

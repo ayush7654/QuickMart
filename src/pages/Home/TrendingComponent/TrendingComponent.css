@@ -106,13 +106,14 @@ width: 50%;
   border-radius: 100px;
   width: fit-content;
   margin-bottom: 1rem;
-  font-size: 16px;
-  background-color: rgba(217, 221, 251, 0.659);
-  border: 1px solid rgb(196, 203, 255);
+  font-size: .9rem;
+ background-color: rgb(230, 230, 255);
+  border: 1px solid rgb(100, 80, 250,.3);
+
   color:rgb(0, 0, 0);
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family:'Roboto';
+  font-family:'Figtree';
 }
 
 .trend-info h2{
@@ -131,15 +132,19 @@ width: 50%;
 
  width: 8rem;
  padding: 2px 0rem;
- background-color: rgb(0,100,255);
- 
- border: 2px solid transparent;
 
- font-size: 1rem;
+
+ background-color: rgb(100, 80, 250);
+   background-color: rgb(0,100,255);
+   background-color: var(--primary-color);
+ border: 1px solid transparent;
+
+ font-size: .95rem;
  border-radius: 100px;
  color:rgb(255, 255, 255);
- font-family:sans-serif;
- font-weight: 600;
+
+ font-family:'Figtree';
+ font-weight: 500;
  display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -148,8 +153,9 @@ width: 50%;
 
 .fashion-trend-btn:hover{
   background-color: transparent;
-   border: 2px solid rgb(0,100,255);
-    color:rgb(0,100,255);
+   border: 1px solid var(--primary-color);
+    color:rgb(100, 80, 250);
+  color: var(--primary-color);
 }
 
 

@@ -16,7 +16,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 40%;
   max-width: 1100px;
   text-align: center;
 }
@@ -38,6 +38,7 @@
   letter-spacing: -0.03em;
   color: #ffffff;
   will-change: transform, opacity, filter;
+  mix-blend-mode: difference;
 }
 
 
