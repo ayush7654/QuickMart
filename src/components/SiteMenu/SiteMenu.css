@@ -1,7 +1,7 @@
 
 .site-menu {
   width: 100%;
-  height: 85vh; 
+  height: 95vh; 
   cursor: default;
   display: flex;
   flex-direction: column;
@@ -9,6 +9,7 @@
   background-color: rgba(255, 255, 255, 0.95);
   color:black;
 z-index: 1;
+
 
 }
 
@@ -24,13 +25,16 @@ z-index: 1000;
   flex-direction: column;
   align-items: center;
   border: 0px solid red;
-  border-top: 1px solid rgb(200,200,200,.5);
   
 
 
 }
 
+.site-menu-space{
+height: 4rem;
 
+
+}
 
 .site-menu-layout {
   display: flex;

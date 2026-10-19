@@ -134,7 +134,9 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
 
 <div className="pet-Food-wrapper">
   {DogFood.map((item,index)=>
-  <div className='pet-product' 
+  <div 
+  key={index}
+  className='pet-product' 
    onMouseEnter={() => setHoveredIndex(index)}
   onMouseLeave={() => setHoveredIndex(null)}>
   <div className='pet-food-img-wrapper' >

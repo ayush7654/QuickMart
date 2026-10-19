@@ -143,13 +143,13 @@ export default function ScrollingAnimation({ isAtTop }) {
       <div className="grid-container-wrapper">
         <div className="grid-content">
           <div className="site-title-wrapper">
-            <div className="hero-title2">SaraS</div>
+            <div className="hero-title2">ananta</div>
             <div className="title-tag">Refine Living</div>
           </div>
 
           <div className="main-image-wrapper" ref={mainImgRef}>
             <video 
-              src="HomeMedia/AmiriVidFinalCut.mp4" 
+              src="/clothingIntroVideo.mp4" 
               muted 
               autoPlay 
               loop 

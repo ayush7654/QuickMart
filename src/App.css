@@ -32,7 +32,7 @@ a {
   --font-heading: "Jost", sans-serif;
   --font-subheading: sans-serif;
   --font-button: 'Outfit';
-  --primary-color: rgb(0,100,255);
+  --primary-color: rgb(1, 113, 227);
 }
 
 
@@ -66,13 +66,22 @@ a {
   backdrop-filter: blur(1px); /* optional blur */
 }
 
+/* Existing Didot font */
 @font-face {
   font-family: 'DidotCustom';
-  src: url('./assets/fonts/DidotB16.otf') format('truetype');
+  src: url('./assets/fonts/DidotB16.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
+/* New Runiga font */
+@font-face {
+  font-family: 'Runiga';
+  src: url('./assets/fonts/Runiga.otf') format('opentype'); /* Replace 'Runiga.otf' with the exact filename if it differs */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 .head-dot-wrapper{
   display: flex;
   gap:5px;

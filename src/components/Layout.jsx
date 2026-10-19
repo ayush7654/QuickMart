@@ -117,7 +117,9 @@ setSearchBarToggle(i)
     
       toggleOverlay={setShowOverlay}
       sideBarToggle={toggleSideBar}
-      setCartToggled={setCartToggled}/>
+      setCartToggled={setCartToggled}
+         sideBarState={sideBarOn} 
+   />
 
 
 

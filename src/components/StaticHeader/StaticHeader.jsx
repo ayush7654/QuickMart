@@ -94,17 +94,27 @@ const headerNavLeft =
 
 
 const timeoutRef = useRef(null);
+const openTimeoutRef = useRef(null);
 
 const handleMouseEnter = () => {
-  // Clear any pending close timeout so it opens immediately
+  // Cancel any pending close timeout
   if (timeoutRef.current) {
     clearTimeout(timeoutRef.current);
   }
-  setIsOpen(true);
+
+  // Open only if the cursor stays for 300ms
+  openTimeoutRef.current = setTimeout(() => {
+    setIsOpen(true);
+  }, 300);
 };
 
 const handleMouseLeave = () => {
-  // Apply the 0.8s (800ms) delay only when leaving
+  // Cancel any pending open timeout
+  if (openTimeoutRef.current) {
+    clearTimeout(openTimeoutRef.current);
+  }
+
+  // Close after 500ms
   timeoutRef.current = setTimeout(() => {
     setIsOpen(false);
   }, 500);
@@ -165,6 +175,8 @@ useEffect(() => {
 
 }, [location.pathname]);
 
+console.log(' is at top' , isAtTop)
+
   return (
 
        
@@ -173,34 +185,37 @@ useEffect(() => {
   className={`
     static-header-wrapper
     ${isOpen
-      ? "header-force-black"
+      ? "open-menu-header"
       : headerTheme === "white"
         ? "header-force-white"
         : "header-force-black"
     }
-    ${isIdle && !isOpen ? "static-header-hidden" : ""}
-    ${isOpen?'open-menu-header':''}
+  ${isIdle && !isOpen &&  storeHeader ? "static-header-hidden" : ""} 
+    ${!isAtTop ? 'hide-header-bar':'' }
+    
+   
   `}
 
-  style={{ '--header-translate': storeHeader ? '-100%' : '-1.5rem' }}
+  style={{ '--header-translate': storeHeader ? '-100%' : '0rem' }}
 >
 
-        <HeaderBar/>
+     <div className="header-bar-wrapper">
+      <HeaderBar/>
+     </div>
 
-  <div className='static-header'
-    >
+  <div className='static-header' >
 
 
 
  
    
-   <div className="static-header-content"  >
+   <div className="static-header-content">
 
      
      <Link to ='/' className="static-header-middle"> {/* Make this transational */}
                 
-                 <span className="site-logo"> <img src='siteLogo5.png'/></span>
-                 <span className='header-site-name'>Shihō</span>
+                 <span className="site-logo"> <img src='/NewLogo/LightBlueA.png'/></span>
+                 <span className='header-site-name'>ananta</span>  {/* Shihō */}
                
     {/*       <div className="site-logo-name">Saras Drops</div>  */}
      </Link>
@@ -211,14 +226,28 @@ useEffect(() => {
  onMouseLeave={handleMouseLeave}
 >
 
- {/*    <div className='header-menu-wrapper'
+  {/* about , FAQ , BLOG , COntact us , english */}
+
+    <div className='header-menu-wrapper'
     onClick={handleExpandedToggle}>
         <MenuCancel color='white' state={isOpen} />
+        <span>Menu</span>
   
-    </div> */}
+    </div> 
+
+      <TransitionLink to='/store' className="">Shop All</TransitionLink>
+
+    <div className="collections-btn"
+    onMouseEnter={handleMouseEnter}>
+      Collection
+
+      make all side panel emerge from circle
+    </div>
+
+  
 
 
-      {headerNavLeft.map((item,index)=>
+   {/*    {headerNavLeft.map((item,index)=>
     <TransitionLink to={item.path} key={index}
        className={({ isActive }) =>`header-nav ${isActive?'active-header-nav':''}`}
      onMouseEnter={handleMouseEnter}
@@ -227,7 +256,7 @@ useEffect(() => {
        <span className='dropDown-menu-btn' 
        >{item.name}</span> 
       
-    </TransitionLink>)}
+    </TransitionLink>)} */}
 
       <div className="home-menu-ph"
           onClick={()=>{sideBarToggle(true),toggleOverlay(true)}}>

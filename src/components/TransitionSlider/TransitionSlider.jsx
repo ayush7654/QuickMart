@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { usePageTransition } from "../PageTransitionContext";
 import "./TransitionSlider.css";
+import { Lottie } from "lottie-react";
+import SiteLogoAnimation3 from "../../assets/SiteLogoAnimation3.json";
 
 const TEXT = "SARAS";
 
@@ -76,7 +78,16 @@ export default function TransitionSlider() {
       animate={phase}
       onAnimationComplete={handleAnimationComplete}
     >
-      <div className="transition-text">
+
+       <div >
+            <Lottie
+              src={SiteLogoAnimation3}
+              autoplay
+              loop
+              style={{ width: "100%", height: "50%" }}
+            />
+          </div>
+    {/*   <div className="transition-text">
         {letters.map((letter, index) => (
           <span className="letter-wrapper" key={index}>
             <motion.span
@@ -104,7 +115,7 @@ export default function TransitionSlider() {
             </motion.span>
           </span>
         ))}
-      </div>
+      </div> */}
     </motion.div>
   );
 }

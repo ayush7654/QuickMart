@@ -36,7 +36,7 @@ export default function SideBarNav({sideBarState=true, sideBarToggle, toggleOver
         transform: sideBarState ? 'translateX(0)' : 'translateX(-100%)',
         transition: 'transform 0.3s ease-in-out',
       }} */
-    className={`sideBarNav ${sideBarState?'open':''}`}> 
+    className={`sideBarNav ${sideBarState?'open':''}`}>                                                    
 
     <div className="sideBarNav-content" style={{opacity:sideBarState?1:0}}>
         <div className='sideBarNav-head-div'>
