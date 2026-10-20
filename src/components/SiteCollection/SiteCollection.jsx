@@ -1,0 +1,225 @@
+import {useState, useEffect} from 'react'
+import './SiteCollection.css'
+import CategoryDataProvider from '../../pages/Store/ExpandingStoreHeader/CategoryDataProvider';
+import AnimatedUnderline from '../AnimatedUnderline/AnimatedUnderline';
+import { useStoreData } from '../StoreDataContext';
+import { FaFacebook, FaXTwitter, FaYoutube, FaInstagram ,FaTiktok, FaLinkedin, FaLinkedinIn} from "react-icons/fa6";
+
+const footerContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const footerItemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+ const categoryImgs = [
+    {id:0, img: ['Clothing1.jpg','Clothing2.jpg'],},
+    {id:1,img :['IphoneDuo4.jpg','IphoneDuo.jpg']},
+    {id:2, img:['skincare1.jpg','skincare2.jpg']},
+    {id:3, img:['GreenGems.jpg','Green-Gems.jpg']},
+    {id:4, img:['Football5.jpg','Football6.jpg']},
+    {id:5, img: ['DailyItem2.jpg','Grocery.jpg']}
+
+  ]
+
+export default function SiteCollection() {
+
+    const {handleTypeFilter,isOpen, setIsOpen,currentCategory} = useStoreData();
+    const { categorizedData, loading , selectedGroup} = CategoryDataProvider();
+    const [selectedSubGroupId,setSelectedSubGroupId] = useState(null);
+    const [selectedCategoryId,setSelectedCategoryId] = useState(null)
+    const [activeGroup, setActiveGroup] = useState(null);
+
+
+    useEffect(() => {
+    
+      if (!loading && categorizedData) {
+    
+        /* CLOSED */
+        if (!isOpen) {
+          setActiveGroup(null);
+        
+        
+          
+          return;
+        }
+    
+        const groups = Object.keys(categorizedData);
+    
+        /* NO SELECTED CATEGORY */
+        if (selectedCategoryId === null) {
+          setActiveGroup(groups[0]);
+           setSelectedSubGroupId(isOpen?0:null)  /*  */
+          
+          
+        }
+    
+        /* RESTORE SELECTED CATEGORY */
+        else {
+          setActiveGroup(groups[selectedCategoryId]);
+          setSelectedSubGroupId(selectedCategoryId)
+          
+        }
+    
+      }
+    
+    }, [loading, categorizedData, isOpen, selectedCategoryId]);
+
+    
+
+    console.log('active group', currentCategory)
+
+  return (
+    <div className={`site-collection ${isOpen ? "site-collection-open" : ""}`}>
+      <div className="site-collection-content">
+
+       <div className="site-collection-space"></div>
+
+            <div className="site-collection-layout">
+                <div className="collection-layout-content">
+                 <div className="subgroup-content-wrapper">
+                    <div className='subgroup-content-head'>Collections</div>
+                {(selectedSubGroupId != null ) && (
+                  <div className="subgroup-content">
+                
+                 <div className="subgroup-new">
+                   {Object.keys(categorizedData).map((group,index)=>
+                  <div className="subgroup-list-wrapper" >
+                  <div className="subgroup-list-head">{group}</div>
+                 
+                    <div className="sub-group-list">
+                     {categorizedData[group].items.map((item, itemIdx) => (
+                        <div 
+                        className={`subgroup-name ${currentCategory===item.slug?'active-subgroup':''}`}
+                        key={itemIdx}  
+                        onMouseEnter={() => {
+                    setActiveGroup(group);
+                    setSelectedSubGroupId(index);
+                  }}
+                  
+                     onClick={()=>{handleTypeFilter(item),
+                                setIsOpen(false),                     
+                                setSelectedSubGroupId(itemIdx)} }>
+
+                         <AnimatedUnderline>{item.slug.replaceAll('-', ' ')}</AnimatedUnderline> 
+                          </div>
+                      ))}
+                    </div> 
+                  </div>)}
+                 </div>
+                
+                  </div>
+                
+                )}
+                
+                 </div>
+
+
+                   <div className={`category-grid-wrapper ${isOpen ? 'is-active' : ''}`}>
+                 
+                 
+                    <div className="category-grid">
+                 
+                 {categoryImgs[selectedSubGroupId]?.img.map((imgPath, index) => (
+                   <div className="catgeory-img-wrapper">
+                     <img src={`StoreMedia/${imgPath}`}/>
+                 
+                   </div>
+                 ))}
+                   
+                    </div>
+                 </div>
+            
+                 </div>
+            </div>
+
+             <div className="collection-footer-wrapper">
+                               <div className="site-collection-footer"
+                               >
+            
+                                 <div className="collection-footer-info"
+                               >
+                                 <span>Get in touch </span>
+                                  <div className="collection-footer-icon-wrapper">
+                                    
+                                    <FaFacebook/> 
+                                      <FaInstagram />
+                                    < FaYoutube/> 
+                                    <  FaTiktok /> 
+                                    <FaLinkedinIn/> 
+                                  
+                                  
+                                  </div>
+                                </div>
+            
+                                <div className="collection-footer-info">
+                                <span><AnimatedUnderline>Cancel Order</AnimatedUnderline></span>
+                                <span><AnimatedUnderline>Order History</AnimatedUnderline></span>
+                                <span><AnimatedUnderline>Payment Methods</AnimatedUnderline></span>
+                             
+                             
+                                 </div>
+                                 
+                                
+                               
+                                <div className="collection-footer-info"
+                                 >
+                                  <div className="collection-footer-contact-wrapper">
+                                    <div className="collection-footer-contact">
+                                      <span>For press contacts:</span>
+                                      <span><AnimatedUnderline>press@saras.com</AnimatedUnderline> </span>
+                                    </div>
+                                
+                                  </div>
+                                 
+                                  <span></span>
+                                </div>
+
+                                <div className="collection-footer-info"
+                                >
+                                  <div className="collection-footer-link-wrapper">
+                                    <span>Shiho HQ</span>
+                                    <span>42, Harbour View Road , Lower Parel</span>
+                                   
+                                  </div>
+                                  <div className="collection-footer-telephone">
+                                    <span>Tel:</span>
+                                    <span>+91 22 4567 8900</span>
+                                  </div>
+                                </div>
+
+
+                                <div className="collection-footer-info"
+                                  >
+                                  <div className="collection-footer-link-wrapper collection-footer-copyright">
+                                     <span>© 2026 Shiho India Pvt. Ltd.</span>
+                              
+                                  <span>  Studio North.</span>
+                                      <span> All Rights Reserved</span>
+                                  </div>
+                                 
+                                
+                                </div>
+                               </div>
+                               </div>
+      </div>
+     </div>
+  )
+}

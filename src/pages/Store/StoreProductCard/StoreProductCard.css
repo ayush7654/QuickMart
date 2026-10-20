@@ -3,9 +3,10 @@
 
 .store-ProductCard{
     width: 100%;
-    border: 0px solid red;
+    border: px solid red;
     position: relative;
      background-color: white;
+         background-color: rgb(245,245,245);
    overflow: hidden;
 
    display: flex;
@@ -24,11 +25,15 @@
   position: relative;
   display: grid;
   place-items: center;
-border-radius: 8px;
+
   overflow: hidden;
   transition: .3s all ease;
       background-color: rgb(245,245,245);
   
+}
+
+.store-ProductCard:hover {
+  background-color: white;
 }
 
 
@@ -126,6 +131,11 @@ font-size: .7rem;
 color:white;
 color:black;
 font-family: 'Figtree';
+background-color: white;
+font-weight: 500;
+border: 1px solid blue;
+color:blue;
+
 
 
 
@@ -212,14 +222,16 @@ color:red
     display: flex;
 flex-direction: column;
 justify-content: center;
-gap:14px;
-  padding: 16px 0rem;
-  font-size: 16px;
+gap: .8rem;
+  padding: 1rem;
+  font-size: 1rem;
   text-transform: uppercase;
   color:rgb(0, 0, 0);
-  background-color: white;
-  
-  font-weight: 500;
+
+/*   font-family: 'Manrope'; */
+/* font-family: 'Figtree'; */
+  font-weight: 400;
+  border: 0px solid red;
 }
 
 .store-Info-title {
@@ -230,6 +242,15 @@ gap:14px;
 
   text-transform: capitalize;
 }
+
+.store-Info-brand{
+  font-size: .75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
 
 .productInfo-line2{
   display: flex;
@@ -253,11 +274,20 @@ gap:14px;
 
 .sp-price{
 
-
+font-size: .9rem;
 
 }
 
+.productInfo-rating {
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
 
+.store-ProductCard:hover .productInfo-rating {
+  opacity: 1;
+  transition: opacity 0.15s ease-in-out;
+}
 
 
 .product-color-wrapper{

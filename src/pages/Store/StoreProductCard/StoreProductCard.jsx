@@ -144,16 +144,12 @@ useEffect(() => {
 
    <div className="store-ProductInfo-wrapper">
         <div className="store-Info-title">{title}</div>
-
-        <div className="productInfo-line2">
-          <div className='sp-rating-div'>         
-            <MdStar color="rgb(255, 164, 57)" size={16}/> 
-                        <span className='rating-num'>{rating.toFixed(1)}</span>
-                        <span>(1.2k Reviews)</span>                      
-           </div>  
-
-             <div className='sp-price'>${price}</div>
+        <div className="store-Info-brand">{brand?brand : category}
+          <div className='sp-price'>${price}</div>
         </div>
+
+     
+        <div className="productInfo-rating"><StarRating rating={rating} color="rgb(255, 164, 57)"/></div>
         </div>
     
     <div className="store-ProductInfo-wrapper-ph">

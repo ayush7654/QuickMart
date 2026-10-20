@@ -1,298 +1,97 @@
-
-.site-menu {
-  width: 100%;
-  height: 95vh; 
-  cursor: default;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.95);
-  color:black;
-z-index: 1;
+.site-menu{
+    height: 60vh;
+    width: 100%;
+   border: 1px solid green;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 8rem;
 
 
 }
 
-.site-menu-open{
-
-z-index: 1000;
+.site-menu-content{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
-.site-menu-content {
-  width: 95%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 0px solid red;
-  
-
-
-}
-
-.site-menu-space{
-height: 4rem;
-
+.site-menu-nav-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap:1rem;
 
 }
 
-.site-menu-layout {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  flex: 1;
-  
-  /* FIXES OVERFLOW: */
-  min-height: 0;        /* Overrides the default auto min-height */
-  overflow-y: auto;    /* Adds a scrollbar when content exceeds parent height */
+.site-menu-nav{
+    color:black;
+    font-size: 3rem;
+    font-family: 'Manrope';
 
-  margin-top: 0rem;
-  padding: 0px;
-  border: 0px solid red;
-}
-
-.menu-layout-content{
- width: 95%;
- display: flex;
- justify-content:center;
-align-items: center;
- gap: 1rem;
- border: 0px solid blue;
- padding: 3rem 0rem 2rem 0rem;
-
-}
-
-.subgroup-content-wrapper{
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2rem;
-
-  
-
-}
-.subgroup-content-head{
-font-size: 1.8rem;
-display: none;
-}
-
-
-.subgroup-content{
-  width: 100%;
-  border: 0px solid yellow;
-  height: 100%;
-  display: flex;
-
-  
-
-   position: relative;
-
-  
-
-
-  
-}
-
-.subgroup-new {
-  width: 100%;
-  height: 100%;
-
-color: black;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-template-rows: repeat(3, auto);   /* 3 rows */
-  grid-auto-flow: column;                 /* Fills column 1 first, then column 2 */
-  gap: 16px;   
-  font-family: 'Roboto';         
-         
-}
-
-.subgroup-list-wrapper{
-border: 0px solid red;
-}
-.subgroup-list-head{
-  font-weight: 500;
-  font-size: .8rem;
+    font-weight: 700;
+cursor: pointer; /* Makes it clear that the items are clickable */
+    transition: color 0.3s ease; /* Smooth transition effect */
+      font-weight: 500;
+  font-size: 2rem;
  
   color:black;
-  padding-bottom:1rem ;
-  font-family: 'Figtree';
-  text-transform: uppercase;
-}
-
-.sub-group-list{
- width: fit-content;
-
-  font-size: .75rem;
-  display: flex;
-  flex-direction: column;
-  gap:8px;
-  cursor: pointer;
-  text-transform: capitalize;
-  font-family: 'Inter';
+  
 
 
-}
-.subgroup-name{
-   color:rgb(125, 125, 125);
-   transition: color .2s ease;
+  
+
 }
 
-.subgroup-name:hover{
-  color:black;
+/* 1. When the wrapper is hovered, make ALL items grey by default */
+.site-menu-nav-wrapper:hover .site-menu-nav {
+    color: rgb(172, 171, 171);
 }
 
-.active-subgroup{
-  color:black;
-}
-.subgroup-name.active-subgroup .animated-underline::after {
-  transform: scaleX(1);
-}
-.subgroup-name:hover .animated-underline{
-  filter: brightness(0);
-}
-.active-subgroup .animated-underline{
-  filter: brightness(0);
+/* 2. When a specific item is hovered, override the grey and make it blue */
+.site-menu-nav-wrapper .site-menu-nav:hover {
+    color: blue;
 }
 
-.category-grid-wrapper {
-
-/*   flex: 0 0 60%; */
-  flex:1;
+.site-menu-grid-wrapper {
+  width: 60%;
   height: 100%;
- background-color: rgba(0, 0, 0, 0);
-  box-sizing: border-box;
-  position: relative; /* Keep this */
-  overflow: hidden; /* Prevent scaling cards from creating scrollbars */
-border: 0px solid rgb(214, 212, 212);
-border: 0px solid red;
-
-
-
-
-
+  border: 1px solid blue;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  grid-template-rows: repeat(2, 1fr);    /* Each row takes 50% of the container's height */
+  gap: 16px;
 }
-.category-grid{
+
+/* Ensure the wrapper divs fill their assigned grid areas */
+.site-menu-grid-wrapper .site-menu-img-wrapper {
   width: 100%;
   height: 100%;
-  display: flex;
-  gap:0rem;
-  color:black;
-  
-
-  
-
+  display: grid;
+  place-items: center;
+ 
 }
 
-.catgeory-img-wrapper{
-flex: 1;
-border: 0px solid red;
-}
-
-.catgeory-img-wrapper img{
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
-
-.menu-footer-wrapper{
+/* Make images fill their wrapper completely without distortion */
+.site-menu-grid-wrapper .site-menu-img-wrapper img {
   width: 100%;
-  color:black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: .75rem;
-  color:rgb(25,25,25);
-  font-family: 'Inter';
- font-family:sans-serif;
-
-}
-.menu-footer-wrapper span{
-  width: fit-content;
-}
-
-.menu-footer-wrapper .animated-underline{
-  filter: brightness(0);
-}
-
-
-.menu-footer-wrapper span{ 
-
-}
-
-.site-menu-footer{
- width: 95%;
- height: 100%;
-
- display: flex;
-
- padding:1rem 0rem;
- border-top:1px solid rgb(200,200,200,.5)
-  
-}
-.menu-footer-info{
-  flex:1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-    height: 100%;
-}
-
-.menu-footer-link-wrapper{
-
-    display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-}
-
-.menu-footer-contact-wrapper{
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  
+  object-fit: cover;
 }
 
-.menu-footer-contact span{
-  display: block;
+/* Grid Placement Rules */
+.site-menu-grid-wrapper .site-menu-img-wrapper:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3; /* Spans both rows (full height) */
 }
 
-.menu-footer-address ,.menu-footer-copyright,.menu-footer-contact{
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.site-menu-grid-wrapper .site-menu-img-wrapper:nth-child(2) {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
 }
 
-.menu-footer-address span{
-    display: block;
+.site-menu-grid-wrapper .site-menu-img-wrapper:nth-child(3) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
 }
-
-.menu-footer-telephone span{
-  display: inline;
-}
-
-.menu-footer-copyright{
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-
-}
-
-.menu-footer-icon-wrapper{
-  font-size: 1.4rem;
-  color:black;
-  display: flex;
-  gap: 1.5rem;
-
-  width: fit-content;
-  display: flex;
-  align-items: center;
-  padding: 1rem 0rem; 
-  
-
-}
-

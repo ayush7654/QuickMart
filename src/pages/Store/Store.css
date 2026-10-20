@@ -243,7 +243,7 @@ background-color:rgb(255, 255, 255);
    .productList {
   display: grid;
 
-  gap: 4rem 2rem; 
+  gap: 10px 10px; 
   width: 90%;
   margin: 0 auto;
     justify-items: center;

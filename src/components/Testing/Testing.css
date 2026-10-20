@@ -23,24 +23,12 @@
 
   width: 100%;
     position: relative;
-margin-top: 10rem;
+
 
    min-height: 100vh;
-   display: grid;
-   place-items: center;
-background-color: black;
 
-}
 
-.color-bar-wrapper{
-  display: flex;
-  flex-direction: row;
-}
 
-.color-bar{
-  width: 8rem;
-  height: 20rem;
-  border: 0px solid red;
 }
 
 

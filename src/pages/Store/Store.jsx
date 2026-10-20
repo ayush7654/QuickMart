@@ -42,10 +42,10 @@ import { MdOutlineTune, MdFilterList } from 'react-icons/md';
 
 
 const getLayoutByWidth = () => {
-  if (typeof window === 'undefined') return 4; // Fallback for SSR (e.g., Next.js)
+  if (typeof window === 'undefined') return 3; // Fallback for SSR (e.g., Next.js)
   if (window.innerWidth < 700) return 2;
   if (window.innerWidth < 1100) return 3;
-  return 4;
+  return 3;
 };
 
 export default function Store() {

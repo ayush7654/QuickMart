@@ -21,7 +21,7 @@ import { useStoreData } from '../StoreDataContext';
 import HeaderBar from './HeaderBar/HeaderBar';
 import { WinScrollContext } from '../WinScrollProvider/WinScrollProvider';
 import AnimatedUnderline from '../AnimatedUnderline/AnimatedUnderline';
-import SiteMenu from '../SiteMenu/SiteMenu';
+import SiteCollection from '../SiteCollection/SiteCollection';
 
 
 
@@ -214,7 +214,7 @@ console.log(' is at top' , isAtTop)
      
      <Link to ='/' className="static-header-middle"> {/* Make this transational */}
                 
-                 <span className="site-logo"> <img src='/NewLogo/LightBlueA.png'/></span>
+                 <span className="site-logo"> <img src='/LightBlueA.png'/></span>
                  <span className='header-site-name'>ananta</span>  {/* Shihō */}
                
     {/*       <div className="site-logo-name">Saras Drops</div>  */}
@@ -349,7 +349,7 @@ console.log(' is at top' , isAtTop)
         ease: [0.76, 0, 0.24, 1],
       }}
     >
-      <SiteMenu />
+      <SiteCollection />
     </motion.div>
   )}
 </AnimatePresence>

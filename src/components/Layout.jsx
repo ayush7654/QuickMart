@@ -10,7 +10,7 @@ import StaticHeader from './StaticHeader/StaticHeader';
 import { CartListProvider } from './CartListProvider';
 import TransitionSlider from './TransitionSlider/TransitionSlider';
 import { usePageTransition } from './PageTransitionContext';
-import SiteMenu from './SiteMenu/SiteMenu';
+import SiteMenu from './SiteCollection/SiteCollection';
 import { useStoreData } from './StoreDataContext';
 
 
