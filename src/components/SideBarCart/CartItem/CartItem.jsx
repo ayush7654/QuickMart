@@ -32,7 +32,13 @@ export default function CartItem({product,handleRemove,updateDataBase}) {
   };
 
 
+const sampleCart =[
+  {name:'product1', price:'10',quantity:'2', img:'MockDP2.jpg'},
+  {name:'product2', price:'20',quantity:'1', img:'MockDP3.jpg'},
+  {name:'product3', price:'40',quantity:'3', img:'MockDP4.jpg'},
+  {name:'product4', price:'30',quantity:'2', img:'MockDP5.jpg'},
 
+]
 
 
   return (
@@ -57,7 +63,7 @@ export default function CartItem({product,handleRemove,updateDataBase}) {
               </div>
 
 
-              <div className='cart-item-shipment'>{shippingInformation}</div>
+           {/*    <div className='cart-item-shipment'>{shippingInformation}</div> */}
         
       
         
@@ -69,7 +75,8 @@ export default function CartItem({product,handleRemove,updateDataBase}) {
                   </div>
                       <div className="cart-product-price-div">
             
-        ${(price*((100-discount)/100)).toFixed(2)*quantity}
+             <span className='quantity-cp'>{quantity} x 
+               </span>   ${(price*((100-discount)/100)).toFixed(2)*quantity}
            
               </div>
            

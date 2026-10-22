@@ -120,7 +120,7 @@ border: 0px solid red;
   
   font-family: 'Figtree';
   text-transform: uppercase;
-  padding-bottom:1rem ;
+  padding-bottom:1rem;
 }
 
 .sub-group-list{
@@ -179,7 +179,7 @@ border: 0px solid red;
   width: 100%;
   height: 100%;
   display: flex;
-  gap:0rem;
+  gap:1rem;
   color:black;
   
 

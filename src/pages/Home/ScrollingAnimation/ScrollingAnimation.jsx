@@ -148,14 +148,14 @@ export default function ScrollingAnimation({ isAtTop }) {
           </div>
 
           <div className="main-image-wrapper" ref={mainImgRef}>
-            <video 
+         {/*     <video 
               src="/clothingIntroVideo.mp4" 
               muted 
               autoPlay 
               loop 
               playsInline
               className="hero-video"
-            />
+            />  */}
           </div>
 
           <div style={{ opacity: isAtTop ? 1 : 0 }} className="store-scroll-down-wrapper">

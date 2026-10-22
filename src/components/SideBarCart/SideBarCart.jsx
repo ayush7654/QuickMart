@@ -38,14 +38,14 @@ export default function SideBarCart({cartToggled,setCartToggled,toggleOverlay}) 
 
            <div className='side-cart-header'>
           
-                 <h2>Shopping Cart ({cartElements.length})</h2>  
+                 <h2>BAG ({cartElements.length})</h2>  
                  <span className='side-cart-cancel' onClick={()=>{setCartToggled(false),toggleOverlay(false)}}>
                  <X strokeWidth={1.5}/>
                  </span>
           
         </div>
 {cartElements.length ?
-      <div className='cart-sidebar-content' style={{opacity:cartToggled?1:0}}>
+      <div className='cart-sidebar-content' style={{opacity:cartToggled?1:1}}>
    
 
         

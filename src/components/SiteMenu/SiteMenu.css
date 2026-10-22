@@ -1,11 +1,12 @@
 .site-menu{
-    height: 60vh;
+    height: 95vh;
     width: 100%;
    border: 1px solid green;
    display: flex;
-   align-items: center;
+   align-items: end;
    justify-content: center;
-   margin-top: 8rem;
+   
+  
 
 
 }
@@ -15,13 +16,32 @@
     height: 100%;
     display: flex;
     justify-content: space-between;
+    padding-top: 0rem;
+    position: relative;
+    border: 1px solid red;
+}
+
+.site-menu-right-img{
+  width: 60%;
+  height: 100%;
+  background-color: red;
+  display: grid;
+  place-items: center;
+  border: 1px solid yellow;
+}
+.site-menu-right-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .site-menu-nav-wrapper{
     display: flex;
     flex-direction: column;
+    justify-content:center;
     width: fit-content;
     gap:1rem;
+
 
 }
 
@@ -54,6 +74,16 @@ cursor: pointer; /* Makes it clear that the items are clickable */
     color: blue;
 }
 
+.site-menu-animation-wrapper{
+    width: 60%;
+  height: 100%;
+  display: flex;
+align-items: end;
+  border: 0px solid blue;
+
+
+}
+
 .site-menu-grid-wrapper {
   width: 60%;
   height: 100%;
@@ -62,6 +92,7 @@ cursor: pointer; /* Makes it clear that the items are clickable */
   grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
   grid-template-rows: repeat(2, 1fr);    /* Each row takes 50% of the container's height */
   gap: 16px;
+  display: none;
 }
 
 /* Ensure the wrapper divs fill their assigned grid areas */
@@ -70,6 +101,7 @@ cursor: pointer; /* Makes it clear that the items are clickable */
   height: 100%;
   display: grid;
   place-items: center;
+  overflow: hidden;
  
 }
 
@@ -94,4 +126,11 @@ cursor: pointer; /* Makes it clear that the items are clickable */
 .site-menu-grid-wrapper .site-menu-img-wrapper:nth-child(3) {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+}
+
+.site-menu-grid-wrapper .site-menu-img-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* Removes any default inline video spacing gaps */
 }

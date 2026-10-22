@@ -9,7 +9,7 @@ export const StoreDataProvider = ({ children }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   
   // 1. UI & Scroll States
-   const [isOpen, setIsOpen] = useState(false);
+   const [isOpen, setIsOpen] = useState(true);
   const { isAtTop } = useContext(WinScrollContext);
   const [partialPill,setPartialPill] = useState(false);
 

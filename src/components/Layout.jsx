@@ -68,13 +68,27 @@ setSearchBarToggle(i)
   useEffect(() => {
     setAnimationStatus('idle');
   }, [location.pathname]);
+
+
+
+    const [isPanelOpen, setIsPanelOpen] = useState(false);
+
+  const handlePanelToggle = () => {
+    setIsPanelOpen(prev => !prev);
+  };
+
+
+  const [currentPanel,setCurrentPanel] = useState('')   /* search (top) , sideNav bar (left), cart (right) , storefilter (left)   */
+
+
+console.log(currentPanel)
    
     return(
 
  
      
 
-    <div  className={`root${isHomePage ? 'home' : 'nothome'}`} style={{position:"relative"}}>
+    <div  className={`root${isHomePage ?'home':'nothome'} ${isPanelOpen?currentPanel:''} `} style={{position:"relative"}}>
 
  
 
@@ -88,10 +102,92 @@ setSearchBarToggle(i)
      
       toggleOverlay={setShowOverlay} />
 
-  <SideBarNav
+{/*   <SideBarNav
+   sideBarState={sideBarOn} 
+  sideBarToggle={toggleSideBar}
+  toggleOverlay={setShowOverlay} /> */}
+
+
+
+       <StaticHeader
+      toggleSwitch={SearchToggle} 
+    
+      toggleOverlay={setShowOverlay}
+      sideBarToggle={toggleSideBar}
+      setCartToggled={setCartToggled}
+         sideBarState={sideBarOn} 
+   />
+
+
+<div className="sample-side-panel">
+
+</div>
+
+<div className="side-panel-btn" onClick={handlePanelToggle}></div>
+       
+  <CartListProvider>
+<div className="search-panel" >
+  <div className='close-panel'onClick={()=>{setIsPanelOpen(false),setCurrentPanel('')}}>Close</div>
+</div>
+
+<div className='siteNav-panel' >
+   <div className='close-panel' onClick={()=>{setIsPanelOpen(false),setCurrentPanel('')}}>Close</div>
+   <SideBarNav
    sideBarState={sideBarOn} 
   sideBarToggle={toggleSideBar}
   toggleOverlay={setShowOverlay} />
+
+</div>
+
+<div className="cart-panel" >
+   <div className='close-panel' onClick={()=>{setIsPanelOpen(false),setCurrentPanel('')}}>Close</div>
+      <SideBarCart
+  cartToggled={cartToggled}
+  setCartToggled={setCartToggled}
+  toggleOverlay={setShowOverlay}/> 
+</div>
+
+
+
+
+
+<div className="panel-button-container">
+  <span className="panel-button" onClick={()=>{setIsPanelOpen(true),setCurrentPanel('top-panel')}}>top</span>
+  <span className="panel-button"onClick={()=>{setIsPanelOpen(true),setCurrentPanel('left-panel')}}>left</span>
+  <span className="panel-button" onClick={()=>{setIsPanelOpen(true),setCurrentPanel('right-panel')}}>right</span>
+
+</div>
+  
+
+
+
+
+
+  
+    <div className={`outlet-container`}
+    data-animation={animationStatus}>
+    <Outlet 
+      toggleOverlay={setShowOverlay}/>
+    </div>
+
+{/*      <SideBarCart
+  cartToggled={cartToggled}
+  setCartToggled={setCartToggled}
+  toggleOverlay={setShowOverlay}/>  */}
+
+
+  </CartListProvider>
+
+
+
+
+         <Footer />    {/* fix layout for screen chnage */}
+         <TransitionSlider/>
+    </div>
+
+        
+    )
+}
 
 
 {/*     <div className="mix-blend-test">
@@ -111,49 +207,3 @@ setSearchBarToggle(i)
 
         
 {/*  <SiteMenu   toggleOverlay={setShowOverlay}/> */}
-
-       <StaticHeader
-      toggleSwitch={SearchToggle} 
-    
-      toggleOverlay={setShowOverlay}
-      sideBarToggle={toggleSideBar}
-      setCartToggled={setCartToggled}
-         sideBarState={sideBarOn} 
-   />
-
-
-
-
-
-
-  
-
-
-
-  <CartListProvider>
-
-  
-    <div className='outlet-container' data-animation={animationStatus}>
-    <Outlet 
-      toggleOverlay={setShowOverlay}/>
-    </div>
-
-     <SideBarCart
-  cartToggled={cartToggled}
-  setCartToggled={setCartToggled}
-  toggleOverlay={setShowOverlay}/> 
-
-
-  </CartListProvider>
-
-
-
-
-         <Footer />    {/* fix layout for screen chnage */}
-         <TransitionSlider/>
-    </div>
-
-        
-    )
-}
-

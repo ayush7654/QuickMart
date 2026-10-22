@@ -94,6 +94,7 @@ export default function SiteCollection() {
 
             <div className="site-collection-layout">
                 <div className="collection-layout-content">
+                 
                  <div className="subgroup-content-wrapper">
                     <div className='subgroup-content-head'>Collections</div>
                 {(selectedSubGroupId != null ) && (

@@ -24,6 +24,7 @@ import BrandsSection from "../../components/BrandsSection/BrandsSection";
 
 
 
+
 export default function Home(){
 
 const location = useLocation()
@@ -73,6 +74,8 @@ const {isAtTop} = useStoreData();
   
    
           <BrandsSection/>
+
+
     
       <HomeFooter/>
             </div>

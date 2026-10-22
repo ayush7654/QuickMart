@@ -38,7 +38,7 @@ export default function SideBarNav({sideBarState=true, sideBarToggle, toggleOver
       }} */
     className={`sideBarNav ${sideBarState?'open':''}`}>                                                    
 
-    <div className="sideBarNav-content" style={{opacity:sideBarState?1:0}}>
+    <div className="sideBarNav-content" style={{opacity:sideBarState?1:1}}>
         <div className='sideBarNav-head-div'>
  
           <div className='sideBar-cancel-div' onClick={()=>{sideBarToggle(false),toggleOverlay(false)}}>
