@@ -5,7 +5,7 @@ import Header from './Header/Header'
 import Footer from './Footer/Footer'
 import SearchBar from './SearchBar/SearchBar';
 import SideBarNav from './SideBarNav/SideBarNav';
-import SideBarCart from './SideBarCart/SideBarCart';
+
 import StaticHeader from './StaticHeader/StaticHeader';
 import { CartListProvider } from './CartListProvider';
 import TransitionSlider from './TransitionSlider/TransitionSlider';
@@ -13,6 +13,7 @@ import { usePageTransition } from './PageTransitionContext';
 import SiteMenu from './SiteCollection/SiteCollection';
 import { useStoreData } from './StoreDataContext';
 import SideCart from './SideCart/SideCart';
+import NavigationPanel from './NavigationPanel/NavigationPanel';
 
 
 
@@ -108,10 +109,7 @@ console.log(currentPanel)
      
       toggleOverlay={setShowOverlay} />
 
-{/*   <SideBarNav
-   sideBarState={sideBarOn} 
-  sideBarToggle={toggleSideBar}
-  toggleOverlay={setShowOverlay} /> */}
+
 
 
 
@@ -138,11 +136,11 @@ console.log(currentPanel)
 
 <div className='siteNav-panel' >
 
-
+<NavigationPanel closePanel={closePanel}/>
 </div>
 
 <div className="cart-panel" >
-{/*    <div className='close-panel' onClick={()=>{setIsPanelOpen(false),setCurrentPanel('')}}>Close</div> */}
+
   <SideCart closePanel={closePanel}/>
 
 </div>
@@ -170,10 +168,7 @@ console.log(currentPanel)
       toggleOverlay={setShowOverlay}/>
     </div>
 
-{/*      <SideBarCart
-  cartToggled={cartToggled}
-  setCartToggled={setCartToggled}
-  toggleOverlay={setShowOverlay}/>  */}
+
 
 
   </CartListProvider>

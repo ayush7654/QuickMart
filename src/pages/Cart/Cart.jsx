@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import TrackingOrder from "./TrackingOrder/TrackingOrder";
 import { useFirebase } from "../../components/FirebaseContext/Firebase";
-import CartItem from "../../components/SideBarCart/CartItem/CartItem";
+
 import OrderDetails from "./OrderDetails/OrderDetails";
 import CartLoading from "./CartLoading/CartLoading";
 import CheckoutForm from "./CheckoutForm/CheckoutForm";
@@ -49,7 +49,7 @@ export default function Cart(){
 
 
 
-    const cartElements=cartList? (cartList.map((product,index)=>(
+   /*  const cartElements=cartList? (cartList.map((product,index)=>(
    <CartItem
    index={index}
    title={product.title}
@@ -58,7 +58,7 @@ export default function Cart(){
     quantity={product.quantity}
     shippingInformation={product.shippingInformation}
     handleRemove={handleRemove}/>
-        ))):<div>loading</div>;
+        ))):<div>loading</div>; */
 
 
     
@@ -89,11 +89,11 @@ export default function Cart(){
        
 <div className="order-details-wrapper">
   
-    <OrderDetails
+{/*     <OrderDetails
    cartElements={cartElements}
    cartList={cartList}
    totalCost={totalCost}
-   />
+   /> */}
 </div>
    
 

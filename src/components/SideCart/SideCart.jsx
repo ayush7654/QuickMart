@@ -22,9 +22,9 @@ export default function SideCart({closePanel}) {
 
   return (
        <div className="side-cart">
-        <div className="side-cart__header">
+        <div className="side-panel__header">
             <span>BAG</span>
-             <span className='side-cart__close'
+             <span className='side-panel__close'
               onClick={closePanel}>
                 <AnimatedUnderline color='black'>Close</AnimatedUnderline>
                 </span>

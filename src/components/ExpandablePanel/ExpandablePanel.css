@@ -17,7 +17,6 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-
   transition:
     width 0.65s cubic-bezier(0.22, 1, 0.36, 1),
     height 0.65s cubic-bezier(0.22, 1, 0.36, 1),

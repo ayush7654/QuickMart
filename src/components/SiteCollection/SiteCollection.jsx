@@ -135,6 +135,7 @@ export default function SiteCollection() {
 
                    <div className={`category-grid-wrapper ${isOpen ? 'is-active' : ''}`}>
                  
+                 Make chnages accorunding to image in public 'siteCOllectionUpdate'
                  
                     <div className="category-grid">
                  
