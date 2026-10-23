@@ -12,6 +12,7 @@ import TransitionSlider from './TransitionSlider/TransitionSlider';
 import { usePageTransition } from './PageTransitionContext';
 import SiteMenu from './SiteCollection/SiteCollection';
 import { useStoreData } from './StoreDataContext';
+import SideCart from './SideCart/SideCart';
 
 
 
@@ -77,6 +78,11 @@ setSearchBarToggle(i)
     setIsPanelOpen(prev => !prev);
   };
 
+  const closePanel = () =>{
+    setIsPanelOpen(false);
+    setCurrentPanel('');
+  }
+
 
   const [currentPanel,setCurrentPanel] = useState('')   /* search (top) , sideNav bar (left), cart (right) , storefilter (left)   */
 
@@ -127,24 +133,18 @@ console.log(currentPanel)
        
   <CartListProvider>
 <div className="search-panel" >
-  <div className='close-panel'onClick={()=>{setIsPanelOpen(false),setCurrentPanel('')}}>Close</div>
+  
 </div>
 
 <div className='siteNav-panel' >
-   <div className='close-panel' onClick={()=>{setIsPanelOpen(false),setCurrentPanel('')}}>Close</div>
-   <SideBarNav
-   sideBarState={sideBarOn} 
-  sideBarToggle={toggleSideBar}
-  toggleOverlay={setShowOverlay} />
+
 
 </div>
 
 <div className="cart-panel" >
-   <div className='close-panel' onClick={()=>{setIsPanelOpen(false),setCurrentPanel('')}}>Close</div>
-      <SideBarCart
-  cartToggled={cartToggled}
-  setCartToggled={setCartToggled}
-  toggleOverlay={setShowOverlay}/> 
+{/*    <div className='close-panel' onClick={()=>{setIsPanelOpen(false),setCurrentPanel('')}}>Close</div> */}
+  <SideCart closePanel={closePanel}/>
+
 </div>
 
 

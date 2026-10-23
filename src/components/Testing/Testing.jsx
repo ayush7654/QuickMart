@@ -14,32 +14,16 @@ const sampleCart = [
   { name: "Product Columns", price: "150", quantity: "2", img: "MockDP3.jpg" },
   { name: "Product Stacked", price: "135", quantity: "4", img: "MockDP4.avif" },
   { name: "Product Split", price: "70", quantity: "3", img: "MockDP5.jpg" },
-  { name: "Product Impact", price: "350", quantity: "2", img: "MockDP2.jpg" },
+  { name: "Product Carousel", price: "250", quantity: "1", img: "MockDP2.png" },
+  { name: "Product Columns", price: "150", quantity: "2", img: "MockDP3.jpg" },
+  { name: "Product Stacked", price: "135", quantity: "4", img: "MockDP4.avif" },
+  { name: "Product Split", price: "70", quantity: "3", img: "MockDP5.jpg" },
 ];
 
 
 export default function Testing({ onClose }) {
 
 
-const [cart, setCart] = useState(sampleCart);
-
-  const removeItem = (indexToRemove) => {
-    setCart((currentCart) =>
-      currentCart.filter((_, index) => index !== indexToRemove)
-    );
-  };
-
-  const subtotal = cart.reduce(
-    (total, item) =>
-      total + Number(item.price) * Number(item.quantity),
-    0
-  );
-
-  const formatPrice = (price) =>
-    `€${price.toLocaleString("en-US", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    })}`;
 
 
 
@@ -47,53 +31,18 @@ const [cart, setCart] = useState(sampleCart);
   
   return (
 <div className="testing-div"  >
-   <div className="side-cart">
-      <div className="side-cart__items">
-        {cart.map((item, index) => (
-          <div className="side-cart__item" key={`${item.name}-${index}`}>
-            <div className="side-cart__image">
-              <img src={item.img} alt={item.name} />
-            </div>
-
-            <div className="side-cart__details">
-              <p className="side-cart__name">{item.name}</p>
-
-              <p className="side-cart__price">
-                {item.quantity} × {formatPrice(Number(item.price))}
-              </p>
-            </div>
-
-            <button
-              className="side-cart__remove"
-              onClick={() => removeItem(index)}
-              aria-label={`Remove ${item.name}`}
-              title="Remove item"
-            >
-              ×
-            </button>
-          </div>
-        ))}
-
-        {cart.length === 0 && (
-          <p className="side-cart__empty">Your cart is empty.</p>
-        )}
-      </div>
-
-      <div className="side-cart__footer">
-        <div className="side-cart__subtotal">
-          <span>Subtotal:</span>
-          <span>{formatPrice(subtotal)}</span>
-        </div>
-
-        <button className="side-cart__view-cart">
-          VIEW CART
-        </button>
-
-        <button className="side-cart__checkout">
-          CHECKOUT
-        </button>
-      </div>
+   
+<div className="outer-container">
+  <div className="sideCart">
+    <div className="sideCart-list">
+      <div className="sideCart-item"></div>
+      <div className="sideCart-item"></div>
+      <div className="sideCart-item"></div>
+      <div className="sideCart-item"></div>
     </div>
+    <div className="sideCart-footer"></div>
+  </div>
+</div>
 
 {/* <ExpandablePanel/> */}
 
