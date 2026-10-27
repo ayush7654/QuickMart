@@ -104,10 +104,10 @@ console.log(currentPanel)
 {overlayVisible  && (
   <div className="screen-overlay" onClick={() => setShowOverlay(false)} />
 )}
-      <SearchBar currentToggle={searchBarToggle} 
+   {/*    <SearchBar currentToggle={searchBarToggle} 
       toggleSwitch={SearchToggle} 
      
-      toggleOverlay={setShowOverlay} />
+      toggleOverlay={setShowOverlay} /> */}
 
 
 
@@ -131,7 +131,10 @@ console.log(currentPanel)
        
   <CartListProvider>
 <div className="search-panel" >
-  
+     <SearchBar currentToggle={searchBarToggle} 
+      toggleSwitch={SearchToggle} 
+     closePanel={closePanel}
+      toggleOverlay={setShowOverlay} />
 </div>
 
 <div className='siteNav-panel' >
@@ -149,13 +152,13 @@ console.log(currentPanel)
 
 
 
-<div className="panel-button-container">
+ <div className="panel-button-container">
   <span className="panel-button" onClick={()=>{setIsPanelOpen(true),setCurrentPanel('top-panel')}}>top</span>
   <span className="panel-button"onClick={()=>{setIsPanelOpen(true),setCurrentPanel('left-panel')}}>left</span>
   <span className="panel-button" onClick={()=>{setIsPanelOpen(true),setCurrentPanel('right-panel')}}>right</span>
 
 </div>
-  
+ 
 
 
 

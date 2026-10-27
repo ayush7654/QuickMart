@@ -1,110 +1,101 @@
 .searchBar-div{
-position:fixed;
+/* position:fixed;
 top: -.1rem;
-    height: 40vh;
+    height: 40vh; */
+    height: 100%;
     width: 100%;
     background-color: white;
+
     z-index: 9999;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:end;
    gap:2rem;
     flex-direction: column;
-  transform: translateY(-12rem);
+       position: relative;
+/*   transform: translateY(-12rem); */
 }
-.searchBar-head-div{
-    width: 85%;
 
-    display: flex;
+.search-panel-container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: rgb(60, 60, 60);
-
-    user-select: none;
-  border: 0px solid red;
-
-
-
-
-}
-
-.searchBar-cancel-div{
- position: absolute;
-top:2rem;
-right: 2rem; 
+  width: 100%;
+  /* Using rem for responsive padding */
+  padding: 1.875rem 1.25rem 2.5rem; 
+  background-color: #f7fafc;
+  box-sizing: border-box;
  
-height: 2.8rem;
-width: 2.8rem;
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius:50% ;
-color: rgb(75, 75, 75);
-border: 0px solid rgb(130, 130, 130);
+}
 
+/* Circular Close Button */
+.search-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.125rem;  /* ~34px */
+  height: 2.125rem; /* ~34px */
+  border-radius: 50%;
+  border: 0.0625rem solid #d1d5db; /* 1px border */
+  background-color: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  margin-bottom: 2.1875rem; /* ~35px */
+  transition: all 0.2s ease-in-out;
+  padding: 0;
+}
 
+.search-close-btn:hover {
+  border-color: #111827;
+  color: #111827;
+}
+
+.close-icon {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 300;
+}
+
+/* Input Wrapper & Bottom Line */
+.search-input-wrapper {
+  width: 95%;
+
+  border-bottom: 0.0625rem solid #d1d5db; /* 1px line */
+  padding-bottom: 0.75rem;
 
 }
 
-.searchBar-cancel-div:hover{
-
-color:rgb(0, 0, 0);
-cursor: pointer;
-background-color:rgb(230, 230, 230);
-}
-.searchBar-cancel{
-width: 1.8rem;
-height: 1.8rem;
-}
-
-
-.header-searchBar-div{
-    width: 100%;
-    display:flex;
-    flex-direction: column;
- align-items: center;
-    position: relative;
-    margin-top: 2rem;
-    border: 0px solid red;
-
-   
-    
-  }
-  .header-searchBar{
-    border: 0px solid red;
-   width:85%;
-    display:flex;
-    position: relative;
-    align-items: center;
-    user-select: none;
-     border-bottom:1px solid rgb(185, 185, 185);
-    
-  }
-  .header-search-box{
+/* Main Search Input */
+.header-search-box {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  /* Scalable fluid typography using clamp with rem, fallback to 3rem */
+  font-size: clamp(1.5rem, 4vw, 2.2rem); 
   
-    width: 100%;
-   
-    border: 0px;
-    border-radius: 0rem;
-
-border: 0px solid blue;
-    font-size: 1rem;
-    padding:.5rem;
-
-   
-   
-  }
-  .header-search-box:focus{
-    outline: none;
-
-  }
-
-  .header-searchBar:focus-within {
-  border-bottom: 1px solid rgb(100, 100, 100);
+  font-weight: 400;
+  color: #111827;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter';
+  letter-spacing: -0.02em;
 }
 
+.header-search-box::placeholder {
+  color: rgb(170, 170, 170);
+  font-weight: 400;
+  opacity: 1;
+  font-family: 'Figtree';
+}
+
+
+
+
+
+
+
+  
 
   .searchBar-btn-div{
     border: 0px solid red;
@@ -152,7 +143,7 @@ color:rgb(170, 170, 170);
   max-height: 80vh;
   padding-bottom: 10rem;
     position: absolute;
-   margin-top: 4rem; 
+    top: 100%;
    background-color: rgb(255, 255, 255);
   overflow: hidden;
   z-index: 999;
@@ -182,6 +173,7 @@ color:rgb(170, 170, 170);
 
 
 
+
 }
 
 .category-suggestion{
@@ -193,10 +185,8 @@ color:rgb(170, 170, 170);
   font-weight: 400;
    font-size: .85rem;
   transition: all .2s ease;
-
-    background-color:rgb(230, 230, 230);
-    background-color: white;
-    border: 1px solid rgb(220, 220, 220);
+  background-color: rgb(242, 242, 255);
+  color:rgb(20, 20, 20)
 }
 
 .category-suggestion:hover{
@@ -206,7 +196,7 @@ color:rgb(170, 170, 170);
 background-color: rgb(255, 255, 255);
   color:rgb(20, 20, 20);
     
-  border: 1px solid  rgb(80,230,230);
+  border: 0px solid  blue;
   
   border: 1px solid rgb(20, 20, 20);
 }
@@ -214,26 +204,48 @@ background-color: rgb(255, 255, 255);
 
 
   .suggestion-div{
-    width: 85%;
+    width: 100%;
     display: flex;
   align-items: center;
- border-bottom: 1px solid rgb(220, 220, 220);
+
  position: relative;
    transition: all .3s ease;
+   border: 0px solid red;
 
   }
     .suggestion-div:hover{
     background-color: #eee;
+    background-color: rgb(245, 245, 245);
+    
      cursor: pointer;
   }
+
+  .suggestion-arrow{
+  opacity: 0;
+  transform: translate(-0.4rem, 0.4rem);
+  transition: all 0.3s ease;
+    color:rgb(0,100,255);
+    font-size: 1.5rem;
+    position: absolute;
+    right: 1rem;
+    
+  }
+
+  .suggestion-div:hover .suggestion-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+  
+}
+
+
 .suggestion-image-div{
   height: 4rem;
   width: 4rem;
-  border: 1px solid transparent;
+
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(245, 245, 245);
   border-radius: 5px;
   margin:1rem;
     transition: all .3s ease;
@@ -241,7 +253,7 @@ background-color: rgb(255, 255, 255);
 }
 
 .suggestion-div:hover .suggestion-image-div{
-        border: 1px solid rgb(80,230,230);
+    
         background-color: white;
 }
 
@@ -253,17 +265,98 @@ background-color: rgb(255, 255, 255);
    
   }
 
-  .suggestion-arrow{
-    position: absolute;
-    right:1rem;
-    color:rgb(181, 181, 181);
-    width: 1.5rem;
-    height: 1.5rem;
-  }
 
-  .suggestion-div:hover .suggestion-arrow{
-  color:rgb(80,230,230);
-  }
+  .search-panel-suggestion-wrapper{
+  height: 70vh;
+  width: 100%;
+  left: 0;
+  top: 100%;
+position: absolute;
+border: 0px solid red;
+background-color: white;
+display: flex;
+justify-content: center;
+display: none;
+
+
+}
+
+.search-panel-suggestion{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-pills-wrapper{
+  border: 0px solid rgb(201, 201, 201);
+  width: 100%;
+  display: flex;
+    flex-wrap: wrap; 
+  gap:2rem;
+  padding: 2rem 0rem;
+  border: 0px solid red;
+}
+
+.product-suggestions-wrapper{
+
+     width: 100%;
+  display: grid;
+
+  grid-template-columns: repeat(1, 1fr); 
+  overflow: scroll;
+  scrollbar-width: thin;
+
+
+}
+
+.suggestion-collection-wrapper{
+  width: 100%;
+  flex: 1;
+  border: 0px solid blue;
+  display: flex;
+  align-items: end;
+  padding: 2rem 0rem;
+      display: grid;
+        place-items: center;
+/*  min-height: 50vh; */
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 2rem;
+  
+}
+
+.suggestion-colletion{
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+
+  
+}
+
+.collection-img{
+  width: 100%;
+  aspect-ratio: 1/1;
+
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.collection-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection-title{
+  padding: 1rem 0rem;
+  width: 100%;
+  font-weight: 600;
+  
+}
+
+
+
 
   @media(max-width:1000px){
 
@@ -307,6 +400,8 @@ background-color: rgb(255, 255, 255);
   }
 
 }
+
+
 
 @media(max-width:650px){
 

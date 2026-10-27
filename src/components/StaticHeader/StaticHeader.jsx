@@ -64,7 +64,8 @@ const boxVariants = {
 
 
 
-export default function StaticHeader({toggleSwitch,toggleOverlay, sideBarToggle,setCartToggled}) {
+export default function StaticHeader({toggleSwitch,toggleOverlay, sideBarToggle,setCartToggled,setCurrentPanel,
+         setIsPanelOpen}) {
 
 
 const location = useLocation();
@@ -264,6 +265,7 @@ console.log(' is at top' , isAtTop)
           </div>
     
           <div className="header-right-icon" 
+          
           id='header-search-icon-ph'>
             <Search className="header-search-icon"    
                      style={{ strokeWidth: '1.5'}}  />
@@ -309,7 +311,7 @@ console.log(' is at top' , isAtTop)
               onClick={()=>{setCartToggled(true) ,toggleOverlay(true)} }>
                       
                            
-                           <span className='header-icon'>
+                           <span className='header-icon' onClick={()=>{setIsPanelOpen(true),setCurrentPanel('right-panel')}}>
                                             {location.pathname === "/cart" ? (
               < RiShoppingBag3Fill  />  
             ) : (
