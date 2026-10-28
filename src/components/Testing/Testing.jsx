@@ -7,7 +7,7 @@ import SiteMenu from '../SiteMenu/SiteMenu';
 import SiteMenuAnimation2 from "../../assets/SiteMenuAnimation2.json";
 import ExpandablePanel from '../ExpandablePanel/ExpandablePanel';
 import NavigationPanel from '../NavigationPanel/NavigationPanel';
-import SearchPanel from '../SearchPanel/SearchPanel';
+
  import "./Testing.css";
 
 
@@ -24,7 +24,7 @@ export default function Testing() {
   return (
 <div className="testing-div"  >
    
-   <SearchPanel/>
+
 
 
 {/* <ExpandablePanel/> */}

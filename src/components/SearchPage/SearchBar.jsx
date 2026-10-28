@@ -4,7 +4,7 @@ import { useDelayedNavigate } from '../useDelayedNavigate';
 import { TrendingUp } from 'lucide-react';
 import { ChevronRight } from 'lucide-react';
 import { X } from 'lucide-react';
-import './SearchBar.css';
+import './SearchPage.css';
 
 
 
@@ -32,7 +32,7 @@ const suggestionPlaceholder = [
   {name:'Sunglasses',slug:''},
 ]
 
-export default function SearchBar({ currentToggle, toggleSwitch, toggleOverlay , closePanel , currentPanel }) {
+export default function SearchPage({ currentToggle, toggleSwitch, toggleOverlay , closePanel , currentPanel }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const[products,setProducts] = useState()
@@ -165,14 +165,14 @@ const productsComp = useMemo(() => {
 
   
   return (
-    <div className='searchBar-div'>
+    <div className='search-page-wrapper'>
 
 
-  <div className="search-panel-container">
+  <div className="search-input-wrapper">
     
 
 
-      <div className="search-input-wrapper">
+      <div className="search-input">
         <input
           type="text"
           className="header-search-box"
@@ -229,9 +229,9 @@ const productsComp = useMemo(() => {
               <div
                 onClick={() => handleProductClick(item.id)}
                 key={item.name}
-                className='suggestion-div'
+                className='suggestion-wrapper'
               >
-                <div className='suggestion-image-div' style={{backgroundImage:`url(${item.images[0]})`}}></div>
+                <div className='suggestion-image' style={{backgroundImage:`url(${item.images[0]})`}}></div>
                 <div className='suggestion'>{getHighlightedText(item.title, searchTerm)}</div>
                 <span className="suggestion-arrow"><TrendingUp size={20}/></span>
               </div>
@@ -245,13 +245,13 @@ const productsComp = useMemo(() => {
           :
 
 
-          <div className="suggestion-collection-wrapper">
+          <div className="search-collection-wrapper">
            {collections.map((item,index)=>
-           <div className='suggestion-colletion' key={index}>
-            <div className="collection-img">
+           <div className='search-colletion' key={index}>
+            <div className="search-collection-img">
               <img src={item.img}/>
             </div>
-            <div className="collection-title">
+            <div className="search-collection-title">
               {item.name}
             </div>
            </div>)}

@@ -3,7 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
-import SearchBar from './SearchBar/SearchBar';
+import SearchPage from './SearchPage/SearchBar';
 import SideBarNav from './SideBarNav/SideBarNav';
 
 import StaticHeader from './StaticHeader/StaticHeader';
@@ -102,7 +102,7 @@ console.log(currentPanel)
   {/* <div className="middleLine"></div> */}
 
 <div className={`search-overlay ${currentPanel === 'top-panel' ? 'active' : ''}`}>
-  <SearchBar 
+  <SearchPage
     currentToggle={searchBarToggle} 
     toggleSwitch={SearchToggle} 
     closePanel={closePanel}
@@ -116,14 +116,6 @@ console.log(currentPanel)
 
 
 
-{currentPanel==='top-panel'&&  <div className="search-overlay">
-  <SearchBar currentToggle={searchBarToggle} 
-      toggleSwitch={SearchToggle} 
-     closePanel={closePanel}
-      toggleOverlay={setShowOverlay} 
-      currentPanel={currentPanel}/>
-  
-  </div>}
 
 
 
