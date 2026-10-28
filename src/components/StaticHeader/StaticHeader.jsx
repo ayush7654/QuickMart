@@ -64,7 +64,7 @@ const boxVariants = {
 
 
 
-export default function StaticHeader({toggleSwitch,toggleOverlay, sideBarToggle,setCartToggled,setCurrentPanel,
+export default function StaticHeader({toggleSwitch,toggleOverlay, sideBarToggle,setCartToggled,setCurrentPanel,currentPanel,
          setIsPanelOpen}) {
 
 
@@ -224,7 +224,7 @@ console.log(' is at top' , isAtTop)
    
 
   <div className="header-left-section"
-/*  onMouseLeave={handleMouseLeave} */   /* UNCOMMENT THIS */
+ onMouseLeave={handleMouseLeave}  
 >
 
   {/* about , FAQ , BLOG , COntact us , english */}
@@ -239,10 +239,10 @@ console.log(' is at top' , isAtTop)
       <TransitionLink to='/store' className="">Shop All</TransitionLink>
 
     <div className="collections-btn"
-    /* onMouseEnter={handleMouseEnter} */>
+     onMouseEnter={handleMouseEnter} >
       Collection
 
-      make all side panel emerge from circle
+
     </div>
 
   
@@ -278,7 +278,7 @@ console.log(' is at top' , isAtTop)
       <div className="header-right-section">
 
       <div className="header-icon-wrapper"
-      onClick={()=>{toggleSwitch(true),toggleOverlay(true)}} >
+   onClick={()=>{setIsPanelOpen(true),setCurrentPanel('top-panel')}}>
 
 
         <div className='header-icon'>
@@ -302,16 +302,15 @@ console.log(' is at top' , isAtTop)
                           
                           
  </span>
-                       
        
            </TransitionLink>
 
 
               <div  className={`header-icon-wrapper ${location.pathname==='/cart'?'active-header-nav':''}`}
-              onClick={()=>{setCartToggled(true) ,toggleOverlay(true)} }>
+              onClick={()=>{setIsPanelOpen(true),setCurrentPanel('right-panel')}}>
                       
                            
-                           <span className='header-icon' onClick={()=>{setIsPanelOpen(true),setCurrentPanel('right-panel')}}>
+                           <span className='header-icon'>
                                             {location.pathname === "/cart" ? (
               < RiShoppingBag3Fill  />  
             ) : (

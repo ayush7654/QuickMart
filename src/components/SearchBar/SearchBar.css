@@ -1,31 +1,26 @@
 .searchBar-div{
-/* position:fixed;
-top: -.1rem;
-    height: 40vh; */
     height: 100%;
     width: 100%;
-    background-color: white;
-
-    z-index: 9999;
-    display: flex;
+      display: flex;
     align-items: center;
-    justify-content:end;
-   gap:2rem;
     flex-direction: column;
+ justify-content: space-between;
        position: relative;
-/*   transform: translateY(-12rem); */
 }
+
 
 .search-panel-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: end;
+  width: 95%;
+  height: 20vh;
   /* Using rem for responsive padding */
-  padding: 1.875rem 1.25rem 2.5rem; 
-  background-color: #f7fafc;
+
+/*   background-color: #f7fafc; */
   box-sizing: border-box;
+  border: 0px solid red;
  
 }
 
@@ -51,11 +46,7 @@ top: -.1rem;
   color: #111827;
 }
 
-.close-icon {
-  font-size: 1rem;
-  line-height: 1;
-  font-weight: 300;
-}
+
 
 /* Input Wrapper & Bottom Line */
 .search-input-wrapper {
@@ -63,7 +54,18 @@ top: -.1rem;
 
   border-bottom: 0.0625rem solid #d1d5db; /* 1px line */
   padding-bottom: 0.75rem;
+  position: relative;
 
+}
+
+.cancel-search{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  font-size: 2rem;
+  color:rgb(100,100,100);
+  cursor: pointer;  
 }
 
 /* Main Search Input */
@@ -87,119 +89,98 @@ top: -.1rem;
   font-weight: 400;
   opacity: 1;
   font-family: 'Figtree';
+  font-size: 3rem;
 }
 
 
 
+.search-panel-suggestion-wrapper{
+
+  width: 100%;
+height: 80vh;
+display: flex;
+justify-content: center;
+border: 0px solid blue;
+padding: 1rem 0rem;
 
 
 
-
-  
-
-  .searchBar-btn-div{
-    border: 0px solid red;
-   display: flex;
-    align-items: center;
-    gap: 1rem;
-       margin-right: .5rem;
-  }
-  
-.clearSearchBtn-div{
-   
-   display: flex;
-   align-items: center;
-
-  
 }
 
-.clearSearchBtn{
-color:rgb(150, 150, 150);
-  font-size: 1.5rem;
+.search-result-products{
+  border: 0px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .85rem;
+  padding: 1rem 0rem;
 }
 
-.clearSearchBtn:hover{
-color:rgb(100, 100, 100);
-  cursor: pointer;
+.result-number{
+  color:rgb(100,100,100);
+}
+.result-link{
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-
-
-  .searchBar-seachIcon-div .searchIcon{
-height: 1.5rem;
-width: 1.5rem;
-color:rgb(170, 170, 170);
-
-  }
-
- .header-searchBar:focus-within .searchBar-seachIcon-div .searchIcon{
-    color:rgb(100, 100, 100);
-  }
-
-  .suggestionBox{
-    border: 0px solid red;
-    color: black;
-   width: 100%;
-  max-height: 80vh;
-  padding-bottom: 10rem;
-    position: absolute;
-    top: 100%;
-   background-color: rgb(255, 255, 255);
-  overflow: hidden;
-  z-index: 999;
-  font-family: 'Roboto';
-  font-weight: 300;
-  overflow-y: scroll;
+.search-panel-suggestion{
+  width: 90%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  
-  }
+  padding: 1rem 0rem;
+}
 
-  
-.category-suggestion-box{
+.advanced-search-wrapper{
+
+}
+
+.search-pills-wrapper{
   border: 0px solid rgb(201, 201, 201);
-  width: 85%;
-  /* background-color:rgb(225, 225, 225); */
+  width: 100%;
   display: flex;
     flex-wrap: wrap; 
-   
-  margin: .5rem;
- 
-  gap:1rem;
-  padding:1rem;
-  padding-left: 0rem;
-
-
-
-
-
+  gap:2rem;
+  padding: 1rem 0rem;
+  border: 0px solid red;
 }
+
+
 
 .category-suggestion{
-    border: 1px solid transparent;
+
   padding:.4rem;
-
-  color:rgb(0, 0, 0);
-  border-radius: 5px;
+  border-radius: 6px;
   font-weight: 400;
-   font-size: .85rem;
-  transition: all .2s ease;
-  background-color: rgb(242, 242, 255);
-  color:rgb(20, 20, 20)
-}
-
-.category-suggestion:hover{
-  
+   font-size: .8rem;
+  border: 1px solid rgb(160,160,160);
+  color:rgb(60, 60, 60);
   cursor: pointer;
-
-background-color: rgb(255, 255, 255);
-  color:rgb(20, 20, 20);
-    
-  border: 0px solid  blue;
-  
-  border: 1px solid rgb(20, 20, 20);
+transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
+.category-suggestion:hover{
+  border-color:rgb(0,100,255);
+  color:rgb(0,100,255);
+
+}
+
+
+
+.product-suggestions-wrapper{
+
+     width: 100%;
+  display: grid;
+
+  grid-template-columns: repeat(1, 1fr); 
+  overflow-y: scroll;
+  scrollbar-width: thin;
+ 
+
+
+}
+
+
 
 
 
@@ -210,12 +191,13 @@ background-color: rgb(255, 255, 255);
 
  position: relative;
    transition: all .3s ease;
-   border: 0px solid red;
+
 
   }
     .suggestion-div:hover{
-    background-color: #eee;
+ /*    background-color: #eee;
     background-color: rgb(245, 245, 245);
+        background-color: rgb(242, 242, 255); */
     
      cursor: pointer;
   }
@@ -225,9 +207,11 @@ background-color: rgb(255, 255, 255);
   transform: translate(-0.4rem, 0.4rem);
   transition: all 0.3s ease;
     color:rgb(0,100,255);
-    font-size: 1.5rem;
-    position: absolute;
-    right: 1rem;
+
+ 
+
+
+
     
   }
 
@@ -246,7 +230,8 @@ background-color: rgb(255, 255, 255);
   background-size: cover;
   background-repeat: no-repeat;
   background-color: rgb(245, 245, 245);
-  border-radius: 5px;
+ background-color: white;
+  border-radius: 6px;
   margin:1rem;
     transition: all .3s ease;
   
@@ -266,59 +251,15 @@ background-color: rgb(255, 255, 255);
   }
 
 
-  .search-panel-suggestion-wrapper{
-  height: 70vh;
-  width: 100%;
-  left: 0;
-  top: 100%;
-position: absolute;
-border: 0px solid red;
-background-color: white;
-display: flex;
-justify-content: center;
-display: none;
 
 
-}
-
-.search-panel-suggestion{
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-}
-
-.search-pills-wrapper{
-  border: 0px solid rgb(201, 201, 201);
-  width: 100%;
-  display: flex;
-    flex-wrap: wrap; 
-  gap:2rem;
-  padding: 2rem 0rem;
-  border: 0px solid red;
-}
-
-.product-suggestions-wrapper{
-
-     width: 100%;
-  display: grid;
-
-  grid-template-columns: repeat(1, 1fr); 
-  overflow: scroll;
-  scrollbar-width: thin;
-
-
-}
 
 .suggestion-collection-wrapper{
   width: 100%;
   flex: 1;
-  border: 0px solid blue;
   display: flex;
-  align-items: end;
-  padding: 2rem 0rem;
-      display: grid;
-        place-items: center;
-/*  min-height: 50vh; */
+  align-items: center;
+
   grid-template-columns: repeat(5, 1fr); 
   gap: 2rem;
   
@@ -329,6 +270,7 @@ display: none;
  display: flex;
  flex-direction: column;
  align-items: center;
+ cursor: pointer;
 
   
 }
@@ -346,6 +288,11 @@ display: none;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+
+}
+.suggestion-colletion:hover img{
+transform: scale(1.1);
 }
 
 .collection-title{

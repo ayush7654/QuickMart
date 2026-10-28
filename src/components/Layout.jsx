@@ -101,15 +101,29 @@ console.log(currentPanel)
 
   {/* <div className="middleLine"></div> */}
 
-{overlayVisible  && (
-  <div className="screen-overlay" onClick={() => setShowOverlay(false)} />
-)}
-   {/*    <SearchBar currentToggle={searchBarToggle} 
+<div className={`search-overlay ${currentPanel === 'top-panel' ? 'active' : ''}`}>
+  <SearchBar 
+    currentToggle={searchBarToggle} 
+    toggleSwitch={SearchToggle} 
+    closePanel={closePanel}
+    toggleOverlay={setShowOverlay} 
+    currentPanel={currentPanel}
+  />
+</div>
+
+
+
+
+
+
+{currentPanel==='top-panel'&&  <div className="search-overlay">
+  <SearchBar currentToggle={searchBarToggle} 
       toggleSwitch={SearchToggle} 
-     
-      toggleOverlay={setShowOverlay} /> */}
-
-
+     closePanel={closePanel}
+      toggleOverlay={setShowOverlay} 
+      currentPanel={currentPanel}/>
+  
+  </div>}
 
 
 
@@ -120,22 +134,17 @@ console.log(currentPanel)
       sideBarToggle={toggleSideBar}
       setCartToggled={setCartToggled}
          sideBarState={sideBarOn} 
+         setCurrentPanel={setCurrentPanel}
+         setIsPanelOpen={setIsPanelOpen}
+         currentPanel={currentPanel}
    />
 
 
-<div className="sample-side-panel">
 
-</div>
 
-<div className="side-panel-btn" onClick={handlePanelToggle}></div>
        
   <CartListProvider>
-<div className="search-panel" >
-     <SearchBar currentToggle={searchBarToggle} 
-      toggleSwitch={SearchToggle} 
-     closePanel={closePanel}
-      toggleOverlay={setShowOverlay} />
-</div>
+
 
 <div className='siteNav-panel' >
 
@@ -152,12 +161,7 @@ console.log(currentPanel)
 
 
 
- <div className="panel-button-container">
-  <span className="panel-button" onClick={()=>{setIsPanelOpen(true),setCurrentPanel('top-panel')}}>top</span>
-  <span className="panel-button"onClick={()=>{setIsPanelOpen(true),setCurrentPanel('left-panel')}}>left</span>
-  <span className="panel-button" onClick={()=>{setIsPanelOpen(true),setCurrentPanel('right-panel')}}>right</span>
 
-</div>
  
 
 

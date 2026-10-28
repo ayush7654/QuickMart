@@ -1,13 +1,9 @@
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect , useMemo} from 'react';
 import TransitionLink from '../TransitionLink';
 import { useDelayedNavigate } from '../useDelayedNavigate';
-import { Search } from 'react-feather';
+import { TrendingUp } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { X } from 'lucide-react';
-import { ArrowUpRight } from "lucide-react";
-import { IoCloseCircle } from "react-icons/io5";
-import CollectionProduct from '../../pages/Home/Collections/CollectionProduct/CollectionProduct';
-
 import './SearchBar.css';
 
 
@@ -36,29 +32,29 @@ const suggestionPlaceholder = [
   {name:'Sunglasses',slug:''},
 ]
 
-export default function SearchBar({ currentToggle, toggleSwitch, toggleOverlay , closePanel }) {
+export default function SearchBar({ currentToggle, toggleSwitch, toggleOverlay , closePanel , currentPanel }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const[products,setProducts] = useState()
-  const [suggestionBox, setSuggestionBox] = useState(false);
+
 
 
     const delayedNavigate = useDelayedNavigate();
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
-    setSuggestionBox(true);
+  
   };
 
   const handleCategoryClick = (name, slug) => {
     setSearchTerm(name);
-    setSuggestionBox(false);
+   
   delayedNavigate (`store?type=${slug}`);
-    handleCloseSearchBar();
+   closePanel();
   };
 
   const handleProductClick = (id) =>{
-       setSuggestionBox(false);
+    
   delayedNavigate (`store/${id}`);
     handleCloseSearchBar();
   }
@@ -153,11 +149,14 @@ useEffect(() => {
 
   const suggestionComp = suggestions
     ? suggestions.filter((item) =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase())
+        item.name.toLowerCase().startsWith(searchTerm.toLowerCase())
       )
     : null;
 
-const productsComp = products ? filterAndRankByTitle(products, searchTerm) : [];
+
+const productsComp = useMemo(() => {
+  return products ? filterAndRankByTitle(products, searchTerm) : [];
+}, [products, searchTerm]);
 
 
 
@@ -170,65 +169,33 @@ const productsComp = products ? filterAndRankByTitle(products, searchTerm) : [];
 
 
   <div className="search-panel-container">
-      {/* Top Close Button */}
-      <button 
-        className="search-close-btn" 
-       onClick={closePanel} 
-        aria-label="Close search"
-      >
-        <span className="close-icon">&times;</span>
-      </button>
+    
 
-      {/* Search Input Box */}
+
       <div className="search-input-wrapper">
         <input
           type="text"
           className="header-search-box"
-          placeholder="Search (add throttle to search)"
+          placeholder="Search (craete search result page which opens with enter button)"
           value={searchTerm}
           onChange={handleChange}
           autoFocus
         />
+        <span className='cancel-search' onClick={closePanel} ><X strokeWidth={1.5}/></span>
       </div>
     </div>
 
-       
-   {/*  {  searchTerm &&  <div className='suggestionBox'>
-    <div className='category-suggestion-box'>
-        {suggestionBox &&
-            searchTerm &&
-            suggestionComp &&
-            suggestionComp.map((item) => (
-           
-                <div   onClick={() => handleCategoryClick(item.name, item.slug)} className='category-suggestion'>{item.name}</div>
-         
-            ))}
-    </div>
-          {suggestionBox &&
-            searchTerm &&
-            productsComp &&
-            productsComp.slice(0,6).map((item) => (
-              <div
-                onClick={() => handleProductClick(item.id)}
-                key={item.name}
-                className='suggestion-div'
-              >
-                <div className='suggestion-image-div' style={{backgroundImage:`url(${item.images[0]})`}}></div>
-                <div className='suggestion'>{getHighlightedText(item.title, searchTerm)}</div>
-                <ArrowUpRight className='suggestion-arrow'/>
-              </div>
-            ))}
-        </div>} */}
+      
 
-     
-     <div className="search-panel-suggestion-wrapper">
+
+<div className="search-panel-suggestion-wrapper">
 
           <div className="search-panel-suggestion">
 
           <div className="advanced-search-wrapper">
             <h2>Advanced Search</h2>
             <div className="search-pills-wrapper">
-              {searchTerm?
+              {searchTerm && suggestionComp.length>0?
                suggestionComp.map((item) => (
            
                 <div   onClick={() => handleCategoryClick(item.name, item.slug)} className='category-suggestion'>{item.name}</div>
@@ -242,27 +209,20 @@ const productsComp = products ? filterAndRankByTitle(products, searchTerm) : [];
             ))
 
               }
-      {/*     {suggestionBox &&
-            searchTerm &&
-            suggestionComp &&
-            suggestionComp.map((item) => (
-           
-                <div   onClick={() => handleCategoryClick(item.name, item.slug)} className='category-suggestion'>{item.name}</div>
-         
-            ))} 
-            {suggestionPlaceholder.map((item) => (
-           
-                <div   onClick={() => handleCategoryClick(item.name, item.slug)} className='category-suggestion'>{item.name}</div>
-         
-            ))} */} 
+   
             </div>
+     
           </div>
+          {searchTerm && <div className="search-result-products">
+              <span className='result-number'>{productsComp.length} PRODUCTS</span>
+              <span className='result-link'>ALL RESULTS <ChevronRight size={15} strokeWidth={2} /> </span>
+            </div>}
 
          {searchTerm? <div className="product-suggestions-wrapper" data-lenis-prevent>
-
-         
-
-             {suggestionBox &&
+          
+          
+          <div className="product-suggestions">
+              {
             searchTerm &&
             productsComp &&
             productsComp.slice(0,6).map((item) => (
@@ -273,9 +233,13 @@ const productsComp = products ? filterAndRankByTitle(products, searchTerm) : [];
               >
                 <div className='suggestion-image-div' style={{backgroundImage:`url(${item.images[0]})`}}></div>
                 <div className='suggestion'>{getHighlightedText(item.title, searchTerm)}</div>
-                <span className="suggestion-arrow">↗</span>
+                <span className="suggestion-arrow"><TrendingUp size={20}/></span>
               </div>
             ))}
+          </div>
+         
+
+           
 
           </div>
           :
@@ -296,19 +260,11 @@ const productsComp = products ? filterAndRankByTitle(products, searchTerm) : [];
 
           </div>
         </div>
+ 
      
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
 
 
  {/*        <div className='searchBar-btn-div'>
@@ -333,4 +289,12 @@ const productsComp = products ? filterAndRankByTitle(products, searchTerm) : [];
 
 
 
-{/*   */}
+
+
+
+
+
+
+
+
+
