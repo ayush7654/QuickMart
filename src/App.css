@@ -236,7 +236,7 @@ display: none;
     color:black;
 }
 
-.search-overlay {
+.site-overlay-component {
   position: fixed;
   top: 0;
   left: 0;
@@ -257,10 +257,11 @@ display: none;
               visibility 0.3s ease-in-out;
 }
 
-.search-overlay.active {
+.site-overlay-component.active {
   /* Ending state (Visible / Faded in) */
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(30px);
   opacity: 1;
   visibility: visible;
 }
+

@@ -14,6 +14,7 @@ import SiteMenu from './SiteCollection/SiteCollection';
 import { useStoreData } from './StoreDataContext';
 import SideCart from './SideCart/SideCart';
 import NavigationPanel from './NavigationPanel/NavigationPanel';
+import SiteCollection from './SiteCollection/SiteCollection';
 
 
 
@@ -101,14 +102,21 @@ console.log(currentPanel)
 
   {/* <div className="middleLine"></div> */}
 
-<div className={`search-overlay ${currentPanel === 'top-panel' ? 'active' : ''}`}>
+<div className={`site-overlay-component ${currentPanel === 'top-panel' ? 'active' : ''}`}>
   <SearchPage
     currentToggle={searchBarToggle} 
     toggleSwitch={SearchToggle} 
-    closePanel={closePanel}
     toggleOverlay={setShowOverlay} 
+     closePanel={closePanel}
     currentPanel={currentPanel}
   />
+</div>
+
+
+<div className={`site-overlay-component ${isOpen ? 'active' : ''}`}>
+
+  <SiteCollection/>
+
 </div>
 
 
@@ -129,6 +137,8 @@ console.log(currentPanel)
          setCurrentPanel={setCurrentPanel}
          setIsPanelOpen={setIsPanelOpen}
          currentPanel={currentPanel}
+         closePanel={closePanel}
+  
    />
 
 

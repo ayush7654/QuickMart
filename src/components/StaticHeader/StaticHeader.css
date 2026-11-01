@@ -213,14 +213,9 @@ border: 0px solid white;
 }
 
 .header-menu-wrapper{
-    filter: brightness(0);
-    user-select: none;
 
-    padding: 12px 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap:10px;
+
+
  
 }
 
@@ -230,31 +225,23 @@ border: 0px solid white;
 
 .header-nav{
 
- height: 100%; 
-   display: flex;
-  cursor: pointer;
-    align-items: center;
-    gap:8px;
-    flex-shrink: 0;
-    border-bottom: 2px solid transparent;
-    
-    font-size: .9rem;
-    font-family: 'Figtree';
-    font-weight: 600;
-    transition: all .3s ease;
-    font-family: 'Manrope';
+    filter: brightness(0);
+    user-select: none;
 
 
-    
+}    
 
+.header-force-white .header-nav{
+    filter: brightness(1);
 }
-.static-header-wrapper .header-nav:hover{
+
+/* .static-header-wrapper .header-nav:hover{
   border-bottom: 2px solid black; ;
 }
 
 .header-force-white .header-nav:hover{
   border-bottom: 2px solid transparent ;
-}
+} */
 
 .dropDown-menu-btn{
 

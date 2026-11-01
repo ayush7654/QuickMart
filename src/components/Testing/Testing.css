@@ -1,4 +1,24 @@
 .testing-div{
   height: 200vh;
   margin-top: 10rem;
+  display: grid;
+  place-items: center;
+}
+
+.child-wrapper{
+  display: flex;
+  gap:2rem;
+   --child-height: 10rem;
+}
+
+.childA{
+    height: var(--child-height);
+  width: 2rem;
+  background-color: red;
+}
+
+.childB{
+     height: calc(var(--child-height) / 2);
+  width: 2rem;
+  background-color: blue;
 }

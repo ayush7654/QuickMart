@@ -1,9 +1,20 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect,useRef} from 'react'
 import './SiteCollection.css'
 import CategoryDataProvider from '../../pages/Store/ExpandingStoreHeader/CategoryDataProvider';
 import AnimatedUnderline from '../AnimatedUnderline/AnimatedUnderline';
 import { useStoreData } from '../StoreDataContext';
+import { ChevronRight } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
+import { IoShirtOutline } from 'react-icons/io5';
+import { FaGem } from "react-icons/fa";
+import { PiTShirtFill } from "react-icons/pi";
+import { MdLaptopMac } from "react-icons/md";
+import { GiLipstick } from "react-icons/gi";
+import { PiDeskFill } from "react-icons/pi";
+import { FaRunning } from "react-icons/fa";
+import { GiGrapes } from "react-icons/gi";
 import { FaFacebook, FaXTwitter, FaYoutube, FaInstagram ,FaTiktok, FaLinkedin, FaLinkedinIn} from "react-icons/fa6";
+import { div } from 'framer-motion/client';
 
 const footerContainerVariants = {
   hidden: {},
@@ -39,6 +50,46 @@ const footerItemVariants = {
 
   ]
 
+  const groupImgs = [
+    'clothing-group3.png',
+    'technology-group1.png',
+    'skincare-group.png',
+    'accessories-group.png',
+    'sports-group1.png',
+    'home&living-group.png']
+
+  const featuredSubgroup= [
+    'New Arrivals',
+    'Absolute Steals',
+    'Exclusive Picks',
+    'Best Of Apple',
+    'Wardrobe Overhaul',
+    'Explore Our Range'
+  ]
+
+  
+  const collectionImgs = [
+    'clothing-collection2.jpg',
+    'technology-collection3.jpg',
+    'wellness-collection3.jpg',
+    'outdoor-collection8.jpg',
+    'accessories-collection4.jpg',
+    
+    'home&living-collection2.jpg']
+
+  const brandCollection =[
+      'BrandLogo2.webp',
+  'BrandLogo3.webp',
+  'BrandLogo4.webp',
+  'BrandLogo5.webp',
+  'BrandLogo6.webp',
+  'BrandLogo7.webp',
+  'BrandLogo8.webp',
+  'BrandLogo9.webp',
+    'BrandLogo10.webp',
+  'BrandLogo11.webp',
+  ]
+
 export default function SiteCollection() {
 
     const {handleTypeFilter,isOpen, setIsOpen,currentCategory} = useStoreData();
@@ -46,6 +97,27 @@ export default function SiteCollection() {
     const [selectedSubGroupId,setSelectedSubGroupId] = useState(null);
     const [selectedCategoryId,setSelectedCategoryId] = useState(null)
     const [activeGroup, setActiveGroup] = useState(null);
+
+
+      const scrollRef = useRef(null);
+
+  const scrollChildren = (direction) => {
+    const container = scrollRef.current;
+    const child = container?.querySelector('.subgroup-list-wrapper');
+
+    if (!container || !child) return;
+
+    const gap = parseFloat(
+      getComputedStyle(container.querySelector('.subgroups-wrapper')).gap
+    ) || 0;
+
+    const scrollAmount = child.offsetWidth + gap;
+
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  };
 
 
     useEffect(() => {
@@ -84,26 +156,71 @@ export default function SiteCollection() {
 
     
 
-    console.log('active group', currentCategory)
+    console.log('data is', categorizedData)
 
   return (
-    <div className={`site-collection ${isOpen ? "site-collection-open" : ""}`}>
-      <div className="site-collection-content">
+    <div className='site-collection'>
 
-       <div className="site-collection-space"></div>
+      <div className="site-collection-head">COLLECTIONS </div>
 
-            <div className="site-collection-layout">
-                <div className="collection-layout-content">
-                 
-                 <div className="subgroup-content-wrapper">
-                    <div className='subgroup-content-head'>Collections</div>
+   
+
+         <div className="site-collection-layout">
+
+          <div className="featured-wrapper">
+           
+           <div className="subgroup-list-wrapper">
+              <div className="subgroup-list-image">
+                <img src='pet-collection5.jpg'/> 
+                 <div className='subgroup-head'>Featured</div>
+                    </div>
+                    <div className="subgroup-list-head">Featured<ChevronRight size={13} strokeWidth={2} /></div>
+              <div className="sub-group-list">
+                     {featuredSubgroup.map((item,index) => (
+                        <div 
+                        className={`subgroup-name`}
+                        key={index}  
+                      
+                  
+                   >
+
+                         <AnimatedUnderline>{item}</AnimatedUnderline> 
+                          </div>
+                      ))}
+                    </div> 
+           </div>
+          </div>
+
+          <div className="collection-midline"></div>
+          
+               <div className="subgroup-collection-wrapper">
+                 <div className="subgroup-collection" ref={scrollRef}>
+
+                  <div className="collection-nav-wrapper">
+                    <div className="collection-btn" 
+                    onClick={() => scrollChildren(-1)}>
+                      < ChevronLeft />
+                      </div>
+                    <div className="collection-btn"
+                     onClick={() => scrollChildren(1)}>
+                      < ChevronRight/></div>
+                  </div>
+                   
                 {(selectedSubGroupId != null ) && (
-                  <div className="subgroup-content">
+                  
                 
-                 <div className="subgroup-new">
+                 <div className="subgroups-wrapper">
                    {Object.keys(categorizedData).map((group,index)=>
                   <div className="subgroup-list-wrapper" >
-                  <div className="subgroup-list-head">{group}</div>
+                 
+                    <div className="subgroup-list-image">
+        
+                     <img src={collectionImgs[index]}/> 
+                     <div className='subgroup-head'>{group}</div>
+                      
+                    </div>
+                  
+                  <div className="subgroup-list-head">{group}<ChevronRight size={13} strokeWidth={2} /></div>
                  
                     <div className="sub-group-list">
                      {categorizedData[group].items.map((item, itemIdx) => (
@@ -126,33 +243,44 @@ export default function SiteCollection() {
                   </div>)}
                  </div>
                 
-                  </div>
+               
                 
                 )}
                 
                  </div>
+               </div>
+                 
+                
 
 
-                   <div className={`category-grid-wrapper ${isOpen ? 'is-active' : ''}`}>
                  
-                 Make chnages accorunding to image in public 'siteCOllectionUpdate'
-                 
-                    <div className="category-grid">
-                 
-                 {categoryImgs[selectedSubGroupId]?.img.map((imgPath, index) => (
-                   <div className="catgeory-img-wrapper">
-                     <img src={`StoreMedia/${imgPath}`}/>
-                 
-                   </div>
-                 ))}
-                   
-                    </div>
-                 </div>
             
-                 </div>
+                 
             </div>
 
-             <div className="collection-footer-wrapper">
+             
+   
+
+      <div className="collection-footer-wrapper" >
+
+        <div className="collection-brand-head">SHOP BY BRAND</div>
+ 
+        <div className="collection-brands-wrapper">
+         {brandCollection.map((brand,index)=>
+         <div className='brand-icon' key={index}>
+          <img src={`/BrandComponentIcons/${brand}`}/>
+         </div>)}
+        </div>
+
+         <div className="collection-shopAll">
+          <div className='collection-shopAll-btn'>
+            SHOP ALL <ChevronRight size={20} strokeWidth={2} />
+            
+          </div></div>
+
+      
+
+
                                <div className="site-collection-footer"
                                >
             
@@ -221,7 +349,14 @@ export default function SiteCollection() {
                                 </div>
                                </div>
                                </div>
-      </div>
+
+
+
+
+
+
      </div>
   )
 }
+
+

@@ -224,40 +224,33 @@ console.log(' is at top' , isAtTop)
    
 
   <div className="header-left-section"
- onMouseLeave={handleMouseLeave}  
+/*  onMouseLeave={handleMouseLeave}   */
 >
 
-  {/* about , FAQ , BLOG , COntact us , english */}
 
-    <div className='header-menu-wrapper'
-    onClick={handleExpandedToggle}>
-        <MenuCancel color='white' state={isOpen} />
-        <span>Menu</span>
+
+    <span className='header-nav'
+     onClick={()=>{setIsPanelOpen(true),setCurrentPanel('left-panel')}}>
+       
+        <AnimatedUnderline>Menu</AnimatedUnderline>
   
-    </div> 
+    </span> 
 
-      <TransitionLink to='/store' className="">Shop All</TransitionLink>
+      <TransitionLink to='/store' className='header-nav'>
+      <AnimatedUnderline>Shop All</AnimatedUnderline>
+      </TransitionLink>
 
-    <div className="collections-btn"
-     onMouseEnter={handleMouseEnter} >
-      Collection
+    <span className='header-nav'
+  /*    onMouseEnter={handleMouseEnter} */
+  onClick={()=>setIsOpen(true)}>
+   <AnimatedUnderline>Collection</AnimatedUnderline>
 
 
-    </div>
+    </span>
 
   
 
 
-   {/*    {headerNavLeft.map((item,index)=>
-    <TransitionLink to={item.path} key={index}
-       className={({ isActive }) =>`header-nav ${isActive?'active-header-nav':''}`}
-     onMouseEnter={handleMouseEnter}
-  >
-        
-       <span className='dropDown-menu-btn' 
-       >{item.name}</span> 
-      
-    </TransitionLink>)} */}
 
       <div className="home-menu-ph"
           onClick={()=>{sideBarToggle(true),toggleOverlay(true)}}>

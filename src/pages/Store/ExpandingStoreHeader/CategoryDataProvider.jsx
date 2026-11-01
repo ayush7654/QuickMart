@@ -9,9 +9,11 @@ import { useStoreData } from '../../../components/StoreDataContext';
 
 const SUBGROUP_MAPPING = {
 
- "Clothing & Apparel": {
+ "Clothing": {
 
     groupId: 0,
+
+
      
     items: [
      
@@ -19,17 +21,17 @@ const SUBGROUP_MAPPING = {
        { slug: "tops"},
       { slug: "mens-shirts" },    
       { slug: "womens-dresses" },
-      { slug: "mens-shoes" },
+      { slug: "mens-shoes" }
+     
     ]
 
   },
  
 
-  "Electronics & Tech": {
+  "Technology": {
 
     groupId: 1,
-   
-    items: [
+     items: [
       { slug: "laptops"},
       { slug: "mobile-accessories" },
       { slug: "smartphones"},
@@ -40,37 +42,22 @@ const SUBGROUP_MAPPING = {
 
 
 
-  "Beauty & Wellness": {
+  "Wellness": {
 
     groupId: 2,
-   
+    
     items: [
       { slug: "beauty" },
       { slug: "fragrances"},
-      { slug: "skin-care" }
+      { slug: "skin-care" },
+       
     ]
 
   },
-
-
-  "Accessories & Jewellery": {
+     "Outdoors": {
 
     groupId: 3,
 
-    items: [
-      { slug: "mens-watches"},
-      { slug: "womens-watches" },
-      { slug: "sunglasses"},
-      { slug: "womens-jewellery"},
-      { slug: "womens-bags" },
-    ]
-
-  },
-
-   "Automotive & Outdoors": {
-
-    groupId: 4,
-    
     items: [
       { slug: "sports-accessories" },
       { slug: "vehicle" },
@@ -81,10 +68,27 @@ const SUBGROUP_MAPPING = {
   },
 
 
+
+  "Accessories": {
+
+    groupId: 4,
+  
+    items: [
+      { slug: "mens-watches"},
+      { slug: "womens-watches" },
+      { slug: "sunglasses"},
+      { slug: "womens-jewellery"},
+      { slug: "womens-bags" },
+    ]
+
+  },
+
+
+
   "Home & Living": {
 
     groupId: 5,
-   
+
     items: [
       {slug:'kitchen-accessories'},
       { slug: "groceries" }
@@ -99,8 +103,8 @@ const SUBGROUP_MAPPING = {
  
 
 
-/* 
-  "Daily Essentials": {
+
+/*   "Daily Essentials": {
 
     groupId: 6,
 
@@ -109,8 +113,8 @@ const SUBGROUP_MAPPING = {
       { slug: "groceries", img: "Grocery7.jpg" } 
     ]
 
-  }
- */
+  } */
+ 
 };
 
 
