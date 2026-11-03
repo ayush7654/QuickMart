@@ -16,9 +16,9 @@ import FilterSection from "./FilterSection/FilterSection";
 import GridToggle from "./GridToggle/GridToggle";
 import { useStoreFilter } from "../../components/StoreFilterContext";
 import { X } from "lucide-react";
-import ExpandingStoreHeader from "./ExpandingStoreHeader/ExpandingStoreHeader";
+
 import { useStoreData } from "../../components/StoreDataContext";
-import CategoryDataProvider from "./ExpandingStoreHeader/CategoryDataProvider";
+import CategoryDataProvider from "../../components/CategoryDataProvider";
 import "./Store.css";
 import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
 import CarouselIntro from "./CarouselIntro/CarouselIntro";
@@ -74,8 +74,8 @@ export default function Store() {
     sideFilterOn,
     setSideFilterOn,
     partialPill,setPartialPill,
-    storeSearch,setStoreSearch,
-  setIsOpen} = useStoreData()
+    storeSearch,setStoreSearch,}
+     = useStoreData()
 
   const {selectedGroup} = CategoryDataProvider();
 
@@ -316,8 +316,8 @@ console.log(productElements && productElements)
           </div>
          </div> 
 
-    <div className={`storePage-overlay ${storeOverlayActive ? 'is-visible' : ''}`} 
-     onClick={() => {setIsOpen(false),setPartialPill(false)}}> </div>  
+   {/*  <div className={`storePage-overlay ${storeOverlayActive ? 'is-visible' : ''}`} 
+     onClick={() => {setIsOpen(false),setPartialPill(false)}}> </div>   */}
 
     
 

@@ -32,7 +32,9 @@ export default function Home(){
 
    const [sideBarOn,setSideBarOn] = useState(false)
 
-   const {isOpen} = useStoreData();
+   const [collectionOpen,setCollectionOpen] =useState(false)
+
+   const {isOpen,setIsOpen} = useStoreData();
 
    const overlayVisible = isOpen || showOverlay;
 
@@ -89,7 +91,7 @@ setSearchBarToggle(i)
   const [currentPanel,setCurrentPanel] = useState('')   /* search (top) , sideNav bar (left), cart (right) , storefilter (left)   */
 
 
-console.log(currentPanel)
+
    
     return(
 
@@ -108,14 +110,16 @@ console.log(currentPanel)
     toggleSwitch={SearchToggle} 
     toggleOverlay={setShowOverlay} 
      closePanel={closePanel}
-    currentPanel={currentPanel}
+  
   />
 </div>
 
 
-<div className={`site-overlay-component ${isOpen ? 'active' : ''}`}>
+<div className={`site-overlay-component ${collectionOpen ? 'active' : ''}`}>
 
-  <SiteCollection/>
+ <SiteCollection
+ collectionOpen={collectionOpen}
+   setCollectionOpen={setCollectionOpen}/> 
 
 </div>
 
@@ -138,6 +142,7 @@ console.log(currentPanel)
          setIsPanelOpen={setIsPanelOpen}
          currentPanel={currentPanel}
          closePanel={closePanel}
+          setCollectionOpen={setCollectionOpen}
   
    />
 

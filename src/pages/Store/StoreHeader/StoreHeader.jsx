@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import MenuCancel from '../../../components/MenuCancel/MenuCancel'
-import ExpandingStoreHeader from '../ExpandingStoreHeader/ExpandingStoreHeader'
+
 import { LayoutPanelLeft } from 'lucide-react'
 import { useStoreData } from '../../../components/StoreDataContext'
 import { HiOutlineAdjustmentsHorizontal } from 'react-icons/hi2'

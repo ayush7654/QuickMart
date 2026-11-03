@@ -5,20 +5,17 @@
   place-items: center;
 }
 
-.child-wrapper{
-  display: flex;
-  gap:2rem;
-   --child-height: 10rem;
+.login-pill{
+display: flex;
+align-items: center;
+gap:1rem;
+border: 1px solid black;
+padding: 8px;
+border-radius: 100px;
 }
-
-.childA{
-    height: var(--child-height);
+.login-img-wrapper{
   width: 2rem;
-  background-color: red;
-}
-
-.childB{
-     height: calc(var(--child-height) / 2);
-  width: 2rem;
-  background-color: blue;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 1px solid red;
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useStoreData } from '../../../components/StoreDataContext';
+import { useStoreData } from './StoreDataContext';
 
 
 

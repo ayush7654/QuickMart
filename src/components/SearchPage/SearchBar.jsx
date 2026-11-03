@@ -32,7 +32,7 @@ const suggestionPlaceholder = [
   {name:'Sunglasses',slug:''},
 ]
 
-export default function SearchPage({ currentToggle, toggleSwitch, toggleOverlay , closePanel , currentPanel }) {
+export default function SearchPage({ toggleSwitch, toggleOverlay , closePanel}) {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const[products,setProducts] = useState()
@@ -249,7 +249,7 @@ const productsComp = useMemo(() => {
            {collections.map((item,index)=>
            <div className='search-colletion' key={index}>
             <div className="search-collection-img">
-              <img src={item.img}/>
+              <img src={`SearchPageMedia/${item.img}`}/>
             </div>
             <div className="search-collection-title">
               {item.name}

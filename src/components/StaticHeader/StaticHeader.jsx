@@ -1,80 +1,33 @@
 import {useState,useEffect, useContext , useRef}from 'react'
 import './StaticHeader.css'
 import TransitionLink from '../TransitionLink';
-import { FaCircle } from "react-icons/fa";
 import { Search } from 'lucide-react';
-import { HiUser , HiOutlineUser } from 'react-icons/hi';
-import { FaRegUser, FaUser } from 'react-icons/fa6';
-import { User } from 'lucide-react';
-import { UserCircle } from 'lucide-react';
-import { MdOutlineAccountCircle, MdAccountCircle } from 'react-icons/md';
-// Change 'fa6' to 'fa'
-import { FaRegUserCircle, FaUserCircle } from 'react-icons/fa';
-import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from 'react-router-dom';
-import {  HiShoppingBag,HiOutlineShoppingBag } from "react-icons/hi2";
-import { RiShoppingBag3Line, RiShoppingBag3Fill } from 'react-icons/ri';
-import { RiAccountPinCircleLine,  RiAccountPinCircleFill } from 'react-icons/ri';
-import MenuCancel from '../MenuCancel/MenuCancel';
+import { RiShoppingBag3Fill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-import { useStoreData } from '../StoreDataContext';
 import HeaderBar from './HeaderBar/HeaderBar';
 import { WinScrollContext } from '../WinScrollProvider/WinScrollProvider';
 import AnimatedUnderline from '../AnimatedUnderline/AnimatedUnderline';
-import SiteCollection from '../SiteCollection/SiteCollection';
+import { HiUser , HiOutlineUser} from 'react-icons/hi2';
+import { FiShoppingBag } from 'react-icons/fi';
 
 
 
-
-const menuVariants = {
-  hidden: {
-    opacity: 0,
-    y: -20,
-    transition: {
-      duration: 0.2,
-    },
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.35,
-      ease: [0.22, 1, 0.36, 1],
-      when: "beforeChildren",
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const boxVariants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-
-
-
-export default function StaticHeader({toggleSwitch,toggleOverlay, sideBarToggle,setCartToggled,setCurrentPanel,currentPanel,
-         setIsPanelOpen}) {
+export default function StaticHeader({
+  toggleOverlay, 
+  sideBarToggle,
+  setCurrentPanel,
+ setIsPanelOpen,
+ setCollectionOpen}) {
 
 
 const location = useLocation();
 
-const {isOpen, setIsOpen} = useStoreData();
 
 
 
- const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+
 
 const [headerTheme, setHeaderTheme] = useState('black');
 
@@ -82,59 +35,12 @@ const [headerTheme, setHeaderTheme] = useState('black');
 
   const storeHeader = ['/store'].includes(location.pathname);
 
-const headerNavLeft = 
-[
- {name:'Store',path:'/store',},
-  {name:'Collections',path:'/',},
- /* {name:'Journal',path:'/',}, */
- {name:'About',path:'/testing',},
- {name:'Contact',path:'/',},
-
-]
 
 
 
-const timeoutRef = useRef(null);
-const openTimeoutRef = useRef(null);
 
-const handleMouseEnter = () => {
-  // Cancel any pending close timeout
-  if (timeoutRef.current) {
-    clearTimeout(timeoutRef.current);
-  }
 
-  // Open only if the cursor stays for 300ms
-  openTimeoutRef.current = setTimeout(() => {
-    setIsOpen(true);
-  }, 300);
-};
 
-const handleMouseLeave = () => {
-  // Cancel any pending open timeout
-  if (openTimeoutRef.current) {
-    clearTimeout(openTimeoutRef.current);
-  }
-
-  // Close after 500ms
-  timeoutRef.current = setTimeout(() => {
-    setIsOpen(false);
-  }, 500);
-};
-
-const handleExpandedToggle = () => {
-  if (!isOpen) {
-    // Stage 1: If it's closed, open it.
-    setIsOpen(true);
-    /* toggleOverlay(true); */
-    
-  } 
-    else {
-      // If it's already full height, close the whole thing.
-      setIsOpen(false);
-     /*  toggleOverlay(false) */
-    }
-  
-};
 
 
 /* directly paste the original page nav right from the previous one */
@@ -185,13 +91,11 @@ console.log(' is at top' , isAtTop)
 <div
   className={`
     static-header-wrapper
-    ${isOpen
-      ? "open-menu-header"
-      : headerTheme === "white"
+    ${ headerTheme === "white"
         ? "header-force-white"
         : "header-force-black"
     }
-  ${isIdle && !isOpen &&  storeHeader ? "static-header-hidden" : ""} 
+  ${isIdle &&  storeHeader ? "static-header-hidden" : ""} 
     ${!isAtTop ? 'hide-header-bar':'' }
     
    
@@ -212,38 +116,46 @@ console.log(' is at top' , isAtTop)
    
    <div className="static-header-content">
 
+   
+
      
-     <Link to ='/' className="static-header-middle"> {/* Make this transational */}
-                
-                 <span className="site-logo"> <img src='/LightBlueLogo.png'/></span>
-                 <span className='header-site-name'>ananta</span>  {/* Shihō */}
+     <Link to ='/' className="site-logo-wrapper"> 
+                 
+                 <span className="site-logo"> <img src='/siteSampleLogo7.png'/></span>
+                 <span className='header-site-name'>Plethora</span>  
                
-    {/*       <div className="site-logo-name">Saras Drops</div>  */}
      </Link>
 
    
 
-  <div className="header-left-section"
-/*  onMouseLeave={handleMouseLeave}   */
->
+  <div className="header-nav-wrapper">
+
+ 
 
 
 
-    <span className='header-nav'
-     onClick={()=>{setIsPanelOpen(true),setCurrentPanel('left-panel')}}>
-       
-        <AnimatedUnderline>Menu</AnimatedUnderline>
-  
-    </span> 
 
       <TransitionLink to='/store' className='header-nav'>
-      <AnimatedUnderline>Shop All</AnimatedUnderline>
+      <AnimatedUnderline>Shop</AnimatedUnderline>
       </TransitionLink>
 
+       <span className='header-nav'
+     onClick={()=>{setIsPanelOpen(true),setCurrentPanel('left-panel')}}>
+       <AnimatedUnderline>Menu</AnimatedUnderline>
+    </span> 
+
     <span className='header-nav'
-  /*    onMouseEnter={handleMouseEnter} */
-  onClick={()=>setIsOpen(true)}>
+
+  onClick={()=>setCollectionOpen(true)}>
    <AnimatedUnderline>Collection</AnimatedUnderline>
+
+
+    </span>
+
+        <span className='header-nav'
+
+>
+   <AnimatedUnderline>Wishlist</AnimatedUnderline>
 
 
     </span>
@@ -252,7 +164,7 @@ console.log(' is at top' , isAtTop)
 
 
 
-      <div className="home-menu-ph"
+      {/* <div className="home-menu-ph"
           onClick={()=>{sideBarToggle(true),toggleOverlay(true)}}>
           <MenuCancel colorSwitch={true} />                
           </div>
@@ -262,63 +174,39 @@ console.log(' is at top' , isAtTop)
           id='header-search-icon-ph'>
             <Search className="header-search-icon"    
                      style={{ strokeWidth: '1.5'}}  />
-           </div>
+           </div> */}
 
 
     </div>
 
 
-      <div className="header-right-section">
+      <div className="header-icon-wrapper">
 
-      <div className="header-icon-wrapper"
-   onClick={()=>{setIsPanelOpen(true),setCurrentPanel('top-panel')}}>
+            <div className='header-icon'
+             onClick={()=>{setIsPanelOpen(true),setCurrentPanel('top-panel')}}>
+     <Search size={20} strokeWidth={1.5} />
+    </div>
 
-
-        <div className='header-icon'>
-               <Search className="header-search-icon"    
-          style={{ strokeWidth: '2'}} size={20} />
-        </div>
-       
+  {/*    <div className='header-icon'>
+     <LuBell size={20} strokeWidth={1.5} />
+    </div> */}
     
-        
-      </div>
+    <div className='header-icon' 
+    onClick={()=>{setIsPanelOpen(true),setCurrentPanel('right-panel')}}>
+     {location.pathname === "/cart" ?
+      (< RiShoppingBag3Fill  />   ) : ( <FiShoppingBag style={{ strokeWidth: "1.5" }} /> )}
+      </div> 
+       
+
+
 
         <TransitionLink 
         to='/Login'
-        className={({ isActive }) =>`header-icon-wrapper ${isActive?'active-header-nav':''}`}>
-         
-             
+        className='header-icon'>
 
- <span className='header-icon'>
        { location.pathname == "/Login" ? 
-        <RiAccountPinCircleFill  />:<RiAccountPinCircleLine />} 
-                          
-                          
- </span>
-       
-           </TransitionLink>
-
-
-              <div  className={`header-icon-wrapper ${location.pathname==='/cart'?'active-header-nav':''}`}
-              onClick={()=>{setIsPanelOpen(true),setCurrentPanel('right-panel')}}>
-                      
-                           
-                           <span className='header-icon'>
-                                            {location.pathname === "/cart" ? (
-              < RiShoppingBag3Fill  />  
-            ) : (
-              < RiShoppingBag3Line
-                
-                style={{ strokeWidth: "" }}
-              />
-            )}
-                           </span>
-                
-                        
-                           
-                 </div>
-
-        
+        < HiUser/>:<HiOutlineUser strokeWidth={1.5} />}   
+       </TransitionLink>    
 
     </div> 
 
@@ -329,25 +217,7 @@ console.log(' is at top' , isAtTop)
    </div>
 
 
-       <AnimatePresence>
-  {isOpen && (
-    <motion.div
-       onMouseEnter={handleMouseEnter}
-  onMouseLeave={handleMouseLeave}
-      className="mega-menu"
-      initial={{ clipPath: "inset(0 0 100% 0)" }}
-      animate={{ clipPath: "inset(0 0 0% 0)" }}
-      exit={{ clipPath: "inset(0 0 100% 0)" }}
-      transition={{
-        duration: 0.5,
-        ease: [0.76, 0, 0.24, 1],
-      }}
-    >
-      <SiteCollection />
-    </motion.div>
-  )}
-</AnimatePresence>
-    
+ 
 
   </div>
 
