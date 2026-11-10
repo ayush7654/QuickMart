@@ -14,7 +14,7 @@ function NavigationPanel({ closePanel }) {
   return (
     <div className="navigation-panel">
        <div className="side-panel__header">
-                  <span>MENU</span>
+                  <span>Menu</span>
                    <span className='side-panel__close'
                     onClick={closePanel}>
                       <AnimatedUnderline color='black'>Close</AnimatedUnderline>

@@ -12,16 +12,16 @@ export default function NewArrivals() {
 
   // 1. Define your overrides for these specific IDs
   const arrivalOverrides = {
-        13: { 
-      brand: 'Annibale', 
-      name: "African Cherry Table", 
-      thumbnail: "Home-products-img/SideTable.jpg" 
-    },
+ 
      87: { brand: 'Urban Chic', name: 'Urban Chic Check Shirt', thumbnail: 'Home-products-img/Green-shirt.jpg' },
-           101: { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'Home-products-img/AirPodMax.jpg' },
-     88: { brand: 'Nike', name: 'Nike Air Jordan 1', thumbnail: 'Home-products-img/AirJordan1.jpg' },
+              80: { 
+      brand: 'Huawei', 
+      name: "Huawei Matebook X Pro", 
+      thumbnail: 'Home-products-img/laptop.jpg' 
+    },
+     88: { brand: 'Nike', name: 'Nike Air Jordan 1', thumbnail: 'Home-products-img/AirJordan3.jpg' },
 
-     36:{ brand: 'Groceries', name: 'Protein Powder', thumbnail: 'Home-products-img/WheyPro.jpg' }
+     36:{ brand: 'Groceries', name: 'Protein Powder', thumbnail: 'Home-products-img/protienPowder.jpg' }
      /* whey protien , id :36 */
    
   };
@@ -29,7 +29,7 @@ export default function NewArrivals() {
   useEffect(() => {
     async function fetchAllProducts() {
       try {
-        const idsToFetch = [13, 87, 101,88,36];
+        const idsToFetch = [87,80,88,36];
         const loadedProducts = [];
 
         for (const id of idsToFetch) {
@@ -59,22 +59,22 @@ export default function NewArrivals() {
      
     >
   
-      <div id='home-product-head'>
-        New Arrivals
-   <span id='home-product-tagline'>Check out what's latest. </span>
+      <div id='home-head-wrapper'>
+      Fresh Drops
+   <span id='home-head-tagline'>Check out what's latest. </span>
      <div>
-                <div className="head-dot-wrapper">
-      <span className="head-dot red"></span>
-      <span className="head-dot blue" ></span>
-      <span className="head-dot green"></span>
-    
-    </div>
+     
      </div>
       </div>
 
     <div key={homeProducts.length}  className="home-Products-container">
       
-<CoverflowCarousel homeProducts={homeProducts && homeProducts}/>
+{/* <CoverflowCarousel homeProducts={homeProducts && homeProducts}/> */}
+
+     <div className="home-products-wrapper">
+       {homeProducts.map((item,index)=>
+     <HomeProduct product={item}/>)}
+     </div>
 
       </div>
     </div>

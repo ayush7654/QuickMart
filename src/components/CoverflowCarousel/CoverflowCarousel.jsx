@@ -66,8 +66,8 @@ const handleClick = () => {
           setCurrentCard(swiper.realIndex);
         }}
         coverflowEffect={{
-          rotate: 35,
-          stretch: 0,
+          rotate: -10,
+          stretch: -50,
           depth: 150,
           modifier: 1,
           slideShadows: false,

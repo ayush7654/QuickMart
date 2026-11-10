@@ -38,22 +38,22 @@ const {isAtTop} = useStoreData();
   <div className="Home">
  
 
-   <div className="scrolling-animation-wrapper"  data-header-theme="white"   >
+ {/*   <div className="scrolling-animation-wrapper"  data-header-theme="white"   >
          
  <ScrollingAnimation isAtTop={isAtTop}  /> 
  
-</div>  
+</div>   */}
       <div className="Home-scroll-content"  >
         
        <NewArrivals />
-          
+             <DiscountProducts/>
      
         <Collections /> 
          <AppleScalingWindow/>
          
        <TrendingComponent />
 
-          <DiscountProducts/>
+       
       
         
 

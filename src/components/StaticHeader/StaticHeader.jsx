@@ -36,14 +36,6 @@ const [headerTheme, setHeaderTheme] = useState('black');
   const storeHeader = ['/store'].includes(location.pathname);
 
 
-
-
-
-
-
-
-
-/* directly paste the original page nav right from the previous one */
 useEffect(() => {
     const sections = document.querySelectorAll("[data-header-theme]");
 
@@ -82,7 +74,7 @@ useEffect(() => {
 
 }, [location.pathname]);
 
-console.log(' is at top' , isAtTop)
+
 
   return (
 
@@ -96,10 +88,7 @@ console.log(' is at top' , isAtTop)
         : "header-force-black"
     }
   ${isIdle &&  storeHeader ? "static-header-hidden" : ""} 
-    ${!isAtTop ? 'hide-header-bar':'' }
-    
-   
-  `}
+    ${!isAtTop ? 'hide-header-bar':'' }`}
 
   style={{ '--header-translate': storeHeader ? '-100%' : '0rem' }}
 >
@@ -110,10 +99,6 @@ console.log(' is at top' , isAtTop)
 
   <div className='static-header' >
 
-
-
- 
-   
    <div className="static-header-content">
 
    
@@ -122,7 +107,7 @@ console.log(' is at top' , isAtTop)
      <Link to ='/' className="site-logo-wrapper"> 
                  
                  <span className="site-logo"> <img src='/siteSampleLogo7.png'/></span>
-                 <span className='header-site-name'>Plethora</span>  
+                 <span className='header-site-name'>lethora</span>  
                
      </Link>
 
@@ -152,13 +137,13 @@ console.log(' is at top' , isAtTop)
 
     </span>
 
-        <span className='header-nav'
+        <Link to='/testing' className='header-nav'
 
 >
    <AnimatedUnderline>Wishlist</AnimatedUnderline>
 
 
-    </span>
+    </Link>
 
   
 

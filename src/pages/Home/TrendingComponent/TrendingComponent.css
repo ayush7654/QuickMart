@@ -117,9 +117,12 @@ width: 50%;
 }
 
 .trend-info h2{
-  font-size: 3.5rem;
+  font-size: 3rem;
  
   font-family: 'Roboto';
+ font-family: 'Marcellus';
+ font-family: 'Manrope';
+ font-weight: 600;
 }
 .trend-info p{
   font-size: 1rem;

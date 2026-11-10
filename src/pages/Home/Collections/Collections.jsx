@@ -22,23 +22,18 @@ const containerVariants = {
   return (
      <div className="collections-wrapper" >
 
-           <div id='home-section-head'>
-            Exclusive Picks
-           
+           <div id='home-head-wrapper'>
+            Exclusive Collections
+            <span id='home-head-tagline'>Curated excellence, limited reach. </span>
             
              </div> 
-           <div className="head-dot-wrapper">
-      <span className="head-dot red"></span>
-      <span className="head-dot blue" ></span>
-      <span className="head-dot green"></span>
-    
-    </div>
+   
      
 
       <FitnessCollection productAnimation={containerVariants} />
 
-       <SolarCollection productAnimation={containerVariants}/> 
-
+   {/*   <SolarCollection productAnimation={containerVariants}/>  */}
+ 
       <PetShopCollection productAnimation={containerVariants}/>
 
       

@@ -130,14 +130,9 @@ const loopBanners = [...banners, ...banners];
          </div> 
 
          <div className='collection-product-wrapper'>   
-   <div  id='home-product-head'>
-    Fitness Hub Collection
-         <div className="head-dot-wrapper">
-      <span className="head-dot red"></span>
-      <span className="head-dot blue" ></span>
-      <span className="head-dot green"></span>
-    
-    </div>
+   <div  id='home-head-wrapper'>
+    Fitness Hub 
+   <span id='home-head-tagline'>Push Beyond Limits.</span>
     </div>
 
          <motion.div className='collection-Products-container'

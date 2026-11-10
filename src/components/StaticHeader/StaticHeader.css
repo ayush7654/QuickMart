@@ -87,7 +87,7 @@ place-items: center;
     font-family: 'Roboto';
   display: flex;
   align-items: center;
-    gap:10px;
+    gap:2px;
 
   
 
@@ -97,6 +97,7 @@ place-items: center;
     width: 2rem;
     display: grid;
     place-items: center;
+    border: 0px solid red;
 
 
   }
@@ -110,10 +111,13 @@ place-items: center;
     }
 
     .header-site-name{
-        font-size:1.5rem;
+        font-size:2rem;
         font-family: 'Inter';
         font-family: 'Cormorant Garamond';
         font-family: 'Manrope';
+          font-family: 'Marcellus';
+          font-family: 'Figtree';
+          text-transform: uppercase ;
 /* 
        font-family: 'Outfit';
         font-family: 'Figtree';
@@ -122,8 +126,8 @@ place-items: center;
          
 
         font-weight: 500;
-     text-transform: uppercase;   
-     text-transform: capitalize;
+/*      text-transform: uppercase;   */ 
+    
         
     }
 
@@ -131,16 +135,8 @@ place-items: center;
  filter: brightness(1);
     }
 
-    .site-logo-name{
-      text-transform:capitalize;
-      font-family: 'Jost';
-      letter-spacing: 1px;
-      font-size: .9rem;
-      font-weight: 400;
- 
-      
-
-    }
+   
+    
 
 
 .header-nav-wrapper{
@@ -150,11 +146,12 @@ place-items: center;
     gap: 3rem;
     font-size:.9rem; 
     font-family: 'Inter';
-    font-weight: 400;
+    font-weight: 500;
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-height: 2.5rem;
+
+font-family: 'Manrope';
 
 
     

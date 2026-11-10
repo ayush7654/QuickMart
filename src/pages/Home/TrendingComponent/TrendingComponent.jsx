@@ -30,20 +30,17 @@ const itemVariants = {
 
 
    const clothingTrends = [
-    {img:'Men-clothing2.jpg',category:'Men',title:'Effortless Style. Engineered for Men.',description:'From sharp, tailored classics to laid-back weekend essentials, discover premium wardrobe staples designed for maximum comfort and an impeccable fit.'},
-    {img:'Women-clothing.jpg',category:'Women',title:'Define Your Style. Own Your Power.',description:'Explore a curated collection of contemporary fashion, elegant silhouettes, and everyday essentials crafted to make you look and feel unforgettable wherever you go.'},
-    {img:'Hot-Trends2.jpg',category:'Hot Trends',title:'Ahead of the Curve. Right Now.',description:'Don’t just follow the trends—set them. Dive into our freshest, most sought-after drop of viral styles and statement pieces straight from the fashion frontline.'},
-    {img:'ActiveGear2.jpg',category:'Active Gears',title:'Built to Move. Driven to Perform.',description:"Whether you're crushing miles on the bike, diving into open waters, or hitting the gym, our high-performance athletic apparel delivers the ultimate blend of breathability, stretch, and endurance."},
+    {img:'Men-clothing2.jpg',category:'Men',title1:'Effortless Style.',title2:'Engineered for Men.',description:'From sharp, tailored classics to laid-back weekend essentials, discover premium wardrobe staples designed for maximum comfort and an impeccable fit.'},
+    {img:'Women-clothing.jpg',category:'Women',title1:'Define Your Style.',title2:' Own Your Power.',description:'Explore a curated collection of contemporary fashion, elegant silhouettes, and everyday essentials crafted to make you look and feel unforgettable wherever you go.'},
+    {img:'Hot-Trends2.jpg',category:'Hot Trends',title1:'Ahead of the Curve.',title2:'Right Now.',description:'Don’t just follow the trends—set them. Dive into our freshest, most sought-after drop of viral styles and statement pieces straight from the fashion frontline.'},
+    {img:'ActiveGear2.jpg',category:'Active Gears',title1:'Built to Move.',title2:'Driven to Perform.',description:"Whether you're crushing miles on the bike, diving into open waters, or hitting the gym, our high-performance athletic apparel delivers the ultimate blend of breathability, stretch, and endurance."},
    ]
 
   return (
       <div className="trending-products-div">
-             <div id='home-section-head'>Wardrobe Overhaul Series</div>
-                <div className="head-dot-wrapper">
-      <span className="head-dot red"></span>
-      <span className="head-dot blue" ></span>
-      <span className="head-dot green"></span>
-    
+            <div  id='home-head-wrapper'>
+   Wardrobe Overhaul
+   <span id='home-head-tagline'>Elevate your everyday style.</span>
     </div>
 <div className="clothingTrendsWrapper">
 
@@ -66,8 +63,12 @@ const itemVariants = {
     </motion.span>
     
     <motion.h2 variants={itemVariants}>
-      {trend.title}
+      {trend.title1}
     </motion.h2>
+      <motion.h2 variants={itemVariants}>
+      {trend.title2}
+    </motion.h2>
+
     
     <motion.p variants={itemVariants}>
       {trend.description}

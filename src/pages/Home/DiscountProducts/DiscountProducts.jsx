@@ -14,32 +14,24 @@ export default function DiscountProducts() {
   const productOverrides = {
 
             
-     100: { 
-      brand: 'Apple', 
-      name: "Apple Airpods", 
-      thumbnail: 'Home-products-img/hp-airpod.jpg' 
-    }
-    ,    94: { brand: 'Longines', name: 'Longines Master Collection', thumbnail: 'Home-products-img/hp-watch.jpg' }
-  ,
+  94: { brand: 'Longines', name: 'Longines Master Collection', thumbnail: 'Home-products-img/MensWatch3.jpg' },
+     101: { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'Home-products-img/AppleSilver.jpg' },
+      
+  
 
          152: { 
-      brand: 'Sports Accessory', 
-      name: "Tennis Racket", 
-      thumbnail: 'Home-products-img/TennisRacket.jpg' 
-    },
-       174: {  brand: 'Prada',  name: "Prada Women Bag",  thumbnail: 'Home-products-img/BluePrada.jpg' },
-      7: { 
       brand: 'Chanel', 
       name: "Coco Noir Eau De", 
-      thumbnail: 'Home-products-img/hp-chanel.jpg' 
-    }
+      thumbnail: 'Home-products-img/perfume3.jpg' 
+    },
+       174: {  brand: 'Prada',  name: "Prada Women Bag",  thumbnail: 'Home-products-img/BluePrada.jpg' }
 
   };
 
   useEffect(() => {
     async function fetchAllProducts() {
       try {
-        const idsToFetch = [100,94,152,174,7];
+        const idsToFetch = [94,101,152,174];
         const loadedProducts = [];
         
         for (const id of idsToFetch) {
@@ -61,20 +53,19 @@ export default function DiscountProducts() {
 
   return (
     <div  className='home-product-div'>
-      <div id='home-product-head'>
-            
-        <span>Absolute Steals</span>
-         <span id='home-product-tagline'>Big savings. Unbelievable prices.</span>
-         <div className="head-dot-wrapper">
-      <span className="head-dot red"></span>
-      <span className="head-dot blue" ></span>
-      <span className="head-dot green"></span>
-    
+
+
+            <div  id='home-head-wrapper'>
+   Absolute Steals
+   <span id='home-head-tagline'>Big savings. Unbelievable prices.</span>
     </div>
-      </div>
       
       <div key={homeProducts.length} className="home-Products-container">
-        <CoverflowCarousel homeProducts={homeProducts && homeProducts}/>
+     {/*    <CoverflowCarousel homeProducts={homeProducts && homeProducts}/> */}
+     <div className="home-products-wrapper">
+       {homeProducts.map((item,index)=>
+     <HomeProduct product={item}/>)}
+     </div>
       </div>
     </div>
   );
