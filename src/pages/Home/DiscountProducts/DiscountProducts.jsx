@@ -15,23 +15,24 @@ export default function DiscountProducts() {
 
             
   94: { brand: 'Longines', name: 'Longines Master Collection', thumbnail: 'Home-products-img/MensWatch3.jpg' },
-     101: { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'Home-products-img/AppleSilver.jpg' },
-      
-  
 
-         152: { 
-      brand: 'Chanel', 
-      name: "Coco Noir Eau De", 
-      thumbnail: 'Home-products-img/perfume3.jpg' 
+    101: { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'AirPodsMax1.jpg' },
+
+    10: { 
+      brand: 'Gucci', 
+      name: "Gucci Bloom Eau de", 
+      thumbnail: 'GucciPerfume3.jpg' 
     },
-       174: {  brand: 'Prada',  name: "Prada Women Bag",  thumbnail: 'Home-products-img/BluePrada.jpg' }
+      174: {  brand: 'Prada',  name: "Prada Women Bag",  thumbnail: 'Home-products-img/BluePrada.jpg' }
+
+       
 
   };
 
   useEffect(() => {
     async function fetchAllProducts() {
       try {
-        const idsToFetch = [94,101,152,174];
+        const idsToFetch = [94,101,10,174];
         const loadedProducts = [];
         
         for (const id of idsToFetch) {

@@ -50,7 +50,7 @@ const handleTransitionNavigation = (id) => {
     
       <div className="card-badge">{discount?discount + '% Off':'New'}</div>
 
-        <span className="brand-tag">{brand}</span>
+        <span className="brand-tag">${price}</span>
 
      
       <div

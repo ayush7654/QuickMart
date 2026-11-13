@@ -5,23 +5,11 @@ gsap.registerPlugin(ScrollTrigger);
 import './PetShopCollection.css'
 import { motion, useScroll, useTransform ,useSpring} from 'framer-motion';
 import CollectionProduct from '../CollectionProduct/CollectionProduct';
+import ScrollButton from '../../../../components/ScrollingButton/ScrollingButton';
 
 
- const arcItems = 
-  [
- /*  {id:0,img:'DogFood2.png',scale:.7}, */
-  {id:1,img:'DogFood5.png',scale:.7},
-  {id:2,img:'DogFood6.png',scale:.85},
-  {id:3,img:'DogFood4.png',scale:1},
-]
 
 
-const DogFood =[
-  {id:0,title:'Wet Dog Food Pack',img1:'PetFood1Img1.webp',img2:'PetFood1Img2.webp',price:'£36.65',brand:'Superfoods'},
-  {id:1,title:'Salmon And Chicken ',img1:'PetFood5Img1.webp',img2:'PetFood5Img2.jpg',price:'£19.07',brand:'Harringtons'},
-  {id:2,title:'Baked Salmon Fish Bites',img1:'PetFood3Img1.webp',img2:'PetFood2Img2.webp',price:'£14.32',brand:'FreshBakes'},
-  {id:3,title:'Lamb And Chicken',img1:'PetFood4Img1.webp',img2:'PetFood4Img2.webp',price:'£14.00',brand:'Harringtons'},
-]
 
  // 1. Controls the staggered entry timing for all children inside
   const containerVariants = {
@@ -29,7 +17,7 @@ const DogFood =[
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.12, // Delay between each element's animation
+        staggerChildren: 0.15, // Delay between each element's animation
         delayChildren: 0.1,    // Initial delay before the sequence starts
       },
     },
@@ -39,7 +27,7 @@ const DogFood =[
   const itemVariants = {
     hidden: { 
       opacity: 0, 
-      y: 40 
+      y: 100 
     },
     visible: {
       opacity: 1,
@@ -69,93 +57,48 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
     <div className="PetShop-collection-wapper">
-    <div className="PetShop-collection" data-header-theme="white" >
+    <div className="PetShop-collection">
  
-   
-<div className='pet-section'
->
-   
-<motion.div 
-      className="pet-left-wrapper"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible" // Animates automatically when scrolled into view
-      viewport={{ once: true, amount: 0.2 }} // Triggers when 20% of the section is visible
-    >
-      {/* --- Heading Lines --- */}
+   <div className="pet-collection-info">
       <div className="pet-store-head">
-        <div className="clip-mask">
-          <motion.div variants={itemVariants}>Everything your pet</motion.div>
-        </div>
-        
-   {/*      <div className="clip-mask">
-          <motion.div variants={itemVariants}>Needs Care , Play & Love</motion.div>
-        </div> */}
-        
-        <div className="clip-mask">
-          <motion.div variants={itemVariants}>needs in one place.</motion.div>
-        </div>
-      </div>
-
-      {/* --- Subheading Lines --- */}
+      Everything your pet needs in one place.
+       </div>
       <div className="pet-store-subhead">
-        <div className="clip-mask-sub">
-          <motion.div variants={itemVariants}>Premium pet care products , fun exercise essentials, and</motion.div>
-        </div>
-        <div className="clip-mask-sub">
-          <motion.div variants={itemVariants}>healthy lifestyle solutions designed for happy pets</motion.div>
-        </div>
-        <div className="clip-mask-sub">
-          <motion.div variants={itemVariants}>and stress-free pet parents.</motion.div>
-        </div>
+        Premium pet care products , fun exercise essentials, and healthy lifestyle solutions designed for happy pets and stress-free pet parents.
+    </div>
+
+    
+      <div className='home-shop-btn' >
+       <ScrollButton text={' Shop Now '}/>
+   
       </div>
 
-      {/* --- Buttons --- */}
-      <motion.div className='pet-store-btn-wrapper' variants={itemVariants}>
-        <motion.div 
-          className='pet-store-btn pet-shop-btn'
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.97 }}
-        >
-          Shop Now
-        </motion.div>
-        <motion.div 
-          className='pet-store-btn'
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.97 }}
-        >
-          Explore Pet Care
-        </motion.div>
+    </div>
+
+    <motion.div className="pet-UI-graphics"
+   variants={containerVariants}
+      initial="hidden"
+      whileInView="visible" 
+      viewport={{ once: true, amount: 0.4 }}  >
+
+      <motion.div 
+      variants={itemVariants}
+      className="pet-column pet-column-1">
+          <img src="PetBed.jpg" alt="" />
       </motion.div>
-
-    </motion.div>
-
-
-
-<div className="pet-Food-wrapper">
-  {DogFood.map((item,index)=>
-  <div 
-  key={index}
-  className='pet-product' 
-   onMouseEnter={() => setHoveredIndex(index)}
-  onMouseLeave={() => setHoveredIndex(null)}>
-  <div className='pet-food-img-wrapper' >
-   <img src={`HomeCollections/PetCareImages/${item.img1}`}/>
-   <div className='pet-product-bg-wrapper'
-   style={{backgroundImage:`url(HomeCollections/PetCareImages/${item.img2})`}}
-   ></div>
-  </div>
-  <div className='pet-food-Info-wrapper'>
-  <div className="pet-info-line1">
-    <span>{item.title}</span>
-    <span>{item.price}</span>
-  </div>
-  <div className="pet-food-brand">{item.brand}</div>
-  </div>
-  </div>)}
-</div>
-</div>
-
+      <motion.div
+      variants={itemVariants}
+      className="pet-column pet-column-2">
+             <img src="cat5.jpg" alt="" />
+      </motion.div>
+      <motion.div 
+      variants={itemVariants}
+      className="pet-column pet-column-3">
+        <img src="PetFood8.jpg" alt="" />
+      </motion.div>
+    </motion.div> 
+   
+    
 
     </div>
      <div className='collection-product-wrapper'>   
@@ -179,6 +122,8 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
           imgPath='PetCareImages'/>)}
     </motion.div>
     </div>
+
+    
     </div>
       
   )

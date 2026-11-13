@@ -90,6 +90,7 @@ const SUBGROUP_MAPPING = {
     groupId: 5,
 
     items: [
+      {slug:'furniture'},
       {slug:'kitchen-accessories'},
       { slug: "groceries" }
 

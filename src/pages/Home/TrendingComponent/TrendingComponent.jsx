@@ -76,7 +76,7 @@ const itemVariants = {
 
     {/* Added a subtle hover micro-interaction to your button */}
     <motion.div 
-      className="fashion-trend-btn" 
+      className="home-shop-btn" 
       variants={itemVariants}
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}

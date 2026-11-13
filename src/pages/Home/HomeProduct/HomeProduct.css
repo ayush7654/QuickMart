@@ -93,10 +93,15 @@ height: 100%;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   padding: 4px 12px;
-  border-radius: 12px;
+  border-radius: 0px;
   font-size: 0.75rem;
   color: white;
   z-index: 1;
+      background-color: white;
+    color:black;
+         border: 1px solid white;
+      color:white;
+      background-color: transparent;
 }
 
 .brand-tag{
@@ -106,11 +111,16 @@ height: 100%;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   padding: 4px 12px;
-  border-radius: 12px;
+  border-radius: 0px;
   font-size: 0.75rem;
   color: white;
     z-index: 1;
     text-transform: uppercase;
+    background-color: white;
+    color:black;
+      font-family: 'INter';
+ 
+ 
 }
 
 
@@ -133,12 +143,14 @@ gap: 10px;
 .price-tag {
   background: rgba(255, 255, 255, 0.2);
   padding: 4px 10px;
-  border-radius: 15px;
-  font-weight: 300;
+  border-radius: 0px;
+  font-weight: 400;
   font-size: .85rem;
   background-color: white;
   color:black;
   width: fit-content;
+  font-family: 'INter';
+     display: none;
 }
 .product-desc {
   font-size: 0.85rem;
