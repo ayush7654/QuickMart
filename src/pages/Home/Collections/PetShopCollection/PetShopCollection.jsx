@@ -84,17 +84,17 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
       <motion.div 
       variants={itemVariants}
       className="pet-column pet-column-1">
-          <img src="PetBed.jpg" alt="" />
+          <img src="/HomeCollections/PetCareImages/PetBed.jpg" alt="" />
       </motion.div>
       <motion.div
       variants={itemVariants}
       className="pet-column pet-column-2">
-             <img src="cat5.jpg" alt="" />
+             <img src="/HomeCollections/PetCareImages/cat4.jpg" alt="" />
       </motion.div>
       <motion.div 
       variants={itemVariants}
       className="pet-column pet-column-3">
-        <img src="PetFood8.jpg" alt="" />
+        <img src="/HomeCollections/PetCareImages/PetFood8.jpg" alt="" />
       </motion.div>
     </motion.div> 
    

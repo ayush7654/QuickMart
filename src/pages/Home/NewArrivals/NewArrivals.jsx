@@ -12,16 +12,17 @@ export default function NewArrivals() {
 
   // 1. Define your overrides for these specific IDs
   const arrivalOverrides = {
-               12: { 
+         86: { brand: 'Casual Comfort', name: 'Man Short Sleeve Shirt', thumbnail: 'BeachShirt.jpg' },
+
+             12: { 
       brand: 'Annibale Colombo', 
       name: "Annibale Colombo Sofa", 
-      thumbnail: 'WhiteSofa.jpg' 
+      thumbnail: 'whiteSofa2.jpg' 
     },
-     87: { brand: 'Urban Chic', name: 'Urban Chic Check Shirt', thumbnail: 'greenShirt2.jpg' },
-
-     88: { brand: 'Nike', name: 'Nike Air Jordan 1', thumbnail: 'AirJordan3.jpg' },
-
-     36:{ brand: 'Groceries', name: 'Protein Powder', thumbnail: 'microwave2.jpg' }
+  
+ 88: { brand: 'Nike', name: 'Nike Air Jordan 1', thumbnail: 'AirJordan2.jpg' },
+     66:{ brand: 'Kitchen Accessories', name: 'Microwave Oven', thumbnail: 'microwave4.jpg' },
+    
 
    
   };
@@ -29,7 +30,7 @@ export default function NewArrivals() {
   useEffect(() => {
     async function fetchAllProducts() {
       try {
-        const idsToFetch = [12,87,88,36];
+        const idsToFetch = [86,12,88,66];
         const loadedProducts = [];
 
         for (const id of idsToFetch) {

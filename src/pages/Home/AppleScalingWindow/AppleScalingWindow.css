@@ -11,70 +11,39 @@
 
 .ap-head-wrapper{
     width: 100%;
-    height: 25rem;
-  font-size: 1.4rem;
-  padding: 2rem 0rem;
-  margin-bottom: 2rem;
-  border-radius: 0px;
-  font-family: 'Inter';
+padding: 0rem 0rem;
   display: flex;
-
+flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap:2rem;
+gap:0rem;
   position: relative;
   overflow: hidden;
-  background-image: url('/AppleProductsMedia/AppleHeadBg11.jpg');
-  background-position: center;
-  background-size: cover;
+  border: 0px solid red;
+
+
 
 }
 
-.ap-head-content{
-      display: flex;
-      flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  border: 0px solid blue;
-  color:rgb(255, 255, 255);
 
-}
-
-.ap-head-upper{
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    font-size: 3rem;
-
-}
-
-.ap-head-lower{
-  display: flex;
-    align-items: center;
-
-
-font-size: 1.3rem;
-color:rgb(90, 90, 90);
-color:rgb(255, 255, 255);
-}
 
 
 
 .ap-head-img{
   
     display: flex;
-   height: 100%;
+
    display: grid;
    place-items: center;
+
 
     
 }
 
 .ap-head-img img{
      height:5rem;
-    width: 5rem;
-    object-fit: contain;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 
 
@@ -172,6 +141,7 @@ will-change: transform;
   background-color: white;
  color:black;
  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ font-family: 'Manrope';
  font-weight: 600;
  text-align: left;
  padding: 1rem;
@@ -376,7 +346,8 @@ transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
  .ApplePro-btn{
   padding: 0px 20px;
   border-radius: 100px;
-  background-color: rgb(0,100,255);
+  background-color: var(--primary-color);
+
  transition: all .3s ease;
  border: 2px solid transparent;
  font-weight: 400;
@@ -386,9 +357,9 @@ transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
  .ApplePro-btn:hover{
-  border: 2px solid rgb(0,100,255);
+  border: 2px solid var(--primary-color);
   background-color: transparent;
-  color:rgb(0,100,255);
+  color: var(--primary-color);
  }
 
  @media (max-width:1100px){

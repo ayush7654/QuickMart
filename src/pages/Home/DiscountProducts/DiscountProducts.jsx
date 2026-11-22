@@ -13,18 +13,19 @@ export default function DiscountProducts() {
   // 1. Define your hardcoded overrides
   const productOverrides = {
 
-            
-  94: { brand: 'Longines', name: 'Longines Master Collection', thumbnail: 'Home-products-img/MensWatch3.jpg' },
+      173: {  brand: 'Prada',  name: "Heshe Women's Leather Bag",  thumbnail: 'BrownBag.jpg' },
+  96: { brand: 'Rolex', name: 'Rolex Cellini Moonphase', thumbnail: 'MenWatch6.jpg' },
 
-    101: { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'AirPodsMax1.jpg' },
+  
+    101: { brand: 'Apple', name: 'AirPods Max Silver', thumbnail: 'AirPodMax5.jpg' },
 
-    10: { 
-      brand: 'Gucci', 
-      name: "Gucci Bloom Eau de", 
-      thumbnail: 'GucciPerfume3.jpg' 
+
+
+    7: { 
+      brand: 'Chanel', 
+      name: "Chanel Coco Noir Eau De", 
+      thumbnail: 'perfume.jpg' 
     },
-      174: {  brand: 'Prada',  name: "Prada Women Bag",  thumbnail: 'Home-products-img/BluePrada.jpg' }
-
        
 
   };
@@ -32,7 +33,7 @@ export default function DiscountProducts() {
   useEffect(() => {
     async function fetchAllProducts() {
       try {
-        const idsToFetch = [94,101,10,174];
+        const idsToFetch = [173,96,101,7];
         const loadedProducts = [];
         
         for (const id of idsToFetch) {

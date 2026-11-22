@@ -32,7 +32,8 @@ a {
   --font-heading: "Jost", sans-serif;
   --font-subheading: sans-serif;
   --font-button: 'Outfit';
-  --primary-color: rgb(1, 113, 227);
+ /*  --primary-color: rgb(1, 113, 227); */
+  --primary-color: rgb(0,100,255);
 }
 
 

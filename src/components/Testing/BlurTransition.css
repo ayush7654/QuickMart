@@ -1,6 +1,6 @@
 .slider-wrapper1 {
   position: relative;
-  width: 100%;
+  width: 100vh;
   height: 100vh;
   overflow: hidden;
   background-color: #000;

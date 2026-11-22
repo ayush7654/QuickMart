@@ -127,23 +127,18 @@ className='ap-head-wrapper'>
         }
       }}  
   >
-    <img src='AppleProductsMedia/AppleWhite.png'/>
+    <img src='AppleProductsMedia/AppleBlack.png'/>
 
     </motion.div> 
-    <div className="ap-head-content">
+
+          <div id='home-head-wrapper'>
+      The Apple Store
+   <span id='home-head-tagline'>Experiences only Apple can deliver. </span>
+     <div>
      
-     <div className="ap-head-upper">
-
-    <div className="ap-head-main">
-       <TextAnimation text={'The Apple Store'} delay={0.15} staggerDelay={.1} />
-    </div>
      </div>
-     <div className="ap-head-lower">
-         <TextAnimation text={'Experiences only Apple can deliver.'} delay={0.5} staggerDelay={.1} />
-     </div>
+      </div>
 
- 
-    </div>
 
 
     </motion.div> 
@@ -223,10 +218,10 @@ className='ap-head-wrapper'>
             {/* ROW 2 (CENTER ROW) */}
             <div className="mid-row-wrapper">
               <div className="middle-row-grid apple-left-grid">
-                The Absolute Best of Apple. All in One Place.
+                The absolute best of Apple. All in one place.
               </div>
                   <div className="middle-row-grid apple-right-grid">
-                The Absolute Best of Apple. All in One Place.
+               The absolute best of Apple. All in one place.
               </div>
             <div
               className="window-row middle-row"
@@ -249,7 +244,7 @@ className='ap-head-wrapper'>
                 >
                   <video
                     ref={(el) => (videoRefs.current[index] = el)}
-                    src={`AppleProductsMedia/${item.videoPh}`}
+                    src={`AppleProductsMedia/${item.video}`}
                     poster={item.poster}
                     loop
                     preload="metadata"

@@ -4,7 +4,7 @@ import ImgCarousel from "./ImgCarousel/ImgCarousel";
 import BrandCarousel from "./BrandComponent/BrandComponent";
 import Collections from "./Collections/Collections";
 import DiscountProducts from "./DiscountProducts/DiscountProducts";
-import ExploreCategory from "./ExploreCategory/ExploreCategory";
+
 
 import NewArrivals from "./NewArrivals/NewArrivals";
 import TrendingComponent from "./TrendingComponent/TrendingComponent";
@@ -20,7 +20,7 @@ import './Home.css';
 import AppleScalingWindow from "./AppleScalingWindow/AppleScalingWindow";
 import { Check } from 'lucide-react';
 import BrandsSection from "../../components/BrandsSection/BrandsSection";
-
+import ExploreCollection from "../../components/ExploreCollection/ExploreCollection";
 
 
 
@@ -38,27 +38,28 @@ const {isAtTop} = useStoreData();
   <div className="Home">
  
 
- {/*   <div className="scrolling-animation-wrapper"  data-header-theme="white"   >
+   <div className="scrolling-animation-wrapper"  data-header-theme="white"   >
          
  <ScrollingAnimation isAtTop={isAtTop}  /> 
  
-</div>   */}
+</div>  
       <div className="Home-scroll-content"  >
         
        <NewArrivals />
              <DiscountProducts/>
      
         <Collections /> 
+          <TrendingComponent />
          <AppleScalingWindow/>
          
-       <TrendingComponent />
+     
 
        
       
         
 
         
-            <div className="explore-range-section">
+          {/*   <div className="explore-range-section">
             <div id='home-section-head' >Explore Our Range
                  <div className="head-dot-wrapper">
       <span className="head-dot red"></span>
@@ -69,11 +70,14 @@ const {isAtTop} = useStoreData();
             </div>
             
 
-           </div> 
-              <ExploreCategory/>
+           </div>  */}
+            {/*   <ExploreCategory/> */}
+              <ExploreCollection/>
+               <BrandsSection/>
   
+
    
-          <BrandsSection/>
+       
 
 
     

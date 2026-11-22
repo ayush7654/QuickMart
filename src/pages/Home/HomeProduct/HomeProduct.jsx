@@ -46,11 +46,11 @@ const handleTransitionNavigation = (id) => {
    onClick={()=>handleTransitionNavigation(product.id)}
     className='home-ProductCard'>
        <div className="test-card"
-        style={{backgroundImage:`url(${thumbnail})`}}>
+        style={{backgroundImage:`url(Home-products-img/${thumbnail})`}}>
     
-      <div className="card-badge">{discount?discount + '% Off':'New'}</div>
+      <div className="card-badge sale-badge">{discount?discount + '% Off':'New'}</div>
 
-        <span className="brand-tag">${price}</span>
+        <span className="card-badge price-badge">${price}</span>
 
      
       <div
@@ -59,11 +59,10 @@ const handleTransitionNavigation = (id) => {
       </div>
 
       <div className="card-content">
- <div className="card-header">
-   <span className="price-tag">${price}</span>
+
+  
           <h2 className="product-title">{name}</h2>
           
-        </div>
 
        
   <div className="product-desc">

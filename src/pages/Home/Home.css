@@ -103,7 +103,7 @@ margin-top: 2rem;
       align-items: center;
        justify-content: center;
        text-align: center;
-   padding: 4rem 0rem;
+   padding: 3rem 0rem;
   font-family: var(--font-subheading);
 
   font-family: 'Jost';
@@ -186,14 +186,14 @@ align-items: center;
 
   .home-shop-btn{
 
- width: 8rem;
- padding: 2px 0rem;
+width: fit-content;
+  padding: 0px 20px;
 
 
- background-color: rgb(100, 80, 250);
+
    background-color: rgb(0,100,255);
    background-color: var(--primary-color);
- border: 1px solid transparent;
+ border: 2px solid transparent;
 
  font-size: .95rem;
  border-radius: 100px;
@@ -205,12 +205,13 @@ align-items: center;
   align-items: center;
   gap: 8px;
   cursor: pointer;
+   transition: all .3s ease;
 }
 
 .home-shop-btn:hover{
   background-color: transparent;
-   border: 1px solid var(--primary-color);
-    color:rgb(100, 80, 250);
+   border: 2px solid var(--primary-color);
+   
   color: var(--primary-color);
 }
 

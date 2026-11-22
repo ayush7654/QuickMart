@@ -102,7 +102,7 @@ setSearchBarToggle(i)
 
  
 
-  {/* <div className="middleLine"></div> */}
+{/* <div className="middleLine"></div>  */}
 
 <div className={`site-overlay-component ${currentPanel === 'top-panel' ? 'active' : ''}`}>
   <SearchPage
