@@ -24,7 +24,7 @@ position: relative;
 
 
 .pet-collection-info{
-  width: 50%;
+  width: 40%;
   color:black;
     position: relative;
   display: flex;
@@ -33,6 +33,7 @@ position: relative;
   padding: 0rem 4rem;
   font-family: 'Manrope'; 
   gap: 2rem;
+  border: 0px solid blue;
 
 
 }
@@ -51,9 +52,9 @@ position: relative;
 .pet-store-subhead{
   font-size: 1rem;
  line-height: 2rem;
- width: 70%;
+ width: 80%;
  color:rgb(80, 80, 80);
- font-family: 'INter';
+ font-family: 'Inter';
 }
 
 

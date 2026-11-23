@@ -76,9 +76,9 @@ export default function ScrollingAnimation({ isAtTop }) {
           marginTop: '0rem' 
         }, 
         { 
-          width: "0vw", 
-          height: "90vh", 
-          borderRadius: "20px",
+          width: "70vw", 
+          height: "100vh", 
+          borderRadius: "10px",
           ease: "expo.out",
           duration: 1,      
           immediateRender: false,
@@ -89,9 +89,9 @@ export default function ScrollingAnimation({ isAtTop }) {
 
       tl.from(".grid-item", {
         scale: 1.5,
-        opacity: .5,
-        x: (i) => (i % 2 === 0 ? -1200 : 1200),
-        y: (i) => (i < 2 ? -100 : 100),
+        opacity: 1,
+        x: (i) => (i % 2 === 0 ? -1000 : 1000),
+        y: (i) => (i < 2 ? 0 : 0),
         ease: "expo.out",
         duration: 1,
       }, 0); 
@@ -110,7 +110,7 @@ export default function ScrollingAnimation({ isAtTop }) {
 
   return (
     <div className="scroll-section" ref={sectionRef}  >
-      <motion.div 
+   {/*    <motion.div 
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
@@ -137,7 +137,7 @@ export default function ScrollingAnimation({ isAtTop }) {
         <span className="grid-item-subtext">Tailored to absolute</span>
             <span className="grid-item-text grid-item-line2">perfection.</span>
           </motion.div>
-      </motion.div>
+      </motion.div> */}
 
 
       <div className="grid-container-wrapper">
@@ -148,14 +148,14 @@ export default function ScrollingAnimation({ isAtTop }) {
           </div>
 
           <div className="main-image-wrapper" ref={mainImgRef}>
-         {/*     <video 
+          <video 
               src="/clothingIntroVideo.mp4" 
               muted 
               autoPlay 
               loop 
               playsInline
               className="hero-video"
-            />  */}
+            />  
           </div>
 
           <div style={{ opacity: isAtTop ? 1 : 0 }} className="store-scroll-down-wrapper">

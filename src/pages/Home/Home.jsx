@@ -52,26 +52,6 @@ const {isAtTop} = useStoreData();
           <TrendingComponent />
          <AppleScalingWindow/>
          
-     
-
-       
-      
-        
-
-        
-          {/*   <div className="explore-range-section">
-            <div id='home-section-head' >Explore Our Range
-                 <div className="head-dot-wrapper">
-      <span className="head-dot red"></span>
-      <span className="head-dot blue" ></span>
-      <span className="head-dot green"></span>
-    
-    </div>
-            </div>
-            
-
-           </div>  */}
-            {/*   <ExploreCategory/> */}
               <ExploreCollection/>
                <BrandsSection/>
   

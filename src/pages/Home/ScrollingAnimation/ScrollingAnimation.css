@@ -3,7 +3,7 @@
   
 
 
-height: 150vh;
+height: 100vh;
   display: flex;
   flex-direction: column;
 
@@ -117,6 +117,8 @@ z-index: 10;
 /* Ensure satellite images are hidden initially if needed */
 .grid-item {
   position: absolute;
+/*   top:50%;
+  transform: translateY(-50%); */
   z-index: 1;
   will-change: transform; /* Performance optimization */
  border: 5px solid rgb(255, 255, 255);
@@ -124,12 +126,13 @@ z-index: 10;
    background-size: cover;
      border-radius: 15px;
    width: 50%;
-     height: 100vh;
+     height: 98vh;
      display: flex;
      flex-direction: column;
      justify-content: end;
      align-items: center;
        color: #fff;
+       border: 1px solid red;
 
 
 }
