@@ -67,12 +67,16 @@ place-items: center;
 
 .static-header-wrapper.header-force-white {
     color: white;
+  
 
 }
 
 .static-header-wrapper.header-force-black {
 
-  background-color: rgba(255, 255, 255);
+  background-color: rgba(255, 255, 255,0);
+  backdrop-filter: blur(0px);
+
+  
 
 
 }
@@ -88,16 +92,21 @@ place-items: center;
   display: flex;
   align-items: center;
     gap:2px;
+    position: absolute;
+    left: 50%;
+  
+    transform: translate(-50%);
 
   
 
 }
 
   .site-logo{
-    width: 2rem;
+    width: 2.5rem;
     display: grid;
     place-items: center;
     border: 0px solid red;
+
 
 
   }
@@ -118,6 +127,8 @@ place-items: center;
           font-family: 'Marcellus';
           font-family: 'Figtree';
           text-transform: uppercase ;
+          font-family: 'Marcellus';
+
 /* 
        font-family: 'Outfit';
         font-family: 'Figtree';
@@ -125,7 +136,8 @@ place-items: center;
      font-family: 'Runiga', sans-serif;  */
          
 
-        font-weight: 500;
+        font-weight: 5
+        00;
 /*      text-transform: uppercase;   */ 
     
         
@@ -147,11 +159,10 @@ place-items: center;
     font-size:.9rem; 
     font-family: 'Inter';
     font-weight: 500;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
+    
 
 font-family: 'Manrope';
+    font-family: 'Marcellus';
 
 
     
@@ -214,8 +225,8 @@ font-family: 'Manrope';
 
 .static-header-wrapper.header-force-white .header-icon{
 
-  background-color: transparent;
-  backdrop-filter: blur(10px);
+/*   background-color: transparent;
+  backdrop-filter: blur(10px); */
 
 
 }

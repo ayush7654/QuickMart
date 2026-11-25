@@ -1,10 +1,10 @@
 .testing-div{
-  height: 150vh;
+
 
 display: flex;
 align-items: center;
 justify-content: end;
-
+height: 100vh;
 
 }
 
@@ -13,4 +13,20 @@ justify-content: end;
   box-sizing: border-box;
 }
 
+
+
+.logo-animation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 10rem;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+
+  white-space: nowrap;
+  z-index: 1000;
+  pointer-events: none;
+}
 

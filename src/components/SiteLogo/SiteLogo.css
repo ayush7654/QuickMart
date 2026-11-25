@@ -1,0 +1,20 @@
+
+
+.site-logo-wrapper1 {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1000;
+  height: 100vh;
+}
+
+.site-logo-animation1 {
+  font-size: 8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+    font-family: 'Marcellus';
+}

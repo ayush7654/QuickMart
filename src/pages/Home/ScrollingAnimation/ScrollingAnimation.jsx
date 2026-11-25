@@ -142,10 +142,10 @@ export default function ScrollingAnimation({ isAtTop }) {
 
       <div className="grid-container-wrapper">
         <div className="grid-content">
-          <div className="site-title-wrapper">
+      {/*     <div className="site-title-wrapper">
             <div className="hero-title2">ananta</div>
             <div className="title-tag">Refine Living</div>
-          </div>
+          </div> */}
 
           <div className="main-image-wrapper" ref={mainImgRef}>
           <video 

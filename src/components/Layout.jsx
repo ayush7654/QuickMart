@@ -15,8 +15,8 @@ import { useStoreData } from './StoreDataContext';
 import SideCart from './SideCart/SideCart';
 import NavigationPanel from './NavigationPanel/NavigationPanel';
 import SiteCollection from './SiteCollection/SiteCollection';
-
-
+import { motion, useScroll, useTransform } from 'framer-motion';
+import SiteLogo from './SiteLogo/SiteLogo';
 
  
 
@@ -92,6 +92,7 @@ setSearchBarToggle(i)
 
 
 
+
    
     return(
 
@@ -125,13 +126,13 @@ setSearchBarToggle(i)
 
 
 
+{/* <SiteLogo/> */}
 
 
 
 
 
-
-       <StaticHeader
+     <StaticHeader
       toggleSwitch={SearchToggle} 
     
       toggleOverlay={setShowOverlay}
@@ -145,7 +146,7 @@ setSearchBarToggle(i)
           setCollectionOpen={setCollectionOpen}
   
    />
-
+ 
 
 
 

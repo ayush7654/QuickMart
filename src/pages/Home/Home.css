@@ -113,10 +113,11 @@ margin-top: 2rem;
 
 
    text-transform: uppercase;
-   font-size: 3rem;
+   font-size: 2.5rem;
    font-weight: 500;
       border: 0px solid green;
       position: relative;
+
       
 
              
@@ -132,6 +133,7 @@ margin-top: 2rem;
   padding: 10px ;
   font-family: 'Courier New', Courier, monospace;
   text-transform: capitalize;
+   font-family: 'Marcellus';
 
     }
 

@@ -44,8 +44,10 @@ const {isAtTop} = useStoreData();
  
 </div>  
       <div className="Home-scroll-content"  >
-        
-       <NewArrivals />
+       
+               <NewArrivals />
+
+  
              <DiscountProducts/>
      
         <Collections /> 

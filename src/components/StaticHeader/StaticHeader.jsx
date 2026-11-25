@@ -10,12 +10,11 @@ import { WinScrollContext } from '../WinScrollProvider/WinScrollProvider';
 import AnimatedUnderline from '../AnimatedUnderline/AnimatedUnderline';
 import { HiUser , HiOutlineUser} from 'react-icons/hi2';
 import { FiShoppingBag } from 'react-icons/fi';
-
+import SiteLogo from '../SiteLogo/SiteLogo';
 
 
 export default function StaticHeader({
-  toggleOverlay, 
-  sideBarToggle,
+
   setCurrentPanel,
  setIsPanelOpen,
  setCollectionOpen}) {
@@ -106,8 +105,9 @@ useEffect(() => {
      
      <Link to ='/' className="site-logo-wrapper"> 
                  
-                 <span className="site-logo"> <img src='/siteSampleLogo7.png'/></span>
-                 <span className='header-site-name'>lethora</span>  
+             <span className="site-logo"> <img src='/SampleLogoWhite.png'/></span> 
+             {/*     <span className='header-site-name'>Medley</span>   */}
+                 <SiteLogo/>
                
      </Link>
 
@@ -172,9 +172,6 @@ useEffect(() => {
      <Search size={20} strokeWidth={1.5} />
     </div>
 
-  {/*    <div className='header-icon'>
-     <LuBell size={20} strokeWidth={1.5} />
-    </div> */}
     
     <div className='header-icon' 
     onClick={()=>{setIsPanelOpen(true),setCurrentPanel('right-panel')}}>

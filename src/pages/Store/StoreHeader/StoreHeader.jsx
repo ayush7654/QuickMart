@@ -11,7 +11,7 @@ import { Search } from 'lucide-react'
 import { Filter } from 'lucide-react'
 import './StoreHeader.css'
 import { useSpring } from 'framer-motion';
-
+import SiteLogo from '../../../components/SiteLogo/SiteLogo'
 
 
 export default function StoreHeader() {

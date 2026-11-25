@@ -58,6 +58,8 @@ export default function NewArrivals() {
   return (
     <div className='home-product-div'
      id="newArrivals-home-Products-div"
+      
+        
      
     >
   
@@ -69,11 +71,14 @@ export default function NewArrivals() {
      </div>
       </div>
 
-    <div key={homeProducts.length}  className="home-Products-container">
+    <div key={homeProducts.length}  
+    className="home-Products-container"
+
+    >
       
 {/* <CoverflowCarousel homeProducts={homeProducts && homeProducts}/> */}
 
-     <div className="home-products-wrapper">
+     <div className="home-products-wrapper" >
        {homeProducts.map((item,index)=>
      <HomeProduct product={item}/>)}
      </div>
