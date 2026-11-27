@@ -5,42 +5,30 @@ import {
   useLayoutEffect,
   useMemo
 } from "react";
-import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import { getItems, getFilteredItems } from "../../api";
 import StoreProductCard from "./StoreProductCard/StoreProductCard";
-import StoreCategory from "./StoreSidebar/StoreCategory/StoreCategory";
+
 import StoreFooter from "./StoreFooter/StoreFooter";
-import { SlidersHorizontal } from "lucide-react";
-import ScrollButton from "../../components/ScrollingButton/ScrollingButton";
-import FilterSection from "./FilterSection/FilterSection";
+
 import GridToggle from "./GridToggle/GridToggle";
 import { useStoreFilter } from "../../components/StoreFilterContext";
 import { X } from "lucide-react";
 
 import { useStoreData } from "../../components/StoreDataContext";
 import CategoryDataProvider from "../../components/CategoryDataProvider";
+import ExploreCollection from "../../components/ExploreCollection/ExploreCollection";
 import "./Store.css";
-import AnimatedUnderline from "../../components/AnimatedUnderline/AnimatedUnderline";
-import CarouselIntro from "./CarouselIntro/CarouselIntro";
-import OrderToggle from "./OrderToggle/OrderToggle";
-import MenuCancel from "../../components/MenuCancel/MenuCancel";
-import { LayoutPanelLeft } from "lucide-react";
+
 import { useScroll } from "../../components/ScrollData/ScrollData";
 import AppliedFilters from "./AppliedFilters/AppliedFilters";
-import StoreHeader from "./StoreHeader/StoreHeader";
-import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
-import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
-import { Link } from "react-router-dom";
+
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import { ListFilter } from "lucide-react";
-import { Search } from 'lucide-react'
-import { Funnel, Filter } from 'lucide-react';
 
 import StoreSearch from "./StoreSearch/StoreSearch";
-import { FaSlidersH, FaFilter } from 'react-icons/fa'; // Font Awesome horizontal sliders
-import { MdOutlineTune, MdFilterList } from 'react-icons/md';
 
-
+import {LuSlidersHorizontal} from 'react-icons/lu';
+import { useOutletContext } from "react-router-dom";
 const getLayoutByWidth = () => {
   if (typeof window === 'undefined') return 3; // Fallback for SSR (e.g., Next.js)
   if (window.innerWidth < 700) return 2;
@@ -48,7 +36,9 @@ const getLayoutByWidth = () => {
   return 3;
 };
 
-export default function Store() {
+export default function Store(
+
+) {
   const ProductCache = useRef({});
   const FilteredItemsCache = useRef({});
   const scrollPositionRef = useRef(0);
@@ -57,23 +47,16 @@ export default function Store() {
   const [isLoading, setIsLoading] = useState(true);
   const [renderTrigger, setRenderTrigger] = useState(0);
 
-  const { scrollY} = useScroll();
+ 
 
   const location = useLocation();
-
-  const { isAtTop,
+const { setCurrentPanel, setIsPanelOpen, sampleTesting } = useOutletContext();
+  const { 
     currentSort,
     sortOrder,
     currentCategory,
     typeFilter,
-    storeOverlayActive,
-    handleSort,
     toggleSortOrder,
-    handleTypeFilter,
-    handleCancelTypeFilter,
-    sideFilterOn,
-    setSideFilterOn,
-    partialPill,setPartialPill,
     storeSearch,setStoreSearch,}
      = useStoreData()
 
@@ -298,38 +281,23 @@ useEffect(() => {
 
 
 
-console.log(productElements && productElements)
+console.log(sampleTesting)
   
   return (
     <div className="Store-Page">
 
+<div className="store-UI-wrapper">
+       <ExploreCollection/>
+</div>
 
-
-   <div className={`store-sideFilter-wrapper ${sideFilterOn?'open':''}`}>
-      
-          <div className="store-sideFilter" style={{opacity:sideFilterOn?1:0}}>
-                 <FilterSection
-              storeFilters={storeFilters}
-              setStoreFilters={setStoreFilters}
-              setAppliedFilters={setAppliedFilters}
-              setSideFilterOn={setSideFilterOn} />
-          </div>
-         </div> 
-
-   {/*  <div className={`storePage-overlay ${storeOverlayActive ? 'is-visible' : ''}`} 
-     onClick={() => {setIsOpen(false),setPartialPill(false)}}> </div>   */}
 
     
 
-   <CarouselIntro />   
+
+
 
  
 
-{/*   <div className='store-header-wrapper' 
-  style={{ top: isScrolledPastLimit ? '0rem' : '-5rem' }}>
-       <ExpandingStoreHeader/>    
-      </div>   */}
- 
   
 
 <div className="store-content-wrapper">
@@ -340,66 +308,33 @@ console.log(productElements && productElements)
         
 
       
-       <div className="store-page-title-wrapper">
-
-    
- 
-<div className="store-page-title-content">
-  
-   <div className="store-page-title">
-
-
- 
-
-    <span className="selected-group"> {currentCategory?selectedGroup: 'Store'}</span>
-    <span className="selected-category">
-     {currentCategory?currentCategory.replace(/-/g, ' '):'Explore All '} 
-    </span>
-          <div className="head-dot-wrapper">
-      <span className="head-dot red"></span>
-      <span className="head-dot blue" ></span>
-      <span className="head-dot green"></span>
-    
-    </div>
-     
-     
-   </div>
-
-
-
-
-  
-</div>
-
-          
-            </div>
 
   
 
         <main className="store-content">
 
-
+  <div className="current-category-wrapper"> 
+                <span className="current-sub-category">{currentCategory?selectedGroup: 'Store'}</span>
+              <span className="store-current-category">{currentCategory?currentCategory.replace(/-/g, ' '):'The Vault '} </span>
+            
+              </div>
 
 <div className="store-info-wrapper">
           
             
              <div className="store-info-section store-bar-left">
+                                        <GridToggle
+   activeLayout={activeLayout}
+   setActiveLayout={setActiveLayout}
+   />
 
-            <div className="filter-btn-wrapper"
-              onClick={() => setSideFilterOn(true)}>
-               <MdOutlineTune size={24}  />
-            <span>Sort & Filter</span>
+
+       
+             </div>
+
            
 
 
-            </div> 
-
-
-
-            
- 
-
-             </div>
              <div className="store-info-section  store-bar-right">
                 
 
@@ -407,15 +342,16 @@ console.log(productElements && productElements)
                  storeSearch={storeSearch}
                  setStoreSearch={setStoreSearch}
                  /> 
-                             <GridToggle
-   activeLayout={activeLayout}
-   setActiveLayout={setActiveLayout}
-   />
-
+     <div className="store-filter-button"
+     onClick={()=>{setIsPanelOpen(true),setCurrentPanel('openFilter')}}>
+               < LuSlidersHorizontal size={18}  />
+            <span>Filters</span>
+           
+            </div> 
        
              </div>
 
-    {/* <span className="product-length"> {productElements.length} PRODUCTS </span> */}  
+
 
     
   
@@ -443,17 +379,7 @@ console.log(productElements && productElements)
               gridTemplateColumns: `repeat(${activeLayout}, 1fr)`
             }}>
 
-{/*      <div 
-  className="store-filter-button"
-  style={{
-    opacity: isScrolledPastLimit ? 1 : 0,
-    pointerEvents: isScrolledPastLimit ? 'auto' : 'none'
-  }}
-  onClick={() => setSideFilterOn(true)}
-  aria-label="Open filter menu"
->
-  <Filter size={20} strokeWidth={2} className="filter-icon" /> 
-</div> */}
+
               
               {productElements}</div>
           </div>

@@ -17,7 +17,7 @@ export default function BlurTransition({activeIndex=0}) {
 
   return (
     <div className="slider-wrapper1">
-      <div className="blur-container">
+      <div className="img-blur-container">
         <AnimatePresence mode="popLayout">
           <motion.img
             key={activeIndex} // Changing the key tells Framer Motion to animate it out and a new one in

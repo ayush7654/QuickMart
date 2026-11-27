@@ -1,12 +1,13 @@
 import React from 'react'
 import { Check, CheckSquare } from 'lucide-react';
-import { useStoreFilter } from '../../../components/StoreFilterContext';
+import { useStoreFilter } from '../StoreFilterContext';
 import PriceFilter from './PriceFilter/PriceFilter';
-import { X } from 'lucide-react';
-import './FilterSection.css'
-import StoreAccordion from '../StoreAccordion/StoreAccordion';
-import { div } from 'framer-motion/client';
-import { useStoreData } from '../../../components/StoreDataContext';
+import StoreAccordion from './StoreAccordion/StoreAccordion';
+import AnimatedUnderline from '../AnimatedUnderline/AnimatedUnderline';
+import './StoreFilter.css'
+
+import { useStoreData } from '../StoreDataContext';
+
 
      const SortArray = [
         { name: 'Price , High to Low', sort: 'price' , order:'desc'  },
@@ -21,9 +22,7 @@ import { useStoreData } from '../../../components/StoreDataContext';
       ];
 
           
-
-
-export default function FilterSection({setSideFilterOn}) {
+export default function StoreFilter({closePanel}) {
     
     
     const {storeFilters,setStoreFilters,setAppliedFilters,storeFilterColors,setStoreFilterColors} = useStoreFilter();
@@ -43,11 +42,13 @@ export default function FilterSection({setSideFilterOn}) {
 
 
 
-    <div className="side-filter-header">
-     <div>SORT & FILTERS</div>
-     <span onClick={()=>setSideFilterOn(false)}><X /></span>
-
-  </div>
+  <div className="side-panel__header">
+                  <span>Filters</span>
+                   <span className='side-panel__close'
+                    onClick={closePanel}>
+                      <AnimatedUnderline color='black'>Close</AnimatedUnderline>
+                      </span>
+              </div>
 
   <div className="store-side-filter" data-lenis-prevent>
 <div className="sort-selector-wrapper">

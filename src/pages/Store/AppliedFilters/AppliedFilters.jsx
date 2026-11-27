@@ -3,11 +3,9 @@ import MenuCancel from '../../../components/MenuCancel/MenuCancel'
 import { useNavigate } from 'react-router-dom'
 import { LayoutPanelLeft } from 'lucide-react'
 import { X } from 'lucide-react'
-
-import OrderToggle from '../OrderToggle/OrderToggle'
 import AnimatedUnderline from '../../../components/AnimatedUnderline/AnimatedUnderline'
 import './AppliedFilters.css'
-import { div } from 'framer-motion/client'
+
 
 export default function AppliedFilters({appliedFilters,removeFilter,handleRemoveColor,currentSort,toggleSortOrder,currentCategory}) {
 

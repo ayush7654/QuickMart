@@ -54,7 +54,7 @@ const {isAtTop} = useStoreData();
           <TrendingComponent />
          <AppleScalingWindow/>
          
-              <ExploreCollection/>
+         
                <BrandsSection/>
   
 

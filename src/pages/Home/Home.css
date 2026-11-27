@@ -215,6 +215,7 @@ width: fit-content;
   gap: 8px;
   cursor: pointer;
    transition: all .3s ease;
+   z-index: 1;
 }
 
 .home-shop-btn:hover{

@@ -13,8 +13,8 @@ import { FiShoppingBag } from 'react-icons/fi';
 import SiteLogo from '../SiteLogo/SiteLogo';
 
 
-export default function StaticHeader({
-
+export default function StaticHeader(
+  {
   setCurrentPanel,
  setIsPanelOpen,
  setCollectionOpen}) {
@@ -32,7 +32,7 @@ const [headerTheme, setHeaderTheme] = useState('black');
 
  const { isAtTop ,  isIdle } = useContext(WinScrollContext);
 
-  const storeHeader = ['/store'].includes(location.pathname);
+  const storeHeader = [''].includes(location.pathname);
 
 
 useEffect(() => {
@@ -125,7 +125,7 @@ useEffect(() => {
       </TransitionLink>
 
        <span className='header-nav'
-     onClick={()=>{setIsPanelOpen(true),setCurrentPanel('left-panel')}}>
+     onClick={()=>{setIsPanelOpen(true),setCurrentPanel('openMenu')}}>
        <AnimatedUnderline>Menu</AnimatedUnderline>
     </span> 
 
@@ -168,13 +168,13 @@ useEffect(() => {
       <div className="header-icon-wrapper">
 
             <div className='header-icon'
-             onClick={()=>{setIsPanelOpen(true),setCurrentPanel('top-panel')}}>
+             onClick={()=>{setIsPanelOpen(true),setCurrentPanel('openSearch')}}>
      <Search size={20} strokeWidth={1.5} />
     </div>
 
     
     <div className='header-icon' 
-    onClick={()=>{setIsPanelOpen(true),setCurrentPanel('right-panel')}}>
+    onClick={()=>{setIsPanelOpen(true),setCurrentPanel('openCart')}}>
      {location.pathname === "/cart" ?
       (< RiShoppingBag3Fill  />   ) : ( <FiShoppingBag style={{ strokeWidth: "1.5" }} /> )}
       </div> 

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 import './TrendingComponent.css'
 import ScrollButton from './../../../components/ScrollingButton/ScrollingButton';
+
 export default function TrendingComponent() {
 
 
@@ -78,8 +79,7 @@ const itemVariants = {
     <motion.div 
       className="home-shop-btn" 
       variants={itemVariants}
-      whileHover={{ scale: 1.03 }}
-      whileTap={{ scale: 0.98 }}
+ 
     >
      
       <ScrollButton text={' Shop Now '}/>

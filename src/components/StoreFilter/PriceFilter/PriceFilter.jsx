@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './PriceFilter.css';
-import { useStoreFilter } from '../../../../components/StoreFilterContext';
+import { useStoreFilter } from '../../StoreFilterContext';
 const PriceFilter = () => {
   const { minPrice, setMinPrice, maxPrice, setMaxPrice } = useStoreFilter();
   

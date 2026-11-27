@@ -15,6 +15,7 @@ import { useStoreData } from './StoreDataContext';
 import SideCart from './SideCart/SideCart';
 import NavigationPanel from './NavigationPanel/NavigationPanel';
 import SiteCollection from './SiteCollection/SiteCollection';
+import StoreFilter from './StoreFilter/StoreFilter';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import SiteLogo from './SiteLogo/SiteLogo';
 
@@ -38,6 +39,7 @@ export default function Home(){
 
    const overlayVisible = isOpen || showOverlay;
 
+   const sampleTesting='Its working'
    
 
        const [cartToggled,setCartToggled]= useState(false)
@@ -88,7 +90,7 @@ setSearchBarToggle(i)
   }
 
 
-  const [currentPanel,setCurrentPanel] = useState('')   /* search (top) , sideNav bar (left), cart (right) , storefilter (left)   */
+  const [currentPanel,setCurrentPanel] = useState('')   /* search (top) , menu bar (left), cart (right) , storefilter (left)   */
 
 
 
@@ -105,7 +107,7 @@ setSearchBarToggle(i)
 
 {/* <div className="middleLine"></div>  */}
 
-<div className={`site-overlay-component ${currentPanel === 'top-panel' ? 'active' : ''}`}>
+<div className={`site-overlay-component ${currentPanel === 'openSearch' ? 'active' : ''}`}>
   <SearchPage
     currentToggle={searchBarToggle} 
     toggleSwitch={SearchToggle} 
@@ -131,18 +133,11 @@ setSearchBarToggle(i)
 
 
 
-
      <StaticHeader
-      toggleSwitch={SearchToggle} 
-    
-      toggleOverlay={setShowOverlay}
-      sideBarToggle={toggleSideBar}
-      setCartToggled={setCartToggled}
-         sideBarState={sideBarOn} 
+
+         
          setCurrentPanel={setCurrentPanel}
          setIsPanelOpen={setIsPanelOpen}
-         currentPanel={currentPanel}
-         closePanel={closePanel}
           setCollectionOpen={setCollectionOpen}
   
    />
@@ -154,9 +149,13 @@ setSearchBarToggle(i)
   <CartListProvider>
 
 
-<div className='siteNav-panel' >
+<div className='menu-panel' >
 
 <NavigationPanel closePanel={closePanel}/>
+</div>
+
+<div className="filter-panel">
+  <StoreFilter closePanel={closePanel}/>
 </div>
 
 <div className="cart-panel" >
@@ -180,7 +179,12 @@ setSearchBarToggle(i)
     <div className={`outlet-container`}
     data-animation={animationStatus}>
     <Outlet 
-      toggleOverlay={setShowOverlay}/>
+context={{
+            setCurrentPanel,
+            setIsPanelOpen,
+            setCollectionOpen,
+            sampleTesting,
+          }}/>
     </div>
 
 

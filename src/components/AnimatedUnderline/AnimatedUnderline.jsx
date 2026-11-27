@@ -6,9 +6,9 @@ export default function AnimatedUnderline({
   from = "left",
     exit = "opposite", 
   thickness = 1,
-  offset = 1.5,
+  offset = 2,
   color = "white",
-  duration = 0.3,
+  duration = 0.4,
 }) {
   return (
     <span
